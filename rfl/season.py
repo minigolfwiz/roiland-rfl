@@ -150,8 +150,8 @@ def rank(S, teams):
     while i < len(teams):
         j = i
         while j < len(teams) and pct(rec[teams[j]]) == pct(rec[teams[i]]): j += 1
-        group = teams[i:j]
-        group.sort(key=lambda t: (-h2h(t, group), -subpct(rec[t]['div']), -subpct(rec[t]['conf']), -(rec[t]['pf'] - rec[t]['pa']), -rec[t]['pf'], t))
+        group = teams[i:j]; members = tuple(group)   # list.sort() empties `group` while keys are computed, so h2h must read a copy
+        group.sort(key=lambda t: (-h2h(t, members), -subpct(rec[t]['div']), -subpct(rec[t]['conf']), -(rec[t]['pf'] - rec[t]['pa']), -rec[t]['pf'], t))
         out += group; i = j
     return out
 def standings(S):
