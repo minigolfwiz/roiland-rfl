@@ -206,7 +206,14 @@ def mega_bowl_mvp(S, r):
 
 # ---------------------------------------------------------------- awards
 def awards(S):
-    se = S['season']; st = se['stats']; rec = se['records']
+    se = S['season']; rec = se['records']
+    st = collections.defaultdict(collections.Counter)   # awards judge the regular season only (weeks 1-20); playoff games are excluded (Mega Bowl MVP is separate)
+    for w in se['results']:
+        for g in se['results'][w]:
+            for side in ('H', 'A'):
+                for pid, v in g['stats'][side].items():
+                    for k, x in v.items():
+                        if isinstance(x, (int, float)): st[str(pid)][k] += x
     def z(vals):
         m = sum(vals) / len(vals); sd = (sum((v - m) ** 2 for v in vals) / len(vals)) ** .5 or 1; return m, sd
     rows = []
