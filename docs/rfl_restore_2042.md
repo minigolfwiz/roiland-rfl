@@ -22,4 +22,9 @@ The cloud workspace can be wiped between sessions. Nothing is safe unless it is 
 - Never re-run a played week or round. `season.week_done` guards double-advance for weeks.
 
 ## Status
-2042 season is COMPLETE: 20 weeks, four playoff rounds, Mega Bowl and awards all played. Champions: Costique Bearcats (Mega Bowl 17-10 over the San Saltadac Sea Lions, Tealcoat Stadium, Bruca Beach). Next phase would be the 2043 offseason (retirements, free agency, staff moves, draft); no 2043 engine step has been built yet.
+2042 season is COMPLETE (Champions: Costique Bearcats, Mega Bowl 17-10 over the San Saltadac Sea Lions, Tealcoat Stadium, Bruca Beach).
+2043 offseason, steps done (each guarded by S['offseason']['done'] = close, retire, fa, trades):
+1. `python3 rfl/offseason.py close` (history + honours), `retire` (ageing + retirements; early retirees <=29 get a stated reason; starters <=30 and recent award winners have reduced hazard; Neraini's retirement was reversed by Dan).
+2. `python3 rfl/freeagency.py` (re-sign, open market, street fill; then `fix_minimums`).
+3. `python3 rfl/trades.py` (trades for 2043 picks; creates 2043 pick ownership; staff moves; syncs and updates `data/rfl_coaching.json` = project doc `claude/rfl_coaching.json`, which had been stale for 2042 hires).
+Next: write offseason_2043 into the history file, archive the 2042 season record, then the 2043 draft (needs draft/pool_2043.txt from the college sim; see rfl_draft.py).
