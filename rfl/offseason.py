@@ -82,8 +82,24 @@ def hazard(p, yr):
     elif p['pos'] in ('RB', 'CB', 'S'): h *= 1.3
     ov = ovr(p)
     h *= 1.8 if ov < 6.5 else (.5 if ov >= 8.5 else 1.0)
+    if p.get('starter') and a <= 30: h *= .4                    # producers/starters rarely walk away early (Neraini rule, 23 Oct 2026)
+    if any(y >= yr - 2 for y, _ in p.get('honors', [])) and a <= 31: h *= .4
     if p.get('inj') and p['inj']['weeks'] > 40 and a >= 28: h += .12
     return min(h, .95)
+
+
+EARLY_MAX = 29   # age at the coming season; anyone this young or younger retiring gets a stated reason (Dan, 23 Oct 2026)
+GENERAL = ['to spend more time with family', 'to pursue a career in broadcasting', 'to move into coaching', 'to finish a university degree', 'after losing the desire to keep playing',
+           'to start a business', 'to take a job in a club front office', 'to become a player agent', 'to move home and be near family', 'to pursue a career outside football']
+def early_reason(S, p, rnd):
+    log = [i for i in S['season']['injuries_log'] if i['pid'] == p['pid']]
+    worst = max(log, key=lambda i: i['weeks'], default=None)
+    if p.get('inj') and p['inj']['weeks'] > 20:
+        return f"after a {p['inj']['kind']} injury that never fully healed"
+    if worst and worst['weeks'] >= 6:
+        return rnd.choice([f"after a long recovery from a {worst['kind']} injury", f"after a {worst['kind']} injury changed how they saw the game"])
+    if not p.get('retired_from') and not p.get('club') and ovr(p) < 7: return 'after no club offered a contract'   # only for unsigned free agents
+    return rnd.choice(GENERAL)
 
 def retire(S, rnd):
     yr = S['season']['year']; out = []
@@ -96,10 +112,22 @@ def retire(S, rnd):
             out.append(p)
     return out
 
+def unretire(S, pid, contract):
+    """Dan's veto: put a retired player back on the club he left, with the contract he had."""
+    p = S['players'][str(pid)]; club = p['retired_from']
+    p['status'] = 'active'; p['club'] = club; p['contract'] = contract
+    for k in ('retired', 'retired_from', 'retire_reason'): p.pop(k, None)
+    S['clubs'][club]['roster'].append(p['pid'])
+    S['offseason']['retired'] = [r for r in S['offseason']['retired'] if r['pid'] != pid]
+
 def step_retire(S):
     rnd = random.Random(2043001)
     progress(S, rnd); out = retire(S, rnd)
-    S['offseason'] = dict(done=['close', 'retire'], retired=[dict(pid=p['pid'], name=p['name'], pos=p['pos'], club=p['retired_from'], age=S['season']['year'] + 1 - p['born']) for p in out])
+    S['offseason'] = dict(done=['close', 'retire'], retired=[])
+    for p in out:
+        a = S['season']['year'] + 1 - p['born']; r = dict(pid=p['pid'], name=p['name'], pos=p['pos'], club=p['retired_from'], age=a)
+        if a <= EARLY_MAX: r['reason'] = early_reason(S, p, random.Random(p['pid'])); p['retire_reason'] = r['reason']
+        S['offseason']['retired'].append(r)
     return out
 
 if __name__ == '__main__':
