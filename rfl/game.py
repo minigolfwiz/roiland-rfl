@@ -291,10 +291,10 @@ class Game:
             possessions += 1
             if res == 'td':
                 s.score += 6; self.log('td', s, self.td_text(s), 6)
-                # second possession answering a TD with a TD: go for two to win
-                if possessions >= 2 and self.H.score != self.A.score: self.xp(s)
-                elif possessions >= 2: self.two_point(s, d) if self.rnd.random() < .5 else self.xp(s)
-                else: self.xp(s)
+                diff = s.score - d.score; self.ot_poss = possessions
+                if possessions >= 2 and diff > 0: self.plays[-1]['noxp'] = True   # walk-off TD: both teams have had the ball and this one leads, so the game ends on the touchdown — no extra point
+                elif possessions >= 2 and diff == 0: self.two_point(s, d) if self.rnd.random() < .5 else self.xp(s)   # answering a TD that missed its XP: the try wins it
+                else: self.xp(s)   # first possession (the opponent still gets the ball), or answering a TD+XP: the kick ties it
             if res == 'fg': pass
             if self.H.score != self.A.score and possessions >= 2: break
             if self.clock <= 0:

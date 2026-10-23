@@ -18,7 +18,7 @@ def game_view(S, r, seeds=None):
         i = 0 if p['side'] == 'H' else 1; k = p['kind']
         if k == 'td':
             trail[i] += 6; nxt = raw[j + 1]['kind'] if j + 1 < len(raw) else None
-            if nxt not in ('xpmiss', '2pt', '2ptfail'): trail[i] += 1
+            if nxt not in ('xpmiss', '2pt', '2ptfail') and not p.get('noxp'): trail[i] += 1
         elif k == 'fg': trail[i] += 3
         elif k == '2pt': trail[i] += 2
         q = p['q']; clock = f"{'OT' if q == 'OT' else 'Q' + str(q)} {p['t']}"
