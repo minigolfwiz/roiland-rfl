@@ -53,3 +53,7 @@ Set championship=("Fiota Bay","Fiota") when building the Season 3 playoff bracke
 ## STANDING SCHEDULE RULE (Dan, 2042 week 7): NO GUEST (subdivision) GAMES IN WEEK 14. Enforced in install_hand_schedule.audit from 2043 on. The 2042 schedule (already built, 12 week-14 guest games) was NOT changed.
 
 ## AFTER 2042 SEASON: PARITY AUDIT (Dan, wk 14) -- see cfb_session_log.md
+
+## QUEUED (Dan, 2042 week 14): AUDIT PARITY AGAIN AFTER THE 2042 SEASON
+Dan's concerns: (1) far more losses by good teams again (upset rate among top teams too high); (2) only ONE 2-loss power team all season looks suspect (loss-count distribution too flat / too few teams near the top of the win column).
+Scope when run: final records by tier/"power" conferences; distribution of losses for the committee top 25 and for the preseason media top 25; upset rate by rating gap (favourite win % at each gap) vs earlier seasons; count of teams at <=2 losses by tier vs 2038-2041; guest-game results for sanity (2042 guests finished 18-118). Existing tools: parity_test.py, parity_ab.py, calib_*.py. Compare against prior-year audits before touching any engine knob; changes apply forward only.

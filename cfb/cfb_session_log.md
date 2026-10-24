@@ -433,3 +433,4 @@ Week 14 (last regular-season week) candidates: Ranroman at Ranroman State [rival
 GUESTS 5-7 in wk 14 (Robertson, Long South 9-7, Gunther, Jones College, Jack Todd OT) -> FINAL 18-118 (136 games).
 NEXT: Dan's WEEK-14 BOARD (stage CCG) -> ccg_preview.py (NEVER run ccg.py without --commit; 2041 incident) -> conference finals -> selection ballot -> playoff.
 TODO (Dan, 2042 wk 14): AFTER THE SEASON, AUDIT PARITY AGAIN -- he feels good teams lost far more often than they should (upsets of top-ranked teams). Tools: parity_test.py, parity_ab.py. Compare 2042 upset rates (ranked/top-10 losses to unranked or lower-rated teams) against prior seasons and the target; report before changing anything; fixes apply forward only.
+QUEUED (Dan, wk 14): after the season, AUDIT PARITY AGAIN -- too many losses by good teams; only one 2-loss power team in 2042 looks suspect. Details in OFFSEASON_TODO.md.
