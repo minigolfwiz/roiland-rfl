@@ -33,7 +33,7 @@ def run_trades(S, rnd, target=7):
         r = pick_round(p)
         mine = [x for x in S['clubs'][buyer]['picks'][str(YEAR)] if x[0] == r and x[1] == buyer]
         if not mine: return False
-        pk = mine[0]; pk[1] = seller
+        pk = mine[0]; S['clubs'][buyer]['picks'][str(YEAR)].remove(pk); S['clubs'][seller]['picks'][str(YEAR)].append(pk)
         S['clubs'][seller]['roster'].remove(p['pid']); S['clubs'][buyer]['roster'].append(p['pid']); p['club'] = buyer
         # the buyer's pick now belongs to the seller
         log.append(f"{seller} trade {p['name']} ({p['pos']}, {ovr(p):.1f}) to {buyer} for a {YEAR} round-{r} pick"); done.add(p['pid'])
