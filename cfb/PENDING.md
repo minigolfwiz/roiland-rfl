@@ -3087,3 +3087,5 @@ Restored from GitHub; recovered marks_lib.js, regenerated the 2042 guest rosters
 2042 WEEK 13 played (Gameview Rogaela State at Tasson). WAITING on wk 13 board. Wk 14 = last regular-season week.
 
 2042 wk13 board installed. NEXT: wk 14 pick (last regular-season week); then conference championship / playoff office.
+
+2042 REGULAR SEASON COMPLETE (wk 14, 980/980). WAITING on Dan's week-14 board; then ccg_preview.py -> conference finals.
