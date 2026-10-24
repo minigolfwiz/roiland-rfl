@@ -459,3 +459,6 @@ RULE (Dan, 2042): semis always Copper-Steam, Lumber-Star or Redwood-501 from 204
 
 ### 2042 post-season: parity follow-through
 RIVALRY_GAP now 0.70 (forward-only, backup pbp_engine.py.pre_rivalry_gap); NOISE_SCALE left 1.0. Added parity_sweep.py, parity_monitor.py, ballot_prep.py net-rank column, committee.title_site_check. Open: Dan to award 2045-2049 title sites.
+
+### Title sites 2045-2051 (Dan)
+Awarded 2045 Kirkwood, 2046 New Madrid, 2047 Marymond, 2048 Nelson Heights, 2049 Lornaman, 2051 Queensville (backup universe.pkl.pre_champ_2045_51). 2050 Tengus City pending location.

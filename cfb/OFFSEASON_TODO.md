@@ -67,3 +67,7 @@ Scope when run: final records by tier/"power" conferences; distribution of losse
 - RIVALRY_GAP 0.55 -> 0.70 SHIPPED forward-only (2043+): rivalry fav win 0.674 -> 0.690 (non-rivalry 0.708); points/team, guest margin (+22.0), one-score share, elite records unchanged. 0.85 gave 0.702, not adopted (step-wise).
 - Standing: run parity_monitor.py at week 8, week 14 and post-season; ballot_prep.py shows net-rating rank.
 - Title sites 2045-49: STILL NEEDS DAN. Show full list 2026-2044. Barred by year: 2045/48 Coachville, Billiataho; 2046/49 Stamford, Kirkwood; 2047 Ediville, Port Logan (semi cities).
+
+## Title sites awarded by Dan (2042 post-season)
+2045 Kirkwood (Crayellan), 2046 New Madrid (Antiragal), 2047 Marymond (Wolford), 2048 Nelson Heights (Fiota), 2049 Lornaman (Ekralund), 2051 Queensville (Parchynt). All pass title_site_check.
+2050 Tengus City: PENDING, city is not on the map; need state + position from Dan.
