@@ -349,3 +349,10 @@ North Hatesei 27-19 #17 Yrei Trobniy. 19 guest games, 2 guest wins (Peterhaus 31
 out: Ciarralotta Tech, Verigon, Eternal Fox. Backup season_state.pkl.pre_w2. Viewer v135, Media Pool v44.
 STANDING (Dan, 2042 wk 2): when giving Gameview candidates, also give detail on each: series (since 2025), last meetings, week-by-week results/leaders, coaches, long-term injuries, stakes and outlook.
 NEXT: week 3 pick.
+
+## 2042 WEEK 3 played (Gameview: Kaji Kita at Barhold) -- 2026-10-24
+#15 Kaji Kita 34-23 at #17 Barhold (Byungho Jinhai 249 rush/2). Ten ranked teams lost: #1 Central Stanton 30-38 to #23 Rogaela State (Althauer 283 rush/2; Watanuki 403, Karakos 260 rec); #4 Ranroman State 6-7 to Canesta State;
+#7 Dietsche 30-31 to Dove Island (El-Najjar 404/3); #9 Eastern State 27-30 Ekralund State; #16 Ciarralotta State 38-49 Lornaman (Quickbear 469/5); #10 Skylar Rose 19-7 #20 Tengus State; #21 Yrei Trobniy 3-7 UN Steelbridge;
+#22 Marblehead 17-25 Keeper; #24 Roosevelt 21-33 Parchynt State. Skeenerland State 17-6 Riverwake, UFNH 37-0 Riveral State, Park Island 31-7 Barhold State, Eona 27-16 Orlot. 10 guest games, 1 guest win (St. Ballo's 30-24 Burrstone).
+Poll: 1 UFNH, 2 Park Island, 3 Eona, 4 Central Stanton, 5 Ranroman State, 6 Kaji Daun; out: Yrei Trobniy, Marblehead. Backup season_state.pkl.pre_w3. Viewer v136, Media Pool v45. gameview_detail.py added (detail for candidates).
+NEXT: week 4 pick (Ranroman State at Kaji Daun; Park Island at Skylar Rose; Tengus State at Kaji Kita; Dietsche at S Antiragal State).

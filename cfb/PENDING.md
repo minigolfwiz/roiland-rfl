@@ -3051,3 +3051,5 @@ Restored from GitHub; recovered marks_lib.js, regenerated the 2042 guest rosters
 ## 2042 WEEK 1 played (Gameview Ranroman State at Crayellan). NEXT: week 2 pick.
 
 ## 2042 WEEK 2 played (Gameview Will Tech at Dietsche). NEXT: week 3 pick.
+
+## 2042 WEEK 3 played (Gameview Kaji Kita at Barhold). NEXT: week 4 pick.
