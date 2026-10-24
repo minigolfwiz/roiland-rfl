@@ -414,3 +414,7 @@ UN Steelbridge 24-21 #22 Canesta State (Viroviy 205 rush/2; Al-Dabbagh 302/1). U
 WAITING on Dan's week 11 board; wk 12 candidates after install.
 WEEK 11 COMMITTEE BOARD INSTALLED (state/ballot_s17_w11.json): 1 Park Island, 2 Tasson, 3 UFNH, 4 Dietsche, 5 Diveo State, 6 Pistolheart, 7 Ranroman State, 8 Fiota Bay, 9 Southern Tengus, 10 Ranroman, 11 Eastern State, 12 Hatesei, 13 Ekralund State, 14 Skeenerland State, 15 Diamond City, 16 Rogaela State, 17 Stanton, 18 North Verigon, 19 Lornaman, 20 Krobe State, 21 Rogaela, 22 UN Steelbridge, 23 Black Forest, 24 Keeper, 25 Far Farris State. Out: Eona, UNN, Canesta State, Hoganelle, Phangrine State.
 Week 12 candidates: Tasson at Krobe State; North Verigon at Fiota Bay; Keeper at Ekralund State; UFNH at Parchynt. NEXT: Dan's pick.
+
+## 2042 WEEK 12 played (Gameview: North Verigon at Fiota Bay) -- 2026-10-24
+#8 Fiota Bay 34-13 #18 North Verigon (Winswick 319/4/2; Al-Hadid 180 rush; Rowberry 169/1/3). Barhold Valley 38-35 #1 Park Island AT Park Island (Bonatelli 478; Torrarini 475/3/2; Elvstrom 209 rec/2). Barhold 34-9 #5 Diveo State (Gyenna 180/3 + 111 rush). Tengus State 14-0 #9 Southern Tengus. #15 Diamond City 38-20 #11 Eastern State. #20 Krobe State 31-40 #2 Tasson (Freeley 492; Highknife 473/4; Shimazuka 235 rec). Wolford 28-7 #22 UN Steelbridge. #13 Ekralund State 27-17 #24 Keeper (Midbe 234 rec/2). UFNH 30-24 at Parchynt; Dietsche 44-13; Ranroman State 21-17 Orlot; Ranroman 37-29 at Greene. Guests 0-4 -> 9-101.
+WAITING on Dan's week 12 board; wk 13 candidates after install.
