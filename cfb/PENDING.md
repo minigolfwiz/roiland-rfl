@@ -3069,3 +3069,5 @@ Restored from GitHub; recovered marks_lib.js, regenerated the 2042 guest rosters
 2042 first committee board installed after wk 8. NEXT: wk 9 pick (candidates presented).
 
 2042 WEEK 9 played (Gameview Keeper at Diamond City). WAITING on Dan's week 9 board.
+
+2042 wk9 board installed. NEXT: wk 10 pick.
