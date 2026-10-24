@@ -395,3 +395,7 @@ Dan ranks by hand every week from here. Weekly routine: play week -> export_comm
 NEXT: week 9 pick (candidates ranked off his board).
 FIRST COMMITTEE BOARD INSTALLED (state/ballot_s17_w8.json): 1 Park Island, 2 Ranroman State, 3 Southern Tengus, 4 Stanton, 5 Diamond City, 6 North Verigon, 7 Tasson, 8 Pistolheart, 9 UFNH, 10 Dietsche, 11 Diveo State, 12 Eona, 13 Rogaela State, 14 UNN, 15 Ekralund State, 16 Crayellan State, 17 Crayellan, 18 Ranroman, 19 Eastern State, 20 Phangrine State, 21 Fiota Bay, 22 Hatesei, 23 Canesta State, 24 Antiragal State, 25 Hoganelle. Committee is now the ranking of record.
 Week 9 candidates (off his board): Natzumakis State at Park Island; Tasson at Will Tech; North Verigon at Riveral; Southern Tengus at Diveo. NEXT: Dan's pick.
+
+## 2042 WEEK 9 played (Gameview: Keeper at Diamond City) -- 2026-10-24
+Keeper 47-41 OT #5 Diamond City (DiStefano 480/3; Greenton 309 rec/2; Marettoni 331 rush/3). Diveo 25-23 #3 Southern Tengus (Sandwick 431; Kepu 424/2/4 INT; Isveiro 249 rec). Riveral 29-26 OT #6 North Verigon. Krobe 28-21 #13 Rogaela State. Coachville 38-21 #15 Ekralund State (Sarvadeva 221 rush/4). Costique River 23-21 #16 Crayellan State. Fiota Bay 36-24 #17 Crayellan (Blackbourne 310 rush/3). Lornaman 38-35 #20 Phangrine State (Georzoglou 464). Park Island 35-7 Natzumakis State; Ranroman State 36-24 UN Ediville; Tasson 23-14 at Will Tech. Guests 0-8.
+WAITING on Dan's week 9 committee board (ballot_prep sheet given). Wk 10 candidates only after install.
