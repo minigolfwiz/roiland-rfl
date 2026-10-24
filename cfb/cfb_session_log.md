@@ -512,3 +512,6 @@ Backups state/{season_state,rosters,coaches,universe}.pkl.pre_s18_rollover. Clas
 Preseason top 10: Skeenerland State 10.57, Kaji Kita 10.28, Rogaela State 10.14, Pistolheart 10.10, Eona 10.08, Kaji Daun, North Verigon, Dietsche, Eastern State, UFNH. Range 6.59-10.57.
 NEXT: 2043 schedule (non-conference hand-off -> Scheduling Office; conference office; no week-14 guest games), media pool redraw for s18 (carry-over rule), preseason.
 Parity: RIVALRY_GAP 0.70 is live from 2043; run parity_monitor.py at weeks 8 and 14 and post-season. Title site 2043 = Canesta (Kaji Daun).
+
+## 2043 SCHEDULE HAND-OFF (2026-10-24)
+Hand-off section added to PENDING.md. Nothing scheduled yet; fresh conversation should start at step (1) non-con Scheduling Office for s18.

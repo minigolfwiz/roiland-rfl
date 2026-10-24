@@ -3118,3 +3118,9 @@ RULE (Dan, 2042): semis always Copper-Steam, Lumber-Star or Redwood-501 from 204
 ## 2042-43 OFFSEASON -- Stage 1 of 7 COMPLETE: coaching carousel (see cfb_session_log.md). NEXT: Stage 2, draft pool for the RFL (needs Dan).
 
 ## 2042-43 OFFSEASON COMPLETE (all 7 stages). 2043 = season 18, next_week 0. NEXT: 2043 schedule, media pool s18, preseason. Standing: no week-14 guest games; parity_monitor at wk 8/14/post.
+
+## 2043 SCHEDULE HAND-OFF (written 2026-10-24, for a fresh conversation)
+State: season 18 (2043), next_week 0, rollover committed (roiland-rfl 0a99a23). No 2043 schedule files exist yet.
+PROCEDURE (mirror 2042): (1) fill/refresh non-con board for s18 via export_schedule_board.py (uses U['school_coords']) -> publish Scheduling Office (saves under schedule/s18); Dan hand-places. (2) Pull Dan's save (db schedule/s18) -> state/schedule_office_save_s18_vN.json -> noncon_s18_handoff.json; fill_noncon.py (BALANCE term) + fix_p6_hosting.py (P6 away at L6 ~18-29%, all-home 23-31%) -> noncon_s18.json. (3) export_conf_board.py -> Conference Office (conf/s18); Dan saves -> convert_conf_db.py -> conf_s18_handoff.json -> seed_conf_board.py -> fill_conf.py -> conf_sched_s18.json. (4) install_hand_schedule.py --commit, then audit. (5) Media pool redraw for s18 voters (carry-over: half same teams, no school >2 yrs running). (6) export_preseason.py + preseason notes. (7) Week 0: Dan picks Gameview.
+RULES: NO week-14 guest games in 2043. Dan wants reminder: when schedule fully built, tell him to start a new conversation. parity_monitor.py at wk 8, wk 14, post-season. Playoff previews every round; final media poll after title game; republish Season viewer each round.
+WATCH: L6 blue-chip share 7.4%; G14 portal net +24; senior class 1,965; carousel r_coach 0.454.
