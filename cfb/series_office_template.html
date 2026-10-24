@@ -819,8 +819,9 @@ async function connect(){
     let n = 0;
     docs.forEach((doc, i) => {
       const y = YEARS[i];
-      let rows = (doc && doc.data && Array.isArray(doc.data.games)) ? doc.data.games : [];
-      if (!doc || !doc.data){ rows = (SEED[y] || []).slice(); if (rows.length) dirtyYears.add(y); }   // year never saved: fall back to the booked copy baked into this page
+      const dd = (doc && doc.exists) ? doc.data() : null;      // snapshot: data() is a function
+      let rows = (dd && Array.isArray(dd.games)) ? dd.games : [];
+      if (!dd){ rows = (SEED[y] || []).slice(); if (rows.length) dirtyYears.add(y); }   // year never saved: fall back to the booked copy baked into this page
       const inflight = G[y].slice();
       const seen = new Set();
       const keep = [];
