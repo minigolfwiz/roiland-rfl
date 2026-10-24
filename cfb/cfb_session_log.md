@@ -368,3 +368,9 @@ NEXT: week 5 pick (UNN at Eona; Central Stanton at North Hatesei; Stanton at Hat
 #9 Hatesei 31-30 #19 Stanton (Fatupeau 254/2; Claybridge 184 rush/2; Brookden 312/3). #7 UNN 30-10 #5 Eona at Eona (Kingsworth 412; Danefield 224 rec). North Hatesei 31-17 #6 Central Stanton. Ciarralotta 34-31 #4 Kaji Daun (Schwarzhoff 288/3/2; Yukimaki 280 rec). North Verigon 14-3 #17 Costique River. Southern Krobe 20-15 #15 Eastern State. Barhold State 29-24 #11 Southern Tengus. Skeenerland 27-24 #25 Tengus State. Guests 0-5.
 Poll: 1 Park Island, 2 UFNH, 3 Ranroman State, 4 UNN, 5 Kaji Daun, 6 Hatesei, 7 Eona. Out: Barhold, Tengus State.
 NEXT: week 6 pick (Eona at Stanton; North Hatesei at UNN; Ranroman at Central Stanton; Eastern State at Phangrine State).
+
+## 2042 WEEK 6 played (Gameview: North Hatesei at UNN) -- 2026-10-24
+#4 UNN 38-21 #17 North Hatesei (Kingsworth 342/4/4 INT; Lomoletti 201/3/2). Stanton 44-31 #7 Eona (Pellavanti 272/3; Eastdale 368/3/2; Nnabayo 235 rec/2). Ranroman 19-16 OT #10 Central Stanton (Eastman 127/2/3; Watanuki 101/0/3; Kofjide 4 sk). Parchynt 42-26 #9 Crayellan (Sierralonga 373 rush/3). Far Farris State 41-10 #19 Roosevelt. Eastern State 31-14 #20 Phangrine State (Darwish 345/3; Georzoglou 5 INT). Verigon 41-27 #16 Costique River. UFNH 20-17 East Costique, Park Island 21-17 Good River, Hatesei 26-21 at UN Ediville, Dietsche 41-10 at Antiragal. Guests 0-5 (1-13 on the year).
+Poll: 1 UFNH, 2 Park Island, 3 UNN, 4 Ranroman State, 5 Hatesei. Out: Rogaela State, Kaji Kita.
+RYSKAMP: engine auto-named the TWENTY at week 6 (ryskamp_s17, open). Next cuts: ten at week 10, four finalists.
+NEXT: week 7 pick (UNN at Ranroman; Ranroman State at Pistolheart; UFNH at Crayellan State; Crayellan at Costique River).

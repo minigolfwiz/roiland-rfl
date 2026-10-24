@@ -3057,3 +3057,5 @@ Restored from GitHub; recovered marks_lib.js, regenerated the 2042 guest rosters
 ## 2042 WEEK 4 played (Gameview Ranroman State at Kaji Daun). NEXT: week 5 pick.
 
 ## 2042 WEEK 5 played (Gameview Stanton at Hatesei). NEXT: week 6 pick.
+
+## 2042 WEEK 6 played (Gameview North Hatesei at UNN). Ryskamp twenty named. NEXT: week 7 pick.
