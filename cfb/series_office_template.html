@@ -132,12 +132,18 @@ main{max-width:1500px;margin:0 auto;padding:14px var(--gutr) 70px var(--gut)}
 @media (min-width:900px){
   .sheet{left:auto;top:0;max-height:none;width:520px;border-radius:0;border-left:1px solid var(--rule);border-top:0}
 }
-.sh{padding:12px var(--gutr) 10px var(--gut);border-bottom:1px solid var(--rule);background:var(--bg)}
+.sh{padding:8px var(--gutr) 6px var(--gut);border-bottom:1px solid var(--rule);background:var(--bg)}
 .sh .r1{display:flex;gap:8px;align-items:center}
-.sh h3{font:700 26px/1 var(--display);margin:0;text-transform:uppercase;flex:1;min-width:0}
-.sb{overflow:auto;padding:10px var(--gutr) calc(24px + env(safe-area-inset-bottom,0px)) var(--gut);flex:1}
-.ychips{display:flex;gap:4px;flex-wrap:wrap;margin-top:9px}
-.yc2{min-height:34px;padding:3px 8px;font:12.5px var(--mono);border-radius:5px}
+.sh h3{font:700 21px/1 var(--display);margin:0;text-transform:uppercase;flex:1;min-width:0}
+.sb{overflow:auto;padding:8px var(--gutr) calc(24px + env(safe-area-inset-bottom,0px)) var(--gut);flex:1}
+.ychips{display:flex;gap:4px;flex-wrap:nowrap;overflow-x:auto;margin-top:6px;padding-bottom:2px;scrollbar-width:none}
+.ychips::-webkit-scrollbar{display:none}
+.filters.tight{margin-bottom:6px;flex-wrap:nowrap}
+.filters.tight input{flex:1 1 90px;min-width:0}
+.filters.tight select{flex:0 1 auto}
+#pfPanel{flex-wrap:wrap}
+#pfPanel select{flex:1 1 110px}
+.yc2{min-height:30px;padding:2px 7px;font:12px var(--mono);border-radius:5px;flex:none}
 .yc2[aria-pressed="true"]{background:var(--turf);border-color:var(--turf);color:var(--on-turf);font-weight:500}
 .yc2.full{opacity:.45}
 .sec{font:10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:14px 0 6px;
@@ -635,29 +641,37 @@ function candRow(f, name, isSub){
     ${wkHint}
     <div class="c4">${hostBtn}</div></div>`;
 }
+function pfLabel(f){
+  const b = el('pfBtn'); if (!b) return;
+  const n = (f.week != null ? 1 : 0) + (f.conf ? 1 : 0) + (f.sort !== 'suggest' ? 1 : 0);
+  b.textContent = 'Filters' + (f.week != null ? ' · wk ' + f.week : n ? ' · ' + n : '') + (f.fOpen ? ' ▴' : ' ▾');
+}
 function renderPick(f, full){
   if (full){
     el('sheet').innerHTML = `<div class="sh">
       <div class="r1">${stack.length > 1 ? '<button class="tiny" data-act="pop">‹ Back</button>' : ''}<h3>Book ${esc(f.team)}</h3>
         <button class="tiny" data-act="close">Close</button></div>
-      <div class="sub" id="pickSub" style="margin-top:4px"></div>
-      <div class="ychips" id="pickYears"></div>
-      <div class="filters" style="margin:9px 0 0">
-        <input id="pq" placeholder="search team, conference, state" autocomplete="off" value="${esc(f.q || '')}">
-        <select id="pTab"><option value="fbs">FBS opponents</option><option value="sub">Subdivision guests</option></select>
-        <select id="pSort"><option value="suggest">Suggested</option><option value="az">A–Z</option><option value="open">Most open</option></select>
-        <select id="pConf"></select>
-        <select id="pWeek" aria-label="week for these games"><option value="">week: decide later</option>${WEEKS.map(w => `<option value="${w}">${wkLabel(w)}</option>`).join('')}</select></div></div>
-      <div class="sb" id="pickList"></div>`;
+      <div class="sub" id="pickSub" style="margin-top:2px"></div>
+      <div class="ychips" id="pickYears"></div></div>
+      <div class="sb"><div id="pickCtl">
+        <div class="filters tight"><input id="pq" placeholder="search team, conference, state" autocomplete="off" value="${esc(f.q || '')}">
+          <select id="pTab" aria-label="opponent type"><option value="fbs">FBS</option><option value="sub">Guests</option></select>
+          <button class="tiny" data-act="pfilters" id="pfBtn"></button></div>
+        <div class="filters tight" id="pfPanel"${f.fOpen ? '' : ' hidden'}>
+          <select id="pSort"><option value="suggest">Suggested</option><option value="az">A–Z</option><option value="open">Most open</option></select>
+          <select id="pConf"></select>
+          <select id="pWeek" aria-label="week for these games"><option value="">week: decide later</option>${WEEKS.map(w => `<option value="${w}">${wkLabel(w)}</option>`).join('')}</select></div>
+      </div><div id="pickList"></div></div>`;
     el('pTab').value = f.tab; el('pSort').value = f.sort; el('pWeek').value = f.week === null || f.week === undefined ? '' : String(f.week);
     const cs = ['<option value="">all conferences</option>'].concat(Object.keys(D.conferences).filter(c => c !== BY[f.team].conf).map(c => `<option>${esc(c)}</option>`));
     el('pConf').innerHTML = cs.join(''); el('pConf').value = f.conf || '';
+    pfLabel(f);
   }
   const t = BY[f.team], y = f.year;
   const ys = f.years.length ? f.years : [y];
   el('pickSub').textContent = y + ' · ' + openOf(f.team,y) + ' open · hosts ' + homeOf(f.team,y) + ' of ' + gamesOf(f.team,y).length
     + (ys.length > 1 ? ' · series ' + ys.join(', ') : '');
-  el('pickYears').innerHTML = `<span class="sub" style="align-self:center">series years:</span>` + yChips(f, 'multi');
+  el('pickYears').innerHTML = `<span class="sub" style="align-self:center;flex:none">years</span>` + yChips(f, 'multi');
   const q = (f.q || '').trim().toLowerCase();
   let html = '';
   if (f.tab === 'sub'){
@@ -889,6 +903,7 @@ document.addEventListener('click', e => {
     renderPick(f, false);
   }
   else if (a === 'bookit'){ bookIt(d.opp, d.first, d.sub === '1'); }
+  else if (a === 'pfilters'){ const f = frame(); f.fOpen = !f.fOpen; el('pfPanel').hidden = !f.fOpen; pfLabel(f); }
   else if (a === 'flip'){ flipGame(yr, d.game); }
   else if (a === 'setwk'){ const v = el('wkSel').value; setWeek(yr, d.game, v === '' ? null : +v); }
   else if (a === 'rm'){ popSheet(); removeGame(yr, d.game, false); }
@@ -918,7 +933,7 @@ document.addEventListener('change', e => {
   else if (id === 'fYear'){ filt.year = e.target.value; renderList(); }
   else if (id === 'pTab' || id === 'pSort' || id === 'pConf' || id === 'pWeek'){
     const f = frame(); f.tab = el('pTab').value; f.sort = el('pSort').value; f.conf = el('pConf').value;
-    f.week = el('pWeek').value === '' ? null : +el('pWeek').value; renderPick(f, false);
+    f.week = el('pWeek').value === '' ? null : +el('pWeek').value; pfLabel(f); renderPick(f, false);
   }
 });
 document.querySelectorAll('#tabs button').forEach(b => b.addEventListener('click', () => setTab(b.dataset.tab)));
