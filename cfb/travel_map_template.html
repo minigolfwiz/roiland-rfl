@@ -1,0 +1,126 @@
+<title>Quarterfinal Travel</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: square Roiland map left, scenario switcher + game list right; stacks on phones. */
+:root{--bg:#f4efe4;--fg:#1d1a14;--muted:#6d6555;--line:#d9d0bd;--card:#fbf8f1;--accent:#b4341f;--chip:#efe7d6;--hi:#1d1a14;--glow:rgba(180,52,31,.18);--good:#2f6b3a}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#17150f;--fg:#efe8d8;--muted:#a79d88;--line:#3a3528;--card:#201d15;--accent:#e2654c;--chip:#2b2719;--hi:#efe8d8;--glow:rgba(226,101,76,.22);--good:#7fc08b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#17150f;--fg:#efe8d8;--muted:#a79d88;--line:#3a3528;--card:#201d15;--accent:#e2654c;--chip:#2b2719;--hi:#efe8d8;--glow:rgba(226,101,76,.22);--good:#7fc08b;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.45 "Source Sans 3",system-ui,sans-serif;padding-block:0 28px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header,.wrap,.tables{max-width:1180px;margin:0 auto}
+header{padding:22px 0 12px}
+h1{font:700 30px/1.05 Fraunces,Georgia,serif;margin:0 0 6px;text-wrap:balance}
+.sub{color:var(--muted);font-size:14px;max-width:70ch}
+.wrap{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:18px;align-items:start}
+.mapbox{border:1px solid var(--line);background:var(--card);border-radius:6px;overflow:hidden}
+.mapbox svg{display:block;width:100%;height:auto}
+.mapbox image{filter:saturate(.85)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .mapbox image{filter:saturate(.7) brightness(.8)}}
+:root[data-theme="dark"] .mapbox image{filter:saturate(.7) brightness(.8)}
+.panel{display:flex;flex-direction:column;gap:12px;min-width:0}
+.seg{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:6px;background:var(--card);overflow:hidden}
+.seg button{all:unset;cursor:pointer;padding:9px 12px;border-bottom:1px solid var(--line);display:grid;gap:2px}
+.seg button:last-child{border-bottom:0}
+.seg button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.seg button[aria-pressed="true"]{background:var(--chip)}
+.seg .n{font-weight:600;display:flex;justify-content:space-between;gap:8px}
+.seg .n span{font:500 12px "IBM Plex Mono",monospace;color:var(--muted);font-variant-numeric:tabular-nums}
+.seg .d{font-size:13px;color:var(--muted)}
+.games{border:1px solid var(--line);border-radius:6px;background:var(--card);overflow:hidden}
+.g{padding:9px 12px;border-bottom:1px solid var(--line);cursor:pointer;min-width:0}
+.g:last-child{border-bottom:0}
+.g.hl{background:var(--chip)}
+.g .b{font:600 15px Fraunces,Georgia,serif}
+.g .b small{font:500 11px "IBM Plex Mono",monospace;color:var(--muted);margin-left:6px;letter-spacing:.04em;text-transform:uppercase}
+.g .t{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;font-size:14px;margin-top:3px;font-variant-numeric:tabular-nums}
+.g .t i{font:500 12px "IBM Plex Mono",monospace;font-style:normal;color:var(--muted);text-align:right}
+.g .t .lo{color:var(--muted)}
+.pin circle{stroke:#fff;stroke-width:1.4}
+.pin text{font:600 8.5px "IBM Plex Mono",monospace;fill:#fff;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.lbl{font:600 8.5px "Source Sans 3",sans-serif;fill:var(--fg);paint-order:stroke;stroke:var(--card);stroke-width:3px;stroke-linejoin:round;pointer-events:none}
+.bowl rect{fill:var(--card);stroke:var(--fg);stroke-width:1.4}
+.bowl text{font:700 8px "Source Sans 3",sans-serif;fill:var(--fg);text-anchor:middle;dominant-baseline:central}
+.leg{fill:none;stroke-width:1.8;opacity:.8}
+.leg.lo{stroke-dasharray:4 3}
+.leg.dim{opacity:.12}
+.tables{margin-top:18px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.tbl{border:1px solid var(--line);border-radius:6px;background:var(--card);padding:12px;min-width:0}
+.tbl h2{font:700 17px Fraunces,Georgia,serif;margin:0 0 2px}
+.tbl p{margin:0 0 8px;font-size:13px;color:var(--muted)}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:14px}
+th,td{padding:5px 8px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{font:500 11px "IBM Plex Mono",monospace;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+td.min{color:var(--good);font-weight:600}
+.note{max-width:1180px;margin:14px auto 0;color:var(--muted);font-size:13px}
+@media (max-width:900px){.wrap,.tables{grid-template-columns:minmax(0,1fr)}h1{font-size:25px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<header><h1>Quarterfinal travel</h1><div class="sub">Where each of the eight teams starts from, and where it goes, under three ways of assigning the four bowls. Distances are in map units on the 596 by 596 Roiland map. Nothing here has been played.</div></header>
+<div class="wrap">
+  <div class="mapbox"><svg id="map" viewBox="0 0 596 596" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of the eight quarterfinal teams, the four bowl sites and the travel lines">
+    <image href="data:image/png;base64,__IMG__" width="596" height="596"/>
+    <g id="legs"></g><g id="bowls"></g><g id="pins"></g>
+  </svg></div>
+  <div class="panel"><div class="seg" id="seg"></div><div class="games" id="games"></div></div>
+</div>
+<div class="tables">
+  <div class="tbl"><h2>True distance, campus to bowl city</h2><p>Highest seed in each game. Green is the nearest bowl.</p><div class="scroll"><table id="t1"></table></div></div>
+  <div class="tbl"><h2>Engine distance, state label to state label</h2><p>What the assignment rule actually measures.</p><div class="scroll"><table id="t2"></table></div></div>
+</div>
+<div class="note">Solid lines are the higher seed, dashed lines the lower seed. Tap a game to isolate its lines.</div>
+<script>
+const T=__TEAMS__, B=__BOWLS__, SC=__SCEN__, TAB=__TAB__, TABL=__TABL__;
+const NS='http://www.w3.org/2000/svg';
+const el=(n,a,t)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);if(t!=null)e.textContent=t;return e;};
+let cur=0, sel=null;
+const legs=document.getElementById('legs'), bowls=document.getElementById('bowls'), pins=document.getElementById('pins');
+const short=n=>n.replace(' Bowl','');
+function draw(){
+  legs.innerHTML='';bowls.innerHTML='';pins.innerHTML='';
+  const sc=SC[cur];
+  sc.rows.forEach((r,i)=>{
+    const b=B[r.bowl];
+    [['hi',r.hi],['lo',r.lo]].forEach(([k,t])=>{
+      const p=el('path',{class:'leg '+k+(sel!=null&&sel!==i?' dim':''),d:`M${T[t].x},${T[t].y} L${b.x},${b.y}`,stroke:T[r.hi].col});
+      legs.appendChild(p);
+    });
+  });
+  Object.values(B).forEach(b=>{
+    const g=el('g',{class:'bowl'});
+    g.appendChild(el('rect',{x:b.x-9,y:b.y-9,width:18,height:18,transform:`rotate(45 ${b.x} ${b.y})`}));
+    g.appendChild(el('text',{x:b.x,y:b.y},'B'));
+    g.appendChild(el('text',{x:b.x+14,y:b.y+1,class:'lbl','text-anchor':'start'},short(b.name)+' · '+b.city));
+    bowls.appendChild(g);
+  });
+  sc.rows.forEach((r,i)=>{[r.hi,r.lo].forEach(t=>{
+    const g=el('g',{class:'pin'});
+    g.appendChild(el('circle',{cx:T[t].x,cy:T[t].y,r:8,fill:T[t].col}));
+    g.appendChild(el('text',{x:T[t].x,y:T[t].y},T[t].seed));
+    pins.appendChild(g);
+    pins.appendChild(el('text',{x:T[t].x+11,y:T[t].y-9,class:'lbl'},t));
+  });});
+}
+function panel(){
+  const seg=document.getElementById('seg');seg.innerHTML='';
+  SC.forEach((s,i)=>{const b=document.createElement('button');b.setAttribute('aria-pressed',i===cur);
+    b.innerHTML=`<div class="n">${s.name}<span>${s.total} total</span></div><div class="d">${s.desc}</div>`;
+    b.onclick=()=>{cur=i;sel=null;panel();draw();};seg.appendChild(b);});
+  const gm=document.getElementById('games');gm.innerHTML='';
+  SC[cur].rows.forEach((r,i)=>{const d=document.createElement('div');d.className='g'+(sel===i?' hl':'');
+    d.innerHTML=`<div class="b">${r.bowl}<small>${B[r.bowl].city}, ${B[r.bowl].state}</small></div><div class="t"><span>(${T[r.hi].seed}) ${r.hi}</span><i>${r.dh}</i><span class="lo">(${T[r.lo].seed}) ${r.lo}</span><i>${r.dl}</i></div>`;
+    d.onclick=()=>{sel=sel===i?null:i;panel();draw();};gm.appendChild(d);});
+}
+function table(id,data,fmt){
+  const bw=Object.keys(B), t=document.getElementById(id);
+  let h='<tr><th>Team</th>'+bw.map(b=>`<th>${short(b)}</th>`).join('')+'</tr>';
+  Object.keys(data).forEach(tm=>{const mn=Math.min(...bw.map(b=>data[tm][b]));
+    h+=`<tr><td>(${T[tm].seed}) ${tm}</td>`+bw.map(b=>`<td class="${data[tm][b]===mn?'min':''}">${data[tm][b]}</td>`).join('')+'</tr>';});
+  t.innerHTML=h;
+}
+const hosts=Object.fromEntries(SC[0].rows.map(r=>[r.hi,TAB[r.hi]]));
+table('t1',hosts);table('t2',TABL);
+panel();draw();
+</script>
