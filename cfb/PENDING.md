@@ -3107,3 +3107,4 @@ STANDING RULE (Dan, 2042): always give full previews of EVERY playoff round befo
 RULE (Dan, 2042): neutral-site bowls assigned by SCHOOL distance (campus to bowl city), not state distance. Implemented in committee.vdist; applies to 2042 QF/SF and all future seasons.
 RULE (Dan, 2042): neutral bowl never in the opponent's own state (de facto home); school distance for the rest. QF NOT PLAYED; waiting on Dan.
 2042 PLAYOFF QF PLAYED: Dietsche 40 Hoganelle 10 (501 Bowl); Tasson 38 Barhold 17 (Redwood Bowl); Eona 35 Fiota Bay 21 (Copper Bowl); Pistolheart 34 Ranroman State 17 (Lumber Bowl). SF: Dietsche-Pistolheart, Tasson-Eona. NEXT: SF previews then Dan's go.
+2042 SF previews given (Dietsche v Pistolheart @ Steam Bowl, Coachville; Tasson v Eona @ Star Bowl, Ediville). Tasson RB Marshwell season-ending injury (inj_out 99) before R2. NOT PLAYED; waiting on Dan's go for playoff.run_sf.
