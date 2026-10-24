@@ -560,12 +560,23 @@ function candRow(f, name, isSub){
   const focusBad = reasons.find(r => r[0] === y && r[1]);
   const d = distOf(a,name);
   const flags = [];
+  let retHost = null;
   if (!isSub){
     const meets = pairGames(a,name);
-    meets.forEach(m => flags.push(`<span class="badge good">${m.y} ${m.g.h === a ? 'at ' + esc(a) : 'at them'}</span>`));
-    if (meets.length === 1 && meets[0].y !== y) flags.push('<span class="badge owed">return leg due</span>');
+    // every line names who visited whom, as "visitor at host", so no badge needs decoding
+    meets.forEach(m => flags.push(`<span class="badge good">${m.y}: ${esc(m.g.v)} at ${esc(m.g.h)}</span>`));
+    if (meets.length === 1 && meets[0].y !== y){
+      retHost = meets[0].g.h === a ? name : a;          // the one who did not host gets the return
+      flags.push(`<span class="badge owed">return due: ${esc(retHost === a ? name : a)} visits ${esc(retHost)}</span>`);
+    }
     const ow = debtOf(a,name);
-    if (ow && y <= Y0 + 3) flags.push(`<span class="badge owed">visit owed (${ow.year})</span>`);
+    if (ow && y <= Y0 + 3 && !meets.length){
+      const aHosted = ow.at === 'away';                  // 'away' = a hosted that meeting, so a travels now
+      const past = aHosted ? [name, a] : [a, name];       // [visitor, host]
+      retHost = aHosted ? name : a;
+      flags.push(`<span class="badge good">${ow.year}: ${esc(past[0])} at ${esc(past[1])}</span>`);
+      flags.push(`<span class="badge owed">return due: ${esc(retHost === a ? name : a)} visits ${esc(retHost)}</span>`);
+    }
     if (needsW14(a,y) && !B.w14_pinned) flags.push('<span class="badge good">solves wk 14</span>');
     const ns = confCount(a,B.conf,y); if (ns >= 1) flags.push(`<span class="badge warn">2nd from ${esc(B.conf)}</span>`);
   } else if (B.guest_last) flags.push('<span class="badge">guest last year</span>');
@@ -587,8 +598,8 @@ function candRow(f, name, isSub){
   }
   const multi = ysel.length > 1;
   const hostBtn = isSub ? `<button class="pri" data-act="bookit" data-opp="${esc(name)}" data-sub="1" ${okYears.length ? '' : 'disabled'}>${multi ? 'Host · ' + okYears.length + ' yrs' : 'Host'}</button>`
-    : `<button class="pri" data-act="bookit" data-opp="${esc(name)}" data-first="home" ${okYears.length ? '' : 'disabled'}>${multi ? 'Host first' : 'Host'}</button>
-       <button data-act="bookit" data-opp="${esc(name)}" data-first="away" ${okYears.length ? '' : 'disabled'}>${multi ? 'Visit first' : 'Visit'}</button>`;
+    : `<button class="pri" data-act="bookit" data-opp="${esc(name)}" data-first="home" ${okYears.length ? '' : 'disabled'}>${multi ? 'Host first' : 'Host'}${retHost === a ? ' ★' : ''}</button>
+       <button data-act="bookit" data-opp="${esc(name)}" data-first="away" ${okYears.length ? '' : 'disabled'}>${multi ? 'Visit first' : 'Visit'}${retHost === name ? ' ★' : ''}</button>`;
   return `<div class="cand${okYears.length ? '' : ' no'}">
     <div class="c1"><button class="nmb" data-act="slate" data-team="${esc(name)}" data-year="${y}">${esc(name)}</button>
       <span class="badge ${B.tier === 'P6' ? 'p6' : ''}">${isSub ? 'subdivision' : B.tier}</span>
