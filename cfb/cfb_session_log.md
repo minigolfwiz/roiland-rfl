@@ -462,3 +462,5 @@ RIVALRY_GAP now 0.70 (forward-only, backup pbp_engine.py.pre_rivalry_gap); NOISE
 
 ### Title sites 2045-2051 (Dan)
 Awarded 2045 Kirkwood, 2046 New Madrid, 2047 Marymond, 2048 Nelson Heights, 2049 Lornaman, 2051 Queensville (backup universe.pkl.pre_champ_2045_51). 2050 Tengus City pending location.
+
+### 2050 title site: Tengus City (Dan). Local city_coords were missing Tengus City/Purcell and had stale New Madrid/Thurmond; synced to canon map package.

@@ -71,3 +71,6 @@ Scope when run: final records by tier/"power" conferences; distribution of losse
 ## Title sites awarded by Dan (2042 post-season)
 2045 Kirkwood (Crayellan), 2046 New Madrid (Antiragal), 2047 Marymond (Wolford), 2048 Nelson Heights (Fiota), 2049 Lornaman (Ekralund), 2051 Queensville (Parchynt). All pass title_site_check.
 2050 Tengus City: PENDING, city is not on the map; need state + position from Dan.
+
+## Title sites: 2050 awarded (Dan): Tengus City (Tengus). All of 2043-2051 now awarded. Passes title_site_check.
+City coordinates synced to the project's map package (Dan's 10/15 additions): Tengus City (214.7,209.0), Purcell (292.5,376.5), New Madrid (229.35,353.7), Thurmond (207.19,325.94). Backup universe.pkl.pre_city_sync. Local state/roiland_map_package.json patched to match.
