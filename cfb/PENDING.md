@@ -3089,3 +3089,5 @@ Restored from GitHub; recovered marks_lib.js, regenerated the 2042 guest rosters
 2042 wk13 board installed. NEXT: wk 14 pick (last regular-season week); then conference championship / playoff office.
 
 2042 REGULAR SEASON COMPLETE (wk 14, 980/980). WAITING on Dan's week-14 board; then ccg_preview.py -> conference finals.
+
+TODO (Dan): after the 2042 season, audit parity again (good teams losing too often). See cfb_session_log.md. Use parity_test.py / parity_ab.py; report first, forward-only fixes.
