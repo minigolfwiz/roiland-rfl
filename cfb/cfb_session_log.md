@@ -515,3 +515,7 @@ Parity: RIVALRY_GAP 0.70 is live from 2043; run parity_monitor.py at weeks 8 and
 
 ## 2043 SCHEDULE HAND-OFF (2026-10-24)
 Hand-off section added to PENDING.md. Nothing scheduled yet; fresh conversation should start at step (1) non-con Scheduling Office for s18.
+ 
+ ## 2043 SCHEDULE -- Scheduling Office published for season 18 (2026-10-24, new session). Engine restored from GitHub (cfb/ -> /home/claude/cfb2, gunzip state, games_db parts joined).
+ export_schedule_board.py: 152 programmes | 217 guests | 6 locked cross-conf | 444 non-conference slots for Dan. Unreturned visits 240 pairs (3.2/programme); 16 series still owed a return ground.
+ Page: out/schedule_office.html (template + __DATA__), published over artifact 6w2G7gu6yGaWNrqPkypmLW (v11, saves under schedule/s18). NEXT: Dan hand-places; pull save -> noncon_s18_handoff.json -> fill_noncon + fix_p6_hosting. NO week-14 guest games in 2043.
