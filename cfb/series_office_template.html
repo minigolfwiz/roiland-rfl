@@ -120,6 +120,8 @@ main{max-width:1500px;margin:0 auto;padding:14px var(--gutr) 70px var(--gut)}
 .cc.h{border-left:3px solid var(--turf)}
 .cc.a{border-left:3px solid var(--away)}
 .star{color:var(--away);font-size:11px}
+.wk{font:500 10.5px var(--mono);padding:1px 5px;border-radius:3px;border:1px solid var(--turf);color:var(--turf);flex:none}
+.wk.none{border-style:dashed;border-color:var(--rule);color:var(--dim)}
 
 /* sheet */
 .sheetwrap{position:fixed;inset:0;z-index:80}
@@ -299,6 +301,37 @@ function debtOf(a,b){
   return null;
 }
 
+/* ---------- weeks (pre-scheduling) ---------- */
+const WEEKS = Array.from({length:15}, (_,i) => i);
+const wkLabel = w => w === 14 ? 'Week 14 · rivalry week' : w === 0 ? 'Week 0 · opener' : 'Week ' + w;
+/* a week is taken for a team when it already has a booked non-con game there or a locked
+   conference rivalry on that date; the rest of the conference slate is placed at the build */
+function weekTaken(t, y, w, exceptKey){
+  const g = gamesOf(t,y).find(q => q.week === w && key(q.h,q.v) !== exceptKey);
+  if (g) return oppOf(g,t);
+  const c = (CG[y][t] || []).find(q => q.lock && q.week === w);
+  return c ? c.o : null;
+}
+function whyNotWeek(g, y, w){
+  if (w === null || w === undefined) return null;
+  if (g.sub && w === 14) return 'guest games cannot be in week 14';
+  const k = key(g.h,g.v);
+  for (const t of [g.h, g.v]){
+    if (!BY[t]) continue;
+    const o = weekTaken(t, y, w, k);
+    if (o) return t + ' already plays ' + o + ' in week ' + w;
+  }
+  return null;
+}
+function setWeek(y, k, w){
+  const i = findGame(y, k); if (i < 0) return;
+  const g = G[y][i];
+  const bad = whyNotWeek(g, y, w);
+  if (bad){ toast(bad); return; }
+  g.week = w; ver++; dirtyYears.add(y); queueSave();
+  toast(w === null ? 'Week cleared' : g.h + ' vs ' + g.v + ' · week ' + w); renderAll();
+}
+
 /* ---------- rules ---------- */
 function whyNot(a,b,y){
   if (a === b) return 'same team';
@@ -346,24 +379,29 @@ function score(a,b,y){
 /* ---------- actions ---------- */
 let sidN = 0;
 const newSid = () => 's' + Date.now().toString(36) + (sidN++);
-function addGame(h, v, y, isSub, sid){
-  G[y].push({ h, v, sub:!!isSub, sid:sid || null, week:null });
+function addGame(h, v, y, isSub, sid, week){
+  G[y].push({ h, v, sub:!!isSub, sid:sid || null, week:Number.isInteger(week) ? week : null });
   ver++; dirtyYears.add(y);
 }
-function bookSeries(a, b, years, firstHome, isSub){
+function bookSeries(a, b, years, firstHome, isSub, week){
   const ys = years.slice().sort((p,q) => p - q);
   const sid = ys.length > 1 ? newSid() : null;
-  const made = [], skipped = [];
+  const made = [], skipped = [], noWeek = [];
   let n = 0;
   ys.forEach(y => {
     const bad = isSub ? whyNotSub(a,b,y) : whyNot(a,b,y);
     if (bad){ skipped.push(y + ' (' + bad + ')'); return; }
     const aHosts = isSub ? true : (firstHome === null ? suggestHost(a,b,y) === a : (n % 2 === 0 ? firstHome : !firstHome));
-    addGame(aHosts ? a : b, aHosts ? b : a, y, isSub, sid);
+    const hh = aHosts ? a : b, vv = aHosts ? b : a;
+    let wk = (week === null || week === undefined) ? null : week;
+    if (wk !== null && whyNotWeek({ h:hh, v:vv, sub:!!isSub }, y, wk)){ noWeek.push(y); wk = null; }
+    addGame(hh, vv, y, isSub, sid, wk);
     made.push(y); n++;
   });
   if (made.length){
     toast((isSub ? b + ' visits ' + a : a + ' ↔ ' + b) + ' · ' + made.join(', ')
+          + (week != null && !noWeek.length ? ' · week ' + week : '')
+          + (noWeek.length ? ' · week ' + week + ' taken in ' + noWeek.join(', ') + ' (left unset)' : '')
           + (skipped.length ? ' · skipped ' + skipped.length : ''));
   } else toast(skipped[0] ? 'Not booked: ' + skipped[0] : 'Nothing to book');
   if (made.length){ queueSave(); renderAll(); }
@@ -412,7 +450,7 @@ function renderList(){
 const slotChip = (g, t, y) => {
   const opp = oppOf(g,t), home = g.h === t;
   return `<button class="slot${g.sub ? ' g' : ''}" data-act="slate" data-team="${esc(opp)}" data-year="${y}" data-game="${esc(key(g.h,g.v))}" data-owner="${esc(t)}">
-    <span class="ha ${home ? 'h' : 'a'}">${home ? 'H' : 'A'}</span><span class="nm">${esc(opp)}</span>${g.locked ? '<span class="star">★</span>' : ''}${g.sub ? '<span class="badge">guest</span>' : ''}</button>`;
+    <span class="ha ${home ? 'h' : 'a'}">${home ? 'H' : 'A'}</span><span class="nm">${esc(opp)}</span>${g.week != null ? `<span class="wk">W${g.week}</span>` : '<span class="wk none">wk ?</span>'}${g.locked ? '<span class="star">★</span>' : ''}${g.sub ? '<span class="badge">guest</span>' : ''}</button>`;
 };
 function yearCard(t, y){
   const gs = gamesOf(t.name, y);
@@ -476,8 +514,10 @@ function renderSlate(f){
     if (g){
       const mine = g.sub ? G[y].find(q => key(q.h,q.v) === f.game) : g;
       const sid = mine && mine.sid;
-      bar = `<div class="gamebar"><b>${esc(g.v)} at ${esc(g.h)}</b> · ${y}${g.locked ? ' · locked rivalry (host alternates by rule)' : ''}${g.sub ? ' · guest' : ''}${sid ? ' · part of a series' : ''}
+      bar = `<div class="gamebar"><b>${esc(g.v)} at ${esc(g.h)}</b> · ${y}${g.week != null ? ' · week ' + g.week : ' · week not set'}${g.locked ? ' · locked rivalry (host alternates by rule)' : ''}${g.sub ? ' · guest' : ''}${sid ? ' · part of a series' : ''}
         ${g.locked ? '' : `<div class="btns">
+          <select id="wkSel" aria-label="week"><option value="">week: not set</option>${WEEKS.map(w => `<option value="${w}"${mine && mine.week === w ? ' selected' : ''}>${wkLabel(w)}</option>`).join('')}</select>
+          <button class="tiny pri" data-act="setwk" data-year="${y}" data-game="${esc(f.game)}">Set week</button>
           ${g.sub ? '' : `<button class="tiny" data-act="flip" data-year="${y}" data-game="${esc(f.game)}">Flip host</button>`}
           <button class="tiny" data-act="rm" data-year="${y}" data-game="${esc(f.game)}">Remove ${y}</button>
           ${sid ? `<button class="tiny" data-act="rmall" data-year="${y}" data-game="${esc(f.game)}">Remove series</button>` : ''}</div>`}</div>`;
@@ -489,7 +529,7 @@ function renderSlate(f){
     ncRows.push(g ? `<button class="grow" data-act="slate" data-team="${esc(oppOf(g,f.team))}" data-year="${y}">
         <span class="ha ${g.h === f.team ? 'h' : 'a'}">${g.h === f.team ? 'H' : 'A'}</span>
         <span class="o">${esc(oppOf(g,f.team))}${g.locked ? ' <span class="star">★ rivalry</span>' : ''}${g.sub ? ' <span class="badge">guest</span>' : ''}</span>
-        <span class="sub">${BY[oppOf(g,f.team)] ? esc(BY[oppOf(g,f.team)].conf) : 'subdivision'}${g.week != null ? ' · wk ' + g.week : ''}</span></button>`
+        <span class="sub">${BY[oppOf(g,f.team)] ? esc(BY[oppOf(g,f.team)].conf) : 'subdivision'}${g.week != null ? ' · <b>wk ' + g.week + '</b>' : ' · wk not set'}</span></button>`
       : `<button class="grow openrow" data-act="book" data-team="${esc(f.team)}" data-year="${y}"><span class="ha" style="background:var(--chip)">–</span><span class="o">open</span><span class="sub">book</span></button>`);
   }
   const hc = cf.filter(c => c.home).length;
@@ -505,7 +545,8 @@ function renderSlate(f){
       ${cf.map(c => `<button class="grow" data-act="slate" data-team="${esc(c.o)}" data-year="${y}">
         <span class="ha ${c.home ? 'h' : 'a'}">${c.home ? 'H' : 'A'}</span>
         <span class="o">${esc(c.o)}${c.lock ? ' <span class="star">★ ' + (c.week === 14 ? 'rivalry wk 14' : 'rivalry') + '</span>' : ''}</span>
-        <span class="sub">${BY[c.o] ? '' : ''}</span></button>`).join('')}
+        <span class="sub">${c.lock && c.week != null ? 'wk ' + c.week : ''}</span></button>`).join('')}
+      <p class="note" style="margin-top:8px">Conference weeks are placed when the ${y} conference schedule is built; locked rivalries already have theirs.</p>
     </div>`;
 }
 
@@ -533,11 +574,16 @@ function candRow(f, name, isSub){
   if (!isSub){
     for (let i = 0; i < SLOTS; i++){
       const g = theirNC[i];
-      tok.push(g ? `<span class="tok ${g.h === name ? '' : 'a'}${g.sub ? ' g' : ''}">${g.h === name ? '' : '@'}${esc(oppOf(g,name))}</span>` : '<span class="tok open">open</span>');
+      tok.push(g ? `<span class="tok ${g.h === name ? '' : 'a'}${g.sub ? ' g' : ''}">${g.week != null ? 'W' + g.week + ' ' : ''}${g.h === name ? '' : '@'}${esc(oppOf(g,name))}</span>` : '<span class="tok open">open</span>');
     }
   } else {
     const used = YEARS.filter(yy => subTaken(name,yy));
     tok.push(used.length ? `<span class="tok">booked ${used.map(shortY).join(' ')}</span>` : '<span class="tok open">free all years</span>');
+  }
+  let wkHint = '';
+  if (f.week !== null && f.week !== undefined){
+    const bad = ysel.filter(yy => !reasons.find(r => r[0] === yy && r[1])).map(yy => [yy, whyNotWeek({ h:a, v:name, sub:isSub }, yy, f.week)]).filter(r => r[1]);
+    wkHint = bad.length ? `<div class="why">week ${f.week} conflict: ${esc(bad[0][1])}${bad.length > 1 ? ' (+' + (bad.length-1) + ' more yrs)' : ''} — books with no week</div>` : '';
   }
   const multi = ysel.length > 1;
   const hostBtn = isSub ? `<button class="pri" data-act="bookit" data-opp="${esc(name)}" data-sub="1" ${okYears.length ? '' : 'disabled'}>${multi ? 'Host · ' + okYears.length + ' yrs' : 'Host'}</button>`
@@ -551,6 +597,7 @@ function candRow(f, name, isSub){
     ${isSub ? `<div class="c2">${tok.join('')}</div>` : `<button class="c2" data-act="slate" data-team="${esc(name)}" data-year="${y}"><span class="lab">${y} non-con</span>${tok.join('')}<span class="lab">· see all 12 ›</span></button>`}
     ${flags.length ? `<div class="c3">${flags.join('')}</div>` : ''}
     ${focusBad ? `<div class="why">${esc(focusBad[1])}</div>` : (reasons.some(r => r[1]) ? `<div class="why">skips ${reasons.filter(r => r[1]).map(r => r[0]).join(', ')}</div>` : '')}
+    ${wkHint}
     <div class="c4">${hostBtn}</div></div>`;
 }
 function renderPick(f, full){
@@ -564,9 +611,10 @@ function renderPick(f, full){
         <input id="pq" placeholder="search team, conference, state" autocomplete="off" value="${esc(f.q || '')}">
         <select id="pTab"><option value="fbs">FBS opponents</option><option value="sub">Subdivision guests</option></select>
         <select id="pSort"><option value="suggest">Suggested</option><option value="az">A–Z</option><option value="open">Most open</option></select>
-        <select id="pConf"></select></div></div>
+        <select id="pConf"></select>
+        <select id="pWeek" aria-label="week for these games"><option value="">week: decide later</option>${WEEKS.map(w => `<option value="${w}">${wkLabel(w)}</option>`).join('')}</select></div></div>
       <div class="sb" id="pickList"></div>`;
-    el('pTab').value = f.tab; el('pSort').value = f.sort;
+    el('pTab').value = f.tab; el('pSort').value = f.sort; el('pWeek').value = f.week === null || f.week === undefined ? '' : String(f.week);
     const cs = ['<option value="">all conferences</option>'].concat(Object.keys(D.conferences).filter(c => c !== BY[f.team].conf).map(c => `<option>${esc(c)}</option>`));
     el('pConf').innerHTML = cs.join(''); el('pConf').value = f.conf || '';
   }
@@ -601,7 +649,7 @@ function renderPick(f, full){
 }
 function startBook(team, year){
   focusY = year;
-  openSheet({ type:'pick', team, year, years:[year], tab:'fbs', sort:'suggest', q:'', conf:'' });
+  openSheet({ type:'pick', team, year, years:[year], tab:'fbs', sort:'suggest', q:'', conf:'', week:null });
 }
 
 /* ---------- other views ---------- */
@@ -628,7 +676,7 @@ function renderSeries(){
     ${list.length ? list.map(r => {
       const a = r[0].g.h, b = r[0].g.v;
       return `<button class="srow" data-act="slate" data-team="${esc(BY[a] ? a : b)}" data-year="${r[0].y}" data-game="${esc(key(a,b))}">
-        <div><b>${esc(a)} ↔ ${esc(b)}</b><div class="sub">${r.map(x => x.y + ' @' + esc(x.g.h)).join(' · ')}</div></div>
+        <div><b>${esc(a)} ↔ ${esc(b)}</b><div class="sub">${r.map(x => x.y + ' @' + esc(x.g.h) + (x.g.week != null ? ' wk' + x.g.week : '')).join(' · ')}</div></div>
         <span class="badge ${r.length > 1 ? 'good' : 'owed'}">${r.length > 1 ? r.length + ' games' : 'one game'}</span></button>`; }).join('')
       : '<div class="empty">Nothing booked yet. Open a team and tap + Book.</div>'}
     <div class="sec"><span>Locked rivalries</span><span>${D.locked.length}</span></div>${L}`;
@@ -639,14 +687,15 @@ function yearStats(y){
   const incomplete = TEAMS.filter(t => fill(t.name,y) < SLOTS);
   const w14 = TEAMS.filter(t => needsW14(t.name,y));
   const lopsided = TEAMS.filter(t => fill(t.name,y) === SLOTS && (homeOf(t.name,y) === 0 || homeOf(t.name,y) === SLOTS));
-  return { used, total: TEAMS.length * SLOTS, incomplete, w14, lopsided };
+  return { used, total: TEAMS.length * SLOTS, incomplete, w14, lopsided, wset: G[y].filter(g => g.week != null).length };
 }
 function renderChecks(){
   const rows = YEARS.map(y => ({ y, s: yearStats(y) }));
-  el('vChecks').innerHTML = `<p class="note">Open slots are filled by the engine's balance rules when that season is built, so they are not errors. Tap a year to list the teams.</p>
-    <div class="tblw"><table class="tbl"><tr><th>Year</th><th>Booked</th><th>Open</th><th>Wk-14</th><th>0 or 3 home</th></tr>
+  el('vChecks').innerHTML = `<p class="note">Open slots are filled by the engine's balance rules when that season is built, so they are not errors. Weeks you set carry into that season's conference build as placed games you can still move. Tap a year to list the teams.</p>
+    <div class="tblw"><table class="tbl"><tr><th>Year</th><th>Booked</th><th>Open</th><th>Wk set</th><th>Wk-14</th><th>0 or 3 home</th></tr>
     ${rows.map(r => `<tr data-act="checkyear" data-year="${r.y}" style="cursor:pointer"><td class="mono"><b>${r.y}</b></td>
       <td class="mono">${r.s.used}/${r.s.total}</td><td class="mono">${r.s.total - r.s.used}</td>
+      <td class="mono">${r.s.wset}/${G[r.y].length}</td>
       <td>${r.s.w14.length ? `<span class="badge warn">${r.s.w14.length}</span>` : '<span class="badge good">0</span>'}</td>
       <td>${r.s.lopsided.length ? `<span class="badge owed">${r.s.lopsided.length}</span>` : '<span class="badge good">0</span>'}</td></tr>`).join('')}</table></div>
     <div id="checkDetail"></div>`;
@@ -691,7 +740,7 @@ function loadBackup(text){
       if (!BY[h] || !(BY[v] || SUB[v])) { skipped++; return; }
       const bad = g.sub ? whyNotSub(h,v,y) : whyNot(h,v,y);
       if (bad){ skipped++; return; }
-      addGame(h, v, y, !!g.sub, g.sid); added++;
+      addGame(h, v, y, !!g.sub, g.sid, g.week); added++;
     });
   });
   if (added){ queueSave(); renderAll(); }
@@ -716,7 +765,7 @@ async function connect(){
       rows.forEach(g => {
         if (!BY[g.h] || !(BY[g.v] || SUB[g.v]) || g.locked) return;
         if (seen.has(key(g.h,g.v))) return;
-        seen.add(key(g.h,g.v)); keep.push({ h:g.h, v:g.v, sub:!!g.sub, sid:g.sid || null, week:null });
+        seen.add(key(g.h,g.v)); keep.push({ h:g.h, v:g.v, sub:!!g.sub, sid:g.sid || null, week:Number.isInteger(g.week) ? g.week : null });
       });
       inflight.forEach(g => { if (!seen.has(key(g.h,g.v))) keep.push(g); });
       G[y] = keep; n += rows.length;
@@ -782,7 +831,7 @@ function openTeam(name, year){
 function bookIt(opp, first, isSub){
   const f = frame(); if (!f || f.type !== 'pick') return;
   const ys = f.years.length ? f.years : [f.year];
-  const n = bookSeries(f.team, opp, ys, isSub ? true : (first === 'home'), !!isSub);
+  const n = bookSeries(f.team, opp, ys, isSub ? true : (first === 'home'), !!isSub, f.week === undefined ? null : f.week);
   if (n){ f.years = [f.year]; renderPick(f, false); renderPage(); }
 }
 
@@ -806,6 +855,7 @@ document.addEventListener('click', e => {
   }
   else if (a === 'bookit'){ bookIt(d.opp, d.first, d.sub === '1'); }
   else if (a === 'flip'){ flipGame(yr, d.game); }
+  else if (a === 'setwk'){ const v = el('wkSel').value; setWeek(yr, d.game, v === '' ? null : +v); }
   else if (a === 'rm'){ popSheet(); removeGame(yr, d.game, false); }
   else if (a === 'rmall'){ popSheet(); removeGame(yr, d.game, true); }
   else if (a === 'pop'){ popSheet(); }
@@ -831,8 +881,9 @@ document.addEventListener('change', e => {
   const id = e.target.id;
   if (id === 'fConf'){ filt.conf = e.target.value; renderList(); }
   else if (id === 'fYear'){ filt.year = e.target.value; renderList(); }
-  else if (id === 'pTab' || id === 'pSort' || id === 'pConf'){
-    const f = frame(); f.tab = el('pTab').value; f.sort = el('pSort').value; f.conf = el('pConf').value; renderPick(f, false);
+  else if (id === 'pTab' || id === 'pSort' || id === 'pConf' || id === 'pWeek'){
+    const f = frame(); f.tab = el('pTab').value; f.sort = el('pSort').value; f.conf = el('pConf').value;
+    f.week = el('pWeek').value === '' ? null : +el('pWeek').value; renderPick(f, false);
   }
 });
 document.querySelectorAll('#tabs button').forEach(b => b.addEventListener('click', () => setTab(b.dataset.tab)));

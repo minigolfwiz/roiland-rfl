@@ -22,7 +22,7 @@ def convert(path):
         vis = L['b'] if host == L['a'] else L['a']
         games.append({'host': host, 'visitor': vis, 'sub': False, 'locked': True, 'auto': False, 'week': L['week']})
     for g in d['games']:
-        games.append({'host': g['h'], 'visitor': g['v'], 'sub': bool(g.get('sub')), 'locked': False, 'auto': False, 'week': None})
+        games.append({'host': g['h'], 'visitor': g['v'], 'sub': bool(g.get('sub')), 'locked': False, 'auto': False, 'week': g.get('week')})
     used = sum(1 if g['sub'] else 2 for g in games)
     out = {'season': y - 2025, 'year': y, 'complete': used == 152 * 3, 'games': games,
            'blocking': 0, 'open_dates': 152 * 3 - used}
