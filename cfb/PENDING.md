@@ -2998,3 +2998,7 @@ Initial fill had 44 of 83 P6-vs-L6 games with the P6 team travelling. New fix_p6
 P6 visiting L6 = 3, all-away = 10, all-home = 10 for L6 but only 0.5 for P6 (structural: 1 guest + 1 L6 + 1 P6 forces ~half of P6 to travel somewhere unless P6 may host all three).
 Result: 6 P6-at-L6 games remain (2 Dan's: Northlight@Starfield, Park Island@Marines; 4 auto: Ranroman@Chinolka, Harrell@Vaughn Bay, Central Stanton@Coachville College, Pistolheart@West Hatesei St).
 P6 non-con home counts: 3 home 37 | 2 home 39 | 1 home 2. L6: nobody all-home/all-away. Pre-fix file state/noncon_s17.json.pre_hostfix. Conference board rebuilt with new hosts.
+
+## 2042 non-conference board -- host repair v2 (2026-10-23, Dan: P6 need not always travel; base on previous seasons)
+Dan's past finals: P6 away at an L6 in 18-29% of P6/L6 games (s13 23, s14 29, s15 27, s16 18); P6 hosting all three non-con 23-31% of P6; 1 home 3-13%.
+fix_p6_hosting.py weights tuned to that (w_away 2.4, w_allhome 1.2, w_oneP6 0.6): 17 of 83 P6/L6 games have the P6 away (20%); P6 home dist 1:2 | 2:50 | 3:26. Conference board rebuilt.

@@ -10,7 +10,7 @@ import sys, json, itertools
 sys.path.insert(0, '/home/claude/cfb2')
 import fill_noncon as F
 
-def run(board_path, payload=F.PAYLOAD, write=True):
+def run(board_path, payload=F.PAYLOAD, write=True, w_away=2.4, w_allhome=1.2, w_oneP6=0.6):
     bd = F.Board(board_path, payload)
     T = bd.BY
     def bad(t):
@@ -19,16 +19,18 @@ def run(board_path, payload=F.PAYLOAD, write=True):
             return 0
         if h == 0:
             return 10
+        if h == 1 and T[t]['tier'] == 'P6':
+            return w_oneP6
         if h == F.SLOTS:
             # hosting all three is tolerable for a power programme (it makes up for
             # guaranteed road dates elsewhere); it stays a real cost for everyone else
-            return 0.5 if T[t]['tier'] == 'P6' else 10
+            return w_allhome if T[t]['tier'] == 'P6' else 10
         return 0
     def gcost(g):
         h, v = g['host'], g['visitor']
         c = 0
         if v in T and h in T and T[v]['tier'] == 'P6' and T[h]['tier'] == 'L6':
-            c += 3
+            c += w_away
         at, _ = bd.owed(h, v) if h in T and v in T else (None, None)
         if at == 'away':          # h owes a trip to v, yet hosts
             c += 2
