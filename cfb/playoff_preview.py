@@ -20,7 +20,7 @@ def season_games(t):
         b=db[gid]
         if t in (b['home'],b['away']): out.append((w,gid,b))
     for gid,b in db.items():
-        if str(gid).startswith('S%dCCG'%s['season']) and t in (b['home'],b['away']): out.append((15,gid,b))
+        if (str(gid).startswith('S%dCCG'%s['season']) or str(gid).startswith('S%dPO_'%s['season'])) and t in (b['home'],b['away']): out.append((15,gid,b))
     return sorted(out,key=lambda x:x[0])
 def leaders(t):
     pl={p['pid']:p for p in E.ROSTERS[t]}; agg=collections.defaultdict(lambda:collections.Counter())
@@ -38,6 +38,7 @@ def show(t):
         h=b['home']==t; ts=b['home_score'] if h else b['away_score']; os_=b['away_score'] if h else b['home_score']; opp=b['away'] if h else b['home']
         pf+=ts; pa+=os_
         line.append('%s %d-%d %s'%('W' if ts>os_ else 'L',ts,os_,opp))
+    po=[l for l in line if False]
     n=max(1,len(g)); print('     scoring %.1f-%.1f per game'%(pf/n,pa/n))
     losses=[l for l in line if l.startswith('L')]
     print('     losses: '+('; '.join(losses) if losses else 'none'))
@@ -70,4 +71,9 @@ def preview(a,h):
     else: print('  series: first meeting')
     show(h); show(a)
 if __name__=='__main__':
-    for h,a in P['r1']: preview(a,h)
+    import playoff as PL
+    rnd=sys.argv[1] if len(sys.argv)>1 else 'r1'
+    if rnd=='r2' and 'r2' not in P:
+        pairs=PL._pair_host(P,P['byes'],[r['winner'] for r in P['r1_results']])
+    else: pairs=P[rnd]
+    for h,a in pairs: preview(a,h)
