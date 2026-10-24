@@ -488,3 +488,11 @@ Backups state/*.pkl.pre_s18_portal; s['portal_s17']. 407 entrants, 284 transfers
 Flows L6->P6 114 / P6->P6 58 / P6->L6 37 / L6->L6 75 (2042: 102/62/46/80). Classes So 104 Jr 90 Fr 82 RS 8.
 G14 in 32 / out 8 = +24 (2042 +15, 2041 +29, 2040 +18). 114 entrants lost a coach, 20 followed him. Top value: Raghav El-Fahim (Hoganelle WR) to Coastal Ranroman.
 NEXT: Stage 4 recruiting.
+
+## 2042-43 OFFSEASON -- Stage 4 of 7 COMPLETE: 2043 recruiting (2026-10-24)
+Backups state/{season_state,rosters}.pkl.pre_s18_recruiting; stored s['recruiting_s17'] (class_size, needs_total, signed, unsigned). Assembled by hand as last year.
+National class 2,822 | needs 2,490 | signed 2,490 | 332 unsigned (12 four/five-stars found no cap room).
+Class 5* 13 | 4* 282 | 3* 988 | 2* 1,129 | 1* 410. Signed 5* 13 | 4* 270 | 3* 988 | 2* 1,129 | 1* 90.
+Blue-chips signed 283: G14 58, PN 45, MV 44, JB 41, BS 39, WC 35; L6 total 21 (7.4%; 2042 about 10 of 275). Low Sixteen 5, East Forest 4, others 3 each. 68 programmes landed none.
+Best classes by stars: Pistolheart 72, Antiragal State 67, Eona 66, Ranroman State 62, Crayellan 61, New Madrid 60.
+WATCH: L6 blue-chip share roughly doubled vs 2042. NEXT: Stage 5 development.
