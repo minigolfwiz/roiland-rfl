@@ -37,6 +37,8 @@ TIERS = U["tiers"]
 PRES = U["prestige"]
 GEO = U["geo"]
 COORDS = U["state_coords"]
+# Distance rules use each SCHOOL's own placed coordinates (Dan, 2042); the state seed is the fallback.
+SCHOOL_XY = U.get("school_coords") or {}
 COLORS = U["team_colors"]
 SCHOOLS = U["schools"]
 
@@ -201,7 +203,8 @@ def build(out='/home/claude/cfb2/state/schedule_board.json'):
     def dist(t1, t2):
         s1 = GEO.get(t1, {}).get("state") or SCHOOLS.get(t1, {}).get("state")
         s2 = GEO.get(t2, {}).get("state") or SCHOOLS.get(t2, {}).get("state")
-        c1, c2 = COORDS.get(s1), COORDS.get(s2)
+        c1 = SCHOOL_XY.get(t1) or COORDS.get(s1)
+        c2 = SCHOOL_XY.get(t2) or COORDS.get(s2)
         if not c1 or not c2:
             return None
         return round(math.dist(c1, c2))
@@ -246,7 +249,7 @@ def build(out='/home/claude/cfb2/state/schedule_board.json'):
             "tier": TIERS.get(TC.get(t), "L6"),
             "prestige": round(PRES.get(t, 50), 1),
             "state": st,
-            "xy": COORDS.get(st),
+            "xy": [round(v) for v in (SCHOOL_XY.get(t) or COORDS.get(st) or [])] or None,
             "colors": COLORS.get(t, ["#555555", "#999999"]),
             "last": {"W": r.get("W", 0), "L": r.get("L", 0)},
             "last_nonconf": last_nonconf.get(t, []),
@@ -266,7 +269,8 @@ def build(out='/home/claude/cfb2/state/schedule_board.json'):
         if name in (U.get("no_football_schools") or []):
             continue
         st = info.get("state")
-        subs.append({"name": name, "state": st, "xy": COORDS.get(st),
+        subs.append({"name": name, "state": st,
+                     "xy": [round(v) for v in (SCHOOL_XY.get(name) or COORDS.get(st) or [])] or None,
                      "guest_last": name in guests_last})
     subs.sort(key=lambda x: x["name"])
 

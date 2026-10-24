@@ -3002,3 +3002,7 @@ P6 non-con home counts: 3 home 37 | 2 home 39 | 1 home 2. L6: nobody all-home/al
 ## 2042 non-conference board -- host repair v2 (2026-10-23, Dan: P6 need not always travel; base on previous seasons)
 Dan's past finals: P6 away at an L6 in 18-29% of P6/L6 games (s13 23, s14 29, s15 27, s16 18); P6 hosting all three non-con 23-31% of P6; 1 home 3-13%.
 fix_p6_hosting.py weights tuned to that (w_away 2.4, w_allhome 1.2, w_oneP6 0.6): 17 of 83 P6/L6 games have the P6 away (20%); P6 home dist 1:2 | 2:50 | 3:26. Conference board rebuilt.
+
+## 2042 distance rules -> SCHOOL COORDINATES (Dan, 2026-10-23: "yes, use school coordinates")
+export_schedule_board.py and export_conf_board.py now take each team's/guest's xy from U['school_coords'] (state seed fallback); the Office distance/regional logic reads those xy. Pre-change copies *.py.pre_s17.
+2042 non-con board was built on state coords BEFORE this change (not re-filled; Dan can ask for a re-fill). Stray duplicate viewer artifact 7G5yKnxG7RgVB9aAZiUDs6 DELETED at Dan's OK.

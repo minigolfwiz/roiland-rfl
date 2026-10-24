@@ -35,6 +35,7 @@ from games_db import load_db
 U = E.U
 TC = U["team_conf"]
 GEO, COORDS, COLORS = U["geo"], U["state_coords"], U["team_colors"]
+SCHOOL_XY = U.get("school_coords") or {}   # school-level placements (Dan, 2042); state seed is the fallback
 PRES, TIERS, SCHOOLS = U["prestige"], U["tiers"], U["schools"]
 
 CONF_GAMES = 9
@@ -186,7 +187,7 @@ def build(conf="Power North", out=None, seed=13):
             "name": t, "full": GEO.get(t, {}).get("full_name", t),
             "mascot": GEO.get(t, {}).get("mascot", ""),
             "prestige": round(PRES.get(t, 50), 1), "state": st(t),
-            "xy": COORDS.get(st(t)), "colors": COLORS.get(t, ["#555", "#999"]),
+            "xy": [round(v) for v in (SCHOOL_XY.get(t) or COORDS.get(st(t)) or [])] or None, "colors": COLORS.get(t, ["#555", "#999"]),
             "last": {"W": rec.get(t, {}).get("W", 0), "L": rec.get(t, {}).get("L", 0)},
         } for t in teams],
         "games": games,
