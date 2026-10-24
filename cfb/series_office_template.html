@@ -136,6 +136,15 @@ main{max-width:1500px;margin:0 auto;padding:14px var(--gutr) 70px var(--gut)}
 .sh .r1{display:flex;gap:8px;align-items:center}
 .sh h3{font:700 21px/1 var(--display);margin:0;text-transform:uppercase;flex:1;min-width:0}
 .sb{overflow:auto;padding:8px var(--gutr) calc(24px + env(safe-area-inset-bottom,0px)) var(--gut);flex:1}
+.wkp{position:absolute;left:0;right:0;bottom:0;background:var(--bg);border-top:2px solid var(--accent,var(--ink));box-shadow:0 -8px 24px rgba(0,0,0,.28);padding:10px var(--gut) calc(12px + env(safe-area-inset-bottom,0px));z-index:5;border-radius:14px 14px 0 0}
+.wkp[hidden]{display:none}
+.wkh{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:2px}
+.wkg{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:8px 0}
+.wkc{min-height:44px;font:600 17px var(--mono);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.wkc i{font:normal 9px var(--body);opacity:.7;margin-top:2px}
+.wkc.off{opacity:.3;text-decoration:line-through}
+.wkc.part{border-style:dashed}
+.wkl{width:100%}
 .ychips{display:flex;gap:4px;flex-wrap:nowrap;overflow-x:auto;margin-top:6px;padding-bottom:2px;scrollbar-width:none}
 .ychips::-webkit-scrollbar{display:none}
 .filters.tight{margin-bottom:6px;flex-wrap:nowrap}
@@ -607,23 +616,19 @@ function candRow(f, name, isSub){
     const used = YEARS.filter(yy => subTaken(name,yy));
     tok.push(used.length ? `<span class="tok">booked ${used.map(shortY).join(' ')}</span>` : '<span class="tok open">free all years</span>');
   }
-  let wkHint = '';
-  if (f.week !== null && f.week !== undefined){
-    const bad = ysel.filter(yy => !reasons.find(r => r[0] === yy && r[1])).map(yy => [yy, whyNotWeek({ h:a, v:name, sub:isSub }, yy, f.week)]).filter(r => r[1]);
-    wkHint = bad.length ? `<div class="why">week ${f.week} conflict: ${esc(bad[0][1])}${bad.length > 1 ? ' (+' + (bad.length-1) + ' more yrs)' : ''} — books with no week</div>` : '';
-  }
+  const wkHint = '';
   const multi = ysel.length > 1;
-  const hostBtn = isSub ? `<button class="pri" data-act="bookit" data-opp="${esc(name)}" data-sub="1" ${okYears.length ? '' : 'disabled'}>${multi ? 'Host · ' + okYears.length + ' yrs' : 'Host'}</button>`
-    : `<button class="pri" data-act="bookit" data-opp="${esc(name)}" data-first="home" ${okYears.length ? '' : 'disabled'}>${multi ? 'Host first' : 'Host'}${retHost === a ? ' ★' : ''}</button>
-       <button data-act="bookit" data-opp="${esc(name)}" data-first="away" ${okYears.length ? '' : 'disabled'}>${multi ? 'Visit first' : 'Visit'}${retHost === name ? ' ★' : ''}</button>`;
+  const hostBtn = isSub ? `<button class="pri" data-act="bookask" data-opp="${esc(name)}" data-sub="1" ${okYears.length ? '' : 'disabled'}>${multi ? 'Host · ' + okYears.length + ' yrs' : 'Host'}</button>`
+    : `<button class="pri" data-act="bookask" data-opp="${esc(name)}" data-first="home" ${okYears.length ? '' : 'disabled'}>${multi ? 'Host first' : 'Host'}${retHost === a ? ' ★' : ''}</button>
+       <button data-act="bookask" data-opp="${esc(name)}" data-first="away" ${okYears.length ? '' : 'disabled'}>${multi ? 'Visit first' : 'Visit'}${retHost === name ? ' ★' : ''}</button>`;
   // Compact until there is something to read: a team with nothing booked that year and no
   // flags is one short row (name, where, buttons). Bookings, flags or a reason it cannot play
   // bring back the fuller card with their slate.
   const busy = isSub ? subTaken(name,y) : (theirNC.length > 0);
   if (!busy && !flags.length && !wkHint && (!focusBad)){
-    const btns = isSub ? `<button class="pri sm" data-act="bookit" data-opp="${esc(name)}" data-sub="1" ${okYears.length ? '' : 'disabled'}>Host</button>`
-      : `<button class="pri sm" data-act="bookit" data-opp="${esc(name)}" data-first="home" ${okYears.length ? '' : 'disabled'}>${multi ? 'Host 1st' : 'Host'}</button>
-         <button class="sm" data-act="bookit" data-opp="${esc(name)}" data-first="away" ${okYears.length ? '' : 'disabled'}>${multi ? 'Visit 1st' : 'Visit'}</button>`;
+    const btns = isSub ? `<button class="pri sm" data-act="bookask" data-opp="${esc(name)}" data-sub="1" ${okYears.length ? '' : 'disabled'}>Host</button>`
+      : `<button class="pri sm" data-act="bookask" data-opp="${esc(name)}" data-first="home" ${okYears.length ? '' : 'disabled'}>${multi ? 'Host 1st' : 'Host'}</button>
+         <button class="sm" data-act="bookask" data-opp="${esc(name)}" data-first="away" ${okYears.length ? '' : 'disabled'}>${multi ? 'Visit 1st' : 'Visit'}</button>`;
     return `<div class="cand cmp${okYears.length ? '' : ' no'}">
       <button class="cmain" data-act="slate" data-team="${esc(name)}" data-year="${y}">
         <span class="nmb">${esc(name)}</span>
@@ -643,8 +648,8 @@ function candRow(f, name, isSub){
 }
 function pfLabel(f){
   const b = el('pfBtn'); if (!b) return;
-  const n = (f.week != null ? 1 : 0) + (f.conf ? 1 : 0) + (f.sort !== 'suggest' ? 1 : 0);
-  b.textContent = 'Filters' + (f.week != null ? ' · wk ' + f.week : n ? ' · ' + n : '') + (f.fOpen ? ' ▴' : ' ▾');
+  const n = (f.conf ? 1 : 0) + (f.sort !== 'suggest' ? 1 : 0);
+  b.textContent = 'Filters' + (n ? ' · ' + n : '') + (f.fOpen ? ' ▴' : ' ▾');
 }
 function renderPick(f, full){
   if (full){
@@ -659,10 +664,9 @@ function renderPick(f, full){
           <button class="tiny" data-act="pfilters" id="pfBtn"></button></div>
         <div class="filters tight" id="pfPanel"${f.fOpen ? '' : ' hidden'}>
           <select id="pSort"><option value="suggest">Suggested</option><option value="az">A–Z</option><option value="open">Most open</option></select>
-          <select id="pConf"></select>
-          <select id="pWeek" aria-label="week for these games"><option value="">week: decide later</option>${WEEKS.map(w => `<option value="${w}">${wkLabel(w)}</option>`).join('')}</select></div>
-      </div><div id="pickList"></div></div>`;
-    el('pTab').value = f.tab; el('pSort').value = f.sort; el('pWeek').value = f.week === null || f.week === undefined ? '' : String(f.week);
+          <select id="pConf"></select></div>
+      </div><div id="pickList"></div></div><div id="wkPanel" class="wkp" hidden></div>`;
+    el('pTab').value = f.tab; el('pSort').value = f.sort;
     const cs = ['<option value="">all conferences</option>'].concat(Object.keys(D.conferences).filter(c => c !== BY[f.team].conf).map(c => `<option>${esc(c)}</option>`));
     el('pConf').innerHTML = cs.join(''); el('pConf').value = f.conf || '';
     pfLabel(f);
@@ -877,10 +881,31 @@ function openTeam(name, year){
   setTab('teams'); closeSheet(); renderAll();
   if (year){ const c = el('yc' + year); if (c) c.scrollIntoView({ block:'start' }); } else window.scrollTo(0, 0);
 }
-function bookIt(opp, first, isSub){
+function wkStates(f, opp, isSub){
+  const a = f.team, ysel = f.years.length ? f.years : [f.year];
+  const ok = ysel.filter(yy => !(isSub ? whyNotSub(a,opp,yy) : whyNot(a,opp,yy)));
+  return WEEKS.map(w => {
+    const bad = ok.map(yy => [yy, whyNotWeek({ h:a, v:opp, sub:!!isSub }, yy, w)]).filter(r => r[1]);
+    return { w, all: ok.length > 0 && bad.length === ok.length, part: bad.length > 0 && bad.length < ok.length, why: bad[0] ? bad[0][1] : '', n: ok.length };
+  });
+}
+function showWk(f){
+  const P = el('wkPanel'); if (!P) return;
+  if (!f.pending){ P.hidden = true; P.innerHTML = ''; return; }
+  const { opp, first, sub } = f.pending, isSub = sub === '1';
+  const st = wkStates(f, opp, isSub), yrs = (f.years.length ? f.years : [f.year]);
+  P.innerHTML = `<div class="wkh"><b>${esc(f.team)} ${isSub ? 'hosts' : first === 'home' ? 'hosts' : 'visits'} ${esc(opp)}</b>
+      <button class="tiny" data-act="wkcancel">Cancel</button></div>
+    <div class="sub">Pick a week${yrs.length > 1 ? ' (same week each year; ' + yrs.length + ' yrs)' : ' for ' + yrs[0]}. Greyed = already taken for one of them.</div>
+    <div class="wkg">${st.map(x => `<button class="wkc${x.all ? ' off' : ''}${x.part ? ' part' : ''}" data-act="wkpick" data-w="${x.w}" data-why="${esc(x.why)}">${x.w}${x.w === 14 ? '<i>riv</i>' : x.w === 0 ? '<i>open</i>' : ''}</button>`).join('')}</div>
+    <button class="pri wkl" data-act="wkpick" data-w="">Decide later</button>`;
+  P.hidden = false;
+}
+function bookIt(opp, first, isSub, week){
   const f = frame(); if (!f || f.type !== 'pick') return;
   const ys = f.years.length ? f.years : [f.year];
-  const n = bookSeries(f.team, opp, ys, isSub ? true : (first === 'home'), !!isSub, f.week === undefined ? null : f.week);
+  const n = bookSeries(f.team, opp, ys, isSub ? true : (first === 'home'), !!isSub, week === undefined ? null : week);
+  f.pending = null; showWk(f);
   if (n){ f.years = [f.year]; renderPick(f, false); renderPage(); }
 }
 
@@ -902,7 +927,13 @@ document.addEventListener('click', e => {
     f.year = f.years.includes(f.year) ? f.year : f.years[0];
     renderPick(f, false);
   }
-  else if (a === 'bookit'){ bookIt(d.opp, d.first, d.sub === '1'); }
+  else if (a === 'bookask'){ const f = frame(); f.pending = { opp:d.opp, first:d.first, sub:d.sub }; showWk(f); }
+  else if (a === 'wkcancel'){ const f = frame(); f.pending = null; showWk(f); }
+  else if (a === 'wkpick'){
+    const f = frame(); if (!f || !f.pending) return;
+    if (b.classList.contains('off')){ toast(d.why || 'Week taken'); return; }
+    const pd = f.pending; bookIt(pd.opp, pd.first, pd.sub === '1', d.w === '' ? null : +d.w);
+  }
   else if (a === 'pfilters'){ const f = frame(); f.fOpen = !f.fOpen; el('pfPanel').hidden = !f.fOpen; pfLabel(f); }
   else if (a === 'flip'){ flipGame(yr, d.game); }
   else if (a === 'setwk'){ const v = el('wkSel').value; setWeek(yr, d.game, v === '' ? null : +v); }
@@ -931,9 +962,9 @@ document.addEventListener('change', e => {
   const id = e.target.id;
   if (id === 'fConf'){ filt.conf = e.target.value; renderList(); }
   else if (id === 'fYear'){ filt.year = e.target.value; renderList(); }
-  else if (id === 'pTab' || id === 'pSort' || id === 'pConf' || id === 'pWeek'){
+  else if (id === 'pTab' || id === 'pSort' || id === 'pConf'){
     const f = frame(); f.tab = el('pTab').value; f.sort = el('pSort').value; f.conf = el('pConf').value;
-    f.week = el('pWeek').value === '' ? null : +el('pWeek').value; pfLabel(f); renderPick(f, false);
+    pfLabel(f); renderPick(f, false);
   }
 });
 document.querySelectorAll('#tabs button').forEach(b => b.addEventListener('click', () => setTab(b.dataset.tab)));
