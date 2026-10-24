@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Roiland Decade</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=UnifrakturCook:wght@700&family=Oswald:wght@600;700&family=Alfa+Slab+One&family=Orbitron:wght@800;900&family=Bungee&family=Bowlby+One+SC&family=Archivo+Black&family=Rye&family=Righteous&family=Spectral:wght@400;600;700&display=swap">
+<style>
+/* Same ledger palette as the rest of the suite for the page furniture. The BARS are a
+   different matter: outcome is an ORDINAL scale (missed -> playoff -> title game ->
+   champion), so they use a single-hue blue ramp, validated with the data-viz
+   validator in both modes rather than eyeballed. Neutral grey sits outside the ramp
+   for "missed", because that is an absence rather than a smaller amount of something. */
+:root{
+  --paper:#f4efe4; --ink:#1d1a15; --dim:#6b6355; --rule:#d8cfbb; --card:#fffdf7;
+  --brass:#8a6410; --brass-soft:#b99a52; --chip:#e9e1cd;
+  --display:"Spectral",Georgia,"Times New Roman",serif;
+  --body:"Spectral",Georgia,serif;
+  --data:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  /* ordinal ramp — light surface: light -> dark toward the title */
+  --o-out:#d6d4cd; --o-po:#86b6ef; --o-final:#2a78d6; --o-champ:#104281;
+  --tip-bg:#1d1a15; --tip-ink:#f4efe4;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --paper:#17150f; --ink:#ece6d7; --dim:#938b78; --rule:#332e24; --card:#201d15;
+  --brass:#d2ab5e; --brass-soft:#8a7542; --chip:#2a2619;
+  /* dark surface: the ramp inverts so the champion is still the highest-contrast mark */
+  --o-out:#45443f; --o-po:#184f95; --o-final:#3987e5; --o-champ:#9ec5f4;
+  --tip-bg:#ece6d7; --tip-ink:#17150f;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#17150f; --ink:#ece6d7; --dim:#938b78; --rule:#332e24; --card:#201d15;
+  --brass:#d2ab5e; --brass-soft:#8a7542; --chip:#2a2619;
+  --o-out:#45443f; --o-po:#184f95; --o-final:#3987e5; --o-champ:#9ec5f4;
+  --tip-bg:#ece6d7; --tip-ink:#17150f;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);margin:0;
+     font-size:15px;line-height:1.45}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:16px;padding-block:0 70px}
+main > *{min-width:0}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;
+  background:color-mix(in srgb,var(--paper) 94%,transparent);
+  backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);
+  padding-block:11px;margin-bottom:14px}
+.topin{max-width:1240px;margin:0 auto;padding-inline:16px;display:flex;gap:12px;
+  align-items:baseline;flex-wrap:wrap}
+h1{font-family:var(--display);font-size:20px;font-weight:600;margin:0}
+h1 span{color:var(--brass)}
+.yr{font-family:var(--data);font-size:11.5px;color:var(--dim);letter-spacing:.14em}
+.spacer{flex:1 1 auto}
+button{font:inherit;cursor:pointer;border-radius:4px;border:1px solid var(--rule);
+  background:var(--card);color:var(--ink);padding:6px 11px;font-size:13px}
+button:hover{border-color:var(--brass-soft)}
+button:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+button[aria-pressed="true"]{background:var(--brass);border-color:var(--brass);
+  color:var(--paper);font-weight:700}
+button.tiny{padding:3px 8px;font-size:11.5px}
+
+/* legend — always present, and the marks carry a glyph as well as a colour */
+.legend{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:10px;
+  font-family:var(--data);font-size:11px;color:var(--dim)}
+.legend b{display:inline-flex;align-items:center;gap:5px;font-weight:400;color:var(--dim)}
+.sw{width:13px;height:13px;border-radius:3px;display:inline-block;flex:0 0 auto}
+.sw.out{background:var(--o-out)} .sw.po{background:var(--o-po)}
+.sw.final{background:var(--o-final)} .sw.champ{background:var(--o-champ)}
+
+.controls{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
+.controls input,.controls select{flex:0 1 190px;min-width:0;font:inherit;font-size:13px;
+  padding:5px 9px;border:1px solid var(--rule);border-radius:4px;
+  background:var(--card);color:var(--ink)}
+.note{font-size:12.5px;color:var(--dim);margin:0 0 14px}
+
+/* the small multiples */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(262px,1fr));gap:9px}
+.tc{border:1px solid var(--rule);border-radius:5px;background:var(--card);padding:9px 10px}
+.th{display:flex;gap:8px;align-items:center;margin-bottom:2px;min-width:0}
+.th .bdg svg{width:21px;height:21px;display:block}
+.th b{font-weight:600;font-size:14px;overflow:hidden;text-overflow:ellipsis;
+  white-space:nowrap;flex:1 1 auto;min-width:0}
+.th .tt{font-family:var(--data);font-size:11px;color:var(--brass);font-weight:700;
+  font-variant-numeric:tabular-nums;flex:0 0 auto}
+.sub{font-family:var(--data);font-size:9.5px;color:var(--dim);margin-bottom:7px;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.plot{display:grid;grid-template-columns:repeat(10,1fr);gap:2px;align-items:end;
+  height:62px;border-bottom:1px solid var(--rule);padding-bottom:0}
+.bar{position:relative;border-radius:4px 4px 0 0;min-height:2px;cursor:default;
+  background:var(--o-out)}
+.bar.po{background:var(--o-po)} .bar.final{background:var(--o-final)}
+.bar.champ{background:var(--o-champ)}
+/* secondary encoding: the two rare outcomes are marked, not left to colour alone */
+.bar.champ::after,.bar.final::after{position:absolute;left:0;right:0;top:-13px;
+  text-align:center;font-size:10px;line-height:1;color:var(--brass)}
+.bar.champ::after{content:"\2605"}
+.bar.final::after{content:"\25CB"}
+.xaxis{display:grid;grid-template-columns:repeat(10,1fr);gap:2px;margin-top:3px}
+.xaxis span{font-family:var(--data);font-size:8.5px;color:var(--dim);text-align:center;
+  font-variant-numeric:tabular-nums}
+.nums .xaxis span{color:var(--ink);font-size:9.5px}
+
+.empty{border:1px dashed var(--rule);border-radius:5px;padding:26px 18px;text-align:center;
+  color:var(--dim);font-size:13.5px}
+
+/* tooltip */
+#tip{position:fixed;z-index:60;pointer-events:none;opacity:0;transition:opacity .09s;
+  background:var(--tip-bg);color:var(--tip-ink);border-radius:5px;padding:6px 9px;
+  font-family:var(--data);font-size:11.5px;line-height:1.5;max-width:230px;
+  box-shadow:0 3px 14px #0003}
+#tip b{font-family:var(--body);font-size:13px}
+
+/* table view */
+table.tbl{width:100%;border-collapse:collapse;font-size:12.5px;font-family:var(--data)}
+table.tbl th,table.tbl td{padding:3px 6px;border-bottom:1px solid var(--rule);
+  text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+table.tbl th:first-child,table.tbl td:first-child{text-align:left;font-family:var(--body)}
+table.tbl th{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);
+  font-weight:400;position:sticky;top:0;background:var(--paper)}
+td.champ{color:var(--brass);font-weight:700}
+td.final{font-weight:700}
+.tblwrap{overflow:auto;max-height:70vh;border:1px solid var(--rule);border-radius:5px}
+
+@media (max-width:700px){
+  .wrap{padding-inline:13px}
+  h1{font-size:17px} .yr{display:none}
+  .grid{grid-template-columns:1fr}
+  .controls input,.controls select{flex:1 1 100%;font-size:16px}
+  button{padding:7px 12px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="topin">
+    <h1>Roiland <span>Decade</span></h1>
+    <span class="yr" id="yrline"></span>
+    <span class="spacer"></span>
+    <button class="tiny" id="viewBtn" aria-pressed="false">Table</button>
+    <button class="tiny" id="themeBtn" title="light / dark">◐</button>
+  </div>
+</header>
+
+<div class="wrap"><main id="main"></main></div>
+<div id="tip" role="status"></div>
+
+<script>
+__MARKS__
+
+const DATA = __DATA__;
+const YEARS = DATA.years;
+const MAXW = DATA.games_per_season;
+const el = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c =>
+  ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+const OUT = { out:'missed the playoff', po:'made the playoff',
+              final:'reached the title game', champ:'national champion' };
+
+let sort = 'tot', conf = '', q = '', showNums = false, table = false;
+
+function badge(t){
+  return mark({ name: t.name, mascot: t.mascot || '', conf: t.conf, col: t.col });
+}
+
+/* every card shares one 0-12 scale — that is the whole point of small multiples,
+   and a per-card scale would make a 4-win season look like a 12-win season */
+function plot(t){
+  const bars = t.years.map(y => {
+    const h = Math.max(2, Math.round(100 * y.w / MAXW));
+    return `<div class="bar ${y.o}" style="height:${h}%"
+      data-t="${esc(t.name)}" data-y="${y.y}" data-w="${y.w}" data-l="${y.l}"
+      data-o="${y.o}" tabindex="0" role="img"
+      aria-label="${esc(t.name)} ${y.y}: ${y.w} wins, ${OUT[y.o]}"></div>`;
+  }).join('');
+  const labs = t.years.map(y =>
+    `<span>${showNums ? y.w : String(y.y).slice(2)}</span>`).join('');
+  return `<div class="plot">${bars}</div><div class="xaxis">${labs}</div>`;
+}
+
+function card(t){
+  const bits = [`${t.tot} wins`];
+  if (t.po) bits.push(`${t.po} playoff${t.po === 1 ? '' : 's'}`);
+  if (t.titles) bits.push(`${t.titles} title${t.titles === 1 ? '' : 's'}`);
+  return `<div class="tc ${showNums ? 'nums' : ''}">
+    <div class="th"><span class="bdg">${badge(t)}</span><b>${esc(t.name)}</b>
+      <span class="tt">${t.tot}</span></div>
+    <div class="sub">${esc(t.conf)} · ${bits.slice(1).join(' · ') || 'no postseason'}</div>
+    ${plot(t)}
+  </div>`;
+}
+
+function rows(){
+  let list = DATA.teams.slice();
+  if (conf) list = list.filter(t => t.conf === conf);
+  const s = q.trim().toLowerCase();
+  if (s) list = list.filter(t => t.name.toLowerCase().includes(s)
+                              || (t.mascot || '').toLowerCase().includes(s));
+  const by = { tot: t => -t.tot, best: t => -t.best, po: t => -t.po,
+               titles: t => -t.titles, name: t => t.name };
+  list.sort((a, b) => {
+    const f = by[sort];
+    const x = f(a), y = f(b);
+    return x < y ? -1 : x > y ? 1 : a.name.localeCompare(b.name);
+  });
+  return list;
+}
+
+function tableView(list){
+  return `<div class="tblwrap"><table class="tbl">
+    <thead><tr><th>Program</th>${YEARS.map(y => `<th>${y}</th>`).join('')}
+      <th>Total</th><th>PO</th><th>Titles</th></tr></thead>
+    <tbody>${list.map(t => `<tr><td>${esc(t.name)}</td>
+      ${t.years.map(y => `<td class="${y.o}" title="${OUT[y.o]}">${y.w}${
+        y.o === 'champ' ? ' ★' : y.o === 'final' ? ' ○' : ''}</td>`).join('')}
+      <td><b>${t.tot}</b></td><td>${t.po}</td><td>${t.titles || ''}</td></tr>`).join('')}
+    </tbody></table></div>`;
+}
+
+function render(){
+  el('yrline').textContent = YEARS[0] + '–' + YEARS[YEARS.length - 1];
+  const list = rows();
+  el('main').innerHTML = `
+    <div class="legend">
+      <b><span class="sw out"></span> missed the playoff</b>
+      <b><span class="sw po"></span> made the playoff</b>
+      <b><span class="sw final"></span> ○ reached the title game</b>
+      <b><span class="sw champ"></span> ★ national champion</b>
+    </div>
+    <div class="controls">
+      <input id="q" placeholder="search a program" value="${esc(q)}" autocomplete="off">
+      <select id="conf"><option value="">all conferences</option>
+        ${DATA.conferences.map(c => `<option value="${esc(c)}" ${conf === c ? 'selected' : ''}>${esc(c)}</option>`).join('')}
+      </select>
+      <select id="sort">
+        <option value="tot" ${sort==='tot'?'selected':''}>most wins</option>
+        <option value="titles" ${sort==='titles'?'selected':''}>most titles</option>
+        <option value="po" ${sort==='po'?'selected':''}>most playoffs</option>
+        <option value="best" ${sort==='best'?'selected':''}>best single season</option>
+        <option value="name" ${sort==='name'?'selected':''}>alphabetical</option>
+      </select>
+      <button class="tiny" id="numsBtn" aria-pressed="${showNums}">${showNums ? 'years' : 'numbers'}</button>
+    </div>
+    <p class="note">Bars are <b>regular-season wins out of ${MAXW}</b>, every card on the
+      same scale. Conference finals and playoff games are left out of the height — the
+      colour already says how far a season went. ${list.length} of ${DATA.teams.length} programs shown.</p>
+    ${!list.length ? '<div class="empty">No program matches.</div>'
+      : table ? tableView(list)
+      : `<div class="grid">${list.map(card).join('')}</div>`}`;
+  fitAll(el('main'));
+}
+
+/* ---------- hover ---------- */
+const tip = () => el('tip');
+function showTip(b, x, y){
+  const t = b.dataset;
+  tip().innerHTML = `<b>${esc(t.t)}</b> · ${t.y}<br>${t.w}–${t.l} · ${OUT[t.o]}`;
+  tip().style.opacity = 1;
+  const r = tip().getBoundingClientRect();
+  tip().style.left = Math.min(window.innerWidth - r.width - 8, Math.max(8, x - r.width / 2)) + 'px';
+  tip().style.top  = Math.max(8, y - r.height - 12) + 'px';
+}
+document.addEventListener('pointerover', e => {
+  const b = e.target.closest('.bar');
+  if (b) showTip(b, e.clientX, e.clientY); else tip().style.opacity = 0;
+});
+document.addEventListener('pointermove', e => {
+  const b = e.target.closest('.bar');
+  if (b) showTip(b, e.clientX, e.clientY);
+});
+document.addEventListener('focusin', e => {
+  const b = e.target.closest('.bar');
+  if (b){ const r = b.getBoundingClientRect(); showTip(b, r.left + r.width / 2, r.top); }
+});
+document.addEventListener('scroll', () => tip().style.opacity = 0, true);
+
+document.addEventListener('input', e => {
+  if (e.target.id === 'q'){ q = e.target.value; render();
+    const i = el('q'); if (i){ i.focus(); i.setSelectionRange(i.value.length, i.value.length); } }
+});
+document.addEventListener('change', e => {
+  if (e.target.id === 'conf') conf = e.target.value;
+  else if (e.target.id === 'sort') sort = e.target.value;
+  else return;
+  render();
+});
+document.addEventListener('click', e => {
+  if (e.target.id === 'numsBtn'){ showNums = !showNums; render(); return; }
+  if (e.target.id === 'viewBtn'){
+    table = !table;
+    e.target.setAttribute('aria-pressed', table);
+    e.target.textContent = table ? 'Charts' : 'Table';
+    render(); return;
+  }
+  if (e.target.id === 'themeBtn'){
+    const now = document.documentElement.getAttribute('data-theme');
+    const dark = now ? now === 'dark' : matchMedia('(prefers-color-scheme:dark)').matches;
+    document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
+  }
+});
+
+render();
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => fitAll(document));
+</script>
+</body>
+</html>

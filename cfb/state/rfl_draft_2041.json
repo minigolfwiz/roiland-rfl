@@ -1,0 +1,1966 @@
+{
+"season": 15,
+"picks": [
+{
+"overall": 1,
+"round": 1,
+"pick": 1,
+"rfl_team": "Vaughn Bay Silverbacks",
+"pid": 2005850
+},
+{
+"overall": 2,
+"round": 1,
+"pick": 2,
+"rfl_team": "Palm Creek Leatherbacks",
+"pid": 2006461
+},
+{
+"overall": 3,
+"round": 1,
+"pick": 3,
+"rfl_team": "New Madrid Mastiffs",
+"pid": 2002977
+},
+{
+"overall": 4,
+"round": 1,
+"pick": 4,
+"rfl_team": "Fiota Bay T-Rexes",
+"pid": 2008196
+},
+{
+"overall": 5,
+"round": 1,
+"pick": 5,
+"rfl_team": "El Latigo Shredders",
+"pid": 2007137
+},
+{
+"overall": 6,
+"round": 1,
+"pick": 6,
+"rfl_team": "Purcell Rapids",
+"pid": 2000579
+},
+{
+"overall": 7,
+"round": 1,
+"pick": 7,
+"rfl_team": "Rogaela Rovers",
+"pid": 2007787
+},
+{
+"overall": 8,
+"round": 1,
+"pick": 8,
+"rfl_team": "Coachville Mastodons",
+"pid": 2008248
+},
+{
+"overall": 9,
+"round": 1,
+"pick": 9,
+"rfl_team": "Tengus City Terrors",
+"pid": 2005880
+},
+{
+"overall": 10,
+"round": 1,
+"pick": 10,
+"rfl_team": "Classetto Cavemen",
+"pid": 2007170
+},
+{
+"overall": 11,
+"round": 1,
+"pick": 11,
+"rfl_team": "Canesta Dales",
+"pid": 2003373
+},
+{
+"overall": 12,
+"round": 1,
+"pick": 12,
+"rfl_team": "Bruca Beach Hammerheads",
+"pid": 2000547
+},
+{
+"overall": 13,
+"round": 1,
+"pick": 13,
+"rfl_team": "Verigon Komodos",
+"pid": 2001943
+},
+{
+"overall": 14,
+"round": 1,
+"pick": 14,
+"rfl_team": "Good River Rangers",
+"pid": 2005527
+},
+{
+"overall": 15,
+"round": 1,
+"pick": 15,
+"rfl_team": "Crayellan Redwoods",
+"pid": 2001029
+},
+{
+"overall": 16,
+"round": 1,
+"pick": 16,
+"rfl_team": "Stamford Grays",
+"pid": 2008667
+},
+{
+"overall": 17,
+"round": 1,
+"pick": 17,
+"rfl_team": "Port Logan Commodores",
+"pid": 2002432
+},
+{
+"overall": 18,
+"round": 1,
+"pick": 18,
+"rfl_team": "Fiota Swords",
+"pid": 2003628
+},
+{
+"overall": 19,
+"round": 1,
+"pick": 19,
+"rfl_team": "Diamond City Hope",
+"pid": 2007181
+},
+{
+"overall": 20,
+"round": 1,
+"pick": 20,
+"rfl_team": "Eona Topcats",
+"pid": 2005939
+},
+{
+"overall": 21,
+"round": 1,
+"pick": 21,
+"rfl_team": "San Saltadac Sea Lions",
+"pid": 2006192
+},
+{
+"overall": 22,
+"round": 1,
+"pick": 22,
+"rfl_team": "Underwood Bats",
+"pid": 2001817
+},
+{
+"overall": 23,
+"round": 1,
+"pick": 23,
+"rfl_team": "Holliday Beetles",
+"pid": 2003559
+},
+{
+"overall": 24,
+"round": 1,
+"pick": 24,
+"rfl_team": "Stanton City Conductors",
+"pid": 2000248
+},
+{
+"overall": 25,
+"round": 1,
+"pick": 25,
+"rfl_team": "South Burke Tsunami",
+"pid": 2009410
+},
+{
+"overall": 26,
+"round": 1,
+"pick": 26,
+"rfl_team": "Lornaman Renegades",
+"pid": 2007317
+},
+{
+"overall": 27,
+"round": 1,
+"pick": 27,
+"rfl_team": "North Hatesei Bees",
+"pid": 2004161
+},
+{
+"overall": 28,
+"round": 1,
+"pick": 28,
+"rfl_team": "Billiataho Greats",
+"pid": 2004192
+},
+{
+"overall": 29,
+"round": 1,
+"pick": 29,
+"rfl_team": "Queensville Phenoms",
+"pid": 2006721
+},
+{
+"overall": 30,
+"round": 1,
+"pick": 30,
+"rfl_team": "Costique Bearcats",
+"pid": 2004060
+},
+{
+"overall": 31,
+"round": 1,
+"pick": 31,
+"rfl_team": "Sarkady Beavers",
+"pid": 2008346
+},
+{
+"overall": 32,
+"round": 1,
+"pick": 32,
+"rfl_team": "Ediville Brass Tigers",
+"pid": 2008877
+},
+{
+"overall": 33,
+"round": 1,
+"pick": 33,
+"rfl_team": "Wolford Dragons",
+"pid": 2005759
+},
+{
+"overall": 34,
+"round": 1,
+"pick": 34,
+"rfl_team": "Cordelle Raptors",
+"pid": 2003658
+},
+{
+"overall": 35,
+"round": 1,
+"pick": 35,
+"rfl_team": "Chapel Rock Crowns",
+"pid": 2005745
+},
+{
+"overall": 36,
+"round": 1,
+"pick": 36,
+"rfl_team": "El Latigo Shredders",
+"pid": 2002002
+},
+{
+"overall": 37,
+"round": 1,
+"pick": 37,
+"rfl_team": "Hughes City Asteroids",
+"pid": 2002813
+},
+{
+"overall": 38,
+"round": 1,
+"pick": 38,
+"rfl_team": "Diamond City Dynamos",
+"pid": 2008523
+},
+{
+"overall": 39,
+"round": 1,
+"pick": 39,
+"rfl_team": "Fiota Bay T-Rexes",
+"pid": 2004993
+},
+{
+"overall": 40,
+"round": 1,
+"pick": 40,
+"rfl_team": "Purcell Rapids",
+"pid": 2000201
+},
+{
+"overall": 41,
+"round": 2,
+"pick": 1,
+"rfl_team": "Vaughn Bay Silverbacks",
+"pid": 2006785
+},
+{
+"overall": 42,
+"round": 2,
+"pick": 2,
+"rfl_team": "Palm Creek Leatherbacks",
+"pid": 2005585
+},
+{
+"overall": 43,
+"round": 2,
+"pick": 3,
+"rfl_team": "New Madrid Mastiffs",
+"pid": 2002520
+},
+{
+"overall": 44,
+"round": 2,
+"pick": 4,
+"rfl_team": "North Hatesei Bees",
+"pid": 2003273
+},
+{
+"overall": 45,
+"round": 2,
+"pick": 5,
+"rfl_team": "Tasson Thunderbugs",
+"pid": 2002134
+},
+{
+"overall": 46,
+"round": 2,
+"pick": 6,
+"rfl_team": "Far Farris Raccoons",
+"pid": 2006679
+},
+{
+"overall": 47,
+"round": 2,
+"pick": 7,
+"rfl_team": "Rogaela Rovers",
+"pid": 2006023
+},
+{
+"overall": 48,
+"round": 2,
+"pick": 8,
+"rfl_team": "Coachville Mastodons",
+"pid": 2008362
+},
+{
+"overall": 49,
+"round": 2,
+"pick": 9,
+"rfl_team": "Tengus City Terrors",
+"pid": 2007794
+},
+{
+"overall": 50,
+"round": 2,
+"pick": 10,
+"rfl_team": "Classetto Cavemen",
+"pid": 2006687
+},
+{
+"overall": 51,
+"round": 2,
+"pick": 11,
+"rfl_team": "Crayellan Redwoods",
+"pid": 2006750
+},
+{
+"overall": 52,
+"round": 2,
+"pick": 12,
+"rfl_team": "Bruca Beach Hammerheads",
+"pid": 2002038
+},
+{
+"overall": 53,
+"round": 2,
+"pick": 13,
+"rfl_team": "Verigon Komodos",
+"pid": 2007090
+},
+{
+"overall": 54,
+"round": 2,
+"pick": 14,
+"rfl_team": "Good River Rangers",
+"pid": 2000576
+},
+{
+"overall": 55,
+"round": 2,
+"pick": 15,
+"rfl_team": "Canesta Dales",
+"pid": 2006423
+},
+{
+"overall": 56,
+"round": 2,
+"pick": 16,
+"rfl_team": "Stamford Grays",
+"pid": 2006725
+},
+{
+"overall": 57,
+"round": 2,
+"pick": 17,
+"rfl_team": "Port Logan Commodores",
+"pid": 2001346
+},
+{
+"overall": 58,
+"round": 2,
+"pick": 18,
+"rfl_team": "Fiota Swords",
+"pid": 2004991
+},
+{
+"overall": 59,
+"round": 2,
+"pick": 19,
+"rfl_team": "Diamond City Hope",
+"pid": 2003103
+},
+{
+"overall": 60,
+"round": 2,
+"pick": 20,
+"rfl_team": "Costique Bearcats",
+"pid": 2001700
+},
+{
+"overall": 61,
+"round": 2,
+"pick": 21,
+"rfl_team": "San Saltadac Sea Lions",
+"pid": 2006722
+},
+{
+"overall": 62,
+"round": 2,
+"pick": 22,
+"rfl_team": "Underwood Bats",
+"pid": 2009052
+},
+{
+"overall": 63,
+"round": 2,
+"pick": 23,
+"rfl_team": "Wolford Dragons",
+"pid": 2003465
+},
+{
+"overall": 64,
+"round": 2,
+"pick": 24,
+"rfl_team": "Stanton City Conductors",
+"pid": 2007823
+},
+{
+"overall": 65,
+"round": 2,
+"pick": 25,
+"rfl_team": "South Burke Tsunami",
+"pid": 2000152
+},
+{
+"overall": 66,
+"round": 2,
+"pick": 26,
+"rfl_team": "Lornaman Renegades",
+"pid": 2002799
+},
+{
+"overall": 67,
+"round": 2,
+"pick": 27,
+"rfl_team": "North Hatesei Bees",
+"pid": 2000568
+},
+{
+"overall": 68,
+"round": 2,
+"pick": 28,
+"rfl_team": "Billiataho Greats",
+"pid": 2007411
+},
+{
+"overall": 69,
+"round": 2,
+"pick": 29,
+"rfl_team": "El Latigo Shredders",
+"pid": 2005292
+},
+{
+"overall": 70,
+"round": 2,
+"pick": 30,
+"rfl_team": "Eona Topcats",
+"pid": 2005128
+},
+{
+"overall": 71,
+"round": 2,
+"pick": 31,
+"rfl_team": "Sarkady Beavers",
+"pid": 2009896
+},
+{
+"overall": 72,
+"round": 2,
+"pick": 32,
+"rfl_team": "Hughes City Asteroids",
+"pid": 2006748
+},
+{
+"overall": 73,
+"round": 2,
+"pick": 33,
+"rfl_team": "Holliday Beetles",
+"pid": 2002785
+},
+{
+"overall": 74,
+"round": 2,
+"pick": 34,
+"rfl_team": "Cordelle Raptors",
+"pid": 2005637
+},
+{
+"overall": 75,
+"round": 2,
+"pick": 35,
+"rfl_team": "Chapel Rock Crowns",
+"pid": 2009933
+},
+{
+"overall": 76,
+"round": 2,
+"pick": 36,
+"rfl_team": "Queensville Phenoms",
+"pid": 2004259
+},
+{
+"overall": 77,
+"round": 2,
+"pick": 37,
+"rfl_team": "Hughes City Asteroids",
+"pid": 2004108
+},
+{
+"overall": 78,
+"round": 2,
+"pick": 38,
+"rfl_team": "Diamond City Dynamos",
+"pid": 2006718
+},
+{
+"overall": 79,
+"round": 2,
+"pick": 39,
+"rfl_team": "Fiota Bay T-Rexes",
+"pid": 2009030
+},
+{
+"overall": 80,
+"round": 2,
+"pick": 40,
+"rfl_team": "Purcell Rapids",
+"pid": 2001976
+},
+{
+"overall": 81,
+"round": 3,
+"pick": 1,
+"rfl_team": "Vaughn Bay Silverbacks",
+"pid": 2007975
+},
+{
+"overall": 82,
+"round": 3,
+"pick": 2,
+"rfl_team": "Palm Creek Leatherbacks",
+"pid": 2008807
+},
+{
+"overall": 83,
+"round": 3,
+"pick": 3,
+"rfl_team": "New Madrid Mastiffs",
+"pid": 2005834
+},
+{
+"overall": 84,
+"round": 3,
+"pick": 4,
+"rfl_team": "Diveo Demons",
+"pid": 2007155
+},
+{
+"overall": 85,
+"round": 3,
+"pick": 5,
+"rfl_team": "Tasson Thunderbugs",
+"pid": 2007289
+},
+{
+"overall": 86,
+"round": 3,
+"pick": 6,
+"rfl_team": "Far Farris Raccoons",
+"pid": 2003369
+},
+{
+"overall": 87,
+"round": 3,
+"pick": 7,
+"rfl_team": "Rogaela Rovers",
+"pid": 2001010
+},
+{
+"overall": 88,
+"round": 3,
+"pick": 8,
+"rfl_team": "Coachville Mastodons",
+"pid": 2004021
+},
+{
+"overall": 89,
+"round": 3,
+"pick": 9,
+"rfl_team": "Tengus City Terrors",
+"pid": 2009387
+},
+{
+"overall": 90,
+"round": 3,
+"pick": 10,
+"rfl_team": "Classetto Cavemen",
+"pid": 2005724
+},
+{
+"overall": 91,
+"round": 3,
+"pick": 11,
+"rfl_team": "Crayellan Redwoods",
+"pid": 2007947
+},
+{
+"overall": 92,
+"round": 3,
+"pick": 12,
+"rfl_team": "Bruca Beach Hammerheads",
+"pid": 2008023
+},
+{
+"overall": 93,
+"round": 3,
+"pick": 13,
+"rfl_team": "Verigon Komodos",
+"pid": 2004519
+},
+{
+"overall": 94,
+"round": 3,
+"pick": 14,
+"rfl_team": "Good River Rangers",
+"pid": 2007516
+},
+{
+"overall": 95,
+"round": 3,
+"pick": 15,
+"rfl_team": "Canesta Dales",
+"pid": 2005020
+},
+{
+"overall": 96,
+"round": 3,
+"pick": 16,
+"rfl_team": "Stamford Grays",
+"pid": 2001485
+},
+{
+"overall": 97,
+"round": 3,
+"pick": 17,
+"rfl_team": "Port Logan Commodores",
+"pid": 2006685
+},
+{
+"overall": 98,
+"round": 3,
+"pick": 18,
+"rfl_team": "Fiota Swords",
+"pid": 2003153
+},
+{
+"overall": 99,
+"round": 3,
+"pick": 19,
+"rfl_team": "Diamond City Hope",
+"pid": 2000573
+},
+{
+"overall": 100,
+"round": 3,
+"pick": 20,
+"rfl_team": "Costique Bearcats",
+"pid": 2001284
+},
+{
+"overall": 101,
+"round": 3,
+"pick": 21,
+"rfl_team": "San Saltadac Sea Lions",
+"pid": 2006807
+},
+{
+"overall": 102,
+"round": 3,
+"pick": 22,
+"rfl_team": "Underwood Bats",
+"pid": 2001985
+},
+{
+"overall": 103,
+"round": 3,
+"pick": 23,
+"rfl_team": "Wolford Dragons",
+"pid": 2006421
+},
+{
+"overall": 104,
+"round": 3,
+"pick": 24,
+"rfl_team": "Stanton City Conductors",
+"pid": 2008596
+},
+{
+"overall": 105,
+"round": 3,
+"pick": 25,
+"rfl_team": "South Burke Tsunami",
+"pid": 2006409
+},
+{
+"overall": 106,
+"round": 3,
+"pick": 26,
+"rfl_team": "Lornaman Renegades",
+"pid": 2006199
+},
+{
+"overall": 107,
+"round": 3,
+"pick": 27,
+"rfl_team": "North Hatesei Bees",
+"pid": 2007916
+},
+{
+"overall": 108,
+"round": 3,
+"pick": 28,
+"rfl_team": "Billiataho Greats",
+"pid": 2005845
+},
+{
+"overall": 109,
+"round": 3,
+"pick": 29,
+"rfl_team": "El Latigo Shredders",
+"pid": 2004987
+},
+{
+"overall": 110,
+"round": 3,
+"pick": 30,
+"rfl_team": "Eona Topcats",
+"pid": 2006791
+},
+{
+"overall": 111,
+"round": 3,
+"pick": 31,
+"rfl_team": "Sarkady Beavers",
+"pid": 2002980
+},
+{
+"overall": 112,
+"round": 3,
+"pick": 32,
+"rfl_team": "Ediville Brass Tigers",
+"pid": 2008335
+},
+{
+"overall": 113,
+"round": 3,
+"pick": 33,
+"rfl_team": "Holliday Beetles",
+"pid": 2000447
+},
+{
+"overall": 114,
+"round": 3,
+"pick": 34,
+"rfl_team": "Cordelle Raptors",
+"pid": 2005860
+},
+{
+"overall": 115,
+"round": 3,
+"pick": 35,
+"rfl_team": "Chapel Rock Crowns",
+"pid": 2006416
+},
+{
+"overall": 116,
+"round": 3,
+"pick": 36,
+"rfl_team": "Queensville Phenoms",
+"pid": 2002961
+},
+{
+"overall": 117,
+"round": 3,
+"pick": 37,
+"rfl_team": "Hughes City Asteroids",
+"pid": 2009809
+},
+{
+"overall": 118,
+"round": 3,
+"pick": 38,
+"rfl_team": "Diamond City Dynamos",
+"pid": 2002768
+},
+{
+"overall": 119,
+"round": 3,
+"pick": 39,
+"rfl_team": "Fiota Bay T-Rexes",
+"pid": 2001185
+},
+{
+"overall": 120,
+"round": 3,
+"pick": 40,
+"rfl_team": "Purcell Rapids",
+"pid": 2002765
+},
+{
+"overall": 121,
+"round": 4,
+"pick": 1,
+"rfl_team": "Vaughn Bay Silverbacks",
+"pid": 2006381
+},
+{
+"overall": 122,
+"round": 4,
+"pick": 2,
+"rfl_team": "Palm Creek Leatherbacks",
+"pid": 2001026
+},
+{
+"overall": 123,
+"round": 4,
+"pick": 3,
+"rfl_team": "New Madrid Mastiffs",
+"pid": 2004427
+},
+{
+"overall": 124,
+"round": 4,
+"pick": 4,
+"rfl_team": "Diveo Demons",
+"pid": 2000314
+},
+{
+"overall": 125,
+"round": 4,
+"pick": 5,
+"rfl_team": "Tasson Thunderbugs",
+"pid": 2008269
+},
+{
+"overall": 126,
+"round": 4,
+"pick": 6,
+"rfl_team": "Far Farris Raccoons",
+"pid": 2001747
+},
+{
+"overall": 127,
+"round": 4,
+"pick": 7,
+"rfl_team": "Rogaela Rovers",
+"pid": 2004001
+},
+{
+"overall": 128,
+"round": 4,
+"pick": 8,
+"rfl_team": "Coachville Mastodons",
+"pid": 2005597
+},
+{
+"overall": 129,
+"round": 4,
+"pick": 9,
+"rfl_team": "Tengus City Terrors",
+"pid": 2000448
+},
+{
+"overall": 130,
+"round": 4,
+"pick": 10,
+"rfl_team": "Classetto Cavemen",
+"pid": 2006398
+},
+{
+"overall": 131,
+"round": 4,
+"pick": 11,
+"rfl_team": "Crayellan Redwoods",
+"pid": 2004609
+},
+{
+"overall": 132,
+"round": 4,
+"pick": 12,
+"rfl_team": "Bruca Beach Hammerheads",
+"pid": 2000188
+},
+{
+"overall": 133,
+"round": 4,
+"pick": 13,
+"rfl_team": "Verigon Komodos",
+"pid": 2008695
+},
+{
+"overall": 134,
+"round": 4,
+"pick": 14,
+"rfl_team": "Good River Rangers",
+"pid": 2008661
+},
+{
+"overall": 135,
+"round": 4,
+"pick": 15,
+"rfl_team": "Canesta Dales",
+"pid": 2004717
+},
+{
+"overall": 136,
+"round": 4,
+"pick": 16,
+"rfl_team": "Stamford Grays",
+"pid": 2004064
+},
+{
+"overall": 137,
+"round": 4,
+"pick": 17,
+"rfl_team": "Port Logan Commodores",
+"pid": 2002798
+},
+{
+"overall": 138,
+"round": 4,
+"pick": 18,
+"rfl_team": "Fiota Swords",
+"pid": 2007865
+},
+{
+"overall": 139,
+"round": 4,
+"pick": 19,
+"rfl_team": "Diamond City Hope",
+"pid": 2006753
+},
+{
+"overall": 140,
+"round": 4,
+"pick": 20,
+"rfl_team": "Costique Bearcats",
+"pid": "SUB_9"
+},
+{
+"overall": 141,
+"round": 4,
+"pick": 21,
+"rfl_team": "San Saltadac Sea Lions",
+"pid": 2003467
+},
+{
+"overall": 142,
+"round": 4,
+"pick": 22,
+"rfl_team": "Underwood Bats",
+"pid": 2006075
+},
+{
+"overall": 143,
+"round": 4,
+"pick": 23,
+"rfl_team": "Wolford Dragons",
+"pid": 2006164
+},
+{
+"overall": 144,
+"round": 4,
+"pick": 24,
+"rfl_team": "Stanton City Conductors",
+"pid": 2008856
+},
+{
+"overall": 145,
+"round": 4,
+"pick": 25,
+"rfl_team": "South Burke Tsunami",
+"pid": 2000926
+},
+{
+"overall": 146,
+"round": 4,
+"pick": 26,
+"rfl_team": "Lornaman Renegades",
+"pid": 2002294
+},
+{
+"overall": 147,
+"round": 4,
+"pick": 27,
+"rfl_team": "North Hatesei Bees",
+"pid": 2003617
+},
+{
+"overall": 148,
+"round": 4,
+"pick": 28,
+"rfl_team": "Billiataho Greats",
+"pid": 2000165
+},
+{
+"overall": 149,
+"round": 4,
+"pick": 29,
+"rfl_team": "El Latigo Shredders",
+"pid": 2005601
+},
+{
+"overall": 150,
+"round": 4,
+"pick": 30,
+"rfl_team": "Eona Topcats",
+"pid": 2004184
+},
+{
+"overall": 151,
+"round": 4,
+"pick": 31,
+"rfl_team": "Sarkady Beavers",
+"pid": 2004959
+},
+{
+"overall": 152,
+"round": 4,
+"pick": 32,
+"rfl_team": "Ediville Brass Tigers",
+"pid": 2003363
+},
+{
+"overall": 153,
+"round": 4,
+"pick": 33,
+"rfl_team": "Holliday Beetles",
+"pid": 2006441
+},
+{
+"overall": 154,
+"round": 4,
+"pick": 34,
+"rfl_team": "Cordelle Raptors",
+"pid": 2007162
+},
+{
+"overall": 155,
+"round": 4,
+"pick": 35,
+"rfl_team": "Chapel Rock Crowns",
+"pid": 2002048
+},
+{
+"overall": 156,
+"round": 4,
+"pick": 36,
+"rfl_team": "Queensville Phenoms",
+"pid": 2007982
+},
+{
+"overall": 157,
+"round": 4,
+"pick": 37,
+"rfl_team": "Hughes City Asteroids",
+"pid": "SUB_21"
+},
+{
+"overall": 158,
+"round": 4,
+"pick": 38,
+"rfl_team": "Diamond City Dynamos",
+"pid": 2003094
+},
+{
+"overall": 159,
+"round": 4,
+"pick": 39,
+"rfl_team": "Fiota Bay T-Rexes",
+"pid": 2000961
+},
+{
+"overall": 160,
+"round": 4,
+"pick": 40,
+"rfl_team": "Purcell Rapids",
+"pid": 2002796
+},
+{
+"overall": 161,
+"round": 5,
+"pick": 1,
+"rfl_team": "Vaughn Bay Silverbacks",
+"pid": 2004551
+},
+{
+"overall": 162,
+"round": 5,
+"pick": 2,
+"rfl_team": "Palm Creek Leatherbacks",
+"pid": 2005015
+},
+{
+"overall": 163,
+"round": 5,
+"pick": 3,
+"rfl_team": "New Madrid Mastiffs",
+"pid": 2008282
+},
+{
+"overall": 164,
+"round": 5,
+"pick": 4,
+"rfl_team": "Diveo Demons",
+"pid": 2006006
+},
+{
+"overall": 165,
+"round": 5,
+"pick": 5,
+"rfl_team": "Tasson Thunderbugs",
+"pid": 2002827
+},
+{
+"overall": 166,
+"round": 5,
+"pick": 6,
+"rfl_team": "Far Farris Raccoons",
+"pid": 2002712
+},
+{
+"overall": 167,
+"round": 5,
+"pick": 7,
+"rfl_team": "Rogaela Rovers",
+"pid": 2006784
+},
+{
+"overall": 168,
+"round": 5,
+"pick": 8,
+"rfl_team": "Coachville Mastodons",
+"pid": 2008329
+},
+{
+"overall": 169,
+"round": 5,
+"pick": 9,
+"rfl_team": "Tengus City Terrors",
+"pid": 2009785
+},
+{
+"overall": 170,
+"round": 5,
+"pick": 10,
+"rfl_team": "Classetto Cavemen",
+"pid": 2007309
+},
+{
+"overall": 171,
+"round": 5,
+"pick": 11,
+"rfl_team": "Crayellan Redwoods",
+"pid": 2009276
+},
+{
+"overall": 172,
+"round": 5,
+"pick": 12,
+"rfl_team": "Bruca Beach Hammerheads",
+"pid": 2009544
+},
+{
+"overall": 173,
+"round": 5,
+"pick": 13,
+"rfl_team": "Verigon Komodos",
+"pid": 2000062
+},
+{
+"overall": 174,
+"round": 5,
+"pick": 14,
+"rfl_team": "Good River Rangers",
+"pid": 2003894
+},
+{
+"overall": 175,
+"round": 5,
+"pick": 15,
+"rfl_team": "Canesta Dales",
+"pid": 2005867
+},
+{
+"overall": 176,
+"round": 5,
+"pick": 16,
+"rfl_team": "Stamford Grays",
+"pid": 2004160
+},
+{
+"overall": 177,
+"round": 5,
+"pick": 17,
+"rfl_team": "Port Logan Commodores",
+"pid": 2004355
+},
+{
+"overall": 178,
+"round": 5,
+"pick": 18,
+"rfl_team": "Fiota Swords",
+"pid": 2005003
+},
+{
+"overall": 179,
+"round": 5,
+"pick": 19,
+"rfl_team": "Diamond City Hope",
+"pid": 2007369
+},
+{
+"overall": 180,
+"round": 5,
+"pick": 20,
+"rfl_team": "Costique Bearcats",
+"pid": 2001552
+},
+{
+"overall": 181,
+"round": 5,
+"pick": 21,
+"rfl_team": "San Saltadac Sea Lions",
+"pid": 2008279
+},
+{
+"overall": 182,
+"round": 5,
+"pick": 22,
+"rfl_team": "Underwood Bats",
+"pid": 2002306
+},
+{
+"overall": 183,
+"round": 5,
+"pick": 23,
+"rfl_team": "Wolford Dragons",
+"pid": 2008352
+},
+{
+"overall": 184,
+"round": 5,
+"pick": 24,
+"rfl_team": "Stanton City Conductors",
+"pid": 2000554
+},
+{
+"overall": 185,
+"round": 5,
+"pick": 25,
+"rfl_team": "South Burke Tsunami",
+"pid": 2002557
+},
+{
+"overall": 186,
+"round": 5,
+"pick": 26,
+"rfl_team": "Lornaman Renegades",
+"pid": 2000538
+},
+{
+"overall": 187,
+"round": 5,
+"pick": 27,
+"rfl_team": "North Hatesei Bees",
+"pid": "SUB_19"
+},
+{
+"overall": 188,
+"round": 5,
+"pick": 28,
+"rfl_team": "Billiataho Greats",
+"pid": 2009285
+},
+{
+"overall": 189,
+"round": 5,
+"pick": 29,
+"rfl_team": "El Latigo Shredders",
+"pid": 2001222
+},
+{
+"overall": 190,
+"round": 5,
+"pick": 30,
+"rfl_team": "Eona Topcats",
+"pid": 2009653
+},
+{
+"overall": 191,
+"round": 5,
+"pick": 31,
+"rfl_team": "Sarkady Beavers",
+"pid": 2006065
+},
+{
+"overall": 192,
+"round": 5,
+"pick": 32,
+"rfl_team": "Ediville Brass Tigers",
+"pid": 2004033
+},
+{
+"overall": 193,
+"round": 5,
+"pick": 33,
+"rfl_team": "Holliday Beetles",
+"pid": 2009568
+},
+{
+"overall": 194,
+"round": 5,
+"pick": 34,
+"rfl_team": "Cordelle Raptors",
+"pid": 2008862
+},
+{
+"overall": 195,
+"round": 5,
+"pick": 35,
+"rfl_team": "Chapel Rock Crowns",
+"pid": 2001675
+},
+{
+"overall": 196,
+"round": 5,
+"pick": 36,
+"rfl_team": "Queensville Phenoms",
+"pid": 2000072
+},
+{
+"overall": 197,
+"round": 5,
+"pick": 37,
+"rfl_team": "Hughes City Asteroids",
+"pid": 2007362
+},
+{
+"overall": 198,
+"round": 5,
+"pick": 38,
+"rfl_team": "Diamond City Dynamos",
+"pid": 2000178
+},
+{
+"overall": 199,
+"round": 5,
+"pick": 39,
+"rfl_team": "Fiota Bay T-Rexes",
+"pid": 2008441
+},
+{
+"overall": 200,
+"round": 5,
+"pick": 40,
+"rfl_team": "Purcell Rapids",
+"pid": "SUB_1"
+},
+{
+"overall": 201,
+"round": 6,
+"pick": 1,
+"rfl_team": "Vaughn Bay Silverbacks",
+"pid": 2007820
+},
+{
+"overall": 202,
+"round": 6,
+"pick": 2,
+"rfl_team": "Palm Creek Leatherbacks",
+"pid": 2007954
+},
+{
+"overall": 203,
+"round": 6,
+"pick": 3,
+"rfl_team": "New Madrid Mastiffs",
+"pid": 2002068
+},
+{
+"overall": 204,
+"round": 6,
+"pick": 4,
+"rfl_team": "Diveo Demons",
+"pid": 2009803
+},
+{
+"overall": 205,
+"round": 6,
+"pick": 5,
+"rfl_team": "Tasson Thunderbugs",
+"pid": 2000828
+},
+{
+"overall": 206,
+"round": 6,
+"pick": 6,
+"rfl_team": "Far Farris Raccoons",
+"pid": 2007833
+},
+{
+"overall": 207,
+"round": 6,
+"pick": 7,
+"rfl_team": "Rogaela Rovers",
+"pid": 2003025
+},
+{
+"overall": 208,
+"round": 6,
+"pick": 8,
+"rfl_team": "Coachville Mastodons",
+"pid": 2003447
+},
+{
+"overall": 209,
+"round": 6,
+"pick": 9,
+"rfl_team": "Tengus City Terrors",
+"pid": 2007949
+},
+{
+"overall": 210,
+"round": 6,
+"pick": 10,
+"rfl_team": "Classetto Cavemen",
+"pid": 2004709
+},
+{
+"overall": 211,
+"round": 6,
+"pick": 11,
+"rfl_team": "Crayellan Redwoods",
+"pid": 2001037
+},
+{
+"overall": 212,
+"round": 6,
+"pick": 12,
+"rfl_team": "Bruca Beach Hammerheads",
+"pid": 2003634
+},
+{
+"overall": 213,
+"round": 6,
+"pick": 13,
+"rfl_team": "Verigon Komodos",
+"pid": 2008255
+},
+{
+"overall": 214,
+"round": 6,
+"pick": 14,
+"rfl_team": "Good River Rangers",
+"pid": 2007734
+},
+{
+"overall": 215,
+"round": 6,
+"pick": 15,
+"rfl_team": "Canesta Dales",
+"pid": 2007149
+},
+{
+"overall": 216,
+"round": 6,
+"pick": 16,
+"rfl_team": "Stamford Grays",
+"pid": 2007806
+},
+{
+"overall": 217,
+"round": 6,
+"pick": 17,
+"rfl_team": "Port Logan Commodores",
+"pid": 2005726
+},
+{
+"overall": 218,
+"round": 6,
+"pick": 18,
+"rfl_team": "Fiota Swords",
+"pid": 2000418
+},
+{
+"overall": 219,
+"round": 6,
+"pick": 19,
+"rfl_team": "Diamond City Hope",
+"pid": 2002148
+},
+{
+"overall": 220,
+"round": 6,
+"pick": 20,
+"rfl_team": "Costique Bearcats",
+"pid": 2005758
+},
+{
+"overall": 221,
+"round": 6,
+"pick": 21,
+"rfl_team": "San Saltadac Sea Lions",
+"pid": 2001017
+},
+{
+"overall": 222,
+"round": 6,
+"pick": 22,
+"rfl_team": "Underwood Bats",
+"pid": 2001458
+},
+{
+"overall": 223,
+"round": 6,
+"pick": 23,
+"rfl_team": "Wolford Dragons",
+"pid": 2006772
+},
+{
+"overall": 224,
+"round": 6,
+"pick": 24,
+"rfl_team": "Stanton City Conductors",
+"pid": 2000853
+},
+{
+"overall": 225,
+"round": 6,
+"pick": 25,
+"rfl_team": "South Burke Tsunami",
+"pid": 2009802
+},
+{
+"overall": 226,
+"round": 6,
+"pick": 26,
+"rfl_team": "Lornaman Renegades",
+"pid": 2008257
+},
+{
+"overall": 227,
+"round": 6,
+"pick": 27,
+"rfl_team": "North Hatesei Bees",
+"pid": 2003810
+},
+{
+"overall": 228,
+"round": 6,
+"pick": 28,
+"rfl_team": "Billiataho Greats",
+"pid": 2001016
+},
+{
+"overall": 229,
+"round": 6,
+"pick": 29,
+"rfl_team": "El Latigo Shredders",
+"pid": 2007298
+},
+{
+"overall": 230,
+"round": 6,
+"pick": 30,
+"rfl_team": "Eona Topcats",
+"pid": 2008948
+},
+{
+"overall": 231,
+"round": 6,
+"pick": 31,
+"rfl_team": "Sarkady Beavers",
+"pid": 2005350
+},
+{
+"overall": 232,
+"round": 6,
+"pick": 32,
+"rfl_team": "Ediville Brass Tigers",
+"pid": 2006764
+},
+{
+"overall": 233,
+"round": 6,
+"pick": 33,
+"rfl_team": "Holliday Beetles",
+"pid": 2002962
+},
+{
+"overall": 234,
+"round": 6,
+"pick": 34,
+"rfl_team": "Cordelle Raptors",
+"pid": 2000825
+},
+{
+"overall": 235,
+"round": 6,
+"pick": 35,
+"rfl_team": "Chapel Rock Crowns",
+"pid": 2008399
+},
+{
+"overall": 236,
+"round": 6,
+"pick": 36,
+"rfl_team": "Queensville Phenoms",
+"pid": 2003413
+},
+{
+"overall": 237,
+"round": 6,
+"pick": 37,
+"rfl_team": "Hughes City Asteroids",
+"pid": 2005284
+},
+{
+"overall": 238,
+"round": 6,
+"pick": 38,
+"rfl_team": "Diamond City Dynamos",
+"pid": 2008772
+},
+{
+"overall": 239,
+"round": 6,
+"pick": 39,
+"rfl_team": "Fiota Bay T-Rexes",
+"pid": 2008764
+},
+{
+"overall": 240,
+"round": 6,
+"pick": 40,
+"rfl_team": "Purcell Rapids",
+"pid": 2007146
+},
+{
+"overall": 241,
+"round": 7,
+"pick": 1,
+"rfl_team": "Vaughn Bay Silverbacks",
+"pid": 2009067
+},
+{
+"overall": 242,
+"round": 7,
+"pick": 2,
+"rfl_team": "Palm Creek Leatherbacks",
+"pid": 2007278
+},
+{
+"overall": 243,
+"round": 7,
+"pick": 3,
+"rfl_team": "New Madrid Mastiffs",
+"pid": 2007791
+},
+{
+"overall": 244,
+"round": 7,
+"pick": 4,
+"rfl_team": "Diveo Demons",
+"pid": 2004268
+},
+{
+"overall": 245,
+"round": 7,
+"pick": 5,
+"rfl_team": "Tasson Thunderbugs",
+"pid": 2000586
+},
+{
+"overall": 246,
+"round": 7,
+"pick": 6,
+"rfl_team": "Far Farris Raccoons",
+"pid": 2001001
+},
+{
+"overall": 247,
+"round": 7,
+"pick": 7,
+"rfl_team": "Rogaela Rovers",
+"pid": 2003155
+},
+{
+"overall": 248,
+"round": 7,
+"pick": 8,
+"rfl_team": "Coachville Mastodons",
+"pid": 2000106
+},
+{
+"overall": 249,
+"round": 7,
+"pick": 9,
+"rfl_team": "Tengus City Terrors",
+"pid": 2007821
+},
+{
+"overall": 250,
+"round": 7,
+"pick": 10,
+"rfl_team": "Classetto Cavemen",
+"pid": 2001751
+},
+{
+"overall": 251,
+"round": 7,
+"pick": 11,
+"rfl_team": "Crayellan Redwoods",
+"pid": 2009044
+},
+{
+"overall": 252,
+"round": 7,
+"pick": 12,
+"rfl_team": "Bruca Beach Hammerheads",
+"pid": 2005607
+},
+{
+"overall": 253,
+"round": 7,
+"pick": 13,
+"rfl_team": "Verigon Komodos",
+"pid": 2005869
+},
+{
+"overall": 254,
+"round": 7,
+"pick": 14,
+"rfl_team": "Good River Rangers",
+"pid": 2008696
+},
+{
+"overall": 255,
+"round": 7,
+"pick": 15,
+"rfl_team": "Canesta Dales",
+"pid": 2005760
+},
+{
+"overall": 256,
+"round": 7,
+"pick": 16,
+"rfl_team": "Stamford Grays",
+"pid": 2006432
+},
+{
+"overall": 257,
+"round": 7,
+"pick": 17,
+"rfl_team": "Port Logan Commodores",
+"pid": 2001948
+},
+{
+"overall": 258,
+"round": 7,
+"pick": 18,
+"rfl_team": "Fiota Swords",
+"pid": 2003192
+},
+{
+"overall": 259,
+"round": 7,
+"pick": 19,
+"rfl_team": "Diamond City Hope",
+"pid": "SUB_15"
+},
+{
+"overall": 260,
+"round": 7,
+"pick": 20,
+"rfl_team": "Costique Bearcats",
+"pid": 2000565
+},
+{
+"overall": 261,
+"round": 7,
+"pick": 21,
+"rfl_team": "San Saltadac Sea Lions",
+"pid": 2001738
+},
+{
+"overall": 262,
+"round": 7,
+"pick": 22,
+"rfl_team": "Underwood Bats",
+"pid": 2007177
+},
+{
+"overall": 263,
+"round": 7,
+"pick": 23,
+"rfl_team": "Wolford Dragons",
+"pid": 2002078
+},
+{
+"overall": 264,
+"round": 7,
+"pick": 24,
+"rfl_team": "Stanton City Conductors",
+"pid": 2005271
+},
+{
+"overall": 265,
+"round": 7,
+"pick": 25,
+"rfl_team": "South Burke Tsunami",
+"pid": 2003138
+},
+{
+"overall": 266,
+"round": 7,
+"pick": 26,
+"rfl_team": "Lornaman Renegades",
+"pid": 2005379
+},
+{
+"overall": 267,
+"round": 7,
+"pick": 27,
+"rfl_team": "North Hatesei Bees",
+"pid": 2000216
+},
+{
+"overall": 268,
+"round": 7,
+"pick": 28,
+"rfl_team": "Billiataho Greats",
+"pid": 2007847
+},
+{
+"overall": 269,
+"round": 7,
+"pick": 29,
+"rfl_team": "El Latigo Shredders",
+"pid": 2006713
+},
+{
+"overall": 270,
+"round": 7,
+"pick": 30,
+"rfl_team": "Eona Topcats",
+"pid": 2001834
+},
+{
+"overall": 271,
+"round": 7,
+"pick": 31,
+"rfl_team": "Sarkady Beavers",
+"pid": 2003781
+},
+{
+"overall": 272,
+"round": 7,
+"pick": 32,
+"rfl_team": "Ediville Brass Tigers",
+"pid": 2006418
+},
+{
+"overall": 273,
+"round": 7,
+"pick": 33,
+"rfl_team": "Holliday Beetles",
+"pid": 2006473
+},
+{
+"overall": 274,
+"round": 7,
+"pick": 34,
+"rfl_team": "Cordelle Raptors",
+"pid": 2008662
+},
+{
+"overall": 275,
+"round": 7,
+"pick": 35,
+"rfl_team": "Chapel Rock Crowns",
+"pid": 2004013
+},
+{
+"overall": 276,
+"round": 7,
+"pick": 36,
+"rfl_team": "Queensville Phenoms",
+"pid": 2000319
+},
+{
+"overall": 277,
+"round": 7,
+"pick": 37,
+"rfl_team": "Hughes City Asteroids",
+"pid": 2004040
+},
+{
+"overall": 278,
+"round": 7,
+"pick": 38,
+"rfl_team": "Diamond City Dynamos",
+"pid": "SUB_6"
+},
+{
+"overall": 279,
+"round": 7,
+"pick": 39,
+"rfl_team": "Fiota Bay T-Rexes",
+"pid": "SUB_7"
+},
+{
+"overall": 280,
+"round": 7,
+"pick": 40,
+"rfl_team": "Purcell Rapids",
+"pid": 2009043
+}
+],
+"source": "project doc claude/rfl_draft_2041_picks.json"
+}

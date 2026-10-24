@@ -1,0 +1,204 @@
+<title>Roiland Team Marks</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Cinzel:wght@700;900&family=UnifrakturCook:wght@700&family=Oswald:wght@600;700&family=Alfa+Slab+One&family=Orbitron:wght@800;900&family=Bungee&family=Bowlby+One+SC&family=Archivo+Black&family=Rye&family=Righteous&display=swap">
+<style>
+/* Layout: a specimen board. Each mark is a letterform in a conference shape, so the page
+   stays achromatic and the only colour on screen is the teams' own. */
+:root{
+  --bg:#eceef1; --panel:#f8f9fb; --ink:#16191d; --dim:#636a74; --rule:#d2d7de;
+  --accent:#2d5a7c; --warn:#8a4b1a;
+  --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --bg:#14171a; --panel:#1c2024; --ink:#e7eaee; --dim:#8e96a1; --rule:#2d333a;
+  --accent:#7fb3d5; --warn:#d49a62; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#14171a; --panel:#1c2024; --ink:#e7eaee; --dim:#8e96a1; --rule:#2d333a;
+  --accent:#7fb3d5; --warn:#d49a62; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);margin:0;
+  font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px;padding-block:34px 70px}
+
+h1{font-size:30px;font-weight:600;letter-spacing:-.02em;margin:0 0 6px;text-wrap:balance}
+.lede{color:var(--dim);font-size:15.5px;max-width:64ch;margin:0 0 30px}
+h2{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--dim);margin:38px 0 13px;
+  padding-bottom:7px;border-bottom:1px solid var(--rule)}
+h2 em{font-style:normal;color:var(--accent);letter-spacing:.06em}
+
+/* the five from before, large */
+.five{display:grid;grid-template-columns:repeat(auto-fit,minmax(192px,1fr));gap:12px}
+.card{background:var(--panel);border:1px solid var(--rule);border-radius:7px;padding:16px 14px;
+  display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;min-width:0}
+.card .mk{width:76px;height:76px}
+.card .mk svg{width:76px;height:76px;display:block}
+.card .tn{font-weight:600;font-size:15px;letter-spacing:-.01em}
+.card .tm{font-family:var(--mono);font-size:10.5px;color:var(--dim)}
+.card .fnt{font-family:var(--mono);font-size:9.5px;color:var(--accent);letter-spacing:.06em;
+  text-transform:uppercase}
+.card .inline{display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:500}
+.card .inline svg{width:19px;height:19px;display:block;flex:0 0 auto}
+
+/* the twelve conferences */
+.confblock{margin-bottom:18px}
+.confname{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--dim);margin-bottom:7px;display:flex;align-items:baseline;gap:8px}
+.confname b{color:var(--ink);font-weight:600;letter-spacing:.04em}
+.strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:7px}
+.chip{display:flex;align-items:center;gap:9px;background:var(--panel);border:1px solid var(--rule);
+  border-radius:5px;padding:7px 10px;min-width:0}
+.chip svg{width:26px;height:26px;flex:0 0 auto;display:block}
+.chip .t{min-width:0}
+.chip .t b{display:block;font-size:12.5px;font-weight:600;letter-spacing:-.01em;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chip .t small{display:block;font-family:var(--mono);font-size:9.5px;color:var(--dim);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.listdemo{background:var(--panel);border:1px solid var(--rule);border-radius:6px;
+  padding:6px 4px;max-width:400px}
+.listdemo .row{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;
+  padding:8px 12px;border-bottom:1px solid var(--rule)}
+.listdemo .row:last-child{border-bottom:0}
+.listdemo .row svg{width:20px;height:20px;display:block}
+.listdemo .nm{font-size:14px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.listdemo .sc{font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums;color:var(--dim)}
+
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:13px}
+.note{background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:13px 15px}
+.note h3{font-size:14px;margin:0 0 5px;font-weight:600;letter-spacing:-.01em}
+.note p{margin:0;font-size:13px;color:var(--dim);line-height:1.55}
+.note .fx{font-family:var(--mono);font-size:10.5px;color:var(--accent);letter-spacing:.05em;
+  display:block;margin-top:8px}
+.flag{border-left:2px solid var(--warn);padding-left:12px;margin-top:20px;
+  font-size:13.5px;color:var(--dim);max-width:70ch}
+.flag b{color:var(--warn);font-weight:600}
+
+@media (max-width:760px){
+  .wrap{padding-inline:16px}
+  h1{font-size:24px}
+  .five{grid-template-columns:1fr 1fr}
+  .card .mk,.card .mk svg{width:62px;height:62px}
+  .strip{grid-template-columns:1fr}
+}
+</style>
+
+<div class="wrap">
+  <h1>Letterforms, not mascots</h1>
+  <p class="lede">Each program's initials set in a typeface chosen from what its mascot actually is —
+    blackletter for the ghosts and demons, slab for the livestock and the locomotives, a space face
+    for the cosmonauts — inside a shape that belongs to its conference. Nothing is drawn by hand,
+    so this covers all 369 schools.</p>
+
+  <h2>The same five <em>as before</em></h2>
+  <div class="five" id="five"></div>
+
+  <h2>Every conference has its own shape <em>12 of 12</em></h2>
+  <div id="conflist"></div>
+
+  <h2>All 152 <em id="allcount"></em>
+    <button id="allBtn" style="font:inherit;font-size:11px;font-family:var(--mono);
+      letter-spacing:.1em;text-transform:uppercase;cursor:pointer;background:var(--panel);
+      color:var(--ink);border:1px solid var(--rule);border-radius:4px;padding:4px 9px">show</button></h2>
+  <div id="allgrid" hidden></div>
+
+  <h2>In a results list</h2>
+  <div class="listdemo" id="listdemo"></div>
+
+  <h2>How the typeface gets picked</h2>
+  <div class="notes" id="fontnotes"></div>
+
+  <div class="flag">
+    <b>One thing I could not check.</b> The fonts load from Google, which this machine cannot
+    reach, so I have seen the layout but not the actual typefaces. Every monogram measures itself
+    once the fonts arrive and scales to fit its badge, so the letters stay centred and correctly
+    sized whatever metrics each face turns out to have — but if a particular face reads wrong to
+    you, that is the one thing here I could not judge for myself.
+  </div>
+</div>
+
+<script>
+/* ---------- every program, straight from the universe file ---------- */
+const DATA = __DATA__;
+const ALL = DATA.teams;
+const BY = {}; ALL.forEach(t => BY[t.name] = t);
+
+__MARKS__
+
+/* ---------- render ---------- */
+const esc = s => String(s).replace(/[&<>"']/g, c =>
+  ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+const FIVE = DATA.featured.map(n => BY[n]).filter(Boolean);
+document.getElementById("five").innerHTML = FIVE.map(t => {
+  const F = FONTS[fontFor(t.mascot)];
+  return `<div class="card">
+    <span class="mk">${mark(t)}</span>
+    <span>
+      <span class="tn">${esc(t.name)}</span><br>
+      <span class="tm">${esc(t.mascot)}</span>
+    </span>
+    <span class="fnt">${esc(F.label)}</span>
+    <span class="inline">${mark(t)}<span>${esc(t.name)}</span></span>
+  </div>`;
+}).join("");
+
+/* three per conference, chosen so the three use different typefaces where possible —
+   the point of the strip is to show the system varying, not to rank anybody */
+const byConf = {};
+DATA.conferences.forEach(conf => {
+  const pool = ALL.filter(t => t.conf === conf);
+  const picked = [], used = new Set();
+  for (const t of pool){
+    const f = fontFor(t.mascot);
+    if (!used.has(f)){ used.add(f); picked.push(t); }
+    if (picked.length === 3) break;
+  }
+  for (const t of pool){ if (picked.length >= 3) break; if (!picked.includes(t)) picked.push(t); }
+  byConf[conf] = picked;
+});
+document.getElementById("conflist").innerHTML = Object.keys(SHAPES).map(conf => {
+  const rows = byConf[conf] || [];
+  if (!rows.length) return "";
+  return `<div class="confblock">
+    <div class="confname"><b>${esc(conf)}</b> ${esc(SHAPE_NOTE[conf] || "")}</div>
+    <div class="strip">${rows.map(t => `<div class="chip">${mark(t)}
+      <span class="t"><b>${esc(t.name)}</b><small>${esc(t.mascot)} · ${esc(FONTS[fontFor(t.mascot)].label)}</small></span>
+    </div>`).join("")}</div></div>`;
+}).join("");
+
+const DEMO = ["Stanton","Churchill","Starfield","Hatesei","Orlot Western"];
+const DEMOSCORE = [31,17,24,38,10];
+document.getElementById("listdemo").innerHTML = DEMO.map((n, i) => {
+  const t = BY[n]; if (!t) return "";
+  return `<div class="row">${mark(t)}<span class="nm">${esc(n)}</span>
+    <span class="sc">${DEMOSCORE[i]}</span></div>`;
+}).join("");
+
+/* the full roster, so every programme's colours can be checked against the real thing */
+const allgrid = document.getElementById("allgrid");
+document.getElementById("allcount").textContent = ALL.length + " programs";
+document.getElementById("allBtn").addEventListener("click", e => {
+  const showing = !allgrid.hidden;
+  if (showing){ allgrid.hidden = true; e.target.textContent = "show"; return; }
+  if (!allgrid.innerHTML){
+    allgrid.innerHTML = `<div class="strip" style="grid-template-columns:repeat(auto-fill,minmax(168px,1fr))">`
+      + ALL.map(t => `<div class="chip">${mark(t)}<span class="t"><b>${esc(t.name)}</b>
+         <small>${esc(t.mascot)}</small></span></div>`).join("") + `</div>`;
+    fitAll(allgrid);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => fitAll(allgrid));
+  }
+  allgrid.hidden = false; e.target.textContent = "hide";
+});
+
+document.getElementById("fontnotes").innerHTML = Object.values(FONTS).map(F =>
+  `<div class="note"><h3 style="font-family:${F.css};font-weight:${F.w}">${esc(F.label)}</h3>
+   <p>${esc(F.why)}</p><span class="fx">${esc(F.label)}</span></div>`).join("");
+
+fitAll();
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => fitAll());
+window.addEventListener("load", () => fitAll());
+</script>

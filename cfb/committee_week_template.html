@@ -1,0 +1,535 @@
+<title>Committee Ballot</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=UnifrakturCook:wght@700&family=Oswald:wght@600;700&family=Alfa+Slab+One&family=Orbitron:wght@800;900&family=Bungee&family=Bowlby+One+SC&family=Archivo+Black&family=Rye&family=Righteous&display=swap">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+/* The same ledger desk as the Committee Room and the Scheduling Office: the board of all
+   152 at left in the computer's order, the ballot being built at right, and a résumé that
+   slides over when a programme is worth a closer look. */
+:root{
+  --paper:#f4efe4; --ink:#1d1a15; --dim:#6b6355; --rule:#d8cfbb; --card:#fffdf7;
+  --brass:#8a6410; --brass-soft:#b99a52; --win:#2f5d4a; --loss:#8c2f2f;
+  /* a quality loss is neither a credit nor a demerit, so it gets its own colour rather
+     than a shade of the win green or the loss red */
+  --qual:#6a3b8f;
+  --chip:#e9e1cd; --warn:#8a5a12;
+  --display:"Spectral",Georgia,"Times New Roman",serif;
+  --body:"Spectral",Georgia,serif;
+  --data:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --paper:#17150f; --ink:#ece6d7; --dim:#938b78; --rule:#332e24; --card:#201d15;
+  --brass:#d2ab5e; --brass-soft:#8a7542; --win:#79c3a2; --loss:#e0786f;
+  --qual:#bb95e0;
+  --chip:#2a2619; --warn:#d8a24a; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#17150f; --ink:#ece6d7; --dim:#938b78; --rule:#332e24; --card:#201d15;
+  --brass:#d2ab5e; --brass-soft:#8a7542; --win:#79c3a2; --loss:#e0786f;
+  --qual:#bb95e0;
+  --chip:#2a2619; --warn:#d8a24a; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);margin:0;
+  font-size:15px;line-height:1.45}
+.wrap{max-width:1380px;margin:0 auto;padding-inline:16px;padding-block:0 56px}
+main > *{min-width:0}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;
+  background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--rule);padding-block:11px;margin-bottom:14px}
+.topin{max-width:1380px;margin:0 auto;padding-inline:16px;display:flex;gap:13px;
+  align-items:baseline;flex-wrap:wrap}
+h1{font-family:var(--display);font-size:20px;font-weight:600;margin:0}
+h1 span{color:var(--brass)}
+.yr{font-family:var(--data);font-size:11.5px;color:var(--dim);letter-spacing:.14em}
+.spacer{flex:1 1 auto}
+.count{font-family:var(--data);font-size:12px;color:var(--dim)}
+.count b{color:var(--ink);font-weight:700}
+.savestate{font-family:var(--data);font-size:11.5px;color:var(--dim)}
+.savestate.dirty{color:var(--warn)} .savestate.ok{color:var(--win)} .savestate.bad{color:var(--loss)}
+
+button{font:inherit;cursor:pointer;border-radius:4px;border:1px solid var(--rule);
+  background:var(--card);color:var(--ink);padding:6px 11px;font-size:13px}
+button:hover{border-color:var(--brass-soft)}
+button:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+button.primary{background:var(--brass);border-color:var(--brass);color:var(--paper);font-weight:700}
+button.ghost{background:transparent}
+button.tiny{padding:3px 7px;font-size:11.5px;line-height:1.25}
+button[aria-pressed="true"]{background:var(--brass);border-color:var(--brass);color:var(--paper);font-weight:700}
+
+main{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+@media (max-width:1000px){ main{grid-template-columns:1fr} }
+
+h2.sec{font-family:var(--data);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--dim);margin:0 0 9px;padding-bottom:6px;border-bottom:1px solid var(--rule);
+  display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+h2.sec em{font-style:normal;color:var(--brass);letter-spacing:.06em}
+
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:9px}
+.filters input,.filters select{flex:1 1 140px;min-width:0;font:inherit;font-size:13px;
+  padding:5px 9px;border:1px solid var(--rule);border-radius:4px;background:var(--card);color:var(--ink)}
+select{max-width:100%}
+
+ul.list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px}
+.scroller{max-height:74vh;overflow:auto;padding-right:3px}
+li.row{display:grid;grid-template-columns:30px auto 1fr auto auto auto;gap:8px;align-items:center;
+  background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:6px 9px;min-width:0}
+li.row .nm{cursor:pointer}
+li.row .nm:hover b{color:var(--brass);text-decoration:underline;text-underline-offset:3px}
+li.row:hover{border-color:var(--brass-soft)}
+li.row.seated{opacity:.42}
+li.row.seated:hover{opacity:.7}
+.cr{font-family:var(--data);font-size:11px;color:var(--dim);text-align:right;
+  font-variant-numeric:tabular-nums}
+.bdg svg{width:20px;height:20px;display:block}
+.nm{min-width:0}
+.nm b{font-weight:600;display:block;font-size:13.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nm small{color:var(--dim);font-size:10.5px;font-family:var(--data);display:block;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rec{font-family:var(--data);font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.marks{display:flex;gap:3px;white-space:nowrap}
+.badge{font-family:var(--data);font-size:9px;letter-spacing:.06em;text-transform:uppercase;
+  padding:1px 5px;border-radius:3px;background:var(--chip);color:var(--dim);white-space:nowrap}
+.badge.q{color:var(--win);border:1px solid var(--win);background:transparent}
+.badge.ql{color:var(--qual);border:1px solid var(--qual);background:transparent}
+.badge.b{color:var(--loss);border:1px solid var(--loss);background:transparent}
+.badge.p6{background:var(--brass);color:var(--paper);font-weight:700}
+.badge.mp{border:1px solid var(--brass-soft);color:var(--brass);background:transparent}
+.badge.ti{background:var(--brass);color:var(--paper);font-weight:700}
+/* this week's result, one glyph: W / L in the win and loss colours, filled when it was a
+   quality win or a bad loss, purple for a quality loss, hollow grey when idle. Same
+   thresholds as the QW/QL/BL badges, so the glyph and the counts never disagree. */
+.wk{display:inline-flex;align-items:center;justify-content:center;width:22px;height:18px;
+  border-radius:3px;font-family:var(--data);font-size:10px;font-weight:700;letter-spacing:.02em;
+  border:1.5px solid var(--rule);color:var(--dim);background:transparent;flex:none}
+.wk.w{border-color:var(--win);color:var(--win)}
+.wk.qw{background:var(--win);color:var(--paper);border-color:var(--win)}
+.wk.l{border-color:var(--loss);color:var(--loss)}
+.wk.bl{background:var(--loss);color:var(--paper);border-color:var(--loss)}
+.wk.ql{border-color:var(--qual);color:var(--qual)}
+
+/* the ballot */
+li.slot{display:grid;grid-template-columns:34px auto 1fr auto auto;gap:9px;align-items:center;
+  background:var(--card);border:1px solid var(--rule);border-left-width:4px;border-radius:4px;
+  padding:6px 9px;min-width:0}
+li.slot.empty{border-style:dashed;color:var(--dim);grid-template-columns:34px 1fr;
+  font-size:12.5px;padding:9px}
+.seedno{font-family:var(--display);font-size:17px;font-weight:700;text-align:right;
+  font-variant-numeric:tabular-nums}
+.acts{display:flex;gap:3px}
+.acts button{padding:2px 6px;font-size:11px;line-height:1.3}
+
+/* résumé drawer */
+.scrim{position:fixed;inset:0;background:#0007;z-index:50}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(620px,100%);z-index:51;
+  background:var(--paper);border-left:1px solid var(--rule);overflow:auto;
+  padding:0 18px calc(30px + env(safe-area-inset-bottom,0px))}
+/* The host app draws its own header across the top of the page, which swallowed the
+   close button. The drawer's heading clears that band and then sticks, so close stays
+   reachable however far down the résumé you have scrolled. */
+.dhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;
+  position:sticky;top:0;z-index:3;background:var(--paper);
+  padding-top:calc(62px + env(safe-area-inset-top,0px));padding-bottom:10px;
+  border-bottom:1px solid var(--rule);margin-bottom:12px}
+.dhead h3{font-family:var(--display);font-size:23px;margin:0;font-weight:600;
+  display:flex;align-items:center;gap:10px}
+.dhead h3 svg{width:34px;height:34px}
+.dsub{font-family:var(--data);font-size:11.5px;color:var(--dim);margin-bottom:14px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(86px,1fr));gap:8px;margin-bottom:15px}
+.stat{background:var(--card);border:1px solid var(--rule);border-radius:4px;padding:7px 9px}
+.stat .k{font-family:var(--data);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.stat .v{font-family:var(--display);font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}
+table.log{width:100%;border-collapse:collapse;font-size:13px}
+table.log th{font-family:var(--data);font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--dim);text-align:left;font-weight:400;padding:5px 6px;border-bottom:1px solid var(--rule)}
+table.log td{padding:6px;border-bottom:1px solid var(--rule);vertical-align:middle}
+table.log tr.win td:first-child{border-left:3px solid var(--win)}
+table.log tr.loss td:first-child{border-left:3px solid var(--loss)}
+.res{font-family:var(--data);font-weight:700;font-variant-numeric:tabular-nums}
+.res.w{color:var(--win)} .res.l{color:var(--loss)}
+.n{font-family:var(--data);font-size:11.5px;color:var(--dim);font-variant-numeric:tabular-nums}
+.tablewrap{overflow-x:auto}
+
+.io{margin-top:22px;border-top:1px solid var(--rule);padding-top:14px}
+textarea{width:100%;min-height:80px;font-family:var(--data);font-size:11px;background:var(--card);
+  color:var(--ink);border:1px solid var(--rule);border-radius:4px;padding:8px;resize:vertical}
+.note{font-size:12.5px;color:var(--dim);margin:9px 0 0}
+.empty{border:1px dashed var(--rule);border-radius:5px;padding:22px 16px;text-align:center;
+  color:var(--dim);font-size:13.5px}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:22px;z-index:60;
+  background:var(--ink);color:var(--paper);padding:9px 16px;border-radius:5px;font-size:13.5px;
+  box-shadow:0 6px 22px #0004;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+
+@media (max-width:760px){
+  .filters input,.filters select,textarea{font-size:16px}
+  .scroller{max-height:50vh}
+  header.top{padding-block:8px}
+  .yr{display:none}
+  h1{font-size:17px}
+  .drawer{width:100%;padding:14px 14px 30px}
+  button{padding:7px 12px}
+}
+</style>
+
+<header class="top">
+  <div class="topin">
+    <h1>Committee <span>Ballot</span></h1>
+    <span class="yr" id="yrline"></span>
+    <span class="spacer"></span>
+    <span class="count" id="counts"></span>
+    <span class="savestate" id="savestate">connecting…</span>
+    <button class="primary" id="saveBtn">Save</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <main>
+    <section>
+      <h2 class="sec">All 152 — your board first, then the computer's order <em id="boardCount"></em></h2>
+      <div class="filters">
+        <input id="q" placeholder="search a team" autocomplete="off">
+        <select id="fConf"><option value="">all conferences</option></select>
+      </div>
+      <div class="filters">
+        <button id="fUn" aria-pressed="false">unranked only</button>
+        <button id="fP6" aria-pressed="false">P6</button>
+        <button id="fL6" aria-pressed="false">L6</button>
+        <button id="fSort" aria-pressed="false" title="committee order, or raw rating">rating order</button>
+      </div>
+      <div class="scroller"><ul class="list" id="board"></ul></div>
+      <p class="note">The number at left is your rank from last week for the top 25, then where the computer has everyone else. <b>+</b> drops a team
+        into the next open slot; clicking the name opens their résumé first.</p>
+    </section>
+
+    <section>
+      <h2 class="sec">Your top 25 <em id="ballotCount"></em>
+        <span><button class="tiny ghost" id="priorBtn">seed from last week</button>
+        <button class="tiny ghost" id="seedBtn">seed from computer</button>
+        <button class="tiny ghost" id="clearBtn">clear</button></span></h2>
+      <ul class="list" id="ballot"></ul>
+
+      <div class="io">
+        <h2 class="sec">Hand-off</h2>
+        <p class="note" style="margin-top:0">Saves itself as you go. This is the copy to paste
+          into the chat — the rest of the season's committee rankings are built from it.</p>
+        <div class="filters" style="margin-block:9px">
+          <button id="exportBtn">Build hand-off</button>
+          <button class="ghost" id="copyBtn">Copy</button>
+        </div>
+        <textarea id="blob" readonly placeholder="nothing built yet"></textarea>
+        <p class="note">Paste a previous ballot here to load it:</p>
+        <textarea id="inblob" placeholder='{"week":10,"ballot":["…"]}'></textarea>
+        <div class="filters" style="margin-block:9px">
+          <button class="primary" id="loadBtn">Load</button>
+          <span id="loadnote" class="note" style="margin:0;align-self:center"></span>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<div id="drawerHost"></div>
+<div class="toast" id="toast"></div>
+
+<script>
+__MARKS__
+
+const DATA = __DATA__;
+const T = DATA.teams;
+const BY = {}; T.forEach(t => BY[t.name] = t);
+/* The reference number on each row is Dan's own committee board, not a media poll.
+   From 2038 the board of record is hand-built and there is no media poll to compare
+   against, so the useful comparison is where the committee already had a programme. */
+const MP = {}; (DATA.prior || []).forEach((n, i) => MP[n] = i + 1);
+/* the glyph for what a team did THIS week */
+function wkGlyph(t){
+  const g = (t.games || []).find(x => x.w === (DATA.stage === 'CCG' ? 15 : DATA.week));
+  if (!g) return `<span class="wk" title="idle this week">–</span>`;
+  const r = g.oppRank, opp = g.opp + (g.sub ? ' (guest)' : '');
+  const sc = `${g.won ? 'W' : 'L'} ${g.ps}-${g.pa} ${g.home ? 'vs' : 'at'} ${opp}${g.ot ? ' OT' : ''}`;
+  // marks come from the export (resume_marks.py): judged against the current rankings
+  if (g.won)  return g.mark === 'qw' ? `<span class="wk qw" title="quality win · ${sc}">W</span>` : `<span class="wk w" title="${sc}">W</span>`;
+  if (g.mark === 'ql') return `<span class="wk ql" title="quality loss · ${sc}">L</span>`;
+  if (g.mark === 'bl') return `<span class="wk bl" title="bad loss · ${sc}">L</span>`;
+  return `<span class="wk l" title="${sc}">L</span>`;
+}
+const MPLAB = (DATA.priorWeek === DATA.week) ? ' · committee #' : ' · last week #';
+
+let ballot = [];
+let filt = { q:'', conf:'', unranked:false, tier:null, sort:'committee' };
+let db = null, saveTimer = null, dirty = false, loaded = false;
+
+const el = id => document.getElementById(id);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c =>
+  ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const badge = n => { const t = BY[n]; return t ? mark({ name:n, mascot:t.mascot, conf:t.conf, col:t.col }) : ''; };
+
+/* ---------- board ---------- */
+function renderBoard(){
+  const q = filt.q.trim().toLowerCase();
+  const seated = new Set(ballot);
+  let rows = T.filter(t => {
+    if (filt.conf && t.conf !== filt.conf) return false;
+    if (filt.tier && t.tier !== filt.tier) return false;
+    if (filt.unranked && seated.has(t.name)) return false;
+    if (q && !(t.name.toLowerCase().includes(q) || (t.mascot||'').toLowerCase().includes(q)
+         || t.conf.toLowerCase().includes(q))) return false;
+    return true;
+  });
+  // Dan's rule, 2039: the board opens in HIS order -- last week's 25 first, as he ranked
+  // them, then everyone else in the computer's order. The rating toggle still re-sorts.
+  const prior = n => MP[n] || 999;
+  rows = rows.slice().sort((a, b) => filt.sort === 'rating'
+    ? a.ratingRank - b.ratingRank
+    : (prior(a.name) - prior(b.name)) || (a.cRank - b.cRank));
+  el('board').innerHTML = rows.map(t => {
+    const n = filt.sort === 'rating' ? t.ratingRank : (MP[t.name] ? MP[t.name] : t.cRank);
+    const on = seated.has(t.name);
+    return `<li class="row ${on?'seated':''}">
+      <span class="cr">${n}</span>
+      <span class="bdg">${badge(t.name)}</span>
+      <span class="nm" data-look="${esc(t.name)}"><b>${esc(t.name)}</b>
+        <small>${esc(t.conf)} · rating ${t.rating.toFixed(1)}${MP[t.name]?MPLAB+MP[t.name]:''}</small></span>
+      <span class="rec">${t.W}-${t.L}</span>
+      <span class="marks">${wkGlyph(t)}${t.champ?'<span class="badge ti">champ</span>':''}${t.qw?`<span class="badge q">${t.qw} QW</span>`:''}${t.ql?`<span class="badge ql">${t.ql} QL</span>`:''}${t.bl?`<span class="badge b">${t.bl} BL</span>`:''}</span>
+      <button class="tiny ${on?'ghost':'primary'}" data-add="${esc(t.name)}" ${on?'disabled':''}
+        title="${on?'already ranked':'add to the ballot'}">${on?'✓':'+'}</button>
+    </li>`;
+  }).join('') || '<div class="empty">nothing matches</div>';
+  el('boardCount').textContent = rows.length + ' shown';
+}
+
+/* ---------- ballot ---------- */
+function renderBallot(){
+  const out = [];
+  for (let i = 0; i < 25; i++){
+    const n = ballot[i];
+    if (!n){ out.push(`<li class="slot empty"><span class="seedno">${i+1}</span><span>open</span></li>`); continue; }
+    const t = BY[n];
+    const move = MP[n] ? (MP[n] - (i+1)) : null;
+    out.push(`<li class="slot" style="border-left-color:${t.col[0]}">
+      <span class="seedno">${i+1}</span>
+      <span class="bdg">${badge(n)}</span>
+      <span class="nm" data-look="${esc(n)}"><b>${esc(n)}</b>
+        <small>${t.champ?'★ ':''}${esc(t.conf)} · computer #${t.cRank}${move!==null?MPLAB+MP[n]:''}</small></span>
+      <span class="rec" style="display:inline-flex;gap:6px;align-items:center">${wkGlyph(t)}${t.W}-${t.L}</span>
+      <span class="acts">
+        <button class="tiny" data-up="${i}" ${i===0?'disabled':''}>↑</button>
+        <button class="tiny" data-down="${i}" ${i===ballot.length-1?'disabled':''}>↓</button>
+        <button class="tiny ghost" data-drop="${i}">×</button>
+      </span></li>`);
+  }
+  el('ballot').innerHTML = out.join('');
+  el('ballotCount').textContent = ballot.length + ' of 25';
+  el('counts').innerHTML = `<b>${ballot.length}</b>/25 ranked`;
+}
+
+/* ---------- résumé ---------- */
+function openResume(n){
+  const t = BY[n];
+  if (!t) return;
+  const rows = t.games.map(g => {
+    const opp = BY[g.opp];
+    const str = g.sub ? '<span class="n">subdivision</span>'
+      : `<span class="n">#${g.oppRank} · ${opp ? opp.W+'-'+opp.L : ''}</span>`;
+    const tag = (g.ccg ? '<span class="badge ti">title game</span> ' : '')
+              + (g.mark === 'qw' ? '<span class="badge q">quality</span>'
+              : g.mark === 'ql' ? '<span class="badge ql">quality loss</span>'
+              : g.mark === 'bl' ? '<span class="badge b">bad loss</span>' : '');
+    return `<tr class="${g.won?'win':'loss'}">
+      <td class="n">${g.ccg ? 'CCG' : 'wk ' + g.w}</td>
+      <td>${g.neutral?'vs':(g.home?'vs':'at')} <b>${esc(g.opp)}</b> ${tag}</td>
+      <td>${str}</td>
+      <td class="res ${g.won?'w':'l'}">${g.won?'W':'L'} ${g.ps}–${g.pa}${g.ot?' OT':''}</td>
+    </tr>`;
+  }).join('');
+  el('drawerHost').innerHTML = `<div class="scrim" data-close></div>
+    <aside class="drawer" role="dialog" aria-label="résumé">
+      <div class="dhead">
+        <div>
+          <h3>${badge(n)} ${esc(t.full)}</h3>
+          <div class="dsub">${esc(t.conf)} · ${t.tier} · computer #${t.cRank} · rating rank #${t.ratingRank}</div>
+        </div>
+        <button class="tiny" data-close>close</button>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="k">record</div><div class="v">${t.W}-${t.L}</div></div>
+        <div class="stat"><div class="k">conference</div><div class="v">${t.cW}-${t.cL}</div></div>
+        <div class="stat"><div class="k">rating</div><div class="v">${t.rating.toFixed(1)}</div></div>
+        <div class="stat"><div class="k">points</div><div class="v" style="font-size:15px">${t.pf}–${t.pa}</div></div>
+        <div class="stat"><div class="k">quality wins</div><div class="v">${t.qw}</div></div>
+        <div class="stat"><div class="k">quality losses</div>
+          <div class="v" style="color:var(--qual)">${t.ql}</div></div>
+        <div class="stat"><div class="k">bad losses</div><div class="v">${t.bl}</div></div>
+      </div>
+      <div class="tablewrap"><table class="log"><thead><tr>
+        <th>Wk</th><th>Opponent</th><th>Strength</th><th>Result</th></tr></thead>
+        <tbody>${rows}</tbody></table></div>
+      <p class="note">Strength is the opponent's rank by rating among the 152, with their record.
+        A quality win is a win over a team in the current top 25 (${esc(DATA.marks_source || 'media poll')}); a quality loss is a defeat
+        against one; a bad loss is a loss to a team nowhere in the current poll and outside the top 60 by rating.</p>
+      <div style="margin-top:16px">
+        ${ballot.includes(n)
+          ? `<button class="ghost" data-dropname="${esc(n)}">remove from the ballot</button>`
+          : `<button class="primary" data-addname="${esc(n)}">add to the ballot</button>`}
+      </div>
+    </aside>`;
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer(){ el('drawerHost').innerHTML = ''; document.body.style.overflow = ''; }
+
+/* ---------- actions ---------- */
+function add(n){
+  if (ballot.includes(n)) { toast(n + ' is already on the ballot'); return; }
+  if (ballot.length >= 25){ toast('all 25 slots are filled'); return; }
+  ballot.push(n); render(); queueSave();
+  toast(n + ' at ' + ballot.length);
+}
+function drop(i){ const n = ballot.splice(i,1)[0]; render(); queueSave(); toast(n + ' removed'); }
+function render(){ renderBoard(); renderBallot(); }
+let tt;
+function toast(m){ el('toast').textContent = m; el('toast').classList.add('show');
+  clearTimeout(tt); tt = setTimeout(() => el('toast').classList.remove('show'), 1800); }
+
+/* ---------- persistence ---------- */
+const DOC = 'committee/s' + DATA.season + 'w' + String(DATA.week).padStart(2,'0');
+function setSave(m, c){ const n = el('savestate'); n.textContent = m; n.className = 'savestate' + (c?' '+c:''); }
+async function connect(){
+  setSave('loading…','');
+  try { db = await window.claude?.use?.('db'); } catch(e){ db = null; }
+  if (!db){ loaded = true; setSave('saving unavailable — use the hand-off','bad'); return; }
+  try {
+    const doc = await db.doc(DOC).get();
+    if (doc && doc.data && Array.isArray(doc.data.ballot) && doc.data.ballot.length){
+      const restored = doc.data.ballot.filter(n => BY[n]);
+      const inflight = ballot.filter(n => !restored.includes(n));
+      ballot = restored.concat(inflight).slice(0,25);
+      setSave('restored ' + ballot.length + (doc.data.saved ? ' · ' + doc.data.saved : ''), 'ok');
+    } else setSave('ready','');
+  } catch(e){ setSave('could not read the saved ballot — reload before working','bad'); return; }
+  loaded = true;
+  if (dirty) save(false);
+  render();
+}
+async function save(){
+  if (!loaded){ setSave('still loading — hold on','dirty'); return; }
+  if (!db){ setSave('no save connection — use the hand-off','bad'); return; }
+  try {
+    await db.doc(DOC).set({ season:DATA.season, week:DATA.week, ballot,
+      saved:new Date().toLocaleString() });
+    dirty = false; setSave('saved ' + new Date().toLocaleTimeString(), 'ok');
+  } catch(e){ setSave('save failed — copy the hand-off','bad'); }
+}
+function queueSave(){
+  dirty = true;
+  if (!loaded){ setSave('loading…','dirty'); return; }
+  setSave('unsaved…','dirty');
+  clearTimeout(saveTimer); saveTimer = setTimeout(save, 800);
+}
+window.addEventListener('beforeunload', e => { if (dirty){ e.preventDefault(); e.returnValue=''; } });
+
+function exportBallot(){
+  el('blob').value = JSON.stringify({ season:DATA.season, week:DATA.week,
+    complete: ballot.length === 25,
+    ballot: ballot.map((n,i) => ({ rank:i+1, team:n, rec: BY[n].W+'-'+BY[n].L })) });
+  el('blob').scrollIntoView({behavior:'smooth', block:'center'});
+}
+
+/* confirm() is inert inside the artifact viewer — it returns false at once — so any
+   button guarded by it would silently do nothing. Destructive actions arm on the first
+   click and run on the second instead. */
+function arm(btn, label, run){
+  if (btn._armed){
+    clearTimeout(btn._t); btn._armed = false; btn.textContent = btn._orig;
+    run(); return;
+  }
+  btn._orig = btn._orig || btn.textContent;
+  btn._armed = true; btn.textContent = label;
+  btn._t = setTimeout(() => { btn._armed = false; btn.textContent = btn._orig; }, 3500);
+}
+/* ---------- events ---------- */
+document.addEventListener('click', e => {
+  const look = e.target.closest('[data-look]');
+  if (look){ e.stopPropagation(); openResume(look.dataset.look); return; }
+  if (e.target.closest('[data-close]')){ closeDrawer(); return; }
+  const b = e.target.closest('button');
+  if (b){
+    if (b.dataset.add){ add(b.dataset.add); return; }
+    if (b.dataset.addname){ add(b.dataset.addname); closeDrawer(); return; }
+    if (b.dataset.dropname){ drop(ballot.indexOf(b.dataset.dropname)); closeDrawer(); return; }
+    if (b.dataset.drop !== undefined){ drop(+b.dataset.drop); return; }
+    if (b.dataset.up !== undefined){ const i=+b.dataset.up;
+      [ballot[i-1],ballot[i]]=[ballot[i],ballot[i-1]]; render(); queueSave(); return; }
+    if (b.dataset.down !== undefined){ const i=+b.dataset.down;
+      if (i+1<ballot.length){ [ballot[i+1],ballot[i]]=[ballot[i],ballot[i+1]]; render(); queueSave(); } return; }
+  }
+});
+el('q').addEventListener('input', e => { filt.q = e.target.value; renderBoard(); });
+el('fConf').innerHTML = '<option value="">all conferences</option>' +
+  DATA.conferences.map(c => `<option value="${esc(c)}">${esc(c)}</option>`).join('');
+el('fConf').addEventListener('change', e => { filt.conf = e.target.value; renderBoard(); });
+el('fUn').addEventListener('click', e => { filt.unranked = !filt.unranked;
+  e.currentTarget.setAttribute('aria-pressed', filt.unranked); renderBoard(); });
+[['fP6','P6'],['fL6','L6']].forEach(([id,tier]) => el(id).addEventListener('click', () => {
+  filt.tier = filt.tier === tier ? null : tier;
+  el('fP6').setAttribute('aria-pressed', filt.tier==='P6');
+  el('fL6').setAttribute('aria-pressed', filt.tier==='L6');
+  renderBoard();
+}));
+el('fSort').addEventListener('click', e => {
+  filt.sort = filt.sort === 'committee' ? 'rating' : 'committee';
+  e.currentTarget.setAttribute('aria-pressed', filt.sort === 'rating');
+  e.currentTarget.textContent = filt.sort === 'rating' ? 'committee order' : 'rating order';
+  renderBoard();
+});
+const PRIOR = (DATA.prior || []).filter(n => BY[n]);
+if (!PRIOR.length) el('priorBtn').style.display = 'none';
+el('priorBtn').addEventListener('click', () => {
+  arm(el('priorBtn'), 'click again to replace', () => {
+    ballot = PRIOR.slice(0,25); render(); queueSave(); toast("seeded from last week's board");
+  });
+});
+el('seedBtn').addEventListener('click', () => {
+  arm(el('seedBtn'), 'click again to replace', () => {
+    ballot = T.slice(0,25).map(t => t.name); render(); queueSave(); toast('seeded from the computer');
+  });
+});
+el('clearBtn').addEventListener('click', () => {
+  if (!ballot.length) return;
+  arm(el('clearBtn'), 'click again to clear', () => { ballot = []; render(); queueSave(); toast('ballot cleared'); });
+});
+el('saveBtn').addEventListener('click', save);
+el('exportBtn').addEventListener('click', exportBallot);
+el('copyBtn').addEventListener('click', async () => {
+  if (!el('blob').value) exportBallot();
+  try { await navigator.clipboard.writeText(el('blob').value); toast('copied'); }
+  catch(e){ el('blob').select(); toast('press ⌘C / Ctrl-C'); }
+});
+el('loadBtn').addEventListener('click', () => {
+  const txt = el('inblob').value.trim();
+  if (!txt){ el('loadnote').textContent = 'nothing pasted'; return; }
+  if (!loaded){ el('loadnote').textContent = 'still loading — try again in a moment'; return; }
+  let d; try { d = JSON.parse(txt); } catch(err){ el('loadnote').textContent = 'not valid JSON'; return; }
+  const rows = Array.isArray(d) ? d : (d.ballot || []);
+  const names = rows.map(r => typeof r === 'string' ? r : r.team).filter(n => BY[n]);
+  if (!names.length){ el('loadnote').textContent = 'no teams I recognise in that'; return; }
+  ballot = names.slice(0,25);
+  el('loadnote').textContent = 'loaded ' + ballot.length;
+  el('inblob').value = ''; render(); queueSave();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape'){ closeDrawer(); return; }
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  if (e.key === '/'){ e.preventDefault(); el('q').focus(); }
+});
+
+el('yrline').textContent = DATA.year + (DATA.stage === 'CCG'
+  ? ' · SELECTION BALLOT · AFTER THE CONFERENCE TITLE GAMES'
+  : ' · AFTER WEEK ' + DATA.week);
+render();
+fitAll();
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => fitAll());
+const _r = render; render = function(){ _r(); queueMicrotask(() => fitAll()); };
+connect();
+</script>

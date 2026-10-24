@@ -1,0 +1,346 @@
+<title>Roiland Map Office</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f3efe6; --panel:#fbf9f4; --ink:#1f1d1a; --muted:#6b645a; --line:#d9d2c4; --accent:#9a4a1f; --accent2:#2b5d8a;
+  --sel:#d8a21b; --land:#e9e2d2; --land2:#e1d8c4; --border:#b8ad98; --water:#cfdde6; --fbs:#1f1d1a; --sub:#8c8273; --city:#2b5d8a;
+  --ok:#2f7d4f; --bad:#a63a2a; --dirty:#9a7a1a; --grid:#d8d0bf;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#17161a; --panel:#1f1e23; --ink:#ece7dc; --muted:#9a948a; --line:#36343b; --accent:#e08a4f; --accent2:#7fb0dc;
+  --sel:#f0c04a; --land:#2a2930; --land2:#242329; --border:#5a5667; --water:#1d2730; --fbs:#ece7dc; --sub:#8e877b; --city:#7fb0dc;
+  --ok:#6fcf8f; --bad:#e2695a; --dirty:#d9b64a; --grid:#2f2e35; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#17161a; --panel:#1f1e23; --ink:#ece7dc; --muted:#9a948a; --line:#36343b; --accent:#e08a4f; --accent2:#7fb0dc;
+  --sel:#f0c04a; --land:#2a2930; --land2:#242329; --border:#5a5667; --water:#1d2730; --fbs:#ece7dc; --sub:#8e877b; --city:#7fb0dc;
+  --ok:#6fcf8f; --bad:#e2695a; --dirty:#d9b64a; --grid:#2f2e35; color-scheme:dark }
+html,body{height:100%;min-height:100vh}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.4 "IBM Plex Sans",system-ui,sans-serif;overflow:hidden}
+.app{position:fixed;inset:0;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);height:100vh;height:100dvh}
+.mapwrap{position:absolute;inset:0;background:var(--water)}
+.side,.insp{position:absolute;top:0;bottom:0;width:min(300px,86vw);background:var(--panel);display:flex;flex-direction:column;min-width:0;min-height:0;z-index:5;transition:transform .18s;box-shadow:0 0 18px rgba(0,0,0,.15)}
+.side{left:0;border-right:1px solid var(--line);transform:translateX(-100%)}
+.side.open{transform:none}
+.insp{right:0;border-left:1px solid var(--line);transform:translateX(100%)}
+.insp.open{transform:none}
+.insp .done{display:none}
+@media (max-width:900px){
+  .side{width:100%;max-width:none}
+  .insp{top:auto;left:0;right:0;width:100%;max-width:none;height:42%;border-left:0;border-top:1px solid var(--line);transform:translateY(100%);border-radius:14px 14px 0 0}
+  .insp .hd .sub{display:none}
+  .insp .done{display:inline-block;position:absolute;top:8px;right:44px}
+  .insp .body{padding:8px 14px;gap:8px}
+  .insp h2{font-size:15px}
+  .insp .kv{grid-template-columns:auto 1fr auto 1fr}
+  .insp .kv input{width:80px}
+  .insp details{font-size:12px}
+}
+.closer{position:absolute;top:8px;right:8px;width:26px;height:26px;padding:0;line-height:24px;text-align:center}
+.hd{padding:12px 14px 8px;border-bottom:1px solid var(--line)}
+.hd h1{margin:0;font-size:15px;font-weight:600;letter-spacing:.02em}
+.hd .sub{color:var(--muted);font-size:12px}
+.tools{padding:8px 14px;display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--line)}
+input[type=text],input[type=number],select{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:5px 8px;min-width:0}
+input[type=number]{font-family:"IBM Plex Mono",monospace;width:92px}
+button{font:inherit;font-size:12.5px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:5px 9px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+button.warn{border-color:var(--bad);color:var(--bad)}
+.list{overflow:auto;flex:1;min-height:0;padding:4px 0}
+.grp{padding:6px 14px 2px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;cursor:pointer}
+.grp .n{font-family:"IBM Plex Mono",monospace}
+.row{display:flex;align-items:center;gap:8px;padding:4px 14px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row:hover{background:var(--land2)} .row.sel{background:var(--land);outline:1px solid var(--sel)}
+.sw{width:10px;height:10px;border-radius:50%;flex:0 0 auto;border:1.5px solid var(--fbs)}
+.sw.sub{border-color:var(--sub);background:transparent!important;width:7px;height:7px}
+.sw.city{border-radius:2px;background:var(--city);border-color:var(--city)}
+.sw.state{transform:rotate(45deg);border-radius:1px;background:var(--accent);border-color:var(--accent)}
+.row .nm{flex:1;overflow:hidden;text-overflow:ellipsis}
+.row .st{font-size:11px;color:var(--muted)}
+.row.unp .nm{color:var(--muted);font-style:italic}
+
+svg.map{width:100%;height:100%;display:block;touch-action:none;cursor:grab;background:#cfe3f0}
+svg.map.dragging{cursor:grabbing}
+.cell{fill:transparent;stroke:none;cursor:pointer}
+.cell:hover{fill:rgba(154,74,31,.08)}
+.cell.hl{fill:rgba(216,162,27,.22);stroke:var(--sel);stroke-width:1.5;vector-effect:non-scaling-stroke}
+.slabel{font:600 11px "IBM Plex Sans";fill:var(--muted);text-anchor:middle;pointer-events:none;letter-spacing:.06em;text-transform:uppercase;paint-order:stroke;stroke:var(--land);stroke-width:3px;stroke-linejoin:round}
+.pt{cursor:pointer}
+.pt circle.hit{fill:#000;fill-opacity:0;stroke:none;pointer-events:all}
+.pt circle.fbs{stroke:var(--fbs);stroke-width:1.2;vector-effect:non-scaling-stroke}
+.pt circle.sub{fill:none;stroke:var(--sub);stroke-width:1.2;vector-effect:non-scaling-stroke}
+.pt rect.city{fill:var(--city);stroke:var(--panel);stroke-width:1;vector-effect:non-scaling-stroke}
+.pt path.seed{fill:var(--accent);stroke:var(--panel);stroke-width:1;vector-effect:non-scaling-stroke}
+.pt.unp circle,.pt.unp rect{stroke-dasharray:2 2;opacity:.75}
+.pt.sel circle:not(.hit),.pt.sel rect,.pt.sel path{stroke:var(--sel)!important;stroke-width:3!important;opacity:1}
+.pt.sel circle.hit{fill:var(--sel);fill-opacity:.18}
+.pt.lk circle.sub{fill:var(--panel)} .pt.lk circle.fbs,.pt.lk rect.city{stroke-width:2.2}
+.plabel{font:11px "IBM Plex Sans";fill:var(--ink);pointer-events:none;paint-order:stroke;stroke:var(--land);stroke-width:3px;stroke-linejoin:round}
+.plabel.city{fill:var(--city);font-weight:500}
+.gridline{stroke:var(--grid);stroke-width:.5;vector-effect:non-scaling-stroke}
+.hud{position:absolute;left:10px;top:calc(env(safe-area-inset-top,0px) + 88px);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:6px 10px;font:12px "IBM Plex Mono",monospace;color:var(--muted);pointer-events:none}
+.topbar{position:absolute;left:10px;top:calc(env(safe-area-inset-top,0px) + 46px);right:10px;display:flex;gap:6px;flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;z-index:3}
+.topbar::-webkit-scrollbar{display:none}
+.topbar button{white-space:nowrap;flex:0 0 auto}
+.topbar button{background:var(--panel)}
+.topbar button.on{background:var(--accent);color:#fff}
+.save{position:absolute;right:10px;top:calc(env(safe-area-inset-top,0px) + 88px);z-index:3;max-width:55%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:5px 10px;font-size:12px}
+.save.ok{color:var(--ok)} .save.bad{color:var(--bad)} .save.dirty{color:var(--dirty)}
+.insp .body{padding:12px 14px;overflow:auto;flex:1;min-height:0;display:flex;flex-direction:column;gap:10px}
+.insp h2{margin:0;font-size:16px;font-weight:600;text-wrap:balance}
+.insp .meta{color:var(--muted);font-size:12px}
+.belongs{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;padding:6px 10px;border-radius:6px;background:var(--land);border:1px solid var(--line);font-size:12px;color:var(--muted)}
+.belongs strong{font-size:15px;color:var(--ink);letter-spacing:.04em}
+.belongs em{font-style:normal;color:var(--bad)}
+.belongs.bad{border-color:var(--bad)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 10px;align-items:center;font-size:13px}
+.kv label{color:var(--muted)}
+.nudge{display:grid;grid-template-columns:repeat(3,34px);gap:4px;justify-content:start}
+.nudge button{padding:4px 0;font-family:"IBM Plex Mono",monospace}
+.hint{font-size:11.5px;color:var(--muted)}
+textarea{font:11px "IBM Plex Mono",monospace;width:100%;box-sizing:border-box;height:90px;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px}
+.addcity{border-top:1px solid var(--line);padding-top:8px} .addcity input,.addcity select,.addcity button,.addcity textarea{display:block;width:100%;box-sizing:border-box;margin-top:6px}
+.roles{font-size:12px;color:var(--muted)} .roles div{padding:1px 0}
+.pop{position:absolute;left:10px;top:calc(env(safe-area-inset-top,0px) + 90px);z-index:7;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;width:min(280px,calc(100vw - 20px));box-shadow:0 6px 24px rgba(0,0,0,.18)}
+.pop input,.pop select{width:100%;box-sizing:border-box}
+.toast{position:absolute;left:50%;bottom:48px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:6px 12px;border-radius:6px;font-size:12px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+</style>
+<div class="app">
+  <aside class="side" id="side">
+    <div class="hd"><button class="closer" data-close="side">×</button><h1>Roiland Map Office</h1><div class="sub" id="counts"></div></div>
+    <div class="tools">
+      <input type="text" id="q" placeholder="search schools, cities, states" style="flex:1 1 140px">
+      <button data-f="FBS" class="on">FBS</button><button data-f="SUB" class="on">Subdivision</button><button data-f="CITY" class="on">Cities</button><button data-f="UNP">Unplaced only</button>
+    </div>
+    <div class="list" id="list"></div>
+  </aside>
+  <main class="mapwrap">
+    <svg class="map" id="map"></svg>
+    <div class="topbar">
+      <button id="openSide">☰ List</button>
+      <button id="zin">+</button><button id="zout">−</button>
+      <button id="mStates">Edit state seeds</button>
+      <button id="mLabels" class="on">Labels</button>
+      <button id="mGrid">Grid</button>
+      <button id="fit">Whole map</button>
+      <button id="zstate">Zoom to state</button>
+      <button id="undo">Undo</button>
+      <button id="addCityBtn">+ City</button>
+    </div>
+    <div class="save" id="save">loading…</div>
+    <div class="hud" id="hud">x — y —</div>
+    <div class="toast" id="toast"></div>
+    <div class="pop" id="cityPop" hidden>
+      <div class="hint" style="font-weight:600;color:var(--ink)">Add a city</div>
+      <input type="text" id="pname" placeholder="city name" autocomplete="off">
+      <select id="pstate"></select>
+      <div style="display:flex;gap:6px"><button id="popAdd" class="on">Add</button><button id="popCancel">Cancel</button></div>
+      <div class="hint">It lands in the middle of the state, selected and ready to drag.</div>
+    </div>
+  </main>
+  <aside class="insp" id="inspPanel">
+    <div class="hd"><button class="closer" data-close="insp">×</button><button class="done" id="done">Done</button><h1>Inspector</h1><div class="sub">click a point, drag to move, arrows to nudge · double-click a state to zoom to it</div></div>
+    <div class="body" id="insp"></div>
+  </aside>
+</div>
+<script>
+const DATA = __DATA__;
+/* ---------- model ---------- */
+const S = {};                           // id -> item
+DATA.states.forEach(s => S['st:' + s.name] = { id: 'st:' + s.name, kind: 'state', name: s.name, state: s.name, x: s.x, y: s.y, adj: s.adj, placed: true });
+const STATE_SEED = n => S['st:' + n];
+function jitter(seedStr, i){ let h = 2166136261; for (const c of seedStr) h = Math.imul(h ^ c.charCodeAt(0), 16777619); const a = ((h >>> 0) % 360) * Math.PI / 180, r = 10 + ((h >>> 8) % 160) / 10; return [Math.cos(a) * r, Math.sin(a) * r]; }
+function inPoly(x, y, pieces){ let inside = false; for (const poly of pieces){ for (let i = 0, j = poly.length - 1; i < poly.length; j = i++){ const [xi, yi] = poly[i], [xj, yj] = poly[j]; if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) inside = !inside; } } return inside; }
+function inState(x, y, state){ const pcs = DATA.polys[state]; return pcs && pcs.length ? inPoly(x, y, pcs) : true; }
+function guessPos(key, state, scale){ // a spot inside the state's traced shape, deterministic per name, falling back to the centroid
+  const c = DATA.centroids[state] || [STATE_SEED(state).x, STATE_SEED(state).y]; let [dx, dy] = jitter(key, 0);
+  for (let k = 1; k >= 0.05; k *= 0.7){ const x = c[0] + dx * k * scale, y = c[1] + dy * k * scale; if (inState(x, y, state)) return [x, y]; }
+  return [c[0], c[1]]; }
+DATA.schools.forEach((s, i) => { const st = STATE_SEED(s.state); const [gx, gy] = guessPos(s.id, s.state, 1), dx = gx - st.x, dy = gy - st.y;
+  S['sc:' + s.id] = { id: 'sc:' + s.id, kind: 'school', name: s.id, full: s.full, state: s.state, level: s.level, conf: s.conf, tier: s.tier, colors: s.colors, x: s.locked ? s.locked[0] : st.x + dx, y: s.locked ? s.locked[1] : st.y + dy, placed: !!s.locked, locked: !!s.locked }; });
+DATA.cities.forEach(c => { const st = STATE_SEED(c.state); const [gx, gy] = guessPos('city' + c.name, c.state, 1); const dx = (gx - st.x) / .6, dy = (gy - st.y) / .6;
+  S['ci:' + c.name + '|' + c.state] = { id: 'ci:' + c.name + '|' + c.state, kind: 'city', name: c.name, state: c.state, roles: c.roles, x: c.locked ? c.locked[0] : st.x + dx * .6, y: c.locked ? c.locked[1] : st.y + dy * .6, placed: !!c.locked, custom: !!c.custom, locked: !!c.locked }; });
+
+let sel = null, editStates = false, showLabels = true, showGrid = false, filters = { FBS: true, SUB: true, CITY: true, UNP: false }, q = '';
+let db = null, loaded = false, dirty = false, saveTimer = null; const undoStack = [];
+const el = id => document.getElementById(id);
+
+/* ---------- view (pan/zoom) ---------- */
+const svg = el('map'); const NS = 'http://www.w3.org/2000/svg';
+let view = { x: 80, y: 100, w: 440, h: 520 };
+function fitView(){ const x0 = 0, x1 = DATA.img_size[0], y0 = 0, y1 = DATA.img_size[1];
+  const r = svg.clientWidth / Math.max(1, svg.clientHeight); let w = x1 - x0, h = y1 - y0; if (w / h < r) w = h * r; else h = w / r;
+  view = { x: (x0 + x1) / 2 - w / 2, y: (y0 + y1) / 2 - h / 2, w, h }; applyView(); }
+function bottomInset(){ const ip = el('inspPanel'); return (window.innerWidth <= 900 && ip.classList.contains('open')) ? ip.getBoundingClientRect().height : 0; }
+function zoomBox(x0, y0, x1, y1){ const W = Math.max(1, svg.clientWidth), H = Math.max(1, svg.clientHeight), visH = Math.max(80, H - bottomInset() - 56);
+  const k = Math.max((x1 - x0) / W, (y1 - y0) / visH);   // map units per pixel so the box fits the uncovered part of the screen
+  const w = k * W, h = k * H; const target = { x: (x0 + x1) / 2 - w / 2, y: (y0 + y1) / 2 - k * visH / 2, w, h }; const from = { ...view }; const t0 = performance.now();
+  (function step(now){ const k = Math.min(1, (now - t0) / 260), e = 1 - Math.pow(1 - k, 3); view = { x: from.x + (target.x - from.x) * e, y: from.y + (target.y - from.y) * e, w: from.w + (target.w - from.w) * e, h: from.h + (target.h - from.h) * e }; applyView(); if (k < 1) requestAnimationFrame(step); else renderMap(); })(t0); }
+function zoom(f){ const cx = view.x + view.w / 2, cy = view.y + view.h / 2; zoomBox(cx - view.w * f / 2, cy - view.h * f / 2, cx + view.w * f / 2, cy + view.h * f / 2); }
+function zoomToState(name){ const c = cells().find(c => c.name === name); if (!c) return; const pts = c.poly.concat(Object.values(S).filter(p => p.state === name && p.kind !== 'state').map(p => [p.x, p.y]));
+  const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]); const pad = 4; zoomBox(Math.min(...xs) - pad, Math.min(...ys) - pad, Math.max(...xs) + pad, Math.max(...ys) + pad); }
+function applyView(){ svg.setAttribute('viewBox', `${view.x} ${view.y} ${view.w} ${view.h}`); }
+function toMap(ev){ const pt = svg.createSVGPoint(); pt.x = ev.clientX; pt.y = ev.clientY; const m = svg.getScreenCTM().inverse(); const p = pt.matrixTransform(m); return [p.x, p.y]; }
+svg.addEventListener('wheel', ev => { ev.preventDefault(); const [mx, my] = toMap(ev); const f = Math.exp(ev.deltaY * 0.0015);
+  view = { x: mx - (mx - view.x) * f, y: my - (my - view.y) * f, w: view.w * f, h: view.h * f }; applyView(); clearTimeout(wheelT); wheelT = setTimeout(renderMap, 120); }, { passive: false });
+let wheelT = null;
+
+/* ---------- voronoi cells for the states ---------- */
+function clipHalf(poly, a, b){ // keep side of bisector nearer a
+  const out = []; const mid = [(a.x + b.x) / 2, (a.y + b.y) / 2], n = [b.x - a.x, b.y - a.y];
+  const side = p => (p[0] - mid[0]) * n[0] + (p[1] - mid[1]) * n[1];
+  for (let i = 0; i < poly.length; i++){ const p = poly[i], r = poly[(i + 1) % poly.length], sp = side(p), sr = side(r);
+    if (sp <= 0) out.push(p);
+    if ((sp < 0 && sr > 0) || (sp > 0 && sr < 0)){ const t = sp / (sp - sr); out.push([p[0] + (r[0] - p[0]) * t, p[1] + (r[1] - p[1]) * t]); } }
+  return out; }
+let CELLS = null;
+function cells(){ if (CELLS) return CELLS; CELLS = DATA.states.map(s => { const pieces = DATA.polys[s.name] || []; return { name: s.name, pieces, poly: [].concat(...pieces) }; }); return CELLS; }
+
+/* ---------- render ---------- */
+const g = { cells: null, grid: null, pts: null };
+function mk(tag, attrs, parent){ const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+function visible(p){ if (p.kind === 'state') return editStates; if (filters.UNP && p.placed) return false;
+  if (p.kind === 'city') return filters.CITY; return p.level === 'FBS' ? filters.FBS : filters.SUB; }
+function renderMap(){ svg.innerHTML = '';
+  const im = mk('image', { x: 0, y: 0, width: DATA.img_size[0], height: DATA.img_size[1], preserveAspectRatio: 'none' }, svg); im.setAttributeNS('http://www.w3.org/1999/xlink', 'href', DATA.img); im.setAttribute('href', DATA.img);
+  g.cells = mk('g', {}, svg); const cs = cells(); const selState = sel ? S[sel].state : null;
+  cs.forEach((c, i) => { const path = mk('path', { d: c.pieces.map(pc => 'M' + pc.map(p => p.join(',')).join('L') + 'Z').join(''), class: 'cell' + (c.name === selState ? ' hl' : '') }, g.cells); path.dataset.state = c.name; });
+  if (showGrid){ g.grid = mk('g', {}, svg); for (let x = 0; x <= 700; x += 25) mk('line', { x1: x, y1: 0, x2: x, y2: 800, class: 'gridline' }, g.grid); for (let y = 0; y <= 800; y += 25) mk('line', { x1: 0, y1: y, x2: 700, y2: y, class: 'gridline' }, g.grid); }
+  const k = view.w / Math.max(1, svg.clientWidth);   // map units per screen pixel: markers and type stay a constant size on screen
+  const lbl = mk('g', {}, svg); if (editStates) cs.forEach(c => { const s = STATE_SEED(c.name); const tx = mk('text', { x: s.x, y: s.y - 8 * k, class: 'slabel' }, lbl); tx.textContent = c.name; tx.style.fontSize = (k > 0.6 ? 11 : 13) * k + 'px'; tx.style.strokeWidth = 3 * k + 'px'; });
+  g.pts = mk('g', {}, svg); const scale = k;
+  const order = Object.values(S).filter(visible).sort((a, b) => (a.id === sel) - (b.id === sel));
+  for (const p of order){ const gp = mk('g', { class: 'pt' + (p.placed ? '' : ' unp') + (p.locked ? ' lk' : '') + (p.id === sel ? ' sel' : ''), transform: `translate(${p.x},${p.y})` }, g.pts); gp.dataset.id = p.id;
+    const r = 4.5 * k, r2 = 3 * k;
+    mk('circle', { r: 11 * k, class: 'hit' }, gp);   // invisible touch target: a hollow circle has no interior to tap
+    if (p.kind === 'state') mk('path', { d: `M0,${-7*k}L${7*k},0L0,${7*k}L${-7*k},0Z`, class: 'seed' }, gp);
+    else if (p.kind === 'city') mk('rect', { x: -r, y: -r, width: 2 * r, height: 2 * r, class: 'city' }, gp);
+    else if (p.level === 'FBS') mk('circle', { r: r, class: 'fbs', fill: p.colors[0] }, gp);
+    else mk('circle', { r: r2, class: 'sub' }, gp);
+    const labelOk = p.id === sel || (scale <= 0.45) || (scale <= 0.9 && (p.kind !== 'school' || p.level === 'FBS'));
+    if (showLabels && labelOk){ const t = mk('text', { x: 7 * k, y: 4 * k, class: 'plabel' + (p.kind === 'city' ? ' city' : '') }, gp); t.textContent = p.name; t.style.fontSize = 11.5 * k + 'px'; t.style.strokeWidth = 3 * k + 'px'; } }
+}
+function renderList(){ const L = el('list'); L.innerHTML = ''; const qq = q.trim().toLowerCase();
+  const byState = {}; Object.values(S).forEach(p => { if (p.kind === 'state' && !editStates) return; if (!visible(p) && p.kind !== 'state') return;
+    if (qq && !(p.name.toLowerCase().includes(qq) || (p.full || '').toLowerCase().includes(qq) || p.state.toLowerCase().includes(qq))) return; (byState[p.state] = byState[p.state] || []).push(p); });
+  let nUnp = 0; Object.values(S).forEach(p => { if (!p.placed) nUnp++; });
+  el('counts').textContent = `${DATA.states.length} states · ${DATA.schools.length} schools · ${Object.values(S).filter(p => p.kind === 'city').length} cities · ${nUnp} unplaced`;
+  Object.keys(byState).sort().forEach(st => { const items = byState[st].sort((a, b) => (a.kind === 'state' ? 0 : a.kind === 'city' ? 1 : a.level === 'FBS' ? 2 : 3) - (b.kind === 'state' ? 0 : b.kind === 'city' ? 1 : b.level === 'FBS' ? 2 : 3) || a.name.localeCompare(b.name));
+    const h = document.createElement('div'); h.className = 'grp'; h.innerHTML = `<span>${st}</span><span class="n">${items.filter(p => p.kind !== 'state').length}</span>`; h.onclick = () => zoomToState(st); L.appendChild(h);
+    items.forEach(p => { const r = document.createElement('div'); r.className = 'row' + (p.id === sel ? ' sel' : '') + (p.placed ? '' : ' unp'); r.dataset.id = p.id;
+      const sw = p.kind === 'state' ? 'sw state' : p.kind === 'city' ? 'sw city' : p.level === 'FBS' ? 'sw' : 'sw sub';
+      r.innerHTML = `<span class="${sw}" style="${p.kind === 'school' && p.level === 'FBS' ? 'background:' + p.colors[0] : ''}"></span><span class="nm">${p.name}${wantsLock(p) ? ' <span title="locked">🔒</span>' : ''}</span><span class="st">${p.kind === 'school' ? (p.conf || 'sub') : p.kind}</span>`; L.appendChild(r); }); });
+  const r = L.querySelector('.row.sel'); if (r) r.scrollIntoView({ block: 'nearest' }); }
+function renderInsp(){ const I = el('insp'); if (!sel){ I.innerHTML = `<div class="hint">Nothing selected.<br><br>Drag any point to place it. Dashed points have never been placed and sit at a guessed spot near their state's seed.<br><br>Coordinates are the sim's own map units (the ones the schedule and bowl distances already use), so what you place here is what the engine will measure.</div>${addCityForm()}`; return; }
+  const p = S[sel]; const st = STATE_SEED(p.state); const d = Math.hypot(p.x - st.x, p.y - st.y).toFixed(1);
+  const outside = p.kind !== 'state' && !inState(p.x, p.y, p.state);
+  I.innerHTML = `<h2>${p.full || p.name}</h2>
+    <div class="belongs${outside ? ' bad' : ''}"><span>${p.kind === 'state' ? 'state seed' : 'belongs in'}</span><strong>${p.state.toUpperCase()}</strong>${outside ? '<em>· dot is currently outside the state</em>' : ''}</div><div class="meta">${p.kind === 'school' ? (p.level === 'FBS' ? `${p.conf} (${p.tier})` : 'subdivision') : p.kind === 'city' ? 'city' + (p.custom ? ' (added here)' : '') : 'state seed — moving it reshapes the map'} · ${p.state}${p.kind !== 'state' ? ` · ${d} from seed` : ''}</div>
+    ${p.roles ? `<div class="roles">${p.roles.map(r => '<div>' + r + '</div>').join('')}</div>` : ''}
+    <div class="kv"><label>x</label><input type="number" step="0.1" id="ix" value="${p.x.toFixed(1)}" ${p.locked ? 'readonly' : ''}><label>y</label><input type="number" step="0.1" id="iy" value="${p.y.toFixed(1)}" ${p.locked ? 'readonly' : ''}><label>status</label><span>${lockState(p)}</span></div>
+    <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><div class="nudge"><span></span><button data-n="0,-1">↑</button><span></span><button data-n="-1,0">←</button><button data-n="0,1">↓</button><button data-n="1,0">→</button></div><div class="hint">nudge 1 unit · hold shift for 10, alt for 0.1<br>drag the dot on the map to place it</div></div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">${p.kind === 'state' ? '' : p.locked ? '<button disabled>🔒 Locked in</button>' : `<button id="lockBtn" class="${wantsLock(p) ? 'on' : ''}">${wantsLock(p) ? '🔒 Lock requested' : '🔓 Lock'}</button>`}<button id="zstate2">Zoom to state</button>${p.locked ? '' : '<button id="toSeed">Snap to state seed</button>'}${p.locked ? '' : `<button id="markPlaced">${p.placed ? 'Mark unplaced' : 'Mark placed'}</button>`}${p.custom ? '<button id="delCity" class="warn">Delete city</button>' : ''}</div>
+    ${addCityForm()}`; }
+function wantsLock(p){ return p.lockReq !== undefined ? p.lockReq : !!p.locked; }
+function lockState(p){ if (!p.placed) return 'unplaced (guess)'; if (p.locked) return 'LOCKED into the sim — permanent'; if (p.lockReq) return 'placed · lock requested (next lock-in)'; return 'placed · not locked'; }
+function addCity(rawName, st){ const name = (rawName || '').trim(); if (!name){ toast('name the city first'); return false; } const id = 'ci:' + name + '|' + st; if (S[id]){ toast('already on the map'); return false; }
+  const [gx, gy] = guessPos('city' + name, st, 0.3); S[id] = { id, kind: 'city', name, state: st, roles: ['added in the Map Office'], x: gx, y: gy, placed: true, custom: true };
+  pushUndo(S[id]); queueSave(); select(id, true); toast('added ' + name + ' — drag it into place'); return true; }
+function addCityForm(){ return `<details class="addcity"><summary class="hint" style="font-weight:600;color:var(--ink);cursor:pointer">Add a city</summary><input type="text" id="cname" placeholder="city name" style="margin-top:6px"><select id="cstate">${DATA.states.map(s => `<option>${s.name}</option>`).join('')}</select><button id="addCity">Add at state seed</button></details>
+    <details class="addcity"><summary class="hint" style="font-weight:600;color:var(--ink);cursor:pointer">Hand-off JSON</summary><textarea id="handoff" readonly style="margin-top:6px"></textarea><button id="copyHand">Copy placements JSON</button></details>`; }
+function render(){ renderMap(); renderList(); renderInsp(); el('mStates').classList.toggle('on', editStates); fillHandoff(); }
+
+/* ---------- interaction ---------- */
+let drag = null, panning = null;
+svg.addEventListener('pointerdown', ev => { const t = ev.target.closest('.pt'); if (t){ const p = S[t.dataset.id]; if (p.kind === 'state' && !editStates) return;
+    if (p.locked){ select(p.id, false); toast(p.name + ' is locked into the sim'); ev.preventDefault(); return; }
+    pushUndo(p); drag = { p, start: toMap(ev), ox: p.x, oy: p.y, moved: false }; svg.setPointerCapture(ev.pointerId); select(p.id, false); ev.preventDefault(); return; }
+  const cellEl = ev.target.closest('.cell'); panning = { start: [ev.clientX, ev.clientY], v: { ...view }, cell: cellEl ? cellEl.dataset.state : null }; svg.classList.add('dragging'); svg.setPointerCapture(ev.pointerId); });
+svg.addEventListener('dblclick', ev => { const c = ev.target.closest('.cell'); if (c) zoomToState(c.dataset.state); });
+/* pinch: two fingers scale and move the view; pointer handlers stand down while a pinch is live */
+let pinch = null;
+function tdist(ts){ return Math.hypot(ts[0].clientX - ts[1].clientX, ts[0].clientY - ts[1].clientY); }
+function tmid(ts){ return [(ts[0].clientX + ts[1].clientX) / 2, (ts[0].clientY + ts[1].clientY) / 2]; }
+svg.addEventListener('touchstart', ev => { if (ev.touches.length === 2){ ev.preventDefault(); if (drag){ undoStack.pop(); drag = null; } panning = null;
+    const [mx, my] = toMap({ clientX: tmid(ev.touches)[0], clientY: tmid(ev.touches)[1] }); pinch = { d0: tdist(ev.touches), v0: { ...view }, mx, my, c0: tmid(ev.touches) }; } }, { passive: false });
+svg.addEventListener('touchmove', ev => { if (!pinch || ev.touches.length !== 2) return; ev.preventDefault();
+  const f = pinch.d0 / Math.max(1, tdist(ev.touches)); const c = tmid(ev.touches); const kpx = pinch.v0.w / svg.clientWidth;
+  const w = pinch.v0.w * f, h = pinch.v0.h * f;   // keep the map point under the fingers' midpoint under them, and follow the midpoint
+  view = { x: pinch.mx - (c[0] - svg.getBoundingClientRect().left) * (w / svg.clientWidth), y: pinch.my - (c[1] - svg.getBoundingClientRect().top) * (h / svg.clientHeight), w, h }; applyView(); }, { passive: false });
+svg.addEventListener('touchend', ev => { if (pinch && ev.touches.length < 2){ pinch = null; renderMap(); } });
+svg.addEventListener('pointermove', ev => { const [mx, my] = toMap(ev); el('hud').textContent = `x ${mx.toFixed(1)}  y ${my.toFixed(1)}` + (sel ? `   · ${Math.hypot(mx - S[sel].x, my - S[sel].y).toFixed(1)} from ${S[sel].name}` : '');
+  if (drag){ const [sx, sy] = drag.start; drag.p.x = drag.ox + (mx - sx); drag.p.y = drag.oy + (my - sy); drag.moved = true; const node = svg.querySelector(`.pt[data-id="${CSS.escape(drag.p.id)}"]`); if (node) node.setAttribute('transform', `translate(${drag.p.x},${drag.p.y})`); return; }
+  if (panning){ if (Math.hypot(ev.clientX - panning.start[0], ev.clientY - panning.start[1]) > 4) panning.moved = true; if (!panning.moved) return; const k = view.w / svg.clientWidth; view.x = panning.v.x - (ev.clientX - panning.start[0]) * k; view.y = panning.v.y - (ev.clientY - panning.start[1]) * k; applyView(); } });
+function endDrag(ev){ if (panning && !panning.moved && ev && ev.type === 'pointerup' && panning.cell){ const name = panning.cell; panning = null; svg.classList.remove('dragging'); return zoomToState(name); }
+  if (drag){ if (drag.moved){ drag.p.x = +drag.p.x.toFixed(2); drag.p.y = +drag.p.y.toFixed(2); drag.p.placed = true; queueSave(); } else undoStack.pop(); drag = null; render(); } if (panning){ panning = null; svg.classList.remove('dragging'); } }
+svg.addEventListener('pointerup', endDrag); svg.addEventListener('pointercancel', endDrag);
+function select(id, center){ const prev = sel ? S[sel].state : null; sel = id; if (id) el('inspPanel').classList.add('open'); if (center) el('side').classList.remove('open'); render();
+  if (center && id){ if (S[id].state !== prev || view.w > 140) zoomToState(S[id].state); else centerOn(S[id]); } }
+function deselect(){ sel = null; el('inspPanel').classList.remove('open'); render(); }
+function centerOn(p){ view.x = p.x - view.w / 2; view.y = p.y - view.h / 2; applyView(); }
+function pushUndo(p){ undoStack.push({ id: p.id, x: p.x, y: p.y, placed: p.placed }); if (undoStack.length > 200) undoStack.shift(); }
+function move(p, dx, dy){ if (p.locked) return toast(p.name + ' is locked'); pushUndo(p); p.x = +(p.x + dx).toFixed(2); p.y = +(p.y + dy).toFixed(2); p.placed = true; queueSave(); render(); }
+document.addEventListener('keydown', ev => { if (!sel || ['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) return; const k = { ArrowUp: [0, -1], ArrowDown: [0, 1], ArrowLeft: [-1, 0], ArrowRight: [1, 0] }[ev.key]; if (!k) return; ev.preventDefault();
+  const m = ev.shiftKey ? 10 : ev.altKey ? 0.1 : 1; const p = S[sel]; if (p.kind === 'state' && !editStates) return; move(p, k[0] * m, k[1] * m); });
+document.addEventListener('click', ev => { const row = ev.target.closest('.row'); if (row) return select(row.dataset.id, true);
+  const f = ev.target.closest('[data-f]'); if (f){ filters[f.dataset.f] = !filters[f.dataset.f]; f.classList.toggle('on', filters[f.dataset.f]); return render(); }
+  const n = ev.target.closest('[data-n]'); if (n && sel){ const [dx, dy] = n.dataset.n.split(',').map(Number); return move(S[sel], dx, dy); }
+  const cl = ev.target.closest('[data-close]'); if (cl){ if (cl.dataset.close === 'insp') return deselect(); el('side').classList.remove('open'); return; }
+  if (ev.target.id === 'done') return deselect();
+  switch (ev.target.id){
+    case 'openSide': el('side').classList.toggle('open'); return;
+    case 'zin': return zoom(0.7);
+    case 'zout': return zoom(1/0.7);
+    case 'mStates': editStates = !editStates; if (!editStates && sel && S[sel].kind === 'state') sel = null; return render();
+    case 'mLabels': showLabels = !showLabels; ev.target.classList.toggle('on', showLabels); return renderMap();
+    case 'mGrid': showGrid = !showGrid; ev.target.classList.toggle('on', showGrid); return renderMap();
+    case 'fit': return fitView();
+    case 'lockBtn': { const p = S[sel]; if (p.locked) return; if (!p.placed){ p.placed = true; } p.lockReq = !p.lockReq; queueSave(); toast(p.lockReq ? 'lock requested — permanent once I lock it in' : 'lock request withdrawn'); return render(); }
+    case 'zstate2':
+    case 'zstate': if (sel) return zoomToState(S[sel].state); return toast('select something first');
+    case 'undo': { const u = undoStack.pop(); if (!u) return toast('nothing to undo'); const p = S[u.id]; p.x = u.x; p.y = u.y; p.placed = u.placed; queueSave(); return render(); }
+    case 'toSeed': { const p = S[sel]; const st = STATE_SEED(p.state); pushUndo(p); p.x = st.x; p.y = st.y; p.placed = true; queueSave(); return render(); }
+    case 'markPlaced': { const p = S[sel]; if (p.locked) return toast('locked'); pushUndo(p); p.placed = !p.placed; queueSave(); return render(); }
+    case 'delCity': { const p = S[sel]; delete S[sel]; sel = null; queueSave(); toast('deleted ' + p.name); return render(); }
+    case 'addCity': return addCity(el('cname').value, el('cstate').value);
+    case 'addCityBtn': { const pop = el('cityPop'); pop.hidden = !pop.hidden; if (!pop.hidden){ const ps = el('pstate'); if (!ps.options.length) ps.innerHTML = DATA.states.map(s => `<option>${s.name}</option>`).join('');
+        if (sel) ps.value = S[sel].state; el('pname').value = ''; setTimeout(() => el('pname').focus(), 50); } return; }
+    case 'popCancel': el('cityPop').hidden = true; return;
+    case 'popAdd': { if (addCity(el('pname').value, el('pstate').value) !== false) el('cityPop').hidden = true; return; }
+    case 'copyHand': { const ta = el('handoff'); ta.select(); navigator.clipboard?.writeText(ta.value).then(() => toast('copied'), () => toast('select and copy by hand')); return; }
+  } });
+document.addEventListener('change', ev => { if (!sel || S[sel].locked) return; if (ev.target.id === 'ix' || ev.target.id === 'iy'){ const p = S[sel]; pushUndo(p); p.x = +(+el('ix').value).toFixed(2); p.y = +(+el('iy').value).toFixed(2); p.placed = true; queueSave(); render(); } });
+el('pname').addEventListener('keydown', ev => { if (ev.key === 'Enter'){ ev.preventDefault(); if (addCity(el('pname').value, el('pstate').value) !== false) el('cityPop').hidden = true; } });
+el('q').addEventListener('input', ev => { q = ev.target.value; renderList(); });
+window.addEventListener('resize', () => renderMap());
+
+/* ---------- persistence ---------- */
+const DOC = 'map/v1';
+function snapshot(){ const o = { saved: new Date().toISOString(), states: {}, schools: {}, cities: [], locks: {} };
+  Object.values(S).forEach(p => { if (p.lockReq !== undefined) o.locks[p.id] = p.lockReq; });
+  Object.values(S).forEach(p => { if (p.kind === 'state') o.states[p.name] = [p.x, p.y]; else if (p.kind === 'school'){ if (p.placed) o.schools[p.name] = [p.x, p.y]; } else o.cities.push({ name: p.name, state: p.state, x: p.x, y: p.y, placed: p.placed, custom: p.custom, roles: p.custom ? p.roles : undefined }); });
+  return o; }
+function fillHandoff(){ const ta = el('handoff'); if (ta) ta.value = JSON.stringify(snapshot()); }
+function setSave(m, c){ const s = el('save'); s.textContent = m; s.className = 'save ' + (c || ''); }
+function restore(d){ let n = 0; if (d.states) for (const k in d.states){ const p = STATE_SEED(k); if (p){ p.x = d.states[k][0]; p.y = d.states[k][1]; } }
+  // unplaced schools re-jitter around the (possibly moved) seed
+  Object.values(S).forEach(p => { if (p.kind !== 'state' && !p.placed && !p.locked){ const [gx, gy] = guessPos(p.kind === 'city' ? 'city' + p.name : p.name, p.state, 1); p.x = gx; p.y = gy; } });
+  if (d.locks) for (const k in d.locks){ if (S[k]) S[k].lockReq = d.locks[k]; }
+  if (d.schools) for (const k in d.schools){ const p = S['sc:' + k]; if (p && !p.locked){ p.x = d.schools[k][0]; p.y = d.schools[k][1]; p.placed = true; n++; } }
+  if (d.cities) d.cities.forEach(c => { const id = 'ci:' + c.name + '|' + c.state; if (!S[id] && c.custom) S[id] = { id, kind: 'city', name: c.name, state: c.state, roles: c.roles || ['added in the Map Office'], x: c.x, y: c.y, placed: c.placed, custom: true };
+    else if (S[id] && !S[id].locked){ S[id].x = c.x; S[id].y = c.y; S[id].placed = !!c.placed; } if (c.placed) n++; });
+  return n; }
+async function connect(){ setSave('loading…', '');
+  try { db = await window.claude?.use?.('db'); } catch (e){ db = null; }
+  if (!db){ loaded = true; setSave('saving unavailable — copy the hand-off JSON', 'bad'); render(); return; }
+  try { const doc = await db.doc(DOC).get(); if (doc && doc.data){ const n = restore(doc.data); setSave(`restored ${n} placements · ${doc.data.saved ? doc.data.saved.slice(0, 16).replace('T', ' ') : ''}`, 'ok'); } else setSave('ready — nothing placed yet', ''); }
+  catch (e){ db = null; loaded = true; setSave('could not read the saved map — copy the hand-off before you close', 'bad'); render(); return; }
+  loaded = true; render(); fitView(); }
+function queueSave(){ dirty = true; if (!loaded) return; setSave('unsaved…', 'dirty'); clearTimeout(saveTimer); saveTimer = setTimeout(save, 800); }
+async function save(){ if (!db){ setSave('not saved — copy the hand-off JSON', 'bad'); fillHandoff(); return; }
+  try { await db.doc(DOC).set(snapshot()); dirty = false; setSave('saved ' + new Date().toLocaleTimeString(), 'ok'); fillHandoff(); } catch (e){ setSave('save failed — copy the hand-off JSON', 'bad'); } }
+let toastTimer = null; function toast(m){ const t = el('toast'); t.textContent = m; t.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), 1800); }
+
+render(); fitView(); connect();
+</script>

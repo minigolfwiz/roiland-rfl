@@ -1,0 +1,337 @@
+<title>Roiland Coaching Board</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=UnifrakturCook:wght@700&family=Oswald:wght@600;700&family=Alfa+Slab+One&family=Orbitron:wght@800;900&family=Bungee&family=Bowlby+One+SC&family=Archivo+Black&family=Rye&family=Righteous&display=swap">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+/* The same ledger desk as the Season viewer, the Committee Room and the Scheduling
+   Office. One row per coach; the thirteen cells to the right are the thirteen seasons,
+   shaded by how far that season went. */
+:root{
+  --paper:#f4efe4; --ink:#1d1a15; --dim:#6b6355; --rule:#d8cfbb; --card:#fffdf7;
+  --brass:#8a6410; --brass-soft:#b99a52; --win:#2f5d4a; --loss:#8c2f2f;
+  --chip:#e9e1cd; --warn:#8a5a12;
+  /* Playoff depth is ORDINAL -- missed, round one, round two, quarterfinal, semifinal,
+     final, title -- so it gets one hue stepped light to dark, never a set of unrelated
+     colours. The title step is the only one that inverts to paper-on-brass, because a
+     championship should read as a different KIND of cell, not just a darker one. */
+  --d0:#eae2cf; --d1:#ddcfa6; --d2:#cdb67c; --d3:#b9995a;
+  --d4:#9d7a34; --d5:#7d5c15; --d6:#5a3f06;
+  --d0i:#8a8070; --d1i:#2a2416; --d2i:#2a2416; --d3i:#fdfaf1;
+  --d4i:#fdfaf1; --d5i:#fdfaf1; --d6i:#fdf3cf;
+  --display:"Spectral",Georgia,"Times New Roman",serif;
+  --body:"Spectral",Georgia,serif;
+  --data:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --paper:#17150f; --ink:#ece6d7; --dim:#938b78; --rule:#332e24; --card:#201d15;
+  --brass:#d2ab5e; --brass-soft:#8a7542; --win:#79c3a2; --loss:#e0786f;
+  --chip:#2a2619; --warn:#d8a24a;
+  --d0:#282318; --d1:#3b3220; --d2:#55482a; --d3:#6f5d33;
+  --d4:#8d763f; --d5:#ad934e; --d6:#d2ab5e;
+  --d0i:#6e6757; --d1i:#c9c0a8; --d2i:#e4dcc6; --d3i:#f3ecd9;
+  --d4i:#1d1a11; --d5i:#1d1a11; --d6i:#17150f;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#17150f; --ink:#ece6d7; --dim:#938b78; --rule:#332e24; --card:#201d15;
+  --brass:#d2ab5e; --brass-soft:#8a7542; --win:#79c3a2; --loss:#e0786f;
+  --chip:#2a2619; --warn:#d8a24a;
+  --d0:#282318; --d1:#3b3220; --d2:#55482a; --d3:#6f5d33;
+  --d4:#8d763f; --d5:#ad934e; --d6:#d2ab5e;
+  --d0i:#6e6757; --d1i:#c9c0a8; --d2i:#e4dcc6; --d3i:#f3ecd9;
+  --d4i:#1d1a11; --d5i:#1d1a11; --d6i:#17150f;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);margin:0;
+  font-size:15px;line-height:1.45}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:16px;padding-block:0 56px}
+main > *{min-width:0}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;
+  background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--rule);padding-block:11px;margin-bottom:14px}
+.topin{max-width:1240px;margin:0 auto;padding-inline:16px;display:flex;gap:13px;
+  align-items:baseline;flex-wrap:wrap}
+h1{font-family:var(--display);font-size:20px;font-weight:600;margin:0}
+h1 span{color:var(--brass)}
+.yr{font-family:var(--data);font-size:11.5px;color:var(--dim);letter-spacing:.14em}
+.spacer{flex:1 1 auto}
+button{font:inherit;cursor:pointer;border-radius:4px;border:1px solid var(--rule);
+  background:var(--card);color:var(--ink);padding:5px 10px;font-size:12.5px}
+button:hover{border-color:var(--brass-soft)}
+button:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+button[aria-pressed="true"]{background:var(--brass);border-color:var(--brass);
+  color:var(--paper);font-weight:700}
+
+.lede{max-width:66ch;font-size:14.5px;color:var(--dim);margin:0 0 12px}
+.lede b{color:var(--ink);font-weight:600}
+.caveat{border-left:3px solid var(--warn);background:var(--card);border-radius:0 4px 4px 0;
+  padding:10px 13px;margin:0 0 16px;font-size:13.5px;max-width:78ch}
+.caveat b{color:var(--warn)}
+
+h2.sec{font-family:var(--data);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--dim);margin:22px 0 9px;padding-bottom:6px;border-bottom:1px solid var(--rule);
+  display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+
+.controls{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.controls .lbl{font-family:var(--data);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--dim);margin-right:2px}
+
+/* the legend for the depth ramp */
+.legend{display:flex;gap:0;flex-wrap:wrap;align-items:stretch;margin:0 0 14px;
+  border:1px solid var(--rule);border-radius:4px;overflow:hidden;max-width:760px}
+.legend .k{flex:1 1 0;min-width:58px;padding:5px 4px;font-family:var(--data);
+  font-size:9px;letter-spacing:.04em;text-transform:uppercase;text-align:center;
+  border-right:1px solid color-mix(in srgb,var(--paper) 55%,transparent)}
+.legend .k:last-child{border-right:0}
+
+/* the board */
+.boardwrap{overflow-x:auto;border:1px solid var(--rule);border-radius:5px;background:var(--card)}
+table.board{border-collapse:separate;border-spacing:0;width:100%;min-width:900px}
+table.board th{font-family:var(--data);font-size:9px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--dim);font-weight:400;padding:7px 5px;border-bottom:1px solid var(--rule);
+  position:sticky;top:0;background:var(--card);z-index:2;white-space:nowrap}
+table.board th.yr{width:30px;text-align:center;padding-inline:0}
+table.board td{padding:0;border-bottom:1px solid var(--rule);vertical-align:middle}
+tr:last-child td{border-bottom:0}
+tr.row:hover td{background:color-mix(in srgb,var(--brass) 6%,transparent)}
+
+.cno{font-family:var(--data);font-size:11.5px;color:var(--dim);text-align:right;
+  padding:0 8px 0 10px;font-variant-numeric:tabular-nums;width:34px}
+.who{padding:7px 8px 7px 2px;min-width:200px}
+.whoin{display:flex;gap:8px;align-items:center;min-width:0}
+.bdg{flex:0 0 auto;display:flex}
+.bdg svg{width:21px;height:21px;display:block}
+.nm b{font-weight:600;font-size:13.5px;display:block;white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis}
+.nm small{display:block;font-family:var(--data);font-size:10px;color:var(--dim);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:26ch}
+.rec{font-family:var(--data);font-size:12.5px;font-variant-numeric:tabular-nums;
+  white-space:nowrap;padding:0 9px;text-align:right}
+.rec small{display:block;font-size:10px;color:var(--dim)}
+.marks{padding:0 8px;white-space:nowrap}
+.pill{display:inline-block;font-family:var(--data);font-size:9.5px;letter-spacing:.06em;
+  padding:1px 5px;border-radius:3px;margin-right:3px;border:1px solid var(--rule);color:var(--dim)}
+.pill.t{background:var(--d6);color:var(--d6i);border-color:var(--d6);font-weight:700}
+.pill.f{border-color:var(--d5);color:var(--brass)}
+.pill.s{border-color:var(--d4);color:var(--brass)}
+.pill.q{border-color:var(--brass-soft)}
+
+td.cell{width:30px;height:30px;padding:0;text-align:center}
+.cell .sq{display:block;width:100%;height:30px;line-height:30px;font-family:var(--data);
+  font-size:9px;letter-spacing:.02em;border-right:2px solid var(--card);cursor:default;
+  overflow:hidden}
+.cell.none .sq{background:transparent;color:transparent;
+  background-image:repeating-linear-gradient(135deg,transparent 0 4px,
+    color-mix(in srgb,var(--dim) 22%,transparent) 4px 5px)}
+.cell .sq.switch{box-shadow:inset 3px 0 0 var(--ink)}
+
+/* the school map */
+.schools{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}
+.scard{display:flex;gap:9px;align-items:center;background:var(--card);
+  border:1px solid var(--rule);border-left-width:4px;border-radius:4px;padding:7px 10px;min-width:0}
+.scard .nm2{min-width:0}
+.scard b{font-weight:600;font-size:13.5px;display:block;white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis}
+.scard small{font-family:var(--data);font-size:10.5px;color:var(--dim);display:block}
+
+#tip{position:fixed;z-index:60;pointer-events:none;opacity:0;transition:opacity .09s;
+  background:var(--card);border:1px solid var(--brass-soft);border-radius:4px;
+  padding:7px 10px;font-size:12.5px;max-width:260px;box-shadow:0 6px 20px #0003}
+#tip.on{opacity:1}
+#tip b{display:block;font-weight:600}
+#tip small{font-family:var(--data);font-size:10.5px;color:var(--dim);display:block}
+
+.note{font-size:12.5px;color:var(--dim);margin:12px 0 0;max-width:76ch}
+
+@media (max-width:760px){
+  .wrap{padding-inline:14px}
+  h1{font-size:17px}
+  .yr{display:none}
+  .who{min-width:170px}
+}
+</style>
+
+<header class="top">
+  <div class="topin">
+    <h1>Roiland <span>Coaching Board</span></h1>
+    <span class="yr" id="yrline"></span>
+    <span class="spacer"></span>
+    <button class="tiny" id="themeBtn" title="light / dark">◐</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <main>
+    <p class="lede" id="lede"></p>
+    <div class="caveat" id="caveat"></div>
+
+    <div class="controls">
+      <span class="lbl">order by</span>
+      <button data-sort="W" aria-pressed="true">wins</button>
+      <button data-sort="pct" aria-pressed="false">win rate</button>
+      <button data-sort="tit" aria-pressed="false">titles</button>
+      <button data-sort="po" aria-pressed="false">playoff trips</button>
+      <span class="spacer"></span>
+      <button id="minS" aria-pressed="false">6+ seasons only</button>
+    </div>
+
+    <div class="legend" id="legend"></div>
+
+    <div class="boardwrap">
+      <table class="board">
+        <thead><tr id="head"></tr></thead>
+        <tbody id="body"></tbody>
+      </table>
+    </div>
+    <p class="note" id="foot"></p>
+
+    <h2 class="sec">Coaches who changed schools <em id="mcount"></em></h2>
+    <div class="schools" id="movers"></div>
+  </main>
+</div>
+<div id="tip"></div>
+
+<script>
+__MARKS__
+</script>
+<script>
+const DATA = __DATA__;
+const el = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+const DEPTH = ['missed', 'round 1', 'round 2', 'quarterfinal', 'semifinal', 'final', 'TITLE'];
+const SHORT = ['', 'R1', 'R2', 'QF', 'SF', 'F', '★'];
+
+el('yrline').textContent = DATA.years[0] + ' – ' + DATA.years[DATA.years.length - 1];
+el('lede').innerHTML = 'Every head coach in the simulated era, ranked by games won. '
+  + 'Each row runs left to right across the thirteen seasons; a cell is shaded by how '
+  + 'far that team went in <b>that</b> season, and a dark left edge marks the year a '
+  + 'coach arrived at a new school.';
+el('caveat').innerHTML = '<b>What this can and cannot see.</b> Who coached where is '
+  + 'recorded exactly from 2036 on. Earlier than that it is reconstructed from each '
+  + "coach's tenure at the 2035 rebuild, which only carries back the coaches who never "
+  + 'moved — so a coach who left a job before 2035 has no record here at all, and the '
+  + 'board is biased toward the ones who stayed put. The win-loss and playoff figures '
+  + 'themselves come from the box scores and are exact. Coverage by season is below the table.';
+
+/* ---------- legend ---------- */
+el('legend').innerHTML = DEPTH.map((d, i) =>
+  `<span class="k" style="background:var(--d${i});color:var(--d${i}i)">${esc(d)}</span>`).join('');
+
+/* ---------- head ---------- */
+el('head').innerHTML = '<th></th><th>coach</th><th style="text-align:right">record</th>'
+  + '<th>postseason</th>'
+  + DATA.years.map(y => `<th class="yr">’${String(y).slice(2)}</th>`).join('');
+
+const badge = t => {
+  const d = DATA.teams[t];
+  return d ? mark({ name: t, mascot: d.mascot, conf: d.conf, col: d.col }) : '';
+};
+
+let sortKey = 'W', minSeasons = false;
+
+function rows(){
+  let r = DATA.coaches.slice();
+  if (minSeasons) r = r.filter(c => c.s >= 6);
+  const key = c => sortKey === 'pct' ? c.W / Math.max(1, c.W + c.L)
+             : sortKey === 'tit' ? c.tit * 1000 + c.W / 100
+             : sortKey === 'po'  ? c.po * 1000 + c.W / 100
+             : c.W;
+  return r.sort((a, b) => key(b) - key(a));
+}
+
+function render(){
+  const out = [];
+  rows().forEach((c, i) => {
+    const byYear = {};
+    c.yrs.forEach(y => byYear[y.y] = y);
+    let prev = null;
+    const cells = DATA.years.map(y => {
+      const v = byYear[y];
+      if (!v){ prev = null; return `<td class="cell none"><span class="sq"></span></td>`; }
+      const sw = (prev !== null && prev !== v.t) || prev === null ? 'switch' : '';
+      prev = v.t;
+      return `<td class="cell"><span class="sq ${sw}" style="background:var(--d${v.d});color:var(--d${v.d}i)"`
+        + ` data-tip="${esc(c.n)}|${y} · ${esc(v.t)}|${v.w}-${v.l} · ${esc(DEPTH[v.d])}">${SHORT[v.d]}</span></td>`;
+    }).join('');
+    const pct = (c.W / Math.max(1, c.W + c.L)).toFixed(3).replace(/^0/, '');
+    const where = c.schools.map(s => s.t + (s.from === s.to ? ` ’${String(s.from).slice(2)}`
+      : ` ’${String(s.from).slice(2)}–’${String(s.to).slice(2)}`)).join(' · ');
+    const pills = (c.tit ? `<span class="pill t">${c.tit} title${c.tit > 1 ? 's' : ''}</span>` : '')
+      + (c.fin ? `<span class="pill f">${c.fin} final${c.fin > 1 ? 's' : ''}</span>` : '')
+      + (c.sf ? `<span class="pill s">${c.sf} semi${c.sf > 1 ? 's' : ''}</span>` : '')
+      + (c.qf ? `<span class="pill q">${c.qf} qtr</span>` : '')
+      + `<span class="pill">${c.po} playoff${c.po === 1 ? '' : 's'}</span>`;
+    out.push(`<tr class="row">
+      <td class="cno">${i + 1}</td>
+      <td class="who"><span class="whoin"><span class="bdg">${badge(c.schools[c.schools.length - 1].t)}</span>
+        <span class="nm"><b>${esc(c.n)}</b><small>${esc(where)}</small></span></span></td>
+      <td class="rec">${c.W}–${c.L}<small>${pct} · ${c.s} seasons</small></td>
+      <td class="marks">${pills}</td>${cells}</tr>`);
+  });
+  el('body').innerHTML = out.join('');
+  if (window.fitAll) fitAll(el('body'));
+}
+
+/* ---------- coverage footnote, straight from the data ---------- */
+el('foot').textContent = 'Programmes with a known head coach, by season: '
+  + DATA.years.map(y => y + ' ' + (DATA.coverage[y] || 0)).join(' · ')
+  + ' — out of 152. The thin diagonal cells are seasons where that coach is not on record.';
+
+/* ---------- the movers ---------- */
+const movers = DATA.coaches.filter(c => c.schools.length > 1);
+el('mcount').textContent = movers.length + ' of the ' + DATA.coaches.length + ' on this board';
+el('movers').innerHTML = movers.map(c => {
+  const col = DATA.teams[c.schools[c.schools.length - 1].t].col[0];
+  return `<div class="scard" style="border-left-color:${col}">
+    <span class="bdg">${badge(c.schools[c.schools.length - 1].t)}</span>
+    <span class="nm2"><b>${esc(c.n)}</b>
+    <small>${c.schools.map(s => esc(s.t) + ' ’' + String(s.from).slice(2)
+      + (s.from === s.to ? '' : '–’' + String(s.to).slice(2))).join(' → ')}</small>
+    <small>${c.W}–${c.L}</small></span></div>`;
+}).join('') || '<p class="note">None on this board.</p>';
+
+/* ---------- interaction ---------- */
+const tip = el('tip');
+document.addEventListener('mouseover', e => {
+  const n = e.target.closest('[data-tip]');
+  if (!n){ tip.classList.remove('on'); return; }
+  const p = n.dataset.tip.split('|');
+  tip.innerHTML = `<b>${esc(p[1])}</b><small>${esc(p[0])}</small><small>${esc(p[2])}</small>`;
+  tip.classList.add('on');
+});
+document.addEventListener('mousemove', e => {
+  if (!tip.classList.contains('on')) return;
+  const w = tip.offsetWidth, h = tip.offsetHeight;
+  let x = e.clientX + 14, y = e.clientY + 16;
+  if (x + w > innerWidth - 8) x = e.clientX - w - 14;
+  if (y + h > innerHeight - 8) y = e.clientY - h - 16;
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+});
+
+document.querySelectorAll('[data-sort]').forEach(b => b.addEventListener('click', () => {
+  sortKey = b.dataset.sort;
+  document.querySelectorAll('[data-sort]').forEach(x =>
+    x.setAttribute('aria-pressed', String(x === b)));
+  render();
+}));
+el('minS').addEventListener('click', () => {
+  minSeasons = !minSeasons;
+  el('minS').setAttribute('aria-pressed', String(minSeasons));
+  render();
+});
+
+/* theme toggle, same as every other room */
+el('themeBtn').addEventListener('click', () => {
+  const r = document.documentElement;
+  const dark = r.getAttribute('data-theme') === 'dark'
+    || (!r.getAttribute('data-theme') && matchMedia('(prefers-color-scheme:dark)').matches);
+  r.setAttribute('data-theme', dark ? 'light' : 'dark');
+  if (window.fitAll) fitAll(document);
+});
+
+render();
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => fitAll(document));
+</script>

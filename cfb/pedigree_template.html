@@ -1,0 +1,191 @@
+<title>Playoff Pedigree</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600;700&display=swap">
+<style>
+/* The ledger desk again. Each row is one programme's whole history: a century of
+   titles and finals as marks on a timeline, then the simulated era as a strip of
+   cells shaded by how deep the playoff run went. The seed is the row's number. */
+:root{
+  --paper:#f4efe4; --ink:#1d1a15; --dim:#6b6355; --rule:#d8cfbb; --card:#fffdf7;
+  --brass:#8a6410; --brass-soft:#b99a52; --chip:#e9e1cd;
+  /* playoff depth, one hue light to dark; a title inverts to paper on brass */
+  --d0:transparent; --d1:#ece3cc; --d2:#dccb9f; --d3:#c8ae70; --d4:#b4924a; --d5:#9a772a; --d6:#8a6410;
+  --dink:#1d1a15; --dink-hi:#f4efe4;
+  --display:"Spectral",Georgia,"Times New Roman",serif; --body:"Spectral",Georgia,serif;
+  --data:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --paper:#17150f; --ink:#ece6d7; --dim:#938b78; --rule:#332e24; --card:#201d15;
+  --brass:#d2ab5e; --brass-soft:#8a7542; --chip:#2a2619;
+  --d1:#2e2a1e; --d2:#453b23; --d3:#5e4e28; --d4:#78632d; --d5:#9c8238; --d6:#d2ab5e;
+  --dink:#ece6d7; --dink-hi:#17150f; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#17150f; --ink:#ece6d7; --dim:#938b78; --rule:#332e24; --card:#201d15;
+  --brass:#d2ab5e; --brass-soft:#8a7542; --chip:#2a2619;
+  --d1:#2e2a1e; --d2:#453b23; --d3:#5e4e28; --d4:#78632d; --d5:#9c8238; --d6:#d2ab5e;
+  --dink:#ece6d7; --dink-hi:#17150f; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);margin:0;font-size:15px;line-height:1.45}
+.wrap{max-width:1380px;margin:0 auto;padding-inline:16px;padding-block:0 56px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;
+  background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--rule);padding-block:11px;margin-bottom:14px}
+.topin{max-width:1380px;margin:0 auto;padding-inline:16px;display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+h1{font-family:var(--display);font-size:20px;font-weight:600;margin:0}
+h1 span{color:var(--brass)}
+.yr{font-family:var(--data);font-size:11.5px;color:var(--dim);letter-spacing:.14em}
+.spacer{flex:1 1 auto}
+button{font:inherit;cursor:pointer;border-radius:4px;border:1px solid var(--rule);background:var(--card);color:var(--ink);
+  padding:4px 10px;font-size:12px;font-family:var(--data);letter-spacing:.06em;text-transform:uppercase}
+button[aria-pressed="true"]{background:var(--brass);border-color:var(--brass);color:var(--paper);font-weight:700}
+p.lede{max-width:70ch;color:var(--dim);font-size:13.5px;margin:0 0 14px}
+
+.legend{display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-family:var(--data);font-size:10.5px;
+  letter-spacing:.06em;color:var(--dim);margin:0 0 10px}
+.legend .sw{display:inline-block;width:12px;height:12px;border:1px solid var(--rule);vertical-align:-2px;margin-right:4px}
+.legend svg{vertical-align:-3px;margin-right:4px}
+
+/* the grid: seed | name | century timeline | sim era strip | totals */
+.hdr,.row{display:grid;grid-template-columns:34px 180px minmax(220px,1fr) 440px 210px;gap:12px;align-items:center}
+.hdr{font-family:var(--data);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);
+  padding:4px 0 6px;border-bottom:1px solid var(--rule);position:sticky;top:calc(52px + env(safe-area-inset-top,0px));
+  background:var(--paper);z-index:5}
+.row{padding:6px 0;border-bottom:1px solid var(--rule);min-width:0}
+.row:hover{background:color-mix(in srgb,var(--chip) 55%,transparent)}
+.seed{font-family:var(--display);font-size:18px;font-weight:700;text-align:right;font-variant-numeric:tabular-nums;color:var(--brass)}
+.nm{min-width:0;border-left:4px solid var(--brass);padding-left:8px}
+.nm b{display:block;font-weight:600;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nm small{display:block;font-family:var(--data);font-size:10px;color:var(--dim);letter-spacing:.05em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl{width:100%;height:30px;display:block;max-width:100%}
+.tl .axis{stroke:var(--rule);stroke-width:1}
+.tl .tick{stroke:var(--rule);stroke-width:1}
+.tl .decade{font:9px var(--data);fill:var(--dim)}
+.tl .title{fill:var(--brass)}
+.tl .ru{fill:var(--paper);stroke:var(--brass);stroke-width:1.4}
+.tl .semi{fill:var(--brass-soft)}
+.strip{display:grid;grid-template-columns:repeat(14,1fr);gap:2px}
+.cell{height:26px;border:1px solid var(--rule);border-radius:2px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:var(--data);font-size:8.5px;line-height:1.1;color:var(--dink);font-variant-numeric:tabular-nums;min-width:0;overflow:hidden;white-space:nowrap}
+.cell b{font-size:9px}
+.cell.d1{background:var(--d1)} .cell.d2{background:var(--d2)} .cell.d3{background:var(--d3)}
+.cell.d4{background:var(--d4);color:var(--dink-hi)} .cell.d5{background:var(--d5);color:var(--dink-hi)}
+.cell.d6{background:var(--d6);color:var(--dink-hi)}
+.cell.now{border:1.5px solid var(--brass);border-style:dashed}
+.tot{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-variant-numeric:tabular-nums}
+.tot div{text-align:center}
+.tot .v{font-family:var(--display);font-size:16px;font-weight:600;display:block;line-height:1.1}
+.tot .k{font-family:var(--data);font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);white-space:nowrap}
+.tot .v.zero{color:var(--dim);font-weight:400}
+.foot{font-size:12px;color:var(--dim);margin-top:14px;max-width:80ch}
+@media (max-width:1000px){
+  .hdr{display:none}
+  .row{grid-template-columns:30px 1fr;grid-template-areas:"seed nm" "tl tl" "strip strip" "tot tot";row-gap:6px}
+  .row > .seed{grid-area:seed} .row > .nm{grid-area:nm} .row > .tl{grid-area:tl} .row > .strip{grid-area:strip} .row > .tot{grid-area:tot}
+}
+</style>
+
+<header class="top"><div class="topin">
+  <h1>Playoff <span>Pedigree</span></h1>
+  <span class="yr" id="yrline"></span>
+  <span class="spacer"></span>
+  <button data-sort="seed" aria-pressed="true">by seed</button>
+  <button data-sort="titles" aria-pressed="false">by titles</button>
+  <button data-sort="sim" aria-pressed="false">by recent runs</button>
+</div></header>
+
+<div class="wrap">
+  <p class="lede" id="lede"></p>
+  <div class="legend">
+    <span><svg width="12" height="12"><path d="M6 0 12 6 6 12 0 6z" fill="var(--brass)"/></svg>title</span>
+    <span><svg width="12" height="12"><path d="M6 1 11 6 6 11 1 6z" fill="var(--paper)" stroke="var(--brass)" stroke-width="1.4"/></svg>lost the final</span>
+    <span><svg width="12" height="12"><circle cx="6" cy="6" r="3" fill="var(--brass-soft)"/></svg>semifinal (recorded from 2035)</span>
+    <span style="margin-left:8px">simulated era, by round reached:</span>
+    <span><i class="sw" style="background:var(--d1)"></i>first round</span>
+    <span><i class="sw" style="background:var(--d2)"></i>second</span>
+    <span><i class="sw" style="background:var(--d3)"></i>quarter</span>
+    <span><i class="sw" style="background:var(--d4)"></i>semi</span>
+    <span><i class="sw" style="background:var(--d5)"></i>final</span>
+    <span><i class="sw" style="background:var(--d6)"></i>champion</span>
+  </div>
+  <div class="hdr"><span>Seed</span><span>Programme</span><span id="tlhdr"></span><span id="simhdr"></span><span>Titles · Finals · Playoffs · Last title</span></div>
+  <div id="rows"></div>
+  <p class="foot">Titles and finals come from the canon record back to <span id="firstyr"></span>. Semifinal appearances were only recorded from 2035. The simulated era begins in <span id="simyr"></span>; each cell is one season's regular-season record, shaded by the playoff round the programme reached, with a dashed cell for the season under way. "Playoffs" counts simulated-era fields, this one included.</p>
+</div>
+
+<script>
+const DATA = __DATA__;
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const Y0 = DATA.first_year, Y1 = DATA.sim_from - 1, H = 30;
+let W = 600;                                   // measured from the column before each draw
+const x = y => 8 + (y - Y0) / (Y1 - Y0) * (W - 16);
+document.getElementById('yrline').textContent = DATA.year + ' · ' + DATA.teams.length + '-TEAM FIELD';
+document.getElementById('lede').textContent = 'Every programme in the ' + DATA.year + ' field, with its whole history on one line: a century of national titles and lost finals, then each simulated season since ' + DATA.sim_from + ' shaded by how far the playoff run went.';
+document.getElementById('tlhdr').textContent = Y0 + ' – ' + Y1;
+document.getElementById('simhdr').textContent = DATA.sim_from + ' – ' + DATA.year;
+document.getElementById('firstyr').textContent = Y0;
+document.getElementById('simyr').textContent = DATA.sim_from;
+
+function timeline(t){
+  let s = `<svg class="tl" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${esc(t.team)} titles and finals ${Y0}-${Y1}">`;
+  s += `<line class="axis" x1="${x(Y0)}" x2="${x(Y1)}" y1="19" y2="19"/>`;
+  for (let y = Math.ceil(Y0/10)*10; y <= Y1; y += 10){
+    s += `<line class="tick" x1="${x(y)}" x2="${x(y)}" y1="16" y2="22"/>`;
+    if (y % 20 === 0) s += `<text class="decade" x="${x(y)}" y="29" text-anchor="middle">${y}</text>`;
+  }
+  const pre = y => y <= Y1;
+  t.semis.filter(pre).forEach(y => s += `<circle class="semi" cx="${x(y)}" cy="19" r="3"><title>${y} semifinal</title></circle>`);
+  t.runnerup.filter(pre).forEach(y => s += `<path class="ru" d="M${x(y)} 13 l5 6 -5 6 -5 -6z"><title>${y} — lost the final</title></path>`);
+  t.titles.filter(pre).forEach(y => s += `<path class="title" d="M${x(y)} 11 l7 8 -7 8 -7 -8z"><title>${y} national champion</title></path>`);
+  return s + '</svg>';
+}
+function strip(t){
+  return '<div class="strip">' + t.sim.map(c => {
+    const now = c.year === DATA.year;
+    const d = now ? 0 : c.depth;
+    const lab = ['did not qualify','lost in the first round','lost in the second round','lost in the quarterfinal','lost in the semifinal','lost the final','national champion'][d];
+    return `<div class="cell d${d} ${now ? 'now' : ''}" title="${c.year}: ${c.w}-${c.l}${now ? ' · seeded ' + t.seed : ' · ' + lab}"><b>${String(c.year).slice(2)}</b><span>${c.w}-${c.l}</span></div>`;
+  }).join('') + '</div>';
+}
+function totals(t){
+  const z = v => `<span class="v ${v ? '' : 'zero'}">${v || '–'}</span>`;
+  return `<div class="tot">
+    <div>${z(t.n_titles)}<span class="k">titles</span></div>
+    <div>${z(t.n_finals)}<span class="k">finals</span></div>
+    <div>${z(t.po_trips)}<span class="k">playoffs</span></div>
+    <div><span class="v ${t.last_title ? '' : 'zero'}">${t.last_title || '–'}</span><span class="k">last</span></div></div>`;
+}
+let sort = 'seed';
+function measure(){
+  const probe = document.getElementById('tlhdr');
+  const w = probe ? probe.getBoundingClientRect().width : 0;
+  if (w > 40) W = Math.round(w);
+  else { const r = document.querySelector('.row .tl'); if (r) W = Math.round(r.getBoundingClientRect().width) || W; }
+}
+let rt = null;
+window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { measure(); render(); }, 120); });
+function render(){
+  measure();
+  const rows = DATA.teams.slice().sort((a, b) => {
+    if (sort === 'titles') return (b.n_titles - a.n_titles) || (b.n_finals - a.n_finals) || (a.seed - b.seed);
+    if (sort === 'sim'){ const d = t => t.sim.reduce((s, c) => s + c.depth, 0); return (d(b) - d(a)) || (a.seed - b.seed); }
+    return a.seed - b.seed;
+  });
+  document.getElementById('rows').innerHTML = rows.map(t => `
+    <div class="row">
+      <span class="seed">${t.seed}</span>
+      <span class="nm" style="border-left-color:${esc(t.colors[0])}"><b>${esc(t.team)}</b><small>${esc(t.conf)} · ${t.tier} · ${esc(t.rec)}</small></span>
+      ${timeline(t)}
+      ${strip(t)}
+      ${totals(t)}
+    </div>`).join('');
+}
+document.querySelectorAll('[data-sort]').forEach(b => b.addEventListener('click', () => {
+  sort = b.dataset.sort;
+  document.querySelectorAll('[data-sort]').forEach(x => x.setAttribute('aria-pressed', x === b));
+  render();
+}));
+render();
+</script>

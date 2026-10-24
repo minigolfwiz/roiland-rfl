@@ -1,0 +1,1998 @@
+{
+ "saved": "2026-10-15T19:56:35.761Z",
+ "school_coords": {
+  "Barhold": [
+   252.92,
+   137.38
+  ],
+  "Barhold State": [
+   237.94,
+   112.99
+  ],
+  "Barhold Valley": [
+   276.38,
+   96.33
+  ],
+  "Burrstone": [
+   183,
+   51
+  ],
+  "Cedar Frost": [
+   212.27,
+   144.86
+  ],
+  "Malta": [
+   247.47,
+   129.9
+  ],
+  "Park Island": [
+   174.6,
+   23
+  ],
+  "Southern Tengus": [
+   191.23,
+   241.29
+  ],
+  "Tengus": [
+   224.73,
+   189.32
+  ],
+  "Tengus State": [
+   220.02,
+   213.14
+  ],
+  "Grizzly Hills": [
+   217,
+   218.67
+  ],
+  "Highrose": [
+   215.76,
+   206.15
+  ],
+  "Lannister": [
+   217.83,
+   184.13
+  ],
+  "Reid State": [
+   235.89,
+   178.02
+  ],
+  "Collette": [
+   155.87,
+   220.41
+  ],
+  "Denver State": [
+   178.25,
+   195.62
+  ],
+  "Diveo": [
+   163.39,
+   217.5
+  ],
+  "Diveo State": [
+   180.26,
+   204.38
+  ],
+  "Forrester": [
+   192.22,
+   185.18
+  ],
+  "Gordon-Shipp": [
+   169.12,
+   203.24
+  ],
+  "Henderson State": [
+   195.04,
+   156.23
+  ],
+  "St. Ballo's": [
+   126.49,
+   218.76
+  ],
+  "Avian Light": [
+   146.8,
+   345.57
+  ],
+  "Canesta State": [
+   146.45,
+   340.6
+  ],
+  "Crimson Mount": [
+   160.26,
+   296.21
+  ],
+  "Draque College": [
+   145.08,
+   339.56
+  ],
+  "KKRC": [
+   164.64,
+   313.28
+  ],
+  "Kaji Central": [
+   160.07,
+   345.45
+  ],
+  "Kaji Daun": [
+   146.28,
+   371.83
+  ],
+  "Kaji Daun State": [
+   149.86,
+   348.73
+  ],
+  "Kaji Kita": [
+   163.91,
+   310.76
+  ],
+  "Kaji Kita State": [
+   145.35,
+   332.45
+  ],
+  "Lower Kaji Kita": [
+   137.13,
+   343.75
+  ],
+  "Mt Kaji": [
+   146.43,
+   338.11
+  ],
+  "North Canesta": [
+   148.14,
+   340.41
+  ],
+  "Pershing": [
+   148.38,
+   313.47
+  ],
+  "Pollard State": [
+   177.18,
+   362.98
+  ],
+  "Brinckston": [
+   224.31,
+   340.94
+  ],
+  "Far Farris": [
+   207.19,
+   331.94
+  ],
+  "Far Farris State": [
+   206.6,
+   307.54
+  ],
+  "Friedrichsville": [
+   193.21,
+   355.39
+  ],
+  "Josephine": [
+   245.11,
+   278.63
+  ],
+  "NE Rogaela": [
+   323.38,
+   293.83
+  ],
+  "Palisades": [
+   301.46,
+   287.19
+  ],
+  "Riverwake": [
+   296.54,
+   262.73
+  ],
+  "Rodgerville": [
+   205.76,
+   315.63
+  ],
+  "Rogaela": [
+   288.47,
+   314.26
+  ],
+  "Rogaela State": [
+   281.49,
+   354.51
+  ],
+  "Rogaela Tech": [
+   278.89,
+   346.97
+  ],
+  "Rupin State": [
+   282.95,
+   317.62
+  ],
+  "Star Mountain": [
+   276.58,
+   330.05
+  ],
+  "UFFE": [
+   254.79,
+   329.01
+  ],
+  "UFFL": [
+   230,
+   328.57
+  ],
+  "Yrei Trobniy": [
+   227.18,
+   352.06
+  ],
+  "Applegate": [
+   322,
+   271.08
+  ],
+  "Crayellan": [
+   436.17,
+   203.37
+  ],
+  "Crayellan State": [
+   269.94,
+   188.39
+  ],
+  "El Latigo": [
+   332.18,
+   262.12
+  ],
+  "Farmington": [
+   133.56,
+   237.64
+  ],
+  "Greater Billiataho": [
+   150.43,
+   248.43
+  ],
+  "Hofferteltra": [
+   356.46,
+   188.47
+  ],
+  "Hoganelle": [
+   411.18,
+   194.45
+  ],
+  "Joseph Hall": [
+   440.15,
+   195.62
+  ],
+  "Mt St Williams": [
+   149.1,
+   252.31
+  ],
+  "Northlight": [
+   111.85,
+   242.44
+  ],
+  "RPU": [
+   142.15,
+   241.48
+  ],
+  "Redford": [
+   439.13,
+   191.72
+  ],
+  "Roosevelt": [
+   151.64,
+   275.49
+  ],
+  "Roosevelt Mines": [
+   160.25,
+   278.04
+  ],
+  "Roosevelt State": [
+   139,
+   244.23
+  ],
+  "Rouska": [
+   328.42,
+   259.68
+  ],
+  "Skeenerland": [
+   322.85,
+   267.56
+  ],
+  "Skeenerland East": [
+   349.62,
+   247.31
+  ],
+  "Skeenerland Parley": [
+   262.58,
+   261.71
+  ],
+  "Skeenerland State": [
+   304.83,
+   261.33
+  ],
+  "Skirter": [
+   127.68,
+   242.07
+  ],
+  "Skylar Rose": [
+   148,
+   257.42
+  ],
+  "St. Valentine": [
+   330.8,
+   274.1
+  ],
+  "Stanisburg": [
+   295.23,
+   258.7
+  ],
+  "Whiteside": [
+   275.11,
+   241.51
+  ],
+  "Coniferous": [
+   152.42,
+   235.54
+  ],
+  "Harko": [
+   148.97,
+   279.1
+  ],
+  "Classetto": [
+   417.4,
+   281.51
+  ],
+  "East Tasson": [
+   457.61,
+   279.32
+  ],
+  "Harrell": [
+   423.14,
+   277.58
+  ],
+  "Harrell State": [
+   433.23,
+   259.02
+  ],
+  "Lighaty": [
+   435.96,
+   243.65
+  ],
+  "Ormskirk": [
+   429.82,
+   285.46
+  ],
+  "Riveral": [
+   435.34,
+   249.49
+  ],
+  "Riveral State": [
+   463.72,
+   241.97
+  ],
+  "Silverton": [
+   447.61,
+   280.82
+  ],
+  "Tasson": [
+   440.63,
+   279.26
+  ],
+  "Tasson Plains": [
+   451.36,
+   258.88
+  ],
+  "Tasson State": [
+   441.19,
+   269.09
+  ],
+  "UHMM": [
+   437.87,
+   276.73
+  ],
+  "Will Tech": [
+   441.47,
+   278.1
+  ],
+  "Bragi": [
+   335.64,
+   260.97
+  ],
+  "Costique": [
+   347.32,
+   264.02
+  ],
+  "Costique River": [
+   391.72,
+   299.6
+  ],
+  "Costique State": [
+   352.39,
+   276.67
+  ],
+  "East Costique": [
+   396.65,
+   291.83
+  ],
+  "Larksdale": [
+   336.72,
+   263.47
+  ],
+  "Marblehead": [
+   364.6,
+   287.26
+  ],
+  "Peterhaus": [
+   413.15,
+   276.62
+  ],
+  "Reescomb": [
+   342.27,
+   266.16
+  ],
+  "Southeastern": [
+   389.95,
+   307.12
+  ],
+  "Starfield": [
+   410.16,
+   279.38
+  ],
+  "Towgrade": [
+   382.2,
+   271.05
+  ],
+  "VSSC": [
+   376.46,
+   287.64
+  ],
+  "Zialo State": [
+   341.98,
+   270.01
+  ],
+  "Candie College": [
+   394.15,
+   370.91
+  ],
+  "Casavadrian": [
+   397.83,
+   375.19
+  ],
+  "Cathedral": [
+   364.61,
+   365.34
+  ],
+  "Central Fiota State": [
+   403.98,
+   377.66
+  ],
+  "Charlesville": [
+   407.94,
+   316.52
+  ],
+  "Church of Fiota": [
+   377.27,
+   375.2
+  ],
+  "Crystal Word": [
+   434.33,
+   385.21
+  ],
+  "Eternal Fox": [
+   370.54,
+   345.18
+  ],
+  "Fiota": [
+   424.33,
+   377.86
+  ],
+  "Fiota Bay": [
+   428.44,
+   381.31
+  ],
+  "Fiota State": [
+   363.76,
+   370.31
+  ],
+  "First Dawn Falls": [
+   411.69,
+   370.02
+  ],
+  "Humphrey": [
+   383.56,
+   366.33
+  ],
+  "Ireland River": [
+   400.63,
+   364.39
+  ],
+  "Kilgrave": [
+   372.67,
+   371.08
+  ],
+  "Kingdom Valley": [
+   411.66,
+   339.59
+  ],
+  "Lito Rock State": [
+   389.42,
+   376.48
+  ],
+  "Long South": [
+   389.08,
+   379.21
+  ],
+  "Mountain Home": [
+   393.99,
+   337.22
+  ],
+  "Nelson Heights": [
+   385.32,
+   369.39
+  ],
+  "North Central": [
+   407.45,
+   314.06
+  ],
+  "Rascha": [
+   403.85,
+   367.31
+  ],
+  "Southern Fiota": [
+   435.84,
+   393.77
+  ],
+  "St. Brandon's": [
+   426.28,
+   376.68
+  ],
+  "St. Recreation": [
+   389,
+   371.72
+  ],
+  "Trapper Point": [
+   398.08,
+   345.31
+  ],
+  "UFNH": [
+   385.34,
+   369.15
+  ],
+  "Vaughn Bay": [
+   404.13,
+   307.16
+  ],
+  "Vaughn Bay State": [
+   411.64,
+   325.7
+  ],
+  "Veriota": [
+   359.78,
+   368.97
+  ],
+  "Waterville": [
+   409.67,
+   380.29
+  ],
+  "Wharf Bay": [
+   381.48,
+   369.96
+  ],
+  "Antiragal": [
+   250.58,
+   358.74
+  ],
+  "Antiragal State": [
+   289.67,
+   374.6
+  ],
+  "Apatol": [
+   305.89,
+   375.03
+  ],
+  "Black Forest": [
+   313.7,
+   376.45
+  ],
+  "Central Antiragal": [
+   273.62,
+   365.08
+  ],
+  "David Harrison": [
+   315.9,
+   352.38
+  ],
+  "Eastern State": [
+   230.66,
+   353.39
+  ],
+  "German Shores": [
+   341.59,
+   369.26
+  ],
+  "Keytommiyr": [
+   342.38,
+   342.83
+  ],
+  "Koli Ro": [
+   325.98,
+   379.05
+  ],
+  "Krane State": [
+   347.19,
+   366.77
+  ],
+  "Middle Parchynt": [
+   317.84,
+   334.26
+  ],
+  "New Madrid": [
+   228.04,
+   354.02
+  ],
+  "North Verigon": [
+   339.31,
+   344.26
+  ],
+  "ParTech": [
+   322.75,
+   297.86
+  ],
+  "Parchynt": [
+   299.43,
+   340.36
+  ],
+  "Parchynt State": [
+   315.22,
+   346.08
+  ],
+  "Princeton State": [
+   318.13,
+   340.59
+  ],
+  "Queensville": [
+   311.13,
+   347.21
+  ],
+  "Quincy Harmon": [
+   313.11,
+   349.76
+  ],
+  "Sacred Tomb": [
+   230.82,
+   355.87
+  ],
+  "Southern Parchynt": [
+   305.35,
+   367.59
+  ],
+  "VCA": [
+   339.38,
+   358.4
+  ],
+  "Verigon": [
+   351.14,
+   363.11
+  ],
+  "Verigon State": [
+   333.7,
+   374.76
+  ],
+  "Verigon Tech": [
+   342.43,
+   354.75
+  ],
+  "Victoria": [
+   283.62,
+   367.23
+  ],
+  "Western Antiragal": [
+   225.02,
+   357.91
+  ],
+  "Bitner": [
+   313.8,
+   468.5
+  ],
+  "Cliffstraite": [
+   337.35,
+   408.57
+  ],
+  "DeRowe": [
+   326.43,
+   446.76
+  ],
+  "Guice-Moore": [
+   311.9,
+   458.52
+  ],
+  "Hansenne": [
+   318.47,
+   464.33
+  ],
+  "Holy Monastery": [
+   332.46,
+   384.05
+  ],
+  "Juniper": [
+   321.09,
+   389.6
+  ],
+  "Krobe": [
+   325.63,
+   412.1
+  ],
+  "Krobe State": [
+   330.19,
+   441.06
+  ],
+  "Milharvey": [
+   314.11,
+   461.84
+  ],
+  "Northern Krobe": [
+   331.01,
+   381.57
+  ],
+  "Pikeland": [
+   324.03,
+   453.18
+  ],
+  "Robertson": [
+   333.7,
+   433.1
+  ],
+  "Southern Krobe": [
+   313.8,
+   472.73
+  ],
+  "UK Hoza": [
+   317.29,
+   418.18
+  ],
+  "Arguster": [
+   294.68,
+   383.82
+  ],
+  "Athens": [
+   279.51,
+   392.9
+  ],
+  "Boulder Creek": [
+   276.69,
+   397.7
+  ],
+  "Broadhilton": [
+   304.37,
+   431.46
+  ],
+  "Central Stanton": [
+   289.12,
+   458.43
+  ],
+  "Civil Law": [
+   275.17,
+   459.27
+  ],
+  "Coachville": [
+   275.4,
+   457.57
+  ],
+  "Coachville College": [
+   275.74,
+   458.91
+  ],
+  "Coffeeville": [
+   267.98,
+   461.51
+  ],
+  "Dietsche": [
+   283.54,
+   386.12
+  ],
+  "Fabor State": [
+   298.61,
+   460.96
+  ],
+  "French State": [
+   311.56,
+   441.76
+  ],
+  "Gorban": [
+   303.23,
+   465.83
+  ],
+  "Greene": [
+   278.69,
+   467.3
+  ],
+  "Harriker": [
+   302.56,
+   470.1
+  ],
+  "Hughes State": [
+   300.68,
+   412.14
+  ],
+  "Keeper": [
+   282.86,
+   406.33
+  ],
+  "Kro Magloire St": [
+   294.88,
+   448.12
+  ],
+  "LSFA": [
+   263.12,
+   388.75
+  ],
+  "Lady Lina": [
+   279.73,
+   382.11
+  ],
+  "Lawiiri": [
+   281.69,
+   388.89
+  ],
+  "Lawiiri South": [
+   261.87,
+   407.89
+  ],
+  "Lawiiri State": [
+   279.39,
+   404.53
+  ],
+  "Leafette": [
+   292.71,
+   382.71
+  ],
+  "Lockring": [
+   306.16,
+   456.22
+  ],
+  "Mill Station": [
+   288.76,
+   405.49
+  ],
+  "NW Stanton": [
+   269.93,
+   454.59
+  ],
+  "Newfoundland": [
+   264.06,
+   468.52
+  ],
+  "Pationah": [
+   290.11,
+   422.41
+  ],
+  "Peach Valley": [
+   303.14,
+   450.68
+  ],
+  "Prowesser": [
+   304.79,
+   421.65
+  ],
+  "Revigian": [
+   271.77,
+   401.76
+  ],
+  "S Antiragal State": [
+   286.77,
+   404.18
+  ],
+  "San Diego Valley": [
+   266.24,
+   469.32
+  ],
+  "South Antiragal": [
+   302.77,
+   429.65
+  ],
+  "Southern": [
+   276.82,
+   471.94
+  ],
+  "Stanton": [
+   289.12,
+   452.69
+  ],
+  "Stanton State": [
+   306.01,
+   464.8
+  ],
+  "Stokie": [
+   289.65,
+   451.82
+  ],
+  "Tono State": [
+   307.92,
+   387.02
+  ],
+  "US Downtown": [
+   275.09,
+   458.21
+  ],
+  "US Fall Beach": [
+   262.1,
+   474.1
+  ],
+  "US Fitzgerald": [
+   278.47,
+   449.84
+  ],
+  "US Harlon": [
+   294.29,
+   467.26
+  ],
+  "US Lyman": [
+   284.22,
+   462.52
+  ],
+  "USA Bradley": [
+   291.94,
+   408.06
+  ],
+  "USA Britton": [
+   280.08,
+   444.32
+  ],
+  "USA Roman City": [
+   300.88,
+   419.67
+  ],
+  "USADY": [
+   301.6,
+   443.46
+  ],
+  "Villalandon": [
+   261.59,
+   470.2
+  ],
+  "Agis": [
+   274.65,
+   494.71
+  ],
+  "Brock": [
+   282.15,
+   496.37
+  ],
+  "Chorrisaw": [
+   308.52,
+   472.1
+  ],
+  "Clark": [
+   291.79,
+   482.54
+  ],
+  "Diamond City": [
+   276.06,
+   492.35
+  ],
+  "Ek Tech": [
+   304.61,
+   481.56
+  ],
+  "Ekralund": [
+   310.1,
+   477.96
+  ],
+  "Ekralund State": [
+   302.53,
+   477.1
+  ],
+  "Forseti": [
+   303.66,
+   480.6
+  ],
+  "Godfrey State": [
+   302.95,
+   472.81
+  ],
+  "Gretelson": [
+   287.98,
+   470.95
+  ],
+  "High Platte": [
+   285.35,
+   494.07
+  ],
+  "Jamestown": [
+   310.71,
+   472.96
+  ],
+  "Krei": [
+   274.53,
+   479.98
+  ],
+  "Lornaman": [
+   306.74,
+   476.45
+  ],
+  "Lornaman State": [
+   306.06,
+   475.57
+  ],
+  "Michaelson-Timms": [
+   291.94,
+   417.62
+  ],
+  "Mountains": [
+   283.09,
+   487.94
+  ],
+  "National": [
+   307.3,
+   474.92
+  ],
+  "New Amethine": [
+   283.73,
+   495.72
+  ],
+  "OCU": [
+   267.3,
+   474.85
+  ],
+  "Orlot": [
+   291.23,
+   478.26
+  ],
+  "Orlot East Coast": [
+   294.5,
+   490.56
+  ],
+  "Orlot Western": [
+   269.12,
+   476.82
+  ],
+  "Phangrine": [
+   273.41,
+   488.92
+  ],
+  "Phangrine A&M": [
+   272.1,
+   484.57
+  ],
+  "Phangrine State": [
+   290.64,
+   493.06
+  ],
+  "Polt Hall": [
+   297.94,
+   484.35
+  ],
+  "Spirit of Light": [
+   272.16,
+   487.72
+  ],
+  "Strame State": [
+   270.61,
+   470.01
+  ],
+  "Westburg": [
+   272.26,
+   480.63
+  ],
+  "Wintersleep": [
+   278.2,
+   477.91
+  ],
+  "Benjamin": [
+   236.85,
+   476.41
+  ],
+  "Brallstrom": [
+   198.78,
+   406.51
+  ],
+  "Carnegie": [
+   267.76,
+   447.25
+  ],
+  "Chinolka": [
+   175.53,
+   488.64
+  ],
+  "Ciarralotta": [
+   283.77,
+   420.19
+  ],
+  "Ciarralotta State": [
+   266.02,
+   451.29
+  ],
+  "Ciarralotta Tech": [
+   256.68,
+   468.3
+  ],
+  "Coastal Ranroman": [
+   198.99,
+   480.53
+  ],
+  "Enos": [
+   190.05,
+   448.55
+  ],
+  "Fort Disher": [
+   183.39,
+   433.23
+  ],
+  "Good River": [
+   195.61,
+   404.19
+  ],
+  "Guerra": [
+   180.72,
+   409.93
+  ],
+  "Hunter": [
+   182.53,
+   471.99
+  ],
+  "Iricod": [
+   192.91,
+   471.94
+  ],
+  "Lake Triton": [
+   247.98,
+   454.23
+  ],
+  "Landon Hills": [
+   273.59,
+   428.65
+  ],
+  "Lewis Valley": [
+   202.31,
+   447.62
+  ],
+  "McCall State": [
+   199.6,
+   450.64
+  ],
+  "Mojourn State": [
+   178.19,
+   476.9
+  ],
+  "Monroe": [
+   168.14,
+   395.46
+  ],
+  "Mount Cairn": [
+   168.02,
+   413.28
+  ],
+  "North Ranroman": [
+   165.54,
+   390.17
+  ],
+  "RU Herriman": [
+   180.83,
+   453
+  ],
+  "RU Smithfield": [
+   186.92,
+   400.97
+  ],
+  "Ranroman": [
+   191.65,
+   426.53
+  ],
+  "Ranroman State": [
+   173.06,
+   465.01
+  ],
+  "Santa Madera": [
+   254.5,
+   434.29
+  ],
+  "Sarandon State": [
+   214.26,
+   471.17
+  ],
+  "Stamford": [
+   243.52,
+   474.6
+  ],
+  "Anderville Tech": [
+   179.67,
+   547.94
+  ],
+  "Boetticher": [
+   125.94,
+   495.79
+  ],
+  "Bowles": [
+   194.76,
+   554.66
+  ],
+  "Burrell": [
+   111.29,
+   498.58
+  ],
+  "Chapel Rock": [
+   163.02,
+   518.89
+  ],
+  "Cherry Lake": [
+   200.54,
+   559.77
+  ],
+  "Churchill": [
+   130.39,
+   411.62
+  ],
+  "Cordelle": [
+   127.8,
+   417.31
+  ],
+  "Ediville State": [
+   116.45,
+   491.2
+  ],
+  "Eona": [
+   229.62,
+   514.08
+  ],
+  "Eona Navy": [
+   233.35,
+   517.88
+  ],
+  "Eona State": [
+   223.17,
+   553.07
+  ],
+  "Freyr": [
+   163.35,
+   492.96
+  ],
+  "Gunther": [
+   195.2,
+   539.86
+  ],
+  "Hatesei": [
+   172.87,
+   545.19
+  ],
+  "Holliday": [
+   141.32,
+   418.97
+  ],
+  "Inkstromm": [
+   153.2,
+   526.58
+  ],
+  "Jack Todd": [
+   183.46,
+   556.11
+  ],
+  "Jones College": [
+   164.25,
+   523.59
+  ],
+  "Junesburg": [
+   167.87,
+   529.76
+  ],
+  "Kendall": [
+   231.53,
+   539.44
+  ],
+  "Kimberly": [
+   235.13,
+   526.45
+  ],
+  "Lamb": [
+   167.97,
+   519.72
+  ],
+  "Leoto State": [
+   128.67,
+   460.12
+  ],
+  "Lupgate": [
+   163.73,
+   449.95
+  ],
+  "Marines": [
+   196.66,
+   541.75
+  ],
+  "Natzumakis": [
+   143.92,
+   405.51
+  ],
+  "Natzumakis State": [
+   129.76,
+   432.27
+  ],
+  "Newfeld State": [
+   115.07,
+   503.95
+  ],
+  "Norris State": [
+   228.28,
+   553.97
+  ],
+  "North Hatesei": [
+   174.43,
+   523.07
+  ],
+  "North Hatesei St": [
+   183.34,
+   531.68
+  ],
+  "Nuvero State": [
+   228.85,
+   528.46
+  ],
+  "Oceanside": [
+   117.69,
+   447.56
+  ],
+  "Olds College": [
+   133.41,
+   415.02
+  ],
+  "Pepperlund": [
+   231.51,
+   517.31
+  ],
+  "Perth Island": [
+   225.53,
+   510.03
+  ],
+  "Pietro Tadal": [
+   222.64,
+   558.57
+  ],
+  "Pinn College": [
+   228.42,
+   520.14
+  ],
+  "Pistolheart": [
+   154.37,
+   434.66
+  ],
+  "Poland State": [
+   208.56,
+   553.83
+  ],
+  "Poppyseed": [
+   136.46,
+   514.81
+  ],
+  "Reagan": [
+   124.21,
+   480.59
+  ],
+  "Repidome": [
+   220.34,
+   539.41
+  ],
+  "Reuben-Smith": [
+   236.09,
+   530.63
+  ],
+  "San Milos": [
+   230.03,
+   534.55
+  ],
+  "Southern Bay": [
+   208.53,
+   543.14
+  ],
+  "Southern Perth": [
+   223.8,
+   511.53
+  ],
+  "Surreigh": [
+   172.2,
+   525.23
+  ],
+  "Thurley": [
+   116.23,
+   476.97
+  ],
+  "Trinne State": [
+   148.56,
+   508.46
+  ],
+  "UEKP": [
+   217.62,
+   547.75
+  ],
+  "UN Ediville": [
+   112.41,
+   494.51
+  ],
+  "UN Leoto": [
+   130.8,
+   458.85
+  ],
+  "UN Minko": [
+   118.42,
+   473.11
+  ],
+  "UN Steelbridge": [
+   124.57,
+   508.19
+  ],
+  "UNN": [
+   143.24,
+   421.51
+  ],
+  "Underwood": [
+   177.67,
+   550.2
+  ],
+  "Ursus": [
+   116.59,
+   498.28
+  ],
+  "Waterloo": [
+   191.4,
+   577.37
+  ],
+  "West Hatesei": [
+   158.69,
+   520.3
+  ],
+  "West Hatesei St": [
+   165.03,
+   534.85
+  ],
+  "Wolford": [
+   195.26,
+   565.97
+  ],
+  "Yarrola": [
+   131.42,
+   384.46
+  ],
+  "Yawney": [
+   130.84,
+   495.15
+  ],
+  "Burke State": [
+   419.37,
+   413.94
+  ],
+  "Dove Island": [
+   420.2,
+   411.12
+  ],
+  "Dove Island State": [
+   425.07,
+   415.49
+  ],
+  "Lazzagu": [
+   408.94,
+   411.8
+  ],
+  "Perri Park": [
+   389.47,
+   408.68
+  ],
+  "Ravenhead": [
+   393.62,
+   411.87
+  ],
+  "S Dove Island St": [
+   431.22,
+   426.38
+  ],
+  "Seytoicca": [
+   417.41,
+   407.43
+  ]
+ },
+ "city_coords": {
+  "Sarkady|Barhold": {
+   "city": "Sarkady",
+   "state": "Barhold",
+   "xy": [
+    251.58,
+    133.29
+   ],
+   "custom": false
+  },
+  "Denning|Diveo": {
+   "city": "Denning",
+   "state": "Diveo",
+   "xy": [
+    176.72,
+    197.27
+   ],
+   "custom": false
+  },
+  "Canesta|Kaji Daun": {
+   "city": "Canesta",
+   "state": "Kaji Daun",
+   "xy": [
+    148.08,
+    340.88
+   ],
+   "custom": false
+  },
+  "Riverwake|Rogaela": {
+   "city": "Riverwake",
+   "state": "Rogaela",
+   "xy": [
+    294.5,
+    262.27
+   ],
+   "custom": false
+  },
+  "Landon|Far Farris": {
+   "city": "Landon",
+   "state": "Far Farris",
+   "xy": [
+    230.31,
+    331.58
+   ],
+   "custom": false
+  },
+  "Kirkwood|Crayellan": {
+   "city": "Kirkwood",
+   "state": "Crayellan",
+   "xy": [
+    438.06,
+    192.84
+   ],
+   "custom": false
+  },
+  "Billiataho|Roosevelt": {
+   "city": "Billiataho",
+   "state": "Roosevelt",
+   "xy": [
+    150.3,
+    246.25
+   ],
+   "custom": false
+  },
+  "El Latigo|Skeenerland": {
+   "city": "El Latigo",
+   "state": "Skeenerland",
+   "xy": [
+    332.09,
+    264.45
+   ],
+   "custom": false
+  },
+  "Classetto|Harrell": {
+   "city": "Classetto",
+   "state": "Harrell",
+   "xy": [
+    417.48,
+    279.82
+   ],
+   "custom": false
+  },
+  "Gunterburg|Tasson": {
+   "city": "Gunterburg",
+   "state": "Tasson",
+   "xy": [
+    440.32,
+    278.67
+   ],
+   "custom": true
+  },
+  "Port Logan|Fiota": {
+   "city": "Port Logan",
+   "state": "Fiota",
+   "xy": [
+    387,
+    373.97
+   ],
+   "custom": false
+  },
+  "Fiota Bay|Fiota": {
+   "city": "Fiota Bay",
+   "state": "Fiota",
+   "xy": [
+    427.72,
+    379.85
+   ],
+   "custom": false
+  },
+  "Queensville|Parchynt": {
+   "city": "Queensville",
+   "state": "Parchynt",
+   "xy": [
+    312.17,
+    348.43
+   ],
+   "custom": false
+  },
+  "Verigon City|Verigon": {
+   "city": "Verigon City",
+   "state": "Verigon",
+   "xy": [
+    334.85,
+    372.48
+   ],
+   "custom": false
+  },
+  "Coachville|Stanton": {
+   "city": "Coachville",
+   "state": "Stanton",
+   "xy": [
+    275.63,
+    457.85
+   ],
+   "custom": false
+  },
+  "Hughes City|South Antiragal": {
+   "city": "Hughes City",
+   "state": "South Antiragal",
+   "xy": [
+    300,
+    410.96
+   ],
+   "custom": false
+  },
+  "Stanton City|Stanton": {
+   "city": "Stanton City",
+   "state": "Stanton",
+   "xy": [
+    288.93,
+    459.08
+   ],
+   "custom": false
+  },
+  "Diamond City|Phangrine": {
+   "city": "Diamond City",
+   "state": "Phangrine",
+   "xy": [
+    274.56,
+    493.58
+   ],
+   "custom": false
+  },
+  "Lornaman|Ekralund": {
+   "city": "Lornaman",
+   "state": "Ekralund",
+   "xy": [
+    306.93,
+    475.92
+   ],
+   "custom": false
+  },
+  "San Saltadac|Orlot": {
+   "city": "San Saltadac",
+   "state": "Orlot",
+   "xy": [
+    270.98,
+    478.12
+   ],
+   "custom": false
+  },
+  "Stamford|Ciarralotta": {
+   "city": "Stamford",
+   "state": "Ciarralotta",
+   "xy": [
+    242.8,
+    473.56
+   ],
+   "custom": false
+  },
+  "Flatting|Ciarralotta": {
+   "city": "Flatting",
+   "state": "Ciarralotta",
+   "xy": [
+    285.68,
+    418.42
+   ],
+   "custom": false
+  },
+  "Good River|Ranroman": {
+   "city": "Good River",
+   "state": "Ranroman",
+   "xy": [
+    196.48,
+    406.09
+   ],
+   "custom": true
+  },
+  "Ediville|Natzumakis": {
+   "city": "Ediville",
+   "state": "Natzumakis",
+   "xy": [
+    116.12,
+    492.76
+   ],
+   "custom": false
+  },
+  "Underwood|Hatesei": {
+   "city": "Underwood",
+   "state": "Hatesei",
+   "xy": [
+    179.08,
+    548.84
+   ],
+   "custom": false
+  },
+  "Niana Vaw|North Hatesei": {
+   "city": "Niana Vaw",
+   "state": "North Hatesei",
+   "xy": [
+    176.77,
+    524.68
+   ],
+   "custom": false
+  },
+  "Perth|Eona": {
+   "city": "Perth",
+   "state": "Eona",
+   "xy": [
+    224.88,
+    510.77
+   ],
+   "custom": false
+  },
+  "Chapel Rock|West Hatesei": {
+   "city": "Chapel Rock",
+   "state": "West Hatesei",
+   "xy": [
+    161.56,
+    518.11
+   ],
+   "custom": false
+  },
+  "Palm Creek|Natzumakis": {
+   "city": "Palm Creek",
+   "state": "Natzumakis",
+   "xy": [
+    148.22,
+    512.61
+   ],
+   "custom": false
+  },
+  "Holliday|Natzumakis": {
+   "city": "Holliday",
+   "state": "Natzumakis",
+   "xy": [
+    141.96,
+    419.62
+   ],
+   "custom": true
+  },
+  "Bruca Beach|Natzumakis": {
+   "city": "Bruca Beach",
+   "state": "Natzumakis",
+   "xy": [
+    109.31,
+    496.35
+   ],
+   "custom": true
+  },
+  "Burke Bay|Dove Island": {
+   "city": "Burke Bay",
+   "state": "Dove Island",
+   "xy": [
+    419.33,
+    412.77
+   ],
+   "custom": false
+  },
+  "Charlesville|Vaughn Bay": {
+   "city": "Charlesville",
+   "state": "Vaughn Bay",
+   "xy": [
+    407.65,
+    315.62
+   ],
+   "custom": false
+  },
+  "Cordelle|Natzumakis": {
+   "city": "Cordelle",
+   "state": "Natzumakis",
+   "xy": [
+    130.18,
+    417.22
+   ],
+   "custom": true
+  },
+  "Marymond|Wolford": {
+   "city": "Marymond",
+   "state": "Wolford",
+   "xy": [
+    198.44,
+    562.64
+   ],
+   "custom": true
+  },
+  "Marshfield|Costique": {
+   "city": "Marshfield",
+   "state": "Costique",
+   "xy": [
+    340.24,
+    265.13
+   ],
+   "custom": true
+  },
+  "Nelson Heights|Fiota": {
+   "city": "Nelson Heights",
+   "state": "Fiota",
+   "xy": [
+    386.21,
+    369.52
+   ],
+   "custom": true
+  },
+  "Bitner|Krobe": {
+   "city": "Bitner",
+   "state": "Krobe",
+   "xy": [
+    314.26,
+    469.8
+   ],
+   "custom": true
+  },
+  "Bandagabny|Phangrine": {
+   "city": "Bandagabny",
+   "state": "Phangrine",
+   "xy": [
+    275.35,
+    491.99
+   ],
+   "custom": true
+  },
+  "Thurmond|Far Farris": {
+   "city": "Thurmond",
+   "state": "Far Farris",
+   "xy": [
+    208.55,
+    329.96
+   ],
+   "custom": true
+  },
+  "New Madrid|Antiragal": {
+   "city": "New Madrid",
+   "state": "Antiragal",
+   "xy": [
+    229,
+    353.5
+   ],
+   "custom": true
+  }
+ },
+ "state_coords": {
+  "Barhold": [
+   247,
+   137
+  ],
+  "Tengus": [
+   228,
+   182
+  ],
+  "Diveo": [
+   163,
+   211
+  ],
+  "Roosevelt": [
+   123,
+   257
+  ],
+  "Crayellan": [
+   315,
+   185
+  ],
+  "Skeenerland": [
+   312,
+   240
+  ],
+  "East Costique": [
+   390,
+   262
+  ],
+  "Riveral": [
+   420,
+   238
+  ],
+  "Harrell": [
+   430,
+   265
+  ],
+  "Tasson": [
+   462,
+   268
+  ],
+  "Costique": [
+   350,
+   283
+  ],
+  "Rogaela": [
+   287,
+   296
+  ],
+  "Far Farris": [
+   225,
+   314
+  ],
+  "Kaji Kita": [
+   140,
+   310
+  ],
+  "Kaji Daun": [
+   140,
+   355
+  ],
+  "Antiragal": [
+   245,
+   353
+  ],
+  "Parchynt": [
+   305,
+   350
+  ],
+  "Verigon": [
+   340,
+   340
+  ],
+  "Vaughn Bay": [
+   395,
+   325
+  ],
+  "Fiota": [
+   405,
+   365
+  ],
+  "Ranroman": [
+   185,
+   400
+  ],
+  "Lawiiri": [
+   245,
+   390
+  ],
+  "South Antiragal": [
+   295,
+   390
+  ],
+  "Krobe": [
+   325,
+   398
+  ],
+  "Ciarralotta": [
+   240,
+   437
+  ],
+  "Stanton": [
+   290,
+   458
+  ],
+  "Orlot": [
+   285,
+   478
+  ],
+  "Ekralund": [
+   320,
+   483
+  ],
+  "Phangrine": [
+   255,
+   492
+  ],
+  "Natzumakis": [
+   140,
+   477
+  ],
+  "Dove Island": [
+   415,
+   435
+  ],
+  "North Hatesei": [
+   185,
+   519
+  ],
+  "West Hatesei": [
+   150,
+   538
+  ],
+  "Eona": [
+   215,
+   547
+  ],
+  "Hatesei": [
+   160,
+   575
+  ],
+  "Wolford": [
+   190,
+   560
+  ]
+ }
+}

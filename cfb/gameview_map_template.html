@@ -1,0 +1,92 @@
+<title>Gameview __YEAR__</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+:root{--bg:#f4efe4;--fg:#1d1a14;--muted:#6d6555;--line:#d9d0bd;--card:#fbf8f1;--accent:#b4341f;--route:#1d1a14;--chip:#efe7d6;--glow:rgba(180,52,31,.18)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#17150f;--fg:#efe8d8;--muted:#a79d88;--line:#3a3528;--card:#201d15;--accent:#e2654c;--route:#efe8d8;--chip:#2b2719;--glow:rgba(226,101,76,.22);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#17150f;--fg:#efe8d8;--muted:#a79d88;--line:#3a3528;--card:#201d15;--accent:#e2654c;--route:#efe8d8;--chip:#2b2719;--glow:rgba(226,101,76,.22);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.45 "Source Sans 3",system-ui,sans-serif;padding-block:0 24px;padding-inline:16px}
+header{max-width:1180px;margin:0 auto;padding:22px 0 10px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px}
+h1{font:700 30px/1.05 Fraunces,Georgia,serif;margin:0;text-wrap:balance}
+.sub{color:var(--muted);font-size:14px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:18px;align-items:start}
+.mapbox{position:relative;border:1px solid var(--line);background:var(--card);border-radius:6px;overflow:hidden}
+.mapbox svg{display:block;width:100%;height:auto}
+.mapbox img{filter:saturate(.85)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .mapbox img{filter:saturate(.7) brightness(.82)}}
+:root[data-theme="dark"] .mapbox img{filter:saturate(.7) brightness(.82)}
+.route{fill:none;stroke:var(--route);stroke-width:1.6;stroke-dasharray:4 3;opacity:.75}
+.route.hl{stroke:var(--accent);stroke-width:2.6;stroke-dasharray:none;opacity:1}
+.pin circle.ring{fill:var(--card);stroke:var(--fg);stroke-width:1.2}
+.pin circle.dot{stroke:#fff;stroke-width:1.4}
+.pin text{font:600 9.5px "IBM Plex Mono",monospace;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.pin .lbl{font:600 8.5px "Source Sans 3",sans-serif;fill:var(--fg);text-anchor:start;dominant-baseline:central;paint-order:stroke;stroke:var(--card);stroke-width:3px;stroke-linejoin:round}
+.pin.hl circle.ring{stroke:var(--accent);stroke-width:3;filter:drop-shadow(0 0 6px var(--glow))}
+.pin{cursor:pointer}
+.list{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:6px;background:var(--card);overflow:hidden}
+.row{display:grid;grid-template-columns:34px minmax(0,1fr);gap:0 10px;padding:9px 12px;border-bottom:1px solid var(--line);cursor:pointer;min-width:0}
+.row:last-child{border-bottom:0}
+.row.hl{background:var(--chip)}
+.wk{font:500 12px "IBM Plex Mono",monospace;color:var(--muted);padding-top:3px}
+.wk b{display:block;font:600 15px/1 Fraunces,serif;color:var(--fg)}
+.g{min-width:0}
+.g .t{font-weight:600;line-height:1.25}
+.g .r{font:500 11px "IBM Plex Mono",monospace;color:var(--muted)}
+.g .s{font-size:13px;color:var(--muted);margin-top:2px}
+.g .s b{color:var(--fg);font-variant-numeric:tabular-nums}
+.swatch{display:inline-block;width:9px;height:9px;border-radius:2px;vertical-align:-1px;margin-right:5px;border:1px solid rgba(0,0,0,.25)}
+.foot{max-width:1180px;margin:14px auto 0;color:var(--muted);font-size:13px}
+.foot b{color:var(--fg)}
+@media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr)}h1{font-size:25px}}
+</style>
+<header><h1>Where Gameview went, __YEAR__</h1><div class="sub">__SUB__</div></header>
+<div class="wrap">
+  <div class="mapbox"><svg id="map" viewBox="0 0 596 596" xmlns="http://www.w3.org/2000/svg">
+    <image href="data:image/png;base64,__IMG__" width="596" height="596"/>
+    <g id="routes"></g><g id="pins"></g>
+  </svg></div>
+  <div class="list" id="list"></div>
+</div>
+<div class="foot" id="foot"></div>
+<script>
+const S = __STOPS__;
+const NEXT = __NEXT__;
+const svgNS='http://www.w3.org/2000/svg';
+const el=(n,a)=>{const e=document.createElementNS(svgNS,n);for(const k in a)e.setAttribute(k,a[k]);return e;};
+const routes=document.getElementById('routes'), pins=document.getElementById('pins'), list=document.getElementById('list');
+// trip legs
+let dist=0;
+for(let i=1;i<S.length;i++){const a=S[i-1],b=S[i];
+  const p=el('path',{class:'route',id:'leg'+i,d:`M${a.x},${a.y} L${b.x},${b.y}`}); routes.appendChild(p);
+  dist+=Math.hypot(b.x-a.x,b.y-a.y);}
+// label side: nudge right unless near right edge
+S.forEach((s,i)=>{
+  const g=el('g',{class:'pin',id:'pin'+i,transform:`translate(${s.x},${s.y})`});
+  g.appendChild(el('circle',{class:'ring',r:9.5}));
+  g.appendChild(el('circle',{class:'dot',r:7.4,fill:s.col[0]}));
+  const c=s.col[0].replace('#',''); const lum=(parseInt(c.substr(0,2),16)*299+parseInt(c.substr(2,2),16)*587+parseInt(c.substr(4,2),16)*114)/1000;
+  const t=el('text',{fill:lum>150?'#1d1a14':'#fff'}); t.textContent=s.w; g.appendChild(t);
+  // crowded pins: push the label under the pin instead of beside it
+  const near=S.some((o,j)=>j!==i && Math.hypot(o.x-s.x,o.y-s.y)<34);
+  const right=s.x<470; const lb=el('text',{class:'lbl',x:near?0:(right?13:-13),y:near?(i%2?15:-15):0,'text-anchor':near?'middle':(right?'start':'end')}); lb.textContent=s.host; g.appendChild(lb);
+  g.addEventListener('mouseenter',()=>hl(i)); g.addEventListener('mouseleave',()=>hl(-1)); g.addEventListener('click',()=>{hl(i);document.getElementById('row'+i).scrollIntoView({block:'nearest',behavior:'smooth'});});
+  pins.appendChild(g);
+  const win=s.hs>s.as; const home=s.hs>s.as?s.host:s.away;
+  const r=document.createElement('div'); r.className='row'; r.id='row'+i;
+  r.innerHTML=`<div class="wk">WK<b>${s.w}</b></div><div class="g">
+    <div class="t"><span class="swatch" style="background:${s.acol[0]}"></span>${s.ar?'<span class="r">#'+s.ar+'</span> ':''}${s.away} <span class="r">at</span> <span class="swatch" style="background:${s.col[0]}"></span>${s.hr?'<span class="r">#'+s.hr+'</span> ':''}${s.host}</div>
+    <div class="s"><b>${home}</b> ${Math.max(s.hs,s.as)}–${Math.min(s.hs,s.as)}${s.ot?' ('+s.ot+'OT)':''} · ${s.state}</div></div>`;
+  r.addEventListener('mouseenter',()=>hl(i)); r.addEventListener('mouseleave',()=>hl(-1)); r.addEventListener('click',()=>hl(i));
+  list.appendChild(r);
+});
+function hl(i){
+  document.querySelectorAll('.hl').forEach(e=>e.classList.remove('hl'));
+  if(i<0)return;
+  document.getElementById('pin'+i).classList.add('hl'); document.getElementById('row'+i).classList.add('hl');
+  if(i>0)document.getElementById('leg'+i).classList.add('hl');
+  if(i<S.length-1)document.getElementById('leg'+(i+1)).classList.add('hl');
+}
+NEXT.forEach((n,i)=>{const g=el('g',{class:'pin cand',transform:`translate(${n.x},${n.y})`});g.appendChild(el('circle',{class:'ring',r:9.5}));g.appendChild(el('circle',{r:7.4,fill:'none',stroke:n.col[0],'stroke-width':2.2,'stroke-dasharray':'3 2'}));const t=el('text',{fill:'var(--fg)'});t.textContent='?';g.appendChild(t);const lb=el('text',{class:'lbl',x:13,y:0});lb.textContent=n.host;g.appendChild(lb);pins.appendChild(g);});
+const homeW=S.filter(s=>s.hs>s.as).length, rankedHosts=S.filter(s=>s.hr).length, states=new Set(S.map(s=>s.state)).size;
+document.getElementById('foot').innerHTML=`Hosts won <b>${homeW} of ${S.length}</b>. <b>${rankedHosts}</b> stops were at a ranked host, <b>${states}</b> states visited. Longest hop: <b>${(()=>{let m=0,k=0;for(let i=1;i<S.length;i++){const d=Math.hypot(S[i].x-S[i-1].x,S[i].y-S[i-1].y);if(d>m){m=d;k=i}}return k?S[k-1].host+' → '+S[k].host:'—'})()}</b>.${NEXT.length?' Dashed pins are this week\'s candidates.':''}`;
+</script>

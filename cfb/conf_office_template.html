@@ -1,0 +1,685 @@
+<title>Conference Office</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;500;600&display=swap">
+<style>
+/* Same ledger desk as the Scheduling Office, turned to a calendar problem. The week
+   strip is the instrument: everything else exists to tell you which weeks are legal. */
+:root{
+  --paper:#f4efe4; --ink:#1d1a15; --dim:#6b6355; --rule:#d8cfbb; --card:#fffdf7;
+  --brass:#8a6410; --brass-soft:#b99a52; --good:#2f5d4a; --cut:#8c2f2f;
+  --chip:#e9e1cd; --warn:#8a5a12; --lock:#6d4d8a;
+  /* venue colours. Green hosts, slate travels -- the same pairing the overview matrix
+     already uses, so one colour means one thing everywhere on the page. */
+  --home:#2f5d4a; --road:#395f84;
+  --display:"Spectral",Georgia,"Times New Roman",serif;
+  --body:"Spectral",Georgia,serif;
+  --data:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --paper:#17150f; --ink:#ece6d7; --dim:#938b78; --rule:#332e24; --card:#201d15;
+  --brass:#d2ab5e; --brass-soft:#8a7542; --good:#79c3a2; --cut:#e0786f;
+  --chip:#2a2619; --warn:#d8a24a; --lock:#b394d8;
+  --home:#79c3a2; --road:#86b0d6; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#17150f; --ink:#ece6d7; --dim:#938b78; --rule:#332e24; --card:#201d15;
+  --brass:#d2ab5e; --brass-soft:#8a7542; --good:#79c3a2; --cut:#e0786f;
+  --chip:#2a2619; --warn:#d8a24a; --lock:#b394d8;
+  --home:#79c3a2; --road:#86b0d6; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);margin:0;
+     font-size:15px;line-height:1.45}
+.wrap{max-width:1420px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;
+  background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--rule);padding-block:11px;margin-bottom:16px}
+.topin{max-width:1420px;margin:0 auto;padding-inline:16px;display:flex;gap:14px;
+  align-items:baseline;flex-wrap:wrap}
+h1{font-family:var(--display);font-size:20px;font-weight:600;margin:0}
+h1 span{color:var(--brass)}
+.yr{font-family:var(--data);font-size:11.5px;color:var(--dim);letter-spacing:.14em}
+.spacer{flex:1 1 auto}
+.savestate{font-family:var(--data);font-size:10.5px;color:var(--dim);letter-spacing:.06em}
+.savestate.ok{color:var(--good)} .savestate.bad{color:var(--cut)} .savestate.dirty{color:var(--warn)}
+h2.sec{font-family:var(--data);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--dim);font-weight:400;margin:18px 0 9px;display:flex;gap:10px;align-items:baseline;
+  border-bottom:1px solid var(--rule);padding-bottom:5px}
+h2.sec em{font-style:normal;color:var(--brass);letter-spacing:.04em;text-transform:none;font-family:var(--body);font-size:12.5px}
+button{font:inherit;cursor:pointer}
+.tiny{font-family:var(--data);font-size:10px;letter-spacing:.09em;text-transform:uppercase;
+  padding:4px 9px;border:1px solid var(--rule);background:var(--card);color:var(--dim);border-radius:4px}
+.tiny[aria-pressed="true"],.tiny.primary{background:var(--brass-soft);color:#1d1a15;border-color:var(--brass)}
+.tiny.danger{color:var(--cut);border-color:color-mix(in srgb,var(--cut) 40%,var(--rule))}
+.note{font-size:12.5px;color:var(--dim);margin:8px 0 0}
+.cols{display:grid;grid-template-columns:230px minmax(0,1fr);gap:18px;align-items:start}
+@media (max-width:880px){ .cols{grid-template-columns:1fr} }
+
+/* ---- team rail ---- */
+.rail{border:1px solid var(--rule);border-radius:7px;background:var(--card);overflow:hidden}
+.trow{display:flex;gap:8px;align-items:center;padding:7px 10px;border-bottom:1px solid var(--rule);
+  width:100%;text-align:left;background:none;border-left:3px solid transparent;color:inherit}
+.trow:last-child{border-bottom:none}
+.trow[aria-pressed="true"]{background:var(--chip);border-left-color:var(--brass)}
+.trow b{font-weight:600;font-size:13.5px;flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pill{font-family:var(--data);font-size:9.5px;letter-spacing:.05em;padding:1px 5px;border-radius:3px;
+  border:1px solid var(--rule);color:var(--dim);white-space:nowrap}
+.pill.done{color:var(--good);border-color:color-mix(in srgb,var(--good) 45%,var(--rule))}
+.pill.bad{color:var(--cut);border-color:color-mix(in srgb,var(--cut) 45%,var(--rule))}
+
+/* ---- week strip ---- */
+.strip{display:grid;grid-template-columns:repeat(15,minmax(0,1fr));gap:5px;margin-top:4px}
+@media (max-width:1000px){ .strip{grid-template-columns:repeat(5,minmax(0,1fr))} }
+.wk{border:1px solid var(--rule);border-radius:6px;background:var(--card);padding:6px 5px;
+  min-height:86px;display:flex;flex-direction:column;gap:4px;text-align:left;color:inherit;
+  width:100%;min-width:0}
+.wk .wn{font-family:var(--data);font-size:9px;letter-spacing:.1em;color:var(--dim)}
+.wk .op{font-size:12px;font-weight:600;line-height:1.2;overflow-wrap:anywhere}
+.wk .vs{font-family:var(--data);font-size:9px;color:var(--dim);letter-spacing:.07em}
+.wk.bye{background:transparent;border-style:dashed}
+.wk.bye .op{color:var(--dim);font-weight:400;font-style:italic}
+/* Venue is the card's own colour, not a word on it: a green card is a home game, a
+   slate one a road game, and the strip reads as a pattern before you read any text.
+   The left edge carries the same colour at full strength so it survives at a glance
+   and in the narrow phone layout. */
+.wk.home{border-color:color-mix(in srgb,var(--home) 50%,var(--rule));
+  background:color-mix(in srgb,var(--home) 11%,var(--card));border-left:4px solid var(--home)}
+.wk.away{border-color:color-mix(in srgb,var(--road) 50%,var(--rule));
+  background:color-mix(in srgb,var(--road) 11%,var(--card));border-left:4px solid var(--road)}
+.wk .vs.vh{color:var(--home)} .wk .vs.va{color:var(--road)}
+/* a non-conference date keeps its venue colour and goes dashed, so the two readings
+   never compete for the same channel */
+.wk.nc{border-top-style:dashed;border-right-style:dashed;border-bottom-style:dashed}
+/* locked sits INSIDE the card, so it cannot paint over the venue colour */
+.wk.locked{box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--lock) 70%,transparent)}
+.wk.legal{border-color:var(--good);box-shadow:inset 0 0 0 1px var(--good);cursor:pointer}
+.wk.illegal{opacity:.42}
+.wk .why{font-family:var(--data);font-size:8.5px;color:var(--cut);letter-spacing:.03em;margin-top:auto}
+
+/* ---- chips to place ---- */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.chip{display:inline-flex;gap:6px;align-items:baseline;border:1px solid var(--rule);background:var(--card);
+  border-radius:5px;padding:5px 9px;font-size:12.5px;color:inherit}
+.chip[aria-pressed="true"]{background:var(--brass-soft);color:#1d1a15;border-color:var(--brass)}
+.chip .hv{font-family:var(--data);font-size:9px;letter-spacing:.08em;color:var(--dim)}
+.chip[aria-pressed="true"] .hv{color:#4a3a12}
+.chip.ncc{border-style:dashed;border-color:var(--brass-soft)}
+
+/* ---- overview matrix ---- */
+.mx{width:100%;border-collapse:collapse;font-family:var(--data);font-size:10px}
+.mx th{font-weight:400;color:var(--dim);letter-spacing:.08em;padding:3px 2px;text-align:center;
+  border-bottom:1px solid var(--rule)}
+.mx th.tn{text-align:left;padding-right:8px;white-space:nowrap;font-family:var(--body);font-size:12px}
+.mx td{text-align:center;padding:2px;border-bottom:1px solid var(--rule);white-space:nowrap}
+.mx td.h{color:var(--good)} .mx td.a{color:var(--dim)}
+.mx td.n{color:var(--brass)} .mx td.b{color:var(--rule)}
+.mx tr:hover td{background:color-mix(in srgb,var(--chip) 50%,transparent)}
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:7px;padding:8px 10px;background:var(--card)}
+.issue{display:flex;gap:10px;align-items:baseline;padding:5px 9px;border-left:2px solid;margin-bottom:4px;font-size:12.5px}
+.issue.err{border-color:var(--cut)} .issue.wrn{border-color:var(--warn)}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0 0}
+.confbar{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 2px}
+.cbtn{display:inline-flex;flex-direction:column;gap:1px;align-items:flex-start;
+  border:1px solid var(--rule);background:var(--card);border-radius:5px;padding:5px 9px;color:inherit}
+.cbtn[aria-pressed="true"]{background:var(--chip);border-color:var(--brass)}
+.cbtn b{font-size:12.5px;font-weight:600;white-space:nowrap}
+.cbtn span{font-family:var(--data);font-size:9px;letter-spacing:.07em;color:var(--dim)}
+.cbtn.done span{color:var(--good)}
+.cbtn.warn span{color:var(--warn)}
+#toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(14px);opacity:0;
+  background:var(--ink);color:var(--paper);padding:8px 14px;border-radius:5px;font-size:13px;
+  pointer-events:none;transition:.18s;z-index:90}
+#toast.show{opacity:1;transform:translateX(-50%)}
+textarea{width:100%;min-height:90px;font-family:var(--data);font-size:10.5px;background:var(--card);
+  color:var(--ink);border:1px solid var(--rule);border-radius:6px;padding:8px}
+.kbd{font-family:var(--data);font-size:10px;border:1px solid var(--rule);border-radius:3px;padding:0 4px}
+</style>
+
+<header class="top"><div class="topin">
+  <h1>Conference <span>Office</span></h1>
+  <span class="yr" id="yrline"></span>
+  <span class="spacer"></span>
+  <span class="savestate" id="savestate">starting…</span>
+</div></header>
+
+<div class="wrap">
+  <div id="picker"></div>
+  <div id="summary"></div>
+  <div class="cols">
+    <div><h2 class="sec">Programmes <em id="railcount"></em></h2><div class="rail" id="rail"></div></div>
+    <div id="main"></div>
+  </div>
+  <div id="overview"></div>
+  <div id="issues"></div>
+  <h2 class="sec">Hand-off</h2>
+  <p class="note">Copy this into the chat when you want me to install the calendar, or paste a
+  saved one back in to restore it.</p>
+  <textarea id="blob" readonly></textarea>
+  <div class="bar">
+    <button class="tiny" id="copyBtn">copy</button>
+    <button class="tiny" id="loadBtn">paste one back in</button>
+    <button class="tiny" id="saveBtn">save now</button>
+  </div>
+</div>
+<div id="toast"></div>
+
+<script>
+const DATA = __DATA__;
+const CONFS = DATA.conferences.map(c => c.conference);
+const TEAMINFO = DATA.teams;                       // every FBS programme, all conferences
+const WEEKS = DATA.weeks;
+const FULL = new Set(DATA.full_weeks);             // week 1 is no longer one of these
+const RIV = DATA.rivalry_week;
+const GAMES_PER_TEAM = 12;
+const WEEK0_GAMES = DATA.week0_games;
+
+/* ---------- state ----------
+   ONE league-wide model, not twelve conference-shaped ones. Conference games belong to
+   their conference; a non-conference game belongs to two programmes in two DIFFERENT
+   conferences and is held once, shared. Giving each conference its own copy would let
+   the same real fixture sit in two different weeks depending on which conference was
+   open at the time -- so placing one here lands in both conferences at once, which is
+   also the only way the cross-conference weeks can stay consistent. */
+let games = [];
+let conf = CONFS[0];
+let sel = null;
+let held = null;
+let db = null, loaded = false, dirty = false, saveTimer = null;
+
+const el = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const confOf = t => (TEAMINFO[t] || {}).conf || null;
+const isFBS  = t => !!TEAMINFO[t];
+
+function seed(){
+  games = [];
+  DATA.conferences.forEach((c, ci) => c.games.forEach((g, i) => games.push({
+    id: 'C' + ci + '-' + i, conf: c.conference, a: g.a, b: g.b, host: g.host,
+    week: g.week, locked: !!g.locked })));
+  DATA.noncon.forEach((n, i) => games.push({
+    id: 'N' + i, conf: null, a: n.host, b: n.visitor, host: n.host,
+    week: n.week, locked: !!n.locked, sub: !!n.sub }));
+}
+const rosterOf = c => DATA.conferences.find(x => x.conference === c).roster;
+const lockedOf = c => DATA.conferences.find(x => x.conference === c).locked;
+const siteOf   = c => DATA.conferences.find(x => x.conference === c).ccg_site;
+const confGames = c => games.filter(g => g.conf === c);
+
+/* ---------- index ----------
+   Scanning every game for every lookup is correct and unusably slow -- the auto-fill
+   asks "is this week legal" tens of thousands of times. TG is each programme's own
+   games, fixed once seeded; SLOT is its 15-week calendar, kept in step by setWeek. */
+const TG = {}, SLOT = {};
+const inGame = (g, t) => g.a === t || g.b === t;
+const oppOf  = (g, t) => g.a === t ? g.b : g.a;
+const sidesOf = g => [g.a, g.b].filter(isFBS);
+
+function buildIndex(){
+  Object.keys(TEAMINFO).forEach(t => { TG[t] = []; SLOT[t] = new Array(WEEKS.length).fill(null); });
+  games.forEach(g => sidesOf(g).forEach(t => TG[t].push(g)));
+  games.forEach(g => { if (g.week !== null) sidesOf(g).forEach(t => SLOT[t][g.week] = g); });
+}
+function setWeek(g, w){
+  if (g.week !== null) sidesOf(g).forEach(t => { if (SLOT[t][g.week] === g) SLOT[t][g.week] = null; });
+  g.week = w;
+  if (w !== null) sidesOf(g).forEach(t => SLOT[t][w] = g);
+}
+function gamesOf(t){ return TG[t] || []; }
+function atWeek(t, w){ return SLOT[t] ? SLOT[t][w] : null; }
+function unplaced(t){ return gamesOf(t).filter(g => g.week === null); }
+function byesOf(t){ return WEEKS.filter(w => atWeek(t, w) === null); }
+
+/* ---------- the rules ---------- */
+function whyNotWeek(g, w){
+  if (g.locked) return 'locked';
+  for (const t of sidesOf(g)){
+    const sitting = atWeek(t, w);
+    if (sitting && sitting !== g) return esc(t) + ' already plays ' + esc(oppOf(sitting, t));
+  }
+  const was = g.week; setWeek(g, w);
+  let bad = null;
+  for (const t of sidesOf(g)){
+    const b = byeTrouble(t);
+    if (b){ bad = esc(t) + ': ' + b; break; }
+  }
+  setWeek(g, was);
+  return bad;
+}
+
+/* Exactly three byes, never two in a row, and never in a full week.
+   Week 1 is no longer a full week, so weeks 0 and 1 are now ADJACENT for the
+   back-to-back test -- a pair that could never both be byes before. */
+function byeTrouble(t){
+  const row = SLOT[t], open = [];
+  for (const w of WEEKS) if (row[w] === null) open.push(w);
+  let left = 0;
+  for (const g of TG[t]) if (g.week === null) left++;
+  const byes = open.length - left;
+  if (byes < DATA.byes) return 'that leaves only ' + byes + ' bye weeks, needs ' + DATA.byes;
+  if (left === 0){
+    for (const w of open) if (FULL.has(w)) return 'week ' + w + ' is a full slate and would be a bye';
+    if (open.length !== DATA.byes) return open.length + ' byes, needs ' + DATA.byes;
+    for (let i = 1; i < open.length; i++)
+      if (open[i] - open[i-1] === 1)
+        return 'byes in weeks ' + open[i-1] + ' and ' + open[i] + ' back to back';
+  } else {
+    let mustFill = 0;
+    for (const w of open) if (FULL.has(w)) mustFill++;
+    if (mustFill > left) return 'week ' + DATA.full_weeks.join(' and ')
+      + ' is a full slate and there are not enough games left to cover it';
+  }
+  return null;
+}
+
+/* ---------- actions ---------- */
+function hold(g){ held = (held === g) ? null : g; render(); }
+function place(g, w){
+  const bad = whyNotWeek(g, w);
+  if (bad){ toast(bad); return; }
+  setWeek(g, w); TOUCHED.add(g.id); held = null; render(); queueSave();
+}
+function lift(g){
+  if (g.locked){ toast('locked — this one cannot move'); return; }
+  setWeek(g, null); TOUCHED.add(g.id); held = g; render(); queueSave();
+}
+
+/* Where the auto-fill would RATHER put a game. A preference, never a rule.
+   Both halves measured off canon: the 2037 slates put NO conference game in weeks 0
+   or 1, opening the season on non-conference play; and week 0 is a soft opening, 11
+   games across the league in 2035 with 86% of programmes idle, so a conference
+   contributes about one. Each was caught by measuring the filler's output -- the first
+   pass dropped five conference games into week 0, the correction then emptied it. */
+function weekBias(g, w, perWeek){
+  // Rivalry week is the only full slate, so EVERY programme needs a game there. Go and
+  // find one first. Once a programme has its week-14 game any other game involving it
+  // that week is already illegal, so this fills week 14 with a matching rather than
+  // overloading it. Without this the filler spent week 14 like any other date and left
+  // the four conferences with no locked rivalries -- Vapor Stream, Low Sixteen, East
+  // Forest, Southwestern -- holding programmes that had nothing left to play that day.
+  if (w === RIV) return -40;
+  if (w === 0){
+    if (g.conf) return 60;
+    return (perWeek[0] < WEEK0_GAMES * CONFS.length) ? 0 : 60;
+  }
+  if (g.conf)  return w === 1 ? 40 : 0;
+  return w === 1 ? 0 : 6;
+}
+
+function autoFill(scope, quiet){
+  const snapshot = games.map(g => g.week);
+  const restore = () => { games.forEach(g => setWeek(g, null));
+                          games.forEach((g, i) => setWeek(g, snapshot[i])); };
+  const want = g => g.week === null && (
+        scope === 'all' ? true
+      : scope === 'conf' ? (g.conf === conf || sidesOf(g).some(t => confOf(t) === conf))
+      : inGame(g, scope));
+  const t0 = Date.now();
+  for (let attempt = 0; attempt < 300; attempt++){
+    restore();
+    let left = games.filter(want);
+    if (!left.length){ if (!quiet) toast('nothing open there'); return; }
+    const opts = new Map();
+    const recompute = g => opts.set(g, WEEKS.filter(w => whyNotWeek(g, w) === null));
+    left.forEach(recompute);
+    const perWeek = new Array(WEEKS.length).fill(0);
+    games.forEach(g => { if (g.week !== null) perWeek[g.week]++; });
+    let stuck = false;
+    while (left.length){
+      let best = null, bestN = 1e9;
+      for (const g of left){
+        const n = opts.get(g).length;
+        if (n === 0){ stuck = true; break; }
+        if (n < bestN){ bestN = n; best = g; if (n === 1) break; }
+      }
+      if (stuck) break;
+      const choice = opts.get(best).slice()
+        .sort((x, y) => (weekBias(best, x, perWeek) - weekBias(best, y, perWeek))
+                     || (perWeek[x] - perWeek[y]) || (Math.random() - 0.5))[0];
+      setWeek(best, choice); TOUCHED.add(best.id); perWeek[choice]++;
+      left = left.filter(g => g !== best); opts.delete(best);
+      const touched = new Set(sidesOf(best));
+      for (const g of left) if (sidesOf(g).some(t => touched.has(t))) recompute(g);
+    }
+    if (!games.some(want)){
+      held = null;
+      if (!quiet){ render(); queueSave(); toast('filled in ' + (Date.now() - t0) + 'ms'); }
+      return;
+    }
+    if (Date.now() - t0 > 6000) break;
+  }
+  restore();
+  if (!quiet){ render();
+    toast('could not finish from here — lift a few games and try again'); }
+}
+
+/* ---------- render ---------- */
+function render(){ renderPicker(); renderSummary(); renderRail(); renderMain();
+                   renderOverview(); renderIssues(); renderBlob(); }
+
+function confStat(c){
+  const gs = confGames(c);
+  const placed = gs.filter(g => g.week !== null).length;
+  const trouble = rosterOf(c).some(t => unplaced(t).length === 0 && byeTrouble(t));
+  return { placed, total: gs.length, done: placed === gs.length, trouble };
+}
+
+function renderPicker(){
+  el('picker').innerHTML = `<div class="confbar">${CONFS.map(c => {
+    const st = confStat(c);
+    return `<button class="cbtn ${st.done ? (st.trouble ? 'warn' : 'done') : ''}"
+      data-conf="${esc(c)}" aria-pressed="${c === conf}">
+      <b>${esc(c)}</b><span>${st.placed}/${st.total}${st.done ? (st.trouble ? ' · CHECK' : ' · SET') : ''}</span>
+    </button>`;
+  }).join('')}</div>`;
+}
+
+function renderSummary(){
+  const gs = confGames(conf);
+  const done = gs.filter(g => g.week !== null).length;
+  const roster = rosterOf(conf);
+  const nc = games.filter(g => !g.conf && sidesOf(g).some(t => roster.includes(t)));
+  const ncd = nc.filter(g => g.week !== null).length;
+  const site = siteOf(conf);
+  const allG = games.length, allD = games.filter(g => g.week !== null).length;
+  el('summary').innerHTML = `<h2 class="sec">${esc(conf)} ${DATA.year}
+    <em>${done} of ${gs.length} conference games placed · ${ncd} of ${nc.length} non-conference dates
+    · league ${allD}/${allG}</em></h2>
+    <p class="note">${DATA.conf_games} conference games each over ${roster.length} programmes, so
+    ${gs.length} in all, and every programme skips ${roster.length - 1 - DATA.conf_games} of the other
+    ${roster.length - 1}. Fifteen weeks, twelve games, exactly ${DATA.byes} byes and never two in a row.
+    <b>Week ${RIV} is the only full slate</b> — week 1 may now be a bye, which also means weeks 0 and 1
+    count as back-to-back. ${lockedOf(conf).length
+      ? lockedOf(conf).length + ' locked ' + (lockedOf(conf).length === 1 ? 'rivalry is' : 'rivalries are')
+        + ' already on week ' + RIV + '.'
+      : 'This conference has no locked rivalries, so week ' + RIV + ' is yours to fill.'}
+    Title game at ${site ? esc(site[0] + ', ' + site[1]) : '—'}.</p>
+    <div class="bar">
+      <button class="tiny primary" id="autoConf">fill ${esc(conf)}</button>
+      <button class="tiny" id="autoTeam">fill ${esc(sel)} only</button>
+      <button class="tiny" id="autoAll">fill the whole league</button>
+      <button class="tiny danger" id="clearTeam">clear ${esc(sel)}</button>
+      <button class="tiny danger" id="clearConf">clear ${esc(conf)}</button>
+      <button class="tiny" id="themeBtn">light / dark</button>
+    </div>`;
+}
+
+function renderRail(){
+  const roster = rosterOf(conf);
+  el('railcount').textContent = roster.length + ' teams';
+  el('rail').innerHTML = roster.map(t => {
+    const left = unplaced(t).length, trouble = byeTrouble(t);
+    const cls = left === 0 ? (trouble ? 'bad' : 'done') : '';
+    return `<button class="trow" data-team="${esc(t)}" aria-pressed="${t === sel}">
+      <b>${esc(t)}</b>
+      <span class="pill ${cls}">${left === 0 ? (trouble ? 'check' : 'set') : left + ' left'}</span>
+    </button>`;
+  }).join('');
+}
+
+function renderMain(){
+  const t = sel, T = TEAMINFO[t];
+  const open = unplaced(t);
+  el('main').innerHTML = `
+    <h2 class="sec">${esc(t)} <em>${esc(T.full)} · ${T.last.W}-${T.last.L} in ${DATA.prev_year}
+      · hosts ${gamesOf(t).filter(g => g.host === t && g.conf).length} of ${DATA.conf_games}</em></h2>
+    <div class="strip">${WEEKS.map(w => weekCard(t, w)).join('')}</div>
+    <h2 class="sec">Still to place <em>${open.length ? 'click one, then click a week' : 'all placed'}</em></h2>
+    <div class="chips">${open.map(g => {
+      const o = oppOf(g, t);
+      const tag = g.conf ? '' : `<span class="hv">${g.sub ? 'GUEST' : esc(confOf(o) || 'non-conf')}</span>`;
+      return `<button class="chip ${g.conf ? '' : 'ncc'}" data-hold="${g.id}" aria-pressed="${held === g}">
+        <span class="hv">${g.host === t ? 'VS' : '@'}</span>${esc(o)}${tag}</button>`;
+    }).join('') || '<span class="note">Nothing left for this programme.</span>'}</div>
+    <p class="note"><b style="color:var(--home)">Green</b> is a home game,
+    <b style="color:var(--road)">slate</b> a road game, and a dashed edge means non-conference.
+    A non-conference date is shared with the other programme's conference, so placing it here
+    places it there too. Click a placed week to lift that game back out.
+    ${held ? '<b>Holding ' + esc(oppOf(held, inGame(held, t) ? t : held.a)) + '</b> — green weeks will take it.' : ''}</p>`;
+}
+
+function weekCard(t, w){
+  const g = atWeek(t, w);
+  const cls = [], bits = [];
+  let why = '';
+  if (g){
+    const o = oppOf(g, t), home = g.host === t;
+    cls.push(home ? 'home' : 'away');
+    if (!g.conf) cls.push('nc');
+    if (g.locked) cls.push('locked');
+    bits.push(`<div class="op">${esc(o)}</div>`,
+      `<div class="vs ${home ? 'vh' : 'va'}">${home ? 'HOME' : 'AWAY'}${g.locked ? ' · LOCKED' : ''}${g.conf ? '' : ' · NON-CONF'}</div>`);
+  } else if (held){
+    const bad = whyNotWeek(held, w);
+    cls.push(bad ? 'illegal' : 'legal');
+    if (bad) why = `<div class="why">${bad}</div>`;
+    bits.push(`<div class="op">${bad ? '—' : 'place here'}</div>`);
+  } else {
+    cls.push('bye');
+    bits.push(`<div class="op">${unplaced(t).length ? 'open' : 'bye'}</div>`);
+  }
+  return `<button class="wk ${cls.join(' ')}" data-wk="${w}" data-gid="${g ? g.id : ''}">
+    <div class="wn">WK ${w}${FULL.has(w) ? ' ·FULL' : ''}</div>${bits.join('')}${why}</button>`;
+}
+
+function renderOverview(){
+  const roster = rosterOf(conf);
+  const rows = roster.map(t => `<tr><th class="tn">${esc(t)}</th>${WEEKS.map(w => {
+    const g = atWeek(t, w);
+    if (!g) return `<td class="b">·</td>`;
+    const o = oppOf(g, t), home = g.host === t;
+    const short = o.length > 9 ? o.slice(0, 8) + '…' : o;
+    return `<td class="${g.conf ? (home ? 'h' : 'a') : 'n'}" title="${esc((home ? 'hosts ' : 'at ') + o)}"
+      >${home ? '' : '@'}${esc(short)}</td>`;
+  }).join('')}</tr>`).join('');
+  el('overview').innerHTML = `<h2 class="sec">${esc(conf)}, week by week
+      <em>green hosts · grey travels · brass is non-conference · dot is a bye</em></h2>
+    <div class="tablewrap"><table class="mx"><thead><tr><th class="tn"></th>
+      ${WEEKS.map(w => `<th>${w}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div>
+    <p class="note">Conference games per week: ${WEEKS.map(w =>
+      `<b>${w}</b>&nbsp;${confGames(conf).filter(g => g.week === w).length}`).join(' · ')}.</p>`;
+}
+
+function renderIssues(){
+  const errs = [], wrns = [];
+  Object.keys(TEAMINFO).forEach(t => {
+    if (unplaced(t).length) return;
+    const gs = gamesOf(t);
+    const where = confOf(t) === conf ? '' : ' (' + confOf(t) + ')';
+    if (gs.length !== GAMES_PER_TEAM) errs.push([t + where, gs.length + ' games, needs ' + GAMES_PER_TEAM]);
+    const b = byesOf(t);
+    if (b.length !== DATA.byes) errs.push([t + where, b.length + ' byes, needs ' + DATA.byes]);
+    b.forEach(w => { if (FULL.has(w)) errs.push([t + where, 'bye in week ' + w + ', a full slate']); });
+    for (let i = 1; i < b.length; i++)
+      if (b[i] - b[i-1] === 1) errs.push([t + where, 'byes in weeks ' + b[i-1] + ' and ' + b[i] + ' back to back']);
+    let run = 0, mx = 0, runA = 0, mxA = 0;
+    WEEKS.forEach(w => {
+      const g = atWeek(t, w);
+      if (!g){ run = 0; runA = 0; return; }
+      if (g.host === t){ run++; runA = 0; mx = Math.max(mx, run); }
+      else { runA++; run = 0; mxA = Math.max(mxA, runA); }
+    });
+    if (mx >= 4) wrns.push([t + where, mx + ' home games in a row']);
+    if (mxA >= 4) wrns.push([t + where, mxA + ' road games in a row']);
+  });
+  WEEKS.forEach(w => {
+    if (!FULL.has(w)) return;
+    const idle = Object.keys(TEAMINFO).filter(t => atWeek(t, w) === null && !unplaced(t).length);
+    if (idle.length) errs.push(['Week ' + w, 'a full slate, but ' + idle.length + ' idle: '
+      + idle.slice(0, 6).join(', ') + (idle.length > 6 ? '…' : '')]);
+  });
+  const mine = x => x[0].indexOf('(') < 0;
+  const order = a => a.filter(mine).concat(a.filter(x => !mine(x)));
+  el('issues').innerHTML = `<h2 class="sec">Checks <em>${errs.length} blocking · ${wrns.length} to look at
+      — ${esc(conf)} first, then the rest of the league</em></h2>
+    ${order(errs).slice(0, 60).map(([t,m]) => `<div class="issue err"><span><b>${esc(t)}</b> — ${esc(m)}</span></div>`).join('')}
+    ${order(wrns).slice(0, 60).map(([t,m]) => `<div class="issue wrn"><span><b>${esc(t)}</b> — ${esc(m)}</span></div>`).join('')}
+    ${!errs.length && !wrns.length ? '<p class="note">Nothing flagged.</p>' : ''}`;
+}
+
+function renderBlob(){
+  el('blob').value = JSON.stringify({
+    season: DATA.season, year: DATA.year,
+    complete: games.every(g => g.week !== null),
+    games: games.map(g => ({ conf: g.conf, host: g.host,
+      visitor: g.host === g.a ? g.b : g.a, week: g.week, locked: g.locked })),
+  });
+}
+
+/* ---------- persistence ---------- */
+const DOC = 'conf/s' + DATA.season;
+async function connect(){
+  setSave('loading…', '');
+  try { db = await window.claude?.use?.('db'); } catch(e){ db = null; }
+  if (!db){ loaded = true; setSave('saving unavailable — use the hand-off box', 'bad'); render(); return; }
+  try {
+    const doc = await db.doc(DOC).get();
+    if (doc && doc.data && Array.isArray(doc.data.weeks)){
+      // restored BY GAME ID onto a freshly seeded slate, so a change to the slate
+      // upstream can never be overwritten by a stale saved copy of it
+      const m = new Map(doc.data.weeks.map(r => [r.id, r.week]));
+      let n = 0;
+      games.forEach(g => { if (!g.locked && m.has(g.id)){ setWeek(g, m.get(g.id)); n++; } });
+      setSave('restored ' + n + ' weeks' + (doc.data.saved ? ' · ' + doc.data.saved : ''), 'ok');
+    } else setSave('ready', '');
+  } catch(e){ db = null; loaded = true; setSave('could not read the saved board — export before you close', 'bad'); render(); return; }
+  loaded = true; if (dirty) save(); render();
+}
+function setSave(m, c){ const n = el('savestate'); n.textContent = m; n.className = 'savestate' + (c ? ' ' + c : ''); }
+/* MERGE ON SAVE (2040). The save used to write this tab's whole slate over whatever
+   was stored, so a second tab -- or a reload that connected before an earlier save
+   landed -- silently wiped work placed elsewhere (Dan lost a set of Western Coast
+   placements this way). Now a save reads the stored copy first and only overrides
+   the games THIS tab actually touched; anything placed elsewhere is kept and pulled
+   into this tab. */
+const TOUCHED = new Set();
+async function save(){
+  if (!loaded || !db) return;
+  try {
+    let stored = null;
+    try { const d0 = await db.doc(DOC).get(); stored = d0 && d0.data && Array.isArray(d0.data.weeks) ? new Map(d0.data.weeks.map(r => [r.id, r.week])) : null; } catch(e){ stored = null; }
+    let pulled = 0;
+    if (stored){
+      games.forEach(g => {
+        if (g.locked || TOUCHED.has(g.id)) return;
+        const w = stored.get(g.id);
+        if (w !== undefined && w !== null && g.week === null && weekFree(g, w)){ setWeek(g, w); pulled++; }
+      });
+    }
+    await db.doc(DOC).set({ season: DATA.season,
+      weeks: games.map(g => ({ id: g.id, week: g.week })), saved: new Date().toLocaleString() });
+    dirty = false; setSave('saved ' + new Date().toLocaleTimeString() + (pulled ? ' · merged ' + pulled + ' from another tab' : ''), 'ok');
+    if (pulled) render();
+  } catch(e){ setSave('save failed — copy the hand-off box', 'bad'); }
+}
+function weekFree(g, w){ return sidesOf(g).every(t => !SLOT[t] || SLOT[t][w] === null || SLOT[t][w] === g); }
+function queueSave(){ dirty = true; if (!loaded) return; setSave('unsaved…', 'dirty');
+  clearTimeout(saveTimer); saveTimer = setTimeout(save, 700); }
+
+let toastTimer = null;
+function toast(m){ el('toast').textContent = m; el('toast').classList.add('show');
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => el('toast').classList.remove('show'), 2000); }
+
+/* ---------- events ---------- */
+document.addEventListener('click', e => {
+  const cb = e.target.closest('[data-conf]');
+  if (cb){ conf = cb.dataset.conf; sel = rosterOf(conf)[0]; held = null; return render(); }
+  const row = e.target.closest('[data-team]');
+  if (row){ sel = row.dataset.team; held = null; return render(); }
+  const chip = e.target.closest('[data-hold]');
+  if (chip){ return hold(games.find(g => g.id === chip.dataset.hold)); }
+  const wk = e.target.closest('[data-wk]');
+  if (wk){
+    const g = wk.dataset.gid ? games.find(x => x.id === wk.dataset.gid) : null;
+    if (g) return lift(g);
+    if (held) return place(held, +wk.dataset.wk);
+    return;
+  }
+  if (e.target.id === 'autoConf') return autoFill('conf');
+  if (e.target.id === 'autoAll'){
+    // Conference by conference, not all 980 games at once: the search is local, and
+    // throwing the whole league at it in one pass simply runs out the clock.
+    //
+    // Then RETRY whatever did not finish. A conference filled late is working around
+    // everything already placed, and the greedy search sometimes paints itself into a
+    // corner it cannot leave; clearing that one conference and running it again from a
+    // fresh start clears it. Measured over repeated runs this is the difference between
+    // usually finishing and always finishing.
+    const keep = conf;
+    const openIn = c => games.some(g => g.week === null
+      && (g.conf === c || sidesOf(g).some(t => confOf(t) === c)));
+    for (const c of CONFS){ conf = c; autoFill('conf', true); }
+    for (let pass = 0; pass < 3; pass++){
+      const stuck = CONFS.filter(openIn);
+      if (!stuck.length) break;
+      for (const c of stuck){
+        const roster = new Set(rosterOf(c));
+        games.forEach(g => { if (!g.locked && (g.conf === c || sidesOf(g).some(t => roster.has(t)))){ setWeek(g, null); TOUCHED.add(g.id); } });
+        conf = c; autoFill('conf', true);
+      }
+    }
+    conf = keep; held = null; render(); queueSave();
+    const left = games.filter(g => g.week === null).length;
+    toast(left ? left + ' still unplaced — try those conferences on their own' : 'the whole league is placed');
+    return;
+  }
+  if (e.target.id === 'autoTeam') return autoFill(sel);
+  if (e.target.id === 'clearTeam'){
+    gamesOf(sel).slice().forEach(g => { if (!g.locked){ setWeek(g, null); TOUCHED.add(g.id); } });
+    held = null; render(); queueSave(); return;
+  }
+  if (e.target.id === 'clearConf'){
+    const roster = new Set(rosterOf(conf));
+    games.forEach(g => { if (!g.locked && (g.conf === conf || sidesOf(g).some(t => roster.has(t)))){ setWeek(g, null); TOUCHED.add(g.id); } });
+    held = null; render(); queueSave(); return;
+  }
+  if (e.target.id === 'saveBtn') return save();
+  if (e.target.id === 'copyBtn'){
+    navigator.clipboard?.writeText(el('blob').value).then(() => toast('copied'),
+      () => { el('blob').select(); toast('press ⌘C / Ctrl-C'); });
+    return;
+  }
+  if (e.target.id === 'loadBtn'){
+    const ta = el('blob'); ta.readOnly = false; ta.value = ''; ta.focus();
+    toast('paste a saved board, then click Load again');
+    e.target.id = 'loadBtn2'; e.target.textContent = 'load it'; return;
+  }
+  if (e.target.id === 'loadBtn2'){
+    try {
+      const d = JSON.parse(el('blob').value); let n = 0;
+      (d.games || []).forEach(r => {
+        const g = games.find(x => !x.locked && x.week === null
+          && ((x.a === r.host && x.b === r.visitor) || (x.a === r.visitor && x.b === r.host)));
+        if (g && r.week !== null && r.week !== undefined && whyNotWeek(g, r.week) === null){ setWeek(g, r.week); n++; }
+      });
+      toast('loaded ' + n + ' weeks');
+    } catch(err){ toast('that is not a board'); }
+    el('blob').readOnly = true; e.target.id = 'loadBtn'; e.target.textContent = 'paste one back in';
+    render(); queueSave(); return;
+  }
+  if (e.target.id === 'themeBtn'){
+    const cur = document.documentElement.getAttribute('data-theme');
+    document.documentElement.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+  }
+});
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'TEXTAREA') return;
+  if (e.key === 'Escape'){ held = null; return render(); }
+  const roster = rosterOf(conf), i = roster.indexOf(sel);
+  if (e.key === 'j' || e.key === 'ArrowDown'){ sel = roster[(i+1) % roster.length]; held = null; render(); }
+  if (e.key === 'k' || e.key === 'ArrowUp'){ sel = roster[(i+roster.length-1) % roster.length]; held = null; render(); }
+  if (e.key === '[' || e.key === ']'){
+    const j = CONFS.indexOf(conf) + (e.key === ']' ? 1 : -1 + CONFS.length);
+    conf = CONFS[j % CONFS.length]; sel = rosterOf(conf)[0]; held = null; render();
+  }
+});
+window.addEventListener('beforeunload', e => { if (dirty){ e.preventDefault(); e.returnValue = ''; } });
+
+el('yrline').textContent = DATA.year + ' SEASON · ALL CONFERENCES';
+seed();
+buildIndex();
+sel = rosterOf(conf)[0];
+render();
+connect();
+
+</script>

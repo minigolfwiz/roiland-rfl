@@ -1,0 +1,1205 @@
+<title>Scheduling Office</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+/* A working desk, not a report. Left: every program and how many openings it has.
+   Right: the program on the clock, its three slots, and a ranked board of who is
+   available to fill them. Same ledger palette as the Committee Room. */
+:root{
+  --paper:#f4efe4; --ink:#1d1a15; --dim:#6b6355; --rule:#d8cfbb; --card:#fffdf7;
+  --brass:#8a6410; --brass-soft:#b99a52; --good:#2f5d4a; --cut:#8c2f2f;
+  --chip:#e9e1cd; --warn:#8a5a12;
+  --display:"Spectral",Georgia,"Times New Roman",serif;
+  --body:"Spectral",Georgia,serif;
+  --data:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --paper:#17150f; --ink:#ece6d7; --dim:#938b78; --rule:#332e24; --card:#201d15;
+  --brass:#d2ab5e; --brass-soft:#8a7542; --good:#79c3a2; --cut:#e0786f;
+  --chip:#2a2619; --warn:#d8a24a; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#17150f; --ink:#ece6d7; --dim:#938b78; --rule:#332e24; --card:#201d15;
+  --brass:#d2ab5e; --brass-soft:#8a7542; --good:#79c3a2; --cut:#e0786f;
+  --chip:#2a2619; --warn:#d8a24a; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);margin:0;
+     font-size:15px;line-height:1.45}
+.wrap{max-width:1420px;margin:0 auto;padding-inline:16px;padding-block:0 56px}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;
+  background:color-mix(in srgb,var(--paper) 94%,transparent);
+  backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);
+  padding-block:11px;margin-bottom:16px}
+.topin{max-width:1420px;margin:0 auto;padding-inline:16px;
+  display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+h1{font-family:var(--display);font-size:20px;font-weight:600;margin:0;letter-spacing:.01em}
+h1 span{color:var(--brass)}
+.yr{font-family:var(--data);font-size:11.5px;color:var(--dim);letter-spacing:.14em}
+.spacer{flex:1 1 auto}
+.count{font-family:var(--data);font-size:12.5px;color:var(--dim)}
+.count b{color:var(--ink);font-weight:700}
+.savestate{font-family:var(--data);font-size:11.5px;color:var(--dim)}
+.savestate.dirty{color:var(--warn)}
+.savestate.ok{color:var(--good)}
+.savestate.bad{color:var(--cut)}
+
+.meter{height:4px;background:var(--chip);border-radius:2px;overflow:hidden;
+  margin-top:9px;max-width:1420px;margin-inline:auto}
+.meter i{display:block;height:100%;background:var(--brass);transition:width .25s}
+
+button{font:inherit;cursor:pointer;border-radius:4px;border:1px solid var(--rule);
+  background:var(--card);color:var(--ink);padding:6px 11px;font-size:13px}
+button:hover{border-color:var(--brass-soft)}
+button:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+button.primary{background:var(--brass);border-color:var(--brass);color:var(--paper);font-weight:700}
+button.ghost{background:transparent}
+button:disabled{opacity:.38;cursor:not-allowed}
+button.tiny{padding:3px 7px;font-size:11.5px;line-height:1.25}
+
+nav.tabs{display:flex;gap:4px;margin-bottom:14px;flex-wrap:wrap}
+nav.tabs button[aria-pressed="true"]{background:var(--brass);border-color:var(--brass);
+  color:var(--paper);font-weight:700}
+
+main{display:grid;grid-template-columns:minmax(260px,330px) 1fr;gap:20px;align-items:start}
+/* Grid and flex children default to min-width:auto, so a 1fr track refuses to shrink
+   below its content's min-content width. The conference <select> and the opponent table
+   are both wider than a phone, which pushed the whole PAGE wide and left the viewport
+   zoomed and unusable. Every column and every scroll container is allowed to shrink. */
+main > *{min-width:0}
+@media (max-width:940px){ main{grid-template-columns:1fr} }
+select{max-width:100%}
+
+h2.sec{font-family:var(--data);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--dim);margin:0 0 9px;padding-bottom:6px;border-bottom:1px solid var(--rule);
+  display:flex;justify-content:space-between;align-items:center;gap:8px}
+h2.sec em{font-style:normal;color:var(--brass);letter-spacing:.06em}
+
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:9px}
+.filters input,.filters select{flex:1 1 130px;min-width:0;font:inherit;font-size:13px;
+  padding:5px 8px;border:1px solid var(--rule);border-radius:4px;background:var(--card);color:var(--ink)}
+.filters button{font-size:11.5px;padding:4px 8px}
+.filters button[aria-pressed="true"]{background:var(--brass);border-color:var(--brass);color:var(--paper)}
+
+ul.list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px}
+.scroller{max-height:72vh;overflow:auto;padding-right:3px}
+li.row{display:grid;grid-template-columns:4px 1fr auto;gap:9px;align-items:center;
+  background:var(--card);border:1px solid var(--rule);border-radius:4px;
+  padding:6px 9px 6px 0;min-width:0;cursor:pointer}
+li.row:hover{border-color:var(--brass-soft)}
+li.row[aria-current="true"]{border-color:var(--brass);box-shadow:inset 0 0 0 1px var(--brass)}
+li.row.done{opacity:.52}
+.swatch{width:4px;align-self:stretch;border-radius:4px 0 0 4px;min-height:30px}
+.nm{min-width:0;padding-left:5px}
+.nm b{font-weight:600;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px}
+.nm small{color:var(--dim);font-size:11px;font-family:var(--data);display:block;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dots{font-family:var(--data);font-size:13px;letter-spacing:1px;color:var(--brass);white-space:nowrap}
+.dots i{color:var(--rule);font-style:normal}
+
+.panel{background:var(--card);border:1px solid var(--rule);border-radius:5px;padding:14px}
+.phead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.phead h3{font-family:var(--display);font-size:23px;margin:0 0 2px;font-weight:600}
+.phead .sub{font-family:var(--data);font-size:12px;color:var(--dim)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:7px;margin:13px 0 4px}
+.fact{background:color-mix(in srgb,var(--chip) 55%,transparent);border:1px solid var(--rule);
+  border-radius:4px;padding:6px 8px}
+.fact .k{font-family:var(--data);font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--dim)}
+.fact .v{font-family:var(--display);font-size:18px;font-weight:600;font-variant-numeric:tabular-nums}
+.fact .v small{font-size:11px;color:var(--dim);font-family:var(--data);font-weight:400}
+
+.slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:9px;margin:14px 0}
+.slot{border:1px solid var(--rule);border-radius:4px;padding:9px 10px;background:var(--paper);
+  min-height:76px;display:flex;flex-direction:column;gap:4px;justify-content:center}
+.slot.open{border-style:dashed;color:var(--dim);align-items:center;text-align:center;font-size:13px}
+.slot .onm{font-weight:600;font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.slot .ometa{font-family:var(--data);font-size:11px;color:var(--dim)}
+.slot .srow{display:flex;gap:5px;align-items:center;margin-top:3px;flex-wrap:wrap}
+.slot.lockedslot{border-color:var(--brass);background:color-mix(in srgb,var(--brass) 7%,var(--paper))}
+.slot.subslot{border-color:var(--good)}
+
+.ha{font-family:var(--data);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  border-radius:3px;padding:2px 6px;border:1px solid var(--rule);background:var(--card);cursor:pointer}
+.ha.home{border-color:var(--good);color:var(--good);font-weight:700}
+.ha.away{border-color:var(--dim);color:var(--dim)}
+.ha[disabled]{cursor:default;opacity:.75}
+
+.badge{font-family:var(--data);font-size:9px;letter-spacing:.07em;text-transform:uppercase;
+  padding:1px 5px;border-radius:3px;background:var(--chip);color:var(--dim);white-space:nowrap}
+.badge.p6{background:var(--brass);color:var(--paper);font-weight:700}
+.badge.good{color:var(--good);border:1px solid var(--good);background:transparent}
+.badge.warnb{color:var(--warn);border:1px solid var(--warn);background:transparent}
+.badge.bad{color:var(--cut);border:1px solid var(--cut);background:transparent}
+.badge.auto{color:var(--brass);border:1px dashed var(--brass-soft);background:transparent}
+
+table.grid{width:100%;border-collapse:collapse;font-size:13.5px}
+table.grid th{font-family:var(--data);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--dim);text-align:left;font-weight:400;padding:5px 7px;border-bottom:1px solid var(--rule);
+  position:sticky;top:0;background:var(--paper)}
+table.grid td{padding:5px 7px;border-bottom:1px solid var(--rule);vertical-align:middle}
+table.grid tr:hover td{background:color-mix(in srgb,var(--chip) 30%,transparent)}
+table.grid td.n{font-family:var(--data);font-variant-numeric:tabular-nums;color:var(--dim);font-size:12px}
+.pick{width:100%;text-align:left;border:0;background:transparent;padding:0;font:inherit;color:inherit;cursor:pointer}
+.pick:hover{color:var(--brass)}
+.tablewrap{overflow:auto;max-height:56vh;border:1px solid var(--rule);border-radius:4px}
+
+.note{font-size:12.5px;color:var(--dim);margin:10px 0 0}
+
+/* five years of non-conference slate: reference material, so it is set small and dense
+   and kept out of the way of the three slots above it */
+.nch{margin:11px 0 0;padding-top:8px;border-top:1px solid var(--rule)}
+.nchh{font-family:var(--data);font-size:9px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--dim);margin-bottom:5px}
+.nchh em{font-style:normal;letter-spacing:.04em;opacity:.7;text-transform:none}
+.nchr{display:flex;flex-wrap:wrap;gap:3px 4px;align-items:center;margin-bottom:3px;
+  line-height:1.3}
+.ncy{font-family:var(--data);font-size:9.5px;color:var(--dim);
+  font-variant-numeric:tabular-nums;min-width:30px;flex:0 0 auto;opacity:.75}
+.nco{font-size:10.5px;padding:1px 5px;border-radius:3px;white-space:nowrap;
+  border:1px solid var(--rule);background:var(--card)}
+.nco.h{color:var(--good);border-color:color-mix(in srgb,var(--good) 40%,var(--rule))}
+.nco.a{color:var(--dim)}
+.nco.s{font-style:italic;opacity:.8}
+/* Venue of what a candidate has already booked: one letter per game, not a word per
+   line. Same colour language as the history strip above -- green hosts, dim travels. */
+.vn{font-family:var(--data);font-size:9.5px;letter-spacing:.16em;font-weight:700;
+    padding:1px 4px;border:1px solid var(--rule);border-radius:3px;white-space:nowrap}
+.vn i{font-style:normal}
+.vn i.h{color:var(--good)}
+.vn i.a{color:var(--dim)}
+.empty{border:1px dashed var(--rule);border-radius:5px;padding:30px 18px;text-align:center;
+  color:var(--dim);font-size:13.5px}
+.issue{border:1px solid var(--rule);border-left-width:3px;border-radius:4px;padding:7px 10px;
+  margin-bottom:5px;font-size:13px;display:flex;gap:9px;align-items:center;justify-content:space-between}
+.issue.err{border-left-color:var(--cut)}
+.issue.wrn{border-left-color:var(--warn)}
+.issue b{font-weight:600}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:22px;z-index:60;
+  background:var(--ink);color:var(--paper);padding:9px 16px;border-radius:5px;font-size:13.5px;
+  box-shadow:0 6px 22px #0004;opacity:0;transition:opacity .2s,transform .2s;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(-4px)}
+.io{margin-top:20px;border-top:1px solid var(--rule);padding-top:13px}
+textarea{width:100%;min-height:92px;font-family:var(--data);font-size:11px;background:var(--card);
+  color:var(--ink);border:1px solid var(--rule);border-radius:4px;padding:8px;resize:vertical}
+.subtabs{display:flex;gap:4px;margin:4px 0 9px}
+.subtabs button[aria-pressed="true"]{background:var(--brass);border-color:var(--brass);color:var(--paper);font-weight:700}
+.kbd{font-family:var(--data);font-size:10.5px;border:1px solid var(--rule);border-bottom-width:2px;
+  border-radius:3px;padding:0 4px;color:var(--dim)}
+
+/* ---------- phone ---------- */
+.compact{display:none}
+@media (max-width:760px){
+  /* iOS zooms the page in whenever a focused field is under 16px and will not zoom back
+     out. Every field goes to 16px on small screens so tapping search does not hijack
+     the viewport. */
+  .filters input,.filters select,textarea{font-size:16px}
+  /* the program list shares the screen with the desk instead of filling it */
+  .scroller{max-height:46vh}
+  .wrap{padding-inline:14px}
+  table.grid td,table.grid th{padding:6px 5px}
+  /* fold the scanning columns into a line under the team name */
+  .opt{display:none}
+  /* the folded facts WRAP rather than run on, so the first column cannot stretch the
+     table past the screen and force a sideways scroll on every row */
+  .compact{display:block;font-family:var(--data);font-size:10.5px;color:var(--dim);
+    white-space:normal;line-height:1.3;margin-top:1px}
+  table.grid td:first-child{max-width:45vw}
+  table.grid td{white-space:normal}
+  .tablewrap{max-height:none}
+  .slots{grid-template-columns:1fr;gap:7px}
+  .slot{min-height:0;padding:7px 9px}
+  .slot.open{padding:12px 9px;font-size:12.5px}
+  .phead h3{font-size:20px}
+  button{padding:7px 12px}
+  button.tiny{padding:5px 9px}
+  /* the header is sticky, so every line it wraps onto is screen the board never gets */
+  header.top{padding-block:8px}
+  .topin{gap:4px 10px;align-items:center}
+  h1{font-size:17px}
+  .yr{display:none}
+  .count,.savestate{font-size:11px}
+  .facts{grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:5px}
+  .fact .v{font-size:16px}
+  nav.tabs{position:sticky;top:0;z-index:30;background:var(--paper);padding-block:6px}
+}
+</style>
+
+<header class="top">
+  <div class="topin">
+    <h1>Scheduling <span>Office</span></h1>
+    <span class="yr" id="yrline"></span>
+    <span class="spacer"></span>
+    <span class="count" id="counts"></span>
+    <span class="savestate" id="savestate">connecting…</span>
+    <button class="primary" id="saveBtn">Save</button>
+  </div>
+  <div class="meter"><i id="meter" style="width:0%"></i></div>
+</header>
+
+<div class="wrap">
+  <nav class="tabs">
+    <button id="tabBoard" aria-pressed="true">Build</button>
+    <button id="tabLedger" aria-pressed="false">Ledger</button>
+    <button id="tabIssues" aria-pressed="false">Checks</button>
+    <span class="spacer"></span>
+    <button class="ghost" id="themeBtn" title="light / dark">◐</button>
+  </nav>
+
+  <div id="viewBoard">
+    <main>
+      <section>
+        <h2 class="sec">Programs <em id="openCount"></em></h2>
+        <div class="filters">
+          <input id="q" placeholder="search team or state" autocomplete="off">
+          <select id="fConf"><option value="">all conferences</option></select>
+        </div>
+        <div class="filters">
+          <button id="fOpen" aria-pressed="true">openings only</button>
+          <button id="fP6" aria-pressed="false">P6</button>
+          <button id="fL6" aria-pressed="false">L6</button>
+          <button id="fSort" aria-pressed="false" title="A–Z, or most open first">↕</button>
+          <button id="nextBtn" title="next program with an open date (n)">next ›</button>
+        </div>
+        <div class="scroller"><ul class="list" id="teamList"></ul></div>
+      </section>
+      <section id="deskHost"></section>
+    </main>
+  </div>
+
+  <div id="viewLedger" hidden></div>
+  <div id="viewIssues" hidden></div>
+
+  <div class="io">
+    <h2 class="sec">Load a saved board</h2>
+    <p class="note" style="margin-top:0">Paste a hand-off from anywhere — an earlier session, the
+      chat — and it merges into what is already here. Games you already have are left alone;
+      anything that would break a rule is reported and skipped.</p>
+    <textarea id="inblob" placeholder='paste a hand-off here, e.g. {"season":11,"games":[…]}'></textarea>
+    <div class="filters" style="margin-block:9px">
+      <button class="primary" id="loadBtn">Load</button>
+      <span id="loadnote" class="note" style="margin:0;align-self:center"></span>
+    </div>
+
+    <h2 class="sec" style="margin-top:22px">Hand-off</h2>
+    <p class="note" style="margin-top:0">Work saves itself as you go. This is the belt-and-braces
+      copy — paste it into the chat and the conference games get built around it.</p>
+    <div class="filters" style="margin-block:9px">
+      <button id="exportBtn">Build hand-off</button>
+      <button class="ghost" id="copyBtn">Copy</button>
+      <span class="spacer"></span>
+      <button class="ghost" id="autoAllBtn">Auto-fill everything still open</button>
+      <button class="ghost" id="clearAutoBtn">Clear auto-filled</button>
+    </div>
+    <textarea id="blob" readonly placeholder="nothing built yet"></textarea>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const DATA = __DATA__;
+const BY = {}; DATA.teams.forEach(t => BY[t.name] = t);
+const SUBBY = {}; DATA.subs.forEach(s => SUBBY[s.name] = s);
+const SLOTS = DATA.slots;
+const TOTAL_SLOTS = DATA.teams.length * SLOTS;
+
+let games = [];            // {a,b,host,sub,locked,auto,week}
+let sel = null;            // team on the clock
+let view = 'board';
+let oppTab = 'fbs';
+let oppSort = 'suggest';
+let teamSort = 'az';
+// q drives the program list and the FBS opponent board; qs is the guest tab's own box,
+// kept separate so typing a subdivision school's name does not empty the FBS board
+let filt = { q:'', qs:'', conf:'', tier:null, openOnly:true };
+let db = null, saveTimer = null, dirty = false;
+// Nothing may be saved until the restore has finished. Loading the saved board is
+// asynchronous; a game booked in that first second used to schedule a save of the
+// still-empty board, and that save landed on top of the real one. That is how a
+// finished team disappeared between sessions.
+let loaded = false;
+
+const el = id => document.getElementById(id);
+const key = (a,b) => [a,b].sort().join('|');
+
+/* ---------- seeds: the locked cross-conference rivalries ---------- */
+function seedLocked(){
+  DATA.locked.forEach(L => {
+    games.push({ a:L.a, b:L.b, host:L.host, sub:false, locked:true, auto:false,
+                 week:L.week, why:L.type });
+  });
+}
+
+/* ---------- derived ---------- */
+function gamesOf(t){ return games.filter(g => g.a === t || g.b === t); }
+function oppOf(g, t){ return g.a === t ? g.b : g.a; }
+function filledOf(t){ return gamesOf(t).length; }
+function openOf(t){ return SLOTS - filledOf(t); }
+function homeOf(t){ return gamesOf(t).filter(g => g.host === t).length; }
+function subUsed(t){ return gamesOf(t).some(g => g.sub); }
+function subTaken(name){ return games.some(g => g.sub && g.b === name); }
+function playsAlready(a,b){ return games.some(g => key(g.a,g.b) === key(a,b)); }
+function confCount(t, conf){
+  return gamesOf(t).filter(g => !g.sub && BY[oppOf(g,t)] && BY[oppOf(g,t)].conf === conf).length;
+}
+/* did these two meet in the non-conference last season, and which way round? */
+function lastMeeting(a, b){
+  return (BY[a]?.last_nonconf || []).find(x => x.opp === b) || null;
+}
+/* Is a return leg owed? Dan's 2038 rule: met exactly once in the last five seasons and
+   not at all in the five before that, so the trip has never been paid back. `at` is
+   already oriented for `a` -- 'away' means a hosted the one meeting and now travels.
+   A recurring series is excluded upstream, so this is never true for a pair that plays
+   every year; that case is still the -26 in `score` below. The two are opposites and
+   used to be conflated. */
+function owedTo(a, b){
+  return (BY[a]?.owed || []).find(x => x.opp === b) || null;
+}
+function owedCount(t){
+  const S = BY[t]?.series || {};
+  return (BY[t]?.owed || []).length
+       + Object.values(S).filter(v => v.n >= 2 && v.same).length;
+}
+/* The state of this series inside the five-year window: how many times they have met,
+   when last, whether `a` hosted that one, and whether every meeting was at one ground. */
+function seriesOf(a, b){ return (BY[a]?.series || {})[b] || null; }
+/* Is a visit owed, by EITHER route?
+     - met once in five years and not in the five before that  (`owed`), or
+     - met two or more times in five years but always at the same ground, so one side
+       has never hosted. Dan's refinement: repetition does not settle a series, a
+       return trip does.
+   `at` is oriented for `a`: 'home' means a has not hosted and should. */
+function debtOf(a, b){
+  const ow = owedTo(a, b);
+  if (ow) return { at: ow.at, year: ow.year, n: 1 };
+  const s = seriesOf(a, b);
+  if (s && s.n >= 2 && s.same) return { at: s.home ? 'away' : 'home', year: s.year, n: s.n };
+  return null;
+}
+/* What a candidate has ALREADY booked on this board, and where. One letter per game --
+   H hosts, A travels -- because a candidate with two games would otherwise cost two
+   words on a row that already carries four other things. Order is the order booked.
+   A subdivision guest always travels to the FBS side, so it can only ever read H;
+   the tooltip names the opponents, which costs no width. */
+function bookedVenues(t){
+  const gs = gamesOf(t);
+  if (!gs.length) return '';
+  const bits = gs.map(g => {
+    const home = g.host === t, opp = oppOf(g, t);
+    return { home, label: home ? 'H' : 'A',
+             text: (home ? 'hosts ' : 'at ') + opp + (g.sub ? ' (guest)' : '')
+                   + (g.locked ? ', locked' : '') };
+  });
+  return `<span class="vn" title="${esc(t)} already has: ${esc(bits.map(x => x.text).join(', '))}"
+    >${bits.map(x => `<i class="${x.home ? 'h' : 'a'}">${x.label}</i>`).join('')}</span>`;
+}
+/* The last five years of a programme's non-conference slate, one line per season and
+   deliberately small: this is reference material you scan for a repeat or a series,
+   not something to read. Home and away are a colour and a glyph rather than a word,
+   because five years of "home"/"away" badges swamped the panel it sits in. */
+function ncHistory(t){
+  const rows = t.nc_history || [];
+  if (!rows.length) return '';
+  const line = r => `<span class="ncy">${r.year}</span>` + r.games.map(g =>
+    `<span class="nco ${g.home ? 'h' : 'a'}${g.sub ? ' s' : ''}"
+       title="${g.home ? 'hosted' : 'played at'} ${esc(g.opp)}${g.sub ? ' (subdivision guest)' : ''}"
+      >${g.home ? '' : '@'}${esc(g.opp)}</span>`).join('');
+  return `<div class="nch"><div class="nchh">non-conference, last ${rows.length}
+    ${rows.length === 1 ? 'year' : 'years'} <em>@ = away</em></div>
+    ${rows.map(r => `<div class="nchr">${line(r)}</div>`).join('')}</div>`;
+}
+function distOf(a,b){
+  const x = (BY[a]||SUBBY[a]||{}).xy, y = (BY[b]||SUBBY[b]||{}).xy;
+  if (!x || !y) return null;
+  return Math.round(Math.hypot(x[0]-y[0], x[1]-y[1]));
+}
+function travelWord(d){ return d == null ? '—' : d <= 80 ? 'regional' : d <= 200 ? 'mid' : 'cross-country'; }
+
+/* ---------- eligibility: the hard rules ---------- */
+function whyNot(a, b){
+  if (a === b) return 'same team';
+  const A = BY[a], B = BY[b];
+  if (!B) return 'unknown';
+  if (A.conf === B.conf) return 'same conference — that is a conference game';
+  if (playsAlready(a,b)) return 'already scheduled';
+  if (openOf(b) <= 0) return 'no openings left';
+  if (confCount(a, B.conf) >= 2) return 'already two from ' + B.conf;
+  if (confCount(b, A.conf) >= 2) return 'they already have two from ' + A.conf;
+  return null;
+}
+function whyNotSub(a, name){
+  if (subUsed(a)) return 'already hosting a guest';
+  if (subTaken(name)) return 'already booked by another program';
+  if (openOf(a) <= 0) return 'no openings left';
+  return null;
+}
+
+/* ---------- host suggestion: keep home games near two ---------- */
+function suggestHost(a, b){
+  const ha = homeOf(a), hb = homeOf(b);
+  if (ha !== hb) return ha < hb ? a : b;
+  return BY[a].prestige >= BY[b].prestige ? a : b;   // the bigger brand hosts the one-off
+}
+
+/* ---------- suggestion score for the opponent board ---------- */
+function score(a, b){
+  const A = BY[a], B = BY[b];
+  const d = distOf(a,b) ?? 250;
+  let s = 0;
+  s += Math.max(0, 120 - d) * 0.42;                       // nearby is easier to sell
+  if (A.state === B.state) s += 34;                        // in-state non-conference game
+  s -= Math.abs(A.prestige - B.prestige) * 0.52;           // competitive matchup
+  if (lastMeeting(a,b)) s -= 26;                           // played them last year
+  // An unreturned one-off pulls the other way, weighted by how fresh the debt is: the
+  // return leg of a 2037 visit is a live piece of business, a 2033 one much less so.
+  // Where both apply -- they met last year, exactly once ever -- the owed bonus wins on
+  // purpose, since turning a one-off around is the whole point of the rule.
+  const ow = debtOf(a,b);
+  if (ow) s += 22 + ((ow.year - 2025) - (DATA.season - 1 - DATA.return_window)) * 4;
+  s += openOf(b) * 7;                                      // they need games too
+  if (A.tier === 'P6' && B.tier === 'P6') s += 12;         // power matchups have value
+  // A second opponent from one conference is legal but unusual, and a third is barred
+  // outright. Weight it heavily so auto-fill reaches for it only when nothing else fits.
+  if (confCount(a, B.conf) >= 1) s -= 85;
+  if (confCount(b, A.conf) >= 1) s -= 85;
+  // a program stranded in rivalry week must come out of this with a free partner
+  if (needsW14(a) && !B.w14_pinned) s += 200;
+  if (needsW14(b) && !A.w14_pinned) s += 200;
+  return s;
+}
+
+/* does this program still need a rivalry-week partner from its non-conference slate? */
+function needsW14(t){
+  const T = BY[t];
+  if (!T || T.w14_pinned || T.conf_free > 0) return false;
+  return !gamesOf(t).map(g => oppOf(g, t)).some(o => BY[o] && !BY[o].w14_pinned);
+}
+
+/* ---------- actions ---------- */
+/* `want` is 'home', 'away', or null to let the home-balance suggestion decide. */
+function addGame(a, b, isSub, want){
+  const bad = isSub ? whyNotSub(a,b) : whyNot(a,b);
+  if (bad){ toast(bad); return; }
+  let host;
+  if (isSub) host = a;                                  // guests travel (see note below)
+  else if (want === 'home') host = a;
+  else if (want === 'away') host = b;
+  else host = suggestHost(a,b);
+  games.push({ a:host, b:(host===a?b:a), host, sub:!!isSub, locked:false, auto:false, week:null });
+  toast(isSub ? (b + ' visits ' + a) : (host === a ? b + ' at ' + a : a + ' at ' + b));
+  render(); queueSave();
+}
+function removeGame(k){
+  const i = games.findIndex(g => key(g.a,g.b) === k);
+  if (i < 0) return;
+  if (games[i].locked){ toast('locked rivalry — cannot be removed'); return; }
+  games.splice(i,1); render(); queueSave();
+}
+function flipHost(k){
+  const g = games.find(x => key(x.a,x.b) === k);
+  if (!g) return;
+  if (g.sub){ toast('guests always travel'); return; }
+  if (g.locked){ toast('locked rivalry — the host alternates by rule'); return; }
+  g.host = g.host === g.a ? g.b : g.a;
+  const vis = g.host === g.a ? g.b : g.a;
+  toast(vis + ' at ' + g.host);
+  render(); queueSave();
+}
+
+/* ---------- auto-fill, for the tail end only ---------- */
+function autoFill(onlyTeam){
+  let made = 0, guard = 0;
+  const order = () => DATA.teams.map(t => t.name)
+      .filter(n => openOf(n) > 0 && (!onlyTeam || n === onlyTeam))
+      .sort((x,y) => openOf(y) - openOf(x) || BY[y].prestige - BY[x].prestige);
+  let queue = order();
+  while (queue.length && guard++ < 4000){
+    const a = queue[0];
+    if (openOf(a) <= 0){ queue = order(); continue; }
+    const cands = DATA.teams.map(t => t.name).filter(b => !whyNot(a,b));
+    if (cands.length){
+      cands.sort((x,y) => score(a,y) - score(a,x));
+      const b = cands[Math.floor(Math.random() * Math.min(4, cands.length))];
+      const host = suggestHost(a,b);
+      games.push({ a:host, b:(host===a?b:a), host, sub:false, locked:false, auto:true, week:null });
+      made++;
+    } else {
+      // nothing in the FBS pool fits: invite a guest instead
+      const gs = DATA.subs.map(s => s.name).filter(n => !whyNotSub(a,n));
+      if (!gs.length){ queue = order().filter(n => n !== a); continue; }
+      gs.sort((x,y) => (distOf(a,x) ?? 999) - (distOf(a,y) ?? 999));
+      games.push({ a:a, b:gs[0], host:a, sub:true, locked:false, auto:true, week:null });
+      made++;
+    }
+    queue = order();
+  }
+  toast(made ? ('filled ' + made + ' game' + (made===1?'':'s')) : 'nothing left to fill');
+  render(); queueSave();
+}
+function clearAuto(){
+  const n = games.filter(g => g.auto).length;
+  games = games.filter(g => !g.auto);
+  toast(n ? ('cleared ' + n + ' auto-filled') : 'none were auto-filled');
+  render(); queueSave();
+}
+
+/* ---------- render: programs ---------- */
+function renderTeams(){
+  const q = filt.q.trim().toLowerCase();
+  const rows = DATA.teams.filter(t => {
+    if (filt.conf && t.conf !== filt.conf) return false;
+    if (filt.tier && t.tier !== filt.tier) return false;
+    if (filt.openOnly && openOf(t.name) <= 0) return false;
+    if (q && !(t.name.toLowerCase().includes(q) || (t.state||'').toLowerCase().includes(q)
+          || (t.mascot||'').toLowerCase().includes(q))) return false;
+    return true;
+  }).sort(teamSort === 'open'
+      ? (x,y) => openOf(y.name) - openOf(x.name) || x.name.localeCompare(y.name)
+      : (x,y) => x.name.localeCompare(y.name));
+
+  el('teamList').innerHTML = rows.map(t => {
+    const o = openOf(t.name);
+    const dots = '●'.repeat(SLOTS - o) + '<i>' + '○'.repeat(o) + '</i>';
+    return `<li class="row ${o?'':'done'}" data-team="${esc(t.name)}"
+       aria-current="${sel===t.name}">
+      <span class="swatch" style="background:${t.colors[0]}"></span>
+      <span class="nm"><b>${esc(t.name)}</b>
+        <small>${esc(t.conf)} · ${t.last.W}-${t.last.L} · ${t.prestige.toFixed(0)}</small></span>
+      <span class="dots">${dots}</span></li>`;
+  }).join('') || '<div class="empty">nothing matches</div>';
+
+  const open = DATA.teams.filter(t => openOf(t.name) > 0).length;
+  el('openCount').textContent = open + ' with openings';
+}
+
+/* ---------- render: the desk ---------- */
+function renderDesk(){
+  if (!sel){
+    el('deskHost').innerHTML = `<h2 class="sec">The desk</h2>
+      <div class="empty">Pick a program on the left to start filling its three
+      non-conference dates.<br><br>Every game you make fills a slot for <em>both</em> teams, so the
+      board shrinks about twice as fast as it looks.</div>`;
+    return;
+  }
+  const t = BY[sel], o = openOf(sel), mine = gamesOf(sel);
+  const slotCards = [];
+  mine.forEach(g => {
+    const opp = oppOf(g, sel);
+    const O = BY[opp] || SUBBY[opp];
+    const home = g.host === sel;
+    const d = distOf(sel, opp);
+    const cls = g.locked ? 'lockedslot' : g.sub ? 'subslot' : '';
+    slotCards.push(`<div class="slot ${cls}">
+      <div class="onm">${esc(opp)}</div>
+      <div class="ometa">${g.sub ? 'subdivision guest' : esc(O.conf) + ' · ' + O.prestige.toFixed(0)
+         + ' · ' + O.last.W + '-' + O.last.L}${d!=null?' · '+travelWord(d):''}</div>
+      <div class="srow">
+        <button class="ha ${home?'home':'away'}" data-flip="${esc(key(g.a,g.b))}"
+          ${g.locked||g.sub?'disabled':''}>${home?'home':'away'}</button>
+        ${g.locked?`<span class="badge" style="border:1px solid var(--brass);color:var(--brass)">locked · wk ${g.week}</span>`:''}
+        ${g.auto?'<span class="badge auto">auto</span>':''}
+        ${!g.locked?`<button class="tiny ghost" data-del="${esc(key(g.a,g.b))}">drop</button>`:''}
+      </div></div>`);
+  });
+  for (let i=0;i<o;i++) slotCards.push('<div class="slot open">open date</div>');
+
+  const nch = homeOf(sel);
+  const hflag = nch === 0 ? 'bad' : nch >= 3 ? 'warnb' : 'good';
+  const rivals = (t.conf_rivals||[]).map(r => r.opp + (r.week===14?' (rivalry wk)':' (wk '+r.week+')')).join(', ');
+
+  el('deskHost').innerHTML = `<h2 class="sec">On the clock <em>${esc(sel)}</em></h2>
+    <div class="panel">
+      <div class="phead">
+        <div>
+          <h3>${esc(t.full)}</h3>
+          <div class="sub">${esc(t.conf)} · ${t.tier} · ${esc(t.state)} · ${DATA.prev_year} record ${t.last.W}-${t.last.L}</div>
+        </div>
+        <div style="display:flex;gap:5px;flex-wrap:wrap">
+          ${o ? `<button class="tiny" data-autoteam="${esc(sel)}">fill this team</button>` : ''}
+        </div>
+      </div>
+      <div class="facts">
+        <div class="fact"><div class="k">open dates</div><div class="v">${o}</div></div>
+        <div class="fact"><div class="k">non-con home</div>
+          <div class="v">${nch} <small>of ${SLOTS}</small></div></div>
+        <div class="fact"><div class="k">prestige</div><div class="v">${t.prestige.toFixed(0)}</div></div>
+        <div class="fact"><div class="k">conf home</div>
+          <div class="v">${t.conf_home_target ?? '4–5'} <small>of 9</small></div></div>
+        <div class="fact"><div class="k">total home</div>
+          <div class="v">${t.conf_home_target ? (t.conf_home_target+nch) : (4+nch)+'–'+(5+nch)}</div></div>
+      </div>
+      ${t.conf_home_target?`<p class="note">Hosts <b>${t.conf_home_target}</b> conference games this year — the split swaps every season, and ${esc(sel)} hosted ${t.conf_home_last} in ${DATA.prev_year}.</p>`:''}
+      ${needsW14(sel)?`<p class="note" style="color:var(--cut)"><b>Rivalry week problem.</b>
+        Every other program in ${esc(t.conf)} is locked into a week-14 rivalry, and ${esc(sel)}
+        is not — so their rivalry-week opponent has to come from these three dates. At least one
+        has to be a team that is not itself locked into a week 14 game. The board below marks
+        who qualifies.</p>`:''}
+      ${nch===0&&!o?'<p class="note" style="color:var(--cut)">All three non-conference games on the road — that leaves only 4–5 home dates all year.</p>':''}
+      ${nch>=3?'<p class="note" style="color:var(--warn)">Hosting all three means 7–8 home games. Legal, just lopsided.</p>':''}
+      <div class="slots">${slotCards.join('')}</div>
+      ${rivals?`<p class="note">Locked conference rivalries, placed by the engine: <b>${esc(rivals)}</b></p>`:''}
+      ${ncHistory(t)}
+    </div>
+    ${o ? renderOpponents() : '<p class="note">Slate full. Pick another program on the left.</p>'}`;
+}
+
+function renderOpponents(){
+  const a = sel;
+  if (oppTab === 'subs'){
+    const q = filt.qs.trim().toLowerCase();
+    let pool = DATA.subs.filter(s => !whyNotSub(a, s.name));
+    if (q) pool = pool.filter(s => s.name.toLowerCase().includes(q)
+        || (s.state||'').toLowerCase().includes(q));
+    const all = pool.length;
+    const list = pool.sort((x,y) => (distOf(a,x.name) ?? 999) - (distOf(a,y.name) ?? 999))
+                     .slice(0, q ? 200 : 80);
+    return `<h2 class="sec" style="margin-top:16px">Invite a guest
+        <em>${all} of ${DATA.subs.length} available</em></h2>
+      ${subTabs()}
+      <div class="filters">
+        <input id="qs" placeholder="search all ${DATA.subs.length} subdivision schools"
+          value="${esc(filt.qs)}" autocomplete="off">
+      </div>
+      <div class="tablewrap"><table class="grid"><thead><tr>
+        <th>School</th><th class="opt">State</th><th class="opt">Travel</th><th></th><th></th>
+        </tr></thead><tbody>
+        ${list.map(s => `<tr><td><b>${esc(s.name)}</b>
+            <span class="compact">${esc(s.state||'')} · ${travelWord(distOf(a,s.name))}</span></td>
+          <td class="n opt">${esc(s.state||'')}</td>
+          <td class="n opt">${travelWord(distOf(a,s.name))}</td>
+          <td>${s.guest_last?'<span class="badge">guest ' + DATA.prev_year + '</span>':''}</td>
+          <td style="text-align:right;white-space:nowrap">
+            <button class="tiny" data-sub="${esc(s.name)}">host</button></td></tr>`).join('')
+          || '<tr><td colspan="5" class="n">nothing matches that search</td></tr>'}
+      </tbody></table></div>
+      <p class="note">A subdivision school never hosts an FBS program — canon, and the guest-game
+      calibration is built on it — so this is always a home date. One guest per program, and each
+      subdivision school takes at most one of these games all season.</p>`;
+  }
+
+  const cands = DATA.teams.map(t => t.name).filter(b => !whyNot(a,b));
+  const sorters = {
+    suggest: (x,y) => score(a,y) - score(a,x),
+    near:    (x,y) => (distOf(a,x) ?? 999) - (distOf(a,y) ?? 999),
+    big:     (x,y) => BY[y].prestige - BY[x].prestige,
+    small:   (x,y) => BY[x].prestige - BY[y].prestige,
+    name:    (x,y) => x.localeCompare(y),
+    // owed returns first, freshest debt at the top; everyone else falls in behind by
+    // the ordinary suggestion score rather than being dropped
+    owed:    (x,y) => ((debtOf(a,y)?.year ?? -1) - (debtOf(a,x)?.year ?? -1))
+                      || (score(a,y) - score(a,x)),
+  };
+  const q = filt.q.trim().toLowerCase();
+  const needW14 = needsW14(a);
+  let list = cands.slice();
+  if (q) list = list.filter(n => n.toLowerCase().includes(q)
+      || (BY[n].state||'').toLowerCase().includes(q) || BY[n].conf.toLowerCase().includes(q));
+  list.sort(sorters[oppSort] || sorters.suggest);
+  // a program that still needs a rivalry-week partner sees those candidates first
+  if (needW14) list.sort((x,y) => (BY[x].w14_pinned?1:0) - (BY[y].w14_pinned?1:0));
+  list = list.slice(0, 70);
+
+  return `<h2 class="sec" style="margin-top:16px">Available opponents
+      <em>${cands.length} eligible</em></h2>
+    ${subTabs()}
+    <div class="filters">
+      ${[['suggest','suggested'],['owed','owed a return' + (owedCount(a) ? ' (' + owedCount(a) + ')' : '')],
+         ['near','nearest'],['big','biggest name'],['small','easiest'],['name','A–Z']]
+        .map(([k,label]) => `<button class="tiny" data-sort="${k}" aria-pressed="${oppSort===k}">${label}</button>`).join('')}
+    </div>
+    <div class="tablewrap"><table class="grid"><thead><tr>
+      <th>Team</th><th class="opt">Conference</th><th class="opt">Pres</th>
+      <th class="opt">${DATA.prev_year}</th>
+      <th class="opt">Travel</th><th class="opt">Open</th><th></th>
+      <th style="text-align:right">Book as</th>
+      </tr></thead><tbody>
+      ${list.map(b => {
+        const B = BY[b], d = distOf(a,b);
+        const prev = lastMeeting(a, b);
+        const flags = [];
+        if (BY[a].state === B.state) flags.push('<span class="badge good">in-state</span>');
+        const ow = debtOf(a, b);
+        const ser = seriesOf(a, b);
+        // A series already turned around is settled, so neither yellow badge appears:
+        // two or more meetings with the ground changing hands means there is nothing
+        // left to balance, and pointing at a flip that already happened is misleading.
+        const settled = !!ser && ser.n >= 2 && !ser.same && !ow;
+        const bv = bookedVenues(b);
+        if (bv) flags.push(bv);
+        if (prev && !settled) flags.push(`<span class="badge warnb">${prev.home ? 'hosted' : 'visited'} ${DATA.prev_year}</span>`);
+        if (ow) flags.push(`<span class="badge warnb" title="${ow.n === 1
+            ? 'met once in ' + DATA.return_window + ' years and not in the '
+              + (DATA.series_window - DATA.return_window) + ' before that'
+            : 'met ' + ow.n + ' times in ' + DATA.return_window
+              + ' years and every one at the same ground'} — the return leg is owed"
+          >owed ${ow.at === 'home' ? 'a visit' : 'a trip'} · ${ow.year}</span>`);
+        if (confCount(a, B.conf) === 1) flags.push('<span class="badge">2nd from conf</span>');
+        if (needW14 && !B.w14_pinned) flags.push('<span class="badge good">solves week 14</span>');
+        // Lead with the button that settles the series -- and only when something is
+        // still unsettled. A debt names the side that has not hosted; otherwise flip
+        // last year's venue; a settled series highlights nothing, so the nudge never
+        // outlives the badge that explained it.
+        const lead = ow ? ow.at : (settled ? null : (prev ? (prev.home ? 'away' : 'home') : null));
+        return `<tr><td><b>${esc(b)}</b>
+            <span class="compact">${esc(B.conf)} ${B.tier} · ${B.prestige.toFixed(0)} ·
+              ${B.last.W}-${B.last.L} · ${travelWord(d)} · ${openOf(b)} open</span></td>
+          <td class="n opt">${esc(B.conf)} <span class="badge ${B.tier==='P6'?'p6':''}">${B.tier}</span></td>
+          <td class="n opt">${B.prestige.toFixed(0)}</td>
+          <td class="n opt">${B.last.W}-${B.last.L}</td>
+          <td class="n opt">${travelWord(d)}</td>
+          <td class="n opt">${openOf(b)}</td>
+          <td>${flags.join(' ')}</td>
+          <td style="text-align:right;white-space:nowrap">
+            <button class="tiny ${lead==='home'?'primary':''}" data-opp="${esc(b)}" data-want="home"
+              title="${esc(a)} hosts">home</button>
+            <button class="tiny ${lead==='away'?'primary':''}" data-opp="${esc(b)}" data-want="away"
+              title="${esc(a)} travels">away</button>
+          </td></tr>`;
+      }).join('') || '<tr><td colspan="8" class="n">nothing matches that search</td></tr>'}
+    </tbody></table></div>
+    <p class="note">Pick the venue as you book — or flip it later on the slot card. The highlighted
+    button is the one that settles the series: where a return leg is <b>owed</b> it points at the
+    site that has not hosted yet, and otherwise it flips ${DATA.prev_year}'s venue.
+    <b>Owed</b> means one side has never hosted: either they met exactly once in the last
+    ${DATA.return_window} years and not at all in the ${DATA.series_window - DATA.return_window}
+    before that, or they met more than once and every meeting was at the same ground. A series
+    that has already changed hands is settled — no yellow badge and no highlighted button, because
+    there is nothing left to turn around.
+    Where a candidate has already booked non-conference games, they show as
+    <span class="vn"><i class="h">H</i></span> for a home date and
+    <span class="vn"><i class="a">A</i></span> for a road one, in the order booked.
+    <span class="kbd">/</span> jumps to search, <span class="kbd">n</span> moves to the next program
+    with an open date.</p>`;
+}
+function subTabs(){
+  return `<div class="subtabs">
+    <button class="tiny" data-otab="fbs" aria-pressed="${oppTab==='fbs'}">FBS opponents</button>
+    <button class="tiny" data-otab="subs" aria-pressed="${oppTab==='subs'}">Subdivision guests</button>
+  </div>`;
+}
+
+/* ---------- render: ledger ---------- */
+function renderLedger(){
+  const rows = games.slice().sort((x,y) => x.host.localeCompare(y.host) || x.b.localeCompare(y.b));
+  el('viewLedger').innerHTML = `<h2 class="sec">Non-conference ledger
+      <em>${games.length} games</em></h2>
+    ${games.length ? `<div class="tablewrap" style="max-height:70vh"><table class="grid"><thead><tr>
+      <th>Visitor</th><th>Host</th><th>Kind</th><th>Travel</th><th>Week</th><th></th></tr></thead><tbody>
+      ${rows.map(g => {
+        const vis = g.host === g.a ? g.b : g.a;
+        const d = distOf(g.a,g.b);
+        return `<tr><td>${esc(vis)}</td><td><b>${esc(g.host)}</b></td>
+          <td class="n">${g.locked?'<span class="badge" style="border:1px solid var(--brass);color:var(--brass)">locked</span>'
+             : g.sub?'<span class="badge good">guest</span>'
+             : g.auto?'<span class="badge auto">auto</span>':'—'}</td>
+          <td class="n">${travelWord(d)}</td>
+          <td class="n">${g.week ?? 'engine'}</td>
+          <td>${g.locked?'':`<button class="tiny ghost" data-del="${esc(key(g.a,g.b))}">drop</button>`}</td>
+        </tr>`;
+      }).join('')}
+    </tbody></table></div>` : '<div class="empty">no games yet</div>'}`;
+}
+
+/* The header is sticky and wraps to several lines on a phone, so scrollIntoView would
+   park the desk underneath it. Offset by whatever the header actually measures. */
+function scrollToDesk(){
+  const h = document.querySelector('header.top');
+  const tabs = document.querySelector('nav.tabs');
+  const pad = (h ? h.getBoundingClientRect().height : 0)
+            + (getComputedStyle(tabs).position === 'sticky' ? tabs.getBoundingClientRect().height : 0)
+            + 8;
+  const y = el('deskHost').getBoundingClientRect().top + window.scrollY - pad;
+  window.scrollTo({ top: Math.max(0, y), behavior:'smooth' });
+}
+
+/* ---------- jump to the next program that still needs dates ---------- */
+function nextOpen(){
+  const pool = DATA.teams.map(t => t.name).filter(n => openOf(n) > 0);
+  if (!pool.length){ toast('every slate is full'); return; }
+  const i = pool.indexOf(sel);
+  sel = pool[(i + 1) % pool.length];
+  oppTab = 'fbs';
+  setView('board');
+  scrollToDesk();
+}
+
+/* ---------- render: checks ---------- */
+function checks(){
+  const errs = [], wrns = [];
+  DATA.teams.forEach(t => {
+    const n = filledOf(t.name);
+    if (n > SLOTS) errs.push([t.name, 'has ' + n + ' non-conference games, the limit is ' + SLOTS]);
+    if (n < SLOTS) wrns.push([t.name, (SLOTS - n) + ' date' + (SLOTS-n===1?'':'s') + ' still open']);
+    const h = homeOf(t.name);
+    if (n === SLOTS && h === 0) wrns.push([t.name, 'all three non-conference games on the road']);
+    if (n === SLOTS && h === SLOTS) wrns.push([t.name, 'hosting all three — 7–8 home games']);
+    const byConf = {};
+    gamesOf(t.name).forEach(g => { if (!g.sub){ const O = BY[oppOf(g,t.name)];
+      if (O) byConf[O.conf] = (byConf[O.conf]||0)+1; } });
+    Object.entries(byConf).forEach(([c,k]) => {
+      if (k >= 3) errs.push([t.name, 'three games against ' + c]);
+      else if (k === 2) wrns.push([t.name, 'two games against ' + c]);
+    });
+  });
+  // ---- rivalry week ----
+  // A program with no free conference mate can only get a week-14 game from the
+  // non-conference slate. If none of its three opponents is free either, nobody can
+  // play it that week and the calendar cannot be built.
+  const stranded = [];
+  DATA.teams.forEach(t => {
+    if (t.w14_pinned || t.conf_free > 0) return;
+    const partners = gamesOf(t.name)
+      .map(g => oppOf(g, t.name))
+      .filter(o => BY[o] && !BY[o].w14_pinned);
+    if (!partners.length){
+      const msg = filledOf(t.name) < SLOTS
+        ? 'needs a rivalry-week opponent — every program in ' + t.conf + ' except them is '
+          + 'locked into a week-14 rivalry, so one of their three non-conference opponents '
+          + 'has to be a team that is not'
+        : 'has nobody to play in rivalry week — all three non-conference opponents are locked '
+          + 'into week-14 rivalries, and so is every other program in ' + t.conf
+          + '. Swap one of their games for a team outside those rivalries.';
+      (filledOf(t.name) < SLOTS ? wrns : errs).push([t.name, msg]);
+      stranded.push(t.name);
+    }
+  });
+
+  const subs = games.filter(g => g.sub).length;
+  if (subs % 2) errs.push(['Calendar', 'an odd number of subdivision guests (' + subs +
+      ') leaves one FBS date that cannot be paired']);
+  return { errs, wrns, subs, stranded };
+}
+function renderIssues(){
+  const { errs, wrns, subs } = checks();
+  const done = games.reduce((n,g) => n + (g.sub ? 1 : 2), 0);
+  const instate = games.filter(g => !g.sub && BY[g.a] && BY[g.b]
+      && BY[g.a].state === BY[g.b].state).length;
+  const longhaul = games.filter(g => (distOf(g.a,g.b) ?? 0) > 200).length;
+  const hd = {}; DATA.teams.forEach(t => { const k = homeOf(t.name); hd[k] = (hd[k]||0)+1; });
+  const bridges = games.filter(g => !g.sub && BY[g.a] && BY[g.b]
+      && !BY[g.a].w14_pinned && !BY[g.b].w14_pinned).length;
+  el('viewIssues').innerHTML = `<h2 class="sec">Checks
+      <em>${errs.length} blocking · ${wrns.length} to look at</em></h2>
+    <div class="facts" style="margin-top:0">
+      <div class="fact"><div class="k">dates filled</div><div class="v">${done} <small>of ${TOTAL_SLOTS}</small></div></div>
+      <div class="fact"><div class="k">games</div><div class="v">${games.length}</div></div>
+      <div class="fact"><div class="k">guest games</div>
+        <div class="v">${subs} <small>was 62</small></div></div>
+      <div class="fact"><div class="k">in-state</div><div class="v">${instate}</div></div>
+      <div class="fact"><div class="k">cross-country</div><div class="v">${longhaul}</div></div>
+      <div class="fact"><div class="k">auto-filled</div><div class="v">${games.filter(g=>g.auto).length}</div></div>
+    </div>
+    <h2 class="sec" style="margin-top:16px">Rivalry week</h2>
+    <p class="note" style="margin-top:0">${DATA.w14.pinned} programs are locked into a week-14
+      rivalry; the other ${DATA.w14.free} have to be paired off among themselves, and each can only
+      be paired with a team it actually plays. Conferences with an odd number of unlocked programs
+      need a non-conference game to bridge them:
+      ${Object.entries(DATA.w14.conf_free).filter(([_c,n]) => n % 2)
+        .map(([c,n]) => `<b>${esc(c)}</b> (${n})`).join(', ') || 'none'}.
+      ${bridges} of your non-conference games pair two unlocked programs, so there is room to do it.</p>
+    <p class="note">Non-conference home dates per program:
+      ${Object.keys(hd).sort().map(k => `<b>${k}</b> home × ${hd[k]}`).join(' · ')}.
+      Conference play adds 4–5 more. Last season 62 programs hosted a subdivision guest —
+      match that or don't, it is your call, but the total must come out even or one FBS
+      date is left with nobody to pair with.</p>
+    ${errs.length ? '<h2 class="sec" style="margin-top:16px">Blocking</h2>' +
+      errs.map(([t,m]) => `<div class="issue err"><span><b>${esc(t)}</b> — ${esc(m)}</span>
+        ${BY[t]?`<button class="tiny" data-goto="${esc(t)}">open</button>`:''}</div>`).join('') : ''}
+    ${wrns.length ? '<h2 class="sec" style="margin-top:16px">Worth a look</h2>' +
+      wrns.slice(0,200).map(([t,m]) => `<div class="issue wrn"><span><b>${esc(t)}</b> — ${esc(m)}</span>
+        ${BY[t]?`<button class="tiny" data-goto="${esc(t)}">open</button>`:''}</div>`).join('') : ''}
+    ${!errs.length && !wrns.length ? '<div class="empty">Every program has three non-conference games and nothing looks off. Ready for the hand-off.</div>' : ''}`;
+}
+
+/* ---------- shell ---------- */
+function render(){
+  const done = games.reduce((n,g) => n + (g.sub ? 1 : 2), 0);
+  el('counts').innerHTML = `<b>${games.length}</b> games · <b>${done}</b>/${TOTAL_SLOTS} dates`;
+  el('meter').style.width = (100*done/TOTAL_SLOTS).toFixed(1) + '%';
+  if (view === 'board'){ renderTeams(); renderDesk(); }
+  if (view === 'ledger') renderLedger();
+  if (view === 'issues') renderIssues();
+}
+function setView(v){
+  view = v;
+  el('viewBoard').hidden = v !== 'board';
+  el('viewLedger').hidden = v !== 'ledger';
+  el('viewIssues').hidden = v !== 'issues';
+  el('tabBoard').setAttribute('aria-pressed', v==='board');
+  el('tabLedger').setAttribute('aria-pressed', v==='ledger');
+  el('tabIssues').setAttribute('aria-pressed', v==='issues');
+  render();
+}
+let toastTimer = null;
+function toast(msg){
+  el('toast').textContent = msg;
+  el('toast').classList.add('show');
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => el('toast').classList.remove('show'), 1900);
+}
+function esc(s){ return String(s).replace(/[&<>"']/g, c =>
+  ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+/* ---------- persistence ---------- */
+const DOC = 'schedule/s' + DATA.season;
+
+/* A board shipped INSIDE the page, as a floor under the database.
+   Version 1 of this page was published without the `db` capability declared, so
+   `claude.use('db')` resolved null, the page fell back to the hand-off box, and a
+   session's work was never written anywhere. The capability is declared now, but a
+   page whose only copy of the work lives behind a runtime call has no floor when that
+   call fails for any reason -- not granted, signed out, read error. So the last known
+   board travels with the page.
+
+   It is a FLOOR, never an override: it is laid down only when the database has nothing
+   for this season, or cannot be reached at all. A board restored from the database
+   always wins, because that one reflects deletions and the seed cannot. Seeding
+   unconditionally would resurrect every game Dan had removed since. */
+function seedBoard(why){
+  const rows = Array.isArray(DATA.seed) ? DATA.seed : [];
+  if (!rows.length) return 0;
+  const have = new Set(games.map(g => key(g.a, g.b)));
+  let n = 0;
+  for (const r of rows){
+    if (r.locked) continue;                    // re-seeded from canon by seedLocked()
+    if (!(BY[r.a] || SUBBY[r.a]) || !(BY[r.b] || SUBBY[r.b])) continue;
+    if (have.has(key(r.a, r.b))) continue;
+    games.push({ a:r.a, b:r.b, host:r.host, sub:!!r.sub, locked:false,
+                 auto:!!r.auto, week: r.week ?? null });
+    have.add(key(r.a, r.b));
+    n++;
+  }
+  if (n) setSave(n + ' games loaded from the page' + (why ? ' — ' + why : ''), 'ok');
+  return n;
+}
+
+async function connect(){
+  setSave('loading your board…', '');
+  try { db = await window.claude?.use?.('db'); } catch(e){ db = null; }
+  if (!db){
+    loaded = true;                       // nothing to wait for; the paste box is the way in
+    const n = seedBoard('saving unavailable, so changes will NOT persist — export before you close');
+    if (!n) setSave('saving unavailable — use Load / hand-off', 'bad');
+    render();
+    return;
+  }
+  try {
+    const doc = await db.doc(DOC).get();
+    if (doc && doc.data && Array.isArray(doc.data.games) && doc.data.games.length){
+      const restored = doc.data.games.filter(g =>
+        (BY[g.a] || SUBBY[g.a]) && (BY[g.b] || SUBBY[g.b]) && !g.locked);
+      // Anything booked while the restore was still in flight is kept and merged on top
+      // of the saved board rather than discarded.
+      const inflight = games.filter(g => !g.locked);
+      const seen = new Set(restored.map(g => key(g.a, g.b)));
+      // locked rivalries are re-seeded from canon every load, never from the save
+      games = games.filter(g => g.locked)
+        .concat(restored)
+        .concat(inflight.filter(g => !seen.has(key(g.a, g.b))));
+      setSave('restored ' + games.filter(g => !g.locked).length + ' games'
+              + (doc.data.saved ? ' · ' + doc.data.saved : ''), 'ok');
+    } else {
+      // The database is reachable but holds nothing for this season: lay the shipped
+      // board down and write it straight back, so from here on the database is the
+      // copy of record and the seed is never consulted again.
+      const n = seedBoard('database was empty');
+      if (!n) setSave('ready', '');
+      loaded = true;
+      if (n) { save(false); }
+      render();
+      return;
+    }
+  } catch(e){
+    // A read error is the dangerous case: the database may hold a board this page
+    // cannot see, so saving over it is how work gets lost. Show the seed read-only and
+    // refuse to write.
+    db = null; loaded = true;
+    const n = seedBoard('could not read the saved board, so changes will NOT persist — export before you close');
+    if (!n) setSave('could not read the saved board — do NOT keep working, reload', 'bad');
+    render();
+    return;
+  }
+  loaded = true;
+  // anything booked while the restore was in flight is merged in, not thrown away
+  if (dirty) save(false);
+  render();
+}
+function setSave(msg, cls){
+  const n = el('savestate'); n.textContent = msg;
+  n.className = 'savestate' + (cls ? ' ' + cls : '');
+}
+async function save(manual){
+  if (!loaded){ setSave('still loading — hold on', 'dirty'); return; }
+  if (!db){ setSave('no save connection — use the hand-off box', 'bad'); return; }
+  try {
+    await db.doc(DOC).set({ season:DATA.season, year:DATA.year, games,
+      saved:new Date().toLocaleString() });
+    dirty = false;
+    setSave('saved ' + new Date().toLocaleTimeString(), 'ok');
+  } catch(e){ setSave('save failed — copy the hand-off box', 'bad'); }
+}
+function queueSave(){
+  dirty = true;
+  if (!loaded){ setSave('loading your board…', 'dirty'); return; }  // connect() saves after
+  setSave('unsaved…', 'dirty');
+  clearTimeout(saveTimer); saveTimer = setTimeout(() => save(false), 800);
+}
+window.addEventListener('beforeunload', e => { if (dirty){ e.preventDefault(); e.returnValue = ''; } });
+
+/* Read a board back in. Accepts either shape -- the hand-off's {host, visitor} rows or
+   the internal {a, b, host} ones -- and merges rather than replaces, so pasting an old
+   board can only ever ADD games back. */
+function importBoard(text){
+  let d;
+  try { d = JSON.parse(text); }
+  catch(e){ return { error: 'that is not valid JSON' }; }
+  const rows = Array.isArray(d) ? d : (d.games || d.data?.games);
+  if (!Array.isArray(rows)) return { error: 'no games found in that' };
+
+  let added = 0, already = 0;
+  const skipped = [];
+  for (const r of rows){
+    if (r.locked) continue;                       // re-seeded from canon, never imported
+    const host = r.host || r.a;
+    const vis  = r.visitor !== undefined ? r.visitor : (r.host === r.a ? r.b : r.a);
+    if (!host || !vis){ skipped.push(['?', 'row has no teams']); continue; }
+    if (!BY[host]){ skipped.push([host, 'not an FBS program']); continue; }
+    const isSub = !!r.sub || !BY[vis];
+    if (isSub && !SUBBY[vis]){ skipped.push([vis, 'unknown school']); continue; }
+    if (playsAlready(host, vis)){ already++; continue; }
+    const bad = isSub ? whyNotSub(host, vis) : whyNot(host, vis);
+    if (bad){ skipped.push([host + ' vs ' + vis, bad]); continue; }
+    games.push({ a:host, b:vis, host, sub:isSub, locked:false, auto:!!r.auto,
+                 week: r.week ?? null });
+    added++;
+  }
+  return { added, already, skipped };
+}
+
+function exportAll(){
+  const { errs, wrns } = checks();
+  const out = { season:DATA.season, year:DATA.year, complete: errs.length === 0 &&
+      DATA.teams.every(t => filledOf(t.name) === SLOTS),
+    games: games.map(g => ({ host:g.host, visitor:(g.host===g.a?g.b:g.a),
+      sub:!!g.sub, locked:!!g.locked, auto:!!g.auto, week:g.week ?? null })),
+    blocking: errs.length, open_dates: TOTAL_SLOTS - games.reduce((n,g)=>n+(g.sub?1:2),0) };
+  el('blob').value = JSON.stringify(out);
+  el('blob').scrollIntoView({ behavior:'smooth', block:'center' });
+}
+
+/* confirm() is inert inside the artifact viewer, returning false at once, so any button
+   guarded by it would silently do nothing. Destructive actions arm on the first click and
+   run on the second instead. */
+function arm(btn, label, run){
+  if (btn._armed){
+    clearTimeout(btn._t); btn._armed = false; btn.textContent = btn._orig;
+    run(); return;
+  }
+  btn._orig = btn._orig || btn.textContent;
+  btn._armed = true; btn.textContent = label;
+  btn._t = setTimeout(() => { btn._armed = false; btn.textContent = btn._orig; }, 3500);
+}
+/* ---------- events ---------- */
+document.addEventListener('click', e => {
+  const li = e.target.closest('li.row');
+  if (li && li.dataset.team){
+    sel = li.dataset.team; oppTab = 'fbs'; render();
+    // on one column the desk renders BELOW the program list, so a tap would otherwise
+    // look like nothing happened
+    if (window.matchMedia('(max-width:940px)').matches) scrollToDesk();
+    return;
+  }
+  const b = e.target.closest('button');
+  if (!b) return;
+  if (b.dataset.opp) addGame(sel, b.dataset.opp, false, b.dataset.want || null);
+  else if (b.dataset.sub) addGame(sel, b.dataset.sub, true);
+  else if (b.dataset.del) removeGame(b.dataset.del);
+  else if (b.dataset.flip) flipHost(b.dataset.flip);
+  else if (b.dataset.sort){ oppSort = b.dataset.sort; renderDesk(); }
+  else if (b.dataset.otab){ oppTab = b.dataset.otab; renderDesk(); }
+  else if (b.dataset.autoteam) autoFill(b.dataset.autoteam);
+  else if (b.dataset.goto){ sel = b.dataset.goto; setView('board'); }
+});
+el('q').addEventListener('input', e => { filt.q = e.target.value; render(); });
+/* the guest tab has its own search box, rebuilt on every render — delegate, then put
+   the caret back where it was so typing a school name is not interrupted */
+document.addEventListener('input', e => {
+  if (e.target.id !== 'qs') return;
+  filt.qs = e.target.value;
+  const pos = e.target.selectionStart;
+  renderDesk();
+  const n = el('qs');
+  if (n){ n.focus(); try { n.setSelectionRange(pos, pos); } catch(_){} }
+});
+el('fConf').innerHTML = '<option value="">all conferences</option>' +
+  Object.keys(DATA.conferences).sort().map(c =>
+    `<option value="${esc(c)}">${esc(c)} (${DATA.conferences[c].tier})</option>`).join('');
+el('fConf').addEventListener('change', e => { filt.conf = e.target.value; renderTeams(); });
+el('fOpen').addEventListener('click', e => {
+  filt.openOnly = !filt.openOnly; e.currentTarget.setAttribute('aria-pressed', filt.openOnly); renderTeams(); });
+[['fP6','P6'],['fL6','L6']].forEach(([id,tier]) => {
+  el(id).addEventListener('click', () => {
+    filt.tier = filt.tier === tier ? null : tier;
+    el('fP6').setAttribute('aria-pressed', filt.tier==='P6');
+    el('fL6').setAttribute('aria-pressed', filt.tier==='L6');
+    renderTeams();
+  });
+});
+el('fSort').addEventListener('click', e => {
+  teamSort = teamSort === 'az' ? 'open' : 'az';
+  e.currentTarget.setAttribute('aria-pressed', teamSort === 'open');
+  e.currentTarget.title = teamSort === 'open' ? 'most open first' : 'A–Z';
+  renderTeams();
+});
+el('nextBtn').addEventListener('click', nextOpen);
+el('tabBoard').addEventListener('click', () => setView('board'));
+el('tabLedger').addEventListener('click', () => setView('ledger'));
+el('tabIssues').addEventListener('click', () => setView('issues'));
+el('saveBtn').addEventListener('click', () => save(true));
+el('exportBtn').addEventListener('click', exportAll);
+el('loadBtn').addEventListener('click', () => {
+  const txt = el('inblob').value.trim();
+  if (!txt){ el('loadnote').textContent = 'nothing pasted'; return; }
+  if (!loaded){ el('loadnote').textContent = 'still loading your saved board — try again in a moment'; return; }
+  const r = importBoard(txt);
+  if (r.error){ el('loadnote').textContent = r.error; toast(r.error); return; }
+  const bits = [r.added + ' added'];
+  if (r.already) bits.push(r.already + ' already here');
+  if (r.skipped.length) bits.push(r.skipped.length + ' skipped');
+  el('loadnote').textContent = bits.join(' · ')
+    + (r.skipped.length ? ' — ' + r.skipped.slice(0,3).map(s => s[0] + ': ' + s[1]).join('; ') : '');
+  if (r.added){ el('inblob').value = ''; render(); queueSave(); }
+  toast(bits.join(' · '));
+});
+el('copyBtn').addEventListener('click', async () => {
+  if (!el('blob').value) exportAll();
+  try { await navigator.clipboard.writeText(el('blob').value); toast('copied'); }
+  catch(e){ el('blob').select(); toast('press ⌘C / Ctrl-C'); }
+});
+el('autoAllBtn').addEventListener('click', () => {
+  const open = TOTAL_SLOTS - games.reduce((n,g)=>n+(g.sub?1:2),0);
+  if (!open) return toast('nothing left to fill');
+  arm(el('autoAllBtn'), 'click again to fill ' + open + ' dates', () => autoFill(null));
+});
+el('clearAutoBtn').addEventListener('click', () => {
+  if (!games.some(g => g.auto)) return toast('none were auto-filled');
+  arm(el('clearAutoBtn'), 'click again to remove them', clearAuto);
+});
+el('themeBtn').addEventListener('click', () => {
+  const cur = document.documentElement.getAttribute('data-theme');
+  document.documentElement.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+});
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA'){
+    if (e.key === 'Escape'){ el('q').value = ''; filt.q = ''; e.target.blur(); render(); }
+    return;
+  }
+  if (e.key === '/'){ e.preventDefault(); el('q').focus(); }
+  else if (e.key === 'n'){ e.preventDefault(); nextOpen(); }
+  else if (e.key === 's' && (e.metaKey || e.ctrlKey)){ e.preventDefault(); save(true); }
+});
+
+el('yrline').textContent = DATA.year + ' SEASON · NON-CONFERENCE';
+seedLocked();
+setView('board');
+connect();
+</script>

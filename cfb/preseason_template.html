@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Roiland Preseason</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=UnifrakturCook:wght@700&family=Oswald:wght@600;700&family=Alfa+Slab+One&family=Orbitron:wght@800;900&family=Bungee&family=Bowlby+One+SC&family=Archivo+Black&family=Rye&family=Righteous&family=Spectral:wght@400;600;700&display=swap">
+<style>
+/* Fifth room in the same building. This one is for READING, so the measure is narrower
+   than the other pages and the prose is set larger than the data around it — the
+   opposite priority from the Scheduling Office, where the numbers lead. */
+:root{
+  --paper:#f4efe4; --ink:#1d1a15; --dim:#6b6355; --rule:#d8cfbb; --card:#fffdf7;
+  --brass:#8a6410; --brass-soft:#b99a52; --win:#2f5d4a; --loss:#8c2f2f;
+  --chip:#e9e1cd; --warn:#8a5a12;
+  --display:"Spectral",Georgia,"Times New Roman",serif;
+  --body:"Spectral",Georgia,serif;
+  --data:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --paper:#17150f; --ink:#ece6d7; --dim:#938b78; --rule:#332e24; --card:#201d15;
+  --brass:#d2ab5e; --brass-soft:#8a7542; --win:#79c3a2; --loss:#e0786f;
+  --chip:#2a2619; --warn:#d8a24a; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#17150f; --ink:#ece6d7; --dim:#938b78; --rule:#332e24; --card:#201d15;
+  --brass:#d2ab5e; --brass-soft:#8a7542; --win:#79c3a2; --loss:#e0786f;
+  --chip:#2a2619; --warn:#d8a24a; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);margin:0;
+     font-size:16px;line-height:1.5}
+.wrap{max-width:860px;margin:0 auto;padding-inline:18px;padding-block:0 70px}
+main > *{min-width:0}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;
+  background:color-mix(in srgb,var(--paper) 94%,transparent);
+  backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);
+  padding-block:11px;margin-bottom:16px}
+.topin{max-width:860px;margin:0 auto;padding-inline:18px;display:flex;gap:12px;
+  align-items:baseline;flex-wrap:wrap}
+h1{font-family:var(--display);font-size:20px;font-weight:600;margin:0}
+h1 span{color:var(--brass)}
+.yr{font-family:var(--data);font-size:11.5px;color:var(--dim);letter-spacing:.14em}
+.spacer{flex:1 1 auto}
+button{font:inherit;cursor:pointer;border-radius:4px;border:1px solid var(--rule);
+  background:var(--card);color:var(--ink);padding:6px 11px;font-size:13px}
+button:hover{border-color:var(--brass-soft)}
+button:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+button.tiny{padding:3px 8px;font-size:11.5px}
+
+/* the jump strip */
+.toc{display:flex;flex-wrap:wrap;gap:3px;margin-bottom:22px;
+  padding-bottom:16px;border-bottom:1px solid var(--rule)}
+.toc a{font-family:var(--data);font-size:11px;text-decoration:none;color:var(--dim);
+  border:1px solid var(--rule);background:var(--card);border-radius:3px;
+  padding:3px 6px;display:flex;gap:4px;align-items:center;white-space:nowrap}
+.toc a:hover{border-color:var(--brass);color:var(--brass)}
+.toc a b{color:var(--ink);font-weight:700}
+.toc svg{width:13px;height:13px;display:block}
+
+.lede{font-size:17px;margin:0 0 20px;color:var(--ink)}
+.lede b{color:var(--brass)}
+
+/* a team */
+article.team{border-top:2px solid var(--rule);padding-top:20px;margin-bottom:34px;
+  scroll-margin-top:72px}
+article.team:first-of-type{border-top-color:var(--brass)}
+.thead{display:flex;gap:13px;align-items:flex-start;margin-bottom:12px}
+.bdg svg{width:46px;height:46px;display:block}
+.tname{min-width:0;flex:1 1 auto}
+.rk{font-family:var(--data);font-size:11px;letter-spacing:.14em;color:var(--brass);
+  text-transform:uppercase}
+h2{font-family:var(--display);font-size:25px;font-weight:700;margin:1px 0 2px;
+  line-height:1.15}
+.sub{font-family:var(--data);font-size:11px;color:var(--dim)}
+.flags{display:flex;gap:4px;flex-wrap:wrap;margin-top:5px}
+.badge{font-family:var(--data);font-size:9px;letter-spacing:.07em;text-transform:uppercase;
+  padding:1px 5px;border-radius:3px;background:var(--chip);color:var(--dim);white-space:nowrap}
+.badge.gold{background:var(--brass);color:var(--paper);font-weight:700}
+.badge.warn{color:var(--loss);border:1px solid var(--loss);background:transparent}
+
+/* the numbers strip */
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:1px;
+  background:var(--rule);border:1px solid var(--rule);border-radius:5px;
+  overflow:hidden;margin-bottom:14px}
+.nums div{background:var(--card);padding:7px 9px}
+.nums .k{font-family:var(--data);font-size:8.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--dim);display:block;margin-bottom:1px}
+.nums .v{font-family:var(--display);font-size:19px;font-weight:700;
+  font-variant-numeric:tabular-nums;line-height:1.1}
+.nums .v small{font-size:11px;font-weight:400;color:var(--dim);font-family:var(--data)}
+
+.note{font-size:16.5px;margin:0 0 15px}
+
+/* detail blocks */
+.blocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:13px}
+.blk{border:1px solid var(--rule);border-radius:5px;background:var(--card);padding:9px 11px}
+.blk h3{font-family:var(--data);font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--brass);margin:0 0 6px;font-weight:400}
+.blk ul{list-style:none;margin:0;padding:0}
+.blk li{font-size:13.5px;padding:2px 0;display:flex;gap:7px;align-items:baseline}
+.blk li .p{font-family:var(--data);font-size:9.5px;color:var(--dim);min-width:22px;
+  flex:0 0 auto;text-transform:uppercase}
+.blk li .n{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* portal lines carry a destination that matters, so they wrap rather than truncate */
+.blk.move li{align-items:flex-start}
+.blk.move li .n{white-space:normal;overflow:visible;text-overflow:clip;line-height:1.3}
+.blk li .x{font-family:var(--data);font-size:11.5px;color:var(--dim);
+  font-variant-numeric:tabular-nums;flex:0 0 auto}
+.blk li .x.hi{color:var(--brass);font-weight:700}
+.blk .none{font-size:13px;color:var(--dim);font-style:italic}
+.blk li.out .n{color:var(--dim)}
+
+@media (max-width:700px){
+  body{font-size:15.5px}
+  .wrap{padding-inline:15px}
+  h1{font-size:17px}
+  .yr{display:none}
+  h2{font-size:21px}
+  .bdg svg{width:38px;height:38px}
+  .note{font-size:15.5px}
+  .blocks{grid-template-columns:1fr}
+  button{padding:7px 12px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="topin">
+    <h1>Roiland <span>Preseason</span></h1>
+    <span class="yr" id="yrline"></span>
+    <span class="spacer"></span>
+    <button class="tiny" id="themeBtn" title="light / dark">◐</button>
+  </div>
+</header>
+
+<div class="wrap"><main id="main"></main></div>
+
+<script>
+__MARKS__
+
+const DATA = __DATA__;
+const el = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c =>
+  ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function badge(t){
+  return mark({ name: t.name, mascot: t.mascot || '', conf: t.conf, col: t.col });
+}
+const ord = n => n + (n % 100 >= 11 && n % 100 <= 13 ? 'th'
+  : ({1:'st',2:'nd',3:'rd'}[n % 10] || 'th'));
+
+/* a coach chair: name and years in it -- ratings stay behind the curtain */
+function chair(label, c, extra){
+  const yrs = c.tenure > 0 ? c.tenure + (c.tenure === 1 ? ' yr' : ' yrs') : 'first year';
+  return `<li><span class="p">${label}</span>
+    <span class="n">${esc(c.name)}${extra || ''}</span>
+    <span class="x">${yrs}</span></li>`;
+}
+
+function teamCard(t){
+  const rec = `${t.lastW}-${t.lastL}`;
+  const flags = [];
+  if (t.defending) flags.push('<span class="badge gold">defending champion</span>');
+  if (t.hc.new) flags.push('<span class="badge gold">new head coach</span>');
+  if (t.lastTitle) flags.push(`<span class="badge">last title ${t.lastTitle}</span>`);
+  else flags.push('<span class="badge warn">never won a title</span>');
+  if (t.sosRank <= 10) flags.push(`<span class="badge warn">${ord(t.sosRank)}-hardest schedule</span>`);
+
+  const stars = t.stars.map(p => `<li><span class="p">${esc(p.pos)}</span>
+      <span class="n">${esc(p.name)}${p.transfer ? ' <span class="badge">transfer</span>' : ''}</span>
+      <span class="x">${esc(p.cls)}</span></li>`).join('');
+
+  const staff = chair('HC', t.hc, t.hc.new ? ' <span class="badge gold">new</span>' : '')
+    + chair('OC', t.oc) + chair('DC', t.dc)
+    + t.lost_coaches.map(m => `<li class="out"><span class="p">out</span>
+        <span class="n">${esc(m.coach)} — ${esc(m.from_role)} to ${esc(m.to)}</span>
+        <span class="x">${esc(m.to_role)}</span></li>`).join('');
+
+  const gone = t.drafted.length
+    ? t.drafted.map(d => `<li><span class="p">${esc(d.pos)}</span>
+        <span class="n">${esc(d.name)}${d.early ? ' <span class="badge">early</span>' : ''}</span>
+        <span class="x ${d.ov <= 32 ? 'hi' : ''}">#${d.ov}</span></li>`).join('')
+    : '<div class="none">Nobody drafted.</div>';
+
+  const moves = (t['in'].length || t.out.length)
+    ? t['in'].map(x => `<li><span class="p">in</span>
+         <span class="n">${esc(x.name)} <span class="x">${esc(x.pos)}</span> — from ${esc(x.from)}</span></li>`).join('')
+      + t.out.map(x => `<li class="out"><span class="p">out</span>
+         <span class="n">${esc(x.name)} <span class="x">${esc(x.pos)}</span> — to ${esc(x.to)}</span></li>`).join('')
+    : '<div class="none">No portal movement either way.</div>';
+
+  const frosh = t.frosh.length
+    ? t.frosh.map(p => `<li><span class="p">${esc(p.pos)}</span>
+        <span class="n">${esc(p.name)}</span><span class="x ${p.stars >= 5 ? 'hi' : ''}">${p.stars ? '★'.repeat(p.stars) : ''}</span></li>`).join('')
+    : '';
+
+  return `<article class="team" id="t${t.rank}">
+    <div class="thead">
+      <span class="bdg">${badge(t)}</span>
+      <span class="tname">
+        <span class="rk">No. ${t.rank}</span>
+        <h2>${esc(t.name)}</h2>
+        <span class="sub">${esc(t.full)} · ${esc(t.conf)} · ${t.tier}</span>
+        <span class="flags">${flags.join('')}</span>
+      </span>
+    </div>
+
+    <div class="nums">
+      <div><span class="k">projected</span><span class="v">${t.proj.toFixed(1)}<small> wins</small></span></div>
+      <div><span class="k">${DATA.prev_year}</span><span class="v">${rec}<small> ${t.lastConfW}-${t.lastConfL}</small></span></div>
+      ${t.pollPts ? `<div><span class="k">poll</span><span class="v">${t.pollPts}<small> pts</small></span></div>` : ''}
+      <div><span class="k">schedule</span><span class="v">${ord(t.sosRank)}<small> hardest</small></span></div>
+      <div><span class="k">class</span><span class="v">${t.bluechips}<small> of ${t.class_size}</small></span></div>
+    </div>
+
+    <p class="note">${esc(t.note)}</p>
+
+    <div class="blocks">
+      <div class="blk"><h3>Who to watch</h3><ul>${stars}</ul></div>
+      <div class="blk"><h3>The staff</h3><ul>${staff}</ul></div>
+      <div class="blk"><h3>Gone to the draft</h3>${t.drafted.length ? `<ul>${gone}</ul>` : gone}</div>
+      <div class="blk move"><h3>Portal</h3>${(t['in'].length || t.out.length) ? `<ul>${moves}</ul>` : moves}</div>
+      ${frosh ? `<div class="blk"><h3>Freshmen to know</h3><ul>${frosh}</ul></div>` : ''}
+    </div>
+  </article>`;
+}
+
+function render(){
+  el('yrline').textContent = DATA.year + ' · TOP 25';
+  const toc = DATA.teams.map(t =>
+    `<a href="#t${t.rank}">${badge(t)}<b>${t.rank}</b> ${esc(t.name)}</a>`).join('');
+  /* a short lede, computed rather than written, so it cannot drift from the data */
+  const byConf = {};
+  DATA.teams.forEach(t => byConf[t.conf] = (byConf[t.conf] || 0) + 1);
+  const lead = Object.entries(byConf).sort((a, b) => b[1] - a[1])[0];
+  const champ = DATA.teams.find(t => t.defending);
+  el('main').innerHTML = `
+    <div class="toc">${toc}</div>
+    <p class="lede">The media's preseason top 25.
+      <b>${esc(lead[0])}</b> places ${lead[1]} of them.
+      ${champ ? `The defending champion, <b>${esc(champ.name)}</b>, opens at No. ${champ.rank}.` : ''}
+      Projected wins are the sum of win probability across all twelve scheduled games —
+      what the roster and the schedule are worth before anyone plays.</p>
+    ${DATA.teams.map(teamCard).join('')}`;
+  fitAll(document);
+}
+
+document.addEventListener('click', e => {
+  if (e.target.id === 'themeBtn'){
+    const now = document.documentElement.getAttribute('data-theme');
+    const dark = now ? now === 'dark' : matchMedia('(prefers-color-scheme:dark)').matches;
+    document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
+  }
+});
+
+render();
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => fitAll(document));
+</script>
+</body>
+</html>

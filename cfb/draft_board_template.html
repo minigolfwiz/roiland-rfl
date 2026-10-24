@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Roiland Draft</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=UnifrakturCook:wght@700&family=Oswald:wght@600;700&family=Alfa+Slab+One&family=Orbitron:wght@800;900&family=Bungee&family=Bowlby+One+SC&family=Archivo+Black&family=Rye&family=Righteous&family=Spectral:wght@400;600;700&display=swap">
+<style>
+/* Fourth room in the same building as the Scheduling Office, the Committee Room and
+   the Season viewer. Same ledger palette, same brass, same monospace for anything
+   numeric — a draft board is mostly numbers, so the data face does a lot of work. */
+:root{
+  --paper:#f4efe4; --ink:#1d1a15; --dim:#6b6355; --rule:#d8cfbb; --card:#fffdf7;
+  --brass:#8a6410; --brass-soft:#b99a52; --win:#2f5d4a; --loss:#8c2f2f;
+  --chip:#e9e1cd; --warn:#8a5a12;
+  --display:"Spectral",Georgia,"Times New Roman",serif;
+  --body:"Spectral",Georgia,serif;
+  --data:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --paper:#17150f; --ink:#ece6d7; --dim:#938b78; --rule:#332e24; --card:#201d15;
+  --brass:#d2ab5e; --brass-soft:#8a7542; --win:#79c3a2; --loss:#e0786f;
+  --chip:#2a2619; --warn:#d8a24a; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#17150f; --ink:#ece6d7; --dim:#938b78; --rule:#332e24; --card:#201d15;
+  --brass:#d2ab5e; --brass-soft:#8a7542; --win:#79c3a2; --loss:#e0786f;
+  --chip:#2a2619; --warn:#d8a24a; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);margin:0;
+     font-size:15px;line-height:1.45}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:16px;padding-block:0 60px}
+main > *{min-width:0}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;
+  background:color-mix(in srgb,var(--paper) 94%,transparent);
+  backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);
+  padding-block:11px;margin-bottom:14px}
+.topin{max-width:1180px;margin:0 auto;padding-inline:16px;display:flex;gap:12px;
+  align-items:baseline;flex-wrap:wrap}
+h1{font-family:var(--display);font-size:20px;font-weight:600;margin:0}
+h1 span{color:var(--brass)}
+.yr{font-family:var(--data);font-size:11.5px;color:var(--dim);letter-spacing:.14em}
+.spacer{flex:1 1 auto}
+.count{font-family:var(--data);font-size:12px;color:var(--dim)}
+.count b{color:var(--ink);font-weight:700}
+
+button{font:inherit;cursor:pointer;border-radius:4px;border:1px solid var(--rule);
+  background:var(--card);color:var(--ink);padding:6px 11px;font-size:13px}
+button:hover{border-color:var(--brass-soft)}
+button:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+button[aria-pressed="true"]{background:var(--brass);border-color:var(--brass);
+  color:var(--paper);font-weight:700}
+button.tiny{padding:3px 8px;font-size:11.5px}
+nav.tabs{display:flex;gap:4px;margin-bottom:12px;flex-wrap:wrap}
+
+h2.sec{font-family:var(--data);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--dim);margin:0 0 9px;padding-bottom:6px;border-bottom:1px solid var(--rule);
+  display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+h2.sec em{font-style:normal;color:var(--brass);letter-spacing:.06em}
+
+.rdnav{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px}
+.rdnav button{font-family:var(--data);font-size:12px;padding:5px 10px;min-width:38px}
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.filters input,.filters select{flex:1 1 150px;min-width:0;font:inherit;font-size:13px;
+  padding:5px 9px;border:1px solid var(--rule);border-radius:4px;
+  background:var(--card);color:var(--ink)}
+select{max-width:100%}
+
+/* the board itself */
+ul.picks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+li.pick{display:grid;grid-template-columns:46px 22px 1fr auto;gap:10px;align-items:center;
+  background:var(--card);border:1px solid var(--rule);border-radius:4px;
+  padding:7px 10px;min-width:0}
+li.pick .ov{font-family:var(--data);font-size:11.5px;color:var(--dim);
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+li.pick .ov b{color:var(--ink);font-weight:700;font-size:13px}
+.bdg{flex:0 0 auto;display:flex}
+.bdg svg{width:22px;height:22px;display:block}
+.bdg.lg svg{width:26px;height:26px}
+li.pick .who{min-width:0}
+li.pick .nm{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+li.pick .sch{font-family:var(--data);font-size:10.5px;color:var(--dim);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+li.pick .sch.tlink{cursor:pointer;text-decoration:underline;
+  text-decoration-color:transparent;text-underline-offset:3px;
+  transition:text-decoration-color .12s}
+li.pick:hover .sch.tlink{text-decoration-color:var(--brass-soft)}
+li.pick .sch.tlink:hover{color:var(--brass);text-decoration-color:var(--brass)}
+li.pick .tags{display:flex;gap:4px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.badge{font-family:var(--data);font-size:9px;letter-spacing:.07em;text-transform:uppercase;
+  padding:1px 5px;border-radius:3px;background:var(--chip);color:var(--dim);white-space:nowrap}
+.badge.pos{background:var(--brass);color:var(--paper);font-weight:700}
+.badge.early{color:var(--brass);border:1px solid var(--brass);background:transparent}
+.badge.reach{color:var(--loss);border:1px solid var(--loss);background:transparent}
+.badge.sub{font-style:italic}
+
+/* programmes */
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:5px}
+.tcard{display:flex;gap:9px;align-items:center;background:var(--card);
+  border:1px solid var(--rule);border-radius:4px;padding:6px 9px;cursor:pointer;min-width:0}
+.tcard:hover{border-color:var(--brass-soft)}
+.tcard b{font-weight:600;font-size:13.5px;overflow:hidden;text-overflow:ellipsis;
+  white-space:nowrap;display:block}
+.tcard small{color:var(--dim);font-family:var(--data);font-size:10.5px;display:block}
+.tcard .n{font-family:var(--data);font-weight:700;font-size:17px;margin-left:auto;
+  padding-left:8px;color:var(--brass);font-variant-numeric:tabular-nums}
+.tcard.none{opacity:.55}
+.tcard.none .n{color:var(--dim)}
+
+/* conference bars */
+ul.bars{list-style:none;margin:0 0 4px;padding:0;display:flex;flex-direction:column;gap:3px}
+li.bar{display:grid;grid-template-columns:132px 1fr 34px;gap:9px;align-items:center}
+li.bar .cn{font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+li.bar .tr{background:var(--chip);border-radius:3px;height:15px;overflow:hidden}
+li.bar .fl{background:var(--brass);height:100%;border-radius:3px}
+li.bar .v{font-family:var(--data);font-size:12px;text-align:right;
+  font-variant-numeric:tabular-nums;color:var(--dim)}
+
+.empty{border:1px dashed var(--rule);border-radius:5px;padding:26px 18px;text-align:center;
+  color:var(--dim);font-size:13.5px}
+.note{font-size:12.5px;color:var(--dim);margin:10px 0 0}
+.stats{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:12px;
+  font-family:var(--data);font-size:11.5px;color:var(--dim)}
+.stats b{color:var(--ink);font-size:14px;font-weight:700;display:block;
+  font-variant-numeric:tabular-nums}
+
+/* drawer */
+.scrim{position:fixed;inset:0;background:#0007;z-index:50}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(560px,100%);z-index:51;
+  background:var(--paper);border-left:1px solid var(--rule);overflow:auto;
+  padding:0 18px calc(30px + env(safe-area-inset-bottom,0px))}
+/* clears the host app's header so the close button is actually clickable, then sticks */
+.dhead{display:flex;justify-content:space-between;align-items:center;gap:12px;
+  position:sticky;top:0;z-index:3;background:var(--paper);
+  padding-top:calc(62px + env(safe-area-inset-top,0px));padding-bottom:10px;
+  border-bottom:1px solid var(--rule);margin-bottom:12px}
+.dhead .t{font-family:var(--display);font-size:19px;font-weight:600;min-width:0;
+  display:flex;gap:10px;align-items:center}
+.dhead .t small{display:block;font-family:var(--data);font-size:10.5px;
+  color:var(--dim);font-weight:400}
+
+@media (max-width:760px){
+  .filters input,.filters select{font-size:16px}
+  .wrap{padding-inline:14px}
+  header.top{padding-block:8px}
+  .yr{display:none}
+  h1{font-size:17px}
+  .drawer{width:100%;padding:0 14px 30px}
+  .tgrid{grid-template-columns:1fr 1fr}
+  button{padding:7px 12px}
+  li.pick{grid-template-columns:40px 22px 1fr;row-gap:3px}
+  li.pick .tags{grid-column:3;justify-content:flex-start}
+  li.bar{grid-template-columns:96px 1fr 30px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="topin">
+    <h1>Roiland <span>Draft</span></h1>
+    <span class="yr" id="yrline"></span>
+    <span class="spacer"></span>
+    <span class="count" id="counts"></span>
+    <button class="tiny" id="themeBtn" title="light / dark">◐</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="tabs">
+    <button id="tabBoard" aria-pressed="true">The board</button>
+    <button id="tabProg" aria-pressed="false">By program</button>
+  </nav>
+  <main>
+    <div id="viewBoard"></div>
+    <div id="viewProg" hidden></div>
+  </main>
+</div>
+<div id="drawerHost"></div>
+
+<script>
+__MARKS__
+
+const DATA = __DATA__;
+const T = DATA.teams;
+const PICKS = DATA.picks;
+const el = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c =>
+  ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* Every team in the payload already carries its mascot, conference and canon colours,
+   so the mark is a lookup exactly as it is on the other three pages. */
+function badge(name){
+  const t = T[name];
+  if (!t) return '';
+  return mark({ name, mascot: t.mascot || '', conf: t.sub ? 'Subdivision' : t.conf,
+                col: t.col });
+}
+
+const ROUNDS = [...new Set(PICKS.map(p => p.rd))].sort((a,b) => a-b);
+let round = ROUNDS[0];
+let view = 'board';
+let prog = null;                       /* a programme's drawer */
+const filt = { q:'', conf:'', pos:'' };
+const POSITIONS = [...new Set(PICKS.map(p => p.pos))].sort();
+
+/* ---------- header ---------- */
+function renderHead(){
+  el('yrline').textContent = DATA.year + ' CLASS · ' + PICKS.length + ' SELECTIONS';
+  const early = PICKS.filter(p => p.early).length;
+  el('counts').innerHTML = `<b>${PICKS.length}</b> picked · <b>${early}</b> early`;
+}
+
+/* ---------- the board, by round ---------- */
+function renderBoard(){
+  let rows = PICKS.filter(p => p.rd === round);
+  const q = filt.q.trim().toLowerCase();
+  if (q) rows = rows.filter(p => p.name.toLowerCase().includes(q)
+                              || p.team.toLowerCase().includes(q));
+  if (filt.conf) rows = rows.filter(p => (T[p.team] || {}).conf === filt.conf);
+  if (filt.pos) rows = rows.filter(p => p.pos === filt.pos);
+
+  el('viewBoard').innerHTML = `
+    <div class="rdnav">${ROUNDS.map(r =>
+      `<button data-r="${r}" aria-pressed="${r===round}">${r===1 ? '1st' : r===2 ? '2nd'
+        : r===3 ? '3rd' : r + 'th'}</button>`).join('')}</div>
+    <h2 class="sec">Round ${round}
+      <em>${rows.length} of ${PICKS.filter(p => p.rd === round).length} shown</em></h2>
+    <div class="filters">
+      <input id="q" placeholder="search a player or school" value="${esc(filt.q)}" autocomplete="off">
+      <select id="fConf"><option value="">all conferences</option>
+        ${DATA.conferences.map(c => `<option value="${esc(c)}" ${filt.conf===c?'selected':''}>${esc(c)}</option>`).join('')}
+        <option value="Subdivision" ${filt.conf==='Subdivision'?'selected':''}>Subdivision</option>
+      </select>
+      <select id="fPos"><option value="">all positions</option>
+        ${POSITIONS.map(p => `<option value="${esc(p)}" ${filt.pos===p?'selected':''}>${esc(p)}</option>`).join('')}
+      </select>
+    </div>
+    ${rows.length ? `<ul class="picks">${rows.map(pickRow).join('')}</ul>`
+      : '<div class="empty">no picks match</div>'}`;
+  fitAll(el('viewBoard'));
+}
+
+function pickRow(p){
+  const t = T[p.team] || {};
+  const tags = [`<span class="badge pos">${esc(p.pos)}</span>`];
+  if (p.early) tags.push(`<span class="badge early">early · ${esc(p.cls)}</span>`);
+  else tags.push(`<span class="badge">${esc(p.cls)}</span>`);
+  if (p.reach) tags.push('<span class="badge reach">reach</span>');
+  if (p.sub) tags.push('<span class="badge sub">subdivision</span>');
+  return `<li class="pick">
+    <span class="ov"><b>${p.ov}</b><br>${p.rd}.${String(p.pk).padStart(2,'0')}</span>
+    <span class="bdg">${badge(p.team)}</span>
+    <span class="who">
+      <span class="nm">${esc(p.name)}</span>
+      <span class="sch ${p.sub ? '' : 'tlink'}" ${p.sub ? '' : `data-t="${esc(p.team)}"`}
+        >${esc(p.team)}${t.conf && !p.sub ? ' · ' + esc(t.conf) : ''}</span>
+    </span>
+    <span class="tags">${tags.join('')}</span>
+  </li>`;
+}
+
+/* ---------- by programme ---------- */
+function renderProg(){
+  const q = filt.q.trim().toLowerCase();
+  let list = Object.keys(T).filter(t => !T[t].sub);
+  if (filt.conf && filt.conf !== 'Subdivision') list = list.filter(t => T[t].conf === filt.conf);
+  if (q) list = list.filter(t => t.toLowerCase().includes(q));
+  /* most picks first, then alphabetical, so the leaders read off the top */
+  list.sort((a,b) => (T[b].n - T[a].n) || a.localeCompare(b));
+
+  const maxc = Math.max(...Object.values(DATA.byconf));
+  const confs = Object.entries(DATA.byconf).sort((a,b) => b[1]-a[1]);
+  const withPicks = list.filter(t => T[t].n).length;
+
+  el('viewProg').innerHTML = `
+    <h2 class="sec">Where the picks came from <em>${withPicks} programs</em></h2>
+    <ul class="bars">${confs.map(([c,n]) => `<li class="bar">
+      <span class="cn">${esc(c)}</span>
+      <span class="tr"><span class="fl" style="width:${(100*n/maxc).toFixed(1)}%"></span></span>
+      <span class="v">${n}</span></li>`).join('')}</ul>
+    <div class="filters" style="margin-top:12px">
+      <input id="q2" placeholder="search a school" value="${esc(filt.q)}" autocomplete="off">
+      <select id="fConf2"><option value="">all conferences</option>
+        ${DATA.conferences.map(c => `<option value="${esc(c)}" ${filt.conf===c?'selected':''}>${esc(c)}</option>`).join('')}
+      </select>
+    </div>
+    <div class="tgrid">${list.map(t => `<div class="tcard ${T[t].n ? '' : 'none'}" data-t="${esc(t)}">
+      <span class="bdg lg">${badge(t)}</span>
+      <span style="min-width:0"><b>${esc(t)}</b><small>${esc(T[t].conf)}</small></span>
+      <span class="n">${T[t].n}</span>
+    </div>`).join('')}</div>`;
+  fitAll(el('viewProg'));
+}
+
+/* ---------- a programme's draft class ---------- */
+function openProg(name){
+  prog = name;
+  const t = T[name] || {};
+  const mine = PICKS.filter(p => p.team === name).sort((a,b) => a.ov - b.ov);
+  el('drawerHost').innerHTML = `
+    <div class="scrim" data-close="1"></div>
+    <aside class="drawer" role="dialog" aria-label="${esc(name)} draft class">
+      <div class="dhead">
+        <span class="t"><span class="bdg lg">${badge(name)}</span>
+          <span>${esc(name)}<small>${esc(t.full || name)}${t.conf ? ' · ' + esc(t.conf) : ''}</small></span>
+        </span>
+        <button class="tiny" data-close="1">close</button>
+      </div>
+      <div class="stats">
+        <span><b>${mine.length}</b>drafted</span>
+        <span><b>${mine.filter(p => p.early).length}</b>early</span>
+        <span><b>${mine.length ? mine[0].ov : '—'}</b>first off the board</span>
+      </div>
+      ${mine.length ? `<ul class="picks">${mine.map(pickRow).join('')}</ul>`
+        : '<div class="empty">No players drafted from this program.</div>'}
+    </aside>`;
+  fitAll(el('drawerHost'));
+}
+function closeDrawer(){ el('drawerHost').innerHTML = ''; prog = null; }
+
+/* ---------- view switching ---------- */
+function setView(v){
+  view = v;
+  el('tabBoard').setAttribute('aria-pressed', v === 'board');
+  el('tabProg').setAttribute('aria-pressed', v === 'prog');
+  el('viewBoard').hidden = v !== 'board';
+  el('viewProg').hidden = v !== 'prog';
+  v === 'board' ? renderBoard() : renderProg();
+}
+
+/* ---------- events ---------- */
+document.addEventListener('click', e => {
+  if (e.target.closest('[data-close]')){ closeDrawer(); return; }
+  const tb = e.target.closest('[data-t]');
+  if (tb){ openProg(tb.dataset.t); return; }
+  const rb = e.target.closest('[data-r]');
+  if (rb){ round = +rb.dataset.r; renderBoard(); return; }
+  if (e.target.id === 'tabBoard'){ setView('board'); return; }
+  if (e.target.id === 'tabProg'){ setView('prog'); return; }
+  if (e.target.id === 'themeBtn'){
+    const now = document.documentElement.getAttribute('data-theme');
+    const dark = now ? now === 'dark'
+      : matchMedia('(prefers-color-scheme:dark)').matches;
+    document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
+    return;
+  }
+});
+document.addEventListener('input', e => {
+  if (e.target.id === 'q' || e.target.id === 'q2'){
+    filt.q = e.target.value;
+    view === 'board' ? renderBoard() : renderProg();
+    const box = el(view === 'board' ? 'q' : 'q2');
+    if (box){ box.focus(); box.setSelectionRange(box.value.length, box.value.length); }
+  }
+});
+document.addEventListener('change', e => {
+  if (e.target.id === 'fConf' || e.target.id === 'fConf2'){ filt.conf = e.target.value; }
+  else if (e.target.id === 'fPos'){ filt.pos = e.target.value; }
+  else return;
+  view === 'board' ? renderBoard() : renderProg();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+renderHead();
+setView('board');
+/* the marks size themselves off the real typefaces, so re-fit once the fonts land */
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => fitAll(document));
+</script>
+</body>
+</html>
