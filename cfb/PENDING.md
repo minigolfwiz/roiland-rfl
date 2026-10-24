@@ -2975,3 +2975,8 @@ Backups state/{season_state,rosters,coaches,universe}.pkl.pre_s17_rollover. Clas
 Preseason top 10: Skeenerland State 10.35, Kaji Daun 10.19, Pistolheart 10.19, Marblehead 10.14, Orlot 10.14, Rogaela State, Eona, North Verigon, Leafette, UFNH. Range 6.85-10.35.
 NEXT: 2042 schedule (noncon hand-off -> Scheduling Office; conference office), media pool redraw for s17 (carry-over rule: half same teams, no school >2 years in a row), preseason.
 Before scheduling: distance rules vs U['school_coords'] still undecided.
+
+## 2042 SCHEDULE -- Scheduling Office published for season 17 (saves under schedule/s17). 444 non-conference slots for Dan. (2026-10-23)
+152 programmes | 217 guests | 6 locked cross-conference rivalries | unreturned visits 249 pairs (3.3 per programme); 13 series still owed a return ground.
+REMINDER (Dan, 2026-10-23): once the schedule is completely built (noncon -> conference -> installed), TELL DAN TO START A NEW CONVERSATION to save usage.
+Media pool redraw for s17 (carry-over rule) still to do before preseason.
