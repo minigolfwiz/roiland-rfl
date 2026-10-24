@@ -200,9 +200,30 @@ def pair_score(bd, a, b):
     A, B = bd.BY[a], bd.BY[b]
     d = bd.dist(a, b)
     d = 250 if d is None else d
-    s = max(0, 120 - d) * 0.42
+    # EXPANSION (Dan, 2042): the first pass over-rewarded proximity -- 40% of auto games were
+    # in-state and the median trip was ~60 units, against ~20% and ~90-110 in Dan's own
+    # hand-built boards. Reward the middle range, tax in-state, and punish a second short trip.
+    s = 0.0
+    if d < 30:
+        s -= 4
+    elif d < 70:
+        s += 14
+    elif d <= 180:
+        s += 24
+    elif d <= 260:
+        s += 12
+    else:
+        s -= (d - 260) * 0.12
     if A['state'] == B['state']:
-        s += 34
+        s -= 12
+    for me, other in ((a, b), (b, a)):
+        near = 0
+        for g in bd.by_team[me]:
+            o = g['visitor'] if g['host'] == me else g['host']
+            if o in bd.BY and bd.dist(me, o) is not None and bd.dist(me, o) < 90:
+                near += 1
+        if near >= 1 and d < 90:
+            s -= 25
     s -= abs(A['prestige'] - B['prestige']) * 0.52
     at, year = bd.owed(a, b)
     if at:

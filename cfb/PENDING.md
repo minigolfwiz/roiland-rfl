@@ -3011,3 +3011,12 @@ export_schedule_board.py and export_conf_board.py now take each team's/guest's x
 Dan's Office save (db conf/s17, version 26, 9:11 PM) pulled down: state/conf_office_save_s17_v26.json; converted (convert_conf_db.py) -> state/conf_s17_handoff.json:
 53 of 980 rows placed (9 Jyras Bay conference games + 3 non-conference weeks by Dan, rest locked/pre-set). seed_conf_board.py baked them into conf_board.json; Office republished.
 NEXT when Dan hands off: fill_conf.py -> conf_sched_s17.json -> install_hand_schedule.py --commit -> audit; then tell Dan to START A NEW CONVERSATION (media pool s17, preseason notes, week 0).
+
+## 2042 non-conference board -- EXPANSION REFILL (2026-10-23 23:xx, Dan: too many teams playing only in-state / one-state-over opponents)
+Measured on school coords: Dan's past hand-built boards median trip 78-110 (75th 145-192, 90th 222-300), ~20% in-state; the first auto-fill had median 63 (75th 102), 40% in-state.
+fill_noncon.pair_score now rewards the middle band (70-180 units best, 180-260 good), taxes in-state (-12) and a SECOND short trip (<90) for a team (-25); pre-change copy fill_noncon.py.pre_expand.
+Refill kept every game Dan hand-picked OR placed a week on (51 games, marked non-auto) and re-solved the rest; fix_p6_hosting re-run.
+Result: 296 games, 136 guests; median 127 / 75th 168 / 90th 236; in-state 16 of 160 FBS games (10%); P6 mix 71 of 78 balanced (1/1/1); P6 away at L6 22 of 79; P6 home 1:1 | 2:59 | 3:18; no L6 all-home/all-away.
+Teams still all-near (<90): Ciarralotta State, East Costique, Kaji Daun, North Verigon, Parchynt, Rogaela, Verigon, Wolford (locked/hand-set games or no longer legal partners).
+Dan's Office save v119 (conf/s17, 10/23 ~10:xx PM) -> state/conf_office_save_s17_v119.json; 70 conf games + his non-con weeks carried BY PAIR onto the new board; DB doc conf/s17 RE-KEYED (version 120) because N-ids are positional. Office republished.
+Dan must RELOAD the Office before placing more (a stale page would write old N-ids).
