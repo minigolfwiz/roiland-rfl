@@ -1,0 +1,20 @@
+{
+  "games": [
+    {
+      "h": "Southern Tengus",
+      "sid": null,
+      "sub": false,
+      "v": "Kaji Kita State",
+      "week": 14
+    },
+    {
+      "h": "North Hatesei",
+      "sid": "smvmzyzd20",
+      "sub": true,
+      "v": "Gunther",
+      "week": 13
+    }
+  ],
+  "saved": "10/24/2026, 4:55:37 PM",
+  "year": 2046
+}

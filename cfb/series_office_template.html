@@ -802,16 +802,25 @@ function loadBackup(text){
 
 /* ---------- persistence: one document per season ---------- */
 function setSave(msg, cls){ const n = el('save'); n.textContent = msg; n.className = 'save' + (cls ? ' ' + cls : ''); }
+const SEED = __SEED__;
+function applySeed(){                 // no database: show the booked games baked into this page
+  YEARS.forEach(y => { (SEED[y] || []).forEach(g => {
+    if (!BY[g.h] || !(BY[g.v] || SUB[g.v]) || G[y].some(q => key(q.h,q.v) === key(g.h,g.v))) return;
+    G[y].push({ h:g.h, v:g.v, sub:!!g.sub, sid:g.sid || null, week:Number.isInteger(g.week) ? g.week : null });
+  }); });
+  ver++;
+}
 async function connect(){
   setSave('loading…', '');
   try { db = await window.claude?.use?.('db'); } catch(e){ db = null; }
-  if (!db){ loaded = true; setSave('saving unavailable — use Hand-off', 'bad'); renderAll(); return; }
+  if (!db){ applySeed(true); loaded = true; setSave('saving unavailable — use Hand-off', 'bad'); renderAll(); return; }
   try {
     const docs = await Promise.all(YEARS.map(y => db.doc('series/y' + y).get()));
     let n = 0;
     docs.forEach((doc, i) => {
       const y = YEARS[i];
-      const rows = (doc && doc.data && Array.isArray(doc.data.games)) ? doc.data.games : [];
+      let rows = (doc && doc.data && Array.isArray(doc.data.games)) ? doc.data.games : [];
+      if (!doc || !doc.data){ rows = (SEED[y] || []).slice(); if (rows.length) dirtyYears.add(y); }   // year never saved: fall back to the booked copy baked into this page
       const inflight = G[y].slice();
       const seen = new Set();
       const keep = [];
@@ -828,7 +837,7 @@ async function connect(){
     setSave(n ? 'restored ' + n + ' games' : 'ready', 'ok');
     if (dirtyYears.size) flushSave();
   } catch(e){
-    db = null; loaded = true;
+    db = null; applySeed(); loaded = true;
     setSave('could not read saved games — reload before booking', 'bad');
   }
   renderAll();

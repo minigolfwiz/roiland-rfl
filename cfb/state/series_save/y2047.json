@@ -1,0 +1,27 @@
+{
+  "games": [
+    {
+      "h": "Crayellan State",
+      "sid": null,
+      "sub": false,
+      "v": "Southern Tengus",
+      "week": 3
+    },
+    {
+      "h": "Kaji Kita State",
+      "sid": null,
+      "sub": false,
+      "v": "Southern Tengus",
+      "week": 14
+    },
+    {
+      "h": "Southern Tengus",
+      "sid": null,
+      "sub": true,
+      "v": "Greater Billiataho",
+      "week": 1
+    }
+  ],
+  "saved": "10/24/2026, 4:54:33 PM",
+  "year": 2047
+}
