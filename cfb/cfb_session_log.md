@@ -363,3 +363,8 @@ Upsets: Stanton 35-21 at #12 North Hatesei (Pellavanti 139/3); #25 Tengus State 
 Hatesei 28-21 Ciarralotta; Dietsche 44-24 at S Antiragal State. 8 guest games, 1 guest win (Polt Hall 27-19 at Clark). 305 results.
 Poll: 1 Park Island, 2 UFNH, 3 Ranroman State, 4 Kaji Daun, 5 Eona; out: Lornaman, Ciarralotta State, Will Tech. Backup season_state.pkl.pre_w4. Viewer (1.7 MB, 305 box scores), Media Pool published.
 NEXT: week 5 pick (UNN at Eona; Central Stanton at North Hatesei; Stanton at Hatesei; UFNH at Harrell).
+
+## 2042 WEEK 5 played (Gameview: Stanton at Hatesei) -- 2026-10-24
+#9 Hatesei 31-30 #19 Stanton (Fatupeau 254/2; Claybridge 184 rush/2; Brookden 312/3). #7 UNN 30-10 #5 Eona at Eona (Kingsworth 412; Danefield 224 rec). North Hatesei 31-17 #6 Central Stanton. Ciarralotta 34-31 #4 Kaji Daun (Schwarzhoff 288/3/2; Yukimaki 280 rec). North Verigon 14-3 #17 Costique River. Southern Krobe 20-15 #15 Eastern State. Barhold State 29-24 #11 Southern Tengus. Skeenerland 27-24 #25 Tengus State. Guests 0-5.
+Poll: 1 Park Island, 2 UFNH, 3 Ranroman State, 4 UNN, 5 Kaji Daun, 6 Hatesei, 7 Eona. Out: Barhold, Tengus State.
+NEXT: week 6 pick (Eona at Stanton; North Hatesei at UNN; Ranroman at Central Stanton; Eastern State at Phangrine State).
