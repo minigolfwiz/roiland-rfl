@@ -123,7 +123,7 @@ def _neutral_round(P, pairs, tag, label_round):
             venue = by_name[pinned[idx]]
             used.add(venue["city"])
         else:
-            venue = (CM.rotation_venue(_seas, tag, high, used) if rotating
+            venue = (CM.rotation_venue(_seas, tag, high, used, low) if rotating
                      else CM.assign_venue(high, used))
         gid = f"S{_seas}PO_{tag}_{high.replace(' ','')}_{low.replace(' ','')}"
         label = f"{venue['name']} ({venue['city']}, {venue['state']})"

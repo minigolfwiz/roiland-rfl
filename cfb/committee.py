@@ -65,7 +65,12 @@ def bowl_rotation(season):
     return {"semis": semis, "quarters": quarters}
 
 
-def rotation_venue(season, rnd, high_seed_team, used):
+def _opp_home(v, opponent):
+    """True when the bowl sits in the opponent's own state: a de facto home game for them."""
+    return bool(opponent) and v["state"] == GEO[opponent]["state"]
+
+
+def rotation_venue(season, rnd, high_seed_team, used, opponent=None):
     """The site for one neutral game: the nearest bowl to the higher seed among the ones
     this season's rotation assigns to this round and that are still free.
 
@@ -74,7 +79,11 @@ def rotation_venue(season, rnd, high_seed_team, used):
     """
     pool = bowl_rotation(season)["semis" if rnd == "SF" else "quarters"]
     cands = [v for v in pool if v["city"] not in used] or list(pool)   # cities, see above
-    v = min(cands, key=lambda v: vdist(v, high_seed_team))
+    # Dan, 2042: the higher seed will not pick a bowl that is a de facto home game for the
+    # opponent (a bowl in the opponent's own state). Only if every free bowl is one does
+    # the rule fall back to the plain nearest.
+    fair = [v for v in cands if not _opp_home(v, opponent)]
+    v = min(fair or cands, key=lambda v: vdist(v, high_seed_team))
     used.add(v["city"])
     return v
 def vdist(venue, team):
