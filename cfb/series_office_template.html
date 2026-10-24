@@ -882,7 +882,7 @@ function openTeam(name, year){
   if (year){ const c = el('yc' + year); if (c) c.scrollIntoView({ block:'start' }); } else window.scrollTo(0, 0);
 }
 function wkStates(f, opp, isSub){
-  const a = f.team, ysel = f.years.length ? f.years : [f.year];
+  const a = f.team, ysel = (f.pending && f.pending.years) || (f.years.length ? f.years : [f.year]);
   const ok = ysel.filter(yy => !(isSub ? whyNotSub(a,opp,yy) : whyNot(a,opp,yy)));
   return WEEKS.map(w => {
     const bad = ok.map(yy => [yy, whyNotWeek({ h:a, v:opp, sub:!!isSub }, yy, w)]).filter(r => r[1]);
@@ -891,9 +891,10 @@ function wkStates(f, opp, isSub){
 }
 function showWk(f){
   const P = el('wkPanel'); if (!P) return;
+  if (!f.pending && f.ret) return showRet(f);
   if (!f.pending){ P.hidden = true; P.innerHTML = ''; return; }
   const { opp, first, sub } = f.pending, isSub = sub === '1';
-  const st = wkStates(f, opp, isSub), yrs = (f.years.length ? f.years : [f.year]);
+  const st = wkStates(f, opp, isSub), yrs = (f.pending.years) || (f.years.length ? f.years : [f.year]);
   P.innerHTML = `<div class="wkh"><b>${esc(f.team)} ${isSub ? 'hosts' : first === 'home' ? 'hosts' : 'visits'} ${esc(opp)}</b>
       <button class="tiny" data-act="wkcancel">Cancel</button></div>
     <div class="sub">Pick a week${yrs.length > 1 ? ' (same week each year; ' + yrs.length + ' yrs)' : ' for ' + yrs[0]}. Greyed = already taken for one of them.</div>
@@ -901,12 +902,37 @@ function showWk(f){
     <button class="pri wkl" data-act="wkpick" data-w="">Decide later</button>`;
   P.hidden = false;
 }
-function bookIt(opp, first, isSub, week){
+function retInfo(a, opp){          // is a return game owed, and who hosts it?
+  const ev = pairGames(a,opp).map(m => m.g.h);
+  const ow = debtOf(a,opp); if (ow) ev.push(ow.at === 'away' ? a : opp);
+  const hs = new Set(ev);
+  return (ev.length && hs.size === 1) ? { host: ev[0] === a ? opp : a } : null;   // the team that has not hosted yet
+}
+function showRet(f){
+  const P = el('wkPanel'), r = f.ret; if (!P) return;
+  const a = f.team, opp = r.opp, host = r.host;
+  const have = pairGames(a,opp).map(m => m.y);
+  const ys = YEARS.filter(yy => !have.includes(yy));
+  const base = have[have.length-1] || f.year;
+  const st = ys.map(yy => ({ yy, bad: whyNot(a,opp,yy) }));
+  const good = st.filter(x => !x.bad).sort((p,q) => Math.abs(Math.abs(p.yy-base)-2) - Math.abs(Math.abs(q.yy-base)-2) || q.yy - p.yy);
+  const rec = good.length ? good[0].yy : null;
+  P.innerHTML = `<div class="wkh"><b>Return game: ${esc(host === a ? opp : a)} visits ${esc(host)}</b>
+      <button class="tiny" data-act="retskip">Not now</button></div>
+    <div class="sub">${esc(a)} and ${esc(opp)} are set for ${have.join(', ')} — pick a year for the other leg. ★ = suggested (about two years apart).</div>
+    <div class="wkg">${st.map(x => `<button class="wkc${x.bad ? ' off' : ''}" data-act="retyear" data-y="${x.yy}" data-why="${esc(x.bad || '')}" style="font-size:14px">${shortY(x.yy)}${x.yy === rec ? '<i>★ suggested</i>' : ''}</button>`).join('')}</div>`;
+  P.hidden = false;
+}
+function bookIt(opp, first, isSub, week, years){
   const f = frame(); if (!f || f.type !== 'pick') return;
-  const ys = f.years.length ? f.years : [f.year];
+  const ys = years || (f.years.length ? f.years : [f.year]);
   const n = bookSeries(f.team, opp, ys, isSub ? true : (first === 'home'), !!isSub, week === undefined ? null : week);
-  f.pending = null; showWk(f);
-  if (n){ f.years = [f.year]; renderPick(f, false); renderPage(); }
+  f.pending = null; f.ret = null;
+  if (n){
+    f.years = [f.year]; renderPick(f, false); renderPage();
+    if (!isSub && ys.length === 1){ const r = retInfo(f.team, opp); if (r){ f.ret = { opp, host: r.host }; } }
+  }
+  showWk(f);
 }
 
 document.addEventListener('click', e => {
@@ -928,11 +954,17 @@ document.addEventListener('click', e => {
     renderPick(f, false);
   }
   else if (a === 'bookask'){ const f = frame(); f.pending = { opp:d.opp, first:d.first, sub:d.sub }; showWk(f); }
-  else if (a === 'wkcancel'){ const f = frame(); f.pending = null; showWk(f); }
+  else if (a === 'retskip'){ const f = frame(); f.ret = null; showWk(f); }
+  else if (a === 'retyear'){
+    const f = frame(); if (!f || !f.ret) return;
+    if (b.classList.contains('off')){ toast(d.why || 'Not available'); return; }
+    f.pending = { opp:f.ret.opp, first: f.ret.host === f.team ? 'home' : 'away', sub:'', years:[+d.y], retYear:true }; showWk(f);
+  }
+  else if (a === 'wkcancel'){ const f = frame(); const was = f.pending; f.pending = null; if (was && was.retYear && !f.ret) f.ret = { opp:was.opp, host: was.first === 'home' ? f.team : was.opp }; showWk(f); }
   else if (a === 'wkpick'){
     const f = frame(); if (!f || !f.pending) return;
     if (b.classList.contains('off')){ toast(d.why || 'Week taken'); return; }
-    const pd = f.pending; bookIt(pd.opp, pd.first, pd.sub === '1', d.w === '' ? null : +d.w);
+    const pd = f.pending; bookIt(pd.opp, pd.first, pd.sub === '1', d.w === '' ? null : +d.w, pd.years);
   }
   else if (a === 'pfilters'){ const f = frame(); f.fOpen = !f.fOpen; el('pfPanel').hidden = !f.fOpen; pfLabel(f); }
   else if (a === 'flip'){ flipGame(yr, d.game); }
