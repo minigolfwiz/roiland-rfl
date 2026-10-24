@@ -59,3 +59,4 @@ Dan's concerns: (1) far more losses by good teams again (upset rate among top te
 Scope when run: final records by tier/"power" conferences; distribution of losses for the committee top 25 and for the preseason media top 25; upset rate by rating gap (favourite win % at each gap) vs earlier seasons; count of teams at <=2 losses by tier vs 2038-2041; guest-game results for sanity (2042 guests finished 18-118). Existing tools: parity_test.py, parity_ab.py, calib_*.py. Compare against prior-year audits before touching any engine knob; changes apply forward only.
 - Neutral-site rule: bowls by SCHOOL distance (campus to bowl city), not state distance (committee.vdist, 2042).
 - Neutral-site rule: higher seed skips bowls in the opponent's own state (committee._opp_home, 2042).
+- Awarding 2045+ title sites: avoid that year's semifinal cities (committee.semi_title_overlap).

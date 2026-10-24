@@ -48,6 +48,20 @@ assert len(BOWLS) == 6, [b["name"] for b in BOWLS]
 # earlier stay as played, on the old rule.
 # ---------------------------------------------------------------------------
 ROTATION_FROM = 13          # season 13 == 2038
+SEMI_PAIRS_FROM = 18        # season 18 == 2043: semifinal pairs fixed (Dan, 2042)
+# 2043 Redwood-501, 2044 Lumber-Star, 2045 Copper-Steam, then repeating. Chosen so that no
+# semifinal city collides with an awarded national-title city (2044 is Coachville, the
+# Steam Bowl's city, so Copper-Steam cannot be 2044) and no bowl repeats inside two seasons.
+SEMI_PAIR_ROLL = ["Redwood Bowl", "501 Bowl", "Lumber Bowl", "Star Bowl", "Copper Bowl", "Steam Bowl"]
+
+
+def semi_title_overlap(season):
+    """The semifinal bowl cities that are also this season's awarded title city (empty = fine)."""
+    try:
+        tc = champ_venue(season)["city"]
+    except SystemExit:
+        return None          # no title site awarded yet
+    return [b["name"] for b in bowl_rotation(season)["semis"] if b["city"] == tc]
 
 
 def bowl_rotation(season):
@@ -57,9 +71,17 @@ def bowl_rotation(season):
     no state, no randomness -- so it answers for any season, past or future.
     """
     by_name = {b["name"]: b for b in BOWLS}
-    roll = [by_name[n] for n in (E.U.get("bowl_roll") or list(E.U["bowls"]))]
-    n = len(roll)
-    i = (2 * (season - ROTATION_FROM)) % n
+    if season >= SEMI_PAIRS_FROM:
+        # Dan, 2042: from 2043 the semifinal bowls always come as one of three fixed
+        # pairs -- Copper-Steam, Lumber-Star, Redwood-501 -- cycling every three seasons.
+        # 2038-2042 stay as played on the old roll.
+        roll = [by_name[n] for n in SEMI_PAIR_ROLL]
+        i = (2 * (season - SEMI_PAIRS_FROM)) % len(roll)
+        n = len(roll)
+    else:
+        roll = [by_name[n] for n in (E.U.get("bowl_roll") or list(E.U["bowls"]))]
+        n = len(roll)
+        i = (2 * (season - ROTATION_FROM)) % n
     semis = [roll[i % n], roll[(i + 1) % n]]
     quarters = [roll[(i + 2 + k) % n] for k in range(4)]
     return {"semis": semis, "quarters": quarters}
