@@ -3061,3 +3061,5 @@ Restored from GitHub; recovered marks_lib.js, regenerated the 2042 guest rosters
 ## 2042 WEEK 6 played (Gameview North Hatesei at UNN). Ryskamp twenty named. NEXT: week 7 pick.
 
 ## 2042 WEEK 7 played (Gameview UFNH at Crayellan State). Poll tweak 'medium' adopted. NEXT: week 8 pick, then FIRST COMMITTEE BALLOT (Dan hand-builds) after week 8.
+
+## 2042 WEEK 8 played (Gameview Southern Tengus). WAITING on Dan's first committee ballot; wk 9 candidates after install. Guest rule: none in wk 14 (audit enforced from 2043).

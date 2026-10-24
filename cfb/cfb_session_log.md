@@ -381,3 +381,10 @@ POLL CHANGE (Dan approved "medium", from wk 7 and all future seasons; weeks 0-6 
 Poll: 1 Park Island, 2 Ranroman State, 3 UFNH, 4 UNN, 5 Dietsche. Out: Costique River, North Hatesei, Roosevelt. In: Diveo State 6-0, UN Steelbridge 6-0.
 ** COMMITTEE: Dan builds the FIRST COMMITTEE RANKING BY HAND after WEEK 8 is played. REMIND HIM right after week 8 results. **
 NEXT: week 8 pick (Skeenerland State at Southern Tengus; Rogaela at UFNH; Kaji Daun at Eona; Ranroman State at Hatesei).
+
+## 2042 WEEK 8 played (Gameview: Skeenerland State at Southern Tengus) -- 2026-10-24
+STANDING RULE (Dan): NO GUEST GAMES IN WEEK 14 -- enforced in install_hand_schedule.audit from 2043; 2042 schedule (12 wk-14 guest games) left as built.
+Guest record corrected from data: through wk 7 7-72 (79 games); 57 more scheduled (wk8 7, wk9 8, wk10 8, wk11 4, wk12 4, wk13 14, wk14 12). Earlier "1-19" tallies in chat were wrong.
+#7 Southern Tengus 41-14 #6 Skeenerland State (Kepu 319/3; Monteclara 170 rec/3; Furube 148/0/2). Eona 31-10 #8 Kaji Daun (Eastdale 362/3). Ranroman State 20-17 at #9 Hatesei (Jorrovei 289; Sorlovei 243 rec). UFNH 23-16 #10 Rogaela. Pistolheart 31-17 #11 Ranroman (Virtravaw 172/4). North Verigon 23-22 #18 Crayellan State. Marines 20-16 #23 UN Steelbridge. Park Island 70-17 at #29 Roosevelt. Guest win: Inkstromm 21-7 at Chapel Rock (guests now 8-78).
+Media poll wk8: 1 Park Island, 2 Ranroman State, 3 UFNH, 4 Dietsche, 5 UNN. Out: Eastern State.
+** FIRST COMMITTEE BALLOT: committee_week.html built, ballot_prep.py sheet given to Dan. WAITING on his top 25 -> install_committee.py <file> --commit. Gameview week 9 candidates only AFTER his board is installed (standing). **

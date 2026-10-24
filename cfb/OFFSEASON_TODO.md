@@ -49,3 +49,5 @@ schedules (S2 already played without it). The scheduler freezes all locked pairs
 
 ## S3 TITLE SITE (user): National Championship will be in Fiota Bay, Fiota.
 Set championship=("Fiota Bay","Fiota") when building the Season 3 playoff bracket.
+
+## STANDING SCHEDULE RULE (Dan, 2042 week 7): NO GUEST (subdivision) GAMES IN WEEK 14. Enforced in install_hand_schedule.audit from 2043 on. The 2042 schedule (already built, 12 week-14 guest games) was NOT changed.

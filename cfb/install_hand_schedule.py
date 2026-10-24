@@ -55,6 +55,13 @@ def audit(games, board):
     if len(per) != len(teams):
         fails.append("programmes scheduled: %d, expected %d" % (len(per), len(teams)))
 
+    # ---- STANDING RULE (Dan, 2042 week 7): no subdivision guest may be scheduled in week 14 ----
+    _t = set(teams)
+    wk14_guest = [(g["host"], g["visitor"]) for g in games
+                  if g["week"] == 14 and (g["host"] not in _t or g["visitor"] not in _t)]
+    if wk14_guest:
+        fails.append("guest games in week 14 (not allowed): %d, e.g. %s" % (len(wk14_guest), wk14_guest[:3]))
+
     # ---- per programme: load, byes, double-booking ----
     consec, byes_in_full, dbl, wrong_n, wrong_byes = [], [], [], [], []
     for t, gs in per.items():
