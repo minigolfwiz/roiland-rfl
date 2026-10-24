@@ -374,3 +374,10 @@ NEXT: week 6 pick (Eona at Stanton; North Hatesei at UNN; Ranroman at Central St
 Poll: 1 UFNH, 2 Park Island, 3 UNN, 4 Ranroman State, 5 Hatesei. Out: Rogaela State, Kaji Kita.
 RYSKAMP: engine auto-named the TWENTY at week 6 (ryskamp_s17, open). Next cuts: ten at week 10, four finalists.
 NEXT: week 7 pick (UNN at Ranroman; Ranroman State at Pistolheart; UFNH at Crayellan State; Crayellan at Costique River).
+
+## 2042 WEEK 7 played (Gameview: UFNH at Crayellan State) -- 2026-10-24
+POLL CHANGE (Dan approved "medium", from wk 7 and all future seasons; weeks 0-6 stand): media_pool.py -- extra losses forgiven 75% less each; preseason weight fades .18/game; prestige+talent fade .09/game to 40%; a team that lost last week has voter inertia x0.3 and can only be pushed DOWN. Backup media_pool.py.pre_w7; changelog media_pool.py.CHANGELOG.
+#23 Crayellan State 49-39 #1 UFNH (Ashdale 239/5; Lamedeer 409/4; Steinmeier 225 rec/3). Ranroman 27-24 #3 UNN (Althardt 145 rush; Kingsworth 353). Eona 30-7 at #5 Hatesei (Eastdale 270/3; Nnabayo 189 rec/2). Harrell 20-0 #9 Rogaela. Ranroman State 52-27 at #17 Pistolheart (Jorrovei 346/5; Loken 245 rec/2). East Costique 20-18 #19 Parchynt. Crayellan 16-14 at #21 Costique River (Omtreimyr 383/0/2). Kaji Daun 28-27 #22 North Hatesei. Guests 0-6.
+Poll: 1 Park Island, 2 Ranroman State, 3 UFNH, 4 UNN, 5 Dietsche. Out: Costique River, North Hatesei, Roosevelt. In: Diveo State 6-0, UN Steelbridge 6-0.
+** COMMITTEE: Dan builds the FIRST COMMITTEE RANKING BY HAND after WEEK 8 is played. REMIND HIM right after week 8 results. **
+NEXT: week 8 pick (Skeenerland State at Southern Tengus; Rogaela at UFNH; Kaji Daun at Eona; Ranroman State at Hatesei).

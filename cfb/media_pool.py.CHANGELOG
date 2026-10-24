@@ -1,0 +1,1 @@
+2042 wk7 (Dan: "medium"): poll tweaks -- extra losses forgiven 75% less each (FORGIVE_DECAY .25); preseason weight fades .18/game (floor .10); prestige+talent fade .09/game to 40%; a team that lost last week has voter inertia x0.3, only able to push it DOWN. Applies from week 7 and all future seasons. Weeks 0-6 stand as published. Backup: media_pool.py.pre_w7

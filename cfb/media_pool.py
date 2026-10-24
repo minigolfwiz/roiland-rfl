@@ -234,6 +234,8 @@ def quirk_text(tr, state):
     return (qtext[0].upper() + qtext[1:] + ".") if qtext else "Plays it straight."
 
 
+FORGIVE_DECAY=0.25; PW_RATE=0.18; PW_FLOOR=0.10; REP_RATE=0.09; REP_FLOOR=0.4
+LOSS_INERTIA=0.3
 def team_components(s, db):
     """The facts every voter sees, computed once a week. Returns per-team dicts."""
     import pickle, season as SE
@@ -288,6 +290,15 @@ def team_components(s, db):
             # and the win over a ranked team is a headline too
             if w in rec and l in rk_now:
                 loss_pen[w] -= 12.0 if rk_now[l] <= 10 else 7.0
+    lost_last = set()
+    wk_pfx = None
+    wks = [w for w, _g in (s.get("results") or [])]
+    if wks:
+        lw = max(wks)
+        for w, gid in s["results"]:
+            if w != lw: continue
+            b = db[gid]; h, a = b["home"], b["away"]
+            lost_last.add(a if b["home_score"] > b["away_score"] else h)
     comp = {}
     for t in U["teams"]:
         b = book.get(t, {})
@@ -304,7 +315,7 @@ def team_components(s, db):
             if gp and r["L"] == 0: cur += 8
             if r["L"] and net:
                 avg = sum(losses_opp[t]) / max(1, len(losses_opp[t]))
-                cur += min(9, max(0, avg) * 0.6 + (prestige[t] - 55) * 0.10)
+                cur += min(9, max(0, avg) * 0.6 + (prestige[t] - 55) * 0.10) * (FORGIVE_DECAY ** max(0, r["L"] - 1))
             if gp and r["W"] == 0 and prestige[t] < 60: cur -= 8
         # the mid-major darling: a lower-division programme off a big year. Without this
         # only two L6 teams drew a single vote in the 2040 preseason poll; real polls
@@ -318,7 +329,7 @@ def team_components(s, db):
                    "recruit": recruit[t] * 0.45, "cur": cur, "loss_pen": loss_pen.get(t, 0.0),
                    "ppg": (r["PF"] / gp if gp else 0.0), "papg": (r["PA"] / gp if gp else 0.0),
                    "state": U["geo"].get(t, {}).get("state")}
-    meta = {"played": played, "preseason_w": max(0.15, 1.0 - played * 0.09), "result_w": min(1.0, played * 0.16),
+    meta = {"played": played, "preseason_w": max(PW_FLOOR, 1.0 - played * PW_RATE), "rep_w": max(REP_FLOOR, 1.0 - played * REP_RATE), "result_w": min(1.0, played * 0.16), "lost_last": lost_last,
             "h2h": h2h}
     return comp, meta
 
@@ -333,7 +344,8 @@ def vote(voter, comp, meta, consensus_prev, prev_ballot, rng):
     style = tr.get("style", "balanced")
     score = {}
     for t, c in comp.items():
-        v = c["prestige"] + c["last"] * tr["w_last"] * pw + c["talent"] * tr["w_talent"] \
+        rep = meta.get("rep_w", 1.0)
+        v = (c["prestige"] + c["talent"] * tr["w_talent"]) * rep + c["last"] * tr["w_last"] * pw \
             + c["recruit"] * tr["w_recruit"] * pw + c["cur"] * tr["w_results"] * rw * 3.2 \
             - c["loss_pen"] * tr["w_results"]
         if c["darling"]: v += c["darling"] * tr.get("w_l6", 1.0) * pw
@@ -370,7 +382,10 @@ def vote(voter, comp, meta, consensus_prev, prev_ballot, rng):
             if t == surprise_pick: continue        # the surprise is this week's whim, not inertia's
             p = pos.get(t, len(prev_ballot) + 8)
             pe = hi - span * (p - 1) / (len(prev_ballot) + 12)
-            score[t] = (1 - tr["inertia"]) * score[t] + tr["inertia"] * pe
+            inr = tr["inertia"] * (LOSS_INERTIA if t in meta.get("lost_last", ()) else 1.0)
+            new = (1 - inr) * score[t] + inr * pe
+            if t in meta.get("lost_last", ()): new = min(new, (1 - tr["inertia"]) * score[t] + tr["inertia"] * pe)
+            score[t] = new
     top = sorted(score, key=lambda t: -score[t])[:25]
     if surprise_pick and surprise_pick not in top:
         top = top[:24] + [surprise_pick]
