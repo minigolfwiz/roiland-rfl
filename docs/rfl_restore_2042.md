@@ -23,8 +23,10 @@ The cloud workspace can be wiped between sessions. Nothing is safe unless it is 
 
 ## Status
 2042 season is COMPLETE (Champions: Costique Bearcats, Mega Bowl 17-10 over the San Saltadac Sea Lions, Tealcoat Stadium, Bruca Beach).
-2043 offseason, steps done (each guarded by S['offseason']['done'] = close, retire, fa, trades):
+2043 offseason, steps done (each guarded by S['offseason']['done'] = close, retire, fa, trades, draft):
 1. `python3 rfl/offseason.py close` (history + honours), `retire` (ageing + retirements; early retirees <=29 get a stated reason; starters <=30 and recent award winners have reduced hazard; Neraini's retirement was reversed by Dan).
 2. `python3 rfl/freeagency.py` (re-sign, open market, street fill; then `fix_minimums`).
 3. `python3 rfl/trades.py` (trades for 2043 picks; creates 2043 pick ownership; staff moves; syncs and updates `data/rfl_coaching.json` = project doc `claude/rfl_coaching.json`, which had been stale for 2042 hires).
-Next: write offseason_2043 into the history file, archive the 2042 season record, then the 2043 draft (needs draft/pool_2043.txt from the college sim; see rfl_draft.py).
+4. `python3 rfl/draft.py` (2043 draft: order from 2042 results, pool `data/draft_pool_2043.json` from the college sim, 7 rounds, UDFAs, camp cuts to 53). Re-run with the QB premium on 24 Oct 2026 is canon.
+History file now has `offseason_2043`, `draft_order_2043`, `draft_2043`. The 2042 season record is `data/rfl_2042_season.json` (repo only).
+Next: republish the Archive (done with the draft), then the 2043 schedule build and season. Project docs are at the 2 MB cap: clear space before adding new docs.
