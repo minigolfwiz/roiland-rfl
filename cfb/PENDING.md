@@ -3037,3 +3037,8 @@ NEXT after Dan's OK: pull save -> convert_conf_db.py -> conf_sched_s17.json -> i
 ## 2042 CONFERENCE OFFICE -- DAN'S EDITS SAVED 2026-10-24 01:0x
 Office save v589 (12:57 AM) -> state/conf_office_save_s17_v589.json; 24 rows changed vs the filled calendar (6 conference games, 18 non-con weeks); all 980 placed. convert_conf_db.py -> state/conf_s17_handoff.json + conf_sched_s17.json (complete).
 Not installed yet -- waiting for Dan's OK (install_hand_schedule.py --commit, then audit, then tell Dan to START A NEW CONVERSATION).
+
+## 2042 SCHEDULE -- INSTALLED (2026-10-24 01:3x)
+Dan's final Office save v589 (12:57 AM) -> convert_conf_db.py -> state/conf_sched_s17.json -> install_hand_schedule.py --commit (backup state/season_state.pkl.pre_s17_install).
+980 games (684 conference, 296 non-conference, 136 guests), audit CLEAN; week 0: 18 games; games by week 0-14: 18/79/71/69/68/66/67/68/65/65/67/65/61/69/82. 4 programmes with 4+ home/road runs (worst Natzumakis, 5 home).
+NEXT (new conversation, per Dan): media pool redraw for s17 (half same teams; no school >2 years in a row), preseason notes + page, then week 0.

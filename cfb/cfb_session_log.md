@@ -254,3 +254,70 @@ Backups state/{season_state,rosters,coaches,universe}.pkl.pre_s17_rollover. Clas
 Preseason top 10: Skeenerland State 10.35, Kaji Daun 10.19, Pistolheart 10.19, Marblehead 10.14, Orlot 10.14, Rogaela State, Eona, North Verigon, Leafette, UFNH. Range 6.85-10.35.
 NEXT: 2042 schedule (noncon hand-off -> Scheduling Office; conference office), media pool redraw for s17 (carry-over rule: half same teams, no school >2 years in a row), preseason.
 Before scheduling: distance rules vs U['school_coords'] still undecided.
+
+## 2042 SCHEDULE -- Scheduling Office published for season 17 (saves under schedule/s17). 444 non-conference slots for Dan. (2026-10-23)
+152 programmes | 217 guests | 6 locked cross-conference rivalries | unreturned visits 249 pairs (3.3 per programme); 13 series still owed a return ground.
+REMINDER (Dan, 2026-10-23): once the schedule is completely built (noncon -> conference -> installed), TELL DAN TO START A NEW CONVERSATION to save usage.
+Media pool redraw for s17 (carry-over rule) still to do before preseason.
+
+## 2042 SCHEDULING OFFICE -- PROGRESS SAVED 2026-10-23 18:26
+Dan's Office save (db schedule/s17, version 17, 6:24 PM) pulled down: state/schedule_office_save_s17_v17.json. Dan is partway through; resume from the Office (his save reloads there).
+
+## 2042 non-conference board -- COMPLETE (2026-10-23)
+Dan's Office save (db schedule/s17, v30, 6:50 PM) -> state/schedule_office_save_s17_v30.json -> state/noncon_s17_handoff.json (33 games incl. 6 locked, 9 guests).
+fill_noncon.py patched for 2042 (pre-patch copy fill_noncon.py.pre_s17): BALANCE term -- a P6 programme is rewarded for the missing category
+(P6 / L6 opponent) and penalised for a second of one; guests are placed on P6 programmes first. Result: 296 games, 136 guests (89.47%), complete.
+state/noncon_s17.json. P6 non-con mix: 67 of 78 are 1 power / 1 non-power / 1 guest; 11 off-balance (5 from Dan's picks/locked rivalries: Kaji Daun, Leafette, Tasson, Barhold Valley, Northlight;
+6 filler: Ekralund State, Pistolheart, UN Ediville, Parchynt, Riveral, UFNH = 0 power/2 non-power/1 guest).
+Conference board built (export_conf_board: 12 conferences, 0 problems); Conference Office rebuilt for saves under conf/s17.
+REMINDER (Dan): once the schedule is completely built, tell him to start a new conversation.
+
+## 2042 non-conference board -- host repair (2026-10-23, Dan: power teams should rarely be on the road at non-power teams)
+Initial fill had 44 of 83 P6-vs-L6 games with the P6 team travelling. New fix_p6_hosting.py (local search over host flips on AUTO non-guest games; Dan's picks and locked rivalries untouched):
+P6 visiting L6 = 3, all-away = 10, all-home = 10 for L6 but only 0.5 for P6 (structural: 1 guest + 1 L6 + 1 P6 forces ~half of P6 to travel somewhere unless P6 may host all three).
+Result: 6 P6-at-L6 games remain (2 Dan's: Northlight@Starfield, Park Island@Marines; 4 auto: Ranroman@Chinolka, Harrell@Vaughn Bay, Central Stanton@Coachville College, Pistolheart@West Hatesei St).
+P6 non-con home counts: 3 home 37 | 2 home 39 | 1 home 2. L6: nobody all-home/all-away. Pre-fix file state/noncon_s17.json.pre_hostfix. Conference board rebuilt with new hosts.
+
+## 2042 non-conference board -- host repair v2 (2026-10-23, Dan: P6 need not always travel; base on previous seasons)
+Dan's past finals: P6 away at an L6 in 18-29% of P6/L6 games (s13 23, s14 29, s15 27, s16 18); P6 hosting all three non-con 23-31% of P6; 1 home 3-13%.
+fix_p6_hosting.py weights tuned to that (w_away 2.4, w_allhome 1.2, w_oneP6 0.6): 17 of 83 P6/L6 games have the P6 away (20%); P6 home dist 1:2 | 2:50 | 3:26. Conference board rebuilt.
+
+## 2042 distance rules -> SCHOOL COORDINATES (Dan, 2026-10-23: "yes, use school coordinates")
+export_schedule_board.py and export_conf_board.py now take each team's/guest's xy from U['school_coords'] (state seed fallback); the Office distance/regional logic reads those xy. Pre-change copies *.py.pre_s17.
+2042 non-con board was built on state coords BEFORE this change (not re-filled; Dan can ask for a re-fill). Stray duplicate viewer artifact 7G5yKnxG7RgVB9aAZiUDs6 DELETED at Dan's OK.
+
+## 2042 CONFERENCE OFFICE -- PROGRESS SAVED 2026-10-23 22:4x
+Dan's Office save (db conf/s17, version 26, 9:11 PM) pulled down: state/conf_office_save_s17_v26.json; converted (convert_conf_db.py) -> state/conf_s17_handoff.json:
+53 of 980 rows placed (9 Jyras Bay conference games + 3 non-conference weeks by Dan, rest locked/pre-set). seed_conf_board.py baked them into conf_board.json; Office republished.
+NEXT when Dan hands off: fill_conf.py -> conf_sched_s17.json -> install_hand_schedule.py --commit -> audit; then tell Dan to START A NEW CONVERSATION (media pool s17, preseason notes, week 0).
+
+## 2042 non-conference board -- EXPANSION REFILL (2026-10-23 23:xx, Dan: too many teams playing only in-state / one-state-over opponents)
+Measured on school coords: Dan's past hand-built boards median trip 78-110 (75th 145-192, 90th 222-300), ~20% in-state; the first auto-fill had median 63 (75th 102), 40% in-state.
+fill_noncon.pair_score now rewards the middle band (70-180 units best, 180-260 good), taxes in-state (-12) and a SECOND short trip (<90) for a team (-25); pre-change copy fill_noncon.py.pre_expand.
+Refill kept every game Dan hand-picked OR placed a week on (51 games, marked non-auto) and re-solved the rest; fix_p6_hosting re-run.
+Result: 296 games, 136 guests; median 127 / 75th 168 / 90th 236; in-state 16 of 160 FBS games (10%); P6 mix 71 of 78 balanced (1/1/1); P6 away at L6 22 of 79; P6 home 1:1 | 2:59 | 3:18; no L6 all-home/all-away.
+Teams still all-near (<90): Ciarralotta State, East Costique, Kaji Daun, North Verigon, Parchynt, Rogaela, Verigon, Wolford (locked/hand-set games or no longer legal partners).
+Dan's Office save v119 (conf/s17, 10/23 ~10:xx PM) -> state/conf_office_save_s17_v119.json; 70 conf games + his non-con weeks carried BY PAIR onto the new board; DB doc conf/s17 RE-KEYED (version 120) because N-ids are positional. Office republished.
+Dan must RELOAD the Office before placing more (a stale page would write old N-ids).
+
+## 2042 CONFERENCE OFFICE -- DEBUG (2026-10-23 23:1x, Dan: why does UFNH play Riveral State in rivalry week?)
+Cause: my own bug in the re-key after the non-con refill. convert_conf_db.py was run against the NEW board with the OLD positional N-ids, then seed_conf_board baked those mismatched weeks into conf_board.json,
+and my "carry by pair" step then kept them as the default -- 17 non-con games got a week that was never Dan's (UFNH vs Riveral State = week 14 was one; UFNH already had a locked week-14 game vs Fiota Bay).
+Fix: regenerated conf_board.json fresh, carried only Dan's 33 non-con weeks by pair from the pre-refill board (git ce29677) using his v119 ids, rewrote DB conf/s17 (version 123, clean_doc), republished Office (v21).
+Checks after fix: board non-con == noncon_s17 (296); every FBS team has 3 non-con and 9 conf games; no guest reused; no team double-booked or with two week-14 games; 138 placed (all Dan's + locks).
+LESSON: never run convert_conf_db.py with a board whose N-order differs from the ids in the save; build pairs from the board the save was made on.
+
+## 2042 CONFERENCE OFFICE -- FILLED, awaiting Dan's review (2026-10-24 00:1x)
+Dan's save v473 -> state/conf_office_save_s17_v473.json (306 of 980 rows placed by Dan/locks). fill_conf.py (seed 2039, attempt 1) placed the other 674, zero hard violations among open programmes;
+none of Dan's placements moved. state/conf_s17_filled.json (980 rows). Hard-rule flags only on programmes Dan hand-filled completely: Far Farris & Far Farris State (5 home in a row), Natzumakis (5 home in a row), North Verigon (4 road in a row).
+Review copy written to DB conf/s17 (version 474) and Office republished; Dan edits there. Dan's own pre-fill hand-off kept as state/conf_s17_handoff_dan.json.
+NEXT after Dan's OK: pull save -> convert_conf_db.py -> conf_sched_s17.json -> install_hand_schedule.py --commit -> audit -> tell Dan to START A NEW CONVERSATION.
+
+## 2042 CONFERENCE OFFICE -- DAN'S EDITS SAVED 2026-10-24 01:0x
+Office save v589 (12:57 AM) -> state/conf_office_save_s17_v589.json; 24 rows changed vs the filled calendar (6 conference games, 18 non-con weeks); all 980 placed. convert_conf_db.py -> state/conf_s17_handoff.json + conf_sched_s17.json (complete).
+Not installed yet -- waiting for Dan's OK (install_hand_schedule.py --commit, then audit, then tell Dan to START A NEW CONVERSATION).
+
+## 2042 SCHEDULE -- INSTALLED (2026-10-24 01:3x)
+Dan's final Office save v589 (12:57 AM) -> convert_conf_db.py -> state/conf_sched_s17.json -> install_hand_schedule.py --commit (backup state/season_state.pkl.pre_s17_install).
+980 games (684 conference, 296 non-conference, 136 guests), audit CLEAN; week 0: 18 games; games by week 0-14: 18/79/71/69/68/66/67/68/65/65/67/65/61/69/82. 4 programmes with 4+ home/road runs (worst Natzumakis, 5 home).
+NEXT (new conversation, per Dan): media pool redraw for s17 (half same teams; no school >2 years in a row), preseason notes + page, then week 0.
