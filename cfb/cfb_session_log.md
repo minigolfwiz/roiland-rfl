@@ -247,3 +247,10 @@ Players rated 9.0+: 28 (post-draft). NEXT: Stage 6 roster finalisation.
 ## 2041-42 OFFSEASON -- Stage 6 of 7 COMPLETE: 2042 roster finalisation (2026-10-23)
 Backups state/{rosters,season_state}.pkl.pre_s17_rfinal. departed 2,530 | recruits added 2,219 | walkons 0 | floor fills 294 | trimmed 0 |
 rosters 63-69, total 9,870. No _leaving flags remain. Rollover (stage 7) pending.
+
+## 2041-42 OFFSEASON -- Stage 7 of 7 COMPLETE: rollover, 2041 closed and 2042 open (season 17) (2026-10-23)
+Backups state/{season_state,rosters,coaches,universe}.pkl.pre_s17_rollover. Classes Sr 2,461 | Jr 2,288 | So 2,427 | RS 181 | Fr 2,513.
+456 staff records advanced. Records, polls, committee/media history reset; season_archive row '16' present (champion Skylar Rose); gameview_s16 archived. next_week 0.
+Preseason top 10: Skeenerland State 10.35, Kaji Daun 10.19, Pistolheart 10.19, Marblehead 10.14, Orlot 10.14, Rogaela State, Eona, North Verigon, Leafette, UFNH. Range 6.85-10.35.
+NEXT: 2042 schedule (noncon hand-off -> Scheduling Office; conference office), media pool redraw for s17 (carry-over rule: half same teams, no school >2 years in a row), preseason.
+Before scheduling: distance rules vs U['school_coords'] still undecided.
