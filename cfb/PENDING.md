@@ -2964,3 +2964,7 @@ Best classes by stars: Skeenerland State / Ciarralotta Tech / Central Stanton 60
 Backups state/{rosters,season_state}.pkl.pre_s17_dev; s['development_s16']. 7,357 players, mean +0.265 (Fr +0.500, So +0.188, RS +0.191, Jr +0.108).
 321 breakouts, 74 busts, r_coach 0.606. Best team development: Ranroman +0.421, Kaji Daun / Poland State +0.393, Skeenerland State +0.389; lowest Clark +0.115.
 Players rated 9.0+: 28 (post-draft). NEXT: Stage 6 roster finalisation.
+
+## 2041-42 OFFSEASON -- Stage 6 of 7 COMPLETE: 2042 roster finalisation (2026-10-23)
+Backups state/{rosters,season_state}.pkl.pre_s17_rfinal. departed 2,530 | recruits added 2,219 | walkons 0 | floor fills 294 | trimmed 0 |
+rosters 63-69, total 9,870. No _leaving flags remain. Rollover (stage 7) pending.
