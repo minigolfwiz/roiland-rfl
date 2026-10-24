@@ -74,6 +74,16 @@ class Board:
     def away_(self, t):   return sum(1 for g in self.by_team[t] if g['host'] != t)
     def has_sub(self, t): return any(g['visitor'] in self.SUBBY for g in self.by_team[t])
 
+    def mix(self, t):
+        """(P6, L6, guest) counts among t's non-conference opponents so far."""
+        p = l = s = 0
+        for g in self.by_team[t]:
+            o = g['visitor'] if g['host'] == t else g['host']
+            if o in self.SUBBY: s += 1
+            elif self.BY[o]['tier'] == 'P6': p += 1
+            else: l += 1
+        return p, l, s
+
     def conf_count(self, t, c):
         n = 0
         for g in self.by_team[t]:
@@ -167,7 +177,7 @@ def place_guests(bd, k, rng):
     takes the nearest guest nobody has claimed, which keeps guarantee games regional.
     """
     cands = [t for t in bd.BY if bd.open_(t) > 0 and not bd.has_sub(t)]
-    cands.sort(key=lambda t: (bd.home_(t) - bd.away_(t), -bd.open_(t), rng.random()))
+    cands.sort(key=lambda t: (bd.BY[t]['tier'] != 'P6', bd.home_(t) - bd.away_(t), -bd.open_(t), rng.random()))
     placed = 0
     for t in cands:
         if placed >= k:
@@ -197,8 +207,17 @@ def pair_score(bd, a, b):
     at, year = bd.owed(a, b)
     if at:
         s += 22 + (year - 2025 - (bd.P['season'] - 1 - bd.P['return_window'])) * 4
-    if A['tier'] == 'P6' and B['tier'] == 'P6':
-        s += 12
+    # BALANCE (Dan, 2042): a power programme's non-conference slate should mix power,
+    # non-power and subdivision opponents. Reward the category it is missing, punish a
+    # second of one it already has. Applied to whichever side of the pair is P6.
+    for me, other in ((A, B), (B, A)):
+        if me['tier'] != 'P6':
+            continue
+        p, l, g = bd.mix(me['name'])
+        if other['tier'] == 'P6':
+            s += 30 if p == 0 else -45
+        else:
+            s += 30 if l == 0 else -45
     # keep the conference mix wide: a second from one conference is legal but duller
     if bd.conf_count(a, B['conf']) >= 1: s -= 60
     if bd.conf_count(b, A['conf']) >= 1: s -= 60

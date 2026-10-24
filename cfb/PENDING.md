@@ -2983,3 +2983,12 @@ Media pool redraw for s17 (carry-over rule) still to do before preseason.
 
 ## 2042 SCHEDULING OFFICE -- PROGRESS SAVED 2026-10-23 18:26
 Dan's Office save (db schedule/s17, version 17, 6:24 PM) pulled down: state/schedule_office_save_s17_v17.json. Dan is partway through; resume from the Office (his save reloads there).
+
+## 2042 non-conference board -- COMPLETE (2026-10-23)
+Dan's Office save (db schedule/s17, v30, 6:50 PM) -> state/schedule_office_save_s17_v30.json -> state/noncon_s17_handoff.json (33 games incl. 6 locked, 9 guests).
+fill_noncon.py patched for 2042 (pre-patch copy fill_noncon.py.pre_s17): BALANCE term -- a P6 programme is rewarded for the missing category
+(P6 / L6 opponent) and penalised for a second of one; guests are placed on P6 programmes first. Result: 296 games, 136 guests (89.47%), complete.
+state/noncon_s17.json. P6 non-con mix: 67 of 78 are 1 power / 1 non-power / 1 guest; 11 off-balance (5 from Dan's picks/locked rivalries: Kaji Daun, Leafette, Tasson, Barhold Valley, Northlight;
+6 filler: Ekralund State, Pistolheart, UN Ediville, Parchynt, Riveral, UFNH = 0 power/2 non-power/1 guest).
+Conference board built (export_conf_board: 12 conferences, 0 problems); Conference Office rebuilt for saves under conf/s17.
+REMINDER (Dan): once the schedule is completely built, tell him to start a new conversation.
