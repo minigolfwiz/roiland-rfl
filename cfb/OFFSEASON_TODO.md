@@ -61,3 +61,9 @@ Scope when run: final records by tier/"power" conferences; distribution of losse
 - Neutral-site rule: higher seed skips bowls in the opponent's own state (committee._opp_home, 2042).
 - Awarding 2045+ title sites: avoid that year's semifinal cities (committee.semi_title_overlap).
 - REMIND DAN after the 2042 season: award title sites for 2045-2049 (five-year block). Show him the FULL LIST of previous title sites (2026-2044) when asking. Avoid that year's semifinal cities (committee.semi_title_overlap).
+
+## 2042 post-season parity work (done)
+- Engine sweep (20 reps, 6 settings): NOISE_SCALE 0.7-1.0 moved nothing beyond sampling noise (mid-gap fav win 0.645-0.663 vs 0.649; top-5 losses 4.0-4.3) -> NOT shipped.
+- RIVALRY_GAP 0.55 -> 0.70 SHIPPED forward-only (2043+): rivalry fav win 0.674 -> 0.690 (non-rivalry 0.708); points/team, guest margin (+22.0), one-score share, elite records unchanged. 0.85 gave 0.702, not adopted (step-wise).
+- Standing: run parity_monitor.py at week 8, week 14 and post-season; ballot_prep.py shows net-rating rank.
+- Title sites 2045-49: STILL NEEDS DAN. Show full list 2026-2044. Barred by year: 2045/48 Coachville, Billiataho; 2046/49 Stamford, Kirkwood; 2047 Ediville, Port Logan (semi cities).

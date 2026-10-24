@@ -299,7 +299,7 @@ def simulate_game(home, away, seed, site="home", unavailable_home=frozenset(), u
         # stadium is not a talent difference and scaling it would only inflate the home
         # win rate, which already measures correctly.
         gap = (off_val - def_val) * EDGE_SCALE
-        if rivalry: gap *= 0.55
+        if rivalry: gap *= RIVALRY_GAP
         gap += (coach_edge[off.team] - coach_edge[deff.team]) * EDGE_SCALE
         gap += hfa_pts*0.10 if off.team == home else -hfa_pts*0.10
         return gap
@@ -1116,6 +1116,10 @@ EDGE_SCALE = 1.0
 # that matters. Cutting noise leaves every mean untouched and sharpens the whole curve
 # at once.
 NOISE_SCALE = 1.0
+
+# In a rivalry game the strength gap is compressed to this fraction (it was a literal 0.55
+# until the 2042 parity audit; the default is unchanged, so no result moves).
+RIVALRY_GAP = 0.70
 
 # The vertical shot: how often an offence takes one, and how much depth it adds.
 # Calibrated against the explosive-play tail rather than guessed -- see the sweep in

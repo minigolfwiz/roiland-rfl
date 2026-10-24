@@ -27,6 +27,13 @@ def main():
         board = [t for _r, t in (s.get('media_poll_prev') or [])][:25]
         label = 'MEDIA POLL going into week %d (no committee board yet)' % week
     rank = {t: i + 1 for i, t in enumerate(board)}
+    # true strength: each team's net-rating rank among all FBS teams (2042 audit: ranked teams
+    # averaged about 21st by rating, so this shows which picks are the thinnest)
+    try:
+        em = SE.net_ratings(s, db)['em']
+        nrank = {t: i + 1 for i, t in enumerate(sorted(em, key=lambda x: -em[x]))}
+    except Exception:
+        nrank = {}
 
     def this_week(t):
         g = [x for x in by[t]['games'] if x['w'] == week]
@@ -44,13 +51,13 @@ def main():
     print('=== %s, with %s results ===' % (label, 'conference-final' if week == 15 else 'week %d' % week))
     for i, t in enumerate(board, 1):
         d = by[t]
-        print('%2d. %-20s %d-%d  %-40s %s  comp #%d' % (i, t, d['W'], d['L'], this_week(t), marks(t), d['cRank']))
+        print('%2d. %-20s %d-%d  %-40s %s  comp #%d  net #%s' % (i, t, d['W'], d['L'], this_week(t), marks(t), d['cRank'], nrank.get(t, '?')))
     print()
     print('=== CANDIDATES (not on your board), computer order ===')
     pool = [t for t in P['teams'] if t['name'] not in rank][:POOL]
     for t in pool:
-        print('    %-20s %d-%d  %-40s %s  comp #%d  %s' % (t['name'], t['W'], t['L'], this_week(t['name']),
-                                                        marks(t['name']), t['cRank'], t['conf']))
+        print('    %-20s %d-%d  %-40s %s  comp #%d  net #%s  %s' % (t['name'], t['W'], t['L'], this_week(t['name']),
+                                                        marks(t['name']), t['cRank'], nrank.get(t['name'], '?'), t['conf']))
 
 
 if __name__ == '__main__':

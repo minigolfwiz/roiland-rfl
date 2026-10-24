@@ -64,6 +64,21 @@ def semi_title_overlap(season):
     return [b["name"] for b in bowl_rotation(season)["semis"] if b["city"] == tc]
 
 
+def title_site_check(season, city):
+    """Rule (Dan, 2037, restated 2042): a title game may sit in a rotation bowl's city ONLY in a
+    year that bowl hosts a QUARTERFINAL. Returns [] when the city is fine, else the reason."""
+    rot = bowl_rotation(season)
+    bowl = [b for b in BOWLS if b["city"] == city]
+    if not bowl:
+        return []                       # not a rotation city: unrestricted
+    b = bowl[0]
+    if any(x["city"] == city for x in rot["semis"]):
+        return ["%s is a %d semifinal site (%s)" % (city, 2025 + season, b["name"])]
+    if not any(x["city"] == city for x in rot["quarters"]):
+        return ["%s (%s) hosts no quarterfinal in %d" % (city, b["name"], 2025 + season)]
+    return []
+
+
 def bowl_rotation(season):
     """Which bowls host which neutral round in a given season.
 
