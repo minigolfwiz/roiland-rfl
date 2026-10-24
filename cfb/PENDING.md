@@ -3020,3 +3020,10 @@ Result: 296 games, 136 guests; median 127 / 75th 168 / 90th 236; in-state 16 of 
 Teams still all-near (<90): Ciarralotta State, East Costique, Kaji Daun, North Verigon, Parchynt, Rogaela, Verigon, Wolford (locked/hand-set games or no longer legal partners).
 Dan's Office save v119 (conf/s17, 10/23 ~10:xx PM) -> state/conf_office_save_s17_v119.json; 70 conf games + his non-con weeks carried BY PAIR onto the new board; DB doc conf/s17 RE-KEYED (version 120) because N-ids are positional. Office republished.
 Dan must RELOAD the Office before placing more (a stale page would write old N-ids).
+
+## 2042 CONFERENCE OFFICE -- DEBUG (2026-10-23 23:1x, Dan: why does UFNH play Riveral State in rivalry week?)
+Cause: my own bug in the re-key after the non-con refill. convert_conf_db.py was run against the NEW board with the OLD positional N-ids, then seed_conf_board baked those mismatched weeks into conf_board.json,
+and my "carry by pair" step then kept them as the default -- 17 non-con games got a week that was never Dan's (UFNH vs Riveral State = week 14 was one; UFNH already had a locked week-14 game vs Fiota Bay).
+Fix: regenerated conf_board.json fresh, carried only Dan's 33 non-con weeks by pair from the pre-refill board (git ce29677) using his v119 ids, rewrote DB conf/s17 (version 123, clean_doc), republished Office (v21).
+Checks after fix: board non-con == noncon_s17 (296); every FBS team has 3 non-con and 9 conf games; no guest reused; no team double-booked or with two week-14 games; 138 placed (all Dan's + locks).
+LESSON: never run convert_conf_db.py with a board whose N-order differs from the ids in the save; build pairs from the board the save was made on.
