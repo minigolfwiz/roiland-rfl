@@ -464,3 +464,12 @@ RIVALRY_GAP now 0.70 (forward-only, backup pbp_engine.py.pre_rivalry_gap); NOISE
 Awarded 2045 Kirkwood, 2046 New Madrid, 2047 Marymond, 2048 Nelson Heights, 2049 Lornaman, 2051 Queensville (backup universe.pkl.pre_champ_2045_51). 2050 Tengus City pending location.
 
 ### 2050 title site: Tengus City (Dan). Local city_coords were missing Tengus City/Purcell and had stale New Madrid/Thurmond; synced to canon map package.
+
+## 2042-43 OFFSEASON -- Stage 1 of 7 COMPLETE: coaching carousel (2026-10-24)
+Backups state/*.pkl.pre_s18_carousel; s['carousel_s17']. Prestige step ran (152 moved on 980 results). 22 hires: 9 sitting HCs poached,
+2 dream jobs, 3 retreads, 3 first-timers, 1 subdivision HC; 32 coordinator moves, 12 raids. Vacancies: 7 offseason firings, 4 retirements
+(Churchill, Dove Island State, North Hatesei, Queensville), 2 interims not retained, 9 poached away, 2 dream-job exits.
+Headlines: DeAndre Kingsbrook leaves German Shores for Greene (dream job, rating 10.62, best hire); Vika Lameotter to Orlot (dream job,
+from Ranroman OC); Perla Notaro Eternal Fox -> North Hatesei; Kabir Venkatadeva East Tasson -> Verigon; chain Fiota State -> East Tasson,
+New Madrid -> Dove Island State, Cordelle/Starfield/German Shores shuffle. Nico Salaanelli (fired Milharvey) retread at Stanton State;
+Ebony Anywale (fired Kaji Kita) retread at North Hatesei St. NEXT: Stage 2, the 2043 draft pool for the RFL (needs Dan).
