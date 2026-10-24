@@ -94,6 +94,43 @@ def build_all(out='/home/claude/cfb2/state/conf_board.json', seed=13):
     return payload, out
 
 
+def _plan_games(season, conf):
+    import os
+    p = "/home/claude/cfb2/state/conf_plan.json"
+    if not os.path.exists(p):
+        return None
+    plan = json.load(open(p)).get(str(2025 + season))
+    if not plan or conf not in plan["conferences"]:
+        return None
+    return [{"a": g["a"], "b": g["b"], "host": g["host"], "week": g.get("week"),
+             "locked": bool(g.get("locked"))} for g in plan["conferences"][conf]]
+
+
+def _conf_payload(conf, teams, new_season, rec, games, locked):
+    def st(t):
+        return GEO.get(t, {}).get("state") or SCHOOLS.get(t, {}).get("state")
+
+    payload = {
+        "conference": conf, "tier": TIERS.get(conf),
+        "season": new_season, "year": 2025 + new_season, "prev_year": 2024 + new_season,
+        "conf_games": CONF_GAMES, "weeks": WEEKS, "byes": BYES,
+        "week0_games": WEEK0_GAMES,
+        "full_weeks": FULL_WEEKS, "rivalry_week": RIVALRY_WEEK,
+        "ccg_site": U.get("ccg_sites", {}).get(conf),
+        "teams": [{
+            "name": t, "full": GEO.get(t, {}).get("full_name", t),
+            "mascot": GEO.get(t, {}).get("mascot", ""),
+            "prestige": round(PRES.get(t, 50), 1), "state": st(t),
+            "xy": [round(v) for v in (SCHOOL_XY.get(t) or COORDS.get(st(t)) or [])] or None, "colors": COLORS.get(t, ["#555", "#999"]),
+            "last": {"W": rec.get(t, {}).get("W", 0), "L": rec.get(t, {}).get("L", 0)},
+        } for t in teams],
+        "games": games,
+        "locked": locked,
+    }
+    payload["roster"] = teams
+    return payload
+
+
 def build(conf="Power North", out=None, seed=13):
     import season as SE
     s = SE.load_state()
@@ -139,6 +176,23 @@ def build(conf="Power North", out=None, seed=13):
     locked = split_locked_venues(locked)
     locked_pairs = {"|".join(sorted((L["a"], L["b"]))) for L in locked}
 
+    # ---- the slate ----
+    # Ten-year plan (Dan, 2026-10-24): when state/conf_plan.json has this season, the
+    # conference slate was drawn in advance (conf_plan.py) and shown to Dan in the Series
+    # Office, so it is used as drawn -- opponents, hosts, locked-rivalry venues.
+    planned = _plan_games(new_season, conf)
+    if planned is not None:
+        for L in locked:
+            pg = next((g for g in planned if {g["a"], g["b"]} == {L["a"], L["b"]}), None)
+            if pg:
+                L["host"] = pg["host"]
+        games = [dict(g) for g in planned]
+        payload = _conf_payload(conf, teams, new_season, rec, games, locked)
+        payload["from_plan"] = True
+        if out:
+            json.dump(payload, open(out, "w"))
+        return payload, out
+
     # ---- the slate: pick which 4 each programme skips ----
     pairs = choose_slate(teams, locked_pairs, played, done, seed)
     games = []
@@ -173,26 +227,7 @@ def build(conf="Power North", out=None, seed=13):
               (CONF_GAMES // 2, CONF_GAMES - CONF_GAMES // 2)}
     games = balance_hosts(games, teams, locked_pairs, hosts, target, series_home=series_home)
 
-    def st(t):
-        return GEO.get(t, {}).get("state") or SCHOOLS.get(t, {}).get("state")
-
-    payload = {
-        "conference": conf, "tier": TIERS.get(conf),
-        "season": new_season, "year": 2025 + new_season, "prev_year": 2024 + new_season,
-        "conf_games": CONF_GAMES, "weeks": WEEKS, "byes": BYES,
-        "week0_games": WEEK0_GAMES,
-        "full_weeks": FULL_WEEKS, "rivalry_week": RIVALRY_WEEK,
-        "ccg_site": U.get("ccg_sites", {}).get(conf),
-        "teams": [{
-            "name": t, "full": GEO.get(t, {}).get("full_name", t),
-            "mascot": GEO.get(t, {}).get("mascot", ""),
-            "prestige": round(PRES.get(t, 50), 1), "state": st(t),
-            "xy": [round(v) for v in (SCHOOL_XY.get(t) or COORDS.get(st(t)) or [])] or None, "colors": COLORS.get(t, ["#555", "#999"]),
-            "last": {"W": rec.get(t, {}).get("W", 0), "L": rec.get(t, {}).get("L", 0)},
-        } for t in teams],
-        "games": games,
-        "locked": locked,
-    }
+    payload = _conf_payload(conf, teams, new_season, rec, games, locked)
     payload["roster"] = teams
     if out:
         json.dump(payload, open(out, "w"))

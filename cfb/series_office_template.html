@@ -1,0 +1,852 @@
+<title>Series Office</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a ledger of 152 programmes x 10 seasons. Left, every team with a ten-cell fill
+   strip; right (or full screen on a phone), the team's ten seasons as cards with the three
+   non-conference slots up front and the nine conference games underneath. Booking and
+   "what is this team already playing" both open in one sheet. */
+:root{
+  --bg:#edf0ec; --card:#fafbf8; --ink:#14201a; --dim:#5b6a62; --rule:#d2d9d1; --chip:#e1e7df;
+  --turf:#1d6a47; --on-turf:#ffffff; --away:#8d5a0c; --warn:#b3402f; --ok:#1d6a47;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --gut:max(16px, env(safe-area-inset-left,0px));
+  --gutr:max(16px, env(safe-area-inset-right,0px));
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1411; --card:#16201b; --ink:#e6ede8; --dim:#93a399; --rule:#2a3731; --chip:#202c26;
+  --turf:#56c48c; --on-turf:#08130d; --away:#e2a850; --warn:#f08c79; --ok:#56c48c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1411; --card:#16201b; --ink:#e6ede8; --dim:#93a399; --rule:#2a3731; --chip:#202c26;
+  --turf:#56c48c; --on-turf:#08130d; --away:#e2a850; --warn:#f08c79; --ok:#56c48c; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.4 var(--body);margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:70;background:var(--bg)}
+button{font:inherit;color:inherit;cursor:pointer;background:var(--card);border:1px solid var(--rule);
+  border-radius:6px;padding:7px 11px;min-height:36px}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--turf);outline-offset:2px}
+button:disabled{opacity:.4;cursor:not-allowed}
+button.pri{background:var(--turf);border-color:var(--turf);color:var(--on-turf);font-weight:600}
+button.ghost{background:transparent}
+button.tiny{min-height:28px;padding:3px 8px;font-size:12.5px}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--rule);
+  border-radius:6px;padding:8px 10px;min-width:0;max-width:100%}
+textarea{width:100%;font:12px/1.35 var(--mono);min-height:110px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:var(--bg);
+  border-bottom:1px solid var(--rule);padding:8px var(--gutr) 0 var(--gut)}
+.toprow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;max-width:1500px;margin:0 auto}
+h1{font:700 22px/1 var(--display);letter-spacing:.02em;margin:0;text-transform:uppercase}
+h1 span{color:var(--turf)}
+.sp{flex:1 1 auto}
+.save{font:11.5px var(--mono);color:var(--dim)}
+.save.ok{color:var(--ok)} .save.dirty{color:var(--away)} .save.bad{color:var(--warn)}
+.meter{height:3px;background:var(--chip);margin-top:8px;max-width:1500px;margin-inline:auto}
+.meter i{display:block;height:100%;background:var(--turf)}
+nav.tabs{display:flex;gap:2px;max-width:1500px;margin:0 auto;overflow-x:auto}
+nav.tabs button{border:0;border-bottom:3px solid transparent;border-radius:0;background:transparent;
+  padding:9px 12px 7px;font:600 15px var(--body);color:var(--dim)}
+nav.tabs button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--turf)}
+
+main{max-width:1500px;margin:0 auto;padding:14px var(--gutr) 70px var(--gut)}
+.split{display:grid;grid-template-columns:minmax(300px,380px) minmax(0,1fr);gap:18px;align-items:start}
+.split>*{min-width:0}
+@media (max-width:899px){
+  .split{grid-template-columns:1fr}
+  .split.has-sel .listpane{display:none}
+  .split:not(.has-sel) .pagepane{display:none}
+}
+.back{display:none}
+@media (max-width:899px){.back{display:inline-flex}}
+
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.filters input{flex:1 1 150px}
+.filters select{flex:1 1 120px}
+.scroll{max-height:calc(100vh - 230px);overflow:auto}
+@media (max-width:899px){.scroll{max-height:none}}
+.trow{display:grid;grid-template-columns:5px minmax(0,1fr) auto;gap:10px;align-items:center;width:100%;text-align:left;
+  background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:7px 9px 7px 0;margin-bottom:4px;min-height:48px}
+.trow[aria-current="true"]{border-color:var(--turf);box-shadow:inset 0 0 0 1px var(--turf)}
+.sw{align-self:stretch;border-radius:6px 0 0 6px}
+.tn{min-width:0}
+.tn b{font:700 18px/1.1 var(--display);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;letter-spacing:.01em}
+.tn small{font:11.5px var(--mono);color:var(--dim);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.strip{display:flex;gap:2px}
+.cell{width:13px;height:26px;padding:0;min-height:0;border:0;border-radius:2px;background:transparent;display:flex;
+  flex-direction:column;gap:2px;justify-content:flex-end}
+.cell i{display:block;height:6px;border-radius:1px;background:var(--chip)}
+.cell i.f{background:var(--turf)}
+.cell i.f.w{background:var(--away)}
+.cell.cur{outline:1.5px solid var(--ink);outline-offset:1px}
+.yrs{display:flex;gap:2px;font:9.5px var(--mono);color:var(--dim);justify-content:flex-end;margin:0 0 3px}
+.yrs span{width:13px;text-align:center}
+
+.pagehead{display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap;margin-bottom:10px}
+.pagehead h2{font:700 32px/1 var(--display);margin:0;text-transform:uppercase;letter-spacing:.01em}
+.sub{font:12px var(--mono);color:var(--dim)}
+.badge{font:10px var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:3px;
+  background:var(--chip);color:var(--dim);white-space:nowrap}
+.badge.p6{background:var(--turf);color:var(--on-turf);font-weight:500}
+.badge.warn{background:transparent;border:1px solid var(--warn);color:var(--warn)}
+.badge.good{background:transparent;border:1px solid var(--ok);color:var(--ok)}
+.badge.owed{background:transparent;border:1px solid var(--away);color:var(--away)}
+
+.yc{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:10px 11px;margin-bottom:8px}
+.yc.focus{border-color:var(--turf)}
+.yh{display:flex;gap:8px;align-items:baseline;margin-bottom:7px}
+.yh b{font:700 24px/1 var(--display)}
+.yh .sub{flex:1}
+.slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+@media (max-width:520px){.slots{grid-template-columns:1fr}}
+.slot{min-height:44px;display:flex;align-items:center;gap:6px;padding:6px 9px;border-radius:6px;border:1px solid var(--rule);
+  background:var(--bg);text-align:left;width:100%;min-width:0}
+.slot .nm{font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+.slot.g .nm{font-style:italic}
+.ha{font:600 10px var(--mono);padding:2px 5px;border-radius:3px;flex:none}
+.ha.h{background:var(--turf);color:var(--on-turf)}
+.ha.a{background:var(--away);color:var(--bg)}
+.slot.open{border-style:dashed;color:var(--dim);justify-content:center;font-weight:600}
+.slot.open:hover{border-color:var(--turf);color:var(--turf)}
+.conf{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;align-items:center}
+.conf .lab{font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-right:2px}
+.cc{min-height:28px;padding:2px 7px;font-size:12.5px;border-radius:4px;background:var(--bg)}
+.cc.a{color:var(--dim)}
+.cc.h{border-left:3px solid var(--turf)}
+.cc.a{border-left:3px solid var(--away)}
+.star{color:var(--away);font-size:11px}
+
+/* sheet */
+.sheetwrap{position:fixed;inset:0;z-index:80}
+.scrim{position:absolute;inset:0;background:#0007}
+.sheet{position:absolute;left:0;right:0;bottom:0;max-height:92%;background:var(--bg);border-radius:14px 14px 0 0;
+  display:flex;flex-direction:column;overflow:hidden;border-top:1px solid var(--rule)}
+@media (min-width:900px){
+  .sheet{left:auto;top:0;max-height:none;width:520px;border-radius:0;border-left:1px solid var(--rule);border-top:0}
+}
+.sh{padding:12px var(--gutr) 10px var(--gut);border-bottom:1px solid var(--rule);background:var(--bg)}
+.sh .r1{display:flex;gap:8px;align-items:center}
+.sh h3{font:700 26px/1 var(--display);margin:0;text-transform:uppercase;flex:1;min-width:0}
+.sb{overflow:auto;padding:10px var(--gutr) calc(24px + env(safe-area-inset-bottom,0px)) var(--gut);flex:1}
+.ychips{display:flex;gap:4px;flex-wrap:wrap;margin-top:9px}
+.yc2{min-height:34px;padding:3px 8px;font:12.5px var(--mono);border-radius:5px}
+.yc2[aria-pressed="true"]{background:var(--turf);border-color:var(--turf);color:var(--on-turf);font-weight:500}
+.yc2.full{opacity:.45}
+.sec{font:10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:14px 0 6px;
+  display:flex;justify-content:space-between;border-bottom:1px solid var(--rule);padding-bottom:4px}
+.grow{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:8px;align-items:center;min-height:40px;
+  border-bottom:1px solid var(--rule);width:100%;text-align:left;background:transparent;border-radius:0;border-width:0 0 1px;padding:4px 0}
+.grow .o{font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.grow.openrow{color:var(--dim)}
+.gamebar{background:var(--card);border:1px solid var(--turf);border-radius:8px;padding:9px 10px;margin-bottom:8px}
+.gamebar .btns{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+
+.cand{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:9px 10px;margin-bottom:6px}
+.cand.no{opacity:.62}
+.c1{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.c1 .nmb{font:700 20px/1.05 var(--display);background:transparent;border:0;padding:2px 0;min-height:30px;text-align:left;
+  text-transform:uppercase;letter-spacing:.01em}
+.c2{margin-top:5px;display:flex;gap:5px;flex-wrap:wrap;align-items:center;width:100%;background:transparent;border:0;
+  padding:4px 0;text-align:left;min-height:30px}
+.c2 .lab{font:10px var(--mono);color:var(--dim);letter-spacing:.08em;text-transform:uppercase}
+.tok{font-size:12.5px;padding:1px 6px;border-radius:4px;background:var(--bg);border:1px solid var(--rule);white-space:nowrap}
+.tok.a{color:var(--dim)} .tok.g{font-style:italic} .tok.open{color:var(--ok);border-style:dashed}
+.tok.cf{background:transparent;border-style:dotted}
+.c3{display:flex;gap:5px;flex-wrap:wrap;margin-top:4px;align-items:center}
+.c4{display:flex;gap:6px;margin-top:8px}
+.c4 button{flex:1}
+.why{font-size:12.5px;color:var(--warn)}
+.empty{border:1px dashed var(--rule);border-radius:8px;padding:26px 14px;text-align:center;color:var(--dim)}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th{font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim);text-align:left;padding:6px 6px;border-bottom:1px solid var(--rule)}
+.tbl td{padding:8px 6px;border-bottom:1px solid var(--rule);vertical-align:top}
+.tblw{overflow-x:auto}
+.srow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;background:var(--card);border:1px solid var(--rule);
+  border-radius:8px;padding:9px 10px;margin-bottom:6px;width:100%;text-align:left}
+.srow b{font:700 19px/1.1 var(--display);text-transform:uppercase}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:90;
+  background:var(--ink);color:var(--bg);padding:9px 15px;border-radius:6px;font-size:14px;max-width:90vw;
+  opacity:0;pointer-events:none;transition:opacity .18s}
+.toast.show{opacity:1}
+.note{font-size:13px;color:var(--dim);margin:0 0 8px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header class="top">
+  <div class="toprow">
+    <h1>Series <span>Office</span></h1>
+    <span class="sp"></span>
+    <span class="save" id="count"></span>
+    <span class="save" id="save">connecting…</span>
+    <button class="ghost tiny" id="theme" title="light / dark">◐</button>
+  </div>
+  <div class="meter"><i id="meter" style="width:0%"></i></div>
+  <nav class="tabs" id="tabs">
+    <button data-tab="teams" aria-pressed="true">Teams</button>
+    <button data-tab="series" aria-pressed="false">Series</button>
+    <button data-tab="checks" aria-pressed="false">Checks</button>
+    <button data-tab="out" aria-pressed="false">Hand-off</button>
+  </nav>
+</header>
+
+<main>
+  <section id="vTeams" class="split">
+    <div class="listpane">
+      <div class="filters">
+        <input id="q" placeholder="search team, state" autocomplete="off">
+        <select id="fConf"><option value="">all conferences</option></select>
+        <select id="fYear"><option value="">any year</option></select>
+      </div>
+      <div class="yrs" id="yrsHead"></div>
+      <div class="scroll" id="teamList"></div>
+    </div>
+    <div class="pagepane" id="teamPage"></div>
+  </section>
+  <section id="vSeries" hidden></section>
+  <section id="vChecks" hidden></section>
+  <section id="vOut" hidden></section>
+</main>
+
+<div class="sheetwrap" id="sheetWrap" hidden>
+  <div class="scrim" data-act="close"></div>
+  <aside class="sheet" id="sheet"></aside>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const D = __DATA__;
+const YEARS = D.years, Y0 = YEARS[0], SLOTS = D.slots;
+const TEAMS = D.teams, BY = {}, SUB = {};
+TEAMS.forEach(t => BY[t.name] = t);
+D.subs.forEach(s => SUB[s.name] = s);
+const el = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const key = (a,b) => [a,b].sort().join('|');
+const shortY = y => "'" + String(y).slice(2);
+
+/* conference games, pre-drawn: CG[year][team] = [{o, home, lock, week}] */
+const CG = {};
+YEARS.forEach(y => {
+  CG[y] = {};
+  (D.conf[y] || []).forEach(r => {
+    const a = TEAMS[r[0]].name, b = TEAMS[r[1]].name, aHome = r[2] === 1;
+    const wk = r[3] >= 0 ? r[3] : null, lock = r[4] === 1;
+    (CG[y][a] = CG[y][a] || []).push({ o:b, home:aHome, lock, week:wk });
+    (CG[y][b] = CG[y][b] || []).push({ o:a, home:!aHome, lock, week:wk });
+  });
+});
+/* locked cross-conference rivalries; the host alternates every year */
+function lockedGames(y){
+  return D.locked.map(L => {
+    const flip = ((y - Y0) % 2) === 1;
+    const host = flip ? (L.host0 === L.a ? L.b : L.a) : L.host0;
+    return { h:host, v:host === L.a ? L.b : L.a, sub:false, locked:true, week:L.week, why:L.type, sid:null };
+  });
+}
+const LOCK = {}; YEARS.forEach(y => LOCK[y] = lockedGames(y));
+
+let G = {};  YEARS.forEach(y => G[y] = []);          // hand-booked games by year: {h,v,sub,sid}
+let ver = 0, IDX = {};
+let tab = 'teams', sel = null, focusY = Y0;
+let stack = [];                                       // sheet frames
+let filt = { q:'', conf:'', year:'' };
+let db = null, loaded = false, dirtyYears = new Set(), saveTimer = null, saving = false;
+
+/* ---------- indexes ---------- */
+function idx(y){
+  if (IDX[y] && IDX[y].ver === ver) return IDX[y];
+  const m = new Map(), pairs = new Set(), subs = new Set();
+  const all = LOCK[y].concat(G[y]);
+  all.forEach(g => {
+    pairs.add(key(g.h, g.v));
+    if (g.sub) subs.add(g.v);
+    [g.h, g.v].forEach(n => { if (BY[n]){ if (!m.has(n)) m.set(n, []); m.get(n).push(g); } });
+  });
+  return IDX[y] = { ver, m, pairs, subs, all };
+}
+const gamesOf = (t,y) => idx(y).m.get(t) || [];
+const oppOf = (g,t) => g.h === t ? g.v : g.h;
+const openOf = (t,y) => SLOTS - gamesOf(t,y).length;
+const homeOf = (t,y) => gamesOf(t,y).filter(g => g.h === t).length;
+const subUsed = (t,y) => gamesOf(t,y).some(g => g.sub);
+const subTaken = (n,y) => idx(y).subs.has(n);
+const confCount = (t,conf,y) => gamesOf(t,y).filter(g => !g.sub && BY[oppOf(g,t)] && BY[oppOf(g,t)].conf === conf).length;
+function pairGames(a,b){          // every booked meeting in the window, oldest first
+  const out = [];
+  YEARS.forEach(y => idx(y).all.forEach(g => { if (key(g.h,g.v) === key(a,b)) out.push({ y, g }); }));
+  return out;
+}
+function distOf(a,b){
+  const x = (BY[a] || SUB[a] || {}).xy, y = (BY[b] || SUB[b] || {}).xy;
+  return (x && y) ? Math.round(Math.hypot(x[0]-y[0], x[1]-y[1])) : null;
+}
+const travelWord = d => d == null ? '' : d <= 80 ? 'regional' : d <= 200 ? 'mid' : 'far';
+function needsW14(t,y){
+  const T = BY[t];
+  if (!T || T.w14_pinned || T.conf_free > 0) return false;
+  return !gamesOf(t,y).map(g => oppOf(g,t)).some(o => BY[o] && !BY[o].w14_pinned);
+}
+function debtOf(a,b){
+  const ow = (BY[a].owed || []).find(x => x.opp === b);
+  if (ow) return { at: ow.at, year: ow.year };
+  const s = (BY[a].series || {})[b];
+  if (s && s.n >= 2 && s.same) return { at: s.home ? 'away' : 'home', year: s.year };
+  return null;
+}
+
+/* ---------- rules ---------- */
+function whyNot(a,b,y){
+  if (a === b) return 'same team';
+  const A = BY[a], B = BY[b];
+  if (A.conf === B.conf) return 'same conference';
+  if (idx(y).pairs.has(key(a,b))) return 'already play in ' + y;
+  if (openOf(a,y) <= 0) return a + ' is full in ' + y;
+  if (openOf(b,y) <= 0) return 'no opening in ' + y;
+  if (confCount(a,B.conf,y) >= 2) return 'already two from ' + B.conf;
+  if (confCount(b,A.conf,y) >= 2) return 'they have two from ' + A.conf;
+  return null;
+}
+function whyNotSub(a,name,y){
+  if (subUsed(a,y)) return 'already hosts a guest in ' + y;
+  if (subTaken(name,y)) return name + ' is booked elsewhere in ' + y;
+  if (openOf(a,y) <= 0) return a + ' is full in ' + y;
+  return null;
+}
+function suggestHost(a,b,y){
+  const ha = homeOf(a,y), hb = homeOf(b,y);
+  if (ha !== hb) return ha < hb ? a : b;
+  return BY[a].prestige >= BY[b].prestige ? a : b;
+}
+function score(a,b,y){
+  const A = BY[a], B = BY[b];
+  const d = distOf(a,b) ?? 250;
+  let s = Math.max(0, 120 - d) * .42;
+  if (A.state === B.state) s += 34;
+  s -= Math.abs(A.prestige - B.prestige) * .52;
+  s += openOf(b,y) * 7;
+  if (A.tier === 'P6' && B.tier === 'P6') s += 12;
+  if (confCount(a,B.conf,y) >= 1) s -= 85;
+  if (confCount(b,A.conf,y) >= 1) s -= 85;
+  if (needsW14(a,y) && !B.w14_pinned) s += 200;
+  if (needsW14(b,y) && !A.w14_pinned) s += 200;
+  const meets = pairGames(a,b);
+  const near = meets.some(m => Math.abs(m.y - y) === 1);
+  if (near) s -= 30;                         // not two years running
+  if (meets.length === 1 && !near && meets[0].y !== y) s += 24;   // a return leg is due
+  if (meets.length >= 2) s -= 12 * (meets.length - 1);
+  if (y <= Y0 + 3 && debtOf(a,b)) s += 22;
+  return s;
+}
+
+/* ---------- actions ---------- */
+let sidN = 0;
+const newSid = () => 's' + Date.now().toString(36) + (sidN++);
+function addGame(h, v, y, isSub, sid){
+  G[y].push({ h, v, sub:!!isSub, sid:sid || null, week:null });
+  ver++; dirtyYears.add(y);
+}
+function bookSeries(a, b, years, firstHome, isSub){
+  const ys = years.slice().sort((p,q) => p - q);
+  const sid = ys.length > 1 ? newSid() : null;
+  const made = [], skipped = [];
+  let n = 0;
+  ys.forEach(y => {
+    const bad = isSub ? whyNotSub(a,b,y) : whyNot(a,b,y);
+    if (bad){ skipped.push(y + ' (' + bad + ')'); return; }
+    const aHosts = isSub ? true : (firstHome === null ? suggestHost(a,b,y) === a : (n % 2 === 0 ? firstHome : !firstHome));
+    addGame(aHosts ? a : b, aHosts ? b : a, y, isSub, sid);
+    made.push(y); n++;
+  });
+  if (made.length){
+    toast((isSub ? b + ' visits ' + a : a + ' ↔ ' + b) + ' · ' + made.join(', ')
+          + (skipped.length ? ' · skipped ' + skipped.length : ''));
+  } else toast(skipped[0] ? 'Not booked: ' + skipped[0] : 'Nothing to book');
+  if (made.length){ queueSave(); renderAll(); }
+  return made.length;
+}
+function findGame(y, k){ return G[y].findIndex(g => key(g.h,g.v) === k); }
+function removeGame(y, k, whole){
+  const i = findGame(y, k); if (i < 0) return;
+  const sid = G[y][i].sid;
+  if (whole && sid){
+    YEARS.forEach(yy => { const n = G[yy].length; G[yy] = G[yy].filter(g => g.sid !== sid); if (G[yy].length !== n) dirtyYears.add(yy); });
+  } else { G[y].splice(i,1); dirtyYears.add(y); }
+  ver++; queueSave(); toast(whole ? 'Series removed' : 'Game removed'); renderAll();
+}
+function flipGame(y, k){
+  const i = findGame(y, k); if (i < 0) return;
+  const g = G[y][i]; if (g.sub){ toast('Guests always travel'); return; }
+  const h = g.v; g.v = g.h; g.h = h;
+  ver++; dirtyYears.add(y); queueSave(); toast(g.v + ' at ' + g.h); renderAll();
+}
+
+/* ---------- small renderers ---------- */
+function fill(t,y){ return gamesOf(t,y).length; }
+function strip(t){
+  return `<span class="strip">` + YEARS.map(y => {
+    const gs = gamesOf(t.name,y);
+    const bars = [0,1,2].map(i => `<i class="${gs[i] ? 'f' : ''}${gs[i] && gs[i].h !== t.name ? ' w' : ''}"></i>`).join('');
+    return `<button class="cell${y === filt.yearN ? ' cur' : ''}" data-act="pip" data-team="${esc(t.name)}" data-year="${y}"
+      title="${y}: ${gs.length}/${SLOTS}" aria-label="${t.name} ${y}, ${gs.length} of ${SLOTS} booked">${bars}</button>`;
+  }).join('') + `</span>`;
+}
+function teamRow(t){
+  return `<button class="trow" data-act="team" data-team="${esc(t.name)}" ${sel === t.name ? 'aria-current="true"' : ''}>
+    <span class="sw" style="background:${t.colors[0]}"></span>
+    <span class="tn"><b>${esc(t.name)}</b><small>${esc(t.conf)}</small></span>
+    ${strip(t)}</button>`;
+}
+function renderList(){
+  const q = filt.q.trim().toLowerCase();
+  filt.yearN = filt.year ? +filt.year : null;
+  let L = TEAMS.filter(t => (!filt.conf || t.conf === filt.conf)
+    && (!q || t.name.toLowerCase().includes(q) || t.state.toLowerCase().includes(q) || t.conf.toLowerCase().includes(q)));
+  if (filt.yearN) L = L.slice().sort((a,b) => openOf(b.name,filt.yearN) - openOf(a.name,filt.yearN) || a.name.localeCompare(b.name));
+  el('teamList').innerHTML = L.length ? L.map(teamRow).join('') : '<div class="empty">No team matches.</div>';
+}
+const slotChip = (g, t, y) => {
+  const opp = oppOf(g,t), home = g.h === t;
+  return `<button class="slot${g.sub ? ' g' : ''}" data-act="slate" data-team="${esc(opp)}" data-year="${y}" data-game="${esc(key(g.h,g.v))}" data-owner="${esc(t)}">
+    <span class="ha ${home ? 'h' : 'a'}">${home ? 'H' : 'A'}</span><span class="nm">${esc(opp)}</span>${g.locked ? '<span class="star">★</span>' : ''}${g.sub ? '<span class="badge">guest</span>' : ''}</button>`;
+};
+function yearCard(t, y){
+  const gs = gamesOf(t.name, y);
+  const slots = [];
+  for (let i = 0; i < SLOTS; i++){
+    slots.push(gs[i] ? slotChip(gs[i], t.name, y)
+      : `<button class="slot open" data-act="book" data-team="${esc(t.name)}" data-year="${y}">+ Book</button>`);
+  }
+  const cf = (CG[y][t.name] || []).slice().sort((p,q) => (q.lock - p.lock) || p.o.localeCompare(q.o));
+  const hc = cf.filter(c => c.home).length;
+  const w14 = needsW14(t.name, y) ? `<span class="badge warn">needs wk-14 partner</span>` : '';
+  return `<div class="yc${y === focusY ? ' focus' : ''}" id="yc${y}">
+    <div class="yh"><b>${y}</b><span class="sub">non-con ${gs.length}/${SLOTS} · home ${homeOf(t.name,y)} of ${gs.length}</span>${w14}</div>
+    <div class="slots">${slots.join('')}</div>
+    <div class="conf"><span class="lab">conf ${hc}H/${cf.length - hc}A</span>${cf.map(c =>
+      `<button class="cc ${c.home ? 'h' : 'a'}" data-act="slate" data-team="${esc(c.o)}" data-year="${y}">${c.home ? '' : '@'}${esc(c.o)}${c.lock ? ' <span class="star">★</span>' : ''}</button>`).join('')}</div>
+  </div>`;
+}
+function renderPage(){
+  const host = el('vTeams');
+  host.classList.toggle('has-sel', !!sel);
+  const p = el('teamPage');
+  if (!sel){ p.innerHTML = `<div class="empty">Pick a team to see its ten seasons.<br><span class="sub">Tap + Book on any open slot, or any opponent's name to see their full schedule.</span></div>`; return; }
+  const t = BY[sel];
+  const booked = YEARS.reduce((n,y) => n + fill(sel,y), 0);
+  p.innerHTML = `<div class="pagehead">
+    <button class="back" data-act="back">‹ Teams</button>
+    <div style="min-width:0;flex:1 1 220px"><h2>${esc(t.name)}</h2>
+      <div class="sub">${esc(t.full)} · ${esc(t.conf)} · ${esc(t.state)} · prestige ${t.prestige}</div></div>
+    <span class="badge ${t.tier === 'P6' ? 'p6' : ''}">${t.tier}</span>
+    <span class="badge">${booked}/${SLOTS * YEARS.length} booked</span></div>
+    ${YEARS.map(y => yearCard(t, y)).join('')}`;
+}
+
+/* ---------- sheet ---------- */
+const frame = () => stack[stack.length - 1];
+function openSheet(f){ stack.push(f); el('sheetWrap').hidden = false; renderSheet(true); }
+function popSheet(){ stack.pop(); if (!stack.length) el('sheetWrap').hidden = true; else renderSheet(true); }
+function closeSheet(){ stack = []; el('sheetWrap').hidden = true; }
+function renderSheet(full){
+  const f = frame(); if (!f) return;
+  if (f.type === 'slate') return renderSlate(f);
+  if (f.type === 'pick') return renderPick(f, full);
+}
+function yChips(f, mode){
+  return YEARS.map(y => {
+    const t = f.team;
+    const n = fill(t,y), isFull = n >= SLOTS;
+    const on = mode === 'multi' ? f.years.includes(y) : f.year === y;
+    return `<button class="yc2${isFull && mode === 'multi' && !on ? ' full' : ''}" data-act="${mode === 'multi' ? 'ytoggle' : 'yslate'}" data-year="${y}" aria-pressed="${on}" title="${y}: ${n}/${SLOTS}">${shortY(y)} ${n}/${SLOTS}</button>`;
+  }).join('');
+}
+function renderSlate(f){
+  const t = BY[f.team], y = f.year;
+  const gs = gamesOf(f.team, y);
+  const cf = (CG[y][f.team] || []).slice().sort((p,q) => (q.lock - p.lock) || (p.week ?? 99) - (q.week ?? 99) || p.o.localeCompare(q.o));
+  let bar = '';
+  if (f.game){
+    const [x,z] = f.game.split('|');
+    const g = idx(y).all.find(q => key(q.h,q.v) === f.game);
+    if (g){
+      const mine = g.sub ? G[y].find(q => key(q.h,q.v) === f.game) : g;
+      const sid = mine && mine.sid;
+      bar = `<div class="gamebar"><b>${esc(g.v)} at ${esc(g.h)}</b> · ${y}${g.locked ? ' · locked rivalry (host alternates by rule)' : ''}${g.sub ? ' · guest' : ''}${sid ? ' · part of a series' : ''}
+        ${g.locked ? '' : `<div class="btns">
+          ${g.sub ? '' : `<button class="tiny" data-act="flip" data-year="${y}" data-game="${esc(f.game)}">Flip host</button>`}
+          <button class="tiny" data-act="rm" data-year="${y}" data-game="${esc(f.game)}">Remove ${y}</button>
+          ${sid ? `<button class="tiny" data-act="rmall" data-year="${y}" data-game="${esc(f.game)}">Remove series</button>` : ''}</div>`}</div>`;
+    }
+  }
+  const ncRows = [];
+  for (let i = 0; i < SLOTS; i++){
+    const g = gs[i];
+    ncRows.push(g ? `<button class="grow" data-act="slate" data-team="${esc(oppOf(g,f.team))}" data-year="${y}">
+        <span class="ha ${g.h === f.team ? 'h' : 'a'}">${g.h === f.team ? 'H' : 'A'}</span>
+        <span class="o">${esc(oppOf(g,f.team))}${g.locked ? ' <span class="star">★ rivalry</span>' : ''}${g.sub ? ' <span class="badge">guest</span>' : ''}</span>
+        <span class="sub">${BY[oppOf(g,f.team)] ? esc(BY[oppOf(g,f.team)].conf) : 'subdivision'}${g.week != null ? ' · wk ' + g.week : ''}</span></button>`
+      : `<button class="grow openrow" data-act="book" data-team="${esc(f.team)}" data-year="${y}"><span class="ha" style="background:var(--chip)">–</span><span class="o">open</span><span class="sub">book</span></button>`);
+  }
+  const hc = cf.filter(c => c.home).length;
+  el('sheet').innerHTML = `<div class="sh">
+      <div class="r1">${stack.length > 1 ? '<button class="tiny" data-act="pop">‹ Back</button>' : ''}<h3>${esc(f.team)}</h3>
+        <button class="tiny pri" data-act="openteam" data-team="${esc(f.team)}">Team page</button>
+        <button class="tiny" data-act="close">Close</button></div>
+      <div class="sub" style="margin-top:4px">${esc(t.conf)} · ${t.tier} · ${esc(t.state)} · ${y}</div>
+      <div class="ychips">${yChips(f, 'single')}</div></div>
+    <div class="sb">${bar}
+      <div class="sec"><span>Non-conference ${y}</span><span>${gs.length}/${SLOTS}</span></div>${ncRows.join('')}
+      <div class="sec"><span>Conference ${y}</span><span>${hc}H / ${cf.length - hc}A</span></div>
+      ${cf.map(c => `<button class="grow" data-act="slate" data-team="${esc(c.o)}" data-year="${y}">
+        <span class="ha ${c.home ? 'h' : 'a'}">${c.home ? 'H' : 'A'}</span>
+        <span class="o">${esc(c.o)}${c.lock ? ' <span class="star">★ ' + (c.week === 14 ? 'rivalry wk 14' : 'rivalry') + '</span>' : ''}</span>
+        <span class="sub">${BY[c.o] ? '' : ''}</span></button>`).join('')}
+    </div>`;
+}
+
+/* picker */
+function candRow(f, name, isSub){
+  const a = f.team, y = f.year;
+  const B = isSub ? SUB[name] : BY[name];
+  const ysel = f.years.length ? f.years : [y];
+  const reasons = ysel.map(yy => [yy, isSub ? whyNotSub(a,name,yy) : whyNot(a,name,yy)]);
+  const okYears = reasons.filter(r => !r[1]).map(r => r[0]);
+  const focusBad = reasons.find(r => r[0] === y && r[1]);
+  const d = distOf(a,name);
+  const flags = [];
+  if (!isSub){
+    const meets = pairGames(a,name);
+    meets.forEach(m => flags.push(`<span class="badge good">${m.y} ${m.g.h === a ? 'at ' + esc(a) : 'at them'}</span>`));
+    if (meets.length === 1 && meets[0].y !== y) flags.push('<span class="badge owed">return leg due</span>');
+    const ow = debtOf(a,name);
+    if (ow && y <= Y0 + 3) flags.push(`<span class="badge owed">visit owed (${ow.year})</span>`);
+    if (needsW14(a,y) && !B.w14_pinned) flags.push('<span class="badge good">solves wk 14</span>');
+    const ns = confCount(a,B.conf,y); if (ns >= 1) flags.push(`<span class="badge warn">2nd from ${esc(B.conf)}</span>`);
+  } else if (B.guest_last) flags.push('<span class="badge">guest last year</span>');
+  const theirNC = isSub ? [] : gamesOf(name,y);
+  const tok = [];
+  if (!isSub){
+    for (let i = 0; i < SLOTS; i++){
+      const g = theirNC[i];
+      tok.push(g ? `<span class="tok ${g.h === name ? '' : 'a'}${g.sub ? ' g' : ''}">${g.h === name ? '' : '@'}${esc(oppOf(g,name))}</span>` : '<span class="tok open">open</span>');
+    }
+  } else {
+    const used = YEARS.filter(yy => subTaken(name,yy));
+    tok.push(used.length ? `<span class="tok">booked ${used.map(shortY).join(' ')}</span>` : '<span class="tok open">free all years</span>');
+  }
+  const multi = ysel.length > 1;
+  const hostBtn = isSub ? `<button class="pri" data-act="bookit" data-opp="${esc(name)}" data-sub="1" ${okYears.length ? '' : 'disabled'}>${multi ? 'Host · ' + okYears.length + ' yrs' : 'Host'}</button>`
+    : `<button class="pri" data-act="bookit" data-opp="${esc(name)}" data-first="home" ${okYears.length ? '' : 'disabled'}>${multi ? 'Host first' : 'Host'}</button>
+       <button data-act="bookit" data-opp="${esc(name)}" data-first="away" ${okYears.length ? '' : 'disabled'}>${multi ? 'Visit first' : 'Visit'}</button>`;
+  return `<div class="cand${okYears.length ? '' : ' no'}">
+    <div class="c1"><button class="nmb" data-act="slate" data-team="${esc(name)}" data-year="${y}">${esc(name)}</button>
+      <span class="badge ${B.tier === 'P6' ? 'p6' : ''}">${isSub ? 'subdivision' : B.tier}</span>
+      ${isSub ? '' : `<span class="sub">${esc(B.conf)}</span>`}
+      <span class="sub">${d != null ? d + ' · ' + travelWord(d) : ''}</span></div>
+    ${isSub ? `<div class="c2">${tok.join('')}</div>` : `<button class="c2" data-act="slate" data-team="${esc(name)}" data-year="${y}"><span class="lab">${y} non-con</span>${tok.join('')}<span class="lab">· see all 12 ›</span></button>`}
+    ${flags.length ? `<div class="c3">${flags.join('')}</div>` : ''}
+    ${focusBad ? `<div class="why">${esc(focusBad[1])}</div>` : (reasons.some(r => r[1]) ? `<div class="why">skips ${reasons.filter(r => r[1]).map(r => r[0]).join(', ')}</div>` : '')}
+    <div class="c4">${hostBtn}</div></div>`;
+}
+function renderPick(f, full){
+  if (full){
+    el('sheet').innerHTML = `<div class="sh">
+      <div class="r1">${stack.length > 1 ? '<button class="tiny" data-act="pop">‹ Back</button>' : ''}<h3>Book ${esc(f.team)}</h3>
+        <button class="tiny" data-act="close">Close</button></div>
+      <div class="sub" id="pickSub" style="margin-top:4px"></div>
+      <div class="ychips" id="pickYears"></div>
+      <div class="filters" style="margin:9px 0 0">
+        <input id="pq" placeholder="search team, conference, state" autocomplete="off" value="${esc(f.q || '')}">
+        <select id="pTab"><option value="fbs">FBS opponents</option><option value="sub">Subdivision guests</option></select>
+        <select id="pSort"><option value="suggest">Suggested</option><option value="az">A–Z</option><option value="open">Most open</option></select>
+        <select id="pConf"></select></div></div>
+      <div class="sb" id="pickList"></div>`;
+    el('pTab').value = f.tab; el('pSort').value = f.sort;
+    const cs = ['<option value="">all conferences</option>'].concat(Object.keys(D.conferences).filter(c => c !== BY[f.team].conf).map(c => `<option>${esc(c)}</option>`));
+    el('pConf').innerHTML = cs.join(''); el('pConf').value = f.conf || '';
+  }
+  const t = BY[f.team], y = f.year;
+  const ys = f.years.length ? f.years : [y];
+  el('pickSub').textContent = y + ' · ' + openOf(f.team,y) + ' open · hosts ' + homeOf(f.team,y) + ' of ' + gamesOf(f.team,y).length
+    + (ys.length > 1 ? ' · series ' + ys.join(', ') : '');
+  el('pickYears').innerHTML = `<span class="sub" style="align-self:center">series years:</span>` + yChips(f, 'multi');
+  const q = (f.q || '').trim().toLowerCase();
+  let html = '';
+  if (f.tab === 'sub'){
+    let L = D.subs.filter(s => !q || s.name.toLowerCase().includes(q) || s.state.toLowerCase().includes(q));
+    L.sort((p,r) => {
+      const ok = n => ys.filter(yy => !whyNotSub(f.team,n,yy)).length;
+      return (ok(r.name) - ok(p.name)) || ((distOf(f.team,p.name) ?? 999) - (distOf(f.team,r.name) ?? 999));
+    });
+    html = L.slice(0, 60).map(s => candRow(f, s.name, true)).join('');
+    if (L.length > 60) html += `<p class="note">Showing 60 of ${L.length}. Search to narrow.</p>`;
+  } else {
+    let L = TEAMS.filter(b => b.name !== f.team && b.conf !== t.conf && (!f.conf || b.conf === f.conf)
+      && (!q || b.name.toLowerCase().includes(q) || b.conf.toLowerCase().includes(q) || b.state.toLowerCase().includes(q)));
+    const sc = {}; L.forEach(b => sc[b.name] = score(f.team, b.name, y));
+    const okc = n => ys.filter(yy => !whyNot(f.team,n,yy)).length;
+    if (f.sort === 'az') L.sort((p,r) => p.name.localeCompare(r.name));
+    else if (f.sort === 'open') L.sort((p,r) => openOf(r.name,y) - openOf(p.name,y) || sc[r.name] - sc[p.name]);
+    else L.sort((p,r) => (okc(r.name) > 0) - (okc(p.name) > 0) || sc[r.name] - sc[p.name]);
+    html = L.slice(0, 80).map(b => candRow(f, b.name, false)).join('');
+    if (L.length > 80) html += `<p class="note">Showing the top 80 of ${L.length}. Search or filter to narrow.</p>`;
+    if (!L.length) html = '<div class="empty">No opponents match.</div>';
+  }
+  el('pickList').innerHTML = html;
+}
+function startBook(team, year){
+  focusY = year;
+  openSheet({ type:'pick', team, year, years:[year], tab:'fbs', sort:'suggest', q:'', conf:'' });
+}
+
+/* ---------- other views ---------- */
+function renderSeries(){
+  const groups = new Map();
+  YEARS.forEach(y => G[y].forEach(g => {
+    const k = g.sid || ('one' + y + key(g.h,g.v));
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push({ y, g });
+  }));
+  // pairs booked in separate single-year bookings still read as one series
+  const byPair = new Map();
+  groups.forEach(rows => {
+    const k = key(rows[0].g.h, rows[0].g.v);
+    if (!byPair.has(k)) byPair.set(k, []);
+    byPair.get(k).push(...rows);
+  });
+  const list = [...byPair.values()].map(r => r.sort((p,q) => p.y - q.y)).sort((p,q) => p[0].y - q[0].y || p[0].g.h.localeCompare(q[0].g.h));
+  const L = D.locked.map(Lk => `<div class="srow" style="cursor:default"><div><b>${esc(Lk.a)} ↔ ${esc(Lk.b)}</b>
+      <div class="sub">${esc(Lk.type)}${Lk.week != null ? ' · week ' + Lk.week : ''} · locked every year, host alternates</div></div>
+      </div>`).join('');
+  el('vSeries').innerHTML = `<p class="note">Every hand-booked meeting, grouped by pair. Tap one to see both teams' schedules.</p>
+    <div class="sec"><span>Booked series</span><span>${list.length}</span></div>
+    ${list.length ? list.map(r => {
+      const a = r[0].g.h, b = r[0].g.v;
+      return `<button class="srow" data-act="slate" data-team="${esc(BY[a] ? a : b)}" data-year="${r[0].y}" data-game="${esc(key(a,b))}">
+        <div><b>${esc(a)} ↔ ${esc(b)}</b><div class="sub">${r.map(x => x.y + ' @' + esc(x.g.h)).join(' · ')}</div></div>
+        <span class="badge ${r.length > 1 ? 'good' : 'owed'}">${r.length > 1 ? r.length + ' games' : 'one game'}</span></button>`; }).join('')
+      : '<div class="empty">Nothing booked yet. Open a team and tap + Book.</div>'}
+    <div class="sec"><span>Locked rivalries</span><span>${D.locked.length}</span></div>${L}`;
+}
+function yearStats(y){
+  const all = idx(y).all;
+  let used = 0; all.forEach(g => used += g.sub ? 1 : 2);
+  const incomplete = TEAMS.filter(t => fill(t.name,y) < SLOTS);
+  const w14 = TEAMS.filter(t => needsW14(t.name,y));
+  const lopsided = TEAMS.filter(t => fill(t.name,y) === SLOTS && (homeOf(t.name,y) === 0 || homeOf(t.name,y) === SLOTS));
+  return { used, total: TEAMS.length * SLOTS, incomplete, w14, lopsided };
+}
+function renderChecks(){
+  const rows = YEARS.map(y => ({ y, s: yearStats(y) }));
+  el('vChecks').innerHTML = `<p class="note">Open slots are filled by the engine's balance rules when that season is built, so they are not errors. Tap a year to list the teams.</p>
+    <div class="tblw"><table class="tbl"><tr><th>Year</th><th>Booked</th><th>Open</th><th>Wk-14</th><th>0 or 3 home</th></tr>
+    ${rows.map(r => `<tr data-act="checkyear" data-year="${r.y}" style="cursor:pointer"><td class="mono"><b>${r.y}</b></td>
+      <td class="mono">${r.s.used}/${r.s.total}</td><td class="mono">${r.s.total - r.s.used}</td>
+      <td>${r.s.w14.length ? `<span class="badge warn">${r.s.w14.length}</span>` : '<span class="badge good">0</span>'}</td>
+      <td>${r.s.lopsided.length ? `<span class="badge owed">${r.s.lopsided.length}</span>` : '<span class="badge good">0</span>'}</td></tr>`).join('')}</table></div>
+    <div id="checkDetail"></div>`;
+  if (checkYear) showCheckYear(checkYear);
+}
+let checkYear = null;
+function showCheckYear(y){
+  checkYear = y;
+  const s = yearStats(y);
+  const lst = (title, arr, why) => arr.length ? `<div class="sec"><span>${title}</span><span>${arr.length}</span></div>` +
+    arr.map(t => `<button class="grow" data-act="pip" data-team="${esc(t.name)}" data-year="${y}"><span class="ha" style="background:${t.colors[0]};color:#fff">&nbsp;</span><span class="o">${esc(t.name)}</span><span class="sub">${esc(why(t))}</span></button>`).join('') : '';
+  el('checkDetail').innerHTML = `<h3 style="font:700 26px var(--display);margin:16px 0 0">${y}</h3>`
+    + lst('Needs a week-14 partner', s.w14, t => t.conf)
+    + lst('Home games 0 or 3', s.lopsided, t => homeOf(t.name,y) + ' home')
+    + lst('Open slots', s.incomplete.slice(0, 40), t => openOf(t.name,y) + ' open')
+    + (s.incomplete.length > 40 ? `<p class="note">…and ${s.incomplete.length - 40} more.</p>` : '');
+}
+function handoff(y){
+  const all = idx(y).all;
+  const st = yearStats(y);
+  return { season: y - 2025, year: y, complete: st.incomplete.length === 0,
+    games: all.map(g => ({ host:g.h, visitor:g.v, sub:!!g.sub, locked:!!g.locked, auto:false, week:g.week ?? null })),
+    blocking: 0, open_dates: st.total - st.used };
+}
+function renderOut(){
+  el('vOut').innerHTML = `<p class="note">Work saves itself. This is the belt-and-braces copy. The hand-off for a year is what the engine reads when that season is built.</p>
+    <div class="filters"><select id="oYear">${YEARS.map(y => `<option>${y}</option>`).join('')}</select>
+      <button class="pri" data-act="mkout">Build hand-off</button><button data-act="mkall">Export all years</button><button class="ghost" data-act="cpout">Copy</button></div>
+    <textarea id="oBlob" readonly placeholder="nothing built yet"></textarea>
+    <div class="sec"><span>Load a backup</span></div>
+    <textarea id="iBlob" placeholder='paste an "export all years" backup here'></textarea>
+    <div class="filters" style="margin-top:8px"><button data-act="loadin">Load</button><span class="sub" id="loadNote" style="align-self:center"></span></div>`;
+}
+function loadBackup(text){
+  let d; try { d = JSON.parse(text); } catch(e){ return 'not valid JSON'; }
+  const yrs = d.years || {}; let added = 0, skipped = 0;
+  Object.keys(yrs).forEach(k => {
+    const y = +k; if (!G[y]) return;
+    (yrs[k].games || []).forEach(g => {
+      if (g.locked) return;
+      const h = g.h || g.host, v = g.v || g.visitor;
+      if (!BY[h] || !(BY[v] || SUB[v])) { skipped++; return; }
+      const bad = g.sub ? whyNotSub(h,v,y) : whyNot(h,v,y);
+      if (bad){ skipped++; return; }
+      addGame(h, v, y, !!g.sub, g.sid); added++;
+    });
+  });
+  if (added){ queueSave(); renderAll(); }
+  return added + ' games added, ' + skipped + ' skipped';
+}
+
+/* ---------- persistence: one document per season ---------- */
+function setSave(msg, cls){ const n = el('save'); n.textContent = msg; n.className = 'save' + (cls ? ' ' + cls : ''); }
+async function connect(){
+  setSave('loading…', '');
+  try { db = await window.claude?.use?.('db'); } catch(e){ db = null; }
+  if (!db){ loaded = true; setSave('saving unavailable — use Hand-off', 'bad'); renderAll(); return; }
+  try {
+    const docs = await Promise.all(YEARS.map(y => db.doc('series/y' + y).get()));
+    let n = 0;
+    docs.forEach((doc, i) => {
+      const y = YEARS[i];
+      const rows = (doc && doc.data && Array.isArray(doc.data.games)) ? doc.data.games : [];
+      const inflight = G[y].slice();
+      const seen = new Set();
+      const keep = [];
+      rows.forEach(g => {
+        if (!BY[g.h] || !(BY[g.v] || SUB[g.v]) || g.locked) return;
+        if (seen.has(key(g.h,g.v))) return;
+        seen.add(key(g.h,g.v)); keep.push({ h:g.h, v:g.v, sub:!!g.sub, sid:g.sid || null, week:null });
+      });
+      inflight.forEach(g => { if (!seen.has(key(g.h,g.v))) keep.push(g); });
+      G[y] = keep; n += rows.length;
+    });
+    ver++;
+    loaded = true;
+    setSave(n ? 'restored ' + n + ' games' : 'ready', 'ok');
+    if (dirtyYears.size) flushSave();
+  } catch(e){
+    db = null; loaded = true;
+    setSave('could not read saved games — reload before booking', 'bad');
+  }
+  renderAll();
+}
+function queueSave(){
+  if (!loaded){ setSave('loading…', 'dirty'); return; }
+  setSave('unsaved…', 'dirty');
+  clearTimeout(saveTimer); saveTimer = setTimeout(flushSave, 700);
+}
+async function flushSave(){
+  if (!db){ setSave('no save connection — use Hand-off', 'bad'); return; }
+  if (saving){ saveTimer = setTimeout(flushSave, 400); return; }
+  saving = true;
+  try {
+    for (const y of [...dirtyYears]){
+      await db.doc('series/y' + y).set({ year:y, games:G[y], saved:new Date().toLocaleString() });
+      dirtyYears.delete(y);
+    }
+    setSave('saved ' + new Date().toLocaleTimeString(), 'ok');
+  } catch(e){ setSave('save failed — use Hand-off', 'bad'); }
+  saving = false;
+}
+window.addEventListener('beforeunload', e => { if (dirtyYears.size){ e.preventDefault(); e.returnValue = ''; } });
+
+/* ---------- plumbing ---------- */
+let toastT;
+function toast(m){ const t = el('toast'); t.textContent = m; t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 2200); }
+function renderHeader(){
+  let used = 0; YEARS.forEach(y => used += yearStats(y).used);
+  const total = TEAMS.length * SLOTS * YEARS.length;
+  el('count').textContent = used + ' / ' + total + ' slots';
+  el('meter').style.width = (100 * used / total).toFixed(1) + '%';
+}
+function renderAll(){
+  renderHeader(); renderList(); renderPage();
+  if (tab === 'series') renderSeries();
+  if (tab === 'checks') renderChecks();
+  if (!el('sheetWrap').hidden && frame()) renderSheet(false);
+}
+function setTab(t){
+  tab = t;
+  ['teams','series','checks','out'].forEach(n => el({teams:'vTeams',series:'vSeries',checks:'vChecks',out:'vOut'}[n]).hidden = n !== t);
+  document.querySelectorAll('#tabs button').forEach(b => b.setAttribute('aria-pressed', b.dataset.tab === t));
+  if (t === 'series') renderSeries();
+  if (t === 'checks') renderChecks();
+  if (t === 'out') renderOut();
+}
+function openTeam(name, year){
+  sel = name; if (year) focusY = year;
+  setTab('teams'); closeSheet(); renderAll();
+  if (year){ const c = el('yc' + year); if (c) c.scrollIntoView({ block:'start' }); } else window.scrollTo(0, 0);
+}
+function bookIt(opp, first, isSub){
+  const f = frame(); if (!f || f.type !== 'pick') return;
+  const ys = f.years.length ? f.years : [f.year];
+  const n = bookSeries(f.team, opp, ys, isSub ? true : (first === 'home'), !!isSub);
+  if (n){ f.years = [f.year]; renderPick(f, false); renderPage(); }
+}
+
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-act]'); if (!b) return;
+  const a = b.dataset.act, d = b.dataset;
+  const yr = d.year ? +d.year : null;
+  if (a === 'team'){ sel = d.team; renderList(); renderPage(); window.scrollTo(0,0); }
+  else if (a === 'back'){ sel = null; renderList(); renderPage(); }
+  else if (a === 'pip'){ openTeam(d.team, yr); }
+  else if (a === 'book'){ startBook(d.team, yr); }
+  else if (a === 'slate'){ focusY = yr; openSheet({ type:'slate', team:d.team, year:yr, game:d.game || null }); }
+  else if (a === 'openteam'){ openTeam(d.team, frame() ? frame().year : null); }
+  else if (a === 'yslate'){ const f = frame(); f.year = yr; f.game = null; focusY = yr; renderSlate(f); }
+  else if (a === 'ytoggle'){
+    const f = frame(), i = f.years.indexOf(yr);
+    if (i >= 0){ if (f.years.length > 1) f.years.splice(i,1); }
+    else f.years.push(yr);
+    f.year = f.years.includes(f.year) ? f.year : f.years[0];
+    renderPick(f, false);
+  }
+  else if (a === 'bookit'){ bookIt(d.opp, d.first, d.sub === '1'); }
+  else if (a === 'flip'){ flipGame(yr, d.game); }
+  else if (a === 'rm'){ popSheet(); removeGame(yr, d.game, false); }
+  else if (a === 'rmall'){ popSheet(); removeGame(yr, d.game, true); }
+  else if (a === 'pop'){ popSheet(); }
+  else if (a === 'close'){ closeSheet(); renderAll(); }
+  else if (a === 'checkyear'){ showCheckYear(yr); }
+  else if (a === 'mkout'){ el('oBlob').value = JSON.stringify(handoff(+el('oYear').value)); }
+  else if (a === 'mkall'){
+    const out = { saved:new Date().toLocaleString(), years:{} };
+    YEARS.forEach(y => out.years[y] = { games:G[y] });
+    el('oBlob').value = JSON.stringify(out);
+  }
+  else if (a === 'cpout'){
+    const t = el('oBlob'); t.select();
+    try { navigator.clipboard.writeText(t.value).then(() => toast('Copied'), () => toast('Select and copy')); } catch(err){ toast('Select and copy'); }
+  }
+  else if (a === 'loadin'){ el('loadNote').textContent = loadBackup(el('iBlob').value); }
+});
+document.addEventListener('input', e => {
+  if (e.target.id === 'q'){ filt.q = e.target.value; renderList(); }
+  else if (e.target.id === 'pq'){ const f = frame(); f.q = e.target.value; renderPick(f, false); }
+});
+document.addEventListener('change', e => {
+  const id = e.target.id;
+  if (id === 'fConf'){ filt.conf = e.target.value; renderList(); }
+  else if (id === 'fYear'){ filt.year = e.target.value; renderList(); }
+  else if (id === 'pTab' || id === 'pSort' || id === 'pConf'){
+    const f = frame(); f.tab = el('pTab').value; f.sort = el('pSort').value; f.conf = el('pConf').value; renderPick(f, false);
+  }
+});
+document.querySelectorAll('#tabs button').forEach(b => b.addEventListener('click', () => setTab(b.dataset.tab)));
+el('theme').addEventListener('click', () => {
+  const r = document.documentElement, dark = r.dataset.theme ? r.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme:dark)').matches;
+  r.dataset.theme = dark ? 'light' : 'dark';
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !el('sheetWrap').hidden) { closeSheet(); renderAll(); } });
+
+(function init(){
+  Object.keys(D.conferences).forEach(c => el('fConf').insertAdjacentHTML('beforeend', `<option>${esc(c)}</option>`));
+  YEARS.forEach(y => el('fYear').insertAdjacentHTML('beforeend', `<option value="${y}">open in ${y}</option>`));
+  el('yrsHead').innerHTML = YEARS.map(y => `<span>${shortY(y)}</span>`).join('');
+  renderAll();
+  connect();
+})();
+</script>

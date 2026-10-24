@@ -3128,3 +3128,13 @@ WATCH: L6 blue-chip share 7.4%; G14 portal net +24; senior class 1,965; carousel
 ## 2043 SCHEDULE -- Scheduling Office published for season 18 (2026-10-24, new session). Engine restored from GitHub (cfb/ -> /home/claude/cfb2, gunzip state, games_db parts joined).
 export_schedule_board.py: 152 programmes | 217 guests | 6 locked cross-conf | 444 non-conference slots for Dan. Unreturned visits 240 pairs (3.2/programme); 16 series still owed a return ground.
 Page: out/schedule_office.html (template + __DATA__), published over artifact 6w2G7gu6yGaWNrqPkypmLW (v11, saves under schedule/s18). NEXT: Dan hand-places; pull save -> noncon_s18_handoff.json -> fill_noncon + fix_p6_hosting. NO week-14 guest games in 2043.
+
+## 2043+ NON-CONFERENCE: SERIES OFFICE (Dan, 2026-10-24) -- 10-year booking replaces the yearly Scheduling Office
+Dan wants non-con games booked up to ten seasons ahead, like real CFB. Built: conf_plan.py (ten-year conference slates 2043-2052 drawn with the Conference Office's own rules,
+year 1 from real history, later years from the plan itself; audit: all 9 games, 4/5 home; 9% of consecutive-year meetings repeat a host because the 4/5 balance moves games, as in the yearly draw)
+-> state/conf_plan.json; export_conf_board.build() now USES the plan for its season (from_plan; pre-change copy export_conf_board.py.pre_plan).
+export_series_board.py -> state/series_board.json; series_office_template.html -> out/series_office.html, artifact FsJi7pHPnmBhXVkj6BTAcb (db docs series/y2043..y2052 = {year, games:[{h,v,sub,sid}]}; locked rivalries derived, host alternates yearly).
+Rules in the app: no same-conf, no repeat pair in a year, 3 slots, <=2 from one conference, 1 guest/team/year, guests travel + one FBS game per guest per year, week-14 partner flag. Series booking = several years at once, host alternating.
+RULED (Dan): conference slates pre-drawn for all 10 years; unbooked non-con slots AUTO-FILL at that season's build (fill_noncon + fix_p6_hosting); window 2043-2052, rolls forward each offseason (rerun conf_plan.py with the new first season; keep booked games).
+PIPELINE for a season: pull db series/y<year> (ArtifactData out_dir) -> convert_series_db.py -> state/noncon_s<N>_handoff.json -> fill_noncon.py/fix_p6_hosting.py -> conf board (already planned) -> Conference Office.
+Old Scheduling Office (6w2G7gu6yGaWNrqPkypmLW) is retired for 2043 unless Dan asks.
