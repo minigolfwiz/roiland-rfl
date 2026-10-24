@@ -3095,3 +3095,4 @@ TODO (Dan): after the 2042 season, audit parity again (good teams losing too oft
 QUEUED: post-season parity audit (Dan, wk 14) -- see OFFSEASON_TODO.md.
 
 2042 wk14 board installed; CCG preview shown. WAITING on Dan's go for ccg.py --commit.
+2042 CCGs played; Ryskamp four set. WAITING on Dan's selection ballot.
