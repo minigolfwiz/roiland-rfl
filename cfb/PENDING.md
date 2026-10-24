@@ -2980,3 +2980,6 @@ Before scheduling: distance rules vs U['school_coords'] still undecided.
 152 programmes | 217 guests | 6 locked cross-conference rivalries | unreturned visits 249 pairs (3.3 per programme); 13 series still owed a return ground.
 REMINDER (Dan, 2026-10-23): once the schedule is completely built (noncon -> conference -> installed), TELL DAN TO START A NEW CONVERSATION to save usage.
 Media pool redraw for s17 (carry-over rule) still to do before preseason.
+
+## 2042 SCHEDULING OFFICE -- PROGRESS SAVED 2026-10-23 18:26
+Dan's Office save (db schedule/s17, version 17, 6:24 PM) pulled down: state/schedule_office_save_s17_v17.json. Dan is partway through; resume from the Office (his save reloads there).

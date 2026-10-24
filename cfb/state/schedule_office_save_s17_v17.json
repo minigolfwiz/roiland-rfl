@@ -1,0 +1,220 @@
+{
+  "games": [
+    {
+      "a": "Northlight",
+      "auto": false,
+      "b": "Starfield",
+      "host": "Starfield",
+      "locked": true,
+      "sub": false,
+      "week": 14,
+      "why": "Rivalry Week"
+    },
+    {
+      "a": "Roosevelt",
+      "auto": false,
+      "b": "Roosevelt State",
+      "host": "Roosevelt State",
+      "locked": true,
+      "sub": false,
+      "week": 14,
+      "why": "Rivalry Week"
+    },
+    {
+      "a": "Kaji Daun",
+      "auto": false,
+      "b": "Kaji Kita",
+      "host": "Kaji Daun",
+      "locked": true,
+      "sub": false,
+      "week": 14,
+      "why": "Rivalry Week"
+    },
+    {
+      "a": "Verigon State",
+      "auto": false,
+      "b": "Verigon",
+      "host": "Verigon",
+      "locked": true,
+      "sub": false,
+      "week": 1,
+      "why": "Locked"
+    },
+    {
+      "a": "Eona Navy",
+      "auto": false,
+      "b": "Northlight",
+      "host": "Northlight",
+      "locked": true,
+      "sub": false,
+      "week": 1,
+      "why": "Locked"
+    },
+    {
+      "a": "Lornaman",
+      "auto": false,
+      "b": "National",
+      "host": "Lornaman",
+      "locked": true,
+      "sub": false,
+      "week": 4,
+      "why": "Locked"
+    },
+    {
+      "a": "Southern Tengus",
+      "auto": false,
+      "b": "Collette",
+      "host": "Southern Tengus",
+      "locked": false,
+      "sub": true,
+      "week": null
+    },
+    {
+      "a": "Southern Tengus",
+      "auto": false,
+      "b": "Tasson",
+      "host": "Southern Tengus",
+      "locked": false,
+      "sub": false,
+      "week": null
+    },
+    {
+      "a": "Southern Tengus",
+      "auto": false,
+      "b": "Reid State",
+      "host": "Southern Tengus",
+      "locked": false,
+      "sub": false,
+      "week": null
+    },
+    {
+      "a": "Tasson",
+      "auto": false,
+      "b": "Harrell State",
+      "host": "Tasson",
+      "locked": false,
+      "sub": true,
+      "week": null
+    },
+    {
+      "a": "Tasson",
+      "auto": false,
+      "b": "Fiota Bay",
+      "host": "Tasson",
+      "locked": false,
+      "sub": false,
+      "week": null
+    },
+    {
+      "a": "Costique River",
+      "auto": false,
+      "b": "Leafette",
+      "host": "Costique River",
+      "locked": false,
+      "sub": false,
+      "week": null
+    },
+    {
+      "a": "Leafette",
+      "auto": false,
+      "b": "UHMM",
+      "host": "Leafette",
+      "locked": false,
+      "sub": true,
+      "week": null
+    },
+    {
+      "a": "Leafette",
+      "auto": false,
+      "b": "Eastern State",
+      "host": "Leafette",
+      "locked": false,
+      "sub": false,
+      "week": null
+    },
+    {
+      "a": "Diveo State",
+      "auto": false,
+      "b": "Barhold Valley",
+      "host": "Diveo State",
+      "locked": false,
+      "sub": false,
+      "week": null
+    },
+    {
+      "a": "Barhold Valley",
+      "auto": false,
+      "b": "Hofferteltra",
+      "host": "Barhold Valley",
+      "locked": false,
+      "sub": false,
+      "week": null
+    },
+    {
+      "a": "Barhold Valley",
+      "auto": false,
+      "b": "Holliday",
+      "host": "Barhold Valley",
+      "locked": false,
+      "sub": false,
+      "week": null
+    },
+    {
+      "a": "Barhold",
+      "auto": false,
+      "b": "Burrstone",
+      "host": "Barhold",
+      "locked": false,
+      "sub": false,
+      "week": null
+    },
+    {
+      "a": "Burrstone",
+      "auto": false,
+      "b": "St. Ballo's",
+      "host": "Burrstone",
+      "locked": false,
+      "sub": true,
+      "week": null
+    },
+    {
+      "a": "Burrstone",
+      "auto": false,
+      "b": "East Tasson",
+      "host": "Burrstone",
+      "locked": false,
+      "sub": false,
+      "week": null
+    },
+    {
+      "a": "Park Island",
+      "auto": false,
+      "b": "Barhold State",
+      "host": "Park Island",
+      "locked": false,
+      "sub": false,
+      "week": null
+    },
+    {
+      "a": "Marines",
+      "auto": false,
+      "b": "Park Island",
+      "host": "Marines",
+      "locked": false,
+      "sub": false,
+      "week": null
+    },
+    {
+      "a": "Park Island",
+      "auto": false,
+      "b": "Victoria",
+      "host": "Park Island",
+      "locked": false,
+      "sub": true,
+      "week": null
+    }
+  ],
+  "saved": "10/23/2026, 6:24:51 PM",
+  "season": 17,
+  "year": 2042
+}
