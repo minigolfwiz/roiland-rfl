@@ -335,3 +335,9 @@ LESSON: commit every file the build needs (*.js, sub_coaches.pkl) and re-push su
 Natzumakis 34-14 over #2 Skylar Rose (Notaw 190/2 TD; Sandcott 201 rush for Skylar Rose; Verville 135/1/1; DL Kalani Ulunoa out for the year). Skeenerland State 41-10 at Cordelle; Hoganelle 35-32 Keytommiyr;
 guest win: Veriota 31-22 at Fiota State (3 guest games, 1 guest win). Poll: Central Stanton 1, Skeenerland State 2, Eona 3, Skylar Rose 4 (0-1), UNN 5. No one dropped out.
 Backup state/season_state.pkl.pre_w0. Season viewer v133, Media Pool v42. NEXT: week 1 Gameview pick (Ranroman State at Crayellan; Dietsche at UNN; Eona at Dove Island; Skylar Rose at Good River).
+
+## 2042 WEEK 1 played (Gameview: Ranroman State at Crayellan) -- 2026-10-24
+Ranroman State 41-27 at #12 Crayellan (Omtreimyr 480/2 in defeat; Petitcour 245 rush, Jorrovei 204/3). #5 UNN lost 28-21 to #18 Dietsche... (UNN 21, Dietsche 28 at UNN; Kingsworth 420/3, El-Najjar 327/3).
+Upsets: Vaughn Bay State 34-21 #6 Tengus State (Vikstad 3 INT); Keeper 23-10 #15 Ciarralotta Tech; Tasson 24-21 #25 Fiota Bay. Skylar Rose 56-24 at Good River; Park Island 56-21 at Marines. 23 guest games, 2 guest wins (Pietro Tadal 17-14 Waterloo, Krei 12-0 Westburg).
+Poll: Central Stanton 1, Skeenerland State 2, Eona 3; Fiota Bay dropped out, Hatesei in at 21. Backup season_state.pkl.pre_w1. Viewer v134, Media Pool v43.
+NEXT: week 2 pick (Will Tech at Dietsche; Yrei Trobniy at North Hatesei; Central Stanton at Ciarralotta; Ranroman at Stanton; passed: Lornaman at Skeenerland State).
