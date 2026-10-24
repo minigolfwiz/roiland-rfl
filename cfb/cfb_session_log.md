@@ -501,3 +501,7 @@ WATCH: L6 blue-chip share roughly doubled vs 2042. NEXT: Stage 5 development.
 Backups state/{rosters,season_state}.pkl.pre_s18_dev; s['development_s17']. 7,086 players, mean +0.277 (Fr +0.489, So +0.196, RS +0.192, Jr +0.113).
 316 breakouts, 70 busts, r_coach 0.454 (2042: 0.606). Best team development: Eternal Fox +0.419, Ranroman +0.418, Ranroman State +0.415, Skeenerland State +0.403, Crayellan +0.400; lowest Kaji Kita State +0.166, Milharvey +0.175, Leafette +0.182.
 Players rated 9.0+: 28 (post-draft). NEXT: Stage 6 roster finalisation.
+
+## 2042-43 OFFSEASON -- Stage 6 of 7 COMPLETE: 2043 roster finalisation (2026-10-24)
+Backups state/{rosters,season_state}.pkl.pre_s18_rfinal. departed 2,784 | recruits added 2,490 | walkons 0 | floor fills 298 | trimmed 0 |
+rosters 63-69, total 9,874. No _leaving flags remain. Rollover (stage 7) pending.
