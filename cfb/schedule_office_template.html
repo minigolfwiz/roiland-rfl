@@ -1023,6 +1023,19 @@ async function connect(){
   if (dirty) save(false);
   render();
 }
+/* BACKUP RESTORE: if the board came up with no hand-placed games but a pulled-down copy of
+   the last save shipped with the page (DATA.preload), lay those games back and save them. */
+function applyPreload(){
+  const pre = (DATA.preload && DATA.preload.games) || [];
+  if (!pre.length || games.some(g => !g.locked)) return false;
+  const ok = pre.filter(g => !g.locked && (BY[g.a] || SUBBY[g.a]) && (BY[g.b] || SUBBY[g.b]));
+  if (!ok.length) return false;
+  games = games.concat(ok);
+  render();
+  setSave('restored ' + ok.length + ' games from backup · ' + (DATA.preload.saved || ''), 'ok');
+  queueSave();
+  return true;
+}
 function setSave(msg, cls){
   const n = el('savestate'); n.textContent = msg;
   n.className = 'savestate' + (cls ? ' ' + cls : '');
@@ -1201,5 +1214,5 @@ document.addEventListener('keydown', e => {
 el('yrline').textContent = DATA.year + ' SEASON · NON-CONFERENCE';
 seedLocked();
 setView('board');
-connect();
+connect().then(applyPreload);
 </script>
