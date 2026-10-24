@@ -3065,3 +3065,5 @@ Restored from GitHub; recovered marks_lib.js, regenerated the 2042 guest rosters
 ## 2042 WEEK 8 played (Gameview Southern Tengus). WAITING on Dan's first committee ballot; wk 9 candidates after install. Guest rule: none in wk 14 (audit enforced from 2043).
 
 ## 2042 first committee board installed after week 8 (ballot_s17_w8.json). NEXT: week 9 Gameview pick; then weekly hand-ballot routine.
+
+2042 first committee board installed after wk 8. NEXT: wk 9 pick (candidates presented).
