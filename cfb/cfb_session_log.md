@@ -477,3 +477,14 @@ Ebony Anywale (fired Kaji Kita) retread at North Hatesei St. NEXT: Stage 2, the 
 ## 2042-43 OFFSEASON -- Stage 2 of 7 IN PROGRESS: 2043 draft pool handed to the RFL
 export_draft_pool.py -> state/draft_pool_2043.json: 3,640 declared (2,461 Sr, 1,156 early, 23 subdivision). Project doc claude/cfb_draft_pool_2043.json = TOP 700 slim;
 full file sent to Dan as attachment. NEXT: RFL returns 280 picks as claude/rfl_draft_2043_picks.json -> install_rfl_draft.py -> portal.
+
+## 2042-43 OFFSEASON -- Stage 2 of 7 COMPLETE: the 2043 draft, run by the RFL
+Picks from GitHub data/rfl_draft_2043_picks.json -> state/rfl_draft_2043.json -> install_rfl_draft.py --commit -> s['draft_s17'] + mark_departures.
+Backups state/{season_state,rosters}.pkl.pre_s18_draft. 280 valid, 2,784 leaving college, 833 early entrants withdrew; 179 early entrants drafted, 1 subdivision.
+#1 overall Veronique Quisveiro (Kaji Kita DL, Jr) to Lornaman; #2 Yrei Joryosei (Vaughn Bay State DL) to Bruca Beach; #3 Afamasaga Claycroft (UFNH DL) to Far Farris.
+(Mistake noted: I first searched only the Project for the picks and said they were missing; they were on GitHub under data/.)
+## 2042-43 OFFSEASON -- Stage 3 of 7 COMPLETE: transfer portal
+Backups state/*.pkl.pre_s18_portal; s['portal_s17']. 407 entrants, 284 transfers, 123 no takers.
+Flows L6->P6 114 / P6->P6 58 / P6->L6 37 / L6->L6 75 (2042: 102/62/46/80). Classes So 104 Jr 90 Fr 82 RS 8.
+G14 in 32 / out 8 = +24 (2042 +15, 2041 +29, 2040 +18). 114 entrants lost a coach, 20 followed him. Top value: Raghav El-Fahim (Hoganelle WR) to Coastal Ranroman.
+NEXT: Stage 4 recruiting.
