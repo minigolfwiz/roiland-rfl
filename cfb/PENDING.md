@@ -3097,3 +3097,4 @@ QUEUED: post-season parity audit (Dan, wk 14) -- see OFFSEASON_TODO.md.
 2042 wk14 board installed; CCG preview shown. WAITING on Dan's go for ccg.py --commit.
 2042 CCGs played; Ryskamp four set. WAITING on Dan's selection ballot.
 2042 playoff builder (Committee Room) published with 54 candidates / 12 champions. WAITING on Dan's field JSON -> install_field.py.
+2042 PLAYOFF FIELD INSTALLED (human committee): 1 Dietsche 2 Tasson 3 Park Island 4 Eona 5 Ranroman State 6 Pistolheart 7 Fiota Bay 8 UFNH | R1: 24 Vaughn Bay State@9 Barhold, 23 UN Minko@10 Lornaman, 22 Trapper Point@11 Diveo State, 21 Canesta State@12 Black Forest, 20 Hoganelle@13 Costique River, 19 Crayellan@14 Hatesei, 18 Marblehead@15 Rogaela, 17 Yrei Trobniy@16 Ranroman. NOT PLAYED; waiting on Dan's go.
