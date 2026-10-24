@@ -3081,3 +3081,5 @@ Restored from GitHub; recovered marks_lib.js, regenerated the 2042 guest rosters
 2042 wk11 board installed. NEXT: wk 12 pick.
 
 2042 WEEK 12 played (Gameview North Verigon at Fiota Bay). Park Island lost at home to Barhold Valley. WAITING on wk 12 board.
+
+2042 wk12 board installed. NEXT: wk 13 pick.
