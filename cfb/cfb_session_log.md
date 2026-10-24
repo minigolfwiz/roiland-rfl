@@ -473,3 +473,7 @@ Headlines: DeAndre Kingsbrook leaves German Shores for Greene (dream job, rating
 from Ranroman OC); Perla Notaro Eternal Fox -> North Hatesei; Kabir Venkatadeva East Tasson -> Verigon; chain Fiota State -> East Tasson,
 New Madrid -> Dove Island State, Cordelle/Starfield/German Shores shuffle. Nico Salaanelli (fired Milharvey) retread at Stanton State;
 Ebony Anywale (fired Kaji Kita) retread at North Hatesei St. NEXT: Stage 2, the 2043 draft pool for the RFL (needs Dan).
+
+## 2042-43 OFFSEASON -- Stage 2 of 7 IN PROGRESS: 2043 draft pool handed to the RFL
+export_draft_pool.py -> state/draft_pool_2043.json: 3,640 declared (2,461 Sr, 1,156 early, 23 subdivision). Project doc claude/cfb_draft_pool_2043.json = TOP 700 slim;
+full file sent to Dan as attachment. NEXT: RFL returns 280 picks as claude/rfl_draft_2043_picks.json -> install_rfl_draft.py -> portal.
