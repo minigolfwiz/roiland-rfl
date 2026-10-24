@@ -60,3 +60,4 @@ Scope when run: final records by tier/"power" conferences; distribution of losse
 - Neutral-site rule: bowls by SCHOOL distance (campus to bowl city), not state distance (committee.vdist, 2042).
 - Neutral-site rule: higher seed skips bowls in the opponent's own state (committee._opp_home, 2042).
 - Awarding 2045+ title sites: avoid that year's semifinal cities (committee.semi_title_overlap).
+- REMIND DAN after the 2042 season: award title sites for 2045-2049 (five-year block). Show him the FULL LIST of previous title sites (2026-2044) when asking. Avoid that year's semifinal cities (committee.semi_title_overlap).
