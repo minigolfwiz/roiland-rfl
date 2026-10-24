@@ -330,3 +330,8 @@ Media pool s17 drawn by media_pool.make_pool (30 returning / 30 new, no school i
 Top 5: Central Stanton (31 firsts), Skylar Rose (26), Eona, Skeenerland State, Eastern State; Eternal Fox 23rd is the only L6 ballot team. 25 notes in state/preseason_notes.json (2041's kept as preseason_notes_s16.json), fact-checked against the log; no mascots/ratings. Roiland Preseason republished (v5), Media Pool (v41).
 Week 0 Gameview candidates printed: Skeenerland State at Cordelle; Natzumakis at Skylar Rose; Crayellan at North Verigon; VSSC at Rogaela State. NEXT: Dan picks -> `python3 week_cycle.py 0 <host>`.
 LESSON: commit every file the build needs (*.js, sub_coaches.pkl) and re-push sub_rosters/sub_coaches right after every install_hand_schedule --commit.
+
+## 2042 WEEK 0 played (Gameview: Natzumakis at Skylar Rose) -- 2026-10-24
+Natzumakis 34-14 over #2 Skylar Rose (Notaw 190/2 TD; Sandcott 201 rush for Skylar Rose; Verville 135/1/1; DL Kalani Ulunoa out for the year). Skeenerland State 41-10 at Cordelle; Hoganelle 35-32 Keytommiyr;
+guest win: Veriota 31-22 at Fiota State (3 guest games, 1 guest win). Poll: Central Stanton 1, Skeenerland State 2, Eona 3, Skylar Rose 4 (0-1), UNN 5. No one dropped out.
+Backup state/season_state.pkl.pre_w0. Season viewer v133, Media Pool v42. NEXT: week 1 Gameview pick (Ranroman State at Crayellan; Dietsche at UNN; Eona at Dove Island; Skylar Rose at Good River).

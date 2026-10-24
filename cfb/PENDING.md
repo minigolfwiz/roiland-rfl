@@ -3045,3 +3045,5 @@ NEXT (new conversation, per Dan): media pool redraw for s17 (half same teams; no
 
 ## 2042 PRESEASON -- 2026-10-24
 Restored from GitHub; recovered marks_lib.js, regenerated the 2042 guest rosters/staffs (names fresh), drew the s17 media pool, ran the preseason poll, wrote 25 notes, republished Preseason + Media Pool. Full entry in cfb_session_log.md. NEXT: Dan's week-0 Gameview pick, then week_cycle.py 0.
+
+## 2042 WEEK 0 played (Gameview Natzumakis at Skylar Rose). NEXT: week 1 pick. See cfb_session_log.md.
