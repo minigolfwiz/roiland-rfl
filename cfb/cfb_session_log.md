@@ -388,3 +388,8 @@ Guest record corrected from data: through wk 7 7-72 (79 games); 57 more schedule
 #7 Southern Tengus 41-14 #6 Skeenerland State (Kepu 319/3; Monteclara 170 rec/3; Furube 148/0/2). Eona 31-10 #8 Kaji Daun (Eastdale 362/3). Ranroman State 20-17 at #9 Hatesei (Jorrovei 289; Sorlovei 243 rec). UFNH 23-16 #10 Rogaela. Pistolheart 31-17 #11 Ranroman (Virtravaw 172/4). North Verigon 23-22 #18 Crayellan State. Marines 20-16 #23 UN Steelbridge. Park Island 70-17 at #29 Roosevelt. Guest win: Inkstromm 21-7 at Chapel Rock (guests now 8-78).
 Media poll wk8: 1 Park Island, 2 Ranroman State, 3 UFNH, 4 Dietsche, 5 UNN. Out: Eastern State.
 ** FIRST COMMITTEE BALLOT: committee_week.html built, ballot_prep.py sheet given to Dan. WAITING on his top 25 -> install_committee.py <file> --commit. Gameview week 9 candidates only AFTER his board is installed (standing). **
+
+## 2042 FIRST COMMITTEE BOARD INSTALLED (after week 8) -- state/ballot_s17_w8.json, audit CLEAN
+1 Park Island, 2 Ranroman State, 3 Southern Tengus, 4 Stanton, 5 Diamond City, 6 North Verigon, 7 Tasson, 8 Pistolheart, 9 UFNH, 10 Dietsche, 11 Diveo State, 12 Eona, 13 Rogaela State, 14 UNN, 15 Ekralund State, 16 Crayellan State, 17 Crayellan, 18 Ranroman, 19 Eastern State, 20 Phangrine State, 21 Fiota Bay, 22 Hatesei, 23 Canesta State, 24 Antiragal State, 25 Hoganelle.
+Dan ranks by hand every week from here. Weekly routine: play week -> export_committee_week.py -> build_pages -> publish Committee Ballot -> ballot_prep.py -> Dan's board -> install_committee.py -> THEN Gameview candidates.
+NEXT: week 9 pick (candidates ranked off his board).
