@@ -356,3 +356,10 @@ NEXT: week 3 pick.
 #22 Marblehead 17-25 Keeper; #24 Roosevelt 21-33 Parchynt State. Skeenerland State 17-6 Riverwake, UFNH 37-0 Riveral State, Park Island 31-7 Barhold State, Eona 27-16 Orlot. 10 guest games, 1 guest win (St. Ballo's 30-24 Burrstone).
 Poll: 1 UFNH, 2 Park Island, 3 Eona, 4 Central Stanton, 5 Ranroman State, 6 Kaji Daun; out: Yrei Trobniy, Marblehead. Backup season_state.pkl.pre_w3. Viewer v136, Media Pool v45. gameview_detail.py added (detail for candidates).
 NEXT: week 4 pick (Ranroman State at Kaji Daun; Park Island at Skylar Rose; Tengus State at Kaji Kita; Dietsche at S Antiragal State).
+
+## 2042 WEEK 4 played (Gameview: Ranroman State at Kaji Daun) -- 2026-10-24
+#5 Ranroman State 28-26 at #6 Kaji Daun (Jorrovei 218/4; Schwarzhoff 322/0). Park Island 38, Skylar Rose 28 at Skylar Rose (Torrarini 416/2; Verville 320/2/2, Weon 211 rec/2).
+Upsets: Stanton 35-21 at #12 North Hatesei (Pellavanti 139/3); #25 Tengus State 45-3 at #14 Kaji Kita (Sotohermosa 157 rec/5 TD); National 48-10 at #19 Lornaman; Leafette 25-24 #21 Will Tech; Parchynt 37-24 at #22 Crayellan State (Sierralonga 284/2).
+Hatesei 28-21 Ciarralotta; Dietsche 44-24 at S Antiragal State. 8 guest games, 1 guest win (Polt Hall 27-19 at Clark). 305 results.
+Poll: 1 Park Island, 2 UFNH, 3 Ranroman State, 4 Kaji Daun, 5 Eona; out: Lornaman, Ciarralotta State, Will Tech. Backup season_state.pkl.pre_w4. Viewer (1.7 MB, 305 box scores), Media Pool published.
+NEXT: week 5 pick (UNN at Eona; Central Stanton at North Hatesei; Stanton at Hatesei; UFNH at Harrell).
