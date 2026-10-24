@@ -3033,3 +3033,7 @@ Dan's save v473 -> state/conf_office_save_s17_v473.json (306 of 980 rows placed 
 none of Dan's placements moved. state/conf_s17_filled.json (980 rows). Hard-rule flags only on programmes Dan hand-filled completely: Far Farris & Far Farris State (5 home in a row), Natzumakis (5 home in a row), North Verigon (4 road in a row).
 Review copy written to DB conf/s17 (version 474) and Office republished; Dan edits there. Dan's own pre-fill hand-off kept as state/conf_s17_handoff_dan.json.
 NEXT after Dan's OK: pull save -> convert_conf_db.py -> conf_sched_s17.json -> install_hand_schedule.py --commit -> audit -> tell Dan to START A NEW CONVERSATION.
+
+## 2042 CONFERENCE OFFICE -- DAN'S EDITS SAVED 2026-10-24 01:0x
+Office save v589 (12:57 AM) -> state/conf_office_save_s17_v589.json; 24 rows changed vs the filled calendar (6 conference games, 18 non-con weeks); all 980 placed. convert_conf_db.py -> state/conf_s17_handoff.json + conf_sched_s17.json (complete).
+Not installed yet -- waiting for Dan's OK (install_hand_schedule.py --commit, then audit, then tell Dan to START A NEW CONVERSATION).

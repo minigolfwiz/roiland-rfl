@@ -84,7 +84,7 @@
    "conf": "Power North",
    "host": "Barhold",
    "visitor": "Kaji Kita",
-   "week": 8,
+   "week": 3,
    "locked": false
   },
   {
@@ -105,7 +105,7 @@
    "conf": "Power North",
    "host": "Skeenerland State",
    "visitor": "Barhold",
-   "week": 3,
+   "week": 9,
    "locked": false
   },
   {
@@ -245,7 +245,7 @@
    "conf": "Power North",
    "host": "Skeenerland",
    "visitor": "Diveo",
-   "week": 1,
+   "week": 12,
    "locked": false
   },
   {
@@ -574,7 +574,7 @@
    "conf": "Jyras Bay",
    "host": "Dietsche",
    "visitor": "Keytommiyr",
-   "week": 11,
+   "week": 12,
    "locked": false
   },
   {
@@ -707,7 +707,7 @@
    "conf": "Jyras Bay",
    "host": "Krobe State",
    "visitor": "Rogaela State",
-   "week": 9,
+   "week": 5,
    "locked": false
   },
   {
@@ -749,7 +749,7 @@
    "conf": "Jyras Bay",
    "host": "Krobe",
    "visitor": "Rogaela State",
-   "week": 1,
+   "week": 9,
    "locked": false
   },
   {
@@ -5019,7 +5019,7 @@
    "conf": null,
    "host": "Dove Island",
    "visitor": "Ravenhead",
-   "week": 11,
+   "week": 9,
    "locked": false,
    "sub": true
   },
@@ -5211,7 +5211,7 @@
    "conf": null,
    "host": "Kaji Kita",
    "visitor": "KKRC",
-   "week": 0,
+   "week": 1,
    "locked": false,
    "sub": true
   },
@@ -5219,7 +5219,7 @@
    "conf": null,
    "host": "Keytommiyr",
    "visitor": "Krane State",
-   "week": 1,
+   "week": 2,
    "locked": false,
    "sub": true
   },
@@ -5323,7 +5323,7 @@
    "conf": null,
    "host": "Krobe State",
    "visitor": "DeRowe",
-   "week": 6,
+   "week": 2,
    "locked": false,
    "sub": true
   },
@@ -5355,7 +5355,7 @@
    "conf": null,
    "host": "Antiragal State",
    "visitor": "Arguster",
-   "week": 5,
+   "week": 13,
    "locked": false,
    "sub": true
   },
@@ -5403,7 +5403,7 @@
    "conf": null,
    "host": "Krobe",
    "visitor": "UK Hoza",
-   "week": 9,
+   "week": 1,
    "locked": false,
    "sub": true
   },
@@ -5411,7 +5411,7 @@
    "conf": null,
    "host": "Dietsche",
    "visitor": "Lawiiri",
-   "week": 12,
+   "week": 13,
    "locked": false,
    "sub": true
   },
@@ -5491,7 +5491,7 @@
    "conf": null,
    "host": "Rogaela State",
    "visitor": "Lady Lina",
-   "week": 5,
+   "week": 8,
    "locked": false,
    "sub": true
   },
@@ -5499,7 +5499,7 @@
    "conf": null,
    "host": "Skeenerland State",
    "visitor": "Riverwake",
-   "week": 12,
+   "week": 3,
    "locked": false,
    "sub": true
   },
@@ -5563,7 +5563,7 @@
    "conf": null,
    "host": "Marblehead",
    "visitor": "Towgrade",
-   "week": 8,
+   "week": 2,
    "locked": false,
    "sub": true
   },
@@ -5635,7 +5635,7 @@
    "conf": null,
    "host": "Costique",
    "visitor": "Reescomb",
-   "week": 13,
+   "week": 4,
    "locked": false,
    "sub": true
   },
@@ -5643,7 +5643,7 @@
    "conf": null,
    "host": "Skeenerland",
    "visitor": "Applegate",
-   "week": 12,
+   "week": 1,
    "locked": false,
    "sub": true
   },
@@ -6323,7 +6323,7 @@
    "conf": null,
    "host": "Vaughn Bay",
    "visitor": "Palisades",
-   "week": 9,
+   "week": 12,
    "locked": false,
    "sub": false
   },
@@ -6331,7 +6331,7 @@
    "conf": null,
    "host": "Diveo",
    "visitor": "Palisades",
-   "week": 12,
+   "week": 0,
    "locked": false,
    "sub": false
   },
@@ -6379,7 +6379,7 @@
    "conf": null,
    "host": "Rogaela State",
    "visitor": "VSSC",
-   "week": 8,
+   "week": 0,
    "locked": false,
    "sub": false
   },
@@ -6395,7 +6395,7 @@
    "conf": null,
    "host": "Hoganelle",
    "visitor": "Keytommiyr",
-   "week": 9,
+   "week": 0,
    "locked": false,
    "sub": false
   },
@@ -6459,7 +6459,7 @@
    "conf": null,
    "host": "S Antiragal State",
    "visitor": "Perri Park",
-   "week": 9,
+   "week": 5,
    "locked": false,
    "sub": false
   },
@@ -6707,7 +6707,7 @@
    "conf": null,
    "host": "Dietsche",
    "visitor": "Sacred Tomb",
-   "week": 5,
+   "week": 0,
    "locked": false,
    "sub": false
   },
