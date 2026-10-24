@@ -341,3 +341,11 @@ Ranroman State 41-27 at #12 Crayellan (Omtreimyr 480/2 in defeat; Petitcour 245 
 Upsets: Vaughn Bay State 34-21 #6 Tengus State (Vikstad 3 INT); Keeper 23-10 #15 Ciarralotta Tech; Tasson 24-21 #25 Fiota Bay. Skylar Rose 56-24 at Good River; Park Island 56-21 at Marines. 23 guest games, 2 guest wins (Pietro Tadal 17-14 Waterloo, Krei 12-0 Westburg).
 Poll: Central Stanton 1, Skeenerland State 2, Eona 3; Fiota Bay dropped out, Hatesei in at 21. Backup season_state.pkl.pre_w1. Viewer v134, Media Pool v43.
 NEXT: week 2 pick (Will Tech at Dietsche; Yrei Trobniy at North Hatesei; Central Stanton at Ciarralotta; Ranroman at Stanton; passed: Lornaman at Skeenerland State).
+
+## 2042 WEEK 2 played (Gameview: Will Tech at Dietsche) -- 2026-10-24
+Dietsche 28-13 over Will Tech (El-Najjar 203/3, Dhanaswamy 135 rush). #1 Central Stanton 26-10 at Ciarralotta. Upsets: Lornaman 41-21 over #2 Skeenerland State (Quickbear 335/3); Stanton 28-9 over #5 Ranroman;
+Verigon State 31-7 #13 Rogaela State; Costique 14-7 #11 Kaji Kita; Pistolheart 27-13 #22 Ciarralotta Tech; Fiota Bay 40-26 #25 Eternal Fox (Winswick 353/3, Verbourg 268/3); German Shores 37-28 #23 Verigon;
+North Hatesei 27-19 #17 Yrei Trobniy. 19 guest games, 2 guest wins (Peterhaus 31-10 East Costique; Southern Bay 20-17 Poland State). Poll: Central Stanton 1, Eona 2, UFNH 3, Ranroman State 4, Park Island 5;
+out: Ciarralotta Tech, Verigon, Eternal Fox. Backup season_state.pkl.pre_w2. Viewer v135, Media Pool v44.
+STANDING (Dan, 2042 wk 2): when giving Gameview candidates, also give detail on each: series (since 2025), last meetings, week-by-week results/leaders, coaches, long-term injuries, stakes and outlook.
+NEXT: week 3 pick.

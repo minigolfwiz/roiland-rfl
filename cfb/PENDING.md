@@ -3049,3 +3049,5 @@ Restored from GitHub; recovered marks_lib.js, regenerated the 2042 guest rosters
 ## 2042 WEEK 0 played (Gameview Natzumakis at Skylar Rose). NEXT: week 1 pick. See cfb_session_log.md.
 
 ## 2042 WEEK 1 played (Gameview Ranroman State at Crayellan). NEXT: week 2 pick.
+
+## 2042 WEEK 2 played (Gameview Will Tech at Dietsche). NEXT: week 3 pick.
