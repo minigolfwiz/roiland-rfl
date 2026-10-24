@@ -408,3 +408,7 @@ RYSKAMP TEN (auto, subset of the 20): Torrarini, Sierralonga, Althauer, Harirama
 WAITING on Dan's week 10 committee board; wk 11 candidates after install.
 WEEK 10 COMMITTEE BOARD INSTALLED (state/ballot_s17_w10.json): 1 Park Island, 2 Tasson, 3 UFNH, 4 Dietsche, 5 Diveo State, 6 Eona, 7 Pistolheart, 8 Ranroman State, 9 Diamond City, 10 UNN, 11 Stanton, 12 Fiota Bay, 13 Southern Tengus, 14 Ranroman, 15 Eastern State, 16 Hatesei, 17 Ekralund State, 18 Skeenerland State, 19 Far Farris State, 20 Rogaela State, 21 North Verigon, 22 Canesta State, 23 Hoganelle, 24 Lornaman, 25 Phangrine State. Out: Diveo, Antiragal State.
 Week 11 candidates: Pistolheart at Stanton; Costique at Diveo State; Verigon at UFNH; Eona at UN Ediville. NEXT: Dan's pick.
+
+## 2042 WEEK 11 played (Gameview: UN Steelbridge at Canesta State) -- 2026-10-24
+UN Steelbridge 24-21 #22 Canesta State (Viroviy 205 rush/2; Al-Dabbagh 302/1). UN Ediville 42-36 OT #6 Eona (Menssei 346/4; Iwasato 250 rec/4; Eastdale 395/3/3 INT). Stanton State 20-17 OT #9 Diamond City. Orlot 21-18 #10 UNN (Whitman 244 rec; Kingsworth 371). #7 Pistolheart 30-24 #11 Stanton at Stanton (Petroridis 270/2/2; Xusun 230 rec). Good River 37-28 #19 Far Farris State. Skeenerland 51-23 #23 Hoganelle (Krishnanathan 417/4; El-Fahim 270 rec/2). Southern Krobe 17-13 #25 Phangrine State. UFNH 34-21 Verigon. Diveo State 37-31 OT Costique. Guests 0-4 -> season 9-97.
+WAITING on Dan's week 11 board; wk 12 candidates after install.
