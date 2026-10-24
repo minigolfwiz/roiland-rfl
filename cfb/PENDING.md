@@ -3116,3 +3116,5 @@ RULE (Dan, 2042): semis always Copper-Steam, Lumber-Star or Redwood-501 from 204
 2042 PARITY OPTION FOUR TESTED (parity_cause_2042.md): spread NOT structurally compressing (sd 9.3 is the long-run norm; 2038-39 were the high outliers right after the restart, strength-prestige corr 0.83 -> 0.78); talent still follows prestige (0.944); minor leaks: portal flow to strong teams 0.52 -> 0.32, draft 210 -> 280 from 2040. Elite records still short of restart projection (top-5 mean L 1.6-3.4 vs 1.08; top-10 win% 79-82 vs ~90 real). Recommendation sent: sweep NOISE_SCALE + rivalry factor at ~10,000 games/setting before 2043; add parity monitor at wk8/wk14; no pipeline changes. NO ENGINE CHANGE MADE.
 
 ## 2042-43 OFFSEASON -- Stage 1 of 7 COMPLETE: coaching carousel (see cfb_session_log.md). NEXT: Stage 2, draft pool for the RFL (needs Dan).
+
+## 2042-43 OFFSEASON COMPLETE (all 7 stages). 2043 = season 18, next_week 0. NEXT: 2043 schedule, media pool s18, preseason. Standing: no week-14 guest games; parity_monitor at wk 8/14/post.

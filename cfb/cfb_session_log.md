@@ -505,3 +505,10 @@ Players rated 9.0+: 28 (post-draft). NEXT: Stage 6 roster finalisation.
 ## 2042-43 OFFSEASON -- Stage 6 of 7 COMPLETE: 2043 roster finalisation (2026-10-24)
 Backups state/{rosters,season_state}.pkl.pre_s18_rfinal. departed 2,784 | recruits added 2,490 | walkons 0 | floor fills 298 | trimmed 0 |
 rosters 63-69, total 9,874. No _leaving flags remain. Rollover (stage 7) pending.
+
+## 2042-43 OFFSEASON -- Stage 7 of 7 COMPLETE: rollover, 2042 closed and 2043 open (season 18) (2026-10-24)
+Backups state/{season_state,rosters,coaches,universe}.pkl.pre_s18_rollover. Classes Sr 1,965 | Jr 2,427 | So 2,505 | RS 189 | Fr 2,788 (Sr down from 2,461 in 2042: bigger 2043 draft exit plus a smaller junior class).
+456 staff records advanced. Records, polls, committee/media history reset; season_archive row '17' present (champion Eona); next_week 0.
+Preseason top 10: Skeenerland State 10.57, Kaji Kita 10.28, Rogaela State 10.14, Pistolheart 10.10, Eona 10.08, Kaji Daun, North Verigon, Dietsche, Eastern State, UFNH. Range 6.59-10.57.
+NEXT: 2043 schedule (non-conference hand-off -> Scheduling Office; conference office; no week-14 guest games), media pool redraw for s18 (carry-over rule), preseason.
+Parity: RIVALRY_GAP 0.70 is live from 2043; run parity_monitor.py at weeks 8 and 14 and post-season. Title site 2043 = Canesta (Kaji Daun).
