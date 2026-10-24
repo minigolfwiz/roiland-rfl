@@ -39,7 +39,8 @@ def main(out='/home/claude/cfb2/state/media_pool_view.json'):
     cur = [t for _r, t in (s.get("media_poll_current") or [])][:25]
     payload = {"season": season, "year": year, "voters": rows, "ballots": ballots, "composite": hist,
                "current": cur, "prev": [t for _r, t in (s.get("media_poll_prev") or [])][:25],
-               "prev_label": ("preseason" if len(s.get("media_history") or {}) <= 2 else "last week"),
+               "prev_label": ("preseason" if len(s.get("media_history") or {}) <= 2 else ("the week 14 poll" if s.get("media_final_key") else "last week")),
+               "final_key": s.get("media_final_key"),
                "points": s.get("media_points_current") or {}, "firsts": s.get("media_firsts_current") or {},
                "confs": list(U["tiers"]), "record": {t: [r["W"], r["L"]] for t, r in s["record"].items()},
                "colors": {t: U["team_colors"].get(t, ["#444", "#999"]) for t in U["teams"]}}

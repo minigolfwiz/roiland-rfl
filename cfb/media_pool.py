@@ -274,7 +274,7 @@ def team_components(s, db):
     h2h = []                                   # (winner, loser) this season, top-division pairs
     if played >= 1:
         for gid, b in db.items():
-            if not gid.startswith(pfx): continue
+            if not (gid.startswith(pfx) or gid.startswith("S%dCCG" % seas) or gid.startswith("S%dPO_" % seas)): continue
             h, a = b["home"], b["away"]; hw = b["home_score"] > b["away_score"]
             l = a if hw else h; w = h if hw else a
             if l not in rec: continue
@@ -291,9 +291,23 @@ def team_components(s, db):
             if w in rec and l in rk_now:
                 loss_pen[w] -= 12.0 if rk_now[l] <= 10 else 7.0
     lost_last = set()
+    final_mode = bool(s.get("_final_poll"))
+    champ_now = (s.get("history") or {}).get("champ", {}).get(year_now)
+    if final_mode:
+        order = {"CCG": 50, "PO_R1": 60, "PO_R2": 61, "PO_QF": 62, "PO_SF": 63, "PO_CHAMP": 64}
+        last_game = {}
+        for gid, b in db.items():
+            if not (gid.startswith("S%dCCG" % seas) or gid.startswith("S%dPO_" % seas)): continue
+            k = gid.split("_", 1)[0] if gid.startswith("S%dCCG" % seas) else "_".join(gid.split("_")[:2])
+            key = order.get(k.replace("S%d" % seas, ""), 0)
+            for tm in (b["home"], b["away"]):
+                if tm not in last_game or key > last_game[tm][0]: last_game[tm] = (key, b)
+        for tm, (_k, b) in last_game.items():
+            loser = b["away"] if b["home_score"] > b["away_score"] else b["home"]
+            if loser == tm: lost_last.add(tm)
     wk_pfx = None
     wks = [w for w, _g in (s.get("results") or [])]
-    if wks:
+    if wks and not final_mode:
         lw = max(wks)
         for w, gid in s["results"]:
             if w != lw: continue
@@ -317,6 +331,7 @@ def team_components(s, db):
                 avg = sum(losses_opp[t]) / max(1, len(losses_opp[t]))
                 cur += min(9, max(0, avg) * 0.6 + (prestige[t] - 55) * 0.10) * (FORGIVE_DECAY ** max(0, r["L"] - 1))
             if gp and r["W"] == 0 and prestige[t] < 60: cur -= 8
+
         # the mid-major darling: a lower-division programme off a big year. Without this
         # only two L6 teams drew a single vote in the 2040 preseason poll; real polls
         # carry three to six. Fades with the preseason weight like the other reputation
@@ -407,6 +422,11 @@ def compute_poll(s, db, seed=None):
     firsts = collections.Counter()
     for v in voters:
         top, sc = vote(v, comp, meta, consensus_prev, prevs.get(v["id"]), rng)
+        if s.get("_final_poll"):
+            # final poll, after the title game: the national champion is first on every ballot
+            _ch = ((s.get("history") or {}).get("champ", {}).get(2025 + season) or (None,))[0]
+            if _ch:
+                top = [_ch] + [x for x in top if x != _ch][:len(top) - 1]
         ballots[v["id"]] = top
         for i, t in enumerate(top): points[t] += PTS[i + 1]
         firsts[top[0]] += 1

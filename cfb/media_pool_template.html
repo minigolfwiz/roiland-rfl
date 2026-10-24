@@ -94,7 +94,7 @@ function board(){
 }
 /* ballot keys are the poll number: 0 is the preseason ballot, k is the one filed after
    week k-1. The matching composite is composite['pre'] for 0 and composite[k-1] after. */
-const wkLabel = k => k === 0 ? 'preseason' : 'after wk ' + (k - 1);
+const wkLabel = k => k === 0 ? 'preseason' : (k === DATA.final_key ? 'final poll' : 'after wk ' + (k - 1));
 function compositeFor(k){
   if (k === weeks[weeks.length-1]) return DATA.current;
   return (k === 0 ? DATA.composite['pre'] : DATA.composite[String(k - 1)]) || [];
