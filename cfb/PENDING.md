@@ -3093,3 +3093,5 @@ Restored from GitHub; recovered marks_lib.js, regenerated the 2042 guest rosters
 TODO (Dan): after the 2042 season, audit parity again (good teams losing too often). See cfb_session_log.md. Use parity_test.py / parity_ab.py; report first, forward-only fixes.
 
 QUEUED: post-season parity audit (Dan, wk 14) -- see OFFSEASON_TODO.md.
+
+2042 wk14 board installed; CCG preview shown. WAITING on Dan's go for ccg.py --commit.
