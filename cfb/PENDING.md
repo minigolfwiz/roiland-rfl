@@ -2992,3 +2992,9 @@ state/noncon_s17.json. P6 non-con mix: 67 of 78 are 1 power / 1 non-power / 1 gu
 6 filler: Ekralund State, Pistolheart, UN Ediville, Parchynt, Riveral, UFNH = 0 power/2 non-power/1 guest).
 Conference board built (export_conf_board: 12 conferences, 0 problems); Conference Office rebuilt for saves under conf/s17.
 REMINDER (Dan): once the schedule is completely built, tell him to start a new conversation.
+
+## 2042 non-conference board -- host repair (2026-10-23, Dan: power teams should rarely be on the road at non-power teams)
+Initial fill had 44 of 83 P6-vs-L6 games with the P6 team travelling. New fix_p6_hosting.py (local search over host flips on AUTO non-guest games; Dan's picks and locked rivalries untouched):
+P6 visiting L6 = 3, all-away = 10, all-home = 10 for L6 but only 0.5 for P6 (structural: 1 guest + 1 L6 + 1 P6 forces ~half of P6 to travel somewhere unless P6 may host all three).
+Result: 6 P6-at-L6 games remain (2 Dan's: Northlight@Starfield, Park Island@Marines; 4 auto: Ranroman@Chinolka, Harrell@Vaughn Bay, Central Stanton@Coachville College, Pistolheart@West Hatesei St).
+P6 non-con home counts: 3 home 37 | 2 home 39 | 1 home 2. L6: nobody all-home/all-away. Pre-fix file state/noncon_s17.json.pre_hostfix. Conference board rebuilt with new hosts.
