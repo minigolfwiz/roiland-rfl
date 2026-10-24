@@ -3042,3 +3042,6 @@ Not installed yet -- waiting for Dan's OK (install_hand_schedule.py --commit, th
 Dan's final Office save v589 (12:57 AM) -> convert_conf_db.py -> state/conf_sched_s17.json -> install_hand_schedule.py --commit (backup state/season_state.pkl.pre_s17_install).
 980 games (684 conference, 296 non-conference, 136 guests), audit CLEAN; week 0: 18 games; games by week 0-14: 18/79/71/69/68/66/67/68/65/65/67/65/61/69/82. 4 programmes with 4+ home/road runs (worst Natzumakis, 5 home).
 NEXT (new conversation, per Dan): media pool redraw for s17 (half same teams; no school >2 years in a row), preseason notes + page, then week 0.
+
+## 2042 PRESEASON -- 2026-10-24
+Restored from GitHub; recovered marks_lib.js, regenerated the 2042 guest rosters/staffs (names fresh), drew the s17 media pool, ran the preseason poll, wrote 25 notes, republished Preseason + Media Pool. Full entry in cfb_session_log.md. NEXT: Dan's week-0 Gameview pick, then week_cycle.py 0.

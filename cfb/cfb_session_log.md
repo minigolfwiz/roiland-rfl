@@ -321,3 +321,12 @@ Not installed yet -- waiting for Dan's OK (install_hand_schedule.py --commit, th
 Dan's final Office save v589 (12:57 AM) -> convert_conf_db.py -> state/conf_sched_s17.json -> install_hand_schedule.py --commit (backup state/season_state.pkl.pre_s17_install).
 980 games (684 conference, 296 non-conference, 136 guests), audit CLEAN; week 0: 18 games; games by week 0-14: 18/79/71/69/68/66/67/68/65/65/67/65/61/69/82. 4 programmes with 4+ home/road runs (worst Natzumakis, 5 home).
 NEXT (new conversation, per Dan): media pool redraw for s17 (half same teams; no school >2 years in a row), preseason notes + page, then week 0.
+
+## 2042 PRESEASON -- 2026-10-24 (new conversation, container wiped again)
+RESTORED from GitHub (minigolfwiz/roiland-rfl, cfb/): code + gz state + games_db parts; season 17, next_week 0, 980-game schedule installed. Two gaps found and closed:
+(1) marks_lib.js had never been committed (build_pages needs it) -- recovered verbatim from the published Roiland Preseason page and now in the repo.
+(2) state/sub_rosters.pkl.gz in the repo was the STALE 2041 guest set (the 2042 guests were generated at install after the last push) and sub_coaches.pkl was never committed. Regenerated the 2042 guest rosters + staffs from the install seed (20267000 = 17*1000+20250000; derive_attrs rng 909090): positions, classes, abilities, staff skills/ages/tenures are as at install; player and coach NAMES are fresh (the originals were unseeded and are gone; nothing had been played or shown). 136 guests, 7,208 players. Both now committed (state/sub_rosters.pkl.gz, state/sub_coaches.pkl.gz). Stale copies: *.pkl.stale_s16 (local only).
+Media pool s17 drawn by media_pool.make_pool (30 returning / 30 new, no school in all three of 2040-42). Preseason poll run: poll_update(seed=10000) -> media_history['pre'], media_ballots[0]. Backup state/season_state.pkl.pre_s17_preseason.
+Top 5: Central Stanton (31 firsts), Skylar Rose (26), Eona, Skeenerland State, Eastern State; Eternal Fox 23rd is the only L6 ballot team. 25 notes in state/preseason_notes.json (2041's kept as preseason_notes_s16.json), fact-checked against the log; no mascots/ratings. Roiland Preseason republished (v5), Media Pool (v41).
+Week 0 Gameview candidates printed: Skeenerland State at Cordelle; Natzumakis at Skylar Rose; Crayellan at North Verigon; VSSC at Rogaela State. NEXT: Dan picks -> `python3 week_cycle.py 0 <host>`.
+LESSON: commit every file the build needs (*.js, sub_coaches.pkl) and re-push sub_rosters/sub_coaches right after every install_hand_schedule --commit.
