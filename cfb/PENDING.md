@@ -3071,3 +3071,5 @@ Restored from GitHub; recovered marks_lib.js, regenerated the 2042 guest rosters
 2042 WEEK 9 played (Gameview Keeper at Diamond City). WAITING on Dan's week 9 board.
 
 2042 wk9 board installed. NEXT: wk 10 pick.
+
+2042 WEEK 10 played (Gameview Pistolheart at Eona). Ryskamp cut to ten. WAITING on wk 10 board.

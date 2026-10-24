@@ -401,3 +401,8 @@ Keeper 47-41 OT #5 Diamond City (DiStefano 480/3; Greenton 309 rec/2; Marettoni 
 WAITING on Dan's week 9 committee board (ballot_prep sheet given). Wk 10 candidates only after install.
 WEEK 9 COMMITTEE BOARD INSTALLED (state/ballot_s17_w9.json): 1 Park Island, 2 Ranroman State, 3 Stanton, 4 Tasson, 5 Pistolheart, 6 UFNH, 7 Dietsche, 8 Diveo State, 9 Eona, 10 Diamond City, 11 UNN, 12 Fiota Bay, 13 Diveo, 14 Southern Tengus, 15 Ranroman, 16 Eastern State, 17 Hatesei, 18 Ekralund State, 19 Skeenerland State, 20 Rogaela State, 21 Antiragal State, 22 North Verigon, 23 Canesta State, 24 Hoganelle, 25 Phangrine State. Out: Crayellan State, Crayellan.
 Week 10 candidates: Pistolheart at Eona; Ranroman State at UNN; Antiragal State at Ekralund State; Stanton at Central Stanton. NEXT: Dan's pick.
+
+## 2042 WEEK 10 played (Gameview: Pistolheart at Eona) -- 2026-10-24
+#9 Eona 21-19 #5 Pistolheart (Eastdale 289/2; Woolridge 130 rec; Clairlac hurt, 3 wks). #11 UNN 20-7 #2 Ranroman State (Kingsworth 355; Jorrovei 211/1/1). Central Stanton 47-14 #3 Stanton (Watanuki 263/3; Northgate 186 rec/2). Barhold 6-0 #13 Diveo. #18 Ekralund State 31-10 #21 Antiragal State (Kongiannis 3 INT). Park Island 41-28 at Kaji Kita State; Tasson 40-0 Krobe; UFNH 28-3 at Riveral; Dietsche 28-14; Diveo State 37-6; Diamond City 30-0 Waterloo. Guests 1-7 (Skeenerland East 41-34 at Hofferteltra) -> season guests 9-93.
+RYSKAMP TEN (auto, subset of the 20): Torrarini, Sierralonga, Althauer, Hariraman, Kingsworth, El-Najjar, U-Cheol, Kepu, Usoanua, Staledis.
+WAITING on Dan's week 10 committee board; wk 11 candidates after install.
