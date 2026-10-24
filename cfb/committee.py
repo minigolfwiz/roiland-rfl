@@ -78,7 +78,19 @@ def rotation_venue(season, rnd, high_seed_team, used):
     used.add(v["city"])
     return v
 def vdist(venue, team):
-    (x1, y1) = COORDS[venue["state"]]; (x2, y2) = COORDS[GEO[team]["state"]]
+    """Travel distance from a team's campus to a bowl's host city, on the map.
+
+    Dan, 2042: neutral sites go by SCHOOL distance, not state distance. Until then this
+    measured between state label positions, which put e.g. Tasson nearer Lumber than
+    Redwood although its campus is nearer Redwood. Falls back to the state label only if
+    a campus or city has no placement. Forward-only: games already played keep their sites.
+    """
+    cc = (E.U.get("city_coords") or {}).get("%s|%s" % (venue["city"], venue["state"]))
+    sc = (E.U.get("school_coords") or {}).get(team)
+    if cc and sc:
+        (x1, y1) = cc["xy"]; (x2, y2) = sc
+    else:
+        (x1, y1) = COORDS[venue["state"]]; (x2, y2) = COORDS[GEO[team]["state"]]
     return math.hypot(x2-x1, y2-y1)
 
 def assign_venue(high_seed_team, used):
