@@ -1,0 +1,533 @@
+<meta charset="utf-8"><title>RFL Schedule Office</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa%20Slab%20One&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ultra&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=New%20Rocker&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee%20Shade&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Graduate&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Metal%20Mania&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big%20Shoulders%20Display&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rozha%20One&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tilt%20Neon&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sancreek&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Monoton&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Original%20Surfer&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanalei%20Fill&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel%20Decorative&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Special%20Elite&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fontdiner%20Swanky&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black%20Ops%20One&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rye&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen%20Dots&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sigmar%20One&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik%20Gemstones&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Metamorphous&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Faster%20One&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sedgwick%20Ave%20Display&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frijole&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Piedra&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Uncial%20Antiqua&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oleo%20Script&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby%20One%20SC&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Trade%20Winds&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Knewave&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"><style>
+/* The Conference Office desk, rebuilt for the pro league: pick a division, pick a club,
+   and the twenty-week strip tells you where each of its 18 games can legally go. */
+:root{
+  --bg:#f1f4f6; --card:#ffffff; --fg:#15202a; --dim:#5a6a77; --rule:#d5dee5; --chip:#e7edf2;
+  --home:#2c6a4f; --road:#36608d; --accent:#1d3f6e; --good:#2c6a4f; --cut:#a83a32; --warn:#9a5c0c;
+  --n:#1f56b8; --n2:#6aa2ef; --w:#6f2c91; --w2:#b98ad6; --s:#b8322a; --s2:#ee8a79; --e:#0b7a62; --e2:#56c1a3;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --data:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e141a; --card:#16202a; --fg:#e7edf2; --dim:#93a4b2; --rule:#283542; --chip:#1f2b37;
+  --home:#73c49f; --road:#8db6e3; --accent:#9cc2f2; --good:#73c49f; --cut:#ec8a80; --warn:#e3a95a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e141a; --card:#16202a; --fg:#e7edf2; --dim:#93a4b2; --rule:#283542; --chip:#1f2b37;
+  --home:#73c49f; --road:#8db6e3; --accent:#9cc2f2; --good:#73c49f; --cut:#ec8a80; --warn:#e3a95a; color-scheme:dark}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.45;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:41;background:var(--bg)}
+.wrap{max-width:1380px;margin:0 auto}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--bg) 94%,transparent);
+  backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);padding-block:10px;margin-bottom:14px;display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+h1{font-family:var(--display);font-weight:800;font-size:24px;margin:0;letter-spacing:.01em}
+.yr{font-family:var(--display);font-weight:700;font-size:13px;color:var(--dim);letter-spacing:.14em;text-transform:uppercase}
+.spacer{flex:1 1 auto}
+.savestate{font-family:var(--data);font-size:11px;color:var(--dim)}
+.savestate.ok{color:var(--good)} .savestate.bad{color:var(--cut)} .savestate.dirty{color:var(--warn)}
+h2.sec{font-family:var(--display);font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);font-weight:700;
+  margin:20px 0 9px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;border-bottom:1px solid var(--rule);padding-bottom:5px}
+h2.sec em{font-style:normal;color:var(--fg);letter-spacing:0;text-transform:none;font-family:var(--body);font-weight:500;font-size:13.5px}
+button{font:inherit;cursor:pointer;color:inherit}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.tiny{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+  padding:4px 11px;border:1px solid var(--rule);background:var(--card);border-radius:999px}
+.tiny.primary{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.tiny.danger{color:var(--cut)}
+.note{font-size:13.5px;color:var(--dim);margin:8px 0 0;max-width:90ch}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0 0}
+.chipdot{display:inline-block;width:11px;height:11px;flex:none}
+.chipdot.R{border-radius:50%} .chipdot.M{transform:rotate(45deg) scale(.85);border-radius:2px}
+
+/* division picker */
+.confs{display:grid;gap:8px}
+.confrow{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.confrow > span{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.08em;text-transform:uppercase;width:84px;color:var(--dim)}
+.dbtn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--rule);background:var(--card);border-radius:8px;padding:6px 10px}
+.dbtn b{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.04em;text-transform:uppercase}
+.dbtn span{font-family:var(--data);font-size:10.5px;color:var(--dim)}
+.dbtn.done span{color:var(--good)} .dbtn.warn span{color:var(--warn)}
+.dbtn[aria-pressed="true"]{border-color:var(--fg);box-shadow:inset 0 0 0 1px var(--fg)}
+
+.cols{display:grid;grid-template-columns:250px minmax(0,1fr);gap:18px;align-items:start}
+@media (max-width:880px){.cols{grid-template-columns:minmax(0,1fr)}}
+.rail{border:1px solid var(--rule);border-radius:10px;background:var(--card);overflow:hidden}
+.trow{display:flex;gap:8px;align-items:center;padding:8px 10px;border:0;border-bottom:1px solid var(--rule);width:100%;text-align:left;background:none;border-left:3px solid transparent}
+.trow:last-child{border-bottom:none}
+.trow[aria-pressed="true"]{background:var(--chip);border-left-color:var(--fg)}
+.trow b{font-weight:600;font-size:14px;flex:1 1 auto;min-width:0}
+.pill{font-family:var(--data);font-size:10px;padding:1px 6px;border-radius:999px;border:1px solid var(--rule);color:var(--dim);white-space:nowrap}
+.pill.done{color:var(--good);border-color:color-mix(in srgb,var(--good) 45%,var(--rule))}
+.pill.bad{color:var(--cut);border-color:color-mix(in srgb,var(--cut) 45%,var(--rule))}
+
+/* week strip */
+.strip{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:5px}
+@media (max-width:1000px){.strip{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.wk{border:1px solid var(--rule);border-radius:7px;background:var(--card);padding:6px 6px;min-height:82px;display:flex;flex-direction:column;gap:3px;text-align:left;width:100%;min-width:0}
+.wk .wn{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.08em;color:var(--dim)}
+.wk .op{font-size:12.5px;font-weight:600;line-height:1.2;overflow-wrap:anywhere}
+.wk .vs{font-family:var(--data);font-size:9.5px;color:var(--dim)}
+.wk.bye{background:transparent;border-style:dashed}
+.wk.bye .op{color:var(--dim);font-weight:400;font-style:italic}
+.wk.game{background:color-mix(in srgb,var(--dc) 13%,var(--card));border:2px solid var(--dc)}
+.wk.away{border-style:dotted;border-width:3px;padding:5px 5px}
+.wk .vs b{color:var(--fg);font-weight:600}
+.wk.legal{border-color:var(--good);box-shadow:inset 0 0 0 1px var(--good)}
+.wk.illegal{opacity:.42}
+.wk .why{font-family:var(--data);font-size:9px;color:var(--cut);margin-top:auto}
+
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;gap:6px;align-items:baseline;border:1px solid var(--rule);background:var(--card);border-radius:7px;padding:5px 9px;font-size:13px}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip .hv{font-family:var(--data);font-size:9.5px;color:var(--dim)}
+.chip[aria-pressed="true"] .hv{color:inherit;opacity:.8}
+.chip.away{border-style:dotted;border-width:2px}
+.divico{vertical-align:-1px;margin-right:1px} .trow b .tm{max-width:100%} .wk .op .tm{font-size:11.5px;white-space:normal;line-height:1.25}
+
+.tm{display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;vertical-align:bottom;padding:1px 7px 1px 6px;border-radius:6px;border:1px solid rgba(0,0,0,.15);border-left:4px solid var(--ac);background:var(--bg);color:var(--fg);font-weight:600;white-space:nowrap;line-height:1.35}
+.tm.sm{font-size:.92em;padding:0 6px 0 5px;border-left-width:3px}
+.mk{display:inline-grid;vertical-align:middle;white-space:nowrap;line-height:1;font-weight:700;font-style:normal;text-transform:none;letter-spacing:.03em;padding:.12em .3em .2em;border-radius:.18em;background:var(--bg);border:3px solid var(--ac);color:var(--fg)}
+.mk .l{grid-area:1/1;display:block;font:inherit;font-weight:700;font-style:normal;text-transform:none;letter-spacing:inherit;line-height:1;color:inherit;background:none;padding:0;margin:0;border:0;text-shadow:none}
+.mk .halo{color:var(--halo);-webkit-text-stroke:calc(var(--sw) * 2 + 3px) var(--halo)}
+.mk .drop{transform:translateY(.07em)} .mk .drop:not(.halo){color:var(--ac);-webkit-text-stroke:calc(var(--sw) * 2) var(--ac)}
+.mk .edge{color:var(--ac);-webkit-text-stroke:calc(var(--sw) * 2) var(--ac)} .mk .fill{position:relative;color:var(--fg)}
+.mk.plain .halo,.mk.plain .edge,.mk.edge .halo,.mk.noshadow .drop{display:none}
+
+
+/* opponent sheet */
+.sheet{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+@media (max-width:760px){.sheet{grid-template-columns:minmax(0,1fr)}}
+.grp{border:1px solid var(--rule);border-radius:10px;background:var(--card);padding:10px 12px;min-width:0}
+.grp h3{margin:0 0 6px;font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase;display:flex;justify-content:space-between;gap:8px}
+.grp h3 small{font-family:var(--data);font-weight:400;font-size:10.5px;color:var(--dim);letter-spacing:0;text-transform:none}
+.grp ul{list-style:none;margin:0;padding:0;display:grid;gap:3px}
+.grp li{display:grid;grid-template-columns:44px 1fr auto;gap:8px;align-items:baseline;font-size:13.5px}
+.grp li .ha{font-family:var(--data);font-size:10.5px}
+.grp li .ha.h{color:var(--fg);font-weight:600} .grp li .ha.a{color:var(--dim)}
+.grp li .dv{display:inline-flex;align-items:center;gap:5px;color:var(--dim);font-size:12px;white-space:nowrap}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:10px;padding:8px 10px;background:var(--card)}
+.mx{border-collapse:collapse;font-family:var(--data);font-size:10.5px;width:100%}
+.mx th{font-weight:400;color:var(--dim);padding:3px 3px;text-align:center;border-bottom:1px solid var(--rule)}
+.mx th.tn{text-align:left;padding-right:8px;white-space:nowrap;font-family:var(--body);font-size:12.5px;color:var(--fg)}
+.mx td{text-align:center;padding:2px 3px;border-bottom:1px solid var(--rule);white-space:nowrap}
+.mx td.g{color:var(--fg);box-shadow:inset 3px 0 0 var(--dc);background:color-mix(in srgb,var(--dc) 10%,transparent)}
+.mx td.a{text-decoration:underline dotted 2px;text-underline-offset:3px} .mx td.b{color:var(--rule)}
+.issue{padding:5px 9px;border-left:3px solid;margin-bottom:4px;font-size:13.5px}
+.issue.err{border-color:var(--cut)} .issue.wrn{border-color:var(--warn)}
+#toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(14px);opacity:0;
+  background:var(--fg);color:var(--bg);padding:8px 14px;border-radius:7px;font-size:13.5px;pointer-events:none;transition:.18s;z-index:90}
+#toast.show{opacity:1;transform:translateX(-50%)}
+@media (prefers-reduced-motion:reduce){#toast{transition:none}}
+textarea{width:100%;min-height:90px;font-family:var(--data);font-size:11px;background:var(--card);color:var(--fg);border:1px solid var(--rule);border-radius:8px;padding:8px}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <h1>RFL Schedule Office</h1>
+  <span class="yr" id="yrline"></span>
+  <span class="spacer"></span>
+  <span class="savestate" id="savestate">starting…</span>
+</header>
+
+<div class="confs" id="picker"></div>
+<div id="summary"></div>
+<div class="cols">
+  <div><h2 class="sec">Clubs <em id="railcount"></em></h2><div class="rail" id="rail"></div></div>
+  <div id="main"></div>
+</div>
+<div id="sheet"></div>
+<div id="overview"></div>
+<div id="issues"></div>
+<h2 class="sec">Hand-off</h2>
+<p class="note">Copy this into the chat when you want me to install the season, or paste a saved one back in to restore it.</p>
+<textarea id="blob" readonly aria-label="Schedule hand-off"></textarea>
+<div class="bar">
+  <button class="tiny" id="copyBtn" type="button">Copy</button>
+  <button class="tiny" id="loadBtn" type="button">Paste one back in</button>
+  <button class="tiny" id="saveBtn" type="button">Save now</button>
+</div>
+</div>
+<div id="toast" role="status"></div>
+
+<script>
+const DATA = {"year":2043,"weeks":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],"byes":2,"games_per_team":18,"divisions":[{"conf":"Regal","div":"North","roster":["Sarkady Beavers","Crayellan Redwoods","Diveo Demons","Costique Bearcats","Billiataho Greats"]},{"conf":"Regal","div":"West","roster":["New Madrid Mastiffs","Holliday Beetles","Ediville Brass Tigers","Wolford Dragons","Eona Topcats"]},{"conf":"Regal","div":"South","roster":["Cordelle Raptors","Far Farris Raccoons","Hughes City Asteroids","Coachville Mastodons","Diamond City Hope"]},{"conf":"Regal","div":"East","roster":["Verigon Komodos","Classetto Cavemen","Fiota Swords","Tasson Thunderbugs","Purcell Rapids"]},{"conf":"Majestic","div":"North","roster":["El Latigo Shredders","Rogaela Rovers","Tengus City Terrors","Canesta Dales","Queensville Phenoms"]},{"conf":"Majestic","div":"West","roster":["Bruca Beach Hammerheads","Palm Creek Leatherbacks","Chapel Rock Crowns","Underwood Bats","North Hatesei Bees"]},{"conf":"Majestic","div":"South","roster":["Good River Rangers","Stamford Grays","Stanton City Conductors","San Saltadac Sea Lions","Lornaman Renegades"]},{"conf":"Majestic","div":"East","roster":["Vaughn Bay Silverbacks","Port Logan Commodores","Fiota Bay T-Rexes","South Burke Tsunami","Diamond City Dynamos"]}],"teams":{"Sarkady Beavers":{"conf":"Regal","div":"North","city":"Sarkady","state":"Barhold","stadium":"Bruinhawk Stadium","colors":{"primary":"#8fa9c2","secondary":"#1f4a5c","tertiary":"#e9eef2"},"font":"Alfa Slab One","wordmark":{"option":2,"bg":"#8fa9c2","fill":"#1f4a5c","accent":"#e9eef2","treatment":"plain"}},"Crayellan Redwoods":{"conf":"Regal","div":"North","city":"Kirkwood","state":"Crayellan","stadium":"Redwood Bowl","colors":{"primary":"#5e2a1f","secondary":"#c0392b","tertiary":"#8c4a3a"},"font":"Ultra","wordmark":{"option":2,"bg":"#5e2a1f","fill":"#c0392b","accent":"#8c4a3a","treatment":"halo"}},"Diveo Demons":{"conf":"Regal","div":"North","city":"Denning","state":"Diveo","stadium":"Air Memorial Stadium","colors":{"primary":"#1f3bb3","secondary":"#1b1a4f","tertiary":"#e23b46"},"font":"New Rocker","wordmark":{"option":2,"bg":"#1f3bb3","fill":"#1b1a4f","accent":"#e23b46","treatment":"halo"}},"Costique Bearcats":{"conf":"Regal","div":"North","city":"Marshfield","state":"Costique","stadium":"Standing Wolf Stadium","colors":{"primary":"#ff8c00","secondary":"#ff2a8a","tertiary":"#0b6fd6"},"font":"Bungee Shade","wordmark":{"option":3,"bg":"#0b6fd6","fill":"#ff8c00","accent":"#ff2a8a","treatment":"halo noshadow"}},"Billiataho Greats":{"conf":"Regal","div":"North","city":"Billiataho","state":"Roosevelt","stadium":"Copper Bowl","colors":{"primary":"#2f4a2e","secondary":"#ffffff","tertiary":null},"font":"Graduate","wordmark":{"option":3,"bg":"#788977","fill":"#ffffff","accent":"#2f4a2e","treatment":"plain"}},"El Latigo Shredders":{"conf":"Majestic","div":"North","city":"El Latigo","state":"Skeenerland","stadium":"New Skeenerland Stadium","colors":{"primary":"#58616b","secondary":"#9aa3ab","tertiary":"#7f9bbf"},"font":"Metal Mania","wordmark":{"option":2,"bg":"#58616b","fill":"#9aa3ab","accent":"#7f9bbf","treatment":"halo"}},"Rogaela Rovers":{"conf":"Majestic","div":"North","city":"Riverwake","state":"Rogaela","stadium":"Falls Fork Stadium","colors":{"primary":"#67819e","secondary":"#10251c","tertiary":null},"font":"Big Shoulders Display","wordmark":{"option":3,"bg":"#9cadc0","fill":"#10251c","accent":"#67819e","treatment":"plain"}},"Tengus City Terrors":{"conf":"Majestic","div":"North","city":"Tengus City","state":"Tengus","stadium":"Fort Gold Field","colors":{"primary":"#450a10","secondary":"#0a0a0a","tertiary":"#9b2230"},"font":"Nosifer","wordmark":{"option":1,"bg":"#0a0a0a","fill":"#450a10","accent":"#9b2230","treatment":"edge"}},"Canesta Dales":{"conf":"Majestic","div":"North","city":"Canesta","state":"Kaji Daun","stadium":"Hall Stadium","colors":{"primary":"#8fd3f4","secondary":"#ff3fa4","tertiary":"#ffffff"},"font":"Rozha One","wordmark":{"option":2,"bg":"#8fd3f4","fill":"#ff3fa4","accent":"#ffffff","treatment":"halo"}},"Queensville Phenoms":{"conf":"Majestic","div":"North","city":"Queensville","state":"Parchynt","stadium":"Valley of Fire Stadium","colors":{"primary":"#1a3fd1","secondary":"#e02a2a","tertiary":"#17a84d"},"font":"Shrikhand","wordmark":{"option":2,"bg":"#1a3fd1","fill":"#e02a2a","accent":"#17a84d","treatment":"edge"}},"New Madrid Mastiffs":{"conf":"Regal","div":"West","city":"New Madrid","state":"Antiragal","stadium":"Lily Field","colors":{"primary":"#7a3db8","secondary":"#d4a52a","tertiary":"#4a4f55"},"font":"Cinzel","wordmark":{"option":2,"bg":"#7a3db8","fill":"#d4a52a","accent":"#4a4f55","treatment":"halo noshadow"}},"Holliday Beetles":{"conf":"Regal","div":"West","city":"Holliday","state":"Natzumakis","stadium":"Jewel Field","colors":{"primary":"#39ff14","secondary":"#b026ff","tertiary":"#101410"},"font":"Tilt Neon","wordmark":{"option":1,"bg":"#b026ff","fill":"#39ff14","accent":"#101410","treatment":"plain"}},"Ediville Brass Tigers":{"conf":"Regal","div":"West","city":"Ediville","state":"Natzumakis","stadium":"Star Bowl","colors":{"primary":"#c47a1e","secondary":"#e0b84a","tertiary":"#0b0b0b"},"font":"Sancreek","wordmark":{"option":2,"bg":"#c47a1e","fill":"#e0b84a","accent":"#0b0b0b","treatment":"edge"}},"Wolford Dragons":{"conf":"Regal","div":"West","city":"Marymond","state":"Wolford","stadium":"One Wolford Stadium","colors":{"primary":"#4a1278","secondary":"#b3122e","tertiary":"#e8e4ee"},"font":"UnifrakturCook","wordmark":{"option":1,"bg":"#b3122e","fill":"#4a1278","accent":"#e8e4ee","treatment":"edge"}},"Eona Topcats":{"conf":"Regal","div":"West","city":"Perth","state":"Eona","stadium":"Cirque Pizon Stadium","colors":{"primary":"#141f3f","secondary":"#b8bec7","tertiary":"#9fb0c3"},"font":"Monoton","wordmark":{"option":3,"bg":"#9fb0c3","fill":"#141f3f","accent":"#b8bec7","treatment":"plain noshadow"}},"Bruca Beach Hammerheads":{"conf":"Majestic","div":"West","city":"Bruca Beach","state":"Natzumakis","stadium":"Tealcoat Stadium","colors":{"primary":"#1b9e9a","secondary":"#ffb27a","tertiary":"#fff4ea"},"font":"Original Surfer","wordmark":{"option":2,"bg":"#1b9e9a","fill":"#ffb27a","accent":"#fff4ea","treatment":"edge"}},"Palm Creek Leatherbacks":{"conf":"Majestic","div":"West","city":"Palm Creek","state":"Natzumakis","stadium":"Anders-Bach Stadium","colors":{"primary":"#2e7d5b","secondary":"#1f8a7a","tertiary":"#8ecae6"},"font":"Hanalei Fill","wordmark":{"option":2,"bg":"#2e7d5b","fill":"#1f8a7a","accent":"#8ecae6","treatment":"edge"}},"Chapel Rock Crowns":{"conf":"Majestic","div":"West","city":"Chapel Rock","state":"West Hatesei","stadium":"Smithy Stadium","colors":{"primary":"#6358d8","secondary":"#d4af37","tertiary":null},"font":"Cinzel Decorative","wordmark":{"option":3,"bg":"#9a92e6","fill":"#d4af37","accent":"#6358d8","treatment":"halo"}},"Underwood Bats":{"conf":"Majestic","div":"West","city":"Underwood","state":"Hatesei","stadium":"Junglerock Park","colors":{"primary":"#1e5bd6","secondary":"#3f7ff0","tertiary":"#ffffff"},"font":"Special Elite","wordmark":{"option":2,"bg":"#1e5bd6","fill":"#3f7ff0","accent":"#ffffff","treatment":"edge"}},"North Hatesei Bees":{"conf":"Majestic","div":"West","city":"Niana Vaw","state":"North Hatesei","stadium":"Heritage Field","colors":{"primary":"#9a4fd6","secondary":"#111111","tertiary":"#ffd400"},"font":"Fontdiner Swanky","wordmark":{"option":2,"bg":"#9a4fd6","fill":"#111111","accent":"#ffd400","treatment":"plain"}},"Cordelle Raptors":{"conf":"Regal","div":"South","city":"Cordelle","state":"Natzumakis","stadium":"Air Guard Station","colors":{"primary":"#c8102e","secondary":"#fff0f2","tertiary":"#5a6b3c"},"font":"Black Ops One","wordmark":{"option":2,"bg":"#c8102e","fill":"#fff0f2","accent":"#5a6b3c","treatment":"plain noshadow"}},"Far Farris Raccoons":{"conf":"Regal","div":"South","city":"Thurmond","state":"Far Farris","stadium":"The Wheat Field","colors":{"primary":"#d9a441","secondary":"#6e6e73","tertiary":"#f2c766"},"font":"Rye","wordmark":{"option":2,"bg":"#d9a441","fill":"#6e6e73","accent":"#f2c766","treatment":"halo noshadow"}},"Hughes City Asteroids":{"conf":"Regal","div":"South","city":"Hughes City","state":"South Antiragal","stadium":"Calvin Field","colors":{"primary":"#ff6a1f","secondary":"#8c6a4f","tertiary":"#1b2a4a"},"font":"Zen Dots","wordmark":{"option":1,"bg":"#8c6a4f","fill":"#ff6a1f","accent":"#1b2a4a","treatment":"edge"}},"Coachville Mastodons":{"conf":"Regal","div":"South","city":"Coachville","state":"Stanton","stadium":"Steam Bowl","colors":{"primary":"#7a1f33","secondary":"#d81e3a","tertiary":"#f5efe6"},"font":"Sigmar One","wordmark":{"option":2,"bg":"#7a1f33","fill":"#d81e3a","accent":"#f5efe6","treatment":"edge"}},"Diamond City Hope":{"conf":"Regal","div":"South","city":"Bandagabny","state":"Phangrine","stadium":"Roiland National Stadium","colors":{"primary":"#2f8fe6","secondary":"#e6f3fb","tertiary":null},"font":"Rubik Gemstones","wordmark":{"option":3,"bg":"#78b6ef","fill":"#e6f3fb","accent":"#2f8fe6","treatment":"halo"}},"Good River Rangers":{"conf":"Majestic","div":"South","city":"Good River","state":"Ranroman","stadium":"High Mountain Stadium","colors":{"primary":"#ee8a79","secondary":"#b8322a","tertiary":null},"font":"Metamorphous","wordmark":{"option":1,"bg":"#b8322a","fill":"#ee8a79","accent":"#111111","treatment":"edge"}},"Stamford Grays":{"conf":"Majestic","div":"South","city":"Stamford","state":"Ciarralotta","stadium":"501 Bowl","colors":{"primary":"#f2c500","secondary":"#3b4149","tertiary":"#c7ccd1"},"font":"Faster One","wordmark":{"option":2,"bg":"#f2c500","fill":"#3b4149","accent":"#c7ccd1","treatment":"plain noshadow"}},"Stanton City Conductors":{"conf":"Majestic","div":"South","city":"Stanton City","state":"Stanton","stadium":"Steel Rail Stadium","colors":{"primary":"#f5a3b0","secondary":"#f3cf4a","tertiary":"#111111"},"font":"Bungee","wordmark":{"option":2,"bg":"#f5a3b0","fill":"#f3cf4a","accent":"#111111","treatment":"edge"}},"San Saltadac Sea Lions":{"conf":"Majestic","div":"South","city":"San Saltadac","state":"Orlot","stadium":"Leviathan Stadium","colors":{"primary":"#a86f5c","secondary":"#5c3a2e","tertiary":"#f3ece2"},"font":"Pacifico","wordmark":{"option":2,"bg":"#a86f5c","fill":"#5c3a2e","accent":"#f3ece2","treatment":"edge"}},"Lornaman Renegades":{"conf":"Majestic","div":"South","city":"Lornaman","state":"Ekralund","stadium":"Red Court Stadium","colors":{"primary":"#d9441a","secondary":"#111111","tertiary":null},"font":"Sedgwick Ave Display","wordmark":{"option":3,"bg":"#e6856a","fill":"#111111","accent":"#d9441a","treatment":"plain"}},"Verigon Komodos":{"conf":"Regal","div":"East","city":"Verigon City","state":"Verigon","stadium":"Usha Field","colors":{"primary":"#1f6b3a","secondary":"#6b8f3a","tertiary":"#d9c89b"},"font":"Frijole","wordmark":{"option":3,"bg":"#d9c89b","fill":"#1f6b3a","accent":"#6b8f3a","treatment":"plain"}},"Classetto Cavemen":{"conf":"Regal","div":"East","city":"Classetto","state":"Harrell","stadium":"Foremaster Stadium","colors":{"primary":"#7a4a1e","secondary":"#c77a2a","tertiary":"#587a8f"},"font":"Piedra","wordmark":{"option":2,"bg":"#7a4a1e","fill":"#c77a2a","accent":"#587a8f","treatment":"halo"}},"Fiota Swords":{"conf":"Regal","div":"East","city":"Nelson Heights","state":"Fiota","stadium":"Castlepine Stadium","colors":{"primary":"#2e2a7a","secondary":"#7b3fbf","tertiary":"#ffffff"},"font":"Uncial Antiqua","wordmark":{"option":1,"bg":"#7b3fbf","fill":"#2e2a7a","accent":"#ffffff","treatment":"edge"}},"Tasson Thunderbugs":{"conf":"Regal","div":"East","city":"Gunterburg","state":"Tasson","stadium":"Williams Field","colors":{"primary":"#4ddb3a","secondary":"#a89a2a","tertiary":"#1e4d1e"},"font":"Audiowide","wordmark":{"option":2,"bg":"#4ddb3a","fill":"#a89a2a","accent":"#1e4d1e","treatment":"edge"}},"Purcell Rapids":{"conf":"Regal","div":"East","city":"Purcell","state":"Antiragal","stadium":"Elm & Poplar Stadium","colors":{"primary":"#2a6fa8","secondary":"#2f9d8a","tertiary":"#dbe9f1"},"font":"Oleo Script","wordmark":{"option":3,"bg":"#dbe9f1","fill":"#2a6fa8","accent":"#2f9d8a","treatment":"plain"}},"Vaughn Bay Silverbacks":{"conf":"Majestic","div":"East","city":"Charlesville","state":"Vaughn Bay","stadium":"The Quarry","colors":{"primary":"#141414","secondary":"#32cd32","tertiary":"#bfc5cc"},"font":"Bowlby One SC","wordmark":{"option":1,"bg":"#32cd32","fill":"#141414","accent":"#bfc5cc","treatment":"plain noshadow"}},"Port Logan Commodores":{"conf":"Majestic","div":"East","city":"Port Logan","state":"Fiota","stadium":"Lumber Bowl","colors":{"primary":"#c9b38a","secondary":"#b5c98a","tertiary":"#1c1c1c"},"font":"Trade Winds","wordmark":{"option":2,"bg":"#c9b38a","fill":"#b5c98a","accent":"#1c1c1c","treatment":"edge"}},"Fiota Bay T-Rexes":{"conf":"Majestic","div":"East","city":"Fiota Bay","state":"Fiota","stadium":"Prehistoria Stadium","colors":{"primary":"#5c9a3a","secondary":"#e8b830","tertiary":"#c1121f"},"font":"Bangers","wordmark":{"option":2,"bg":"#5c9a3a","fill":"#e8b830","accent":"#c1121f","treatment":"halo"}},"South Burke Tsunami":{"conf":"Majestic","div":"East","city":"Burke Bay","state":"Dove Island","stadium":"Almond Field","colors":{"primary":"#0e4b5a","secondary":"#d6f2ee","tertiary":"#a8927a"},"font":"Knewave","wordmark":{"option":2,"bg":"#0e4b5a","fill":"#d6f2ee","accent":"#a8927a","treatment":"plain"}},"Diamond City Dynamos":{"conf":"Majestic","div":"East","city":"Diamond City","state":"Phangrine","stadium":"Speed of Light Stadium","colors":{"primary":"#e8465a","secondary":"#4fc3f7","tertiary":"#ffffff"},"font":"Righteous","wordmark":{"option":3,"bg":"#ffffff","fill":"#e8465a","accent":"#4fc3f7","treatment":"plain"}}},"games":[{"id":"G0","host":"Sarkady Beavers","visitor":"Crayellan Redwoods","kind":"division"},{"id":"G1","host":"Sarkady Beavers","visitor":"Diveo Demons","kind":"division"},{"id":"G2","host":"Sarkady Beavers","visitor":"Costique Bearcats","kind":"division"},{"id":"G3","host":"Sarkady Beavers","visitor":"Billiataho Greats","kind":"division"},{"id":"G4","host":"Crayellan Redwoods","visitor":"Sarkady Beavers","kind":"division"},{"id":"G5","host":"Crayellan Redwoods","visitor":"Diveo Demons","kind":"division"},{"id":"G6","host":"Crayellan Redwoods","visitor":"Costique Bearcats","kind":"division"},{"id":"G7","host":"Crayellan Redwoods","visitor":"Billiataho Greats","kind":"division"},{"id":"G8","host":"Diveo Demons","visitor":"Sarkady Beavers","kind":"division"},{"id":"G9","host":"Diveo Demons","visitor":"Crayellan Redwoods","kind":"division"},{"id":"G10","host":"Diveo Demons","visitor":"Costique Bearcats","kind":"division"},{"id":"G11","host":"Diveo Demons","visitor":"Billiataho Greats","kind":"division"},{"id":"G12","host":"Costique Bearcats","visitor":"Sarkady Beavers","kind":"division"},{"id":"G13","host":"Costique Bearcats","visitor":"Crayellan Redwoods","kind":"division"},{"id":"G14","host":"Costique Bearcats","visitor":"Diveo Demons","kind":"division"},{"id":"G15","host":"Costique Bearcats","visitor":"Billiataho Greats","kind":"division"},{"id":"G16","host":"Billiataho Greats","visitor":"Sarkady Beavers","kind":"division"},{"id":"G17","host":"Billiataho Greats","visitor":"Crayellan Redwoods","kind":"division"},{"id":"G18","host":"Billiataho Greats","visitor":"Diveo Demons","kind":"division"},{"id":"G19","host":"Billiataho Greats","visitor":"Costique Bearcats","kind":"division"},{"id":"G20","host":"New Madrid Mastiffs","visitor":"Holliday Beetles","kind":"division"},{"id":"G21","host":"New Madrid Mastiffs","visitor":"Ediville Brass Tigers","kind":"division"},{"id":"G22","host":"New Madrid Mastiffs","visitor":"Wolford Dragons","kind":"division"},{"id":"G23","host":"New Madrid Mastiffs","visitor":"Eona Topcats","kind":"division"},{"id":"G24","host":"Holliday Beetles","visitor":"New Madrid Mastiffs","kind":"division"},{"id":"G25","host":"Holliday Beetles","visitor":"Ediville Brass Tigers","kind":"division"},{"id":"G26","host":"Holliday Beetles","visitor":"Wolford Dragons","kind":"division"},{"id":"G27","host":"Holliday Beetles","visitor":"Eona Topcats","kind":"division"},{"id":"G28","host":"Ediville Brass Tigers","visitor":"New Madrid Mastiffs","kind":"division"},{"id":"G29","host":"Ediville Brass Tigers","visitor":"Holliday Beetles","kind":"division"},{"id":"G30","host":"Ediville Brass Tigers","visitor":"Wolford Dragons","kind":"division"},{"id":"G31","host":"Ediville Brass Tigers","visitor":"Eona Topcats","kind":"division"},{"id":"G32","host":"Wolford Dragons","visitor":"New Madrid Mastiffs","kind":"division"},{"id":"G33","host":"Wolford Dragons","visitor":"Holliday Beetles","kind":"division"},{"id":"G34","host":"Wolford Dragons","visitor":"Ediville Brass Tigers","kind":"division"},{"id":"G35","host":"Wolford Dragons","visitor":"Eona Topcats","kind":"division"},{"id":"G36","host":"Eona Topcats","visitor":"New Madrid Mastiffs","kind":"division"},{"id":"G37","host":"Eona Topcats","visitor":"Holliday Beetles","kind":"division"},{"id":"G38","host":"Eona Topcats","visitor":"Ediville Brass Tigers","kind":"division"},{"id":"G39","host":"Eona Topcats","visitor":"Wolford Dragons","kind":"division"},{"id":"G40","host":"Cordelle Raptors","visitor":"Far Farris Raccoons","kind":"division"},{"id":"G41","host":"Cordelle Raptors","visitor":"Hughes City Asteroids","kind":"division"},{"id":"G42","host":"Cordelle Raptors","visitor":"Coachville Mastodons","kind":"division"},{"id":"G43","host":"Cordelle Raptors","visitor":"Diamond City Hope","kind":"division"},{"id":"G44","host":"Far Farris Raccoons","visitor":"Cordelle Raptors","kind":"division"},{"id":"G45","host":"Far Farris Raccoons","visitor":"Hughes City Asteroids","kind":"division"},{"id":"G46","host":"Far Farris Raccoons","visitor":"Coachville Mastodons","kind":"division"},{"id":"G47","host":"Far Farris Raccoons","visitor":"Diamond City Hope","kind":"division"},{"id":"G48","host":"Hughes City Asteroids","visitor":"Cordelle Raptors","kind":"division"},{"id":"G49","host":"Hughes City Asteroids","visitor":"Far Farris Raccoons","kind":"division"},{"id":"G50","host":"Hughes City Asteroids","visitor":"Coachville Mastodons","kind":"division"},{"id":"G51","host":"Hughes City Asteroids","visitor":"Diamond City Hope","kind":"division"},{"id":"G52","host":"Coachville Mastodons","visitor":"Cordelle Raptors","kind":"division"},{"id":"G53","host":"Coachville Mastodons","visitor":"Far Farris Raccoons","kind":"division"},{"id":"G54","host":"Coachville Mastodons","visitor":"Hughes City Asteroids","kind":"division"},{"id":"G55","host":"Coachville Mastodons","visitor":"Diamond City Hope","kind":"division"},{"id":"G56","host":"Diamond City Hope","visitor":"Cordelle Raptors","kind":"division"},{"id":"G57","host":"Diamond City Hope","visitor":"Far Farris Raccoons","kind":"division"},{"id":"G58","host":"Diamond City Hope","visitor":"Hughes City Asteroids","kind":"division"},{"id":"G59","host":"Diamond City Hope","visitor":"Coachville Mastodons","kind":"division"},{"id":"G60","host":"Verigon Komodos","visitor":"Classetto Cavemen","kind":"division"},{"id":"G61","host":"Verigon Komodos","visitor":"Fiota Swords","kind":"division"},{"id":"G62","host":"Verigon Komodos","visitor":"Tasson Thunderbugs","kind":"division"},{"id":"G63","host":"Verigon Komodos","visitor":"Purcell Rapids","kind":"division"},{"id":"G64","host":"Classetto Cavemen","visitor":"Verigon Komodos","kind":"division"},{"id":"G65","host":"Classetto Cavemen","visitor":"Fiota Swords","kind":"division"},{"id":"G66","host":"Classetto Cavemen","visitor":"Tasson Thunderbugs","kind":"division"},{"id":"G67","host":"Classetto Cavemen","visitor":"Purcell Rapids","kind":"division"},{"id":"G68","host":"Fiota Swords","visitor":"Verigon Komodos","kind":"division"},{"id":"G69","host":"Fiota Swords","visitor":"Classetto Cavemen","kind":"division"},{"id":"G70","host":"Fiota Swords","visitor":"Tasson Thunderbugs","kind":"division"},{"id":"G71","host":"Fiota Swords","visitor":"Purcell Rapids","kind":"division"},{"id":"G72","host":"Tasson Thunderbugs","visitor":"Verigon Komodos","kind":"division"},{"id":"G73","host":"Tasson Thunderbugs","visitor":"Classetto Cavemen","kind":"division"},{"id":"G74","host":"Tasson Thunderbugs","visitor":"Fiota Swords","kind":"division"},{"id":"G75","host":"Tasson Thunderbugs","visitor":"Purcell Rapids","kind":"division"},{"id":"G76","host":"Purcell Rapids","visitor":"Verigon Komodos","kind":"division"},{"id":"G77","host":"Purcell Rapids","visitor":"Classetto Cavemen","kind":"division"},{"id":"G78","host":"Purcell Rapids","visitor":"Fiota Swords","kind":"division"},{"id":"G79","host":"Purcell Rapids","visitor":"Tasson Thunderbugs","kind":"division"},{"id":"G80","host":"Sarkady Beavers","visitor":"Ediville Brass Tigers","kind":"conference"},{"id":"G81","host":"Wolford Dragons","visitor":"Sarkady Beavers","kind":"conference"},{"id":"G82","host":"Crayellan Redwoods","visitor":"Wolford Dragons","kind":"conference"},{"id":"G83","host":"Eona Topcats","visitor":"Crayellan Redwoods","kind":"conference"},{"id":"G84","host":"Diveo Demons","visitor":"Eona Topcats","kind":"conference"},{"id":"G85","host":"New Madrid Mastiffs","visitor":"Diveo Demons","kind":"conference"},{"id":"G86","host":"Costique Bearcats","visitor":"New Madrid Mastiffs","kind":"conference"},{"id":"G87","host":"Holliday Beetles","visitor":"Costique Bearcats","kind":"conference"},{"id":"G88","host":"Billiataho Greats","visitor":"Holliday Beetles","kind":"conference"},{"id":"G89","host":"Ediville Brass Tigers","visitor":"Billiataho Greats","kind":"conference"},{"id":"G90","host":"Sarkady Beavers","visitor":"Coachville Mastodons","kind":"conference"},{"id":"G91","host":"Diamond City Hope","visitor":"Sarkady Beavers","kind":"conference"},{"id":"G92","host":"Crayellan Redwoods","visitor":"Diamond City Hope","kind":"conference"},{"id":"G93","host":"Cordelle Raptors","visitor":"Crayellan Redwoods","kind":"conference"},{"id":"G94","host":"Diveo Demons","visitor":"Cordelle Raptors","kind":"conference"},{"id":"G95","host":"Far Farris Raccoons","visitor":"Diveo Demons","kind":"conference"},{"id":"G96","host":"Costique Bearcats","visitor":"Far Farris Raccoons","kind":"conference"},{"id":"G97","host":"Hughes City Asteroids","visitor":"Costique Bearcats","kind":"conference"},{"id":"G98","host":"Billiataho Greats","visitor":"Hughes City Asteroids","kind":"conference"},{"id":"G99","host":"Coachville Mastodons","visitor":"Billiataho Greats","kind":"conference"},{"id":"G100","host":"Sarkady Beavers","visitor":"Purcell Rapids","kind":"conference"},{"id":"G101","host":"Verigon Komodos","visitor":"Sarkady Beavers","kind":"conference"},{"id":"G102","host":"Crayellan Redwoods","visitor":"Verigon Komodos","kind":"conference"},{"id":"G103","host":"Classetto Cavemen","visitor":"Crayellan Redwoods","kind":"conference"},{"id":"G104","host":"Diveo Demons","visitor":"Classetto Cavemen","kind":"conference"},{"id":"G105","host":"Fiota Swords","visitor":"Diveo Demons","kind":"conference"},{"id":"G106","host":"Costique Bearcats","visitor":"Fiota Swords","kind":"conference"},{"id":"G107","host":"Tasson Thunderbugs","visitor":"Costique Bearcats","kind":"conference"},{"id":"G108","host":"Billiataho Greats","visitor":"Tasson Thunderbugs","kind":"conference"},{"id":"G109","host":"Purcell Rapids","visitor":"Billiataho Greats","kind":"conference"},{"id":"G110","host":"New Madrid Mastiffs","visitor":"Cordelle Raptors","kind":"conference"},{"id":"G111","host":"Far Farris Raccoons","visitor":"New Madrid Mastiffs","kind":"conference"},{"id":"G112","host":"Holliday Beetles","visitor":"Far Farris Raccoons","kind":"conference"},{"id":"G113","host":"Hughes City Asteroids","visitor":"Holliday Beetles","kind":"conference"},{"id":"G114","host":"Ediville Brass Tigers","visitor":"Hughes City Asteroids","kind":"conference"},{"id":"G115","host":"Coachville Mastodons","visitor":"Ediville Brass Tigers","kind":"conference"},{"id":"G116","host":"Wolford Dragons","visitor":"Coachville Mastodons","kind":"conference"},{"id":"G117","host":"Diamond City Hope","visitor":"Wolford Dragons","kind":"conference"},{"id":"G118","host":"Eona Topcats","visitor":"Diamond City Hope","kind":"conference"},{"id":"G119","host":"Cordelle Raptors","visitor":"Eona Topcats","kind":"conference"},{"id":"G120","host":"New Madrid Mastiffs","visitor":"Classetto Cavemen","kind":"conference"},{"id":"G121","host":"Fiota Swords","visitor":"New Madrid Mastiffs","kind":"conference"},{"id":"G122","host":"Holliday Beetles","visitor":"Fiota Swords","kind":"conference"},{"id":"G123","host":"Tasson Thunderbugs","visitor":"Holliday Beetles","kind":"conference"},{"id":"G124","host":"Ediville Brass Tigers","visitor":"Tasson Thunderbugs","kind":"conference"},{"id":"G125","host":"Purcell Rapids","visitor":"Ediville Brass Tigers","kind":"conference"},{"id":"G126","host":"Wolford Dragons","visitor":"Purcell Rapids","kind":"conference"},{"id":"G127","host":"Verigon Komodos","visitor":"Wolford Dragons","kind":"conference"},{"id":"G128","host":"Eona Topcats","visitor":"Verigon Komodos","kind":"conference"},{"id":"G129","host":"Classetto Cavemen","visitor":"Eona Topcats","kind":"conference"},{"id":"G130","host":"Cordelle Raptors","visitor":"Fiota Swords","kind":"conference"},{"id":"G131","host":"Tasson Thunderbugs","visitor":"Cordelle Raptors","kind":"conference"},{"id":"G132","host":"Far Farris Raccoons","visitor":"Tasson Thunderbugs","kind":"conference"},{"id":"G133","host":"Purcell Rapids","visitor":"Far Farris Raccoons","kind":"conference"},{"id":"G134","host":"Hughes City Asteroids","visitor":"Purcell Rapids","kind":"conference"},{"id":"G135","host":"Verigon Komodos","visitor":"Hughes City Asteroids","kind":"conference"},{"id":"G136","host":"Coachville Mastodons","visitor":"Verigon Komodos","kind":"conference"},{"id":"G137","host":"Classetto Cavemen","visitor":"Coachville Mastodons","kind":"conference"},{"id":"G138","host":"Diamond City Hope","visitor":"Classetto Cavemen","kind":"conference"},{"id":"G139","host":"Fiota Swords","visitor":"Diamond City Hope","kind":"conference"},{"id":"G140","host":"El Latigo Shredders","visitor":"Rogaela Rovers","kind":"division"},{"id":"G141","host":"El Latigo Shredders","visitor":"Tengus City Terrors","kind":"division"},{"id":"G142","host":"El Latigo Shredders","visitor":"Canesta Dales","kind":"division"},{"id":"G143","host":"El Latigo Shredders","visitor":"Queensville Phenoms","kind":"division"},{"id":"G144","host":"Rogaela Rovers","visitor":"El Latigo Shredders","kind":"division"},{"id":"G145","host":"Rogaela Rovers","visitor":"Tengus City Terrors","kind":"division"},{"id":"G146","host":"Rogaela Rovers","visitor":"Canesta Dales","kind":"division"},{"id":"G147","host":"Rogaela Rovers","visitor":"Queensville Phenoms","kind":"division"},{"id":"G148","host":"Tengus City Terrors","visitor":"El Latigo Shredders","kind":"division"},{"id":"G149","host":"Tengus City Terrors","visitor":"Rogaela Rovers","kind":"division"},{"id":"G150","host":"Tengus City Terrors","visitor":"Canesta Dales","kind":"division"},{"id":"G151","host":"Tengus City Terrors","visitor":"Queensville Phenoms","kind":"division"},{"id":"G152","host":"Canesta Dales","visitor":"El Latigo Shredders","kind":"division"},{"id":"G153","host":"Canesta Dales","visitor":"Rogaela Rovers","kind":"division"},{"id":"G154","host":"Canesta Dales","visitor":"Tengus City Terrors","kind":"division"},{"id":"G155","host":"Canesta Dales","visitor":"Queensville Phenoms","kind":"division"},{"id":"G156","host":"Queensville Phenoms","visitor":"El Latigo Shredders","kind":"division"},{"id":"G157","host":"Queensville Phenoms","visitor":"Rogaela Rovers","kind":"division"},{"id":"G158","host":"Queensville Phenoms","visitor":"Tengus City Terrors","kind":"division"},{"id":"G159","host":"Queensville Phenoms","visitor":"Canesta Dales","kind":"division"},{"id":"G160","host":"Bruca Beach Hammerheads","visitor":"Palm Creek Leatherbacks","kind":"division"},{"id":"G161","host":"Bruca Beach Hammerheads","visitor":"Chapel Rock Crowns","kind":"division"},{"id":"G162","host":"Bruca Beach Hammerheads","visitor":"Underwood Bats","kind":"division"},{"id":"G163","host":"Bruca Beach Hammerheads","visitor":"North Hatesei Bees","kind":"division"},{"id":"G164","host":"Palm Creek Leatherbacks","visitor":"Bruca Beach Hammerheads","kind":"division"},{"id":"G165","host":"Palm Creek Leatherbacks","visitor":"Chapel Rock Crowns","kind":"division"},{"id":"G166","host":"Palm Creek Leatherbacks","visitor":"Underwood Bats","kind":"division"},{"id":"G167","host":"Palm Creek Leatherbacks","visitor":"North Hatesei Bees","kind":"division"},{"id":"G168","host":"Chapel Rock Crowns","visitor":"Bruca Beach Hammerheads","kind":"division"},{"id":"G169","host":"Chapel Rock Crowns","visitor":"Palm Creek Leatherbacks","kind":"division"},{"id":"G170","host":"Chapel Rock Crowns","visitor":"Underwood Bats","kind":"division"},{"id":"G171","host":"Chapel Rock Crowns","visitor":"North Hatesei Bees","kind":"division"},{"id":"G172","host":"Underwood Bats","visitor":"Bruca Beach Hammerheads","kind":"division"},{"id":"G173","host":"Underwood Bats","visitor":"Palm Creek Leatherbacks","kind":"division"},{"id":"G174","host":"Underwood Bats","visitor":"Chapel Rock Crowns","kind":"division"},{"id":"G175","host":"Underwood Bats","visitor":"North Hatesei Bees","kind":"division"},{"id":"G176","host":"North Hatesei Bees","visitor":"Bruca Beach Hammerheads","kind":"division"},{"id":"G177","host":"North Hatesei Bees","visitor":"Palm Creek Leatherbacks","kind":"division"},{"id":"G178","host":"North Hatesei Bees","visitor":"Chapel Rock Crowns","kind":"division"},{"id":"G179","host":"North Hatesei Bees","visitor":"Underwood Bats","kind":"division"},{"id":"G180","host":"Good River Rangers","visitor":"Stamford Grays","kind":"division"},{"id":"G181","host":"Good River Rangers","visitor":"Stanton City Conductors","kind":"division"},{"id":"G182","host":"Good River Rangers","visitor":"San Saltadac Sea Lions","kind":"division"},{"id":"G183","host":"Good River Rangers","visitor":"Lornaman Renegades","kind":"division"},{"id":"G184","host":"Stamford Grays","visitor":"Good River Rangers","kind":"division"},{"id":"G185","host":"Stamford Grays","visitor":"Stanton City Conductors","kind":"division"},{"id":"G186","host":"Stamford Grays","visitor":"San Saltadac Sea Lions","kind":"division"},{"id":"G187","host":"Stamford Grays","visitor":"Lornaman Renegades","kind":"division"},{"id":"G188","host":"Stanton City Conductors","visitor":"Good River Rangers","kind":"division"},{"id":"G189","host":"Stanton City Conductors","visitor":"Stamford Grays","kind":"division"},{"id":"G190","host":"Stanton City Conductors","visitor":"San Saltadac Sea Lions","kind":"division"},{"id":"G191","host":"Stanton City Conductors","visitor":"Lornaman Renegades","kind":"division"},{"id":"G192","host":"San Saltadac Sea Lions","visitor":"Good River Rangers","kind":"division"},{"id":"G193","host":"San Saltadac Sea Lions","visitor":"Stamford Grays","kind":"division"},{"id":"G194","host":"San Saltadac Sea Lions","visitor":"Stanton City Conductors","kind":"division"},{"id":"G195","host":"San Saltadac Sea Lions","visitor":"Lornaman Renegades","kind":"division"},{"id":"G196","host":"Lornaman Renegades","visitor":"Good River Rangers","kind":"division"},{"id":"G197","host":"Lornaman Renegades","visitor":"Stamford Grays","kind":"division"},{"id":"G198","host":"Lornaman Renegades","visitor":"Stanton City Conductors","kind":"division"},{"id":"G199","host":"Lornaman Renegades","visitor":"San Saltadac Sea Lions","kind":"division"},{"id":"G200","host":"Vaughn Bay Silverbacks","visitor":"Port Logan Commodores","kind":"division"},{"id":"G201","host":"Vaughn Bay Silverbacks","visitor":"Fiota Bay T-Rexes","kind":"division"},{"id":"G202","host":"Vaughn Bay Silverbacks","visitor":"South Burke Tsunami","kind":"division"},{"id":"G203","host":"Vaughn Bay Silverbacks","visitor":"Diamond City Dynamos","kind":"division"},{"id":"G204","host":"Port Logan Commodores","visitor":"Vaughn Bay Silverbacks","kind":"division"},{"id":"G205","host":"Port Logan Commodores","visitor":"Fiota Bay T-Rexes","kind":"division"},{"id":"G206","host":"Port Logan Commodores","visitor":"South Burke Tsunami","kind":"division"},{"id":"G207","host":"Port Logan Commodores","visitor":"Diamond City Dynamos","kind":"division"},{"id":"G208","host":"Fiota Bay T-Rexes","visitor":"Vaughn Bay Silverbacks","kind":"division"},{"id":"G209","host":"Fiota Bay T-Rexes","visitor":"Port Logan Commodores","kind":"division"},{"id":"G210","host":"Fiota Bay T-Rexes","visitor":"South Burke Tsunami","kind":"division"},{"id":"G211","host":"Fiota Bay T-Rexes","visitor":"Diamond City Dynamos","kind":"division"},{"id":"G212","host":"South Burke Tsunami","visitor":"Vaughn Bay Silverbacks","kind":"division"},{"id":"G213","host":"South Burke Tsunami","visitor":"Port Logan Commodores","kind":"division"},{"id":"G214","host":"South Burke Tsunami","visitor":"Fiota Bay T-Rexes","kind":"division"},{"id":"G215","host":"South Burke Tsunami","visitor":"Diamond City Dynamos","kind":"division"},{"id":"G216","host":"Diamond City Dynamos","visitor":"Vaughn Bay Silverbacks","kind":"division"},{"id":"G217","host":"Diamond City Dynamos","visitor":"Port Logan Commodores","kind":"division"},{"id":"G218","host":"Diamond City Dynamos","visitor":"Fiota Bay T-Rexes","kind":"division"},{"id":"G219","host":"Diamond City Dynamos","visitor":"South Burke Tsunami","kind":"division"},{"id":"G220","host":"El Latigo Shredders","visitor":"Chapel Rock Crowns","kind":"conference"},{"id":"G221","host":"Underwood Bats","visitor":"El Latigo Shredders","kind":"conference"},{"id":"G222","host":"Rogaela Rovers","visitor":"Underwood Bats","kind":"conference"},{"id":"G223","host":"North Hatesei Bees","visitor":"Rogaela Rovers","kind":"conference"},{"id":"G224","host":"Tengus City Terrors","visitor":"North Hatesei Bees","kind":"conference"},{"id":"G225","host":"Bruca Beach Hammerheads","visitor":"Tengus City Terrors","kind":"conference"},{"id":"G226","host":"Canesta Dales","visitor":"Bruca Beach Hammerheads","kind":"conference"},{"id":"G227","host":"Palm Creek Leatherbacks","visitor":"Canesta Dales","kind":"conference"},{"id":"G228","host":"Queensville Phenoms","visitor":"Palm Creek Leatherbacks","kind":"conference"},{"id":"G229","host":"Chapel Rock Crowns","visitor":"Queensville Phenoms","kind":"conference"},{"id":"G230","host":"El Latigo Shredders","visitor":"San Saltadac Sea Lions","kind":"conference"},{"id":"G231","host":"Lornaman Renegades","visitor":"El Latigo Shredders","kind":"conference"},{"id":"G232","host":"Rogaela Rovers","visitor":"Lornaman Renegades","kind":"conference"},{"id":"G233","host":"Good River Rangers","visitor":"Rogaela Rovers","kind":"conference"},{"id":"G234","host":"Tengus City Terrors","visitor":"Good River Rangers","kind":"conference"},{"id":"G235","host":"Stamford Grays","visitor":"Tengus City Terrors","kind":"conference"},{"id":"G236","host":"Canesta Dales","visitor":"Stamford Grays","kind":"conference"},{"id":"G237","host":"Stanton City Conductors","visitor":"Canesta Dales","kind":"conference"},{"id":"G238","host":"Queensville Phenoms","visitor":"Stanton City Conductors","kind":"conference"},{"id":"G239","host":"San Saltadac Sea Lions","visitor":"Queensville Phenoms","kind":"conference"},{"id":"G240","host":"El Latigo Shredders","visitor":"Diamond City Dynamos","kind":"conference"},{"id":"G241","host":"Vaughn Bay Silverbacks","visitor":"El Latigo Shredders","kind":"conference"},{"id":"G242","host":"Rogaela Rovers","visitor":"Vaughn Bay Silverbacks","kind":"conference"},{"id":"G243","host":"Port Logan Commodores","visitor":"Rogaela Rovers","kind":"conference"},{"id":"G244","host":"Tengus City Terrors","visitor":"Port Logan Commodores","kind":"conference"},{"id":"G245","host":"Fiota Bay T-Rexes","visitor":"Tengus City Terrors","kind":"conference"},{"id":"G246","host":"Canesta Dales","visitor":"Fiota Bay T-Rexes","kind":"conference"},{"id":"G247","host":"South Burke Tsunami","visitor":"Canesta Dales","kind":"conference"},{"id":"G248","host":"Queensville Phenoms","visitor":"South Burke Tsunami","kind":"conference"},{"id":"G249","host":"Diamond City Dynamos","visitor":"Queensville Phenoms","kind":"conference"},{"id":"G250","host":"Bruca Beach Hammerheads","visitor":"Good River Rangers","kind":"conference"},{"id":"G251","host":"Stamford Grays","visitor":"Bruca Beach Hammerheads","kind":"conference"},{"id":"G252","host":"Palm Creek Leatherbacks","visitor":"Stamford Grays","kind":"conference"},{"id":"G253","host":"Stanton City Conductors","visitor":"Palm Creek Leatherbacks","kind":"conference"},{"id":"G254","host":"Chapel Rock Crowns","visitor":"Stanton City Conductors","kind":"conference"},{"id":"G255","host":"San Saltadac Sea Lions","visitor":"Chapel Rock Crowns","kind":"conference"},{"id":"G256","host":"Underwood Bats","visitor":"San Saltadac Sea Lions","kind":"conference"},{"id":"G257","host":"Lornaman Renegades","visitor":"Underwood Bats","kind":"conference"},{"id":"G258","host":"North Hatesei Bees","visitor":"Lornaman Renegades","kind":"conference"},{"id":"G259","host":"Good River Rangers","visitor":"North Hatesei Bees","kind":"conference"},{"id":"G260","host":"Bruca Beach Hammerheads","visitor":"Port Logan Commodores","kind":"conference"},{"id":"G261","host":"Fiota Bay T-Rexes","visitor":"Bruca Beach Hammerheads","kind":"conference"},{"id":"G262","host":"Palm Creek Leatherbacks","visitor":"Fiota Bay T-Rexes","kind":"conference"},{"id":"G263","host":"South Burke Tsunami","visitor":"Palm Creek Leatherbacks","kind":"conference"},{"id":"G264","host":"Chapel Rock Crowns","visitor":"South Burke Tsunami","kind":"conference"},{"id":"G265","host":"Diamond City Dynamos","visitor":"Chapel Rock Crowns","kind":"conference"},{"id":"G266","host":"Underwood Bats","visitor":"Diamond City Dynamos","kind":"conference"},{"id":"G267","host":"Vaughn Bay Silverbacks","visitor":"Underwood Bats","kind":"conference"},{"id":"G268","host":"North Hatesei Bees","visitor":"Vaughn Bay Silverbacks","kind":"conference"},{"id":"G269","host":"Port Logan Commodores","visitor":"North Hatesei Bees","kind":"conference"},{"id":"G270","host":"Good River Rangers","visitor":"Fiota Bay T-Rexes","kind":"conference"},{"id":"G271","host":"South Burke Tsunami","visitor":"Good River Rangers","kind":"conference"},{"id":"G272","host":"Stamford Grays","visitor":"South Burke Tsunami","kind":"conference"},{"id":"G273","host":"Diamond City Dynamos","visitor":"Stamford Grays","kind":"conference"},{"id":"G274","host":"Stanton City Conductors","visitor":"Diamond City Dynamos","kind":"conference"},{"id":"G275","host":"Vaughn Bay Silverbacks","visitor":"Stanton City Conductors","kind":"conference"},{"id":"G276","host":"San Saltadac Sea Lions","visitor":"Vaughn Bay Silverbacks","kind":"conference"},{"id":"G277","host":"Port Logan Commodores","visitor":"San Saltadac Sea Lions","kind":"conference"},{"id":"G278","host":"Lornaman Renegades","visitor":"Port Logan Commodores","kind":"conference"},{"id":"G279","host":"Fiota Bay T-Rexes","visitor":"Lornaman Renegades","kind":"conference"},{"id":"G280","host":"Sarkady Beavers","visitor":"Tengus City Terrors","kind":"interconference"},{"id":"G281","host":"Crayellan Redwoods","visitor":"Canesta Dales","kind":"interconference"},{"id":"G282","host":"Diveo Demons","visitor":"Queensville Phenoms","kind":"interconference"},{"id":"G283","host":"Costique Bearcats","visitor":"El Latigo Shredders","kind":"interconference"},{"id":"G284","host":"Billiataho Greats","visitor":"Rogaela Rovers","kind":"interconference"},{"id":"G285","host":"North Hatesei Bees","visitor":"Sarkady Beavers","kind":"interconference"},{"id":"G286","host":"Bruca Beach Hammerheads","visitor":"Crayellan Redwoods","kind":"interconference"},{"id":"G287","host":"Palm Creek Leatherbacks","visitor":"Diveo Demons","kind":"interconference"},{"id":"G288","host":"Chapel Rock Crowns","visitor":"Costique Bearcats","kind":"interconference"},{"id":"G289","host":"Underwood Bats","visitor":"Billiataho Greats","kind":"interconference"},{"id":"G290","host":"Sarkady Beavers","visitor":"Stamford Grays","kind":"interconference"},{"id":"G291","host":"Crayellan Redwoods","visitor":"Stanton City Conductors","kind":"interconference"},{"id":"G292","host":"Diveo Demons","visitor":"San Saltadac Sea Lions","kind":"interconference"},{"id":"G293","host":"Costique Bearcats","visitor":"Lornaman Renegades","kind":"interconference"},{"id":"G294","host":"Billiataho Greats","visitor":"Good River Rangers","kind":"interconference"},{"id":"G295","host":"South Burke Tsunami","visitor":"Sarkady Beavers","kind":"interconference"},{"id":"G296","host":"Diamond City Dynamos","visitor":"Crayellan Redwoods","kind":"interconference"},{"id":"G297","host":"Vaughn Bay Silverbacks","visitor":"Diveo Demons","kind":"interconference"},{"id":"G298","host":"Port Logan Commodores","visitor":"Costique Bearcats","kind":"interconference"},{"id":"G299","host":"Fiota Bay T-Rexes","visitor":"Billiataho Greats","kind":"interconference"},{"id":"G300","host":"Canesta Dales","visitor":"New Madrid Mastiffs","kind":"interconference"},{"id":"G301","host":"Queensville Phenoms","visitor":"Holliday Beetles","kind":"interconference"},{"id":"G302","host":"El Latigo Shredders","visitor":"Ediville Brass Tigers","kind":"interconference"},{"id":"G303","host":"Rogaela Rovers","visitor":"Wolford Dragons","kind":"interconference"},{"id":"G304","host":"Tengus City Terrors","visitor":"Eona Topcats","kind":"interconference"},{"id":"G305","host":"New Madrid Mastiffs","visitor":"Bruca Beach Hammerheads","kind":"interconference"},{"id":"G306","host":"Holliday Beetles","visitor":"Palm Creek Leatherbacks","kind":"interconference"},{"id":"G307","host":"Ediville Brass Tigers","visitor":"Chapel Rock Crowns","kind":"interconference"},{"id":"G308","host":"Wolford Dragons","visitor":"Underwood Bats","kind":"interconference"},{"id":"G309","host":"Eona Topcats","visitor":"North Hatesei Bees","kind":"interconference"},{"id":"G310","host":"Stanton City Conductors","visitor":"New Madrid Mastiffs","kind":"interconference"},{"id":"G311","host":"San Saltadac Sea Lions","visitor":"Holliday Beetles","kind":"interconference"},{"id":"G312","host":"Lornaman Renegades","visitor":"Ediville Brass Tigers","kind":"interconference"},{"id":"G313","host":"Good River Rangers","visitor":"Wolford Dragons","kind":"interconference"},{"id":"G314","host":"Stamford Grays","visitor":"Eona Topcats","kind":"interconference"},{"id":"G315","host":"New Madrid Mastiffs","visitor":"Diamond City Dynamos","kind":"interconference"},{"id":"G316","host":"Holliday Beetles","visitor":"Vaughn Bay Silverbacks","kind":"interconference"},{"id":"G317","host":"Ediville Brass Tigers","visitor":"Port Logan Commodores","kind":"interconference"},{"id":"G318","host":"Wolford Dragons","visitor":"Fiota Bay T-Rexes","kind":"interconference"},{"id":"G319","host":"Eona Topcats","visitor":"South Burke Tsunami","kind":"interconference"},{"id":"G320","host":"Cordelle Raptors","visitor":"Queensville Phenoms","kind":"interconference"},{"id":"G321","host":"Far Farris Raccoons","visitor":"El Latigo Shredders","kind":"interconference"},{"id":"G322","host":"Hughes City Asteroids","visitor":"Rogaela Rovers","kind":"interconference"},{"id":"G323","host":"Coachville Mastodons","visitor":"Tengus City Terrors","kind":"interconference"},{"id":"G324","host":"Diamond City Hope","visitor":"Canesta Dales","kind":"interconference"},{"id":"G325","host":"Palm Creek Leatherbacks","visitor":"Cordelle Raptors","kind":"interconference"},{"id":"G326","host":"Chapel Rock Crowns","visitor":"Far Farris Raccoons","kind":"interconference"},{"id":"G327","host":"Underwood Bats","visitor":"Hughes City Asteroids","kind":"interconference"},{"id":"G328","host":"North Hatesei Bees","visitor":"Coachville Mastodons","kind":"interconference"},{"id":"G329","host":"Bruca Beach Hammerheads","visitor":"Diamond City Hope","kind":"interconference"},{"id":"G330","host":"Cordelle Raptors","visitor":"San Saltadac Sea Lions","kind":"interconference"},{"id":"G331","host":"Far Farris Raccoons","visitor":"Lornaman Renegades","kind":"interconference"},{"id":"G332","host":"Hughes City Asteroids","visitor":"Good River Rangers","kind":"interconference"},{"id":"G333","host":"Coachville Mastodons","visitor":"Stamford Grays","kind":"interconference"},{"id":"G334","host":"Diamond City Hope","visitor":"Stanton City Conductors","kind":"interconference"},{"id":"G335","host":"Vaughn Bay Silverbacks","visitor":"Cordelle Raptors","kind":"interconference"},{"id":"G336","host":"Port Logan Commodores","visitor":"Far Farris Raccoons","kind":"interconference"},{"id":"G337","host":"Fiota Bay T-Rexes","visitor":"Hughes City Asteroids","kind":"interconference"},{"id":"G338","host":"South Burke Tsunami","visitor":"Coachville Mastodons","kind":"interconference"},{"id":"G339","host":"Diamond City Dynamos","visitor":"Diamond City Hope","kind":"interconference"},{"id":"G340","host":"El Latigo Shredders","visitor":"Verigon Komodos","kind":"interconference"},{"id":"G341","host":"Rogaela Rovers","visitor":"Classetto Cavemen","kind":"interconference"},{"id":"G342","host":"Tengus City Terrors","visitor":"Fiota Swords","kind":"interconference"},{"id":"G343","host":"Canesta Dales","visitor":"Tasson Thunderbugs","kind":"interconference"},{"id":"G344","host":"Queensville Phenoms","visitor":"Purcell Rapids","kind":"interconference"},{"id":"G345","host":"Verigon Komodos","visitor":"Chapel Rock Crowns","kind":"interconference"},{"id":"G346","host":"Classetto Cavemen","visitor":"Underwood Bats","kind":"interconference"},{"id":"G347","host":"Fiota Swords","visitor":"North Hatesei Bees","kind":"interconference"},{"id":"G348","host":"Tasson Thunderbugs","visitor":"Bruca Beach Hammerheads","kind":"interconference"},{"id":"G349","host":"Purcell Rapids","visitor":"Palm Creek Leatherbacks","kind":"interconference"},{"id":"G350","host":"Lornaman Renegades","visitor":"Verigon Komodos","kind":"interconference"},{"id":"G351","host":"Good River Rangers","visitor":"Classetto Cavemen","kind":"interconference"},{"id":"G352","host":"Stamford Grays","visitor":"Fiota Swords","kind":"interconference"},{"id":"G353","host":"Stanton City Conductors","visitor":"Tasson Thunderbugs","kind":"interconference"},{"id":"G354","host":"San Saltadac Sea Lions","visitor":"Purcell Rapids","kind":"interconference"},{"id":"G355","host":"Verigon Komodos","visitor":"Port Logan Commodores","kind":"interconference"},{"id":"G356","host":"Classetto Cavemen","visitor":"Fiota Bay T-Rexes","kind":"interconference"},{"id":"G357","host":"Fiota Swords","visitor":"South Burke Tsunami","kind":"interconference"},{"id":"G358","host":"Tasson Thunderbugs","visitor":"Diamond City Dynamos","kind":"interconference"},{"id":"G359","host":"Purcell Rapids","visitor":"Vaughn Bay Silverbacks","kind":"interconference"}]};
+const WEEKS = DATA.weeks, BYES = DATA.byes, GPT = DATA.games_per_team;
+const TI = DATA.teams;
+const DIVKEY = d => d.conf + ' ' + d.div;
+const COLORS = {North:["--n","--n2"],West:["--w","--w2"],South:["--s","--s2"],East:["--e","--e2"]};
+const colOf = t => `var(${COLORS[TI[t].div][TI[t].conf === "Regal" ? 0 : 1]})`;
+// division icon: North ▲, West ◀, South ▼, East ▶ in the division colour; Regal filled, Majestic outlined
+const TRI = {North:'6,1 11,10 1,10', West:'1,6 10,1 10,11', South:'1,2 11,2 6,11', East:'2,1 11,6 2,11'};
+const dot = t => { const T = TI[t], c = colOf(t), regal = T.conf === 'Regal';
+  return `<svg class="divico" viewBox="0 0 12 12" width="11" height="11" aria-label="${T.conf} ${T.div}"><polygon points="${TRI[T.div]}" fill="${regal ? c : 'none'}" stroke="${c}" stroke-width="${regal ? 1 : 1.8}" stroke-linejoin="round"/></svg>`; };
+
+const BRAND = {"Sarkady Beavers": {"slug": "sarkady-beavers", "nick": "Beavers", "conf": "Regal", "div": "North", "city": "Sarkady", "stadium": "Bruinhawk Stadium", "primary": "#8fa9c2", "secondary": "#1f4a5c", "tertiary": "#e9eef2", "font": "Alfa Slab One", "case": "upper", "wordmark": {"option": 2, "bg": "#8fa9c2", "fill": "#1f4a5c", "accent": "#e9eef2", "treatment": "plain"}}, "Crayellan Redwoods": {"slug": "crayellan-redwoods", "nick": "Redwoods", "conf": "Regal", "div": "North", "city": "Kirkwood", "stadium": "Redwood Bowl", "primary": "#5e2a1f", "secondary": "#c0392b", "tertiary": "#8c4a3a", "font": "Ultra", "case": "upper", "wordmark": {"option": 2, "bg": "#5e2a1f", "fill": "#c0392b", "accent": "#8c4a3a", "treatment": "halo"}}, "Diveo Demons": {"slug": "diveo-demons", "nick": "Demons", "conf": "Regal", "div": "North", "city": "Denning", "stadium": "Air Memorial Stadium", "primary": "#1f3bb3", "secondary": "#1b1a4f", "tertiary": "#e23b46", "font": "New Rocker", "case": "upper", "wordmark": {"option": 2, "bg": "#1f3bb3", "fill": "#1b1a4f", "accent": "#e23b46", "treatment": "halo"}}, "Costique Bearcats": {"slug": "costique-bearcats", "nick": "Bearcats", "conf": "Regal", "div": "North", "city": "Marshfield", "stadium": "Standing Wolf Stadium", "primary": "#ff8c00", "secondary": "#ff2a8a", "tertiary": "#0b6fd6", "font": "Bungee Shade", "case": "upper", "wordmark": {"option": 3, "bg": "#0b6fd6", "fill": "#ff8c00", "accent": "#ff2a8a", "treatment": "halo noshadow"}}, "Billiataho Greats": {"slug": "billiataho-greats", "nick": "Greats", "conf": "Regal", "div": "North", "city": "Billiataho", "stadium": "Copper Bowl", "primary": "#2f4a2e", "secondary": "#ffffff", "tertiary": null, "font": "Graduate", "case": "upper", "wordmark": {"option": 3, "bg": "#788977", "fill": "#ffffff", "accent": "#2f4a2e", "treatment": "plain"}}, "El Latigo Shredders": {"slug": "el-latigo-shredders", "nick": "Shredders", "conf": "Majestic", "div": "North", "city": "El Latigo", "stadium": "New Skeenerland Stadium", "primary": "#58616b", "secondary": "#9aa3ab", "tertiary": "#7f9bbf", "font": "Metal Mania", "case": "upper", "wordmark": {"option": 2, "bg": "#58616b", "fill": "#9aa3ab", "accent": "#7f9bbf", "treatment": "halo"}}, "Rogaela Rovers": {"slug": "rogaela-rovers", "nick": "Rovers", "conf": "Majestic", "div": "North", "city": "Riverwake", "stadium": "Falls Fork Stadium", "primary": "#67819e", "secondary": "#10251c", "tertiary": null, "font": "Big Shoulders Display", "case": "upper", "wordmark": {"option": 3, "bg": "#9cadc0", "fill": "#10251c", "accent": "#67819e", "treatment": "plain"}}, "Tengus City Terrors": {"slug": "tengus-city-terrors", "nick": "Terrors", "conf": "Majestic", "div": "North", "city": "Tengus City", "stadium": "Fort Gold Field", "primary": "#450a10", "secondary": "#0a0a0a", "tertiary": "#9b2230", "font": "Nosifer", "case": "upper", "wordmark": {"option": 1, "bg": "#0a0a0a", "fill": "#450a10", "accent": "#9b2230", "treatment": "edge"}}, "Canesta Dales": {"slug": "canesta-dales", "nick": "Dales", "conf": "Majestic", "div": "North", "city": "Canesta", "stadium": "Hall Stadium", "primary": "#8fd3f4", "secondary": "#ff3fa4", "tertiary": "#ffffff", "font": "Rozha One", "case": "title", "wordmark": {"option": 2, "bg": "#8fd3f4", "fill": "#ff3fa4", "accent": "#ffffff", "treatment": "halo"}}, "Queensville Phenoms": {"slug": "queensville-phenoms", "nick": "Phenoms", "conf": "Majestic", "div": "North", "city": "Queensville", "stadium": "Valley of Fire Stadium", "primary": "#1a3fd1", "secondary": "#e02a2a", "tertiary": "#17a84d", "font": "Shrikhand", "case": "title", "wordmark": {"option": 2, "bg": "#1a3fd1", "fill": "#e02a2a", "accent": "#17a84d", "treatment": "edge"}}, "New Madrid Mastiffs": {"slug": "new-madrid-mastiffs", "nick": "Mastiffs", "conf": "Regal", "div": "West", "city": "New Madrid", "stadium": "Lily Field", "primary": "#7a3db8", "secondary": "#d4a52a", "tertiary": "#4a4f55", "font": "Cinzel", "case": "upper", "wordmark": {"option": 2, "bg": "#7a3db8", "fill": "#d4a52a", "accent": "#4a4f55", "treatment": "halo noshadow"}}, "Holliday Beetles": {"slug": "holliday-beetles", "nick": "Beetles", "conf": "Regal", "div": "West", "city": "Holliday", "stadium": "Jewel Field", "primary": "#39ff14", "secondary": "#b026ff", "tertiary": "#101410", "font": "Tilt Neon", "case": "upper", "wordmark": {"option": 1, "bg": "#b026ff", "fill": "#39ff14", "accent": "#101410", "treatment": "plain"}}, "Ediville Brass Tigers": {"slug": "ediville-brass-tigers", "nick": "Brass Tigers", "conf": "Regal", "div": "West", "city": "Ediville", "stadium": "Star Bowl", "primary": "#c47a1e", "secondary": "#e0b84a", "tertiary": "#0b0b0b", "font": "Sancreek", "case": "upper", "wordmark": {"option": 2, "bg": "#c47a1e", "fill": "#e0b84a", "accent": "#0b0b0b", "treatment": "edge"}}, "Wolford Dragons": {"slug": "wolford-dragons", "nick": "Dragons", "conf": "Regal", "div": "West", "city": "Marymond", "stadium": "One Wolford Stadium", "primary": "#4a1278", "secondary": "#b3122e", "tertiary": "#e8e4ee", "font": "UnifrakturCook", "case": "title", "wordmark": {"option": 1, "bg": "#b3122e", "fill": "#4a1278", "accent": "#e8e4ee", "treatment": "edge"}}, "Eona Topcats": {"slug": "eona-topcats", "nick": "Topcats", "conf": "Regal", "div": "West", "city": "Perth", "stadium": "Cirque Pizon Stadium", "primary": "#141f3f", "secondary": "#b8bec7", "tertiary": "#9fb0c3", "font": "Monoton", "case": "upper", "wordmark": {"option": 3, "bg": "#9fb0c3", "fill": "#141f3f", "accent": "#b8bec7", "treatment": "plain noshadow"}}, "Bruca Beach Hammerheads": {"slug": "bruca-beach-hammerheads", "nick": "Hammerheads", "conf": "Majestic", "div": "West", "city": "Bruca Beach", "stadium": "Tealcoat Stadium", "primary": "#1b9e9a", "secondary": "#ffb27a", "tertiary": "#fff4ea", "font": "Original Surfer", "case": "title", "wordmark": {"option": 2, "bg": "#1b9e9a", "fill": "#ffb27a", "accent": "#fff4ea", "treatment": "edge"}}, "Palm Creek Leatherbacks": {"slug": "palm-creek-leatherbacks", "nick": "Leatherbacks", "conf": "Majestic", "div": "West", "city": "Palm Creek", "stadium": "Anders-Bach Stadium", "primary": "#2e7d5b", "secondary": "#1f8a7a", "tertiary": "#8ecae6", "font": "Hanalei Fill", "case": "upper", "wordmark": {"option": 2, "bg": "#2e7d5b", "fill": "#1f8a7a", "accent": "#8ecae6", "treatment": "edge"}}, "Chapel Rock Crowns": {"slug": "chapel-rock-crowns", "nick": "Crowns", "conf": "Majestic", "div": "West", "city": "Chapel Rock", "stadium": "Smithy Stadium", "primary": "#6358d8", "secondary": "#d4af37", "tertiary": null, "font": "Cinzel Decorative", "case": "upper", "wordmark": {"option": 3, "bg": "#9a92e6", "fill": "#d4af37", "accent": "#6358d8", "treatment": "halo"}}, "Underwood Bats": {"slug": "underwood-bats", "nick": "Bats", "conf": "Majestic", "div": "West", "city": "Underwood", "stadium": "Junglerock Park", "primary": "#1e5bd6", "secondary": "#3f7ff0", "tertiary": "#ffffff", "font": "Special Elite", "case": "upper", "wordmark": {"option": 2, "bg": "#1e5bd6", "fill": "#3f7ff0", "accent": "#ffffff", "treatment": "edge"}}, "North Hatesei Bees": {"slug": "north-hatesei-bees", "nick": "Bees", "conf": "Majestic", "div": "West", "city": "Niana Vaw", "stadium": "Heritage Field", "primary": "#9a4fd6", "secondary": "#111111", "tertiary": "#ffd400", "font": "Fontdiner Swanky", "case": "upper", "wordmark": {"option": 2, "bg": "#9a4fd6", "fill": "#111111", "accent": "#ffd400", "treatment": "plain"}}, "Cordelle Raptors": {"slug": "cordelle-raptors", "nick": "Raptors", "conf": "Regal", "div": "South", "city": "Cordelle", "stadium": "Air Guard Station", "primary": "#c8102e", "secondary": "#fff0f2", "tertiary": "#5a6b3c", "font": "Black Ops One", "case": "upper", "wordmark": {"option": 2, "bg": "#c8102e", "fill": "#fff0f2", "accent": "#5a6b3c", "treatment": "plain noshadow"}}, "Far Farris Raccoons": {"slug": "far-farris-raccoons", "nick": "Raccoons", "conf": "Regal", "div": "South", "city": "Thurmond", "stadium": "The Wheat Field", "primary": "#d9a441", "secondary": "#6e6e73", "tertiary": "#f2c766", "font": "Rye", "case": "upper", "wordmark": {"option": 2, "bg": "#d9a441", "fill": "#6e6e73", "accent": "#f2c766", "treatment": "halo noshadow"}}, "Hughes City Asteroids": {"slug": "hughes-city-asteroids", "nick": "Asteroids", "conf": "Regal", "div": "South", "city": "Hughes City", "stadium": "Calvin Field", "primary": "#ff6a1f", "secondary": "#8c6a4f", "tertiary": "#1b2a4a", "font": "Zen Dots", "case": "upper", "wordmark": {"option": 1, "bg": "#8c6a4f", "fill": "#ff6a1f", "accent": "#1b2a4a", "treatment": "edge"}}, "Coachville Mastodons": {"slug": "coachville-mastodons", "nick": "Mastodons", "conf": "Regal", "div": "South", "city": "Coachville", "stadium": "Steam Bowl", "primary": "#7a1f33", "secondary": "#d81e3a", "tertiary": "#f5efe6", "font": "Sigmar One", "case": "upper", "wordmark": {"option": 2, "bg": "#7a1f33", "fill": "#d81e3a", "accent": "#f5efe6", "treatment": "edge"}}, "Diamond City Hope": {"slug": "diamond-city-hope", "nick": "Hope", "conf": "Regal", "div": "South", "city": "Bandagabny", "stadium": "Roiland National Stadium", "primary": "#2f8fe6", "secondary": "#e6f3fb", "tertiary": null, "font": "Rubik Gemstones", "case": "upper", "wordmark": {"option": 3, "bg": "#78b6ef", "fill": "#e6f3fb", "accent": "#2f8fe6", "treatment": "halo"}}, "Good River Rangers": {"slug": "good-river-rangers", "nick": "Rangers", "conf": "Majestic", "div": "South", "city": "Good River", "stadium": "High Mountain Stadium", "primary": "#ee8a79", "secondary": "#b8322a", "tertiary": null, "font": "Metamorphous", "case": "upper", "wordmark": {"option": 1, "bg": "#b8322a", "fill": "#ee8a79", "accent": "#111111", "treatment": "edge"}}, "Stamford Grays": {"slug": "stamford-grays", "nick": "Grays", "conf": "Majestic", "div": "South", "city": "Stamford", "stadium": "501 Bowl", "primary": "#f2c500", "secondary": "#3b4149", "tertiary": "#c7ccd1", "font": "Faster One", "case": "upper", "wordmark": {"option": 2, "bg": "#f2c500", "fill": "#3b4149", "accent": "#c7ccd1", "treatment": "plain noshadow"}}, "Stanton City Conductors": {"slug": "stanton-city-conductors", "nick": "Conductors", "conf": "Majestic", "div": "South", "city": "Stanton City", "stadium": "Steel Rail Stadium", "primary": "#f5a3b0", "secondary": "#f3cf4a", "tertiary": "#111111", "font": "Bungee", "case": "upper", "wordmark": {"option": 2, "bg": "#f5a3b0", "fill": "#f3cf4a", "accent": "#111111", "treatment": "edge"}}, "San Saltadac Sea Lions": {"slug": "san-saltadac-sea-lions", "nick": "Sea Lions", "conf": "Majestic", "div": "South", "city": "San Saltadac", "stadium": "Leviathan Stadium", "primary": "#a86f5c", "secondary": "#5c3a2e", "tertiary": "#f3ece2", "font": "Pacifico", "case": "title", "wordmark": {"option": 2, "bg": "#a86f5c", "fill": "#5c3a2e", "accent": "#f3ece2", "treatment": "edge"}}, "Lornaman Renegades": {"slug": "lornaman-renegades", "nick": "Renegades", "conf": "Majestic", "div": "South", "city": "Lornaman", "stadium": "Red Court Stadium", "primary": "#d9441a", "secondary": "#111111", "tertiary": null, "font": "Sedgwick Ave Display", "case": "upper", "wordmark": {"option": 3, "bg": "#e6856a", "fill": "#111111", "accent": "#d9441a", "treatment": "plain"}}, "Verigon Komodos": {"slug": "verigon-komodos", "nick": "Komodos", "conf": "Regal", "div": "East", "city": "Verigon City", "stadium": "Usha Field", "primary": "#1f6b3a", "secondary": "#6b8f3a", "tertiary": "#d9c89b", "font": "Frijole", "case": "upper", "wordmark": {"option": 3, "bg": "#d9c89b", "fill": "#1f6b3a", "accent": "#6b8f3a", "treatment": "plain"}}, "Classetto Cavemen": {"slug": "classetto-cavemen", "nick": "Cavemen", "conf": "Regal", "div": "East", "city": "Classetto", "stadium": "Foremaster Stadium", "primary": "#7a4a1e", "secondary": "#c77a2a", "tertiary": "#587a8f", "font": "Piedra", "case": "upper", "wordmark": {"option": 2, "bg": "#7a4a1e", "fill": "#c77a2a", "accent": "#587a8f", "treatment": "halo"}}, "Fiota Swords": {"slug": "fiota-swords", "nick": "Swords", "conf": "Regal", "div": "East", "city": "Nelson Heights", "stadium": "Castlepine Stadium", "primary": "#2e2a7a", "secondary": "#7b3fbf", "tertiary": "#ffffff", "font": "Uncial Antiqua", "case": "title", "wordmark": {"option": 1, "bg": "#7b3fbf", "fill": "#2e2a7a", "accent": "#ffffff", "treatment": "edge"}}, "Tasson Thunderbugs": {"slug": "tasson-thunderbugs", "nick": "Thunderbugs", "conf": "Regal", "div": "East", "city": "Gunterburg", "stadium": "Williams Field", "primary": "#4ddb3a", "secondary": "#a89a2a", "tertiary": "#1e4d1e", "font": "Audiowide", "case": "upper", "wordmark": {"option": 2, "bg": "#4ddb3a", "fill": "#a89a2a", "accent": "#1e4d1e", "treatment": "edge"}}, "Purcell Rapids": {"slug": "purcell-rapids", "nick": "Rapids", "conf": "Regal", "div": "East", "city": "Purcell", "stadium": "Elm & Poplar Stadium", "primary": "#2a6fa8", "secondary": "#2f9d8a", "tertiary": "#dbe9f1", "font": "Oleo Script", "case": "title", "wordmark": {"option": 3, "bg": "#dbe9f1", "fill": "#2a6fa8", "accent": "#2f9d8a", "treatment": "plain"}}, "Vaughn Bay Silverbacks": {"slug": "vaughn-bay-silverbacks", "nick": "Silverbacks", "conf": "Majestic", "div": "East", "city": "Charlesville", "stadium": "The Quarry", "primary": "#141414", "secondary": "#32cd32", "tertiary": "#bfc5cc", "font": "Bowlby One SC", "case": "upper", "wordmark": {"option": 1, "bg": "#32cd32", "fill": "#141414", "accent": "#bfc5cc", "treatment": "plain noshadow"}}, "Port Logan Commodores": {"slug": "port-logan-commodores", "nick": "Commodores", "conf": "Majestic", "div": "East", "city": "Port Logan", "stadium": "Lumber Bowl", "primary": "#c9b38a", "secondary": "#b5c98a", "tertiary": "#1c1c1c", "font": "Trade Winds", "case": "upper", "wordmark": {"option": 2, "bg": "#c9b38a", "fill": "#b5c98a", "accent": "#1c1c1c", "treatment": "edge"}}, "Fiota Bay T-Rexes": {"slug": "fiota-bay-t-rexes", "nick": "T-Rexes", "conf": "Majestic", "div": "East", "city": "Fiota Bay", "stadium": "Prehistoria Stadium", "primary": "#5c9a3a", "secondary": "#e8b830", "tertiary": "#c1121f", "font": "Bangers", "case": "upper", "wordmark": {"option": 2, "bg": "#5c9a3a", "fill": "#e8b830", "accent": "#c1121f", "treatment": "halo"}}, "South Burke Tsunami": {"slug": "south-burke-tsunami", "nick": "Tsunami", "conf": "Majestic", "div": "East", "city": "Burke Bay", "stadium": "Almond Field", "primary": "#0e4b5a", "secondary": "#d6f2ee", "tertiary": "#a8927a", "font": "Knewave", "case": "upper", "wordmark": {"option": 2, "bg": "#0e4b5a", "fill": "#d6f2ee", "accent": "#a8927a", "treatment": "plain"}}, "Diamond City Dynamos": {"slug": "diamond-city-dynamos", "nick": "Dynamos", "conf": "Majestic", "div": "East", "city": "Diamond City", "stadium": "Speed of Light Stadium", "primary": "#e8465a", "secondary": "#4fc3f7", "tertiary": "#ffffff", "font": "Righteous", "case": "upper", "wordmark": {"option": 3, "bg": "#ffffff", "fill": "#e8465a", "accent": "#4fc3f7", "treatment": "plain"}}};
+const _lum = h => { const f = c => c <= .04045 ? c / 12.92 : Math.pow((c + .055) / 1.055, 2.4); return .2126*f(parseInt(h.slice(1,3),16)/255) + .7152*f(parseInt(h.slice(3,5),16)/255) + .0722*f(parseInt(h.slice(5,7),16)/255); };
+const _cr = (a, b) => { const x = _lum(a), y = _lum(b); return (Math.max(x,y) + .05) / (Math.min(x,y) + .05); };
+// chip: the club's wordmark background; text in the fill when it reads, else the accent, else black/white — small text can't lean on borders
+function _chip(name, small, label){ const b = BRAND[name]; if (!b) return esc(name); const w = b.wordmark;
+  const fg = _cr(w.fill, w.bg) >= 3 ? w.fill : _cr(w.accent, w.bg) >= 3 ? w.accent : (_lum(w.bg) > .35 ? '#111111' : '#ffffff');
+  const ac = fg === w.fill ? w.accent : w.fill;
+  return `<span class="tm${small ? ' sm' : ''}" style="--bg:${w.bg};--fg:${fg};--ac:${ac}" title="${esc(name)}">${esc(label)}</span>`; }
+function tm(name, small){ return _chip(name, small, name); }
+function tmn(name, small){ const b = BRAND[name]; return _chip(name, small, b ? b.nick : name); }
+function mk(name, size){ const b = BRAND[name]; if (!b) return esc(name); const w = b.wordmark; const txt = b.case === 'upper' ? b.nick.toUpperCase() : b.nick;
+  const lum = h => { const f = c => c <= .04045 ? c / 12.92 : Math.pow((c + .055) / 1.055, 2.4); const r = f(parseInt(h.slice(1,3),16)/255), g = f(parseInt(h.slice(3,5),16)/255), bl = f(parseInt(h.slice(5,7),16)/255); return .2126*r + .7152*g + .0722*bl; };
+  const halo = lum(w.bg) < .12 ? '#ffffff' : '#0a0a0a'; const sw = /halo|edge/.test(w.treatment) && w.treatment.indexOf('noshadow') < 0 ? '.05em' : '.035em';
+  return `<span class="mk ${w.treatment}" style="font-family:'${b.font}';font-size:${size || 28}px;--bg:${w.bg};--fg:${w.fill};--ac:${w.accent};--halo:${halo};--sw:${sw}"><span class="l halo drop" aria-hidden="true">${txt}</span><span class="l halo" aria-hidden="true">${txt}</span><span class="l drop" aria-hidden="true">${txt}</span><span class="l edge" aria-hidden="true">${txt}</span><span class="l fill">${txt}</span></span>`; }
+
+// club chip in the club's own colours, with the division icon in front
+const club = (t, small) => { const b = BRAND[t]; if (!b) return dot(t) + esc(t); const w = b.wordmark;
+  const fg = _cr(w.fill, w.bg) >= 3 ? w.fill : _cr(w.accent, w.bg) >= 3 ? w.accent : (_lum(w.bg) > .35 ? '#111111' : '#ffffff'); const ac = fg === w.fill ? w.accent : w.fill;
+  return `<span class="tm${small ? ' sm' : ''}" style="--bg:${w.bg};--fg:${fg};--ac:${ac}">${dot(t)} ${esc(t)}</span>`; };
+const clubn = (t, small) => { const b = BRAND[t]; if (!b) return dot(t) + esc(t); const w = b.wordmark;
+  const fg = _cr(w.fill, w.bg) >= 3 ? w.fill : _cr(w.accent, w.bg) >= 3 ? w.accent : (_lum(w.bg) > .35 ? '#111111' : '#ffffff'); const ac = fg === w.fill ? w.accent : w.fill;
+  return `<span class="tm${small ? ' sm' : ''}" style="--bg:${w.bg};--fg:${fg};--ac:${ac}">${dot(t)} ${esc(b.nick)}</span>`; };
+const KIND = {division:'Division', conference:'Conference', interconference:'Interconference'};
+const KINDTAG = {division:'DIV', conference:'CONF', interconference:'INTER'};
+
+let games = [], cur = DATA.divisions[0], sel = null, held = null;
+let db = null, loaded = false, dirty = false, saveTimer = null;
+const TOUCHED = new Set();
+const el = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+const TG = {}, SLOT = {};
+const oppOf = (g, t) => g.host === t ? g.visitor : g.host;
+const sides = g => [g.host, g.visitor];
+function seed(){ games = DATA.games.map(g => ({...g, week:null})); }
+function buildIndex(){
+  Object.keys(TI).forEach(t => { TG[t] = []; SLOT[t] = {}; WEEKS.forEach(w => SLOT[t][w] = null); });
+  games.forEach(g => sides(g).forEach(t => TG[t].push(g)));
+  games.forEach(g => { if (g.week !== null) sides(g).forEach(t => SLOT[t][g.week] = g); });
+}
+function setWeek(g, w){
+  if (g.week !== null) sides(g).forEach(t => { if (SLOT[t][g.week] === g) SLOT[t][g.week] = null; });
+  g.week = w;
+  if (w !== null) sides(g).forEach(t => SLOT[t][w] = g);
+}
+const atWeek = (t, w) => SLOT[t][w];
+const unplaced = t => TG[t].filter(g => g.week === null);
+const byesOf = t => WEEKS.filter(w => atWeek(t, w) === null);
+
+/* ---- rules (Dan): one game a week; two byes, the first in weeks 4–11 and the second in 12–18, at least 3 games between them;
+   never more than two home or two road games in a row, and a bye does not reset the run; division rematches never in consecutive weeks ---- */
+const BYE1 = [4, 11], BYE2 = [12, 18], GAP = 3;
+function byeTrouble(t){
+  const open = WEEKS.filter(w => SLOT[t][w] === null);
+  const left = TG[t].filter(g => g.week === null).length;
+  if (open.length - left < BYES) return 'that leaves only ' + (open.length - left) + ' bye weeks, needs ' + BYES;
+  const inA = open.filter(w => w >= BYE1[0] && w <= BYE1[1]), inB = open.filter(w => w >= BYE2[0] && w <= BYE2[1]);
+  if (!inA.length) return 'no week left open for a first bye in weeks ' + BYE1[0] + '–' + BYE1[1];
+  if (!inB.length) return 'no week left open for a second bye in weeks ' + BYE2[0] + '–' + BYE2[1];
+  if (left === 0){
+    if (open.length !== BYES) return open.length + ' byes, needs ' + BYES;
+    const [a, b] = open;
+    if (a < BYE1[0] || a > BYE1[1]) return 'first bye in week ' + a + ', must be in weeks ' + BYE1[0] + '–' + BYE1[1];
+    if (b < BYE2[0] || b > BYE2[1]) return 'second bye in week ' + b + ', must be in weeks ' + BYE2[0] + '–' + BYE2[1];
+    if (b - a - 1 < GAP) return 'only ' + (b - a - 1) + ' games between the byes, needs ' + GAP;
+  }
+  return streakTrouble(t) || rematchTrouble(t);
+}
+// a run counts across byes; an OPEN week with games still to place is unknown and breaks the count for now
+function streakTrouble(t){
+  const left = TG[t].filter(g => g.week === null).length;
+  let side = null, run = 0, from = 0;
+  for (const w of WEEKS){
+    const g = SLOT[t][w];
+    if (!g){ if (left) { side = null; run = 0; } continue; }   // bye (or still-open week while placing)
+    const s = g.host === t ? 'home' : 'road';
+    if (s === side){ run++; } else { side = s; run = 1; from = w; }
+    if (run > 2) return run + ' ' + side + ' games in a row from week ' + from;
+  }
+  return null;
+}
+function rematchTrouble(t){
+  for (const w of WEEKS){ const g = SLOT[t][w], n = SLOT[t][w + 1];
+    if (g && n && g.kind === 'division' && oppOf(g, t) === oppOf(n, t)) return 'plays ' + oppOf(g, t) + ' in weeks ' + w + ' and ' + (w + 1) + ' back to back'; }
+  return null;
+}
+function whyNotWeek(g, w){
+  for (const t of sides(g)){
+    const s = atWeek(t, w);
+    if (s && s !== g) return esc(t) + ' already plays ' + esc(oppOf(s, t));
+  }
+  const was = g.week; setWeek(g, w);
+  let bad = null;
+  for (const t of sides(g)){ const b = byeTrouble(t); if (b){ bad = esc(t) + ': ' + b; break; } }
+  setWeek(g, was);
+  return bad;
+}
+/* soft: rather not see the same opponent in back-to-back weeks */
+function rematchNear(g, w){
+  for (const t of sides(g)) for (const d of [-1, 1]){
+    const o = SLOT[t][w + d]; if (o && o !== g && oppOf(o, t) === oppOf(g, t)) return true;
+  }
+  return false;
+}
+
+/* ---- actions ---- */
+function hold(g){ held = (held === g) ? null : g; render(); }
+function place(g, w){
+  const bad = whyNotWeek(g, w);
+  if (bad){ toast(bad.replace(/&amp;/g,'&')); return; }
+  setWeek(g, w); TOUCHED.add(g.id); held = null; render(); queueSave();
+}
+function lift(g){ setWeek(g, null); TOUCHED.add(g.id); held = g; render(); queueSave(); }
+
+function autoFill(want, quiet){
+  const snap = games.map(g => g.week);
+  const restore = () => { games.forEach(g => setWeek(g, null)); games.forEach((g, i) => setWeek(g, snap[i])); };
+  const t0 = Date.now();
+  for (let attempt = 0; attempt < 400; attempt++){
+    restore();
+    let left = games.filter(g => g.week === null && want(g));
+    if (!left.length){ if (!quiet) toast('nothing open there'); return true; }
+    const opts = new Map(), rec = g => opts.set(g, WEEKS.filter(w => whyNotWeek(g, w) === null));
+    left.forEach(rec);
+    const perWeek = {}; WEEKS.forEach(w => perWeek[w] = 0);
+    games.forEach(g => { if (g.week !== null) perWeek[g.week]++; });
+    let stuck = false;
+    while (left.length){
+      let best = null, bn = 1e9;
+      for (const g of left){ const n = opts.get(g).length; if (!n){ stuck = true; break; } if (n < bn){ bn = n; best = g; if (n === 1) break; } }
+      if (stuck) break;
+      const w = opts.get(best).slice().sort((x, y) => ((rematchNear(best, x) - rematchNear(best, y)) * 10)
+        || (perWeek[x] - perWeek[y]) || (Math.random() - .5))[0];
+      setWeek(best, w); TOUCHED.add(best.id); perWeek[w]++;
+      left = left.filter(g => g !== best); opts.delete(best);
+      const hit = new Set(sides(best));
+      for (const g of left) if (sides(g).some(t => hit.has(t))) rec(g);
+    }
+    if (!games.some(g => g.week === null && want(g))){
+      held = null; if (!quiet){ render(); queueSave(); toast('filled in ' + (Date.now() - t0) + ' ms'); } return true;
+    }
+    if (Date.now() - t0 > 7000) break;
+  }
+  restore(); if (!quiet){ render(); toast('could not finish from here — lift a few games and try again'); }
+  return false;
+}
+
+/* ---- render ---- */
+function render(){ renderPicker(); renderSummary(); renderRail(); renderMain(); renderSheet(); renderOverview(); renderIssues(); renderBlob(); }
+function divGames(d){ const r = new Set(d.roster); return games.filter(g => r.has(g.host) || r.has(g.visitor)); }
+function divStat(d){
+  const gs = divGames(d), placed = gs.filter(g => g.week !== null).length;
+  const trouble = d.roster.some(t => !unplaced(t).length && byeTrouble(t));
+  return {placed, total: gs.length, done: placed === gs.length, trouble};
+}
+function renderPicker(){
+  el('picker').innerHTML = ['Regal','Majestic'].map(c => `<div class="confrow"><span>${c}</span>${
+    DATA.divisions.filter(d => d.conf === c).map(d => { const st = divStat(d), t0 = d.roster[0];
+      return `<button type="button" class="dbtn ${st.done ? (st.trouble ? 'warn' : 'done') : ''}" data-div="${esc(DIVKEY(d))}" aria-pressed="${d === cur}">
+        ${dot(t0)}<b>${esc(d.div)}</b><span>${st.placed}/${st.total}${st.done ? (st.trouble ? ' · check' : ' · set') : ''}</span></button>`; }).join('')
+  }</div>`).join('');
+}
+function renderSummary(){
+  const all = games.length, done = games.filter(g => g.week !== null).length;
+  const st = divStat(cur);
+  el('summary').innerHTML = `<h2 class="sec">${esc(DIVKEY(cur))} ${DATA.year}
+    <em>${st.placed} of ${st.total} games involving this division placed · league ${done}/${all}</em></h2>
+    <p class="note">Each club plays its four division rivals home and away (8), two clubs from each other
+    ${esc(cur.conf)} division, one home and one away (6), and one club from each division of the other
+    conference, two home and two away (4). That is 18 games, 9 at home, over 20 weeks. Rules: the first bye in weeks 4–11 and the second in 12–18 with at least three games between them; never more than two home or two road games in a row (a bye does not reset the run); the two games against a division rival never in back-to-back weeks. The week strip refuses a placement that breaks a rule and the Checks panel lists anything outstanding.</p>
+    <div class="bar">
+      <button type="button" class="tiny primary" id="autoDiv">Fill ${esc(DIVKEY(cur))}</button>
+      <button type="button" class="tiny" id="autoTeam">Fill ${esc(sel)} only</button>
+      <button type="button" class="tiny" id="autoAll">Fill the whole league</button>
+      <button type="button" class="tiny danger" id="clearTeam">Clear ${esc(sel)}</button>
+      <button type="button" class="tiny danger" id="clearDiv">Clear ${esc(DIVKEY(cur))}</button>
+    </div>`;
+}
+function renderRail(){
+  el('railcount').textContent = cur.roster.length + ' clubs';
+  el('rail').innerHTML = cur.roster.map(t => {
+    const left = unplaced(t).length, tr = byeTrouble(t), cls = left === 0 ? (tr ? 'bad' : 'done') : '';
+    return `<button type="button" class="trow" data-team="${esc(t)}" aria-pressed="${t === sel}"><b>${club(t, true)}</b>
+      <span class="pill ${cls}">${left === 0 ? (tr ? 'check' : 'set') : left + ' left'}</span></button>`;
+  }).join('');
+}
+function renderMain(){
+  const t = sel, T = TI[t], open = unplaced(t);
+  el('main').innerHTML = `<h2 class="sec">${mk(t, 22)} <em>${esc(T.stadium)}, ${esc(T.city)}, ${esc(T.state)}</em></h2>
+    <div class="strip">${WEEKS.map(w => weekCard(t, w)).join('')}</div>
+    <h2 class="sec">Still to place <em>${open.length ? 'tap one, then tap a week' : 'all placed'}</em></h2>
+    <div class="chips">${open.map(g => `<button type="button" class="chip ${g.host === t ? '' : 'away'}" style="border-color:${colOf(oppOf(g, t))}" data-hold="${g.id}" aria-pressed="${held === g}">
+        <span class="hv">${g.host === t ? 'VS' : '@'}</span>${clubn(oppOf(g, t), true)}<span class="hv">${KINDTAG[g.kind]}</span></button>`).join('')
+      || '<span class="note">Nothing left for this club.</span>'}</div>
+    <p class="note">Each game takes the colour of the opponent's division; the club chip carries the club's own colours with its division icon (▲ North, ◀ West, ▼ South, ▶ East; filled Regal, outlined Majestic). A <b>solid</b> outline is a home game and a
+    <b>dotted</b> outline is a road game. Tap a placed week to lift that game back out.
+    ${held ? '<b>Holding ' + esc(held.host === t || held.visitor === t ? oppOf(held, t) : held.host + ' v ' + held.visitor) + '</b>, the outlined weeks will take it.' : ''}</p>`;
+}
+function weekCard(t, w){
+  const g = atWeek(t, w), cls = [], bits = [];
+  let why = '', style = '';
+  if (g){
+    const home = g.host === t, o = oppOf(g, t);
+    cls.push('game', home ? 'home' : 'away'); style = ` style="--dc:${colOf(o)}"`;
+    bits.push(`<div class="op">${clubn(o, true)}</div>`, `<div class="vs">${home ? '<b>HOME</b>' : 'AWAY'} · ${KINDTAG[g.kind]}</div>`);
+  } else if (held){
+    const bad = whyNotWeek(held, w);
+    cls.push(bad ? 'illegal' : 'legal'); if (bad) why = `<div class="why">${bad}</div>`;
+    bits.push(`<div class="op">${bad ? '—' : 'place here'}</div>`);
+  } else {
+    cls.push('bye'); bits.push(`<div class="op">${unplaced(t).length ? 'open' : 'bye'}</div>`);
+  }
+  return `<button type="button" class="wk ${cls.join(' ')}" data-wk="${w}" data-gid="${g ? g.id : ''}"${style}><div class="wn">WK ${w}</div>${bits.join('')}${why}</button>`;
+}
+function renderSheet(){
+  const t = sel, mine = TG[t];
+  const grp = k => mine.filter(g => g.kind === k).slice().sort((a, b) => {
+    const oa = oppOf(a, t), ob = oppOf(b, t);
+    return (TI[oa].div + oa).localeCompare(TI[ob].div + ob) || ((b.host === t) - (a.host === t));
+  });
+  const block = k => { const gs = grp(k), h = gs.filter(g => g.host === t).length;
+    return `<div class="grp"><h3>${KIND[k]} <small>${gs.length} games · ${h} home, ${gs.length - h} away</small></h3><ul>${
+      gs.map(g => { const o = oppOf(g, t), home = g.host === t;
+        return `<li><span class="ha ${home ? 'h' : 'a'}">${home ? 'HOME' : 'AWAY'}</span><span>${club(o, true)}</span>
+          <span class="dv">${esc(TI[o].conf === TI[t].conf ? TI[o].div : TI[o].conf + ' ' + TI[o].div)}</span></li>`; }).join('')}</ul></div>`; };
+  el('sheet').innerHTML = `<h2 class="sec">${esc(t)}: the 2043 opponents <em>${mine.filter(g => g.host === t).length} home, ${mine.filter(g => g.host !== t).length} away</em></h2>
+    <div class="sheet">${block('division')}${block('conference')}${block('interconference')}</div>`;
+}
+function renderOverview(){
+  const rows = cur.roster.map(t => `<tr><th class="tn">${clubn(t, true)}</th>${WEEKS.map(w => {
+    const g = atWeek(t, w); if (!g) return '<td class="b">·</td>';
+    const o = oppOf(g, t), home = g.host === t, short = TI[o].city.length > 9 ? TI[o].city.slice(0, 8) + '…' : TI[o].city;
+    return `<td class="g ${home ? 'h' : 'a'}" style="--dc:${colOf(o)}" title="${esc((home ? 'hosts ' : 'at ') + o)}">${home ? '' : '@'}${esc(short)}</td>`;
+  }).join('')}</tr>`).join('');
+  el('overview').innerHTML = `<h2 class="sec">${esc(DIVKEY(cur))}, week by week <em>colour is the opponent's division · @ and a dotted underline mean a road game · a dot is a bye</em></h2>
+    <div class="tablewrap"><table class="mx"><thead><tr><th class="tn"></th>${WEEKS.map(w => `<th>${w}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div>
+    <p class="note">League games per week: ${WEEKS.map(w => `<b>${w}</b>&nbsp;${games.filter(g => g.week === w).length}`).join(' · ')}.</p>`;
+}
+function renderIssues(){
+  const errs = [], wrns = [];
+  Object.keys(TI).forEach(t => {
+    if (unplaced(t).length){ const st = streakTrouble(t) || rematchTrouble(t); if (st) wrns.push([t, st]); return; }
+    const b = byesOf(t);
+    if (TG[t].length !== GPT) errs.push([t, TG[t].length + ' games, needs ' + GPT]);
+    const bt = byeTrouble(t); if (bt) errs.push([t, bt]);
+    const st = streakTrouble(t); if (st && st !== bt) errs.push([t, st]);
+    const rt = rematchTrouble(t); if (rt && rt !== bt) errs.push([t, rt]);
+  });
+  const r = new Set(cur.roster), mineFirst = a => a.filter(x => r.has(x[0])).concat(a.filter(x => !r.has(x[0])));
+  const uniq = a => [...new Map(a.map(x => [x.join('|'), x])).values()];
+  const E = mineFirst(uniq(errs)), W = mineFirst(uniq(wrns));
+  el('issues').innerHTML = `<h2 class="sec">Checks <em>${E.length} blocking · ${W.length} to look at, ${esc(DIVKEY(cur))} first</em></h2>
+    ${E.slice(0, 60).map(([t, m]) => `<div class="issue err"><b>${esc(t)}</b>: ${esc(m)}</div>`).join('')}
+    ${W.slice(0, 60).map(([t, m]) => `<div class="issue wrn"><b>${esc(t)}</b>: ${esc(m)}</div>`).join('')}
+    ${!E.length && !W.length ? '<p class="note">Nothing flagged. A club is checked once all 18 of its games are placed.</p>' : ''}`;
+}
+function renderBlob(){
+  el('blob').value = JSON.stringify({ league: 'RFL', year: DATA.year, complete: games.every(g => g.week !== null),
+    games: games.map(g => ({ host: g.host, visitor: g.visitor, kind: g.kind, week: g.week })) });
+}
+
+/* ---- persistence ---- */
+const DOC = 'rfl/schedule' + DATA.year;
+function setSave(m, c){ const n = el('savestate'); n.textContent = m; n.className = 'savestate' + (c ? ' ' + c : ''); }
+async function connect(){
+  setSave('loading…');
+  try { db = await window.claude?.use?.('db'); } catch(e){ db = null; }
+  if (!db){ loaded = true; setSave('saving unavailable — use the hand-off box', 'bad'); render(); return; }
+  try {
+    const body = bodyOf(await db.doc(DOC).get());
+    if (body && Array.isArray(body.weeks)){
+      const m = new Map(body.weeks.map(r => [r.id, r.week])); let n = 0;
+      games.forEach(g => { const w = m.get(g.id); if (w !== undefined && w !== null && g.week === null && weekFree(g, w)){ setWeek(g, w); n++; } });
+      setSave('restored ' + n + ' games' + (body.saved ? ' · saved ' + body.saved : ''), 'ok');
+    } else setSave('ready');
+  } catch(e){ db = null; loaded = true; setSave('could not read the saved board — copy the hand-off before you close', 'bad'); render(); return; }
+  loaded = true; if (dirty) save(); render();
+}
+/* A document snapshot's body comes from data(), a function. Reading it as a property
+   returned nothing, so the board never restored and a save could overwrite it. */
+function bodyOf(snap){ if (!snap || snap.exists === false) return null;
+  return typeof snap.data === 'function' ? snap.data() : (snap.data || null); }
+function weekFree(g, w){ return sides(g).every(t => SLOT[t][w] === null || SLOT[t][w] === g); }
+async function save(){
+  if (!loaded || !db) return;
+  try {
+    let stored = null;
+    const b0 = bodyOf(await db.doc(DOC).get());   // a failed read throws and aborts the save
+    stored = b0 && Array.isArray(b0.weeks) ? new Map(b0.weeks.map(r => [r.id, r.week])) : null;
+    let pulled = 0;
+    if (stored) games.forEach(g => { if (TOUCHED.has(g.id)) return; const w = stored.get(g.id);
+      if (w !== undefined && w !== null && g.week === null && weekFree(g, w)){ setWeek(g, w); pulled++; } });
+    await db.doc(DOC).set({ year: DATA.year, weeks: games.map(g => ({ id: g.id, week: g.week })), saved: new Date().toLocaleString() });
+    dirty = false; setSave('saved ' + new Date().toLocaleTimeString() + (pulled ? ' · merged ' + pulled + ' from another tab' : ''), 'ok');
+    if (pulled) render();
+  } catch(e){ setSave('save failed — copy the hand-off box', 'bad'); }
+}
+function queueSave(){ dirty = true; if (!loaded) return; setSave('unsaved…', 'dirty'); clearTimeout(saveTimer); saveTimer = setTimeout(save, 700); }
+let tt = null;
+function toast(m){ el('toast').textContent = m; el('toast').classList.add('show'); clearTimeout(tt); tt = setTimeout(() => el('toast').classList.remove('show'), 2200); }
+
+/* ---- events ---- */
+document.addEventListener('click', e => {
+  const db_ = e.target.closest('[data-div]');
+  if (db_){ cur = DATA.divisions.find(d => DIVKEY(d) === db_.dataset.div); sel = cur.roster[0]; held = null; return render(); }
+  const row = e.target.closest('[data-team]');
+  if (row){ sel = row.dataset.team; held = null; return render(); }
+  const chip = e.target.closest('[data-hold]');
+  if (chip) return hold(games.find(g => g.id === chip.dataset.hold));
+  const wk = e.target.closest('[data-wk]');
+  if (wk){ const g = wk.dataset.gid ? games.find(x => x.id === wk.dataset.gid) : null;
+    if (g) return lift(g); if (held) return place(held, +wk.dataset.wk); return; }
+  const id = e.target.closest('button')?.id;
+  const inDiv = g => cur.roster.includes(g.host) || cur.roster.includes(g.visitor);
+  if (id === 'autoDiv') return void autoFill(inDiv);
+  if (id === 'autoTeam') return void autoFill(g => g.host === sel || g.visitor === sel);
+  if (id === 'autoAll'){
+    let ok = false;
+    for (let pass = 0; pass < 4 && !ok; pass++){
+      ok = true;
+      for (const d of DATA.divisions){
+        const r = new Set(d.roster), f = g => r.has(g.host) || r.has(g.visitor);
+        if (!games.some(g => g.week === null && f(g))) continue;
+        if (!autoFill(f, true)){ ok = false;
+          games.forEach(g => { if (f(g)){ setWeek(g, null); TOUCHED.add(g.id); } }); }
+      }
+    }
+    held = null; render(); queueSave();
+    const left = games.filter(g => g.week === null).length;
+    return toast(left ? left + ' still unplaced — try those divisions on their own' : 'the whole league is placed');
+  }
+  if (id === 'clearTeam'){ TG[sel].forEach(g => { setWeek(g, null); TOUCHED.add(g.id); }); held = null; render(); return queueSave(); }
+  if (id === 'clearDiv'){ games.forEach(g => { if (inDiv(g)){ setWeek(g, null); TOUCHED.add(g.id); } }); held = null; render(); return queueSave(); }
+  if (id === 'saveBtn') return save();
+  if (id === 'copyBtn'){ const v = el('blob').value;
+    try { navigator.clipboard.writeText(v).then(() => toast('copied'), () => { el('blob').select(); toast('press ⌘C / Ctrl-C'); }); }
+    catch(_){ el('blob').select(); toast('press ⌘C / Ctrl-C'); } return; }
+  if (id === 'loadBtn'){ const ta = el('blob'); ta.readOnly = false; ta.value = ''; ta.focus();
+    toast('paste a saved board, then tap Load it'); e.target.id = 'loadBtn2'; e.target.textContent = 'Load it'; return; }
+  if (id === 'loadBtn2'){
+    try { const d = JSON.parse(el('blob').value); let n = 0;
+      (d.games || []).forEach(r => { const g = games.find(x => x.week === null && x.host === r.host && x.visitor === r.visitor && x.kind === r.kind);
+        if (g && r.week != null && whyNotWeek(g, r.week) === null){ setWeek(g, r.week); TOUCHED.add(g.id); n++; } });
+      toast('loaded ' + n + ' weeks');
+    } catch(err){ toast('that is not a saved board'); }
+    el('blob').readOnly = true; e.target.id = 'loadBtn'; e.target.textContent = 'Paste one back in'; render(); queueSave(); return;
+  }
+});
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'TEXTAREA') return;
+  if (e.key === 'Escape'){ held = null; return render(); }
+  const i = cur.roster.indexOf(sel);
+  if (e.key === 'j'){ sel = cur.roster[(i + 1) % 5]; held = null; render(); }
+  if (e.key === 'k'){ sel = cur.roster[(i + 4) % 5]; held = null; render(); }
+});
+addEventListener('beforeunload', e => { if (dirty){ e.preventDefault(); e.returnValue = ''; } });
+
+el('yrline').textContent = DATA.year + ' season · 40 clubs · 20 weeks';
+seed(); buildIndex(); sel = cur.roster[0]; render(); connect();
+</script>
+
