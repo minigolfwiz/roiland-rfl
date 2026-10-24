@@ -441,3 +441,4 @@ NEXT: Dan confirms -> python3 ccg.py --commit (backups first). NEVER run ccg.py 
 RYSKAMP FOUR (strict subset of ten): Torrarini, El-Najjar, Hariraman, Sierralonga.
 NEXT: selection ballot (stage CCG) from Dan -> playoff office.
 2042 PLAYOFF FIELD INSTALLED (human committee): 1 Dietsche 2 Tasson 3 Park Island 4 Eona 5 Ranroman State 6 Pistolheart 7 Fiota Bay 8 UFNH | R1: 24 Vaughn Bay State@9 Barhold, 23 UN Minko@10 Lornaman, 22 Trapper Point@11 Diveo State, 21 Canesta State@12 Black Forest, 20 Hoganelle@13 Costique River, 19 Crayellan@14 Hatesei, 18 Marblehead@15 Rogaela, 17 Yrei Trobniy@16 Ranroman. NOT PLAYED; waiting on Dan's go.
+2042 R1 full previews given (playoff_preview.py, read-only). NOT PLAYED; waiting on Dan's go for playoff.py run_round1.
