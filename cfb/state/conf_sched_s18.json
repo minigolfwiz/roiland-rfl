@@ -1,0 +1,7163 @@
+{
+ "season": 18,
+ "year": 2043,
+ "complete": true,
+ "games": [
+  {
+   "conf": "Power North",
+   "host": "Barhold State",
+   "visitor": "Diveo",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Barhold State",
+   "visitor": "Diveo State",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Kaji Kita",
+   "visitor": "Barhold State",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Northlight",
+   "visitor": "Barhold State",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Roosevelt State",
+   "visitor": "Barhold State",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Barhold State",
+   "visitor": "Skeenerland State",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Barhold State",
+   "visitor": "Southern Tengus",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Tengus State",
+   "visitor": "Barhold State",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Barhold",
+   "visitor": "Barhold State",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Power North",
+   "host": "Diveo",
+   "visitor": "Barhold",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Marblehead",
+   "visitor": "Barhold",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Northlight",
+   "visitor": "Barhold",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Roosevelt State",
+   "visitor": "Barhold",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Barhold",
+   "visitor": "Skeenerland",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Barhold",
+   "visitor": "Skeenerland State",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Southern Tengus",
+   "visitor": "Barhold",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Barhold",
+   "visitor": "Tengus State",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Costique",
+   "visitor": "Diveo State",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Kaji Kita",
+   "visitor": "Costique",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Marblehead",
+   "visitor": "Costique",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Power North",
+   "host": "Costique",
+   "visitor": "Northlight",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Roosevelt State",
+   "visitor": "Costique",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Costique",
+   "visitor": "Skeenerland",
+   "week": 2,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Southern Tengus",
+   "visitor": "Costique",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Costique",
+   "visitor": "Tengus",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Costique",
+   "visitor": "Tengus State",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Diveo State",
+   "visitor": "Kaji Kita",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Marblehead",
+   "visitor": "Diveo State",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Diveo State",
+   "visitor": "Northlight",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Diveo State",
+   "visitor": "Roosevelt State",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Skeenerland State",
+   "visitor": "Diveo State",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Tengus State",
+   "visitor": "Diveo State",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Diveo State",
+   "visitor": "Diveo",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Power North",
+   "host": "Kaji Kita",
+   "visitor": "Diveo",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Northlight",
+   "visitor": "Diveo",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Diveo",
+   "visitor": "Roosevelt State",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Diveo",
+   "visitor": "Skeenerland",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Southern Tengus",
+   "visitor": "Diveo",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Diveo",
+   "visitor": "Tengus",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Roosevelt State",
+   "visitor": "Kaji Kita",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Skeenerland",
+   "visitor": "Kaji Kita",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Southern Tengus",
+   "visitor": "Kaji Kita",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Kaji Kita",
+   "visitor": "Tengus",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Tengus State",
+   "visitor": "Kaji Kita",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Northlight",
+   "visitor": "Marblehead",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Marblehead",
+   "visitor": "Roosevelt State",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Skeenerland",
+   "visitor": "Marblehead",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Skeenerland State",
+   "visitor": "Marblehead",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Tengus",
+   "visitor": "Marblehead",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Tengus State",
+   "visitor": "Marblehead",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Skeenerland",
+   "visitor": "Northlight",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Northlight",
+   "visitor": "Skeenerland State",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Tengus",
+   "visitor": "Northlight",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Skeenerland State",
+   "visitor": "Roosevelt State",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Tengus",
+   "visitor": "Roosevelt State",
+   "week": 2,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Skeenerland State",
+   "visitor": "Southern Tengus",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Skeenerland State",
+   "visitor": "Tengus State",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Skeenerland",
+   "visitor": "Skeenerland State",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Power North",
+   "host": "Southern Tengus",
+   "visitor": "Skeenerland",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Skeenerland",
+   "visitor": "Tengus",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Tengus",
+   "visitor": "Southern Tengus",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Tengus State",
+   "visitor": "Southern Tengus",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Power North",
+   "host": "Tengus",
+   "visitor": "Tengus State",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Antiragal State",
+   "visitor": "Dietsche",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Dove Island",
+   "visitor": "Antiragal State",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Antiragal State",
+   "visitor": "Keytommiyr",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Antiragal State",
+   "visitor": "Krobe",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Krobe State",
+   "visitor": "Antiragal State",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Antiragal State",
+   "visitor": "S Antiragal State",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Tasson",
+   "visitor": "Antiragal State",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Will Tech",
+   "visitor": "Antiragal State",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Antiragal",
+   "visitor": "Antiragal State",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Dietsche",
+   "visitor": "Antiragal",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Dove Island",
+   "visitor": "Antiragal",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Antiragal",
+   "visitor": "Krobe State",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Antiragal",
+   "visitor": "Leafette",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Antiragal",
+   "visitor": "Rogaela State",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "S Antiragal State",
+   "visitor": "Antiragal",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Antiragal",
+   "visitor": "South Antiragal",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Verigon State",
+   "visitor": "Antiragal",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Dove Island",
+   "visitor": "Dietsche",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Keytommiyr",
+   "visitor": "Dietsche",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Krobe",
+   "visitor": "Dietsche",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Dietsche",
+   "visitor": "Leafette",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Dietsche",
+   "visitor": "Rogaela State",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "South Antiragal",
+   "visitor": "Dietsche",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Dietsche",
+   "visitor": "Verigon State",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Leafette",
+   "visitor": "Dove Island",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "S Antiragal State",
+   "visitor": "Dove Island",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "South Antiragal",
+   "visitor": "Dove Island",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Dove Island",
+   "visitor": "Tasson",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Verigon State",
+   "visitor": "Dove Island",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Will Tech",
+   "visitor": "Dove Island",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Keytommiyr",
+   "visitor": "Krobe",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Krobe State",
+   "visitor": "Keytommiyr",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Leafette",
+   "visitor": "Keytommiyr",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Rogaela State",
+   "visitor": "Keytommiyr",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Tasson",
+   "visitor": "Keytommiyr",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Keytommiyr",
+   "visitor": "Verigon State",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Keytommiyr",
+   "visitor": "Will Tech",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Krobe State",
+   "visitor": "Leafette",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Rogaela State",
+   "visitor": "Krobe State",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "S Antiragal State",
+   "visitor": "Krobe State",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "South Antiragal",
+   "visitor": "Krobe State",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Tasson",
+   "visitor": "Krobe State",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Krobe State",
+   "visitor": "Krobe",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Leafette",
+   "visitor": "Krobe",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Rogaela State",
+   "visitor": "Krobe",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Krobe",
+   "visitor": "South Antiragal",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Krobe",
+   "visitor": "Tasson",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Krobe",
+   "visitor": "Will Tech",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Leafette",
+   "visitor": "S Antiragal State",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Tasson",
+   "visitor": "Leafette",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Will Tech",
+   "visitor": "Leafette",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "S Antiragal State",
+   "visitor": "Rogaela State",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Rogaela State",
+   "visitor": "South Antiragal",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Verigon State",
+   "visitor": "Rogaela State",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Rogaela State",
+   "visitor": "Will Tech",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "S Antiragal State",
+   "visitor": "South Antiragal",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Verigon State",
+   "visitor": "S Antiragal State",
+   "week": 2,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Will Tech",
+   "visitor": "S Antiragal State",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "South Antiragal",
+   "visitor": "Tasson",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "South Antiragal",
+   "visitor": "Verigon State",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Verigon State",
+   "visitor": "Tasson",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Tasson",
+   "visitor": "Will Tech",
+   "week": 9,
+   "locked": true
+  },
+  {
+   "conf": "Jyras Bay",
+   "host": "Will Tech",
+   "visitor": "Verigon State",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Eona",
+   "visitor": "Central Stanton",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Central Stanton",
+   "visitor": "Greene",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Central Stanton",
+   "visitor": "Orlot",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Pistolheart",
+   "visitor": "Central Stanton",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Ranroman",
+   "visitor": "Central Stanton",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Ranroman State",
+   "visitor": "Central Stanton",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Stanton",
+   "visitor": "Central Stanton",
+   "week": 10,
+   "locked": true
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Central Stanton",
+   "visitor": "UN Ediville",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Central Stanton",
+   "visitor": "UNN",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Ciarralotta",
+   "visitor": "Eona",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Ciarralotta",
+   "visitor": "Hatesei",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Kaji Daun",
+   "visitor": "Ciarralotta",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "North Hatesei",
+   "visitor": "Ciarralotta",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Ciarralotta",
+   "visitor": "Orlot",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Pistolheart",
+   "visitor": "Ciarralotta",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Ciarralotta",
+   "visitor": "Ranroman",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Ranroman State",
+   "visitor": "Ciarralotta",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "UNN",
+   "visitor": "Ciarralotta",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Greene",
+   "visitor": "Eona",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Eona",
+   "visitor": "Hatesei",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Kaji Daun",
+   "visitor": "Eona",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "North Hatesei",
+   "visitor": "Eona",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Eona",
+   "visitor": "Ranroman",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Eona",
+   "visitor": "Stanton",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "UNN",
+   "visitor": "Eona",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Greene",
+   "visitor": "Hatesei",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Greene",
+   "visitor": "Kaji Daun",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "North Hatesei",
+   "visitor": "Greene",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Pistolheart",
+   "visitor": "Greene",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Ranroman",
+   "visitor": "Greene",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Greene",
+   "visitor": "Stanton",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "UN Ediville",
+   "visitor": "Greene",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Hatesei",
+   "visitor": "Kaji Daun",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "North Hatesei",
+   "visitor": "Hatesei",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Hatesei",
+   "visitor": "Orlot",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Hatesei",
+   "visitor": "Pistolheart",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Ranroman State",
+   "visitor": "Hatesei",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Hatesei",
+   "visitor": "UN Ediville",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "North Hatesei",
+   "visitor": "Kaji Daun",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Kaji Daun",
+   "visitor": "Orlot",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Pistolheart",
+   "visitor": "Kaji Daun",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Kaji Daun",
+   "visitor": "UN Ediville",
+   "week": 2,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "UNN",
+   "visitor": "Kaji Daun",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Ranroman",
+   "visitor": "North Hatesei",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Stanton",
+   "visitor": "North Hatesei",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "UN Ediville",
+   "visitor": "North Hatesei",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "UNN",
+   "visitor": "North Hatesei",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Orlot",
+   "visitor": "Pistolheart",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Orlot",
+   "visitor": "Ranroman State",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Stanton",
+   "visitor": "Orlot",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Orlot",
+   "visitor": "UN Ediville",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Orlot",
+   "visitor": "UNN",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Ranroman",
+   "visitor": "Pistolheart",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Ranroman State",
+   "visitor": "Pistolheart",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Pistolheart",
+   "visitor": "Stanton",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Stanton",
+   "visitor": "Ranroman State",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "UN Ediville",
+   "visitor": "Ranroman State",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Ranroman State",
+   "visitor": "UNN",
+   "week": 10,
+   "locked": true
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Ranroman",
+   "visitor": "Ranroman State",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "Stanton",
+   "visitor": "Ranroman",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "UNN",
+   "visitor": "Ranroman",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "UN Ediville",
+   "visitor": "Stanton",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Great Fourteen",
+   "host": "UN Ediville",
+   "visitor": "UNN",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Burrstone",
+   "visitor": "Barhold Valley",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Far Farris State",
+   "visitor": "Barhold Valley",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Barhold Valley",
+   "visitor": "Good River",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Kaji Kita State",
+   "visitor": "Barhold Valley",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Barhold Valley",
+   "visitor": "Natzumakis",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Barhold Valley",
+   "visitor": "Park Island",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Roosevelt",
+   "visitor": "Barhold Valley",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Skylar Rose",
+   "visitor": "Barhold Valley",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Barhold Valley",
+   "visitor": "Yrei Trobniy",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Burrstone",
+   "visitor": "Far Farris",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Burrstone",
+   "visitor": "Far Farris State",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Burrstone",
+   "visitor": "Good River",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Natzumakis State",
+   "visitor": "Burrstone",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Park Island",
+   "visitor": "Burrstone",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Roosevelt",
+   "visitor": "Burrstone",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Skylar Rose",
+   "visitor": "Burrstone",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Yrei Trobniy",
+   "visitor": "Burrstone",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Far Farris State",
+   "visitor": "Good River",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Far Farris State",
+   "visitor": "Kaji Kita State",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Far Farris State",
+   "visitor": "Natzumakis State",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Roosevelt",
+   "visitor": "Far Farris State",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Skylar Rose",
+   "visitor": "Far Farris State",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Yrei Trobniy",
+   "visitor": "Far Farris State",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Far Farris State",
+   "visitor": "Far Farris",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Good River",
+   "visitor": "Far Farris",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Kaji Kita State",
+   "visitor": "Far Farris",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Far Farris",
+   "visitor": "Natzumakis",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Natzumakis State",
+   "visitor": "Far Farris",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Far Farris",
+   "visitor": "Park Island",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Far Farris",
+   "visitor": "Roosevelt",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Far Farris",
+   "visitor": "Skylar Rose",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Kaji Kita State",
+   "visitor": "Good River",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Good River",
+   "visitor": "Natzumakis",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Natzumakis State",
+   "visitor": "Good River",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Good River",
+   "visitor": "Park Island",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Good River",
+   "visitor": "Yrei Trobniy",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Natzumakis",
+   "visitor": "Kaji Kita State",
+   "week": 2,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Park Island",
+   "visitor": "Kaji Kita State",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Kaji Kita State",
+   "visitor": "Roosevelt",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Skylar Rose",
+   "visitor": "Kaji Kita State",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Yrei Trobniy",
+   "visitor": "Kaji Kita State",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Natzumakis State",
+   "visitor": "Park Island",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Roosevelt",
+   "visitor": "Natzumakis State",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Skylar Rose",
+   "visitor": "Natzumakis State",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Natzumakis State",
+   "visitor": "Yrei Trobniy",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Natzumakis",
+   "visitor": "Natzumakis State",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Park Island",
+   "visitor": "Natzumakis",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Natzumakis",
+   "visitor": "Roosevelt",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Natzumakis",
+   "visitor": "Skylar Rose",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Natzumakis",
+   "visitor": "Yrei Trobniy",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Park Island",
+   "visitor": "Skylar Rose",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Yrei Trobniy",
+   "visitor": "Park Island",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Roosevelt",
+   "visitor": "Skylar Rose",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Western Coast",
+   "host": "Yrei Trobniy",
+   "visitor": "Roosevelt",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Ciarralotta State",
+   "visitor": "Ciarralotta Tech",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Broad South",
+   "host": "Coachville",
+   "visitor": "Ciarralotta State",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Diamond City",
+   "visitor": "Ciarralotta State",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Ciarralotta State",
+   "visitor": "Eastern State",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Keeper",
+   "visitor": "Ciarralotta State",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Lornaman",
+   "visitor": "Ciarralotta State",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Ciarralotta State",
+   "visitor": "Milharvey",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Southern Krobe",
+   "visitor": "Ciarralotta State",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Ciarralotta State",
+   "visitor": "Stanton State",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Coachville",
+   "visitor": "Ciarralotta Tech",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Ciarralotta Tech",
+   "visitor": "Diamond City",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Ciarralotta Tech",
+   "visitor": "Eastern State",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Ekralund State",
+   "visitor": "Ciarralotta Tech",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Ciarralotta Tech",
+   "visitor": "Keeper",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Ciarralotta Tech",
+   "visitor": "Lornaman",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Phangrine State",
+   "visitor": "Ciarralotta Tech",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Ciarralotta Tech",
+   "visitor": "Southern Krobe",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Diamond City",
+   "visitor": "Coachville",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Coachville",
+   "visitor": "Eastern State",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Ekralund State",
+   "visitor": "Coachville",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Coachville",
+   "visitor": "Lornaman",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Coachville",
+   "visitor": "Milharvey",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Southern Krobe",
+   "visitor": "Coachville",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Stanton State",
+   "visitor": "Coachville",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Broad South",
+   "host": "Ekralund State",
+   "visitor": "Diamond City",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Keeper",
+   "visitor": "Diamond City",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Lornaman",
+   "visitor": "Diamond City",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Diamond City",
+   "visitor": "Phangrine State",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Broad South",
+   "host": "Southern Krobe",
+   "visitor": "Diamond City",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Diamond City",
+   "visitor": "Stanton State",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Eastern State",
+   "visitor": "Ekralund State",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Keeper",
+   "visitor": "Eastern State",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Broad South",
+   "host": "Eastern State",
+   "visitor": "Lornaman",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Eastern State",
+   "visitor": "Milharvey",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Eastern State",
+   "visitor": "Phangrine State",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Stanton State",
+   "visitor": "Eastern State",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Keeper",
+   "visitor": "Ekralund State",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Lornaman",
+   "visitor": "Ekralund State",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Broad South",
+   "host": "Milharvey",
+   "visitor": "Ekralund State",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Phangrine State",
+   "visitor": "Ekralund State",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Ekralund State",
+   "visitor": "Southern Krobe",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Milharvey",
+   "visitor": "Keeper",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Phangrine State",
+   "visitor": "Keeper",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Southern Krobe",
+   "visitor": "Keeper",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Stanton State",
+   "visitor": "Keeper",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Milharvey",
+   "visitor": "Lornaman",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Lornaman",
+   "visitor": "Phangrine State",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Lornaman",
+   "visitor": "Stanton State",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Phangrine State",
+   "visitor": "Milharvey",
+   "week": 1,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Milharvey",
+   "visitor": "Southern Krobe",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Broad South",
+   "host": "Milharvey",
+   "visitor": "Stanton State",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Phangrine State",
+   "visitor": "Southern Krobe",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Stanton State",
+   "visitor": "Phangrine State",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Broad South",
+   "host": "Stanton State",
+   "visitor": "Southern Krobe",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Costique River",
+   "visitor": "Crayellan State",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Costique River",
+   "visitor": "East Costique",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Fiota Bay",
+   "visitor": "Costique River",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Harrell",
+   "visitor": "Costique River",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Parchynt",
+   "visitor": "Costique River",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Riveral",
+   "visitor": "Costique River",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Rogaela",
+   "visitor": "Costique River",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Costique River",
+   "visitor": "UFNH",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Costique River",
+   "visitor": "Verigon",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "East Costique",
+   "visitor": "Crayellan State",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Fiota Bay",
+   "visitor": "Crayellan State",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Crayellan State",
+   "visitor": "Harrell",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Crayellan State",
+   "visitor": "North Verigon",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Riveral",
+   "visitor": "Crayellan State",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Crayellan State",
+   "visitor": "Rogaela",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Crayellan State",
+   "visitor": "Verigon",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Crayellan",
+   "visitor": "Crayellan State",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Crayellan",
+   "visitor": "East Costique",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Fiota Bay",
+   "visitor": "Crayellan",
+   "week": 9,
+   "locked": true
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Crayellan",
+   "visitor": "Harrell",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Crayellan",
+   "visitor": "North Verigon",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Parchynt",
+   "visitor": "Crayellan",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Rogaela",
+   "visitor": "Crayellan",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Crayellan",
+   "visitor": "UFNH",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Verigon",
+   "visitor": "Crayellan",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "East Costique",
+   "visitor": "Fiota Bay",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Harrell",
+   "visitor": "East Costique",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Parchynt",
+   "visitor": "East Costique",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Riveral",
+   "visitor": "East Costique",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "East Costique",
+   "visitor": "Rogaela",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "East Costique",
+   "visitor": "UFNH",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "North Verigon",
+   "visitor": "Fiota Bay",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Riveral",
+   "visitor": "Fiota Bay",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Fiota Bay",
+   "visitor": "Rogaela",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "UFNH",
+   "visitor": "Fiota Bay",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Verigon",
+   "visitor": "Fiota Bay",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "North Verigon",
+   "visitor": "Harrell",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Harrell",
+   "visitor": "Parchynt",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Riveral",
+   "visitor": "Harrell",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Rogaela",
+   "visitor": "Harrell",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Harrell",
+   "visitor": "Verigon",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "North Verigon",
+   "visitor": "Parchynt",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "North Verigon",
+   "visitor": "Riveral",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Rogaela",
+   "visitor": "North Verigon",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "North Verigon",
+   "visitor": "UFNH",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Verigon",
+   "visitor": "North Verigon",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Parchynt",
+   "visitor": "Riveral",
+   "week": 2,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Parchynt",
+   "visitor": "Rogaela",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "UFNH",
+   "visitor": "Parchynt",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Verigon",
+   "visitor": "Parchynt",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "UFNH",
+   "visitor": "Riveral",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "Verigon",
+   "visitor": "Riveral",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "UFNH",
+   "visitor": "Rogaela",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Mountain Valley",
+   "host": "UFNH",
+   "visitor": "Verigon",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Crimson Mount",
+   "visitor": "Hofferteltra",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Hoganelle",
+   "visitor": "Crimson Mount",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Crimson Mount",
+   "visitor": "Kaji Daun State",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Crimson Mount",
+   "visitor": "NE Rogaela",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Crimson Mount",
+   "visitor": "North Canesta",
+   "week": 2,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Reid State",
+   "visitor": "Crimson Mount",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Rogaela Tech",
+   "visitor": "Crimson Mount",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Roosevelt Mines",
+   "visitor": "Crimson Mount",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Crimson Mount",
+   "visitor": "Skirter",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Hofferteltra",
+   "visitor": "Denver State",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Denver State",
+   "visitor": "Hoganelle",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Kaji Daun State",
+   "visitor": "Denver State",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "NE Rogaela",
+   "visitor": "Denver State",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Denver State",
+   "visitor": "North Canesta",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Denver State",
+   "visitor": "Palisades",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Rogaela Tech",
+   "visitor": "Denver State",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Roosevelt Mines",
+   "visitor": "Denver State",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Denver State",
+   "visitor": "Skirter",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Hoganelle",
+   "visitor": "Hofferteltra",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Hofferteltra",
+   "visitor": "Kaji Daun State",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Palisades",
+   "visitor": "Hofferteltra",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Reid State",
+   "visitor": "Hofferteltra",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Hofferteltra",
+   "visitor": "Rogaela Tech",
+   "week": 2,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Hofferteltra",
+   "visitor": "Roosevelt Mines",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Skirter",
+   "visitor": "Hofferteltra",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Hoganelle",
+   "visitor": "NE Rogaela",
+   "week": 2,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "North Canesta",
+   "visitor": "Hoganelle",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Palisades",
+   "visitor": "Hoganelle",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Reid State",
+   "visitor": "Hoganelle",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Hoganelle",
+   "visitor": "Rogaela Tech",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Skirter",
+   "visitor": "Hoganelle",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Kaji Daun State",
+   "visitor": "NE Rogaela",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "North Canesta",
+   "visitor": "Kaji Daun State",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Kaji Daun State",
+   "visitor": "Palisades",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Kaji Daun State",
+   "visitor": "Rogaela Tech",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Roosevelt Mines",
+   "visitor": "Kaji Daun State",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Kaji Daun State",
+   "visitor": "Skirter",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "North Canesta",
+   "visitor": "NE Rogaela",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "NE Rogaela",
+   "visitor": "Palisades",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "NE Rogaela",
+   "visitor": "Reid State",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Roosevelt Mines",
+   "visitor": "NE Rogaela",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "NE Rogaela",
+   "visitor": "Skirter",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Palisades",
+   "visitor": "North Canesta",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "North Canesta",
+   "visitor": "Reid State",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "North Canesta",
+   "visitor": "Roosevelt Mines",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Skirter",
+   "visitor": "North Canesta",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Reid State",
+   "visitor": "Palisades",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Rogaela Tech",
+   "visitor": "Palisades",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Palisades",
+   "visitor": "Roosevelt Mines",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Rogaela Tech",
+   "visitor": "Reid State",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Roosevelt Mines",
+   "visitor": "Reid State",
+   "week": 2,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Skirter",
+   "visitor": "Reid State",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Rogaela Tech",
+   "visitor": "Roosevelt Mines",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Vapor Stream",
+   "host": "Skirter",
+   "visitor": "Rogaela Tech",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Black Forest",
+   "visitor": "Cliffstraite",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Black Forest",
+   "visitor": "Coachville College",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Ek Tech",
+   "visitor": "Black Forest",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Hansenne",
+   "visitor": "Black Forest",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Hughes State",
+   "visitor": "Black Forest",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Black Forest",
+   "visitor": "National",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "New Madrid",
+   "visitor": "Black Forest",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Orlot Western",
+   "visitor": "Black Forest",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Black Forest",
+   "visitor": "Westburg",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Cliffstraite",
+   "visitor": "Clark",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Clark",
+   "visitor": "Coachville College",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Hansenne",
+   "visitor": "Clark",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Hughes State",
+   "visitor": "Clark",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "National",
+   "visitor": "Clark",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Clark",
+   "visitor": "New Madrid",
+   "week": 1,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Clark",
+   "visitor": "Sacred Tomb",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Clark",
+   "visitor": "San Diego Valley",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Westburg",
+   "visitor": "Clark",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Coachville College",
+   "visitor": "Cliffstraite",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Hansenne",
+   "visitor": "Cliffstraite",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Cliffstraite",
+   "visitor": "Hughes State",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Cliffstraite",
+   "visitor": "National",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Cliffstraite",
+   "visitor": "Queensville",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "San Diego Valley",
+   "visitor": "Cliffstraite",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Westburg",
+   "visitor": "Cliffstraite",
+   "week": 1,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Coachville College",
+   "visitor": "Hansenne",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Hughes State",
+   "visitor": "Coachville College",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Coachville College",
+   "visitor": "Queensville",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Sacred Tomb",
+   "visitor": "Coachville College",
+   "week": 2,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Coachville College",
+   "visitor": "San Diego Valley",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Westburg",
+   "visitor": "Coachville College",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Ek Tech",
+   "visitor": "Hansenne",
+   "week": 1,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Hughes State",
+   "visitor": "Ek Tech",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Ek Tech",
+   "visitor": "National",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "New Madrid",
+   "visitor": "Ek Tech",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Orlot Western",
+   "visitor": "Ek Tech",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Sacred Tomb",
+   "visitor": "Ek Tech",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Ek Tech",
+   "visitor": "San Diego Valley",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Ek Tech",
+   "visitor": "Westburg",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Hughes State",
+   "visitor": "Hansenne",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Hansenne",
+   "visitor": "New Madrid",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Orlot Western",
+   "visitor": "Hansenne",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Queensville",
+   "visitor": "Hansenne",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Orlot Western",
+   "visitor": "Hughes State",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Queensville",
+   "visitor": "Hughes State",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Sacred Tomb",
+   "visitor": "Hughes State",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "National",
+   "visitor": "Orlot Western",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "National",
+   "visitor": "Queensville",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "National",
+   "visitor": "Sacred Tomb",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "San Diego Valley",
+   "visitor": "National",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Westburg",
+   "visitor": "National",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "New Madrid",
+   "visitor": "Orlot Western",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Queensville",
+   "visitor": "New Madrid",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "New Madrid",
+   "visitor": "Sacred Tomb",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "San Diego Valley",
+   "visitor": "New Madrid",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "New Madrid",
+   "visitor": "Westburg",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Queensville",
+   "visitor": "Orlot Western",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Sacred Tomb",
+   "visitor": "Orlot Western",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "San Diego Valley",
+   "visitor": "Orlot Western",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Queensville",
+   "visitor": "San Diego Valley",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Westburg",
+   "visitor": "Queensville",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "San Diego Valley",
+   "visitor": "Sacred Tomb",
+   "week": 1,
+   "locked": false
+  },
+  {
+   "conf": "Low Sixteen",
+   "host": "Sacred Tomb",
+   "visitor": "Westburg",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Churchill",
+   "visitor": "Canesta State",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Eona Navy",
+   "visitor": "Canesta State",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Canesta State",
+   "visitor": "Marines",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "North Hatesei St",
+   "visitor": "Canesta State",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Canesta State",
+   "visitor": "Repidome",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "UN Steelbridge",
+   "visitor": "Canesta State",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Canesta State",
+   "visitor": "West Hatesei",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Canesta State",
+   "visitor": "West Hatesei St",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Wolford",
+   "visitor": "Canesta State",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Eona Navy",
+   "visitor": "Churchill",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Marines",
+   "visitor": "Churchill",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "North Hatesei St",
+   "visitor": "Churchill",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Churchill",
+   "visitor": "Repidome",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "UN Steelbridge",
+   "visitor": "Churchill",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "West Hatesei",
+   "visitor": "Churchill",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Churchill",
+   "visitor": "West Hatesei St",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Churchill",
+   "visitor": "Wolford",
+   "week": 1,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Eona Navy",
+   "visitor": "Marines",
+   "week": 14,
+   "locked": true
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "North Hatesei St",
+   "visitor": "Eona Navy",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Repidome",
+   "visitor": "Eona Navy",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Eona Navy",
+   "visitor": "UN Steelbridge",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Eona Navy",
+   "visitor": "West Hatesei",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "West Hatesei St",
+   "visitor": "Eona Navy",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Wolford",
+   "visitor": "Eona Navy",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "North Hatesei St",
+   "visitor": "Marines",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Repidome",
+   "visitor": "Marines",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Marines",
+   "visitor": "UN Steelbridge",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "West Hatesei",
+   "visitor": "Marines",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Marines",
+   "visitor": "West Hatesei St",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Marines",
+   "visitor": "Wolford",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "North Hatesei St",
+   "visitor": "Repidome",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "UN Steelbridge",
+   "visitor": "North Hatesei St",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "West Hatesei",
+   "visitor": "North Hatesei St",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "West Hatesei St",
+   "visitor": "North Hatesei St",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Wolford",
+   "visitor": "North Hatesei St",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "UN Steelbridge",
+   "visitor": "Repidome",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Repidome",
+   "visitor": "West Hatesei",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Repidome",
+   "visitor": "West Hatesei St",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Wolford",
+   "visitor": "Repidome",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "UN Steelbridge",
+   "visitor": "West Hatesei",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "West Hatesei St",
+   "visitor": "UN Steelbridge",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "Wolford",
+   "visitor": "UN Steelbridge",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "West Hatesei St",
+   "visitor": "Wolford",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "West Hatesei",
+   "visitor": "West Hatesei St",
+   "week": 2,
+   "locked": false
+  },
+  {
+   "conf": "Brass Belt",
+   "host": "West Hatesei",
+   "visitor": "Wolford",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Costique State",
+   "visitor": "East Tasson",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Costique State",
+   "visitor": "Eternal Fox",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Kingdom Valley",
+   "visitor": "Costique State",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Larksdale",
+   "visitor": "Costique State",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "North Central",
+   "visitor": "Costique State",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Costique State",
+   "visitor": "Southeastern",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Starfield",
+   "visitor": "Costique State",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Costique State",
+   "visitor": "Tasson State",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Trapper Point",
+   "visitor": "Costique State",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "East Tasson",
+   "visitor": "Eternal Fox",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "East Tasson",
+   "visitor": "German Shores",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Kingdom Valley",
+   "visitor": "East Tasson",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "East Tasson",
+   "visitor": "Larksdale",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Southeastern",
+   "visitor": "East Tasson",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Starfield",
+   "visitor": "East Tasson",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Tasson State",
+   "visitor": "East Tasson",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "East Tasson",
+   "visitor": "Trapper Point",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Eternal Fox",
+   "visitor": "German Shores",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Kingdom Valley",
+   "visitor": "Eternal Fox",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Eternal Fox",
+   "visitor": "Lito Rock State",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Eternal Fox",
+   "visitor": "North Central",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Starfield",
+   "visitor": "Eternal Fox",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Eternal Fox",
+   "visitor": "Tasson State",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Eternal Fox",
+   "visitor": "Trapper Point",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "German Shores",
+   "visitor": "Kingdom Valley",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "German Shores",
+   "visitor": "Larksdale",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "German Shores",
+   "visitor": "Lito Rock State",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "North Central",
+   "visitor": "German Shores",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Southeastern",
+   "visitor": "German Shores",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "German Shores",
+   "visitor": "Starfield",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "German Shores",
+   "visitor": "Trapper Point",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Lito Rock State",
+   "visitor": "Kingdom Valley",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "North Central",
+   "visitor": "Kingdom Valley",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Southeastern",
+   "visitor": "Kingdom Valley",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Kingdom Valley",
+   "visitor": "Tasson State",
+   "week": 2,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Trapper Point",
+   "visitor": "Kingdom Valley",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Lito Rock State",
+   "visitor": "Larksdale",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Larksdale",
+   "visitor": "North Central",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Larksdale",
+   "visitor": "Southeastern",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Larksdale",
+   "visitor": "Starfield",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Larksdale",
+   "visitor": "Tasson State",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Trapper Point",
+   "visitor": "Larksdale",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Lito Rock State",
+   "visitor": "North Central",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Lito Rock State",
+   "visitor": "Southeastern",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Starfield",
+   "visitor": "Lito Rock State",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Lito Rock State",
+   "visitor": "Tasson State",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Trapper Point",
+   "visitor": "Lito Rock State",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Southeastern",
+   "visitor": "North Central",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Tasson State",
+   "visitor": "North Central",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "North Central",
+   "visitor": "Trapper Point",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Starfield",
+   "visitor": "Southeastern",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Tasson State",
+   "visitor": "Southeastern",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Tasson State",
+   "visitor": "Starfield",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "East Forest",
+   "host": "Trapper Point",
+   "visitor": "Starfield",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "David Harrison",
+   "visitor": "Fiota State",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "David Harrison",
+   "visitor": "Ireland River",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Parchynt State",
+   "visitor": "David Harrison",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Perri Park",
+   "visitor": "David Harrison",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Princeton State",
+   "visitor": "David Harrison",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "David Harrison",
+   "visitor": "Riveral State",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "David Harrison",
+   "visitor": "Rupin State",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "VSSC",
+   "visitor": "David Harrison",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Vaughn Bay",
+   "visitor": "David Harrison",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Fiota State",
+   "visitor": "Dove Island State",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Dove Island State",
+   "visitor": "Ireland River",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Parchynt State",
+   "visitor": "Dove Island State",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Dove Island State",
+   "visitor": "Perri Park",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Dove Island State",
+   "visitor": "Princeton State",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Riveral State",
+   "visitor": "Dove Island State",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Rupin State",
+   "visitor": "Dove Island State",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Dove Island State",
+   "visitor": "VSSC",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Dove Island State",
+   "visitor": "Vaughn Bay",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Fiota State",
+   "visitor": "Ireland River",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Parchynt State",
+   "visitor": "Fiota State",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Perri Park",
+   "visitor": "Fiota State",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Princeton State",
+   "visitor": "Fiota State",
+   "week": 2,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Fiota State",
+   "visitor": "Rupin State",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Fiota State",
+   "visitor": "Vaughn Bay",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Vaughn Bay State",
+   "visitor": "Fiota State",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Ireland River",
+   "visitor": "Parchynt State",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Ireland River",
+   "visitor": "Perri Park",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Princeton State",
+   "visitor": "Ireland River",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Ireland River",
+   "visitor": "Riveral State",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Rupin State",
+   "visitor": "Ireland River",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Ireland River",
+   "visitor": "Vaughn Bay State",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Parchynt State",
+   "visitor": "Riveral State",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Rupin State",
+   "visitor": "Parchynt State",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "VSSC",
+   "visitor": "Parchynt State",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Vaughn Bay",
+   "visitor": "Parchynt State",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Parchynt State",
+   "visitor": "Vaughn Bay State",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Perri Park",
+   "visitor": "Princeton State",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Riveral State",
+   "visitor": "Perri Park",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "VSSC",
+   "visitor": "Perri Park",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Perri Park",
+   "visitor": "Vaughn Bay",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Vaughn Bay State",
+   "visitor": "Perri Park",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Princeton State",
+   "visitor": "Riveral State",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Princeton State",
+   "visitor": "VSSC",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Vaughn Bay",
+   "visitor": "Princeton State",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Vaughn Bay State",
+   "visitor": "Princeton State",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Riveral State",
+   "visitor": "Rupin State",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "VSSC",
+   "visitor": "Riveral State",
+   "week": 1,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Riveral State",
+   "visitor": "Vaughn Bay State",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Rupin State",
+   "visitor": "VSSC",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Vaughn Bay",
+   "visitor": "Rupin State",
+   "week": 1,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Vaughn Bay State",
+   "visitor": "Rupin State",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Vaughn Bay",
+   "visitor": "VSSC",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "VSSC",
+   "visitor": "Vaughn Bay State",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Evening Star",
+   "host": "Vaughn Bay State",
+   "visitor": "Vaughn Bay",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Chapel Rock",
+   "visitor": "Cherry Lake",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Chinolka",
+   "visitor": "Chapel Rock",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Cordelle",
+   "visitor": "Chapel Rock",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Eona State",
+   "visitor": "Chapel Rock",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Chapel Rock",
+   "visitor": "Holliday",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Chapel Rock",
+   "visitor": "Perth Island",
+   "week": 2,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Chapel Rock",
+   "visitor": "Poland State",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "UN Minko",
+   "visitor": "Chapel Rock",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Underwood",
+   "visitor": "Chapel Rock",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Cherry Lake",
+   "visitor": "Chinolka",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Coastal Ranroman",
+   "visitor": "Cherry Lake",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Cordelle",
+   "visitor": "Cherry Lake",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Cherry Lake",
+   "visitor": "Ediville State",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Holliday",
+   "visitor": "Cherry Lake",
+   "week": 2,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Cherry Lake",
+   "visitor": "Perth Island",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Cherry Lake",
+   "visitor": "Poland State",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Waterloo",
+   "visitor": "Cherry Lake",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Cordelle",
+   "visitor": "Chinolka",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Eona State",
+   "visitor": "Chinolka",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Holliday",
+   "visitor": "Chinolka",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Mount Cairn",
+   "visitor": "Chinolka",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Chinolka",
+   "visitor": "UN Minko",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Chinolka",
+   "visitor": "Underwood",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Chinolka",
+   "visitor": "Waterloo",
+   "week": 1,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Coastal Ranroman",
+   "visitor": "Cordelle",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Ediville State",
+   "visitor": "Coastal Ranroman",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Coastal Ranroman",
+   "visitor": "Eona State",
+   "week": 2,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Mount Cairn",
+   "visitor": "Coastal Ranroman",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Poland State",
+   "visitor": "Coastal Ranroman",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "UN Minko",
+   "visitor": "Coastal Ranroman",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Coastal Ranroman",
+   "visitor": "Underwood",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Coastal Ranroman",
+   "visitor": "Waterloo",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Cordelle",
+   "visitor": "Mount Cairn",
+   "week": 13,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Perth Island",
+   "visitor": "Cordelle",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Poland State",
+   "visitor": "Cordelle",
+   "week": 1,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "UN Minko",
+   "visitor": "Cordelle",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Underwood",
+   "visitor": "Cordelle",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Ediville State",
+   "visitor": "Eona State",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Ediville State",
+   "visitor": "Holliday",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Mount Cairn",
+   "visitor": "Ediville State",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Perth Island",
+   "visitor": "Ediville State",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Ediville State",
+   "visitor": "Poland State",
+   "week": 2,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Ediville State",
+   "visitor": "Underwood",
+   "week": 5,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Waterloo",
+   "visitor": "Ediville State",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Eona State",
+   "visitor": "Holliday",
+   "week": 10,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Eona State",
+   "visitor": "Perth Island",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "UN Minko",
+   "visitor": "Eona State",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Underwood",
+   "visitor": "Eona State",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Waterloo",
+   "visitor": "Eona State",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Mount Cairn",
+   "visitor": "Holliday",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Perth Island",
+   "visitor": "Holliday",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Holliday",
+   "visitor": "Poland State",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Holliday",
+   "visitor": "Waterloo",
+   "week": 7,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Poland State",
+   "visitor": "Mount Cairn",
+   "week": 8,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Mount Cairn",
+   "visitor": "UN Minko",
+   "week": 12,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Underwood",
+   "visitor": "Mount Cairn",
+   "week": 2,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Waterloo",
+   "visitor": "Mount Cairn",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Perth Island",
+   "visitor": "Poland State",
+   "week": 11,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "UN Minko",
+   "visitor": "Perth Island",
+   "week": 9,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Perth Island",
+   "visitor": "Waterloo",
+   "week": 3,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Poland State",
+   "visitor": "UN Minko",
+   "week": 6,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Underwood",
+   "visitor": "UN Minko",
+   "week": 14,
+   "locked": false
+  },
+  {
+   "conf": "Southwestern",
+   "host": "Waterloo",
+   "visitor": "Underwood",
+   "week": 4,
+   "locked": false
+  },
+  {
+   "conf": null,
+   "host": "Northlight",
+   "visitor": "Starfield",
+   "week": 14,
+   "locked": true,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Roosevelt",
+   "visitor": "Roosevelt State",
+   "week": 14,
+   "locked": true,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Kaji Kita",
+   "visitor": "Kaji Daun",
+   "week": 14,
+   "locked": true,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Verigon State",
+   "visitor": "Verigon",
+   "week": 1,
+   "locked": true,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Eona Navy",
+   "visitor": "Northlight",
+   "week": 1,
+   "locked": true,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "National",
+   "visitor": "Lornaman",
+   "week": 4,
+   "locked": true,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Skylar Rose",
+   "visitor": "Southern Tengus",
+   "week": 14,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Southern Tengus",
+   "visitor": "Skeenerland Parley",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Southern Tengus",
+   "visitor": "Denver State",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Yrei Trobniy",
+   "visitor": "North Hatesei",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "North Hatesei",
+   "visitor": "West Hatesei",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "North Hatesei",
+   "visitor": "Surreigh",
+   "week": 3,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Fiota Bay",
+   "visitor": "Fiota",
+   "week": 13,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Fiota Bay",
+   "visitor": "Dove Island State",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Fiota Bay",
+   "visitor": "Eternal Fox",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Ranroman",
+   "visitor": "Barhold Valley",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Barhold Valley",
+   "visitor": "Skirter",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Barhold Valley",
+   "visitor": "Southern Parchynt",
+   "week": 0,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Barhold",
+   "visitor": "Burrstone",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Barhold",
+   "visitor": "Holliday",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Barhold",
+   "visitor": "Forrester",
+   "week": 2,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Barhold State",
+   "visitor": "Ciarralotta State",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Barhold State",
+   "visitor": "Grizzly Hills",
+   "week": 2,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Barhold State",
+   "visitor": "NE Rogaela",
+   "week": 4,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Ciarralotta",
+   "visitor": "Krobe",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Ciarralotta",
+   "visitor": "Hughes State",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Crayellan",
+   "visitor": "Hoganelle",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Crayellan",
+   "visitor": "Riveral State",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Tasson",
+   "visitor": "Crayellan",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Eona",
+   "visitor": "Pinn College",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Repidome",
+   "visitor": "Eona",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Eona",
+   "visitor": "Dietsche",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Coachville College",
+   "visitor": "Central Stanton",
+   "week": 4,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Central Stanton",
+   "visitor": "Milharvey",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Central Stanton",
+   "visitor": "US Lyman",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Antiragal State",
+   "visitor": "Parchynt",
+   "week": 5,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Antiragal State",
+   "visitor": "Victoria",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Antiragal State",
+   "visitor": "New Madrid",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Ciarralotta State",
+   "visitor": "Black Forest",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Ciarralotta State",
+   "visitor": "Coffeeville",
+   "week": 4,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Burrstone",
+   "visitor": "Riveral",
+   "week": 0,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Burrstone",
+   "visitor": "Malta",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Coachville",
+   "visitor": "Stanton",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Coachville",
+   "visitor": "Ek Tech",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Coachville",
+   "visitor": "NW Stanton",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Keytommiyr",
+   "visitor": "North Verigon",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Queensville",
+   "visitor": "Keytommiyr",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Keytommiyr",
+   "visitor": "St. Recreation",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "East Costique",
+   "visitor": "Starfield",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "East Costique",
+   "visitor": "VSSC",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "East Costique",
+   "visitor": "Central Fiota State",
+   "week": 3,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Good River",
+   "visitor": "Antiragal",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Antiragal",
+   "visitor": "Rupin State",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Antiragal",
+   "visitor": "UFFE",
+   "week": 7,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Stanton State",
+   "visitor": "Far Farris State",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Stanton State",
+   "visitor": "Palisades",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Stanton State",
+   "visitor": "Pikeland",
+   "week": 3,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "UFNH",
+   "visitor": "Wharf Bay",
+   "week": 0,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "UFNH",
+   "visitor": "Ireland River",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Ekralund State",
+   "visitor": "UFNH",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Costique",
+   "visitor": "Natzumakis",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Marines",
+   "visitor": "South Antiragal",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "South Antiragal",
+   "visitor": "Clark",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "South Antiragal",
+   "visitor": "Prowesser",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Yrei Trobniy",
+   "visitor": "Churchill",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Yrei Trobniy",
+   "visitor": "Pollard State",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Natzumakis State",
+   "visitor": "Pistolheart",
+   "week": 4,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Pistolheart",
+   "visitor": "Canesta State",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Pistolheart",
+   "visitor": "RU Smithfield",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Dove Island",
+   "visitor": "Northlight",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Rogaela",
+   "visitor": "Rogaela State",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Rogaela Tech",
+   "visitor": "Rogaela State",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Rogaela State",
+   "visitor": "LSFA",
+   "week": 2,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Ranroman State",
+   "visitor": "Skeenerland State",
+   "week": 0,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Ranroman State",
+   "visitor": "UN Minko",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Ranroman State",
+   "visitor": "RU Herriman",
+   "week": 3,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Skeenerland State",
+   "visitor": "Costique State",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Skeenerland State",
+   "visitor": "Charlesville",
+   "week": 2,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Tengus State",
+   "visitor": "Diamond City",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Tengus State",
+   "visitor": "Roosevelt Mines",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Tengus State",
+   "visitor": "Tono State",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Kaji Daun",
+   "visitor": "Far Farris",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Kaji Daun",
+   "visitor": "North Ranroman",
+   "week": 13,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Eastern State",
+   "visitor": "Leafette",
+   "week": 4,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Eastern State",
+   "visitor": "Fiota State",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Eastern State",
+   "visitor": "Boulder Creek",
+   "week": 2,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Will Tech",
+   "visitor": "Ranroman",
+   "week": 0,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Ranroman",
+   "visitor": "Enos",
+   "week": 3,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Roosevelt",
+   "visitor": "Crimson Mount",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Roosevelt",
+   "visitor": "St. Ballo's",
+   "week": 2,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Skylar Rose",
+   "visitor": "Hatesei",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Skylar Rose",
+   "visitor": "Mt St Williams",
+   "week": 2,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Hatesei",
+   "visitor": "North Hatesei St",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Hatesei",
+   "visitor": "Anderville Tech",
+   "week": 3,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Dietsche",
+   "visitor": "Athens",
+   "week": 2,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Dietsche",
+   "visitor": "East Tasson",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Kaji Kita",
+   "visitor": "Kaji Kita State",
+   "week": 6,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Kaji Kita",
+   "visitor": "Collette",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Park Island",
+   "visitor": "Orlot",
+   "week": 0,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Park Island",
+   "visitor": "Reid State",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Park Island",
+   "visitor": "Lannister",
+   "week": 2,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "UNN",
+   "visitor": "Cordelle",
+   "week": 4,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "UN Steelbridge",
+   "visitor": "UNN",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "UNN",
+   "visitor": "Lupgate",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Verigon",
+   "visitor": "German Shores",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Verigon",
+   "visitor": "Verigon Tech",
+   "week": 3,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Ciarralotta Tech",
+   "visitor": "Greene",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Westburg",
+   "visitor": "Ciarralotta Tech",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Ciarralotta Tech",
+   "visitor": "US Fall Beach",
+   "week": 3,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Orlot",
+   "visitor": "Polt Hall",
+   "week": 2,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Orlot",
+   "visitor": "Orlot Western",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Crayellan State",
+   "visitor": "Hofferteltra",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Crayellan State",
+   "visitor": "Marblehead",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Crayellan State",
+   "visitor": "Whiteside",
+   "week": 3,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Leafette",
+   "visitor": "Parchynt State",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Leafette",
+   "visitor": "Apatol",
+   "week": 3,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Skeenerland",
+   "visitor": "Costique River",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Costique River",
+   "visitor": "Tasson State",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Costique River",
+   "visitor": "Classetto",
+   "week": 2,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Vaughn Bay State",
+   "visitor": "Tasson",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Tasson",
+   "visitor": "Larksdale",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "North Central",
+   "visitor": "Will Tech",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Will Tech",
+   "visitor": "Skeenerland East",
+   "week": 3,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Marblehead",
+   "visitor": "Southeastern",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Marblehead",
+   "visitor": "Tasson Plains",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "North Verigon",
+   "visitor": "David Harrison",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "North Verigon",
+   "visitor": "Long South",
+   "week": 2,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Stanton",
+   "visitor": "USA Britton",
+   "week": 2,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Stanton",
+   "visitor": "Underwood",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Lornaman",
+   "visitor": "UN Ediville",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Lornaman",
+   "visitor": "Chorrisaw",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Rogaela",
+   "visitor": "Keeper",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Rogaela",
+   "visitor": "Middle Parchynt",
+   "week": 3,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Dove Island",
+   "visitor": "Perri Park",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Dove Island",
+   "visitor": "Burke State",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Krobe State",
+   "visitor": "Southern Krobe",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Krobe State",
+   "visitor": "Cliffstraite",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Krobe State",
+   "visitor": "French State",
+   "week": 3,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Keeper",
+   "visitor": "San Diego Valley",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Keeper",
+   "visitor": "Lawiiri",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Kaji Kita State",
+   "visitor": "Mt Kaji",
+   "week": 7,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Far Farris",
+   "visitor": "Rodgerville",
+   "week": 11,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Parchynt",
+   "visitor": "Quincy Harmon",
+   "week": 9,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Milharvey",
+   "visitor": "Guice-Moore",
+   "week": 5,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Krobe",
+   "visitor": "UK Hoza",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Natzumakis",
+   "visitor": "Olds College",
+   "week": 6,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Southern Krobe",
+   "visitor": "Jamestown",
+   "week": 7,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Diamond City",
+   "visitor": "Agis",
+   "week": 11,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Riveral",
+   "visitor": "Lighaty",
+   "week": 3,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "UN Ediville",
+   "visitor": "Burrell",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Far Farris State",
+   "visitor": "UFFL",
+   "week": 10,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Greene",
+   "visitor": "Southern",
+   "week": 11,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Roosevelt State",
+   "visitor": "RPU",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "S Antiragal State",
+   "visitor": "Mill Station",
+   "week": 5,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Diveo",
+   "visitor": "Gordon-Shipp",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Harrell",
+   "visitor": "Ormskirk",
+   "week": 2,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Tengus",
+   "visitor": "Highrose",
+   "week": 7,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Diveo State",
+   "visitor": "Coniferous",
+   "week": 9,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Phangrine State",
+   "visitor": "Orlot East Coast",
+   "week": 13,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Ekralund State",
+   "visitor": "Lornaman State",
+   "week": 10,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Skeenerland",
+   "visitor": "Applegate",
+   "week": 7,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Costique",
+   "visitor": "Reescomb",
+   "week": 11,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Verigon State",
+   "visitor": "Northern Krobe",
+   "week": 13,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Good River",
+   "visitor": "Brallstrom",
+   "week": 8,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Natzumakis State",
+   "visitor": "Oceanside",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Ciarralotta",
+   "visitor": "Pationah",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Starfield",
+   "visitor": "Peterhaus",
+   "week": 3,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Southeastern",
+   "visitor": "Mountain Home",
+   "week": 5,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Dove Island State",
+   "visitor": "Seytoicca",
+   "week": 13,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Tasson State",
+   "visitor": "UHMM",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Perri Park",
+   "visitor": "Ravenhead",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Fiota State",
+   "visitor": "Veriota",
+   "week": 3,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "West Hatesei",
+   "visitor": "Jones College",
+   "week": 3,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Ireland River",
+   "visitor": "Rascha",
+   "week": 13,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "New Madrid",
+   "visitor": "Western Antiragal",
+   "week": 6,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "David Harrison",
+   "visitor": "VCA",
+   "week": 12,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Ek Tech",
+   "visitor": "Forseti",
+   "week": 3,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Canesta State",
+   "visitor": "Draque College",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Churchill",
+   "visitor": "Yarrola",
+   "week": 10,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Parchynt State",
+   "visitor": "Koli Ro",
+   "week": 10,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Hoganelle",
+   "visitor": "Redford",
+   "week": 8,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "VSSC",
+   "visitor": "Towgrade",
+   "week": 5,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Palisades",
+   "visitor": "Riverwake",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Eternal Fox",
+   "visitor": "Cathedral",
+   "week": 12,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Crimson Mount",
+   "visitor": "KKRC",
+   "week": 3,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Orlot Western",
+   "visitor": "OCU",
+   "week": 8,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Costique State",
+   "visitor": "Zialo State",
+   "week": 8,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "UN Minko",
+   "visitor": "Thurley",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Hofferteltra",
+   "visitor": "Bragi",
+   "week": 6,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "German Shores",
+   "visitor": "Krane State",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Black Forest",
+   "visitor": "Juniper",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Cordelle",
+   "visitor": "UN Leoto",
+   "week": 2,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "East Tasson",
+   "visitor": "Silverton",
+   "week": 11,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Riveral State",
+   "visitor": "Harrell State",
+   "week": 4,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "North Hatesei St",
+   "visitor": "Gunther",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Hughes State",
+   "visitor": "USA Roman City",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Reid State",
+   "visitor": "Cedar Frost",
+   "week": 12,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Clark",
+   "visitor": "Mountains",
+   "week": 5,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Roosevelt Mines",
+   "visitor": "Harko",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Denver State",
+   "visitor": "Henderson State",
+   "week": 3,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Rupin State",
+   "visitor": "Star Mountain",
+   "week": 10,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Holliday",
+   "visitor": "Monroe",
+   "week": 8,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Cliffstraite",
+   "visitor": "Robertson",
+   "week": 10,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Skirter",
+   "visitor": "Farmington",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Underwood",
+   "visitor": "Jack Todd",
+   "week": 10,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Larksdale",
+   "visitor": "El Latigo",
+   "week": 9,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "San Diego Valley",
+   "visitor": "Newfoundland",
+   "week": 4,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "NE Rogaela",
+   "visitor": "ParTech",
+   "week": 9,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Chinolka",
+   "visitor": "Mojourn State",
+   "week": 4,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Vaughn Bay",
+   "visitor": "Humphrey",
+   "week": 10,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Lito Rock State",
+   "visitor": "Candie College",
+   "week": 8,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Eona State",
+   "visitor": "Norris State",
+   "week": 9,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Perth Island",
+   "visitor": "Southern Perth",
+   "week": 10,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Trapper Point",
+   "visitor": "Nelson Heights",
+   "week": 1,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Sacred Tomb",
+   "visitor": "Brinckston",
+   "week": 12,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Coastal Ranroman",
+   "visitor": "Iricod",
+   "week": 11,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Wolford",
+   "visitor": "Bowles",
+   "week": 11,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "North Canesta",
+   "visitor": "Avian Light",
+   "week": 11,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Princeton State",
+   "visitor": "Holy Monastery",
+   "week": 5,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Poland State",
+   "visitor": "UEKP",
+   "week": 13,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Ediville State",
+   "visitor": "Ursus",
+   "week": 13,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Waterloo",
+   "visitor": "Pietro Tadal",
+   "week": 13,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Kaji Daun State",
+   "visitor": "Kaji Central",
+   "week": 6,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "West Hatesei St",
+   "visitor": "Junesburg",
+   "week": 6,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Mount Cairn",
+   "visitor": "Guerra",
+   "week": 9,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Chapel Rock",
+   "visitor": "Lamb",
+   "week": 11,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Hansenne",
+   "visitor": "Bitner",
+   "week": 3,
+   "locked": false,
+   "sub": true
+  },
+  {
+   "conf": null,
+   "host": "Cherry Lake",
+   "visitor": "Diamond City",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Repidome",
+   "visitor": "Coachville College",
+   "week": 14,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Natzumakis State",
+   "visitor": "Coachville College",
+   "week": 0,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Wolford",
+   "visitor": "Chinolka",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Southern Krobe",
+   "visitor": "Chinolka",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Tengus",
+   "visitor": "Queensville",
+   "week": 4,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Harrell",
+   "visitor": "Queensville",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Eona State",
+   "visitor": "UN Steelbridge",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Krobe",
+   "visitor": "Eona State",
+   "week": 12,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "UN Ediville",
+   "visitor": "Westburg",
+   "week": 14,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Milharvey",
+   "visitor": "Waterloo",
+   "week": 9,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Phangrine State",
+   "visitor": "Ediville State",
+   "week": 12,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Kaji Kita State",
+   "visitor": "Ediville State",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Hansenne",
+   "visitor": "North Hatesei St",
+   "week": 11,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Natzumakis",
+   "visitor": "North Canesta",
+   "week": 9,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Far Farris",
+   "visitor": "National",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Princeton State",
+   "visitor": "Kingdom Valley",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Riveral",
+   "visitor": "Princeton State",
+   "week": 11,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Diveo",
+   "visitor": "Sacred Tomb",
+   "week": 5,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Verigon State",
+   "visitor": "Sacred Tomb",
+   "week": 10,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "David Harrison",
+   "visitor": "Kaji Daun State",
+   "week": 0,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Ireland River",
+   "visitor": "Rogaela Tech",
+   "week": 0,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Kingdom Valley",
+   "visitor": "Reid State",
+   "week": 14,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "S Antiragal State",
+   "visitor": "Perth Island",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "German Shores",
+   "visitor": "Perth Island",
+   "week": 5,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Parchynt",
+   "visitor": "National",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Kaji Daun State",
+   "visitor": "Good River",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Greene",
+   "visitor": "Lito Rock State",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Roosevelt State",
+   "visitor": "Mount Cairn",
+   "week": 5,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Ekralund State",
+   "visitor": "Chapel Rock",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Far Farris State",
+   "visitor": "Cherry Lake",
+   "week": 6,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Poland State",
+   "visitor": "Parchynt State",
+   "week": 4,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Skeenerland",
+   "visitor": "North Central",
+   "week": 0,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Costique",
+   "visitor": "Trapper Point",
+   "week": 4,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Diveo State",
+   "visitor": "Coastal Ranroman",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Coastal Ranroman",
+   "visitor": "New Madrid",
+   "week": 4,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "NE Rogaela",
+   "visitor": "Larksdale",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Eona Navy",
+   "visitor": "Black Forest",
+   "week": 9,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "West Hatesei St",
+   "visitor": "Holliday",
+   "week": 13,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Eternal Fox",
+   "visitor": "Marines",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Mount Cairn",
+   "visitor": "Repidome",
+   "week": 0,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Skirter",
+   "visitor": "Rupin State",
+   "week": 14,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "North Canesta",
+   "visitor": "West Hatesei St",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Orlot Western",
+   "visitor": "Lito Rock State",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Vaughn Bay State",
+   "visitor": "Palisades",
+   "week": 13,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Vaughn Bay",
+   "visitor": "Hughes State",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Riveral State",
+   "visitor": "Trapper Point",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "North Central",
+   "visitor": "Cherry Lake",
+   "week": 4,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Marines",
+   "visitor": "Ek Tech",
+   "week": 9,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Underwood",
+   "visitor": "Clark",
+   "week": 6,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Cordelle",
+   "visitor": "Roosevelt Mines",
+   "week": 14,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "San Diego Valley",
+   "visitor": "Churchill",
+   "week": 2,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "VSSC",
+   "visitor": "Hofferteltra",
+   "week": 8,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Rogaela Tech",
+   "visitor": "Eona Navy",
+   "week": 10,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Tasson State",
+   "visitor": "Fiota State",
+   "week": 8,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Chapel Rock",
+   "visitor": "Hansenne",
+   "week": 8,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Hoganelle",
+   "visitor": "Vaughn Bay",
+   "week": 4,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Westburg",
+   "visitor": "Wolford",
+   "week": 8,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Cliffstraite",
+   "visitor": "Kingdom Valley",
+   "week": 12,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Crimson Mount",
+   "visitor": "UN Steelbridge",
+   "week": 14,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Diveo State",
+   "visitor": "S Antiragal State",
+   "week": 3,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Perri Park",
+   "visitor": "Waterloo",
+   "week": 14,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Costique State",
+   "visitor": "Dove Island State",
+   "week": 11,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Denver State",
+   "visitor": "Southeastern",
+   "week": 1,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Canesta State",
+   "visitor": "UN Minko",
+   "week": 4,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Harrell",
+   "visitor": "Tengus",
+   "week": 0,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "Phangrine State",
+   "visitor": "Diveo",
+   "week": 9,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "East Tasson",
+   "visitor": "Poland State",
+   "week": 7,
+   "locked": false,
+   "sub": false
+  },
+  {
+   "conf": null,
+   "host": "West Hatesei",
+   "visitor": "Vaughn Bay State",
+   "week": 5,
+   "locked": false,
+   "sub": false
+  }
+ ]
+}

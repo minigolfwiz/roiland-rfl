@@ -519,3 +519,9 @@ Hand-off section added to PENDING.md. Nothing scheduled yet; fresh conversation 
  ## 2043 SCHEDULE -- Scheduling Office published for season 18 (2026-10-24, new session). Engine restored from GitHub (cfb/ -> /home/claude/cfb2, gunzip state, games_db parts joined).
  export_schedule_board.py: 152 programmes | 217 guests | 6 locked cross-conf | 444 non-conference slots for Dan. Unreturned visits 240 pairs (3.2/programme); 16 series still owed a return ground.
  Page: out/schedule_office.html (template + __DATA__), published over artifact 6w2G7gu6yGaWNrqPkypmLW (v11, saves under schedule/s18). NEXT: Dan hand-places; pull save -> noncon_s18_handoff.json -> fill_noncon + fix_p6_hosting. NO week-14 guest games in 2043.
+
+## 2043 SCHEDULE -- BUILT AND INSTALLED (2026-10-26)
+Dan's Series Office bookings (series/y2043, 64 games + 6 locked rivalries, 134 with hand-picked weeks) -> convert_series_db.py -> fill_noncon (87 guests + 69 FBS auto-added; 136 guests) -> fix_p6_hosting -> export_conf_board (plan-driven, 0 problems) -> fill_conf (no hand-placed conference weeks; all Dan's non-con weeks and the 35 locked rivalries held) -> install_hand_schedule --commit, audit CLEAN.
+980 games (684 conf, 296 non-con, 136 guests); week 0: 12 games; by week 0-14: 12/87/68/67/68/68/66/66/69/69/64/67/66/67/76; 3 programmes with a 4-game home/road run (worst Barhold, 4).
+fill_conf patched (pre-change copy fill_conf.py.pre_s18): guest games are never placed in week 14 (standing rule), the first fill had 8.
+state/season_state.pkl.gz, sub_rosters.pkl.gz, sub_coaches.pkl.gz re-pushed after install. NEXT (new conversation): media pool s18, preseason notes + page, week 0.

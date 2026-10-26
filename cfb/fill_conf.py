@@ -169,7 +169,7 @@ class Cal:
             stuck = []
             left.sort(key=lambda g: sum(1 for w in WEEKS if all(self.slot[t][w] is None for t in self.sides(g))))
             for g in left:
-                free = [w for w in WEEKS if all(self.slot[t][w] is None for t in self.sides(g))]
+                free = [w for w in WEEKS if all(self.slot[t][w] is None for t in self.sides(g)) and not (g['sub'] and w == RIV)]   # standing rule (2043): no guest games in week 14
                 if not free: stuck.append(g); continue
                 # prefer week 14 for anyone still without one, else a random free week
                 rng.shuffle(free)
@@ -195,6 +195,7 @@ class Cal:
             g = rng.choice(self.open)
             w = rng.randrange(15)
             if w == g['week']: continue
+            if g['sub'] and w == RIV: continue
             old = g['week']
             sides = self.sides(g)
             blockers = [self.slot[t][w] for t in sides if self.slot[t][w] is not None]
@@ -205,6 +206,7 @@ class Cal:
             if h is not None:
                 # swap: h goes to old; every side of h must be free at old (except g itself)
                 if any(self.slot[t][old] not in (None, g) for t in self.sides(h)): continue
+                if h['sub'] and old == RIV: continue
             aff = touched([g] + ([h] if h else []))
             before = sum(self.team_score(t) for t in aff)
             per_before = self._level_terms()
