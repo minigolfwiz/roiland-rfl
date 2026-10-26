@@ -145,6 +145,7 @@ main{max-width:1500px;margin:0 auto;padding:14px var(--gutr) 70px var(--gut)}
 .wkc.off{opacity:.3;text-decoration:line-through}
 .wkc.part{border-style:dashed}
 .wkl{width:100%}
+.tierh{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--dim);padding:10px var(--gut) 4px;position:sticky;top:0;background:var(--bg);z-index:1}
 .ychips{display:flex;gap:4px;flex-wrap:nowrap;overflow-x:auto;margin-top:6px;padding-bottom:2px;scrollbar-width:none}
 .ychips::-webkit-scrollbar{display:none}
 .filters.tight{margin-bottom:6px;flex-wrap:nowrap}
@@ -226,6 +227,7 @@ button.sm{min-height:36px;padding:4px 11px;font-size:14px}
         <input id="q" placeholder="search team, state" autocomplete="off">
         <select id="fConf"><option value="">all conferences</option></select>
         <select id="fYear"><option value="">any year</option></select>
+        <select id="fSort" aria-label="sort"><option value="power">Power teams first</option><option value="az">A–Z</option></select>
       </div>
       <div class="yrs" id="yrsHead"></div>
       <div class="scroll" id="teamList"></div>
@@ -279,7 +281,7 @@ let G = {};  YEARS.forEach(y => G[y] = []);          // hand-booked games by yea
 let ver = 0, IDX = {};
 let tab = 'teams', sel = null, focusY = Y0;
 let stack = [];                                       // sheet frames
-let filt = { q:'', conf:'', year:'' };
+let filt = { q:'', conf:'', year:'', sort:'power' };
 let db = null, loaded = false, dirtyYears = new Set(), saveTimer = null, saving = false;
 
 /* ---------- indexes ---------- */
@@ -469,8 +471,20 @@ function renderList(){
   filt.yearN = filt.year ? +filt.year : null;
   let L = TEAMS.filter(t => (!filt.conf || t.conf === filt.conf)
     && (!q || t.name.toLowerCase().includes(q) || t.state.toLowerCase().includes(q) || t.conf.toLowerCase().includes(q)));
-  if (filt.yearN) L = L.slice().sort((a,b) => openOf(b.name,filt.yearN) - openOf(a.name,filt.yearN) || a.name.localeCompare(b.name));
-  el('teamList').innerHTML = L.length ? L.map(teamRow).join('') : '<div class="empty">No team matches.</div>';
+  const by = filt.sort === 'az' ? (a,b) => a.name.localeCompare(b.name)
+    : (a,b) => (a.tier === b.tier ? 0 : a.tier === 'P6' ? -1 : 1)
+      || (filt.yearN ? openOf(b.name,filt.yearN) - openOf(a.name,filt.yearN) : 0)
+      || b.prestige - a.prestige || a.name.localeCompare(b.name);
+  L = L.slice().sort(by);
+  let html = '', last = null;
+  L.forEach(t => {
+    if (filt.sort !== 'az' && t.tier !== last){
+      last = t.tier;
+      html += `<div class="tierh">${t.tier === 'P6' ? 'Power 6 conferences' : 'Group of 6 conferences'}</div>`;
+    }
+    html += teamRow(t);
+  });
+  el('teamList').innerHTML = L.length ? html : '<div class="empty">No team matches.</div>';
 }
 const slotChip = (g, t, y) => {
   const opp = oppOf(g,t), home = g.h === t;
@@ -1004,6 +1018,7 @@ document.addEventListener('change', e => {
   const id = e.target.id;
   if (id === 'fConf'){ filt.conf = e.target.value; renderList(); }
   else if (id === 'fYear'){ filt.year = e.target.value; renderList(); }
+  else if (id === 'fSort'){ filt.sort = e.target.value; renderList(); }
   else if (id === 'pTab' || id === 'pSort' || id === 'pConf'){
     const f = frame(); f.tab = el('pTab').value; f.sort = el('pSort').value; f.conf = el('pConf').value;
     pfLabel(f); renderPick(f, false);
