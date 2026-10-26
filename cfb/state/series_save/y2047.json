@@ -90,8 +90,71 @@
       "sub": false,
       "v": "Orlot",
       "week": 1
+    },
+    {
+      "h": "Rogaela State",
+      "sid": null,
+      "sub": false,
+      "v": "Ciarralotta Tech",
+      "week": 3
+    },
+    {
+      "h": "Tengus State",
+      "sid": null,
+      "sub": false,
+      "v": "Rogaela State",
+      "week": 1
+    },
+    {
+      "h": "Ranroman State",
+      "sid": null,
+      "sub": false,
+      "v": "Natzumakis",
+      "week": 1
+    },
+    {
+      "h": "Ranroman State",
+      "sid": null,
+      "sub": false,
+      "v": "West Hatesei St",
+      "week": 2
+    },
+    {
+      "h": "Marines",
+      "sid": null,
+      "sub": false,
+      "v": "Ranroman State",
+      "week": 3
+    },
+    {
+      "h": "Roosevelt Mines",
+      "sid": null,
+      "sub": false,
+      "v": "Tengus State",
+      "week": 2
+    },
+    {
+      "h": "Tengus State",
+      "sid": null,
+      "sub": true,
+      "v": "Rouska",
+      "week": 3
+    },
+    {
+      "h": "Kaji Daun",
+      "sid": null,
+      "sub": false,
+      "v": "Keytommiyr",
+      "week": 1
+    },
+    {
+      "h": "Kaji Daun",
+      "sid": null,
+      "sub": true,
+      "v": "Guerra",
+      "week": 13
     }
   ],
-  "saved": "10/25/2026, 2:12:02 AM",
+  "saved": "10/26/2026, 3:27:31 PM",
   "year": 2047
 }

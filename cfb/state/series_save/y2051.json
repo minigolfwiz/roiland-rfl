@@ -41,8 +41,22 @@
       "sub": false,
       "v": "Pistolheart",
       "week": 1
+    },
+    {
+      "h": "Reid State",
+      "sid": null,
+      "sub": false,
+      "v": "Tengus State",
+      "week": 1
+    },
+    {
+      "h": "Kaji Daun",
+      "sid": null,
+      "sub": true,
+      "v": "Yarrola",
+      "week": 13
     }
   ],
-  "saved": "10/26/2026, 1:10:29 AM",
+  "saved": "10/26/2026, 3:28:42 PM",
   "year": 2051
 }

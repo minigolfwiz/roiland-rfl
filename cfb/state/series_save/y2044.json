@@ -293,8 +293,78 @@
       "sub": false,
       "v": "David Harrison",
       "week": 2
+    },
+    {
+      "h": "Rogaela State",
+      "sid": null,
+      "sub": false,
+      "v": "Rupin State",
+      "week": 1
+    },
+    {
+      "h": "Rogaela State",
+      "sid": null,
+      "sub": false,
+      "v": "North Verigon",
+      "week": 2
+    },
+    {
+      "h": "Rogaela State",
+      "sid": null,
+      "sub": true,
+      "v": "Victoria",
+      "week": 3
+    },
+    {
+      "h": "Skeenerland State",
+      "sid": null,
+      "sub": false,
+      "v": "Ranroman State",
+      "week": 3
+    },
+    {
+      "h": "Ranroman State",
+      "sid": null,
+      "sub": false,
+      "v": "Wolford",
+      "week": 2
+    },
+    {
+      "h": "Skeenerland State",
+      "sid": null,
+      "sub": true,
+      "v": "El Latigo",
+      "week": 2
+    },
+    {
+      "h": "Skeenerland State",
+      "sid": null,
+      "sub": false,
+      "v": "Parchynt State",
+      "week": 1
+    },
+    {
+      "h": "Tengus State",
+      "sid": null,
+      "sub": false,
+      "v": "Far Farris State",
+      "week": 1
+    },
+    {
+      "h": "Kaji Daun",
+      "sid": null,
+      "sub": true,
+      "v": "Pollard State",
+      "week": 1
+    },
+    {
+      "h": "Kaji Daun",
+      "sid": null,
+      "sub": false,
+      "v": "North Canesta",
+      "week": 3
     }
   ],
-  "saved": "10/26/2026, 1:12:31 AM",
+  "saved": "10/26/2026, 3:25:00 PM",
   "year": 2044
 }

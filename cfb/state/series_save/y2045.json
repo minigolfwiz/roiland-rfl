@@ -251,8 +251,50 @@
       "sub": false,
       "v": "Northlight",
       "week": 3
+    },
+    {
+      "h": "Natzumakis",
+      "sid": null,
+      "sub": false,
+      "v": "Ranroman State",
+      "week": 2
+    },
+    {
+      "h": "Costique State",
+      "sid": null,
+      "sub": false,
+      "v": "Skeenerland State",
+      "week": 3
+    },
+    {
+      "h": "Skeenerland State",
+      "sid": null,
+      "sub": false,
+      "v": "Crayellan State",
+      "week": 1
+    },
+    {
+      "h": "Skeenerland State",
+      "sid": null,
+      "sub": false,
+      "v": "Princeton State",
+      "week": 2
+    },
+    {
+      "h": "Kaji Daun",
+      "sid": null,
+      "sub": false,
+      "v": "UN Minko",
+      "week": 3
+    },
+    {
+      "h": "Kaji Daun",
+      "sid": null,
+      "sub": true,
+      "v": "RU Herriman",
+      "week": 1
     }
   ],
-  "saved": "10/26/2026, 1:13:50 AM",
+  "saved": "10/26/2026, 3:26:14 PM",
   "year": 2045
 }

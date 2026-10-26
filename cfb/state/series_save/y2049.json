@@ -55,8 +55,29 @@
       "sub": false,
       "v": "Pistolheart",
       "week": 1
+    },
+    {
+      "h": "Fiota Bay",
+      "sid": null,
+      "sub": false,
+      "v": "Ranroman State",
+      "week": 2
+    },
+    {
+      "h": "Far Farris State",
+      "sid": null,
+      "sub": false,
+      "v": "Tengus State",
+      "week": 7
+    },
+    {
+      "h": "Kaji Daun",
+      "sid": null,
+      "sub": true,
+      "v": "Ursus",
+      "week": 13
     }
   ],
-  "saved": "10/26/2026, 1:09:41 AM",
+  "saved": "10/26/2026, 3:28:06 PM",
   "year": 2049
 }

@@ -181,8 +181,50 @@
       "sub": false,
       "v": "Coastal Ranroman",
       "week": 1
+    },
+    {
+      "h": "North Verigon",
+      "sid": null,
+      "sub": false,
+      "v": "Rogaela State",
+      "week": 2
+    },
+    {
+      "h": "Rogaela State",
+      "sid": null,
+      "sub": false,
+      "v": "NE Rogaela",
+      "week": 3
+    },
+    {
+      "h": "Rogaela State",
+      "sid": null,
+      "sub": true,
+      "v": "Peach Valley",
+      "week": 4
+    },
+    {
+      "h": "Crayellan State",
+      "sid": null,
+      "sub": false,
+      "v": "Skeenerland State",
+      "week": 3
+    },
+    {
+      "h": "Keytommiyr",
+      "sid": null,
+      "sub": false,
+      "v": "Kaji Daun",
+      "week": 1
+    },
+    {
+      "h": "Kaji Daun",
+      "sid": null,
+      "sub": true,
+      "v": "Lower Kaji Kita",
+      "week": 2
     }
   ],
-  "saved": "10/26/2026, 1:09:14 AM",
+  "saved": "10/26/2026, 3:27:19 PM",
   "year": 2046
 }

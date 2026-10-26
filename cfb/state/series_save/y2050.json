@@ -104,8 +104,29 @@
       "sub": false,
       "v": "Ciarralotta State",
       "week": 10
+    },
+    {
+      "h": "Ciarralotta Tech",
+      "sid": null,
+      "sub": false,
+      "v": "Rogaela State",
+      "week": 1
+    },
+    {
+      "h": "Rogaela State",
+      "sid": null,
+      "sub": false,
+      "v": "Black Forest",
+      "week": 2
+    },
+    {
+      "h": "Rogaela State",
+      "sid": null,
+      "sub": false,
+      "v": "Skeenerland State",
+      "week": 4
     }
   ],
-  "saved": "10/26/2026, 1:10:22 AM",
+  "saved": "10/26/2026, 3:19:16 PM",
   "year": 2050
 }

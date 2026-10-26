@@ -83,8 +83,36 @@
       "sub": false,
       "v": "Perri Park",
       "week": 4
+    },
+    {
+      "h": "Ranroman State",
+      "sid": null,
+      "sub": false,
+      "v": "Coastal Ranroman",
+      "week": 1
+    },
+    {
+      "h": "Ranroman State",
+      "sid": null,
+      "sub": false,
+      "v": "Marines",
+      "week": 2
+    },
+    {
+      "h": "Ranroman State",
+      "sid": null,
+      "sub": true,
+      "v": "Hunter",
+      "week": 3
+    },
+    {
+      "h": "Skeenerland State",
+      "sid": null,
+      "sub": false,
+      "v": "Rogaela State",
+      "week": 1
     }
   ],
-  "saved": "10/25/2026, 2:44:26 AM",
+  "saved": "10/26/2026, 3:19:09 PM",
   "year": 2048
 }
