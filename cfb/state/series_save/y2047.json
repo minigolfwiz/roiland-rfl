@@ -153,8 +153,57 @@
       "sub": true,
       "v": "Guerra",
       "week": 13
+    },
+    {
+      "h": "Ranroman",
+      "sid": null,
+      "sub": false,
+      "v": "Coastal Ranroman",
+      "week": 2
+    },
+    {
+      "h": "Ranroman",
+      "sid": null,
+      "sub": false,
+      "v": "Skylar Rose",
+      "week": 3
+    },
+    {
+      "h": "Ranroman",
+      "sid": null,
+      "sub": true,
+      "v": "Lake Triton",
+      "week": 1
+    },
+    {
+      "h": "Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "Fiota Bay",
+      "week": 1
+    },
+    {
+      "h": "Kaji Kita",
+      "sid": null,
+      "sub": false,
+      "v": "Cordelle",
+      "week": 1
+    },
+    {
+      "h": "Diveo State",
+      "sid": null,
+      "sub": false,
+      "v": "Park Island",
+      "week": 3
+    },
+    {
+      "h": "Dove Island",
+      "sid": null,
+      "sub": false,
+      "v": "Crayellan",
+      "week": 3
     }
   ],
-  "saved": "10/26/2026, 3:27:31 PM",
+  "saved": "10/26/2026, 4:29:17 PM",
   "year": 2047
 }

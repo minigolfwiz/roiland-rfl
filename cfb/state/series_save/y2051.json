@@ -55,8 +55,36 @@
       "sub": true,
       "v": "Yarrola",
       "week": 13
+    },
+    {
+      "h": "Natzumakis",
+      "sid": null,
+      "sub": false,
+      "v": "Ranroman",
+      "week": 13
+    },
+    {
+      "h": "Yrei Trobniy",
+      "sid": null,
+      "sub": false,
+      "v": "Antiragal State",
+      "week": 1
+    },
+    {
+      "h": "Northlight",
+      "sid": null,
+      "sub": false,
+      "v": "Skylar Rose",
+      "week": 3
+    },
+    {
+      "h": "Verigon",
+      "sid": null,
+      "sub": false,
+      "v": "Marblehead",
+      "week": 3
     }
   ],
-  "saved": "10/26/2026, 3:28:42 PM",
+  "saved": "10/26/2026, 4:24:49 PM",
   "year": 2051
 }

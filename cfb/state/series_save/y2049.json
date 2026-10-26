@@ -76,8 +76,22 @@
       "sub": true,
       "v": "Ursus",
       "week": 13
+    },
+    {
+      "h": "Eastern State",
+      "sid": null,
+      "sub": false,
+      "v": "Rogaela",
+      "week": 3
+    },
+    {
+      "h": "Ranroman",
+      "sid": null,
+      "sub": false,
+      "v": "Natzumakis",
+      "week": 4
     }
   ],
-  "saved": "10/26/2026, 3:28:06 PM",
+  "saved": "10/26/2026, 3:37:10 PM",
   "year": 2049
 }

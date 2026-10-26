@@ -363,8 +363,148 @@
       "sub": false,
       "v": "North Canesta",
       "week": 3
+    },
+    {
+      "h": "Sacred Tomb",
+      "sid": null,
+      "sub": false,
+      "v": "Eastern State",
+      "week": 2
+    },
+    {
+      "h": "Eastern State",
+      "sid": null,
+      "sub": true,
+      "v": "LSFA",
+      "week": 1
+    },
+    {
+      "h": "Ranroman",
+      "sid": null,
+      "sub": false,
+      "v": "Denver State",
+      "week": 2
+    },
+    {
+      "h": "Ranroman",
+      "sid": null,
+      "sub": true,
+      "v": "Guerra",
+      "week": 1
+    },
+    {
+      "h": "Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "Roosevelt",
+      "week": 3
+    },
+    {
+      "h": "Roosevelt",
+      "sid": null,
+      "sub": true,
+      "v": "Lewis Valley",
+      "week": 2
+    },
+    {
+      "h": "Stanton",
+      "sid": null,
+      "sub": false,
+      "v": "Skylar Rose",
+      "week": 3
+    },
+    {
+      "h": "Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "West Hatesei",
+      "week": 2
+    },
+    {
+      "h": "Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "Eona State",
+      "week": 1
+    },
+    {
+      "h": "Parchynt State",
+      "sid": null,
+      "sub": false,
+      "v": "Dietsche",
+      "week": 2
+    },
+    {
+      "h": "Dietsche",
+      "sid": null,
+      "sub": true,
+      "v": "US Fitzgerald",
+      "week": 1
+    },
+    {
+      "h": "Kaji Kita",
+      "sid": null,
+      "sub": false,
+      "v": "Southern Krobe",
+      "week": 1
+    },
+    {
+      "h": "Kaji Kita",
+      "sid": null,
+      "sub": true,
+      "v": "Lawiiri South",
+      "week": 2
+    },
+    {
+      "h": "Orlot",
+      "sid": null,
+      "sub": false,
+      "v": "Park Island",
+      "week": 1
+    },
+    {
+      "h": "Park Island",
+      "sid": null,
+      "sub": true,
+      "v": "Henderson State",
+      "week": 3
+    },
+    {
+      "h": "UNN",
+      "sid": null,
+      "sub": false,
+      "v": "Holliday",
+      "week": 2
+    },
+    {
+      "h": "UNN",
+      "sid": null,
+      "sub": true,
+      "v": "Lower Kaji Kita",
+      "week": 3
+    },
+    {
+      "h": "Skeenerland",
+      "sid": null,
+      "sub": false,
+      "v": "Verigon",
+      "week": 3
+    },
+    {
+      "h": "Ciarralotta Tech",
+      "sid": null,
+      "sub": false,
+      "v": "Coachville College",
+      "week": 1
+    },
+    {
+      "h": "Ciarralotta Tech",
+      "sid": null,
+      "sub": true,
+      "v": "Strame State",
+      "week": 3
     }
   ],
-  "saved": "10/26/2026, 3:25:00 PM",
+  "saved": "10/26/2026, 4:28:22 PM",
   "year": 2044
 }

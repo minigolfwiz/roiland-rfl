@@ -293,8 +293,113 @@
       "sub": true,
       "v": "RU Herriman",
       "week": 1
+    },
+    {
+      "h": "Eastern State",
+      "sid": null,
+      "sub": false,
+      "v": "Antiragal",
+      "week": 2
+    },
+    {
+      "h": "Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "Tengus State",
+      "week": 1
+    },
+    {
+      "h": "Ranroman",
+      "sid": null,
+      "sub": false,
+      "v": "Will Tech",
+      "week": 3
+    },
+    {
+      "h": "Ranroman",
+      "sid": null,
+      "sub": true,
+      "v": "Lewis Valley",
+      "week": 1
+    },
+    {
+      "h": "Keeper",
+      "sid": null,
+      "sub": false,
+      "v": "Roosevelt",
+      "week": 1
+    },
+    {
+      "h": "Roosevelt",
+      "sid": null,
+      "sub": false,
+      "v": "Skirter",
+      "week": 2
+    },
+    {
+      "h": "Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "Underwood",
+      "week": 2
+    },
+    {
+      "h": "Hatesei",
+      "sid": null,
+      "sub": true,
+      "v": "Mountains",
+      "week": 3
+    },
+    {
+      "h": "Kaji Kita State",
+      "sid": null,
+      "sub": false,
+      "v": "Kaji Kita",
+      "week": 1
+    },
+    {
+      "h": "Cordelle",
+      "sid": null,
+      "sub": false,
+      "v": "Kaji Kita",
+      "week": 2
+    },
+    {
+      "h": "Park Island",
+      "sid": null,
+      "sub": false,
+      "v": "Eternal Fox",
+      "week": 0
+    },
+    {
+      "h": "Park Island",
+      "sid": null,
+      "sub": false,
+      "v": "Palisades",
+      "week": 2
+    },
+    {
+      "h": "UNN",
+      "sid": null,
+      "sub": false,
+      "v": "UN Steelbridge",
+      "week": 1
+    },
+    {
+      "h": "Verigon",
+      "sid": null,
+      "sub": false,
+      "v": "Skeenerland",
+      "week": 2
+    },
+    {
+      "h": "Greene",
+      "sid": null,
+      "sub": false,
+      "v": "Ciarralotta Tech",
+      "week": 2
     }
   ],
-  "saved": "10/26/2026, 3:26:14 PM",
+  "saved": "10/26/2026, 4:26:26 PM",
   "year": 2045
 }

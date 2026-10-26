@@ -90,8 +90,36 @@
       "sub": false,
       "v": "Reid State",
       "week": 2
+    },
+    {
+      "h": "Rogaela",
+      "sid": null,
+      "sub": false,
+      "v": "Eastern State",
+      "week": 1
+    },
+    {
+      "h": "Antiragal State",
+      "sid": null,
+      "sub": false,
+      "v": "Yrei Trobniy",
+      "week": 1
+    },
+    {
+      "h": "Skylar Rose",
+      "sid": null,
+      "sub": false,
+      "v": "Northlight",
+      "week": 2
+    },
+    {
+      "h": "Crayellan",
+      "sid": null,
+      "sub": false,
+      "v": "Dove Island",
+      "week": 2
     }
   ],
-  "saved": "10/26/2026, 3:22:26 PM",
+  "saved": "10/26/2026, 4:29:25 PM",
   "year": 2052
 }

@@ -111,8 +111,29 @@
       "sub": false,
       "v": "Rogaela State",
       "week": 1
+    },
+    {
+      "h": "Antiragal",
+      "sid": null,
+      "sub": false,
+      "v": "Eastern State",
+      "week": 1
+    },
+    {
+      "h": "Park Island",
+      "sid": null,
+      "sub": false,
+      "v": "Vaughn Bay State",
+      "week": 0
+    },
+    {
+      "h": "Marblehead",
+      "sid": null,
+      "sub": false,
+      "v": "Verigon",
+      "week": 2
     }
   ],
-  "saved": "10/26/2026, 3:19:09 PM",
+  "saved": "10/26/2026, 4:23:58 PM",
   "year": 2048
 }
