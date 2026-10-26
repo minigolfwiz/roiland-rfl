@@ -34,8 +34,421 @@
       "sub": false,
       "v": "West Hatesei",
       "week": 1
+    },
+    {
+      "h": "North Hatesei",
+      "sid": null,
+      "sub": true,
+      "v": "Surreigh",
+      "week": 3
+    },
+    {
+      "h": "Fiota Bay",
+      "sid": null,
+      "sub": true,
+      "v": "Fiota",
+      "week": 13
+    },
+    {
+      "h": "Fiota Bay",
+      "sid": null,
+      "sub": false,
+      "v": "Dove Island State",
+      "week": 1
+    },
+    {
+      "h": "Fiota Bay",
+      "sid": null,
+      "sub": false,
+      "v": "Eternal Fox",
+      "week": 2
+    },
+    {
+      "h": "Ranroman",
+      "sid": null,
+      "sub": false,
+      "v": "Barhold Valley",
+      "week": 2
+    },
+    {
+      "h": "Barhold Valley",
+      "sid": null,
+      "sub": false,
+      "v": "Skirter",
+      "week": 3
+    },
+    {
+      "h": "Barhold Valley",
+      "sid": null,
+      "sub": true,
+      "v": "Southern Parchynt",
+      "week": 0
+    },
+    {
+      "h": "Barhold",
+      "sid": null,
+      "sub": false,
+      "v": "Burrstone",
+      "week": 3
+    },
+    {
+      "h": "Barhold",
+      "sid": null,
+      "sub": false,
+      "v": "Holliday",
+      "week": 1
+    },
+    {
+      "h": "Barhold",
+      "sid": null,
+      "sub": true,
+      "v": "Forrester",
+      "week": 2
+    },
+    {
+      "h": "Barhold State",
+      "sid": null,
+      "sub": false,
+      "v": "Ciarralotta State",
+      "week": 1
+    },
+    {
+      "h": "Barhold State",
+      "sid": null,
+      "sub": true,
+      "v": "Grizzly Hills",
+      "week": 2
+    },
+    {
+      "h": "Barhold State",
+      "sid": null,
+      "sub": false,
+      "v": "NE Rogaela",
+      "week": 4
+    },
+    {
+      "h": "Ciarralotta",
+      "sid": null,
+      "sub": false,
+      "v": "Krobe",
+      "week": 2
+    },
+    {
+      "h": "Ciarralotta",
+      "sid": null,
+      "sub": false,
+      "v": "Hughes State",
+      "week": 3
+    },
+    {
+      "h": "Crayellan",
+      "sid": null,
+      "sub": false,
+      "v": "Hoganelle",
+      "week": 1
+    },
+    {
+      "h": "Crayellan",
+      "sid": null,
+      "sub": false,
+      "v": "Riveral State",
+      "week": 2
+    },
+    {
+      "h": "Tasson",
+      "sid": null,
+      "sub": false,
+      "v": "Crayellan",
+      "week": 3
+    },
+    {
+      "h": "Eona",
+      "sid": null,
+      "sub": true,
+      "v": "Pinn College",
+      "week": 1
+    },
+    {
+      "h": "Repidome",
+      "sid": null,
+      "sub": false,
+      "v": "Eona",
+      "week": 2
+    },
+    {
+      "h": "Eona",
+      "sid": null,
+      "sub": false,
+      "v": "Dietsche",
+      "week": 3
+    },
+    {
+      "h": "Coachville College",
+      "sid": null,
+      "sub": false,
+      "v": "Central Stanton",
+      "week": 4
+    },
+    {
+      "h": "Central Stanton",
+      "sid": null,
+      "sub": false,
+      "v": "Milharvey",
+      "week": 3
+    },
+    {
+      "h": "Central Stanton",
+      "sid": null,
+      "sub": true,
+      "v": "US Lyman",
+      "week": 1
+    },
+    {
+      "h": "Antiragal State",
+      "sid": null,
+      "sub": false,
+      "v": "Parchynt",
+      "week": 5
+    },
+    {
+      "h": "Antiragal State",
+      "sid": null,
+      "sub": true,
+      "v": "Victoria",
+      "week": 1
+    },
+    {
+      "h": "Antiragal State",
+      "sid": null,
+      "sub": false,
+      "v": "New Madrid",
+      "week": 2
+    },
+    {
+      "h": "Ciarralotta State",
+      "sid": null,
+      "sub": false,
+      "v": "Black Forest",
+      "week": 2
+    },
+    {
+      "h": "Ciarralotta State",
+      "sid": null,
+      "sub": true,
+      "v": "Coffeeville",
+      "week": 4
+    },
+    {
+      "h": "Burrstone",
+      "sid": null,
+      "sub": false,
+      "v": "Riveral",
+      "week": 0
+    },
+    {
+      "h": "Burrstone",
+      "sid": null,
+      "sub": true,
+      "v": "Malta",
+      "week": 1
+    },
+    {
+      "h": "Coachville",
+      "sid": null,
+      "sub": false,
+      "v": "Stanton",
+      "week": 3
+    },
+    {
+      "h": "Coachville",
+      "sid": null,
+      "sub": false,
+      "v": "Ek Tech",
+      "week": 2
+    },
+    {
+      "h": "Coachville",
+      "sid": null,
+      "sub": true,
+      "v": "NW Stanton",
+      "week": 1
+    },
+    {
+      "h": "Keytommiyr",
+      "sid": null,
+      "sub": false,
+      "v": "North Verigon",
+      "week": 3
+    },
+    {
+      "h": "Queensville",
+      "sid": null,
+      "sub": false,
+      "v": "Keytommiyr",
+      "week": 2
+    },
+    {
+      "h": "Keytommiyr",
+      "sid": null,
+      "sub": true,
+      "v": "St. Recreation",
+      "week": 1
+    },
+    {
+      "h": "East Costique",
+      "sid": null,
+      "sub": false,
+      "v": "Starfield",
+      "week": 1
+    },
+    {
+      "h": "East Costique",
+      "sid": null,
+      "sub": false,
+      "v": "VSSC",
+      "week": 2
+    },
+    {
+      "h": "East Costique",
+      "sid": null,
+      "sub": true,
+      "v": "Central Fiota State",
+      "week": 3
+    },
+    {
+      "h": "Good River",
+      "sid": null,
+      "sub": false,
+      "v": "Antiragal",
+      "week": 1
+    },
+    {
+      "h": "Antiragal",
+      "sid": null,
+      "sub": false,
+      "v": "Rupin State",
+      "week": 2
+    },
+    {
+      "h": "Antiragal",
+      "sid": null,
+      "sub": true,
+      "v": "UFFE",
+      "week": 7
+    },
+    {
+      "h": "Stanton State",
+      "sid": null,
+      "sub": false,
+      "v": "Far Farris State",
+      "week": 1
+    },
+    {
+      "h": "Stanton State",
+      "sid": null,
+      "sub": false,
+      "v": "Palisades",
+      "week": 2
+    },
+    {
+      "h": "Stanton State",
+      "sid": null,
+      "sub": true,
+      "v": "Pikeland",
+      "week": 3
+    },
+    {
+      "h": "UFNH",
+      "sid": null,
+      "sub": true,
+      "v": "Wharf Bay",
+      "week": 0
+    },
+    {
+      "h": "UFNH",
+      "sid": null,
+      "sub": false,
+      "v": "Ireland River",
+      "week": 1
+    },
+    {
+      "h": "Ekralund State",
+      "sid": null,
+      "sub": false,
+      "v": "UFNH",
+      "week": 2
+    },
+    {
+      "h": "Costique",
+      "sid": null,
+      "sub": false,
+      "v": "Natzumakis",
+      "week": 1
+    },
+    {
+      "h": "Marines",
+      "sid": null,
+      "sub": false,
+      "v": "South Antiragal",
+      "week": 3
+    },
+    {
+      "h": "South Antiragal",
+      "sid": null,
+      "sub": false,
+      "v": "Clark",
+      "week": 2
+    },
+    {
+      "h": "South Antiragal",
+      "sid": null,
+      "sub": true,
+      "v": "Prowesser",
+      "week": 1
+    },
+    {
+      "h": "Yrei Trobniy",
+      "sid": null,
+      "sub": false,
+      "v": "Churchill",
+      "week": 3
+    },
+    {
+      "h": "Yrei Trobniy",
+      "sid": null,
+      "sub": true,
+      "v": "Pollard State",
+      "week": 1
+    },
+    {
+      "h": "Natzumakis State",
+      "sid": null,
+      "sub": false,
+      "v": "Pistolheart",
+      "week": 4
+    },
+    {
+      "h": "Pistolheart",
+      "sid": null,
+      "sub": false,
+      "v": "Canesta State",
+      "week": 2
+    },
+    {
+      "h": "Pistolheart",
+      "sid": null,
+      "sub": true,
+      "v": "RU Smithfield",
+      "week": 1
+    },
+    {
+      "h": "Dove Island",
+      "sid": null,
+      "sub": false,
+      "v": "Northlight",
+      "week": 3
     }
   ],
-  "saved": "10/24/2026, 4:58:44 PM",
+  "saved": "10/26/2026, 1:11:49 AM",
   "year": 2043
 }

@@ -13,8 +13,99 @@
       "sub": true,
       "v": "Pinn College",
       "week": 13
+    },
+    {
+      "h": "North Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "UN Steelbridge",
+      "week": 1
+    },
+    {
+      "h": "North Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "UN Minko",
+      "week": 2
+    },
+    {
+      "h": "Crayellan",
+      "sid": null,
+      "sub": false,
+      "v": "Barhold",
+      "week": 1
+    },
+    {
+      "h": "Eastern State",
+      "sid": null,
+      "sub": false,
+      "v": "Central Stanton",
+      "week": 1
+    },
+    {
+      "h": "Antiragal State",
+      "sid": null,
+      "sub": false,
+      "v": "Far Farris",
+      "week": 1
+    },
+    {
+      "h": "New Madrid",
+      "sid": null,
+      "sub": false,
+      "v": "Antiragal State",
+      "week": 2
+    },
+    {
+      "h": "Riveral",
+      "sid": null,
+      "sub": false,
+      "v": "Burrstone",
+      "week": 2
+    },
+    {
+      "h": "Coachville",
+      "sid": null,
+      "sub": false,
+      "v": "Good River",
+      "week": 1
+    },
+    {
+      "h": "East Costique",
+      "sid": null,
+      "sub": false,
+      "v": "Tengus",
+      "week": 3
+    },
+    {
+      "h": "Stanton",
+      "sid": null,
+      "sub": false,
+      "v": "Antiragal",
+      "week": 1
+    },
+    {
+      "h": "Dove Island",
+      "sid": null,
+      "sub": false,
+      "v": "Stanton State",
+      "week": 0
+    },
+    {
+      "h": "Far Farris State",
+      "sid": null,
+      "sub": false,
+      "v": "Eona",
+      "week": 1
+    },
+    {
+      "h": "Pistolheart",
+      "sid": null,
+      "sub": false,
+      "v": "Ciarralotta State",
+      "week": 10
     }
   ],
-  "saved": "10/24/2026, 4:56:36 PM",
+  "saved": "10/26/2026, 1:10:22 AM",
   "year": 2050
 }

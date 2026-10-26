@@ -27,8 +27,274 @@
       "sub": true,
       "v": "Trinne State",
       "week": 13
+    },
+    {
+      "h": "North Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "Crayellan",
+      "week": 1
+    },
+    {
+      "h": "Eternal Fox",
+      "sid": null,
+      "sub": false,
+      "v": "Fiota Bay",
+      "week": 1
+    },
+    {
+      "h": "Fiota Bay",
+      "sid": null,
+      "sub": false,
+      "v": "Dove Island",
+      "week": 3
+    },
+    {
+      "h": "Fiota Bay",
+      "sid": null,
+      "sub": true,
+      "v": "S Dove Island St",
+      "week": 2
+    },
+    {
+      "h": "Barhold Valley",
+      "sid": null,
+      "sub": false,
+      "v": "Ranroman",
+      "week": 0
+    },
+    {
+      "h": "Burrstone",
+      "sid": null,
+      "sub": false,
+      "v": "Barhold",
+      "week": 2
+    },
+    {
+      "h": "Barhold",
+      "sid": null,
+      "sub": false,
+      "v": "UNN",
+      "week": 1
+    },
+    {
+      "h": "Barhold",
+      "sid": null,
+      "sub": true,
+      "v": "Riverwake",
+      "week": 4
+    },
+    {
+      "h": "Palisades",
+      "sid": null,
+      "sub": false,
+      "v": "Barhold Valley",
+      "week": 2
+    },
+    {
+      "h": "Vaughn Bay State",
+      "sid": null,
+      "sub": false,
+      "v": "Barhold State",
+      "week": 0
+    },
+    {
+      "h": "Park Island",
+      "sid": null,
+      "sub": false,
+      "v": "Barhold State",
+      "week": 2
+    },
+    {
+      "h": "Barhold State",
+      "sid": null,
+      "sub": false,
+      "v": "UN Minko",
+      "week": 3
+    },
+    {
+      "h": "Ciarralotta",
+      "sid": null,
+      "sub": false,
+      "v": "Keeper",
+      "week": 2
+    },
+    {
+      "h": "Eona",
+      "sid": null,
+      "sub": false,
+      "v": "North Hatesei St",
+      "week": 1
+    },
+    {
+      "h": "Ciarralotta Tech",
+      "sid": null,
+      "sub": false,
+      "v": "Eona",
+      "week": 2
+    },
+    {
+      "h": "Milharvey",
+      "sid": null,
+      "sub": false,
+      "v": "Central Stanton",
+      "week": 1
+    },
+    {
+      "h": "Central Stanton",
+      "sid": null,
+      "sub": false,
+      "v": "San Diego Valley",
+      "week": 2
+    },
+    {
+      "h": "Central Stanton",
+      "sid": null,
+      "sub": true,
+      "v": "US Harlon",
+      "week": 3
+    },
+    {
+      "h": "Eastern State",
+      "sid": null,
+      "sub": false,
+      "v": "Antiragal State",
+      "week": 3
+    },
+    {
+      "h": "Ciarralotta State",
+      "sid": null,
+      "sub": false,
+      "v": "Yrei Trobniy",
+      "week": 1
+    },
+    {
+      "h": "Burrstone",
+      "sid": null,
+      "sub": false,
+      "v": "Cherry Lake",
+      "week": 0
+    },
+    {
+      "h": "Greene",
+      "sid": null,
+      "sub": false,
+      "v": "Burrstone",
+      "week": 3
+    },
+    {
+      "h": "Coachville",
+      "sid": null,
+      "sub": false,
+      "v": "Harrell",
+      "week": 1
+    },
+    {
+      "h": "Coachville",
+      "sid": null,
+      "sub": false,
+      "v": "Perth Island",
+      "week": 2
+    },
+    {
+      "h": "Coachville",
+      "sid": null,
+      "sub": true,
+      "v": "Coffeeville",
+      "week": 3
+    },
+    {
+      "h": "Marblehead",
+      "sid": null,
+      "sub": false,
+      "v": "East Costique",
+      "week": 2
+    },
+    {
+      "h": "East Costique",
+      "sid": null,
+      "sub": false,
+      "v": "Sacred Tomb",
+      "week": 3
+    },
+    {
+      "h": "Parchynt",
+      "sid": null,
+      "sub": false,
+      "v": "Antiragal",
+      "week": 3
+    },
+    {
+      "h": "Orlot",
+      "sid": null,
+      "sub": false,
+      "v": "Stanton State",
+      "week": 2
+    },
+    {
+      "h": "Stanton State",
+      "sid": null,
+      "sub": false,
+      "v": "Hughes State",
+      "week": 1
+    },
+    {
+      "h": "UFNH",
+      "sid": null,
+      "sub": false,
+      "v": "Milharvey",
+      "week": 2
+    },
+    {
+      "h": "Natzumakis",
+      "sid": null,
+      "sub": false,
+      "v": "Costique",
+      "week": 1
+    },
+    {
+      "h": "South Antiragal",
+      "sid": null,
+      "sub": false,
+      "v": "Ciarralotta",
+      "week": 1
+    },
+    {
+      "h": "South Antiragal",
+      "sid": null,
+      "sub": false,
+      "v": "Black Forest",
+      "week": 2
+    },
+    {
+      "h": "Yrei Trobniy",
+      "sid": null,
+      "sub": false,
+      "v": "New Madrid",
+      "week": 3
+    },
+    {
+      "h": "Yrei Trobniy",
+      "sid": null,
+      "sub": true,
+      "v": "Revigian",
+      "week": 2
+    },
+    {
+      "h": "Pistolheart",
+      "sid": null,
+      "sub": false,
+      "v": "Tengus State",
+      "week": 2
+    },
+    {
+      "h": "Northlight",
+      "sid": null,
+      "sub": false,
+      "v": "David Harrison",
+      "week": 2
     }
   ],
-  "saved": "10/24/2026, 4:55:15 PM",
+  "saved": "10/26/2026, 1:12:31 AM",
   "year": 2044
 }

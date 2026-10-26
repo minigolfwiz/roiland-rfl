@@ -13,8 +13,246 @@
       "sub": false,
       "v": "Skylar Rose",
       "week": 2
+    },
+    {
+      "h": "Crayellan",
+      "sid": null,
+      "sub": false,
+      "v": "North Hatesei",
+      "week": 0
+    },
+    {
+      "h": "North Hatesei",
+      "sid": null,
+      "sub": true,
+      "v": "Junesburg",
+      "week": 2
+    },
+    {
+      "h": "North Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "Coastal Ranroman",
+      "week": 4
+    },
+    {
+      "h": "Fiota Bay",
+      "sid": null,
+      "sub": false,
+      "v": "Marblehead",
+      "week": 3
+    },
+    {
+      "h": "Barhold Valley",
+      "sid": null,
+      "sub": false,
+      "v": "Diveo State",
+      "week": 2
+    },
+    {
+      "h": "Barhold Valley",
+      "sid": null,
+      "sub": false,
+      "v": "Crimson Mount",
+      "week": 3
+    },
+    {
+      "h": "Barhold Valley",
+      "sid": null,
+      "sub": true,
+      "v": "Malta",
+      "week": 1
+    },
+    {
+      "h": "Barhold",
+      "sid": null,
+      "sub": false,
+      "v": "Yrei Trobniy",
+      "week": 2
+    },
+    {
+      "h": "Barhold",
+      "sid": null,
+      "sub": false,
+      "v": "Reid State",
+      "week": 3
+    },
+    {
+      "h": "Barhold",
+      "sid": null,
+      "sub": true,
+      "v": "Stanisburg",
+      "week": 1
+    },
+    {
+      "h": "Barhold State",
+      "sid": null,
+      "sub": false,
+      "v": "Park Island",
+      "week": 1
+    },
+    {
+      "h": "Krobe",
+      "sid": null,
+      "sub": false,
+      "v": "Ciarralotta",
+      "week": 1
+    },
+    {
+      "h": "Ciarralotta",
+      "sid": null,
+      "sub": true,
+      "v": "Michaelson-Timms",
+      "week": 2
+    },
+    {
+      "h": "Ciarralotta",
+      "sid": null,
+      "sub": false,
+      "v": "National",
+      "week": 3
+    },
+    {
+      "h": "Eona",
+      "sid": null,
+      "sub": false,
+      "v": "Repidome",
+      "week": 1
+    },
+    {
+      "h": "Eona",
+      "sid": null,
+      "sub": false,
+      "v": "Eona State",
+      "week": 2
+    },
+    {
+      "h": "Eona",
+      "sid": null,
+      "sub": false,
+      "v": "Far Farris State",
+      "week": 3
+    },
+    {
+      "h": "Central Stanton",
+      "sid": null,
+      "sub": false,
+      "v": "Eastern State",
+      "week": 3
+    },
+    {
+      "h": "Parchynt",
+      "sid": null,
+      "sub": false,
+      "v": "Antiragal State",
+      "week": 2
+    },
+    {
+      "h": "Ciarralotta State",
+      "sid": null,
+      "sub": false,
+      "v": "Ranroman",
+      "week": 2
+    },
+    {
+      "h": "Burrstone",
+      "sid": null,
+      "sub": false,
+      "v": "Greene",
+      "week": 0
+    },
+    {
+      "h": "Burrstone",
+      "sid": null,
+      "sub": false,
+      "v": "Costique State",
+      "week": 1
+    },
+    {
+      "h": "Burrstone",
+      "sid": null,
+      "sub": true,
+      "v": "Cedar Frost",
+      "week": 2
+    },
+    {
+      "h": "Orlot",
+      "sid": null,
+      "sub": false,
+      "v": "Coachville",
+      "week": 4
+    },
+    {
+      "h": "Good River",
+      "sid": null,
+      "sub": false,
+      "v": "Coachville",
+      "week": 2
+    },
+    {
+      "h": "Coachville",
+      "sid": null,
+      "sub": true,
+      "v": "Lawiiri State",
+      "week": 3
+    },
+    {
+      "h": "East Costique",
+      "sid": null,
+      "sub": false,
+      "v": "NE Rogaela",
+      "week": 1
+    },
+    {
+      "h": "Tengus",
+      "sid": null,
+      "sub": false,
+      "v": "East Costique",
+      "week": 3
+    },
+    {
+      "h": "Far Farris State",
+      "sid": null,
+      "sub": false,
+      "v": "Stanton State",
+      "week": null
+    },
+    {
+      "h": "UFNH",
+      "sid": null,
+      "sub": false,
+      "v": "Ekralund State",
+      "week": 1
+    },
+    {
+      "h": "Ireland River",
+      "sid": null,
+      "sub": false,
+      "v": "UFNH",
+      "week": 2
+    },
+    {
+      "h": "North Verigon",
+      "sid": null,
+      "sub": false,
+      "v": "South Antiragal",
+      "week": 1
+    },
+    {
+      "h": "Pistolheart",
+      "sid": null,
+      "sub": false,
+      "v": "Natzumakis State",
+      "week": 1
+    },
+    {
+      "h": "Ranroman State",
+      "sid": null,
+      "sub": false,
+      "v": "Northlight",
+      "week": 3
     }
   ],
-  "saved": "10/24/2026, 4:41:08 PM",
+  "saved": "10/26/2026, 1:13:50 AM",
   "year": 2045
 }

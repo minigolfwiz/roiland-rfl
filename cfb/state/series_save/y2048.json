@@ -13,8 +13,78 @@
       "sub": true,
       "v": "US Fall Beach",
       "week": 13
+    },
+    {
+      "h": "Ciarralotta Tech",
+      "sid": null,
+      "sub": false,
+      "v": "North Hatesei",
+      "week": 1
+    },
+    {
+      "h": "North Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "Repidome",
+      "week": 2
+    },
+    {
+      "h": "Canesta State",
+      "sid": null,
+      "sub": false,
+      "v": "Barhold",
+      "week": 3
+    },
+    {
+      "h": "Dietsche",
+      "sid": null,
+      "sub": false,
+      "v": "Eona",
+      "week": 3
+    },
+    {
+      "h": "Central Stanton",
+      "sid": null,
+      "sub": false,
+      "v": "Costique River",
+      "week": 2
+    },
+    {
+      "h": "UNN",
+      "sid": null,
+      "sub": false,
+      "v": "Antiragal State",
+      "week": 1
+    },
+    {
+      "h": "Coachville",
+      "sid": null,
+      "sub": false,
+      "v": "South Antiragal",
+      "week": 2
+    },
+    {
+      "h": "Stanton State",
+      "sid": null,
+      "sub": false,
+      "v": "Orlot",
+      "week": 1
+    },
+    {
+      "h": "Keytommiyr",
+      "sid": null,
+      "sub": false,
+      "v": "UFNH",
+      "week": 3
+    },
+    {
+      "h": "UFNH",
+      "sid": null,
+      "sub": false,
+      "v": "Perri Park",
+      "week": 4
     }
   ],
-  "saved": "10/24/2026, 4:56:02 PM",
+  "saved": "10/25/2026, 2:44:26 AM",
   "year": 2048
 }

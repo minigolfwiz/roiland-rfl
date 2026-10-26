@@ -13,8 +13,176 @@
       "sub": true,
       "v": "Gunther",
       "week": 13
+    },
+    {
+      "h": "North Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "North Hatesei St",
+      "week": 3
+    },
+    {
+      "h": "North Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "Ciarralotta Tech",
+      "week": 1
+    },
+    {
+      "h": "Barhold Valley",
+      "sid": null,
+      "sub": false,
+      "v": "Stanton",
+      "week": 0
+    },
+    {
+      "h": "UNN",
+      "sid": null,
+      "sub": false,
+      "v": "Barhold",
+      "week": 3
+    },
+    {
+      "h": "Barhold",
+      "sid": null,
+      "sub": false,
+      "v": "Canesta State",
+      "week": 2
+    },
+    {
+      "h": "Barhold",
+      "sid": null,
+      "sub": true,
+      "v": "Gordon-Shipp",
+      "week": 1
+    },
+    {
+      "h": "Good River",
+      "sid": null,
+      "sub": false,
+      "v": "Barhold State",
+      "week": 1
+    },
+    {
+      "h": "Keeper",
+      "sid": null,
+      "sub": false,
+      "v": "Ciarralotta",
+      "week": 1
+    },
+    {
+      "h": "Ciarralotta",
+      "sid": null,
+      "sub": false,
+      "v": "South Antiragal",
+      "week": 3
+    },
+    {
+      "h": "Crayellan",
+      "sid": null,
+      "sub": false,
+      "v": "Tasson",
+      "week": 3
+    },
+    {
+      "h": "Eona",
+      "sid": null,
+      "sub": false,
+      "v": "Ciarralotta Tech",
+      "week": 2
+    },
+    {
+      "h": "Costique River",
+      "sid": null,
+      "sub": false,
+      "v": "Central Stanton",
+      "week": 2
+    },
+    {
+      "h": "Antiragal State",
+      "sid": null,
+      "sub": false,
+      "v": "Eastern State",
+      "week": 3
+    },
+    {
+      "h": "Far Farris",
+      "sid": null,
+      "sub": false,
+      "v": "Antiragal State",
+      "week": 2
+    },
+    {
+      "h": "Burrstone",
+      "sid": null,
+      "sub": false,
+      "v": "Diveo",
+      "week": 0
+    },
+    {
+      "h": "Denver State",
+      "sid": null,
+      "sub": false,
+      "v": "Burrstone",
+      "week": 1
+    },
+    {
+      "h": "UN Steelbridge",
+      "sid": null,
+      "sub": false,
+      "v": "Burrstone",
+      "week": 3
+    },
+    {
+      "h": "East Costique",
+      "sid": null,
+      "sub": false,
+      "v": "Marblehead",
+      "week": 1
+    },
+    {
+      "h": "Antiragal",
+      "sid": null,
+      "sub": false,
+      "v": "Parchynt",
+      "week": 1
+    },
+    {
+      "h": "South Antiragal",
+      "sid": null,
+      "sub": false,
+      "v": "North Verigon",
+      "week": 1
+    },
+    {
+      "h": "South Antiragal",
+      "sid": null,
+      "sub": true,
+      "v": "USA Roman City",
+      "week": 2
+    },
+    {
+      "h": "Tengus State",
+      "sid": null,
+      "sub": false,
+      "v": "Pistolheart",
+      "week": 3
+    },
+    {
+      "h": "Pistolheart",
+      "sid": null,
+      "sub": true,
+      "v": "Olds College",
+      "week": 2
+    },
+    {
+      "h": "Pistolheart",
+      "sid": null,
+      "sub": false,
+      "v": "Coastal Ranroman",
+      "week": 1
     }
   ],
-  "saved": "10/24/2026, 4:55:37 PM",
+  "saved": "10/26/2026, 1:09:14 AM",
   "year": 2046
 }

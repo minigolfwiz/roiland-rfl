@@ -13,8 +13,64 @@
       "sub": true,
       "v": "Pietro Tadal",
       "week": 13
+    },
+    {
+      "h": "North Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "Barhold",
+      "week": 2
+    },
+    {
+      "h": "Ciarralotta Tech",
+      "sid": null,
+      "sub": false,
+      "v": "Ciarralotta",
+      "week": 1
+    },
+    {
+      "h": "Skeenerland State",
+      "sid": null,
+      "sub": false,
+      "v": "Eona",
+      "week": 2
+    },
+    {
+      "h": "Coachville",
+      "sid": null,
+      "sub": false,
+      "v": "Central Stanton",
+      "week": 1
+    },
+    {
+      "h": "Ranroman",
+      "sid": null,
+      "sub": false,
+      "v": "Ciarralotta State",
+      "week": 4
+    },
+    {
+      "h": "Antiragal",
+      "sid": null,
+      "sub": false,
+      "v": "Stanton",
+      "week": 3
+    },
+    {
+      "h": "Stanton State",
+      "sid": null,
+      "sub": false,
+      "v": "Dove Island",
+      "week": 1
+    },
+    {
+      "h": "Pistolheart",
+      "sid": null,
+      "sub": false,
+      "v": "Dietsche",
+      "week": 1
     }
   ],
-  "saved": "10/24/2026, 4:57:25 PM",
+  "saved": "10/26/2026, 1:09:47 AM",
   "year": 2052
 }

@@ -6,8 +6,57 @@
       "sub": false,
       "v": "Southern Tengus",
       "week": 14
+    },
+    {
+      "h": "North Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "Rogaela State",
+      "week": 1
+    },
+    {
+      "h": "Barhold",
+      "sid": null,
+      "sub": false,
+      "v": "Crayellan",
+      "week": 1
+    },
+    {
+      "h": "Antiragal State",
+      "sid": null,
+      "sub": false,
+      "v": "UNN",
+      "week": 3
+    },
+    {
+      "h": "South Antiragal",
+      "sid": null,
+      "sub": false,
+      "v": "Coachville",
+      "week": 2
+    },
+    {
+      "h": "UFNH",
+      "sid": null,
+      "sub": false,
+      "v": "Keytommiyr",
+      "week": 4
+    },
+    {
+      "h": "Eona",
+      "sid": null,
+      "sub": false,
+      "v": "Ekralund State",
+      "week": 3
+    },
+    {
+      "h": "Dietsche",
+      "sid": null,
+      "sub": false,
+      "v": "Pistolheart",
+      "week": 1
     }
   ],
-  "saved": "10/24/2026, 4:53:41 PM",
+  "saved": "10/26/2026, 1:09:41 AM",
   "year": 2049
 }

@@ -20,8 +20,78 @@
       "sub": true,
       "v": "Greater Billiataho",
       "week": 1
+    },
+    {
+      "h": "Barhold",
+      "sid": null,
+      "sub": false,
+      "v": "North Hatesei",
+      "week": 3
+    },
+    {
+      "h": "Marblehead",
+      "sid": null,
+      "sub": false,
+      "v": "Fiota Bay",
+      "week": 3
+    },
+    {
+      "h": "Stanton",
+      "sid": null,
+      "sub": false,
+      "v": "Barhold Valley",
+      "week": 2
+    },
+    {
+      "h": "Barhold State",
+      "sid": null,
+      "sub": false,
+      "v": "Good River",
+      "week": 1
+    },
+    {
+      "h": "Ciarralotta",
+      "sid": null,
+      "sub": false,
+      "v": "Ciarralotta Tech",
+      "week": 1
+    },
+    {
+      "h": "Yrei Trobniy",
+      "sid": null,
+      "sub": false,
+      "v": "Ciarralotta State",
+      "week": 3
+    },
+    {
+      "h": "Diveo",
+      "sid": null,
+      "sub": false,
+      "v": "Burrstone",
+      "week": 3
+    },
+    {
+      "h": "Burrstone",
+      "sid": null,
+      "sub": false,
+      "v": "UN Steelbridge",
+      "week": 0
+    },
+    {
+      "h": "Harrell",
+      "sid": null,
+      "sub": false,
+      "v": "Coachville",
+      "week": 3
+    },
+    {
+      "h": "Coachville",
+      "sid": null,
+      "sub": false,
+      "v": "Orlot",
+      "week": 1
     }
   ],
-  "saved": "10/24/2026, 4:54:33 PM",
+  "saved": "10/25/2026, 2:12:02 AM",
   "year": 2047
 }

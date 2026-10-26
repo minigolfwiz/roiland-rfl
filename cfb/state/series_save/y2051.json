@@ -6,8 +6,43 @@
       "sub": false,
       "v": "Southern Tengus",
       "week": 14
+    },
+    {
+      "h": "Rogaela State",
+      "sid": null,
+      "sub": false,
+      "v": "North Hatesei",
+      "week": 1
+    },
+    {
+      "h": "Eona",
+      "sid": null,
+      "sub": false,
+      "v": "Skeenerland State",
+      "week": 0
+    },
+    {
+      "h": "Central Stanton",
+      "sid": null,
+      "sub": false,
+      "v": "Coachville",
+      "week": 7
+    },
+    {
+      "h": "Burrstone",
+      "sid": null,
+      "sub": false,
+      "v": "Denver State",
+      "week": 2
+    },
+    {
+      "h": "Ciarralotta State",
+      "sid": null,
+      "sub": false,
+      "v": "Pistolheart",
+      "week": 1
     }
   ],
-  "saved": "10/24/2026, 4:51:45 PM",
+  "saved": "10/26/2026, 1:10:29 AM",
   "year": 2051
 }
