@@ -111,8 +111,8 @@ function gameCard(g){
     <div class="kv" style="margin-top:8px">${['passing','rushing','receiving','defence'].map(k => g.leaders[k].map(l => `<span><b>${k[0].toUpperCase()+k.slice(1)}</b> ${who(l.name, null, l.club)} (${esc(BRAND[l.club].nick)}) ${esc(l.line)}</span>`).join('')).join('')}</div>
     ${g.injuries.length ? `<div class="note">Injuries: ${g.injuries.map(i => `${who(i.name, null, i.team)} (${esc(BRAND[i.team].nick)} ${esc(i.pos)}) — ${esc(i.kind)}, ${i.weeks >= 20 ? 'out for the season' : i.weeks + ' wk' + (i.weeks > 1 ? 's' : '')}`).join('; ')}</div>` : ''}</div>`;
   return `<div class="gc" tabindex="0" role="button" data-g="${g.id}">
-    <div class="row ${aw?'w':'l'}"><span>${chip(g.away, true)}</span><span class="sc">${g.away_pts}</span></div>
-    <div class="row ${hw?'w':'l'}"><span>${chip(g.home, true)}</span><span class="sc">${g.home_pts}</span></div>
+    <div class="row ${aw?'w':'l'}"><span>${g.seeds && g.seeds[g.away] ? '<small style="color:var(--dim)">(' + g.seeds[g.away] + ')</small> ' : ''}${chip(g.away, true)}</span><span class="sc">${g.away_pts}</span></div>
+    <div class="row ${hw?'w':'l'}"><span>${g.seeds && g.seeds[g.home] ? '<small style="color:var(--dim)">(' + g.seeds[g.home] + ')</small> ' : ''}${chip(g.home, true)}</span><span class="sc">${g.home_pts}</span></div>
     <div class="meta"><span><span class="slot ${g.slot}">${SLOT[g.slot]}</span> ${g.ot ? '<b>OT</b> · ' : ''}${g.winner ? '' : '<b>TIE</b> · '}${esc(g.stadium)}, ${esc(g.city)}</span><span>${g.kind.toUpperCase().slice(0,5)}</span></div>${det}</div>`;
 }
 function weekView(){
@@ -146,7 +146,7 @@ function injView(){
 }
 function awardView(){
   if (!D.awards) return '<p class="note">Awards are voted after the regular season.</p>';
-  return '<div class="lead">' + Object.keys(D.awards).map(k => { const a = D.awards[k]; return `<div><b>${esc(k)}${a.award !== k ? ' · ' + esc(a.award) : ''}</b><ol>${a.finalists.map((f, i) => `<li><span>${i === 0 ? '🏆 ' : ''}${f.pos ? who(f.name, null, f.club) : esc(f.name)} <small style="color:var(--dim)">${esc(f.pos || 'HC')}, ${esc(BRAND[f.club].nick)} — ${esc(f.line)}</small></span></li>`).join('')}</ol></div>`; }).join('') + '</div>';
+  return '<div class="lead">' + Object.keys(D.awards).map(k => { const a = D.awards[k]; return `<div><b>${esc(k)}${a.award !== k ? ' · ' + esc(a.award) : ''}</b><ol>${a.finalists.map((f, i) => `<li><span>${a.winner && f.name === a.winner.name ? '🏆 ' : ''}${f.pos ? who(f.name, null, f.club) : esc(f.name)} <small style="color:var(--dim)">${esc(f.pos || 'HC')}, ${esc(BRAND[f.club].nick)} — ${esc(f.line)}</small></span></li>`).join('')}</ol></div>`; }).join('') + '</div>';
 }
 function poView(){
   if (!D.playoffs) return '<p class="note">Seeds are set after week 20.</p>';

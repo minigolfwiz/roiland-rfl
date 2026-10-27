@@ -61,3 +61,5 @@
 - TO REMIND DAN at the end of the 2043 season: make the League Office cases more robust (Dan, 27 Oct 2026, week 18; no action needed before then).
 
 - **Awards (Dan, 27 Oct 2026): from now on present the finalists for each award and let Dan pick the winners; never name winners automatically.** The 2043 finalists are in season.awards (no winners recorded until Dan picks).
+
+- **Playoff seeds (Dan, 27 Oct 2026): whenever playoff teams are mentioned, in conversation or on the Season page, include their seeds.** Season page: playoff game cards now show the seed before each team; award trophy sits on the winner Dan picked (season.awards[k].winner).
