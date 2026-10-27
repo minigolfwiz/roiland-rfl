@@ -1,0 +1,337 @@
+{
+ "year": 2043,
+ "week": 2,
+ "potw": {
+  "off": [
+   {
+    "pid": 9033790,
+    "name": "Zainab Yiling",
+    "pos": "QB",
+    "club": "Palm Creek Leatherbacks",
+    "line": "22/38, 284 yds, 3 TD, 91 rush yds",
+    "res": "W 38-14 vs Rapids",
+    "score": 34.43
+   },
+   {
+    "pid": 9034753,
+    "name": "Michio Clayshaw",
+    "pos": "WR",
+    "club": "Bruca Beach Hammerheads",
+    "line": "9 rec, 156 yds, 3 TD",
+    "res": "W 24-16 vs Hope",
+    "score": 33.6
+   },
+   {
+    "pid": 9037416,
+    "name": "Kamala Al-Yasiri",
+    "pos": "QB",
+    "club": "Far Farris Raccoons",
+    "line": "25/36, 346 yds, 5 TD, 1 INT",
+    "res": "W 50-31 vs Thunderbugs",
+    "score": 30.84
+   },
+   {
+    "pid": 9036760,
+    "name": "Essence Rowham",
+    "pos": "WR",
+    "club": "Tasson Thunderbugs",
+    "line": "11 rec, 184 yds, 1 TD",
+    "res": "L 31-50 vs Raccoons",
+    "score": 24.4
+   },
+   {
+    "pid": 9037782,
+    "name": "Harumi Nakakubo",
+    "pos": "WR",
+    "club": "North Hatesei Bees",
+    "line": "7 rec, 55 yds, 3 TD",
+    "res": "L 31-35 vs Swords",
+    "score": 23.5
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9037952,
+    "name": "Chengfei Leisao",
+    "pos": "DL",
+    "club": "Canesta Dales",
+    "line": "3 sacks, 1 forced fumble",
+    "res": "W 34-24 vs Tsunami",
+    "score": 19
+   },
+   {
+    "pid": 9034723,
+    "name": "Ojinjintka Tomselniy",
+    "pos": "LB",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "2 sacks, 1 INT",
+    "res": "W 24-16 vs Rovers",
+    "score": 16
+   },
+   {
+    "pid": 9037789,
+    "name": "Baltazar Liangzong",
+    "pos": "DL",
+    "club": "Canesta Dales",
+    "line": "2 sacks, 1 forced fumble",
+    "res": "W 34-24 vs Tsunami",
+    "score": 14
+   },
+   {
+    "pid": 9035799,
+    "name": "Chiamaka Camara",
+    "pos": "LB",
+    "club": "Tasson Thunderbugs",
+    "line": "1 sack, 1 INT",
+    "res": "L 31-50 vs Raccoons",
+    "score": 11
+   },
+   {
+    "pid": 9035801,
+    "name": "Bogdan Penaverde",
+    "pos": "LB",
+    "club": "Rogaela Rovers",
+    "line": "1 sack, 1 INT",
+    "res": "L 16-24 vs Silverbacks",
+    "score": 11
+   }
+  ],
+  "st": [
+   {
+    "pid": 9036937,
+    "name": "Talise Quisseil",
+    "pos": "K",
+    "club": "Stanton City Conductors",
+    "line": "5/5 FG, 1 XP",
+    "res": "L 22-24 vs Phenoms",
+    "score": 15.5
+   },
+   {
+    "pid": 9037064,
+    "name": "Adaeze Stavroledis",
+    "pos": "P",
+    "club": "Holliday Beetles",
+    "line": "9 punts, 49.2 avg",
+    "res": "W 24-16 vs Topcats",
+    "score": 13.833333333333334
+   },
+   {
+    "pid": 9101071,
+    "name": "Bassam Al-Kadhim",
+    "pos": "K",
+    "club": "Good River Rangers",
+    "line": "4/4 FG, 1 XP",
+    "res": "L 19-26 vs Grays",
+    "score": 12.5
+   },
+   {
+    "pid": 9037467,
+    "name": "Ishani Bernhardt",
+    "pos": "K",
+    "club": "Far Farris Raccoons",
+    "line": "3/3 FG, 5 XP",
+    "res": "W 50-31 vs Thunderbugs",
+    "score": 11.5
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "defenseless",
+   "title": "Hit on a defenseless player",
+   "who": [
+    {
+     "name": "Shaojun Myeong-Gu",
+     "pos": "CB",
+     "club": "Palm Creek Leatherbacks",
+     "pid": 9100900
+    }
+   ],
+   "game": "G349",
+   "where": "Palm Creek Leatherbacks at Purcell Rapids, week 2",
+   "text": "Shaojun Myeong-Gu (CB) hit a receiver in the air before the ball arrived; the officials flagged it as a hit on a defenseless player.",
+   "prior": 0,
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W2-1",
+   "tier": "minor",
+   "week": 2
+  },
+  {
+   "type": "sideline",
+   "title": "Sideline conduct",
+   "who": [
+    {
+     "name": "Moonsik Radimir",
+     "pos": "HC",
+     "club": "Crayellan Redwoods",
+     "pid": null,
+     "coach": true
+    }
+   ],
+   "game": "G6",
+   "where": "Costique Bearcats at Crayellan Redwoods, week 2",
+   "text": "Head coach Moonsik Radimir was flagged for berating officials over a no-call and followed it with heated comments on the field after the final whistle.",
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W2-2",
+   "tier": "minor",
+   "week": 2
+  },
+  {
+   "type": "helmet",
+   "title": "Helmet-to-helmet contact",
+   "who": [
+    {
+     "name": "Mateo Lafort",
+     "pos": "LB",
+     "club": "Coachville Mastodons",
+     "pid": 9034956
+    }
+   ],
+   "game": "G137",
+   "where": "Coachville Mastodons at Classetto Cavemen, week 2",
+   "text": "Mateo Lafort (LB) was penalized for helmet-to-helmet contact on a crossing route; the player on the other end stayed in the game.",
+   "prior": 0,
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W2-3",
+   "tier": "minor",
+   "week": 2
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.02
+  }
+ ]
+}
