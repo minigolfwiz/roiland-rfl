@@ -48,7 +48,8 @@ h1{font:800 30px/1.05 Fraunces,Georgia,serif;margin:0 0 4px;text-wrap:balance}
 __MARKS__
 const D=__DATA__;
 const IC=(t,cls)=>{const m=D.marks[t];return m?`<span class="${cls||'ic'}">${mark({name:t,mascot:m.m,conf:m.c,col:m.col})}</span>`:`<span class="${cls||'ic'}"></span>`};
-const v=document.getElementById('v');let tab='t',conf='',all={t:false,p:false};
+const v=document.getElementById('v');let tab='t',conf='',era='all',all={t:false,p:false};
+const eraSel=()=>`<div class="ctl"><select id="es" aria-label="playoff era"><option value="all"${era==='all'?' selected':''}>All playoffs · ${D.all_years}</option><option value="24"${era==='24'?' selected':''}>24-team era · ${D.po_years}</option></select></div>`;
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const TIER=Object.fromEntries(D.confs.map(c=>[c.c,c.tier]));
 document.getElementById('sub').textContent='Through the '+D.through+' season · champion '+D.champ[0]+(D.champ[1]?' (def. '+D.champ[1]+')':'');
@@ -60,21 +61,21 @@ function titles(){const rows=D.titles.filter(r=>r.ti>0&&(!conf||r.c===conf));con
  rows.slice(0,n).forEach((r,idx)=>{if(r.ti!==prev){rk=idx+1;prev=r.ti}
   h+=`<div class="row"><div class="rk">${rk}</div>${IC(r.t)}<div><div class="nm">${esc(r.t)}${conf?'':`<span class="cf">${esc(r.c||'')}</span>`}</div><div class="meta"><span>${r.ru} runner-up</span><span>last ${r.last}</span>${r.since?`<span class="new">${r.since} since 2026</span>`:''}</div></div><div class="big">${r.ti}<small>title${r.ti==1?'':'s'}</small></div></div>`});
  h+='</div>';if(rows.length>cap)h+=`<button class="more" data-more="t">${all.t?'Show top 20':'Show all '+rows.length+' champions'}</button>`;return h}
-function po(){const rows=D.po.filter(r=>!conf||r.c===conf);const cap=conf?rows.length:25;const n=all.p?rows.length:cap;
- let h=confSel()+`<p class="note">24-team playoff, ${D.po_years}, from every playoff game on record. Ranked by titles, then title games, semifinals, wins.</p><div class="card">`;
+function po(){const rows=(era==='all'?D.po_all:D.po).filter(r=>!conf||r.c===conf);const cap=conf?rows.length:25;const n=all.p?rows.length:cap;
+ let h=eraSel()+confSel()+`<p class="note">${era==='all'?`Every playoff since 2016: the 8-team field of ${D.all_years.slice(0,4)}–2025, then the 24-team field from 2026.`:`24-team playoff, ${D.po_years}.`} Ranked by titles, then title games, semifinals, wins.</p><div class="card">`;
  rows.slice(0,n).forEach((r,i)=>{const pct=Math.round(100*r.W/Math.max(1,r.W+r.L));
   h+=`<div class="row"><div class="rk">${i+1}</div>${IC(r.t)}<div><div class="nm">${esc(r.t)}${conf?'':`<span class="cf">${esc(r.c||'')}</span>`}</div><div class="meta"><span>${r.apps} apps</span><span>${r.W}–${r.L}</span><span>${r.qf} QF</span><span>${r.sf} SF</span><span>${r.fin} final${r.fin==1?'':'s'}</span><span>last ${r.last}</span></div><div class="bar"><i style="width:${pct}%"></i></div></div><div class="big">${r.ti}<small>title${r.ti==1?'':'s'}</small></div></div>`});
  h+='</div>';if(rows.length>cap)h+=`<button class="more" data-more="p">${all.p?'Show top 25':'Show all '+rows.length+' playoff teams'}</button>`;return h}
 function confs(){
- const block=t=>{const cs=D.confs.filter(c=>c.tier===t).sort((a,b)=>b.ti-a.ti||b.fin-a.fin||b.W-a.W);
+ const block=t=>{const cs=D.confs.filter(c=>c.tier===t).map(c=>Object.assign({},c,c[era])).sort((a,b)=>b.ti-a.ti||b.fin-a.fin||b.W-a.W);
   return `<div class="sec">${t==='P6'?'Power 6':'Group of 6'}</div><div class="card">`+cs.map((c,i)=>{const pct=Math.round(100*c.W/Math.max(1,c.W+c.L));
    return `<button class="crow" data-conf="${esc(c.c)}"><div class="rk">${i+1}</div><div style="min-width:0"><div class="nm">${esc(c.c)}<span class="tier">${c.n} teams</span></div>
    <div class="meta"><span>${c.since} since 2026</span><span>${c.apps} playoff apps</span><span>${c.W}–${c.L}</span><span>${c.sf} SF</span><span>${c.fin} final${c.fin==1?'':'s'}</span></div>
    <div class="meta">${c.champs.length?'Most: '+c.champs.map(esc).join(', '):'No national champion among current members'}</div>${c.champs.length?'<div class="ics">'+c.champs.map(t=>IC(t)).join('')+'</div>':''}<div class="bar"><i style="width:${pct}%"></i></div></div>
    <div class="big">${c.ti}<small>titles</small></div></button>`}).join('')+'</div>'};
- return `<p class="note">Every title and playoff result credited to each conference’s CURRENT members (titles since 1929; playoff ${D.po_years}). Tap a conference to see its teams.</p>`+block('P6')+block('L6')}
-function yrs(){let h='<p class="note">Title game winners and runners-up, 24-team era.</p><div class="card">';
- D.years.slice().reverse().forEach(r=>{h+=`<div class="yr"><b>${r.y}</b>${IC(r.w)}<div><div class="nm">${esc(r.w)}</div><span class="vs">def. ${IC(r.r,'ic')} ${esc(r.r)}</span></div></div>`});return h+'</div>'}
+ return eraSel()+`<p class="note">Every title and playoff result credited to each conference’s CURRENT members (titles since 1929; playoffs ${era==='all'?D.all_years:D.po_years}). Tap a conference to see its teams.</p>`+block('P6')+block('L6')}
+function yrs(){let h='<p class="note">Playoff champions and runners-up: 24-team field from 2026, 8-team field 2016–2025.</p>';let cur=null;
+ D.years.slice().reverse().forEach(r=>{if(r.era!==cur){if(cur!==null)h+='</div>';cur=r.era;h+=`<div class="sec">${r.era===24?'24-team playoff':'8-team playoff'}</div><div class="card">`}h+=`<div class="yr"><b>${r.y}</b>${IC(r.w)}<div><div class="nm">${esc(r.w)}</div><span class="vs">def. ${IC(r.r,'ic')} ${esc(r.r)}</span></div></div>`});return h+'</div>'}
 function setTab(t){tab=t;document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-selected',x.dataset.t===t));draw();window.scrollTo(0,0)}
 function draw(){v.innerHTML=tab=='t'?titles():tab=='p'?po():tab=='c'?confs():yrs();fitAll(v);}
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>fitAll(v));
@@ -83,6 +84,6 @@ document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)r
  else if(b.dataset.more){all[b.dataset.more]=!all[b.dataset.more];draw()}
  else if(b.dataset.conf){conf=b.dataset.conf;setTab('t')}
  else if(b.dataset.clr){conf='';draw()}});
-document.addEventListener('change',e=>{if(e.target.id==='cs'){conf=e.target.value;draw()}});
+document.addEventListener('change',e=>{if(e.target.id==='cs'){conf=e.target.value;draw()}else if(e.target.id==='es'){era=e.target.value;draw()}});
 draw();
 </script>

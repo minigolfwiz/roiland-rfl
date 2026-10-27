@@ -43,39 +43,52 @@ def main(out='/home/claude/cfb2/state/standings.json'):
         for key, rnd in (('r1_results', 1), ('r2_results', 2), ('qf_results', 3), ('sf_results', 4)):
             for g in P.get(key) or []: games.append((sn, rnd, g['winner'], g['loser']))
         games.append((sn, 5, P['champion'], P['runnerup']))
-    apps = collections.defaultdict(set); W = collections.Counter(); L = collections.Counter()
-    depth = collections.defaultdict(dict)
+    # every playoff appearance as (year, depth, wins, losses); depth 3 = quarterfinal ...
+    # 5 = title game, 6 = champion. The 24-team era adds R1 (1) and R2 (2).
+    entries = collections.defaultdict(dict)          # team -> year -> [depth, W, L]
     for sn, r, w, l in games:
-        W[w] += 1; L[l] += 1
-        for t, d in ((w, r + 1), (l, r)):
-            apps[t].add(sn); depth[t][sn] = max(depth[t].get(sn, 0), d)
-    # byes: a team whose first game is R2 still made the field
-    po = []
-    for t in apps:
-        ds = depth[t].values()
-        po.append({'t': t, 'c': tconf.get(t), 'apps': len(apps[t]), 'W': W[t], 'L': L[t],
-                   'qf': sum(d >= 3 for d in ds), 'sf': sum(d >= 4 for d in ds), 'fin': sum(d >= 5 for d in ds),
-                   'ti': sum(d >= 6 for d in ds), 'last': 2025 + max(apps[t]), 'first': 2025 + min(apps[t])})
-    po.sort(key=lambda r: (-r['ti'], -r['fin'], -r['sf'], -r['W'], r['L'], r['t']))
+        y = 2025 + sn
+        for t, d, won in ((w, r + 1, 1), (l, r, 0)):
+            e = entries[t].setdefault(y, [0, 0, 0])
+            e[0] = max(e[0], d); e[1] += won; e[2] += 1 - won
+    # canon 8-team playoff, 2016-2025: history.playoff[year] = [(team, wins)], 3 wins = title
+    pre = s['history'].get('playoff', {})
+    for y, field in pre.items():
+        for t, n in field:
+            entries[t][y] = [3 + n, n, 0 if n == 3 else 1]
+    def table(y0):
+        out = []
+        for t, ys in entries.items():
+            ys = {y: e for y, e in ys.items() if y >= y0}
+            if not ys: continue
+            ds = [e[0] for e in ys.values()]
+            out.append({'t': t, 'c': tconf.get(t), 'apps': len(ys), 'W': sum(e[1] for e in ys.values()),
+                        'L': sum(e[2] for e in ys.values()), 'qf': sum(d >= 3 for d in ds), 'sf': sum(d >= 4 for d in ds),
+                        'fin': sum(d >= 5 for d in ds), 'ti': sum(d >= 6 for d in ds), 'last': max(ys), 'first': min(ys)})
+        out.sort(key=lambda r: (-r['ti'], -r['fin'], -r['sf'], -r['W'], r['L'], r['t']))
+        return out
+    po_all, po = table(min(pre) if pre else 2026), table(2026)
+    pre_years = [{'y': y, 'w': next(t for t, n in pre[y] if n == 3), 'r': next(t for t, n in pre[y] if n == 2), 'era': 8} for y in sorted(pre)]
+    years = pre_years + [dict(r, era=24) for r in years]
     titles = [{'t': t, 'c': tconf.get(t), 'ti': ti[t], 'ru': ru[t], 'last': last.get(t), 'since': since[t]}
               for t in set(ti) | set(ru)]
     titles.sort(key=lambda r: (-r['ti'], -r['ru'], -(r['last'] or 0), r['t']))
     # ---- conferences (current membership) ----
     confs = []
-    POT = {r['t']: r for r in po}
-    for c, members in U['conferences'].items():
-        ms = list(members)
-        row = {'c': c, 'tier': U['tiers'].get(c), 'n': len(ms),
-               'ti': sum(ti[m] for m in ms), 'since': sum(since[m] for m in ms),
-               'apps': sum(POT[m]['apps'] for m in ms if m in POT), 'W': sum(POT[m]['W'] for m in ms if m in POT),
-               'L': sum(POT[m]['L'] for m in ms if m in POT), 'sf': sum(POT[m]['sf'] for m in ms if m in POT),
-               'fin': sum(POT[m]['fin'] for m in ms if m in POT),
-               'champs': sorted([m for m in ms if ti[m]], key=lambda m: -ti[m])[:4],
-               'teams_ti': sum(1 for m in ms if ti[m])}
-        confs.append(row)
+    for key, tab in (('all', po_all), ('24', po)):
+        POT = {r['t']: r for r in tab}
+        for ci, (c, members) in enumerate(U['conferences'].items()):
+            ms = list(members)
+            if key == 'all':
+                confs.append({'c': c, 'tier': U['tiers'].get(c), 'n': len(ms),
+                              'ti': sum(ti[m] for m in ms), 'since': sum(since[m] for m in ms),
+                              'champs': sorted([m for m in ms if ti[m]], key=lambda m: -ti[m])[:4]})
+            confs[ci][key] = {'apps': sum(POT[m]['apps'] for m in ms if m in POT), 'W': sum(POT[m]['W'] for m in ms if m in POT),
+                              'L': sum(POT[m]['L'] for m in ms if m in POT), 'sf': sum(POT[m]['sf'] for m in ms if m in POT),
+                              'fin': sum(POT[m]['fin'] for m in ms if m in POT)}
     marks = {t: {'m': U['geo'][t].get('mascot', ''), 'c': U['team_conf'][t], 'col': list(U['team_colors'][t])} for t in U['teams']}
     out_d = {'marks': marks, 'through': last_done, 'champ': champ[last_done], 'titles': titles, 'po': po, 'years': years,
-             'confs': confs, 'po_years': '2026–%d' % last_done}
+             'confs': confs, 'po_all': po_all, 'po_years': '2026–%d' % last_done, 'all_years': '%d–%d' % (min(pre), last_done)}
     json.dump(out_d, open(out, 'w'))
     return out_d
 
@@ -83,5 +96,5 @@ if __name__ == '__main__':
     d = main()
     print(d['through'], d['champ'])
     print([(r['t'], r['ti'], r['ru'], r['last']) for r in d['titles'][:8]])
-    print([(r['t'], r['apps'], r['W'], r['L'], r['ti']) for r in d['po'][:6]])
-    for c in d['confs']: print(c['c'], c['tier'], c['ti'], c['since'], c['apps'], c['W'], c['L'], c['fin'], c['champs'])
+    print([(r['t'], r['apps'], r['W'], r['L'], r['ti']) for r in d['po_all'][:6]])
+    for c in d['confs']: print(c['c'], c['ti'], c['all'], c['24'])
