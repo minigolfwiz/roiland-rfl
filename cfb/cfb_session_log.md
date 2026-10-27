@@ -636,3 +636,10 @@ NEXT: Dan's week 11 ballot; then week 11 Gameview candidates.
 1 UNN, 2 Ranroman State, 3 Rogaela State, 4 Tengus State, 5 Krobe State, 6 Antiragal State, 7 Lornaman, 8 Yrei Trobniy, 9 Ekralund State, 10 Costique River, 11 Fiota Bay, 12 Roosevelt, 13 Leafette, 14 Tasson, 15 Phangrine State, 16 Ciarralotta State, 17 UFNH, 18 Hatesei, 19 Marblehead, 20 German Shores, 21 Orlot Western, 22 South Antiragal, 23 Eastern State, 24 Southern Tengus, 25 Barhold. Dropped out: Keeper, Far Farris.
 Week 11 candidates: Antiragal State at Krobe State; Ciarralotta at UNN; Tengus State at Skeenerland State; Ranroman State at Orlot. Passed: Eastern State at Ciarralotta State (already visited Ciarralotta State).
 NEXT: week 11 Gameview pick.
+
+## 2043 WEEK 11 played (Gameview: Antiragal State at Krobe State) -- 2026-10-27
+#5 Krobe State 34-13 #6 Antiragal State (Freeley 254/2/1; Grannes 162 rec/2; Kongiannis 171/1 + 74 rush). Krobe State 8-1.
+Board losses: #1 UNN 14-38 to Ciarralotta (Miranegro 360/5, Eze 192 rec/2; Kingsworth 231/1/1) -- UNN 8-1; #2 Ranroman State 17-37 to Orlot (Lundby 192 + 26 rush) -- 7-2; #4 Tengus State 14-23 to Skeenerland State (Cha 282/2; Vikstad 280/1/3 INT, Faitai 202 rec) -- 8-1; #11 Fiota Bay 29-38 to East Costique (Dragovich 205 rush; Balaprasad 368/1/1) -- 7-3; #16 Ciarralotta State beat #23 Eastern State 30-24 (Manupati 400/3; Darwish 364/3, Eaglebear 252 rec/2); #18 Hatesei 13-21 OT to Pistolheart. Wins: #8 Yrei Trobniy 20-3 Kaji Kita State; #9 Ekralund State 40-24 at Milharvey. Rogaela State, Lornaman, Costique River, UFNH idle. Guests 1-8 (Lamb 27-18 Chapel Rock).
+Media poll (info only): Rogaela State 1, Krobe State 2, Tengus State 3, Lornaman 4, UFNH 5.
+Committee Ballot v50 built for week 12. Viewer v168, Media Pool v64. Backup pre_w11.
+NEXT: Dan's week 12 ballot; then week 12 Gameview candidates.
