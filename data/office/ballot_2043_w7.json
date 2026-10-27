@@ -1,0 +1,352 @@
+{
+ "year": 2043,
+ "week": 7,
+ "potw": {
+  "off": [
+   {
+    "pid": 9038026,
+    "name": "Tuva Sierrafranca",
+    "pos": "RB",
+    "club": "Queensville Phenoms",
+    "line": "18 car, 98 yds, 2 rec, 43 yds, 4 TD",
+    "res": "W 42-21 vs Terrors",
+    "score": 38.1,
+    "plays": [
+     "Q1 0:46 1-yd TD run (was tied)",
+     "Q3 9:56 1-yd TD run (was up 14)",
+     "Q4 12:25 8-yd TD catch from Heidi Ruixuan (was up 14)",
+     "Q4 3:10 5-yd TD run (was up 21)"
+    ]
+   },
+   {
+    "pid": 9035209,
+    "name": "Sivoyel Yingzuo",
+    "pos": "QB",
+    "club": "South Burke Tsunami",
+    "line": "30/43, 476 yds, 3 TD",
+    "res": "W 34-27 at Dynamos",
+    "score": 34.04,
+    "plays": [
+     "Q1 7:09 2-yd TD pass to Sota Pyeong-Seong (was tied)",
+     "Q1 3:37 11-yd TD pass to Terrell Highcombe (was up 7)",
+     "Q4 0:02 8-yd TD pass to Sota Pyeong-Seong (was tied, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9033283,
+    "name": "Imani Chimah",
+    "pos": "QB",
+    "club": "Hughes City Asteroids",
+    "line": "25/35, 326 yds, 2 TD, 140 rush yds",
+    "res": "W 27-24 at Komodos",
+    "score": 33.37,
+    "plays": [
+     "Q3 7:02 47-yd TD pass to Soren Birketveit (was down 7)",
+     "Q4 0:51 8-yd TD pass to Uchenna Qaddoumi (was down 4, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9036935,
+    "name": "Kirovei Villareal",
+    "pos": "WR",
+    "club": "North Hatesei Bees",
+    "line": "8 rec, 153 yds, 2 TD",
+    "res": "W 28-21 vs Rovers",
+    "score": 30.3,
+    "plays": [
+     "Q1 2:56 15-yd TD catch from Eugenie Belloletti (was down 3)",
+     "Q4 0:03 27-yd TD catch from Eugenie Belloletti (was tied, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9035929,
+    "name": "Rostislav Neraini",
+    "pos": "WR",
+    "club": "Diamond City Hope",
+    "line": "9 rec, 141 yds, 2 TD",
+    "res": "W 33-32 at Raptors",
+    "score": 26.85,
+    "plays": [
+     "Q2 11:14 40-yd TD catch from Maha Zafeitidis (was down 3)",
+     "Q4 3:30 38-yd TD catch from Maha Zafeitidis (was down 12), cut the deficit late"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9100829,
+    "name": "Manaia Lamecrane",
+    "pos": "LB",
+    "club": "Port Logan Commodores",
+    "line": "12 tackles, 2 sacks, 1 INT",
+    "res": "L 9-41 vs Raccoons",
+    "score": 25.2,
+    "plays": [
+     "Q2 5:25 interception returned 27 yds (down 17), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9034905,
+    "name": "Alofa Goryshyn",
+    "pos": "CB",
+    "club": "Cordelle Raptors",
+    "line": "6 tackles, 2 INT",
+    "res": "L 32-33 vs Hope",
+    "score": 19.6,
+    "plays": [
+     "Q3 6:21 interception (down 5), led to a touchdown",
+     "Q3 4:21 interception returned 13 yds (up 2), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9037755,
+    "name": "Pooja Ezenti",
+    "pos": "LB",
+    "club": "Costique Bearcats",
+    "line": "6 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 31-32 vs Demons",
+    "score": 19.6,
+    "plays": [
+     "Q3 4:56 sack and forced fumble (tied), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9100892,
+    "name": "Ivanei Loroviy",
+    "pos": "DL",
+    "club": "Sarkady Beavers",
+    "line": "5 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 20-13 vs Rapids",
+    "score": 19.0,
+    "plays": [
+     "Q2 9:42 sack and forced fumble (down 3), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9036380,
+    "name": "Aoi Seo-Su",
+    "pos": "LB",
+    "club": "Bruca Beach Hammerheads",
+    "line": "9 tackles, 1 sack, 1 INT",
+    "res": "L 13-31 at Dales",
+    "score": 18.4,
+    "plays": [
+     "Q1 9:31 interception returned 14 yds (down 7), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9034309,
+    "name": "James Elmham",
+    "pos": "LB",
+    "club": "Cordelle Raptors",
+    "line": "9 tackles, 2 sacks",
+    "res": "L 32-33 vs Hope",
+    "score": 15.399999999999999,
+    "plays": []
+   }
+  ],
+  "st": [
+   {
+    "pid": 9101377,
+    "name": "Rhys Ga-Il",
+    "pos": "K",
+    "club": "Cordelle Raptors",
+    "line": "6/6 FG, long 57, 2/2 XP",
+    "res": "L 32-33 vs Hope",
+    "score": 24.75,
+    "plays": [
+     "Q1 10:55 37-yd GOOD",
+     "Q2 13:32 57-yd GOOD",
+     "Q2 6:51 48-yd GOOD",
+     "Q3 9:06 50-yd GOOD",
+     "Q3 2:53 33-yd GOOD",
+     "Q4 6:50 33-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9037423,
+    "name": "Baltazar Kleinmann",
+    "pos": "P",
+    "club": "Diveo Demons",
+    "line": "6 punts, 50.0 avg, 5 inside the 20",
+    "res": "W 32-31 at Bearcats",
+    "score": 17.5,
+    "plays": []
+   },
+   {
+    "pid": 9101380,
+    "name": "Babatunde Herrvieja",
+    "pos": "P",
+    "club": "Bruca Beach Hammerheads",
+    "line": "7 punts, 47.1 avg, 5 inside the 20",
+    "res": "L 13-31 at Dales",
+    "score": 15.833333333333337,
+    "plays": []
+   },
+   {
+    "pid": 9037064,
+    "name": "Adaeze Stavroledis",
+    "pos": "P",
+    "club": "Holliday Beetles",
+    "line": "6 punts, 48.0 avg, 5 inside the 20",
+    "res": "L 17-20 vs Silverbacks",
+    "score": 15.5,
+    "plays": []
+   },
+   {
+    "pid": 9101402,
+    "name": "Lashawn Hazelford",
+    "pos": "P",
+    "club": "Crayellan Redwoods",
+    "line": "5 punts, 48.8 avg, 4 inside the 20",
+    "res": "L 13-16 at Greats",
+    "score": 13.333333333333332,
+    "plays": []
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "flagrant",
+   "title": "Flagrant hit, ejection",
+   "who": [
+    {
+     "name": "Vidar Solberg",
+     "pos": "DL",
+     "club": "Diamond City Dynamos",
+     "pid": 9036921
+    }
+   ],
+   "game": "G219",
+   "where": "South Burke Tsunami at Diamond City Dynamos, week 7",
+   "text": "Vidar Solberg (DL) was ejected for a hit to the head of a defenseless quarterback. The opposing player left the game and returned later.",
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k75",
+     "label": "Fine $75K",
+     "games": 0,
+     "fine": 75000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "g1",
+     "label": "1 game + $25K",
+     "games": 1,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "g2",
+     "label": "2 games",
+     "games": 2,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W7-1",
+   "tier": "moderate",
+   "week": 7
+  },
+  {
+   "type": "flagrant",
+   "title": "Flagrant hit, ejection",
+   "who": [
+    {
+     "name": "Dongmei Jingda",
+     "pos": "LB",
+     "club": "Vaughn Bay Silverbacks",
+     "pid": 9036818
+    }
+   ],
+   "game": "G316",
+   "where": "Vaughn Bay Silverbacks at Holliday Beetles, week 7",
+   "text": "Dongmei Jingda (LB) was ejected for a hit to the head of a defenseless quarterback. The opposing player left the game and returned later.",
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k75",
+     "label": "Fine $75K",
+     "games": 0,
+     "fine": 75000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "g1",
+     "label": "1 game + $25K",
+     "games": 1,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "g2",
+     "label": "2 games",
+     "games": 2,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W7-2",
+   "tier": "moderate",
+   "week": 7
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.02
+  }
+ ]
+}
