@@ -562,3 +562,10 @@ NEXT: week 2 Gameview pick (North Hatesei at Yrei Trobniy; Black Forest at Ciarr
 Top-10 wins: #2 Ranroman State 45-31 UN Minko; #3 Rogaela State 68-7 LSFA (Althauer 362 rush/4); #7 Ranroman 51-21 Barhold Valley; #8 Eastern State 28-14 Boulder Creek; #10 Tengus State 35-30 Diamond City. Other: German Shores 41-38 OT at #26 Verigon; Kaji Kita 25-24 Diveo State. Guests 0-13; season guests 3-46.
 Poll: Ranroman State 1, Rogaela State 2, Eastern State 3, Eona 4, Barhold 5. Dropped out: North Hatesei. New: Krobe State 21st. Backup state/season_state.pkl.pre_w2. Viewer v159, Media Pool v55 republished.
 NEXT: week 3 Gameview pick (Crayellan at Tasson; Dietsche at Eona; Rogaela State at Rogaela Tech; Skylar Rose at Far Farris).
+
+## 2043 WEEK 3 played (Gameview: Dietsche at Eona) -- 2026-10-27
+#17 Dietsche 41-17 #4 Eona at Eona (Ackerbauer 292/3/0, Runningwater 212 rec; Eona's Nagakubo 145/2/1). #20 Crayellan 34-31 #7 Tasson at Tasson (Omtreimyr 497/4/4 INT; Hochholz 367/3/2, Fentreimyr 194 rec/2) -- the only two ranked losses.
+Top-10 wins: #1 Ranroman State 30-14 RU Herriman; #2 Rogaela State 30-0 at Rogaela Tech; #5 Barhold 31-21 Burrstone; #6 Ranroman 50-0 Enos; #8 UFNH 41-32 Parchynt; #9 Skylar Rose 44-21 at Far Farris (Verville 503/4/0); #10 Central Stanton 44-30 Milharvey. Guests 2-20 (Henderson State, Central Fiota State won); season guests 5-66.
+Poll: Rogaela State 1, Eastern State 2, Ranroman State 3, Ranroman 4, Barhold 5; Eona fell 15 to 19th. Nobody dropped out. Backup state/season_state.pkl.pre_w3. Viewer v160, Media Pool v56 republished.
+BUG FIXED (gameview_detail.py, pre-fix copy .pre_sortfix): the "last three meetings" lines sorted on b['season']/b['week'], which games from the rebuilt era (8,061 of 16,886) do not carry, so they showed the OLDEST meetings (2025-2034) instead of the latest. Now sorted on the S<n>W<n> game id. Series records were never affected; weeks 1-3 candidate detail only had series of 3 or fewer games, so nothing reported earlier was wrong.
+NEXT: week 4 Gameview pick (Tengus State at Barhold; Ranroman State at Stanton; Ranroman at Ciarralotta; Skylar Rose at Natzumakis).

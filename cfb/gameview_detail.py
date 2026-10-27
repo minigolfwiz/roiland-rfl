@@ -11,10 +11,10 @@ for arg in sys.argv[2:]:
     a,h=arg.split('@'); g=[g for g in sched if g[1]==h and g[2]==a][0]
     print('='*60); print('%s at %s (%s)'%(a,h,'conference game' if g[3] else 'non-conference'))
     print(' %s vs %s | host state %s'%(U['team_conf'].get(a,'guest'),U['team_conf'].get(h,'guest'),U['geo'][h]['state']))
-    ser=sorted([b for b in db.values() if {b['home'],b['away']}=={h,a}],key=lambda b:(b.get('season',0),b.get('week',0)))
+    ser=sorted([b for b in db.values() if {b['home'],b['away']}=={h,a}],key=lambda b:(lambda m:(int(m.group(1)),int(m.group(2) or 99)))(__import__('re').match(r'S(\d+)(?:W(\d+))?',b['game_id'])))
     hw=sum(1 for b in ser if (b['home']==h)==(b['home_score']>b['away_score']))
     print(' series since 2025: %s %d-%d %s (%d)'%(h,hw,len(ser)-hw,a,len(ser)))
-    for b in ser[-3:]: print('    %s: %s %d, %s %d'%(2025+b.get('season',0),b['home'],b['home_score'],b['away'],b['away_score']))
+    for b in ser[-3:]: print('    %s: %s %d, %s %d'%(2025+int(__import__('re').match(r'S(\d+)',b['game_id']).group(1)),b['home'],b['home_score'],b['away'],b['away_score']))
     for t in (h,a):
         c=E.COACHES[t]; r=s['record'][t]
         print(' -- %s #%s %d-%d | HC %s yr %s | OC %s | DC %s'%(t,rk.get(t,'NR'),r['W'],r['L'],c['HC']['name'],c['HC'].get('tenure'),c['OC']['name'],c['DC']['name']))
