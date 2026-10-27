@@ -1,0 +1,291 @@
+{
+ "year": 2043,
+ "week": 8,
+ "potw": {
+  "off": [
+   {
+    "pid": 9035929,
+    "name": "Rostislav Neraini",
+    "pos": "WR",
+    "club": "Diamond City Hope",
+    "line": "11 rec, 170 yds, 2 TD",
+    "res": "W 34-14 at Swords",
+    "score": 29.0,
+    "plays": [
+     "Q1 3:29 11-yd TD catch from Maha Zafeitidis (was tied)",
+     "Q3 5:52 21-yd TD catch from Maha Zafeitidis (was up 27)"
+    ]
+   },
+   {
+    "pid": 9034297,
+    "name": "Alfie Gyejide",
+    "pos": "QB",
+    "club": "El Latigo Shredders",
+    "line": "22/33, 258 yds, 4 TD, 40 rush yds",
+    "res": "W 37-31 vs Komodos",
+    "score": 28.99,
+    "plays": [
+     "Q1 5:28 9-yd TD pass to Ruta Eastfield (was down 7)",
+     "Q2 10:10 7-yd TD pass to Jonas Lindhus (was down 4)",
+     "Q2 6:50 10-yd TD pass to Ruta Eastfield (was up 3)",
+     "Q3 0:46 14-yd TD pass to Jonas Lindhus (was up 3)"
+    ]
+   },
+   {
+    "pid": 9037297,
+    "name": "Taiga Huanchen",
+    "pos": "WR",
+    "club": "Palm Creek Leatherbacks",
+    "line": "7 rec, 126 yds, 2 TD",
+    "res": "W 23-16 vs Grays",
+    "score": 27.6,
+    "plays": [
+     "Q2 8:29 22-yd TD catch from Zainab Yiling (was down 4)",
+     "Q4 1:53 35-yd TD catch from Zainab Yiling (was tied, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9035208,
+    "name": "Ladislav Georridis",
+    "pos": "QB",
+    "club": "Crayellan Redwoods",
+    "line": "17/23, 219 yds, 59 rush yds",
+    "res": "W 31-14 at Hammerheads",
+    "score": 25.69,
+    "plays": [
+     "Q4 11:29 9-yd TD run (was tied), go-ahead and decisive, never answered",
+     "Q4 6:53 14-yd TD run (was up 7)"
+    ]
+   },
+   {
+    "pid": 9036297,
+    "name": "Jonas Lindhus",
+    "pos": "WR",
+    "club": "El Latigo Shredders",
+    "line": "10 rec, 124 yds, 2 TD",
+    "res": "W 37-31 vs Komodos",
+    "score": 24.4,
+    "plays": [
+     "Q2 10:10 7-yd TD catch from Alfie Gyejide (was down 4)",
+     "Q3 0:46 14-yd TD catch from Alfie Gyejide (was up 3)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9035269,
+    "name": "Frode Slavanov",
+    "pos": "LB",
+    "club": "Tasson Thunderbugs",
+    "line": "6 tackles, 2 INT",
+    "res": "W 20-13 vs Dynamos",
+    "score": 19.1,
+    "plays": [
+     "Q2 2:49 interception (down 7)",
+     "Q4 2:41 interception (tied, late), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9034799,
+    "name": "Beatrice Appiah",
+    "pos": "LB",
+    "club": "Billiataho Greats",
+    "line": "13 tackles, 1 sack, 1 forced fumble",
+    "res": "W 34-27 at Demons",
+    "score": 18.8,
+    "plays": [
+     "Q3 0:47 sack and forced fumble (up 14), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9034262,
+    "name": "Dandan Man-Hwan",
+    "pos": "S",
+    "club": "Crayellan Redwoods",
+    "line": "3 tackles, 2 INT",
+    "res": "W 31-14 at Hammerheads",
+    "score": 17.8,
+    "plays": [
+     "Q1 12:42 interception returned 24 yds (tied), led to a touchdown",
+     "Q4 8:06 interception returned 8 yds (up 7), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9037502,
+    "name": "Daichi Navaclara",
+    "pos": "LB",
+    "club": "El Latigo Shredders",
+    "line": "2 tackles, 2 INT",
+    "res": "W 37-31 vs Komodos",
+    "score": 17.2,
+    "plays": [
+     "Q2 10:58 interception returned 14 yds (down 4), led to a touchdown",
+     "Q2 6:56 interception (up 3), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9035861,
+    "name": "Yannis Chuknna",
+    "pos": "DL",
+    "club": "South Burke Tsunami",
+    "line": "3 tackles, 3 sacks",
+    "res": "L 10-17 vs Beavers",
+    "score": 16.8,
+    "plays": []
+   },
+   {
+    "pid": 9100767,
+    "name": "Wapasha Kickingantler",
+    "pos": "LB",
+    "club": "Ediville Brass Tigers",
+    "line": "6 tackles, 1 sack, 1 INT",
+    "res": "W 31-17 at Mastiffs",
+    "score": 16.6,
+    "plays": [
+     "Q2 9:52 interception returned 20 yds (down 10), led to a field goal"
+    ]
+   }
+  ],
+  "st": [
+   {
+    "pid": 9033398,
+    "name": "Spiros Yretravaw",
+    "pos": "P",
+    "club": "Diamond City Hope",
+    "line": "8 punts, 51.1 avg, 5 inside the 20",
+    "res": "W 34-14 at Swords",
+    "score": 22.333333333333336,
+    "plays": []
+   },
+   {
+    "pid": 9034232,
+    "name": "Lenmana Sanddale",
+    "pos": "P",
+    "club": "Far Farris Raccoons",
+    "line": "7 punts, 50.1 avg, 4 inside the 20",
+    "res": "W 14-10 vs Mastodons",
+    "score": 17.833333333333336,
+    "plays": []
+   },
+   {
+    "pid": 9037247,
+    "name": "Nadine Hamasaki",
+    "pos": "K",
+    "club": "Queensville Phenoms",
+    "line": "3/3 FG, long 56, 1/1 XP",
+    "res": "W 16-13 at Dales",
+    "score": 15.0,
+    "plays": [
+     "Q1 6:32 56-yd GOOD",
+     "Q3 10:53 31-yd GOOD",
+     "Q3 3:46 54-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9036971,
+    "name": "Clive Aalholt",
+    "pos": "P",
+    "club": "Fiota Swords",
+    "line": "10 punts, 46.2 avg, 3 inside the 20",
+    "res": "L 14-34 vs Hope",
+    "score": 14.833333333333337,
+    "plays": []
+   },
+   {
+    "pid": 9101051,
+    "name": "Keyto Ngapule",
+    "pos": "P",
+    "club": "Stamford Grays",
+    "line": "7 punts, 48.1 avg, 3 inside the 20",
+    "res": "L 16-23 at Leatherbacks",
+    "score": 14.000000000000004,
+    "plays": []
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "comments",
+   "title": "Comments about the officials",
+   "who": [
+    {
+     "name": "Yaa Northley",
+     "pos": "S",
+     "club": "Purcell Rapids",
+     "pid": 9101462
+    }
+   ],
+   "game": "G126",
+   "where": "Purcell Rapids at Wolford Dragons, week 8",
+   "text": "Yaa Northley (S) told reporters after the game that the officiating crew 'decided the outcome', in comments that went public the same night.",
+   "prior": 0,
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W8-1",
+   "tier": "minor",
+   "week": 8
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.02
+  }
+ ]
+}
