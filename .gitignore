@@ -1,4 +1,4 @@
-data/state_2042.json
+data/state_*.json
 out/rfl_season_*.html
 out/artifact_raw.html
 __pycache__/

@@ -131,11 +131,11 @@ def step_retire(S):
     return out
 
 if __name__ == '__main__':
-    cmd = sys.argv[1]; path = f'{ROOT}/data/state_2042.json'; S = load(path); S.setdefault('offseason', dict(done=[]))
+    cmd = sys.argv[1]; path = STATE; S = load(path); S.setdefault('offseason', dict(done=[]))
     if cmd == 'close':
         assert 'close' not in S['offseason']['done']
         H = load(HIST); close_books(S, H); S['offseason']['done'].append('close')
-        json.dump(H, open(HIST, 'w'), separators=(',', ':'), ensure_ascii=False); save(S, path); write_project_state(S, f'{ROOT}/data/rfl_state_2042.z64'); print('closed', S['season']['year'])
+        json.dump(H, open(HIST, 'w'), separators=(',', ':'), ensure_ascii=False); save(S, path); write_project_state(S, Z64); print('closed', S['season']['year'])
     elif cmd == 'retire':
         assert 'close' in S['offseason']['done'] and 'retire' not in S['offseason']['done']
-        out = step_retire(S); save(S, path); write_project_state(S, f'{ROOT}/data/rfl_state_2042.z64'); print(len(out), 'retired')
+        out = step_retire(S); save(S, path); write_project_state(S, Z64); print(len(out), 'retired')

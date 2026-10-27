@@ -260,7 +260,7 @@ def leaders(S, n=10):
     return out
 
 if __name__ == '__main__':
-    cmd = sys.argv[1]; path = f'{ROOT}/data/state_2042.json'
+    cmd = sys.argv[1]; path = STATE
     S = load(path)
     if cmd == 'week':
         wk = int(sys.argv[2]); res = run_week(S, wk); save(S, path)

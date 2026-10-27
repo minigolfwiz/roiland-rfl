@@ -9,7 +9,7 @@ from rfl.engine import *
 src, biosrc, out = sys.argv[1:4]
 html = open(src).read(); BIOS = json.load(open(biosrc))
 i = html.index('const D = ') + 10; D, end = json.JSONDecoder().raw_decode(html[i:]); tail = html[i + end:]
-S = load(f'{ROOT}/data/state_2042.json'); H = json.load(open(f'{ROOT}/data/rfl_history_1951_2040.json'))
+S = load(STATE); H = json.load(open(f'{ROOT}/data/rfl_history_1951_2040.json'))
 se = S['season']; PO = se['playoffs']; Y = 2042; CAP43 = cap_for(2043)
 rnd = random.Random(2043004)
 assert '2042' not in D['seasons']

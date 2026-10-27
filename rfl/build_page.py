@@ -90,10 +90,11 @@ def build(S):
         return h[:i] + f'const {name} = ' + json.dumps(obj, separators=(',', ':'), ensure_ascii=False) + h[j:]
     # BRAND (slugs, nicknames, colours, fonts, wordmarks) is kept as published in the template — it never changes in-season
     h = splice(h, 'D', D)
-    h = h.replace('RFL 2041 Season', f'RFL {year} Season').replace('2041 season', f'{year} season')
+    import re
+    h = re.sub(r'RFL 20\d\d Season', f'RFL {year} Season', h); h = re.sub(r'20\d\d season', f'{year} season', h)
     return h
 
 if __name__ == '__main__':
-    path = sys.argv[1] if len(sys.argv) > 1 else f'{ROOT}/data/state_2042.json'
+    path = sys.argv[1] if len(sys.argv) > 1 else STATE
     S = load(path); h = build(S); out = f'{ROOT}/out/rfl_season_{S["season"]["year"]}.html'
     open(out, 'w', encoding='utf-8').write(h); print(out, len(h) // 1024, 'KB')

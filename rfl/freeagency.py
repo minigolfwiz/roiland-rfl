@@ -135,12 +135,12 @@ def run(S, rnd):
     return log, stats
 
 if __name__ == '__main__':
-    path = f'{ROOT}/data/state_2042.json'; S = load(path); dry = len(sys.argv) > 1 and sys.argv[1] == 'dry'
+    path = STATE; S = load(path); dry = len(sys.argv) > 1 and sys.argv[1] == 'dry'
     assert 'fa' not in S['offseason']['done'], 'free agency already run'
     rnd = random.Random(2043002); log, stats = run(S, rnd)
     S['offseason']['fa'] = dict(log=log, stats=dict(stats)); S['offseason']['done'].append('fa')
     print(dict(stats), len(log))
-    if not dry: save(S, path); write_project_state(S, f'{ROOT}/data/rfl_state_2042.z64'); print('saved')
+    if not dry: save(S, path); write_project_state(S, Z64); print('saved')
 
 def fix_minimums(S, rnd):
     """A full 53-man roster cannot hide a missing K/P/QB: release the weakest player from the most overstocked position and sign one."""

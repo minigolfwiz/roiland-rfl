@@ -7,7 +7,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from rfl.engine import *
 YEAR = 2043
 DRY = 'dry' in sys.argv
-S = load(f'{ROOT}/data/state_2042.json'); L = load(f'{ROOT}/data/league.json')
+S = load(STATE); L = load(f'{ROOT}/data/league.json')
 clubs = sorted(L['teams']); rnd = random.Random(YEAR * 31)
 ROUNDS = 7
 QBP, NEEDK, RUN = .65, .16, .012   # QB premium (no QB need), need weight, positional-run penalty per same-position pick already made
@@ -131,7 +131,7 @@ if __name__ == '__main__':
     if not DRY:
         json.dump(ret, open(f'{ROOT}/data/rfl_draft_{YEAR}_picks.json', 'w'), indent=0)
         json.dump(book, open(f'{ROOT}/data/draft_book_{YEAR}.json', 'w'), separators=(',', ':'))
-        save(S, f'{ROOT}/data/state_2042.json'); write_project_state(S, f'{ROOT}/data/rfl_state_2042.z64')
+        save(S, STATE); write_project_state(S, Z64)
     json.dump([[k['overall'], k['round'], k['club'], k['via'], k['prospect']['name'], k['prospect']['pos'], k['prospect']['college'], k['prospect']['abil'], k['prospect']['pot'], k['prospect']['cls']] for k in picks], open('/tmp/picks43.json', 'w'))
     print('by position', collections.Counter(k['prospect']['pos'] for k in picks).most_common())
     print('udfa signed', len(udfa), '| cuts', len(cut), '| roster sizes', sorted(collections.Counter(len(S['clubs'][t]['roster']) for t in clubs).items()))

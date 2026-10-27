@@ -195,7 +195,7 @@ def run_staff(S, rnd, D):
     return sorted(moves), conduct
 
 if __name__ == '__main__':
-    path = f'{ROOT}/data/state_2042.json'; S = load(path); dry = len(sys.argv) > 1 and sys.argv[1] == 'dry'
+    path = STATE; S = load(path); dry = len(sys.argv) > 1 and sys.argv[1] == 'dry'
     assert 'fa' in S['offseason']['done'] and 'trades' not in S['offseason']['done'], 'run free agency first / trades already run'
     rnd = random.Random(2043003); D = load(COACHING)
     trades = run_trades(S, rnd); moves, conduct = run_staff(S, rnd, D)
@@ -203,4 +203,4 @@ if __name__ == '__main__':
     print(len(trades), 'trades'); [print(' ', x) for x in trades]
     print(len(moves), 'staff moves'); [print(' ', x) for x in moves]; [print(' ', x) for x in conduct]
     if not dry:
-        save(S, path); write_project_state(S, f'{ROOT}/data/rfl_state_2042.z64'); json.dump(D, open(COACHING, 'w'), separators=(',', ':'), ensure_ascii=False); print('saved')
+        save(S, path); write_project_state(S, Z64); json.dump(D, open(COACHING, 'w'), separators=(',', ':'), ensure_ascii=False); print('saved')

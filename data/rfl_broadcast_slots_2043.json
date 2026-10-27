@@ -1,0 +1,106 @@
+{
+ "year": 2043,
+ "note": "Dan's TNF/SNF/MNF picks for 2043 from the Primetime Desk; week 20 has two SNF and no MNF",
+ "slots": {
+  "1": {
+   "thu": "Purcell Rapids at San Saltadac Sea Lions",
+   "snf": "Fiota Bay T-Rexes at Vaughn Bay Silverbacks",
+   "mnf": "Lornaman Renegades at Costique Bearcats"
+  },
+  "2": {
+   "thu": "Eona Topcats at Holliday Beetles",
+   "snf": "Hughes City Asteroids at Ediville Brass Tigers",
+   "mnf": "Stamford Grays at Good River Rangers"
+  },
+  "3": {
+   "thu": "Diamond City Dynamos at Fiota Bay T-Rexes",
+   "snf": "Vaughn Bay Silverbacks at San Saltadac Sea Lions",
+   "mnf": "Eona Topcats at Cordelle Raptors"
+  },
+  "4": {
+   "thu": "Coachville Mastodons at South Burke Tsunami",
+   "snf": "Rogaela Rovers at Canesta Dales",
+   "mnf": "Wolford Dragons at Crayellan Redwoods"
+  },
+  "5": {
+   "thu": "Palm Creek Leatherbacks at Bruca Beach Hammerheads",
+   "snf": "New Madrid Mastiffs at Wolford Dragons",
+   "mnf": "Verigon Komodos at Purcell Rapids"
+  },
+  "6": {
+   "thu": "Fiota Swords at Classetto Cavemen",
+   "snf": "Costique Bearcats at Hughes City Asteroids",
+   "mnf": "San Saltadac Sea Lions at Good River Rangers"
+  },
+  "7": {
+   "thu": "Stamford Grays at Lornaman Renegades",
+   "snf": "Crayellan Redwoods at Billiataho Greats",
+   "mnf": "South Burke Tsunami at Diamond City Dynamos"
+  },
+  "8": {
+   "thu": "Port Logan Commodores at Vaughn Bay Silverbacks",
+   "snf": "Sarkady Beavers at South Burke Tsunami",
+   "mnf": "North Hatesei Bees at Underwood Bats"
+  },
+  "9": {
+   "thu": "Canesta Dales at Stanton City Conductors",
+   "snf": "Port Logan Commodores at Fiota Bay T-Rexes",
+   "mnf": "Costique Bearcats at Diveo Demons"
+  },
+  "10": {
+   "thu": "Chapel Rock Crowns at Verigon Komodos",
+   "snf": "Ediville Brass Tigers at Coachville Mastodons",
+   "mnf": "Palm Creek Leatherbacks at Queensville Phenoms"
+  },
+  "11": {
+   "thu": "North Hatesei Bees at Good River Rangers",
+   "snf": "Stamford Grays at Canesta Dales",
+   "mnf": "San Saltadac Sea Lions at Cordelle Raptors"
+  },
+  "12": {
+   "thu": "Crayellan Redwoods at Costique Bearcats",
+   "snf": "Purcell Rapids at Tasson Thunderbugs",
+   "mnf": "Vaughn Bay Silverbacks at Port Logan Commodores"
+  },
+  "13": {
+   "thu": "Tengus City Terrors at Sarkady Beavers",
+   "snf": "Classetto Cavemen at Diveo Demons",
+   "mnf": "Far Farris Raccoons at Chapel Rock Crowns"
+  },
+  "14": {
+   "thu": "Hughes City Asteroids at Underwood Bats",
+   "snf": "Stanton City Conductors at Diamond City Hope",
+   "mnf": "Billiataho Greats at Coachville Mastodons"
+  },
+  "15": {
+   "thu": "Queensville Phenoms at Rogaela Rovers",
+   "snf": "Billiataho Greats at Costique Bearcats",
+   "mnf": "Crayellan Redwoods at Classetto Cavemen"
+  },
+  "16": {
+   "thu": "Ediville Brass Tigers at El Latigo Shredders",
+   "snf": "Underwood Bats at Chapel Rock Crowns",
+   "mnf": "Bruca Beach Hammerheads at Stamford Grays"
+  },
+  "17": {
+   "thu": "Diveo Demons at New Madrid Mastiffs",
+   "snf": "Port Logan Commodores at Tengus City Terrors",
+   "mnf": "Fiota Bay T-Rexes at Canesta Dales"
+  },
+  "18": {
+   "thu": "Tasson Thunderbugs at Billiataho Greats",
+   "snf": "Good River Rangers at San Saltadac Sea Lions",
+   "mnf": "El Latigo Shredders at Vaughn Bay Silverbacks"
+  },
+  "19": {
+   "thu": "Cordelle Raptors at Far Farris Raccoons",
+   "snf": "Diamond City Hope at Crayellan Redwoods",
+   "mnf": "Holliday Beetles at Ediville Brass Tigers"
+  },
+  "20": {
+   "thu": "Wolford Dragons at Diamond City Hope",
+   "snf": "Verigon Komodos at Fiota Swords",
+   "snf2": "Canesta Dales at Palm Creek Leatherbacks"
+  }
+ }
+}

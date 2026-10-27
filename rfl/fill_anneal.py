@@ -122,6 +122,8 @@ tc = {t: team_cost(t) for t in teams}
 moved = [(G[i]['id'], fixw[i], week[i]) for i in range(NG) if fixw[i] is not None and week[i] != fixw[i]]
 print('cost', cost, 'violations', {t: v for t, v in tc.items() if v}, 'moved fixed', len(moved), moved)
 if cost - FIXW * len(moved) == 0:
-    json.dump([dict(g, week=week[i]) for i, g in enumerate(G)], open(f'{ROOT}/data/schedule_{yr}.json', 'w'))
-    json.dump(dict(year=yr, weeks=[dict(id=g['id'], week=week[i]) for i, g in enumerate(G)], saved='filled by Claude'), open(f'{ROOT}/data/db/rfl/schedule{yr}_filled.json', 'w'))
+    # per-seed output so parallel runs do not overwrite each other; copy the chosen one to data/schedule_{yr}.json
+    os.makedirs(f'{ROOT}/data/fill_runs', exist_ok=True)
+    json.dump(dict(year=yr, seed=seed, moved=moved, games=[dict(g, week=week[i]) for i, g in enumerate(G)]),
+              open(f'{ROOT}/data/fill_runs/schedule_{yr}_s{seed}.json', 'w'))
     print('SOLVED per-week games', sorted(collections.Counter(week).items()))

@@ -8,6 +8,9 @@ Club:   name, conf, div, roster [pid...], gm {name, eye, discipline, aggression,
 """
 import json, math, random, hashlib, os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Current season year: data/current_year.txt (one number). State files are year-named so a new season never overwrites the old one.
+YEAR = int(open(f'{ROOT}/data/current_year.txt').read().strip()) if os.path.exists(f'{ROOT}/data/current_year.txt') else 2042
+STATE = f'{ROOT}/data/state_{YEAR}.json'; Z64 = f'{ROOT}/data/rfl_state_{YEAR}.z64'
 R = random.Random(2042)
 POS = ['QB', 'RB', 'WR', 'TE', 'OL', 'DL', 'LB', 'CB', 'S', 'K', 'P']
 ATTR = {'QB': ['acc', 'arm', 'mob'], 'RB': ['run', 'spd', 'hands'], 'WR': ['hands', 'spd', 'route'], 'TE': ['hands', 'spd', 'route', 'blk'],

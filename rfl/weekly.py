@@ -3,8 +3,8 @@ import sys, os, json, subprocess
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from rfl.engine import *
 from rfl import season as SE
-wk = int(sys.argv[1]); path = f'{ROOT}/data/state_2042.json'
-S = load(path); res = SE.run_week(S, wk); save(S, path); write_project_state(S, f'{ROOT}/data/rfl_state_2042.z64')
+wk = int(sys.argv[1]); path = STATE
+S = load(path); res = SE.run_week(S, wk); save(S, path); write_project_state(S, Z64)
 subprocess.run(['python3', f'{ROOT}/rfl/build_page.py'], check=True)
 for r in res: print(f"{r['slot']:4} {r['away']} {r['away_pts']} @ {r['home']} {r['home_pts']}{' (OT)' if r['ot'] else ''}")
 P = S['players']; rows = []
