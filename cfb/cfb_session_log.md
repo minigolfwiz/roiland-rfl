@@ -593,3 +593,9 @@ NEXT: week 7 Gameview pick (Skylar Rose at Roosevelt; UNN at Central Stanton; Ba
 Top-10 wins: #1 Rogaela State 45-3 Krobe; #2 Tengus State 17-10 at Costique; #3 Ranroman State 24-17 at UN Ediville; #5 Lornaman 16-7 at Milharvey. Guests 0-5.
 Poll: Rogaela State 1, Tengus State 2, Ranroman State 3, Lornaman 4 (+1), Krobe State 5. Dropped out: Stanton, Skeenerland State, Barhold. Backup pre_w7. Viewer v164, Media Pool v60.
 NEXT: WEEK 8 -- Dan hand-builds the committee ballot first; Gameview candidates only after his rankings. Parity monitor after week 8. (Provisional media-poll candidates were NOT shown.)
+
+## 2043 FIRST COMMITTEE BOARD INSTALLED (after week 7 results, for week 8) -- state/ballot_s18_w8.json, audit CLEAN
+1 Ranroman State, 2 UNN, 3 Lornaman, 4 Tengus State, 5 Northlight, 6 Krobe State, 7 Roosevelt, 8 Rogaela State, 9 Fiota Bay, 10 Ranroman, 11 Marblehead, 12 Leafette, 13 Eona, 14 Antiragal State, 15 Yrei Trobniy, 16 Ciarralotta State, 17 Crayellan, 18 Phangrine State, 19 Ekralund State, 20 Skeenerland, 21 Tasson, 22 German Shores, 23 Costique River, 24 Orlot Western, 25 Keeper. Committee is now the ranking of record. Committee Ballot artifact v46. Backup season_state.pkl.pre_committee.
+NOTE: gameview_detail prints MEDIA-poll rank tags (#6 UNN); candidate list itself uses committee ranks.
+Week 8 candidates: Ranroman at UNN; Leafette at Krobe State; Phangrine State at Lornaman; Fiota Bay at Verigon. Passed: Barhold State at Northlight; Kaji Kita at Tengus State.
+NEXT: week 8 Gameview pick; parity monitor after week 8.
