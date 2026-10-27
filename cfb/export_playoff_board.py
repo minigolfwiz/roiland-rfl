@@ -29,6 +29,10 @@ def build(out='/home/claude/cfb2/state/playoff_board.json'):
     rank_of = {t: i + 1 for i, t in enumerate(ranked)}
     rating_rank = {t: i + 1 for i, t in enumerate(sorted(TEAMS, key=lambda x: -eff[x]))}
     champs = s.get("conf_champs_s%d" % season) or {}
+    if not champs:   # ccg.py writes the champions to a pickle, not to season state
+        import pickle, os
+        pp = '/home/claude/cfb2/state/conf_champs_s%d.pkl' % season
+        if os.path.exists(pp): champs = pickle.load(open(pp, 'rb'))
     champ_of = {t: c for c, t in champs.items()}
 
     # every game, regular season and conference final alike
