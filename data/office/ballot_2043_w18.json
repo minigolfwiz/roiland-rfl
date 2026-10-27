@@ -1,0 +1,305 @@
+{
+ "year": 2043,
+ "week": 18,
+ "potw": {
+  "off": [
+   {
+    "pid": 9033790,
+    "name": "Zainab Yiling",
+    "pos": "QB",
+    "club": "Palm Creek Leatherbacks",
+    "line": "21/36, 280 yds, 3 TD, 162 rush yds",
+    "res": "W 31-28 at Bees",
+    "score": 39.25,
+    "plays": [
+     "Q2 14:00 11-yd TD run (was down 4)",
+     "Q2 3:17 1-yd TD pass to Taiga Huanchen (was up 3)",
+     "Q3 5:53 fumble lost (down 4), led to a touchdown",
+     "Q4 3:03 19-yd TD pass to Nakia Yorkton (was down 11), cut the deficit late",
+     "Q4 1:16 3-yd TD pass to Liqin Blackcrane (was down 5, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9037803,
+    "name": "Tamsin Ashlow",
+    "pos": "WR",
+    "club": "Tasson Thunderbugs",
+    "line": "10 rec, 121 yds, 4 TD",
+    "res": "W 44-13 at Greats",
+    "score": 36.1,
+    "plays": [
+     "Q1 5:56 16-yd TD catch from Waimarie Sharpturtle (was down 3)",
+     "Q2 9:21 20-yd TD catch from Waimarie Sharpturtle (was down 3)",
+     "Q2 3:43 10-yd TD catch from Waimarie Sharpturtle (was up 1)",
+     "Q3 6:28 1-yd TD catch from Waimarie Sharpturtle (was up 11)"
+    ]
+   },
+   {
+    "pid": 9037885,
+    "name": "Waimarie Sharpturtle",
+    "pos": "QB",
+    "club": "Tasson Thunderbugs",
+    "line": "26/34, 358 yds, 5 TD, 1 INT, 40 rush yds",
+    "res": "W 44-13 at Greats",
+    "score": 32.49,
+    "plays": [
+     "Q1 5:56 16-yd TD pass to Tamsin Ashlow (was down 3)",
+     "Q1 0:40 interception thrown (up 4), led to a touchdown",
+     "Q2 9:21 20-yd TD pass to Tamsin Ashlow (was down 3)",
+     "Q2 3:43 10-yd TD pass to Tamsin Ashlow (was up 1)",
+     "Q3 6:28 1-yd TD pass to Tamsin Ashlow (was up 11)",
+     "Q4 10:51 8-yd TD pass to Essence Rowham (was up 21)"
+    ]
+   },
+   {
+    "pid": 9033773,
+    "name": "Signe No-Gil",
+    "pos": "RB",
+    "club": "Stanton City Conductors",
+    "line": "22 car, 109 yds, 1 rec, 17 yds, 3 TD",
+    "res": "L 24-27 at Crowns",
+    "score": 31.35,
+    "plays": [
+     "Q2 6:57 8-yd TD run (was down 7)",
+     "Q3 8:16 1-yd TD run (was down 10)",
+     "Q4 3:58 18-yd TD run (was down 10), cut the deficit late"
+    ]
+   },
+   {
+    "pid": 9036737,
+    "name": "Soledad Ventoletti",
+    "pos": "WR",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "6 rec, 106 yds, 3 TD",
+    "res": "W 34-31 vs Shredders",
+    "score": 29.35,
+    "plays": [
+     "Q1 6:54 34-yd TD catch from Manish Anysei (was down 7)",
+     "Q4 14:27 2-yd TD catch from Manish Anysei (was down 15)",
+     "Q4 7:22 6-yd TD catch from Manish Anysei (was down 11), cut the deficit late"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9035376,
+    "name": "Rin Vegadura",
+    "pos": "LB",
+    "club": "Fiota Bay T-Rexes",
+    "line": "11 tackles, 3 sacks",
+    "res": "W 20-17 vs Renegades",
+    "score": 21.6,
+    "plays": []
+   },
+   {
+    "pid": 9100797,
+    "name": "Kirovei Ulyosei",
+    "pos": "LB",
+    "club": "North Hatesei Bees",
+    "line": "6 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 28-31 vs Leatherbacks",
+    "score": 19.6,
+    "plays": [
+     "Q3 5:53 sack and forced fumble (up 4), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9037909,
+    "name": "Mei Xuling",
+    "pos": "LB",
+    "club": "Canesta Dales",
+    "line": "7 tackles, 1 sack, 1 INT",
+    "res": "W 24-22 at Phenoms",
+    "score": 17.2,
+    "plays": [
+     "Q3 0:10 interception (down 3), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9100858,
+    "name": "Lubna Amanse",
+    "pos": "DL",
+    "club": "Crayellan Redwoods",
+    "line": "3 tackles, 3 sacks",
+    "res": "T 17-17 at Raptors",
+    "score": 16.8,
+    "plays": []
+   },
+   {
+    "pid": 9101174,
+    "name": "Chaewon Peimirrei",
+    "pos": "LB",
+    "club": "Hughes City Asteroids",
+    "line": "8 tackles, 2 sacks",
+    "res": "W 20-13 at Hope",
+    "score": 14.8,
+    "plays": []
+   },
+   {
+    "pid": 9036721,
+    "name": "Esperanza Miragrande",
+    "pos": "CB",
+    "club": "Canesta Dales",
+    "line": "11 tackles, 1 INT",
+    "res": "W 24-22 at Phenoms",
+    "score": 14.6,
+    "plays": [
+     "Q3 7:44 interception returned 14 yds (down 6), led to a field goal"
+    ]
+   }
+  ],
+  "st": [
+   {
+    "pid": 9035890,
+    "name": "Lubna Camara",
+    "pos": "K",
+    "club": "New Madrid Mastiffs",
+    "line": "3/3 FG, long 56, 2/2 XP",
+    "res": "W 23-20 at Beetles",
+    "score": 17.5,
+    "plays": [
+     "Q1 0:41 38-yd GOOD",
+     "Q3 4:07 56-yd GOOD",
+     "Q4 0:00 29-yd GOOD, go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9035917,
+    "name": "Abena Ramadan",
+    "pos": "K",
+    "club": "Purcell Rapids",
+    "line": "3/3 FG, long 55, 2/2 XP",
+    "res": "W 23-20 vs Tigers",
+    "score": 14.75,
+    "plays": [
+     "Q2 6:04 55-yd GOOD",
+     "Q3 9:14 33-yd GOOD",
+     "Q4 3:48 52-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101071,
+    "name": "Bassam Al-Kadhim",
+    "pos": "K",
+    "club": "Good River Rangers",
+    "line": "3/3 FG, long 52, 4/4 XP",
+    "res": "W 37-0 at Lions",
+    "score": 14.25,
+    "plays": [
+     "Q1 11:18 49-yd GOOD",
+     "Q3 13:25 27-yd GOOD",
+     "Q3 7:00 52-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9038621,
+    "name": "Kwame Kone",
+    "pos": "K",
+    "club": "Tasson Thunderbugs",
+    "line": "3/3 FG, long 54, 5/5 XP",
+    "res": "W 44-13 at Greats",
+    "score": 14.0,
+    "plays": [
+     "Q3 9:10 22-yd GOOD",
+     "Q3 0:04 36-yd GOOD",
+     "Q4 3:48 54-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9036971,
+    "name": "Clive Aalholt",
+    "pos": "P",
+    "club": "Fiota Swords",
+    "line": "4 punts, 51.8 avg, 4 inside the 20",
+    "res": "W 31-27 at Grays",
+    "score": 13.833333333333332,
+    "plays": []
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "comments",
+   "title": "Comments about the officials",
+   "who": [
+    {
+     "name": "Darnell Eastfield",
+     "pos": "CB",
+     "club": "Billiataho Greats",
+     "pid": 9037948
+    }
+   ],
+   "game": "G108",
+   "where": "Tasson Thunderbugs at Billiataho Greats, week 18",
+   "text": "Darnell Eastfield (CB) told reporters after the game that the officiating crew 'decided the outcome', in comments that went public the same night.",
+   "prior": 0,
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W18-1",
+   "tier": "minor",
+   "week": 18
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.02
+  }
+ ]
+}
