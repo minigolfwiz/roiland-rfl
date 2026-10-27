@@ -1,0 +1,235 @@
+{
+ "year": 2043,
+ "week": 9,
+ "potw": {
+  "off": [
+   {
+    "pid": 9034234,
+    "name": "Osamu Santascio",
+    "pos": "QB",
+    "club": "Costique Bearcats",
+    "line": "32/40, 446 yds, 4 TD",
+    "res": "W 44-27 at Demons",
+    "score": 34.84,
+    "plays": [
+     "Q2 2:36 14-yd TD pass to Haneya Vesoviy (was down 7)",
+     "Q3 11:22 33-yd TD pass to Finn Vestgaard (was tied)",
+     "Q3 7:02 16-yd TD pass to Sefo Montucci (was up 7)",
+     "Q4 11:19 6-yd TD pass to Itsuki Nagamaki (was up 14)"
+    ]
+   },
+   {
+    "pid": 9033847,
+    "name": "Norbert Tingyao",
+    "pos": "QB",
+    "club": "Chapel Rock Crowns",
+    "line": "31/40, 366 yds, 3 TD, 63 rush yds",
+    "res": "W 28-14 vs Phenoms",
+    "score": 30.84,
+    "plays": [
+     "Q2 14:16 27-yd TD pass to Malsook Il-Su (was down 1)",
+     "Q3 2:01 5-yd TD pass to Emilio Langshaw (was up 8)",
+     "Q4 9:29 7-yd TD pass to Emilio Langshaw (was up 14)"
+    ]
+   },
+   {
+    "pid": 9037334,
+    "name": "Aisake Stonesky",
+    "pos": "RB",
+    "club": "Tengus City Terrors",
+    "line": "29 car, 116 yds, 1 rec, 7 yds, 3 TD",
+    "res": "W 27-20 vs Rangers",
+    "score": 30.3,
+    "plays": [
+     "Q2 4:46 11-yd TD run (was down 7)",
+     "Q3 10:57 3-yd TD run (was up 6)",
+     "Q4 2:56 1-yd TD run (was up 6, late)"
+    ]
+   },
+   {
+    "pid": 9037969,
+    "name": "Zoe Naimeniy",
+    "pos": "WR",
+    "club": "Underwood Bats",
+    "line": "13 rec, 168 yds, 2 TD",
+    "res": "L 27-28 vs Hammerheads",
+    "score": 28.8,
+    "plays": [
+     "Q2 13:41 16-yd TD catch from Orivaw Nagamaki (was up 6)",
+     "Q3 4:13 17-yd TD catch from Orivaw Nagamaki (was up 6)"
+    ]
+   },
+   {
+    "pid": 9034282,
+    "name": "Emilio Langshaw",
+    "pos": "WR",
+    "club": "Chapel Rock Crowns",
+    "line": "12 rec, 115 yds, 2 TD",
+    "res": "W 28-14 vs Phenoms",
+    "score": 23.5,
+    "plays": [
+     "Q3 2:01 5-yd TD catch from Norbert Tingyao (was up 8)",
+     "Q4 9:29 7-yd TD catch from Norbert Tingyao (was up 14)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9101117,
+    "name": "Amara Amateng",
+    "pos": "LB",
+    "club": "Stamford Grays",
+    "line": "7 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 33-30 vs Lions",
+    "score": 21.7,
+    "plays": [
+     "Q4 5:19 sack and forced fumble (up 7, late), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9100752,
+    "name": "Catori Malietonu",
+    "pos": "LB",
+    "club": "Fiota Swords",
+    "line": "12 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 3-28 at Rapids",
+    "score": 21.2,
+    "plays": [
+     "Q4 4:52 sack and forced fumble (down 25)"
+    ]
+   },
+   {
+    "pid": 9034905,
+    "name": "Alofa Goryshyn",
+    "pos": "CB",
+    "club": "Cordelle Raptors",
+    "line": "8 tackles, 2 INT",
+    "res": "W 27-24 at Mastodons",
+    "score": 20.8,
+    "plays": [
+     "Q1 14:10 interception returned 20 yds (tied), led to a touchdown",
+     "Q1 0:04 interception (tied), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9034305,
+    "name": "Xiulan Manideva",
+    "pos": "LB",
+    "club": "Holliday Beetles",
+    "line": "9 tackles, 1 sack, 1 INT",
+    "res": "L 23-29 vs Raccoons",
+    "score": 18.4,
+    "plays": [
+     "Q4 14:27 interception (down 7), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9037270,
+    "name": "Halvar Fairshaw",
+    "pos": "DL",
+    "club": "Classetto Cavemen",
+    "line": "4 tackles, 3 sacks",
+    "res": "W 27-17 at Hope",
+    "score": 17.4,
+    "plays": []
+   },
+   {
+    "pid": 9037840,
+    "name": "Nikhil Mirablanca",
+    "pos": "CB",
+    "club": "Tasson Thunderbugs",
+    "line": "5 tackles, 2 INT",
+    "res": "W 34-14 vs Komodos",
+    "score": 15.0,
+    "plays": [
+     "Q2 10:36 interception returned 15 yds (up 3)",
+     "Q4 5:15 interception (up 20)"
+    ]
+   }
+  ],
+  "st": [
+   {
+    "pid": 9035860,
+    "name": "Zinovia Chrylidis",
+    "pos": "K",
+    "club": "Fiota Bay T-Rexes",
+    "line": "4/4 FG, long 56, 2/2 XP",
+    "res": "W 32-31 vs Commodores",
+    "score": 18.25,
+    "plays": [
+     "Q2 11:11 37-yd GOOD",
+     "Q3 8:45 47-yd GOOD",
+     "Q3 5:06 56-yd GOOD",
+     "Q4 10:20 29-yd GOOD, go-ahead, later answered"
+    ]
+   },
+   {
+    "pid": 9037768,
+    "name": "Riku Man-Hwan",
+    "pos": "P",
+    "club": "Good River Rangers",
+    "line": "6 punts, 49.8 avg, 5 inside the 20",
+    "res": "L 20-27 at Terrors",
+    "score": 17.333333333333336,
+    "plays": []
+   },
+   {
+    "pid": 9101382,
+    "name": "Ziad Panastakis",
+    "pos": "K",
+    "club": "Costique Bearcats",
+    "line": "3/3 FG, long 61, 5/5 XP",
+    "res": "W 44-27 at Demons",
+    "score": 15.75,
+    "plays": [
+     "Q1 3:37 61-yd GOOD",
+     "Q4 13:27 21-yd GOOD",
+     "Q4 2:00 44-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9033829,
+    "name": "Shaniqua Nagatani",
+    "pos": "P",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "9 punts, 43.2 avg, 7 inside the 20",
+    "res": "W 13-3 at Dynamos",
+    "score": 15.333333333333332,
+    "plays": []
+   },
+   {
+    "pid": 9101380,
+    "name": "Babatunde Herrvieja",
+    "pos": "P",
+    "club": "Bruca Beach Hammerheads",
+    "line": "8 punts, 45.6 avg, 4 inside the 20",
+    "res": "W 28-27 at Bats",
+    "score": 13.5,
+    "plays": []
+   }
+  ]
+ },
+ "cases": [],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.02
+  }
+ ]
+}
