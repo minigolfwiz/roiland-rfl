@@ -1,0 +1,237 @@
+{
+ "year": 2043,
+ "week": 19,
+ "potw": {
+  "off": [
+   {
+    "pid": 9037801,
+    "name": "Meissa Beslovei",
+    "pos": "WR",
+    "club": "Rogaela Rovers",
+    "line": "10 rec, 120 yds, 3 TD",
+    "res": "W 27-24 at Shredders",
+    "score": 34.5,
+    "plays": [
+     "Q2 0:59 11-yd TD catch from Maisie El-Salim (was down 11)",
+     "Q4 3:07 13-yd TD catch from Maisie El-Salim (was down 4, late), go-ahead, later answered",
+     "Q4 0:30 19-yd TD catch from Maisie El-Salim (was down 4, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9033783,
+    "name": "Heidi Ruixuan",
+    "pos": "QB",
+    "club": "Queensville Phenoms",
+    "line": "29/39, 316 yds, 3 TD, 37 rush yds",
+    "res": "W 44-38 at Dynamos",
+    "score": 33.61,
+    "plays": [
+     "Q1 9:37 4-yd TD run (was tied)",
+     "Q1 1:40 9-yd TD pass to Hyunwoo Maylow (was up 4)",
+     "Q3 1:33 11-yd TD pass to Hyunwoo Maylow (was down 11)",
+     "Q4 7:48 16-yd TD pass to Serena Lude (was down 1), go-ahead, later answered"
+    ]
+   },
+   {
+    "pid": 9038003,
+    "name": "Maisie El-Salim",
+    "pos": "QB",
+    "club": "Rogaela Rovers",
+    "line": "26/42, 393 yds, 3 TD, 1 INT, 33 rush yds",
+    "res": "W 27-24 at Shredders",
+    "score": 31.42,
+    "plays": [
+     "Q2 7:07 interception thrown (down 11)",
+     "Q2 0:59 11-yd TD pass to Meissa Beslovei (was down 11)",
+     "Q4 3:07 13-yd TD pass to Meissa Beslovei (was down 4, late), go-ahead, later answered",
+     "Q4 0:30 19-yd TD pass to Meissa Beslovei (was down 4, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9037781,
+    "name": "Bronislaw Svetentsev",
+    "pos": "WR",
+    "club": "Fiota Bay T-Rexes",
+    "line": "11 rec, 110 yds, 3 TD",
+    "res": "W 37-20 vs Greats",
+    "score": 29.0,
+    "plays": [
+     "Q3 9:22 5-yd TD catch from Ramatoulaye Clayson (was down 7)",
+     "Q4 9:55 31-yd TD catch from Ramatoulaye Clayson (was up 3)",
+     "Q4 5:00 7-yd TD catch from Ramatoulaye Clayson (was up 10)"
+    ]
+   },
+   {
+    "pid": 9036449,
+    "name": "Bogdana Neraoretti",
+    "pos": "WR",
+    "club": "Coachville Mastodons",
+    "line": "10 rec, 156 yds, 2 TD",
+    "res": "L 27-30 vs Komodos",
+    "score": 27.6,
+    "plays": [
+     "Q2 1:13 35-yd TD catch from Chengfei Pyeong-Seok (was down 17)",
+     "Q3 10:14 26-yd TD catch from Chengfei Pyeong-Seok (was down 10)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9036380,
+    "name": "Aoi Seo-Su",
+    "pos": "LB",
+    "club": "Bruca Beach Hammerheads",
+    "line": "9 tackles, 3 sacks",
+    "res": "L 16-26 at Thunderbugs",
+    "score": 20.4,
+    "plays": []
+   },
+   {
+    "pid": 9101117,
+    "name": "Amara Amateng",
+    "pos": "LB",
+    "club": "Stamford Grays",
+    "line": "14 tackles, 2 sacks",
+    "res": "L 14-19 at Beavers",
+    "score": 18.4,
+    "plays": []
+   },
+   {
+    "pid": 9034749,
+    "name": "Isla Hautagata",
+    "pos": "DL",
+    "club": "Eona Topcats",
+    "line": "5 tackles, 3 sacks",
+    "res": "W 20-12 vs Dragons",
+    "score": 18.0,
+    "plays": []
+   },
+   {
+    "pid": 9035735,
+    "name": "Kjell Rosenqvist",
+    "pos": "DL",
+    "club": "Fiota Bay T-Rexes",
+    "line": "3 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 37-20 vs Greats",
+    "score": 15.8,
+    "plays": [
+     "Q4 1:45 sack and forced fumble (up 17)"
+    ]
+   },
+   {
+    "pid": 9034278,
+    "name": "Perla Chukmah",
+    "pos": "LB",
+    "club": "Good River Rangers",
+    "line": "8 tackles, 1 sack, 1 forced fumble",
+    "res": "L 20-28 at Conductors",
+    "score": 15.8,
+    "plays": [
+     "Q4 9:24 sack and forced fumble (down 15), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9036299,
+    "name": "Ramatoulaye Yawkwe",
+    "pos": "LB",
+    "club": "Verigon Komodos",
+    "line": "13 tackles, 1 INT",
+    "res": "W 30-27 at Mastodons",
+    "score": 15.8,
+    "plays": [
+     "Q3 2:23 interception returned 17 yds (up 10), led to a field goal"
+    ]
+   }
+  ],
+  "st": [
+   {
+    "pid": 9101331,
+    "name": "Mstislav Redturtle",
+    "pos": "K",
+    "club": "Verigon Komodos",
+    "line": "3/3 FG, long 58, 3/3 XP",
+    "res": "W 30-27 at Mastodons",
+    "score": 18.5,
+    "plays": [
+     "Q2 8:47 58-yd GOOD",
+     "Q3 1:04 24-yd GOOD",
+     "OT 6:08 41-yd GOOD, go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9101447,
+    "name": "Anneliese Galliani",
+    "pos": "K",
+    "club": "Wolford Dragons",
+    "line": "4/4 FG, long 57, 0/0 XP",
+    "res": "L 12-20 at Topcats",
+    "score": 17.0,
+    "plays": [
+     "Q1 4:08 38-yd GOOD",
+     "Q2 10:42 20-yd GOOD",
+     "Q2 2:40 57-yd GOOD",
+     "Q4 13:01 51-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9038621,
+    "name": "Kwame Kone",
+    "pos": "K",
+    "club": "Tasson Thunderbugs",
+    "line": "4/5 FG, long 58, 2/2 XP",
+    "res": "W 26-16 vs Hammerheads",
+    "score": 16.25,
+    "plays": [
+     "Q1 5:50 58-yd GOOD",
+     "Q2 12:05 60-yd MISSED",
+     "Q2 2:41 28-yd GOOD",
+     "Q4 4:45 40-yd GOOD",
+     "Q4 2:37 51-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9033312,
+    "name": "Hernan Sarvapatham",
+    "pos": "P",
+    "club": "Lornaman Renegades",
+    "line": "7 punts, 49.4 avg, 3 inside the 20",
+    "res": "L 12-24 at Lions",
+    "score": 15.500000000000002,
+    "plays": []
+   },
+   {
+    "pid": 9034232,
+    "name": "Lenmana Sanddale",
+    "pos": "P",
+    "club": "Far Farris Raccoons",
+    "line": "6 punts, 47.8 avg, 5 inside the 20",
+    "res": "L 14-17 vs Raptors",
+    "score": 15.333333333333336,
+    "plays": []
+   }
+  ]
+ },
+ "cases": [],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.02
+  }
+ ]
+}
