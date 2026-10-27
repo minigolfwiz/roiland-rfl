@@ -623,3 +623,11 @@ NEXT: Dan's week 10 ballot; then week 10 Gameview candidates. RYSKAMP: ten due a
 1 UNN, 2 Ranroman State, 3 Tengus State, 4 Krobe State, 5 Rogaela State, 6 Fiota Bay, 7 Phangrine State, 8 Lornaman, 9 Antiragal State, 10 Yrei Trobniy, 11 Ekralund State, 12 Roosevelt, 13 Leafette, 14 Tasson, 15 Costique River, 16 Ciarralotta State, 17 Keeper, 18 UFNH, 19 Marblehead, 20 German Shores, 21 Orlot Western, 22 Hatesei, 23 Far Farris, 24 South Antiragal, 25 Barhold. Dropped out: Ranroman, Skeenerland, Northlight.
 Week 10 candidates: Krobe State at Rogaela State; UNN at Ranroman State [rivalry; already visited]; Costique River at Fiota Bay; Phangrine State at Eastern State. No passed-over games listed.
 NEXT: week 10 Gameview pick. Ryskamp TEN due after week 10 (auto, subset of the 20).
+
+## 2043 WEEK 10 played (Gameview: UNN at Ranroman State) -- 2026-10-27
+#1 UNN 35-29 #2 Ranroman State at Ranroman State (Solland 354/2/1 + 70 rush; Sandstrom 234 rec/1; Kingsworth 242/2/0). UNN 8-0, Ranroman State 7-1.
+Board losses: #4 Krobe State 31-42 to #5 Rogaela State (Freeley 400/4; Chakraborty 329/3, Furumura 187 rush); #6 Fiota Bay 26-28 to #15 Costique River; #7 Phangrine State 10-38 to Eastern State (Krasovsky 232 rush/3); #17 Keeper 15-45 to Ciarralotta Tech (Shadid 337/5); #23 Far Farris 14-20 to Good River. Wins: #8 Lornaman 20-9 Diamond City; #9 Antiragal State 23-7 S Antiragal State; #10 Yrei Trobniy 31-17 at Barhold Valley; UFNH 20-17 Rogaela. Guests 2-7 (Yarrola 23-10 Churchill; Jack Todd 17-3 Underwood).
+Media poll (info only): Rogaela State 1, Tengus State 2, UNN 3, Krobe State 4, Lornaman 5.
+RYSKAMP TEN (auto, subset of the 20): Verville, Yunye, Kingsworth, Kyo-Hwan, Lamedeer, Freeley, Neitaw, U-Cheol, Chrykidis, Darwish.
+Committee Ballot v49 built for week 11. Viewer v167, Media Pool v63. Backup pre_w10.
+NEXT: Dan's week 11 ballot; then week 11 Gameview candidates.
