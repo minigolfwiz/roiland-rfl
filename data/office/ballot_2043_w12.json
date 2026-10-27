@@ -1,0 +1,309 @@
+{
+ "year": 2043,
+ "week": 12,
+ "potw": {
+  "off": [
+   {
+    "pid": 9035208,
+    "name": "Ladislav Georridis",
+    "pos": "QB",
+    "club": "Crayellan Redwoods",
+    "line": "20/38, 269 yds, 3 TD",
+    "res": "W 34-31 at Bearcats",
+    "score": 33.19,
+    "plays": [
+     "Q1 9:42 10-yd TD pass to Peizhi Xiangtan (was down 7)",
+     "Q3 2:19 5-yd TD pass to Sofiya Messeniy (was down 7)",
+     "Q4 4:07 3-yd TD run (was down 4, late), go-ahead, later answered",
+     "Q4 1:20 29-yd TD pass to Joachim Goldberry (was down 4, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9038542,
+    "name": "Haneya Vesoviy",
+    "pos": "WR",
+    "club": "Costique Bearcats",
+    "line": "11 rec, 133 yds, 3 TD",
+    "res": "L 31-34 vs Redwoods",
+    "score": 28.3,
+    "plays": [
+     "Q1 11:48 12-yd TD catch from Osamu Santascio (was tied)",
+     "Q1 5:19 18-yd TD catch from Osamu Santascio (was tied)",
+     "Q4 12:13 20-yd TD catch from Osamu Santascio (was tied), go-ahead, later answered",
+     "Q4 1:01 fumble lost (down 3, late)"
+    ]
+   },
+   {
+    "pid": 9034234,
+    "name": "Osamu Santascio",
+    "pos": "QB",
+    "club": "Costique Bearcats",
+    "line": "34/46, 411 yds, 3 TD, 1 INT, 25 rush yds",
+    "res": "L 31-34 vs Redwoods",
+    "score": 27.11,
+    "plays": [
+     "Q1 11:48 12-yd TD pass to Haneya Vesoviy (was tied)",
+     "Q1 5:19 18-yd TD pass to Haneya Vesoviy (was tied)",
+     "Q4 12:13 20-yd TD pass to Haneya Vesoviy (was tied), go-ahead, later answered",
+     "Q4 5:21 interception thrown (up 4, late), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9039078,
+    "name": "Deepika Gangadeva",
+    "pos": "WR",
+    "club": "Verigon Komodos",
+    "line": "10 rec, 133 yds, 2 TD",
+    "res": "L 24-38 vs Beavers",
+    "score": 25.3,
+    "plays": [
+     "Q4 8:46 6-yd TD catch from Yannis Blancbec (was down 28)",
+     "Q4 2:46 6-yd TD catch from Yannis Blancbec (was down 21)"
+    ]
+   },
+   {
+    "pid": 9100785,
+    "name": "Mariana Vignoretti",
+    "pos": "RB",
+    "club": "Good River Rangers",
+    "line": "12 car, 55 yds, 4 rec, 43 yds, 2 TD",
+    "res": "W 20-17 at Tsunami",
+    "score": 21.8,
+    "plays": [
+     "Q1 2:57 2-yd TD run (was tied)",
+     "Q2 14:59 24-yd TD catch from Areum Vesthaug (was up 7)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9035369,
+    "name": "Akari Lambrnides",
+    "pos": "LB",
+    "club": "Underwood Bats",
+    "line": "8 tackles, 1 sack, 1 INT, 1 forced fumble",
+    "res": "L 19-20 at Hammerheads",
+    "score": 23.8,
+    "plays": [
+     "Q1 14:37 interception returned 7 yds (tied), led to a field goal",
+     "Q2 7:37 sack and forced fumble (down 4), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9035757,
+    "name": "George Kirkbride",
+    "pos": "LB",
+    "club": "Canesta Dales",
+    "line": "4 tackles, 2 sacks, 1 INT",
+    "res": "W 30-10 at Hope",
+    "score": 20.4,
+    "plays": [
+     "Q4 11:36 interception returned 25 yds (up 21), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9101098,
+    "name": "Yrei Joryosei",
+    "pos": "DL",
+    "club": "Bruca Beach Hammerheads",
+    "line": "5 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 20-19 vs Bats",
+    "score": 19.0,
+    "plays": [
+     "Q1 6:39 sack and forced fumble (down 3), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9038444,
+    "name": "Sunita Lozano",
+    "pos": "LB",
+    "club": "Crayellan Redwoods",
+    "line": "6 tackles, 1 sack, 1 INT",
+    "res": "W 34-31 at Bearcats",
+    "score": 18.1,
+    "plays": [
+     "Q4 5:21 interception returned 6 yds (down 4, late), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9037502,
+    "name": "Daichi Navaclara",
+    "pos": "LB",
+    "club": "El Latigo Shredders",
+    "line": "8 tackles, 1 sack, 1 INT",
+    "res": "W 20-17 vs Lions",
+    "score": 17.8,
+    "plays": [
+     "Q4 6:43 interception (down 4), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9100746,
+    "name": "Keyto Kovaw",
+    "pos": "LB",
+    "club": "Diveo Demons",
+    "line": "8 tackles, 1 sack, 1 INT",
+    "res": "T 24-24 at Raccoons",
+    "score": 17.8,
+    "plays": [
+     "Q3 2:51 interception returned 12 yds (tied), led to a touchdown"
+    ]
+   }
+  ],
+  "st": [
+   {
+    "pid": 9101398,
+    "name": "Ataahua Matagi",
+    "pos": "K",
+    "club": "Hughes City Asteroids",
+    "line": "5/5 FG, long 58, 1/1 XP",
+    "res": "L 22-25 at Greats",
+    "score": 20.75,
+    "plays": [
+     "Q1 5:12 34-yd GOOD",
+     "Q2 1:19 19-yd GOOD",
+     "Q3 7:44 58-yd GOOD",
+     "Q3 1:54 45-yd GOOD",
+     "Q4 12:27 22-yd GOOD, go-ahead, later answered"
+    ]
+   },
+   {
+    "pid": 9037950,
+    "name": "Luca Tingdi",
+    "pos": "K",
+    "club": "Port Logan Commodores",
+    "line": "4/6 FG, long 54, 1/1 XP",
+    "res": "W 19-16 vs Silverbacks",
+    "score": 17.75,
+    "plays": [
+     "Q1 7:20 49-yd MISSED",
+     "Q2 12:37 53-yd GOOD",
+     "Q3 11:34 57-yd MISSED",
+     "Q4 12:24 22-yd GOOD",
+     "Q4 6:52 31-yd GOOD",
+     "OT 1:46 54-yd GOOD, go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9036421,
+    "name": "Enlai Gyesowah",
+    "pos": "P",
+    "club": "San Saltadac Sea Lions",
+    "line": "6 punts, 47.3 avg, 6 inside the 20",
+    "res": "L 17-20 at Shredders",
+    "score": 16.333333333333336,
+    "plays": []
+   },
+   {
+    "pid": 9037423,
+    "name": "Baltazar Kleinmann",
+    "pos": "P",
+    "club": "Diveo Demons",
+    "line": "6 punts, 50.3 avg, 4 inside the 20",
+    "res": "T 24-24 at Raccoons",
+    "score": 16.333333333333336,
+    "plays": []
+   },
+   {
+    "pid": 9100391,
+    "name": "Quill Nightingale-Fenw",
+    "pos": "K",
+    "club": "Underwood Bats",
+    "line": "4/4 FG, long 54, 1/1 XP",
+    "res": "L 19-20 at Hammerheads",
+    "score": 15.25,
+    "plays": [
+     "Q1 12:36 20-yd GOOD",
+     "Q2 5:30 44-yd GOOD",
+     "Q3 10:06 45-yd GOOD",
+     "Q3 2:13 54-yd GOOD"
+    ]
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "helmet",
+   "title": "Helmet-to-helmet contact",
+   "who": [
+    {
+     "name": "Caden Vance",
+     "pos": "DL",
+     "club": "Tasson Thunderbugs",
+     "pid": 9100429
+    }
+   ],
+   "game": "G75",
+   "where": "Purcell Rapids at Tasson Thunderbugs, week 12",
+   "text": "Caden Vance (DL) was penalized for helmet-to-helmet contact on a crossing route; the player on the other end stayed in the game.",
+   "prior": 0,
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W12-1",
+   "tier": "minor",
+   "week": 12
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.02
+  }
+ ]
+}
