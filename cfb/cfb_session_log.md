@@ -648,3 +648,10 @@ NEXT: Dan's week 12 ballot; then week 12 Gameview candidates.
 1 Rogaela State, 2 Krobe State, 3 UNN, 4 Yrei Trobniy, 5 Tengus State, 6 Lornaman, 7 Ekralund State, 8 Antiragal State, 9 Costique River, 10 Roosevelt, 11 Leafette, 12 Tasson, 13 Phangrine State, 14 Ciarralotta State, 15 UFNH, 16 Marblehead, 17 South Antiragal, 18 Skeenerland State, 19 German Shores, 20 Orlot Western, 21 Kaji Daun, 22 Southern Tengus, 23 Barhold, 24 Fiota Bay, 25 Skylar Rose. Dropped out: Ranroman State, Hatesei, Eastern State.
 Week 12 candidates: Krobe State at South Antiragal; Marblehead at Tengus State; UFNH at Costique River; North Hatesei at UNN. Passed: Ciarralotta State at Lornaman (bigger game at Lornaman later); Rogaela State at S Antiragal State (already visited).
 NEXT: week 12 Gameview pick. Parity monitor at week 14. No guest games week 14.
+
+## 2043 WEEK 12 played (Gameview: UFNH at Costique River) -- 2026-10-27
+#9 Costique River 35-26 #15 UFNH (Velecek 434/4/1; Lamedeer 286/3; Steinmeier 167 rec/1). 
+Board losses: #3 UNN 17-22 to North Hatesei (Kingsworth 430/2/1; Lambrmatos 182 rec, Al-Mahdi 168 rec) -- UNN 8-2; #5 Tengus State 20-27 to #16 Marblehead (Altalarga 360/3/3; Faitai 215 rec) -- 8-2; #6 Lornaman 31-34 to #14 Ciarralotta State -- 8-2; #12 Tasson 10-28 to Verigon State; #17 South Antiragal 14-31 to #2 Krobe State (Freeley 462/4/2, Grannes 269 rec/3); #19 German Shores 13-35 to Trapper Point (Delmaison 235 rush/2) -- first loss. Wins: #1 Rogaela State 48-10 at S Antiragal State (10-0); #8 Antiragal State 26-10 Keytommiyr; Orlot Western 47-10 (10-0). Kaji Daun 33-30 Orlot; Hatesei 23-20 at Ranroman State. Guests 1-5 (VCA 24-21 David Harrison).
+Media poll (info only): Rogaela State 1, Krobe State 2, Roosevelt 3, Tengus State 4, Orlot Western 5.
+Committee Ballot v51 built for week 13. Viewer v169, Media Pool v65. Backup pre_w12.
+NEXT: Dan's week 13 ballot; then week 13 Gameview candidates. Week 14: no guests, parity monitor.
