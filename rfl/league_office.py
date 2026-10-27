@@ -80,7 +80,7 @@ def mk_minor(S, rnd, week, res):
         'equip': f"{p['name']} ({p['pos']}) wore non-approved gear on the field after being warned in the pregame check.",
     }
     base = {'late_hit': 'k25', 'taunt': 'k10', 'defenseless': 'k25', 'helmet': 'k25', 'comments': 'k10', 'equip': 'k10'}[typ]
-    txt = texts[typ] + (f" It is his {['second', 'third', 'fourth'][min(len(pr) - 1, 2)]} case this season." if pr else '')
+    txt = texts[typ] + (f" It is his {['second', 'third', 'fourth'][min(len(pr) - 1, 2)]} case this season. Earlier ruling: {pr[-1]['ruling']}" + (f" (your note: {pr[-1]['note']})" if pr[-1].get('note') else '') + '.' if pr else '')
     sug = base if not pr else ('k50' if base == 'k25' else 'k25')
     return dict(type=typ, title={'late_hit': 'Late hit', 'taunt': 'Taunting', 'defenseless': 'Hit on a defenseless player', 'helmet': 'Helmet-to-helmet contact', 'comments': 'Comments about the officials', 'equip': 'Equipment violation'}[typ],
                 who=[dict(name=p['name'], pos=p['pos'], club=club, pid=p['pid'])], game=g['id'], where=where, text=txt, prior=len(pr),
