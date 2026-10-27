@@ -720,8 +720,225 @@
       "sub": true,
       "v": "US Fall Beach",
       "week": 3
+    },
+    {
+      "h": "Orlot",
+      "sid": null,
+      "sub": true,
+      "v": "Polt Hall",
+      "week": 2
+    },
+    {
+      "h": "Orlot",
+      "sid": null,
+      "sub": false,
+      "v": "Orlot Western",
+      "week": 3
+    },
+    {
+      "h": "Crayellan State",
+      "sid": null,
+      "sub": false,
+      "v": "Hofferteltra",
+      "week": 1
+    },
+    {
+      "h": "Crayellan State",
+      "sid": null,
+      "sub": false,
+      "v": "Marblehead",
+      "week": 2
+    },
+    {
+      "h": "Crayellan State",
+      "sid": null,
+      "sub": true,
+      "v": "Whiteside",
+      "week": 3
+    },
+    {
+      "h": "Leafette",
+      "sid": null,
+      "sub": false,
+      "v": "Parchynt State",
+      "week": 1
+    },
+    {
+      "h": "Leafette",
+      "sid": null,
+      "sub": true,
+      "v": "Apatol",
+      "week": 3
+    },
+    {
+      "h": "Skeenerland",
+      "sid": null,
+      "sub": false,
+      "v": "Costique River",
+      "week": 1
+    },
+    {
+      "h": "Costique River",
+      "sid": null,
+      "sub": false,
+      "v": "Tasson State",
+      "week": 3
+    },
+    {
+      "h": "Costique River",
+      "sid": null,
+      "sub": true,
+      "v": "Classetto",
+      "week": 2
+    },
+    {
+      "h": "Vaughn Bay State",
+      "sid": null,
+      "sub": false,
+      "v": "Tasson",
+      "week": 1
+    },
+    {
+      "h": "Tasson",
+      "sid": null,
+      "sub": false,
+      "v": "Larksdale",
+      "week": 2
+    },
+    {
+      "h": "North Central",
+      "sid": null,
+      "sub": false,
+      "v": "Will Tech",
+      "week": 2
+    },
+    {
+      "h": "Will Tech",
+      "sid": null,
+      "sub": true,
+      "v": "Skeenerland East",
+      "week": 3
+    },
+    {
+      "h": "Marblehead",
+      "sid": null,
+      "sub": false,
+      "v": "Southeastern",
+      "week": 3
+    },
+    {
+      "h": "Marblehead",
+      "sid": null,
+      "sub": true,
+      "v": "Tasson Plains",
+      "week": 1
+    },
+    {
+      "h": "North Verigon",
+      "sid": null,
+      "sub": false,
+      "v": "David Harrison",
+      "week": 1
+    },
+    {
+      "h": "North Verigon",
+      "sid": null,
+      "sub": true,
+      "v": "Long South",
+      "week": 2
+    },
+    {
+      "h": "Stanton",
+      "sid": null,
+      "sub": true,
+      "v": "USA Britton",
+      "week": 2
+    },
+    {
+      "h": "Stanton",
+      "sid": null,
+      "sub": false,
+      "v": "Underwood",
+      "week": 1
+    },
+    {
+      "h": "Lornaman",
+      "sid": null,
+      "sub": false,
+      "v": "UN Ediville",
+      "week": 3
+    },
+    {
+      "h": "Lornaman",
+      "sid": null,
+      "sub": true,
+      "v": "Chorrisaw",
+      "week": 1
+    },
+    {
+      "h": "Rogaela",
+      "sid": null,
+      "sub": false,
+      "v": "Keeper",
+      "week": 2
+    },
+    {
+      "h": "Rogaela",
+      "sid": null,
+      "sub": true,
+      "v": "Middle Parchynt",
+      "week": 3
+    },
+    {
+      "h": "Dove Island",
+      "sid": null,
+      "sub": false,
+      "v": "Perri Park",
+      "week": 2
+    },
+    {
+      "h": "Dove Island",
+      "sid": null,
+      "sub": true,
+      "v": "Burke State",
+      "week": 1
+    },
+    {
+      "h": "Krobe State",
+      "sid": null,
+      "sub": false,
+      "v": "Southern Krobe",
+      "week": 1
+    },
+    {
+      "h": "Krobe State",
+      "sid": null,
+      "sub": false,
+      "v": "Cliffstraite",
+      "week": 2
+    },
+    {
+      "h": "Krobe State",
+      "sid": null,
+      "sub": true,
+      "v": "French State",
+      "week": 3
+    },
+    {
+      "h": "Keeper",
+      "sid": null,
+      "sub": false,
+      "v": "San Diego Valley",
+      "week": 3
+    },
+    {
+      "h": "Keeper",
+      "sid": null,
+      "sub": true,
+      "v": "Lawiiri",
+      "week": 1
     }
   ],
-  "saved": "10/26/2026, 4:27:24 PM",
+  "saved": "10/26/2026, 5:54:20 PM",
   "year": 2043
 }
