@@ -14,7 +14,7 @@ i = season_page.index('const BRAND = '); BRAND = season_page[i:season_page.index
 j = season_page.index('const _lum = '); k = season_page.index('function tmn(')
 CHIPJS = season_page[j:season_page.index('\n', k)]
 hist = dict(potw=se.get('potw', {}), discipline=se.get('discipline', []))
-from rfl.league_office import RATES
+from rfl.cases import RATES
 D = dict(year=year, week=week, ballot=B, hist=hist, rates=RATES)
 
 HTML = r"""<meta charset="utf-8"><title>League Office</title>
@@ -23,7 +23,7 @@ HTML = r"""<meta charset="utf-8"><title>League Office</title>
 <style>
 /* Layout: a single working column, the way a commissioner's desk memo reads: summary first, one decision block per item, one submit bar. */
 :root{--paper:#eef1f4;--card:#fff;--ink:#15202a;--dim:#566673;--rule:#d3dce3;--chip:#e5ebf0;--navy:#1d3f6e;--gold:#8a5f06;--ok:#1f7a4d;
---minor:#566673;--moderate:#a8640a;--serious:#b8322a;--major:#8c1b2b;--club:#5b3a8c;
+--minor:#566673;--moderate:#a8640a;--serious:#b8322a;--major:#8c1b2b;--club:#5b3a8c;--review:#2a7a8c;--appeal:#6b5a3a;
 --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;--body:"Barlow",system-ui,sans-serif}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0e141a;--card:#16202a;--ink:#e7edf2;--dim:#93a4b2;--rule:#283542;--chip:#1f2b37;--navy:#9cc2f2;--gold:#e3b35a;--ok:#5ac28c;--minor:#93a4b2;--moderate:#e3a24a;--serious:#ee7a70;--major:#f0828f;--club:#b89ae8;color-scheme:dark}}
 :root[data-theme="dark"]{--paper:#0e141a;--card:#16202a;--ink:#e7edf2;--dim:#93a4b2;--rule:#283542;--chip:#1f2b37;--navy:#9cc2f2;--gold:#e3b35a;--ok:#5ac28c;--minor:#93a4b2;--moderate:#e3a24a;--serious:#ee7a70;--major:#f0828f;--club:#b89ae8;color-scheme:dark}
@@ -51,7 +51,7 @@ h2 small{font-weight:600;color:var(--dim);letter-spacing:.04em;font-size:14px;ma
 .case{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:12px 14px;margin:0 0 14px}
 .case header{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:6px}
 .pill{font-family:var(--display);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:12px;border-radius:999px;padding:1px 9px;color:var(--bg);background:var(--c)}
-.pill{color:#fff} .t-minor{--c:var(--minor)} .t-moderate{--c:var(--moderate)} .t-serious{--c:var(--serious)} .t-major{--c:var(--major)} .t-club{--c:var(--club)}
+.pill{color:#fff} .t-minor{--c:var(--minor)} .t-moderate{--c:var(--moderate)} .t-serious{--c:var(--serious)} .t-major{--c:var(--major)} .t-club{--c:var(--club)} .t-review{--c:var(--review)} .t-appeal{--c:var(--appeal)}
 :root[data-theme="dark"] .pill{color:#0e141a}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pill{color:#0e141a}}
 .case h3{font-family:var(--display);font-weight:800;font-size:21px;margin:0;line-height:1.1}
@@ -70,6 +70,10 @@ table{width:100%;border-collapse:collapse;font-size:13.5px} td,th{padding:5px 6p
 td.n{font-variant-numeric:tabular-nums;white-space:nowrap} .tw{overflow-x:auto}
 .rec{border-top:1px solid var(--rule);padding:8px 0;font-size:14px} .rec b{font-family:var(--display);letter-spacing:.05em}
 details{margin-top:6px} summary{cursor:pointer;font-family:var(--display);font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--navy)}
+.sev{font-family:var(--display);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:12.5px;color:var(--dim);border:1px solid var(--rule);border-radius:999px;padding:0 8px}
+.sev i{display:inline-block;width:46px;height:6px;background:var(--chip);border-radius:3px;margin:0 5px 1px;vertical-align:middle;position:relative;overflow:hidden} .sev i b{position:absolute;left:0;top:0;bottom:0;background:var(--c)}
+.txt p{margin:0 0 8px} .ctx{background:var(--paper);border-radius:8px;padding:6px 10px;margin:4px 0 6px;font-size:13px;color:var(--dim)} .ctx b{font-family:var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--ink);font-size:12px} .ctx ul{margin:3px 0 0;padding-left:17px}
+.blurb{display:block;color:var(--dim);font-size:12.5px;margin-top:1px}
 .note{font-size:12.5px;color:var(--dim)} .warn{color:var(--serious)}
 </style>
 <div class="wrap">
@@ -91,9 +95,10 @@ const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;
 const D = __DATA__;
 const $ = id => document.getElementById(id);
 const chip = (t, small) => (typeof _chip === 'function' && BRAND[t]) ? _chip(t, small, t) : esc(t);
-const TIER = {minor:'Minor', moderate:'Moderate', serious:'Serious', major:'Major', club:'Club'};
-const PERSEASON = {minor:'about 18', moderate:'about 5', serious:'1 to 2', major:'1 every 3 years', club:'1 every 2-3 years'};
-const COVERS = {minor:'Late hits, taunting, helmet contact, comments about officials, equipment, sideline conduct. Fine-level.', moderate:'Ejections, fights, repeat offenders. Fines or a game.', serious:'Substance violations, DUI, firearm at the facility. Games missed.', major:'Serious criminal charges. Exempt list or indefinite.', club:'Tampering, illegal filming, hidden payments. Club fines and picks.'};
+const TIER = {minor:'Minor', moderate:'Moderate', serious:'Serious', major:'Major', club:'Club', review:'Review', appeal:'Appeal'};
+const STAGE = {findings:'Findings', resolution:'Resolution', review:'Reinstatement review', appeal:'Appeal'};
+const PERSEASON = {minor:'about 18', moderate:'about 5', serious:'1 to 2', major:'1 every 3 years', club:'about 1'};
+const COVERS = {minor:'Late hits, taunting, helmet contact, gestures, fan incidents, comments, social posts, missed media, equipment, sideline conduct. Fines, sometimes a game.', moderate:'Ejections, fights, benches clearing, dangerous hits with injuries, bounty and hazing complaints. Fines or games.', serious:'Substance violations, DUI, gambling, firearms, reckless driving, assault charges. Games missed, programs, probation.', major:'Felony charges (domestic violence, assault, sexual assault, DUI with injury, trafficking, weapons, burglary, fraud). League policy: exempt list or indefinite suspension, then a resolution weeks later, up to a permanent ban.', club:'Tampering, illegal filming, cap side payments, injury reports, draft leaks, facility conditions, executive and owner conduct. Club fines, picks, coach suspensions. Appeals, findings and reinstatement reviews arrive on top of these.'};
 const fmtMean = m => m < .1 ? m.toFixed(3) : m.toFixed(2);
 $('rates').innerHTML = '<tr><th>Tier</th><th>Per week</th><th>Per season</th><th>Covers</th></tr>' + D.rates.map(r => `<tr><td><b>${TIER[r[0]]}</b></td><td class="n">${fmtMean(r[1])}</td><td class="n">${PERSEASON[r[0]]}</td><td>${COVERS[r[0]]}</td></tr>`).join('');
 
@@ -103,7 +108,7 @@ function candidate(c, name, val){
   return `<label class="opt"><input type="radio" name="${name}" value="${esc(val)}"><span><span class="nm">${esc(c.name)}</span><span class="pos">${esc(c.pos)}</span> ${chip(c.club, true)}<div class="ln">${esc(c.line)}</div><div class="rs">${esc(c.res)}</div>${(c.plays && c.plays.length) ? '<ul class="pv">' + c.plays.map(x => '<li>' + esc(x) + '</li>').join('') + '</ul>' : ''}</span></label>`;
 }
 function option(o, name){
-  return `<label class="opt"><input type="radio" name="${name}" value="${esc(o.key)}"><span><span class="nm">${esc(o.label)}</span>${o.suggested ? '<span class="sug">Typical</span>' : ''}${o.status === 'indef' ? '<span class="sug warn">Stays out until reinstated</span>' : ''}</span></label>`;
+  return `<label class="opt"><input type="radio" name="${name}" value="${esc(o.key)}"><span><span class="nm">${esc(o.label)}</span>${o.suggested ? '<span class="sug">Suggested</span>' : ''}${o.status === 'indef' ? '<span class="sug warn">Stays out until reinstated</span>' : ''}${o.status === 'ban' ? '<span class="sug warn">Permanent</span>' : ''}${(o.blurb && (o.program || o.probation || o.coach_games || o.pick_round || o.indef_min || o.exempt || o.adjust || o.reinstate || o.ban)) ? '<span class="blurb">' + esc(o.blurb) + '</span>' : ''}</span></label>`;
 }
 function render(){
   const m = $('main');
@@ -115,10 +120,16 @@ function render(){
   h += `<h2>Cases<small>${B.cases.length ? B.cases.length + ' this week' : 'none this week'}</small></h2>`;
   if (!B.cases.length) h += '<div class="empty">No cases reached the league office this week.</div>';
   for (const c of B.cases){
-    h += `<div class="case" data-id="${c.id}"><header><span class="pill t-${c.tier}">${TIER[c.tier]}</span><h3>${esc(c.title)}</h3></header>
-      <div class="who">${c.who.map(w => w.club_level ? chip(w.club) : (w.coach ? `<span class="nm">${esc(w.name)}</span><span class="pos">HC</span> ${chip(w.club, true)}` : `<span class="nm">${esc(w.name)}</span><span class="pos">${esc(w.pos)}</span> ${chip(w.club, true)}`)).join('<span class="rs">&nbsp;and&nbsp;</span>')}</div>
-      <p>${esc(c.text)}</p><div class="where">${esc(c.where)}${c.prior ? ' · prior cases this season: ' + c.prior : ''}</div><div style="margin-top:8px">${c.options.map(o => option(o, 'c-' + c.id)).join('')}</div>
+    const sev = c.severity ? `<span class="sev t-${c.tier}" style="--c:var(--${c.tier})">Severity <i><b style="width:${Math.round(c.severity * 10)}%"></b></i>${c.severity.toFixed(1)}</span>` : '';
+    const paras = String(c.text || '').split('\n\n').map(x => '<p>' + esc(x) + '</p>').join('');
+    h += `<div class="case" data-id="${c.id}"><header><span class="pill t-${c.tier}">${TIER[c.tier]}</span>${c.stage && c.stage !== 'new' ? '<span class="sev">' + (STAGE[c.stage] || c.stage) + '</span>' : ''}${sev}</header><h3>${esc(c.title)}</h3>
+      <div class="who">${c.who.map(w => w.club_level ? chip(w.club) : (w.coach ? `<span class="nm">${esc(w.name)}</span><span class="pos">${esc(w.pos || 'HC')}</span> ${chip(w.club, true)}` : `<span class="nm">${esc(w.name)}</span><span class="pos">${esc(w.pos)}</span> ${chip(w.club, true)}`)).join('<span class="rs">&nbsp;and&nbsp;</span>')}</div>
+      <div class="txt">${paras}</div>
+      ${(c.chain && c.chain.length) ? '<div class="ctx"><b>How we got here</b><ul>' + c.chain.map(x => '<li>' + esc(x) + '</li>').join('') + '</ul></div>' : ''}
+      ${(c.precedent && c.precedent.length) ? '<div class="ctx"><b>Precedent, similar severity</b><ul>' + c.precedent.map(x => '<li>' + esc(x) + '</li>').join('') + '</ul></div>' : ''}
+      <div class="where">${esc(c.where)}${c.prior ? ' · earlier cases: ' + c.prior : ''}</div><div style="margin-top:8px">${c.options.map(o => option(o, 'c-' + c.id)).join('')}</div>
       <textarea id="note-${c.id}" placeholder="Optional note for the record" rows="1"></textarea></div>`; }
+  if ((B.open || []).length) h += `<h2>Open matters<small>still unresolved</small></h2><div class="ctx">` + B.open.map(x => `<div>${esc(x.title)}: <span class="nm">${esc(x.who)}</span> ${chip(x.club, true)} <span class="rs">${esc(x.since)}${x.ruling ? ' · your ruling: ' + esc(x.ruling) : ''}</span></div>`).join('') + '</div>';
   m.innerHTML = h; $('bar').hidden = false;
   m.addEventListener('change', update); m.addEventListener('input', e => { if (e.target.tagName === 'TEXTAREA') dirty(); });
   update();
@@ -179,7 +190,7 @@ function renderHist(){
   $('hist').innerHTML = weeks.map(w => {
     const p = H.potw[w]; const cases = H.discipline.filter(d => d.week === w);
     return `<div class="rec"><b>WEEK ${w}</b><div>${['off','defense','st'].filter(k => p[k]).map(k => `${CL[k]}: <span class="nm">${esc(p[k].name)}</span> ${chip(p[k].club, true)} <span class="rs">${esc(p[k].line)}</span>`).join('<br>')}</div>` +
-      (cases.length ? '<div style="margin-top:6px">' + cases.map(c => `<div><span class="pill t-${c.tier}">${TIER[c.tier]}</span> ${esc(c.title)}: ${c.who.map(esc).join(' &amp; ')} (${c.clubs.map(x => chip(x, true)).join(' ')}) <b>${esc(c.ruling)}</b>${c.note ? ' <span class="rs">' + esc(c.note) + '</span>' : ''}</div>`).join('') + '</div>' : '<div class="rs" style="margin-top:6px">No cases.</div>') + '</div>'; }).join('');
+      (cases.length ? '<div style="margin-top:6px">' + cases.map(c => `<div><span class="pill t-${c.tier}">${TIER[c.tier] || c.tier}</span> ${esc(c.title)}: ${c.who.map(esc).join(' &amp; ')} (${c.clubs.map(x => chip(x, true)).join(' ')}) <b>${esc(c.ruling)}</b>${c.note ? ' <span class="rs">' + esc(c.note) + '</span>' : ''}</div>`).join('') + '</div>' : '<div class="rs" style="margin-top:6px">No cases.</div>') + '</div>'; }).join('');
 }
 init();
 </script>

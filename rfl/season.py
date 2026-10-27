@@ -23,9 +23,14 @@ def init_season(S, year, schedule):
 
 def heal(S):
     for p in S['players'].values():
-        if p.get('inj'):
+        if p.get('inj') and p['inj']['kind'] not in ('suspended indefinitely', 'exempt list'):    # open-ended holds end only by a ruling
             p['inj']['weeks'] -= 1
             if p['inj']['weeks'] <= 0: p.pop('inj')
+    for c in S['clubs'].values():                      # head-coach sideline bans run down the same way
+        co = c.get('coach_out')
+        if co:
+            co['weeks'] -= 1
+            if co['weeks'] <= 0: c.pop('coach_out')
 
 def apply_result(S, r, week, playoff=False):
     se = S['season']; h, a = r['home'], r['away']

@@ -8,3 +8,5 @@ Reminder for Dan at the end of the 2043 season (after the Mega Bowl): add player
 Second reminder for Dan at the end of the 2043 season: make League Office cases more robust (Dan, 27 Oct 2026; no action needed before then).
 
 Discipline traits BUILT (27 Oct 2026): hidden per-player `disc`/`cond` and coach `disc` (rfl/discipline.py), in-game penalties in rfl/game.py (switch PENALTIES), trait-weighted League Office cases anchored to real flags, yearly drift in offseason.progress; calibration harness rfl/calibrate_discipline.py. NEXT: scope more robust League Office cases with Dan (build only on his go), then the 2043 offseason. Details in data/rfl_notes.md ('Discipline traits').
+
+Robust League Office cases BUILT (27 Oct 2026): rfl/case_catalog.py + rfl/cases.py (fact-rolled cases with severity, precedent, probation, appeals, storylines, reinstatement reviews, harsh felony policy, real effects). State in S['office']. NEXT: the 2043 offseason, one stage at a time (wire S['pick_penalties'] into the draft; bump draft.YEAR). Details in data/rfl_notes.md ('League Office case system').

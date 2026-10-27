@@ -9,6 +9,7 @@ from rfl import discipline as DISC
 Q_LEN = 900
 PENALTIES = True  # forward-only from the 2043 offseason: in-game penalties, driven by player and coach discipline (separate random stream, switch off to reproduce the old engine)
 TRAITS = True     # False = every club and player equally disciplined (used to prove the traits do not move league-wide totals)
+COACH_OUT_DIP = 0.14   # unit-rating points lost while the head coach is suspended: about -1 point of margin and -4% win probability (measured over 1,500 paired games)
 PEN_SCALE = 1.2   # global calibration knob (about 5.3 accepted flags and 40 penalty yards per team-game)
 PEN_ADJ = dict(cmp=.0122, run=.095)   # tiny offsetting nudge so that flags (which cancel snaps) do not lower league scoring; applied only while PENALTIES is on
 TACKLES = True  # forward-only from 2043 week 3: tackles and punts inside the 20 (separate random stream; results are unchanged)
@@ -33,6 +34,8 @@ class Side:
         self.run_def = .5 * m(self.dl, 'rdef') + .35 * m(self.lb, 'tkl') + .15 * m(self.s, 'tkl')
         self.ball = .5 * m(self.cb, 'ball') + .5 * m(self.s, 'ball')
         self.coach = S['clubs'][t]['coach']; self.style = self.coach.get('style', 'balanced')
+        if S['clubs'][t].get('coach_out'):      # head coach barred from the sideline by the League Office: a small dip in every unit
+            for u in ('pass_off', 'deep', 'run_off', 'pass_def', 'rush', 'run_def'): setattr(self, u, getattr(self, u) - COACH_OUT_DIP)
         self.timeouts = 3; self.stats = {}; self.score = 0
         self.plays_run = 0
     def st(self, p, k, v=1):

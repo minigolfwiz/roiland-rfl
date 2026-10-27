@@ -70,7 +70,7 @@ def progress(S, rnd):
         if p.get('attrs'):
             p['attrs'] = {k: round(max(1.0, min(10.0, v + real + rnd.gauss(0, .08))), 2) for k, v in p['attrs'].items()}
         p['delta'] = round(real, 2)
-        if p.get('inj'):
+        if p.get('inj') and p['inj']['kind'] not in ('suspended indefinitely', 'exempt list'):
             p['inj']['weeks'] -= 30                                  # the offseason heals about 30 weeks
             if p['inj']['weeks'] <= 0: p.pop('inj')
     _disc.progress_traits(S, random.Random(f"disc-progress-{yr}"))   # hidden discipline traits mature (or, for a few, slide); own stream so nothing else shifts
