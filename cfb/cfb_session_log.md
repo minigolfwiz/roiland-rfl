@@ -660,3 +660,11 @@ NEXT: Dan's week 13 ballot; then week 13 Gameview candidates. Week 14: no guests
 1 Rogaela State, 2 Krobe State, 3 Yrei Trobniy, 4 Costique River, 5 Ekralund State, 6 Antiragal State, 7 Ciarralotta State, 8 Marblehead, 9 Tengus State, 10 Lornaman, 11 Roosevelt, 12 Leafette, 13 UNN, 14 Phangrine State, 15 Skeenerland State, 16 UFNH, 17 Kaji Daun, 18 South Antiragal, 19 Orlot Western, 20 Southern Tengus, 21 Barhold, 22 Skylar Rose, 23 Fiota Bay, 24 Hatesei, 25 Tasson. Dropped out: German Shores.
 Week 13 candidates: South Antiragal at Rogaela State; Marblehead at Skeenerland State; Park Island at Yrei Trobniy; Costique River at Rogaela. Passed: Krobe State at Antiragal (bigger game at Antiragal later).
 NEXT: week 13 Gameview pick.
+
+## 2043 WEEK 13 played (Gameview: South Antiragal at Rogaela State) -- 2026-10-27
+#1 Rogaela State 30-13 #18 South Antiragal (Chakraborty 264/3; Furumura 168 rush; Havlund 138/1). Rogaela State 11-0.
+Board losses: #2 Krobe State 14-52 to Antiragal (Stakos 260/4/0, Lousi 158 rec; Baifei 114/1/1) -- Krobe State 9-2; #8 Marblehead 17-52 to #15 Skeenerland State (Cha 405/5/0, Ulunoa 199 rec/2) -- 8-3; #13 UNN 26-31 to Orlot (Lundby 444/4/0; Kingsworth 400/3, Al-Mahdi 252 rec) -- 8-3; #20 Southern Tengus 0-24 to Kaji Kita. Wins: #3 Yrei Trobniy 30-26 Park Island (10-1); #4 Costique River 31-28 at Rogaela (9-2); #5 Ekralund State 49-6 Diamond City (10-1); #7 Ciarralotta State 31-30 at Keeper; #9 Tengus State 52-28 Diveo State; #10 Lornaman 38-14 at Ciarralotta Tech. Orlot Western 31-14 (11-0). Guests 3-6 (Rascha 18-13, UEKP 24-15, Northern Krobe 13-10).
+Media poll (info only): Rogaela State 1, Ekralund State 2, Orlot Western 3, Tengus State 4, Roosevelt 5.
+Week 14 schedule verified: 76 games, all FBS vs FBS, no guest games (standing rule held).
+Committee Ballot v52 built for week 14. Viewer v170, Media Pool v66. Backup pre_w13.
+NEXT: Dan's week 14 ballot; then week 14 Gameview candidates; parity monitor after week 14; then CCG.
