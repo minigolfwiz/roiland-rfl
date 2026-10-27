@@ -643,3 +643,8 @@ Board losses: #1 UNN 14-38 to Ciarralotta (Miranegro 360/5, Eze 192 rec/2; Kings
 Media poll (info only): Rogaela State 1, Krobe State 2, Tengus State 3, Lornaman 4, UFNH 5.
 Committee Ballot v50 built for week 12. Viewer v168, Media Pool v64. Backup pre_w11.
 NEXT: Dan's week 12 ballot; then week 12 Gameview candidates.
+
+## 2043 WEEK 12 COMMITTEE BOARD INSTALLED (after week 11 results) -- state/ballot_s18_w12.json, audit CLEAN
+1 Rogaela State, 2 Krobe State, 3 UNN, 4 Yrei Trobniy, 5 Tengus State, 6 Lornaman, 7 Ekralund State, 8 Antiragal State, 9 Costique River, 10 Roosevelt, 11 Leafette, 12 Tasson, 13 Phangrine State, 14 Ciarralotta State, 15 UFNH, 16 Marblehead, 17 South Antiragal, 18 Skeenerland State, 19 German Shores, 20 Orlot Western, 21 Kaji Daun, 22 Southern Tengus, 23 Barhold, 24 Fiota Bay, 25 Skylar Rose. Dropped out: Ranroman State, Hatesei, Eastern State.
+Week 12 candidates: Krobe State at South Antiragal; Marblehead at Tengus State; UFNH at Costique River; North Hatesei at UNN. Passed: Ciarralotta State at Lornaman (bigger game at Lornaman later); Rogaela State at S Antiragal State (already visited).
+NEXT: week 12 Gameview pick. Parity monitor at week 14. No guest games week 14.
