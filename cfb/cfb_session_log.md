@@ -655,3 +655,8 @@ Board losses: #3 UNN 17-22 to North Hatesei (Kingsworth 430/2/1; Lambrmatos 182 
 Media poll (info only): Rogaela State 1, Krobe State 2, Roosevelt 3, Tengus State 4, Orlot Western 5.
 Committee Ballot v51 built for week 13. Viewer v169, Media Pool v65. Backup pre_w12.
 NEXT: Dan's week 13 ballot; then week 13 Gameview candidates. Week 14: no guests, parity monitor.
+
+## 2043 WEEK 13 COMMITTEE BOARD INSTALLED (after week 12 results) -- state/ballot_s18_w13.json, audit CLEAN
+1 Rogaela State, 2 Krobe State, 3 Yrei Trobniy, 4 Costique River, 5 Ekralund State, 6 Antiragal State, 7 Ciarralotta State, 8 Marblehead, 9 Tengus State, 10 Lornaman, 11 Roosevelt, 12 Leafette, 13 UNN, 14 Phangrine State, 15 Skeenerland State, 16 UFNH, 17 Kaji Daun, 18 South Antiragal, 19 Orlot Western, 20 Southern Tengus, 21 Barhold, 22 Skylar Rose, 23 Fiota Bay, 24 Hatesei, 25 Tasson. Dropped out: German Shores.
+Week 13 candidates: South Antiragal at Rogaela State; Marblehead at Skeenerland State; Park Island at Yrei Trobniy; Costique River at Rogaela. Passed: Krobe State at Antiragal (bigger game at Antiragal later).
+NEXT: week 13 Gameview pick.
