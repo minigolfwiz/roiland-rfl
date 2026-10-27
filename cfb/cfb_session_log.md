@@ -606,3 +606,8 @@ Media poll (info only; committee is ranking of record): Rogaela State 1, Tengus 
 PARITY MONITOR (wk 8): undefeated 7, <=2 losses 48, top-5 mean losses 0.60, top-10 win% 92.4 (reference 74-83) -- elite records still well above 2038-42 pace; favourites by gap: 0-3 53%, 3-7 68%, 7-14 76%, 14-21 93%, 21+ 100% (in range). Ranked lost 27/99 to unranked wks 1-7 (27% vs 22% expected), wk 8 3/12.
 Committee Ballot artifact v47 built for week 9. Viewer v165, Media Pool v61. Backup pre_w8.
 NEXT: Dan's week 9 committee ballot; THEN week 9 Gameview candidates.
+
+## 2043 WEEK 9 COMMITTEE BOARD INSTALLED (after week 8 results) -- state/ballot_s18_w9.json, audit CLEAN
+1 UNN, 2 Ranroman State, 3 Tengus State, 4 Krobe State, 5 Roosevelt, 6 Rogaela State, 7 Fiota Bay, 8 Phangrine State, 9 Lornaman, 10 Marblehead, 11 Antiragal State, 12 Yrei Trobniy, 13 Ciarralotta State, 14 Ranroman, 15 Leafette, 16 Ekralund State, 17 Keeper, 18 Skeenerland, 19 Tasson, 20 Costique River, 21 German Shores, 22 Northlight, 23 UFNH, 24 Orlot Western, 25 Hatesei. Dropped out: Eona, Crayellan.
+Week 9 candidates: Roosevelt at Yrei Trobniy; Ekralund State at Keeper; Rogaela State at Verigon State; Diveo at Phangrine State (non-conf). Passed: Crayellan at Fiota Bay [rivalry]; Southern Tengus at Tengus State; Keytommiyr at Krobe State.
+NEXT: week 9 Gameview pick.
