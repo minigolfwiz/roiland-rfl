@@ -526,3 +526,13 @@ Dan's Series Office bookings (series/y2043, 64 games + 6 locked rivalries, 134 w
 fill_conf patched (pre-change copy fill_conf.py.pre_s18): guest games are never placed in week 14 (standing rule), the first fill had 8.
 state/season_state.pkl.gz, sub_rosters.pkl.gz, sub_coaches.pkl.gz re-pushed after install. NEXT (new conversation): media pool s18, preseason notes + page, week 0.
 2026-10-26: Dan wants to view/change the INSTALLED 2043 calendar. Conference Office republished for s18 (v23; https://claude.ai/artifact/YXQd4pYUooTZaUb9tUs3yS) with all 980 filled weeks seeded (conf_board.json + db conf/s18 v1). Office read of snapshot.data() made shape-tolerant. AFTER Dan's edits: pull conf/s18 -> convert_conf_db.py -> install_hand_schedule.py --commit again (nothing played yet), re-gzip season_state/sub_rosters/sub_coaches and re-push. Hand-off before edits: conf_s18_handoff.json (complete).
+
+## 2043 SCHEDULE -- REINSTALLED WITH DAN'S EDITS (2026-10-26 ~18:5x)
+Dan edited 7 weeks in the Conference Office (Power North: Diveo State-Kaji Kita 10->2, Northlight-Diveo 4->2, Skeenerland-Marblehead 10->6, Barhold-Forrester 2->12, Barhold State-Grizzly Hills 2->3; Eona-Pinn College 1->12, Repidome-Eona 2->1).
+install_hand_schedule --commit on state/conf_sched_s18_dan.json (now also conf_sched_s18.json): audit CLEAN, 2 programmes with 4-runs (worst Ciarralotta 4). season_state/sub_rosters/sub_coaches re-gzipped and pushed.
+STANDING SCHEDULING PREFERENCES (Dan, 2043):
+  * no team (power teams above all) ends the season without a HOME game in the last four weeks (11-14) -- all 152 pass in 2043
+  * the three byes should not be bunched close together (e.g. weeks 0 and 2, or 4/6/8 followed by a long unbroken run); 5 L6 programmes still have all three byes inside six weeks in 2043 (Reid State, Skirter, Coachville College, Holliday, Waterloo) -- left as Dan installed
+  * break long unbroken runs of games (7-9 straight weeks) with a mid-season bye
+  TODO: teach fill_conf these as soft terms before the 2044 build.
+NEXT (new conversation): media pool s18, preseason notes + page, week 0.
