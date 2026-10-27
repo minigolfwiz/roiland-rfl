@@ -599,3 +599,10 @@ NEXT: WEEK 8 -- Dan hand-builds the committee ballot first; Gameview candidates 
 NOTE: gameview_detail prints MEDIA-poll rank tags (#6 UNN); candidate list itself uses committee ranks.
 Week 8 candidates: Ranroman at UNN; Leafette at Krobe State; Phangrine State at Lornaman; Fiota Bay at Verigon. Passed: Barhold State at Northlight; Kaji Kita at Tengus State.
 NEXT: week 8 Gameview pick; parity monitor after week 8.
+
+## 2043 WEEK 8 played (Gameview: Phangrine State at Lornaman) -- 2026-10-27
+#18 Phangrine State 51-20 #3 Lornaman at Lornaman (Georzoglou 468/4/1; Caldini 248/2/4 INT; Blaufelder 214 rec/1). Ranked/board losers: #5 Northlight 24-38 to Barhold State (Fenreniy 446/3); #10 Ranroman 20-38 to #2 UNN (Kingsworth 378/4); #12 Leafette 26-34 to #6 Krobe State; #13 Eona 44-45 to Ciarralotta (Triakos 363/4, Xizu 199 rush/2); #17 Crayellan 26-34 to UFNH (Lamedeer 377/4, Tetteh 222 rec/3). Wins: #4 Tengus State 30-10 Kaji Kita; #9 Fiota Bay 30-6 at Verigon. Guests 2-4 (Zialo State 16-14 Costique State; Redford 27-24 Hoganelle).
+Media poll (info only; committee is ranking of record): Rogaela State 1, Tengus State 2, UNN 3, Ranroman State 4, Krobe State 5.
+PARITY MONITOR (wk 8): undefeated 7, <=2 losses 48, top-5 mean losses 0.60, top-10 win% 92.4 (reference 74-83) -- elite records still well above 2038-42 pace; favourites by gap: 0-3 53%, 3-7 68%, 7-14 76%, 14-21 93%, 21+ 100% (in range). Ranked lost 27/99 to unranked wks 1-7 (27% vs 22% expected), wk 8 3/12.
+Committee Ballot artifact v47 built for week 9. Viewer v165, Media Pool v61. Backup pre_w8.
+NEXT: Dan's week 9 committee ballot; THEN week 9 Gameview candidates.
