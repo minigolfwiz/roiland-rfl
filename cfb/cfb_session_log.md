@@ -536,3 +536,11 @@ STANDING SCHEDULING PREFERENCES (Dan, 2043):
   * break long unbroken runs of games (7-9 straight weeks) with a mid-season bye
   TODO: teach fill_conf these as soft terms before the 2044 build.
 NEXT (new conversation): media pool s18, preseason notes + page, week 0.
+
+## 2043 PRESEASON -- 2026-10-26 (new conversation, container wiped again)
+RESTORED from GitHub (minigolfwiz/roiland-rfl, cfb/ -> /home/claude/cfb2): gunzip state, games_db parts joined; season 18, next_week 0, 980-game schedule (Dan's Conference Office edits) installed.
+Media pool s18 drawn by media_pool.make_pool (30 returning / 30 new, no school in all three of 2041-43). Preseason poll: run_season.poll_update(seed=10000) -> media_history['pre'], media_ballots[0]. Backup state/season_state.pkl.pre_s18_preseason.
+Preseason top 5: Eona (all 60 firsts), Ranroman State, Dietsche, Rogaela State, Barhold; Black Forest 21st is the only L6 team in the 25. 25 notes in state/preseason_notes.json (2042's kept as preseason_notes_s17.json), written from export_preseason facts + playoff_s17.pkl results; no mascots/ratings.
+Roiland Preseason republished (v6), Media Pool (v52).
+FINDING: games_db in the repo holds only the 980 regular-season S17 games -- the 12 conference finals and 23 playoff games of 2042 are NOT in it (results survive in state/playoff_s17.pkl and history). Check whether the push predates the postseason before relying on box scores for 2042 CCG/playoffs.
+Week 0 Gameview candidates: Skeenerland State at Ranroman State; Ranroman at Will Tech; Orlot at Park Island; Riveral at Burrstone. NEXT: Dan picks -> `python3 week_cycle.py 0 <host>`.

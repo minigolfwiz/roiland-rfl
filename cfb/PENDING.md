@@ -3142,3 +3142,5 @@ SERIES OFFICE v2 (Dan, 2026-10-24): each booked game can carry a WEEK (0-14), ch
 Weeks flow through convert_series_db.py -> noncon_sN_handoff.json -> fill_noncon (keeps hand-set games and their weeks) -> export_conf_board noncon rows -> Conference Office shows them PLACED BUT UNLOCKED (movable at that season's build; seed_conf_board precedent).
 
 - 2043 non-con booking (Series Office) is IN PROGRESS, Dan finishing later. Partial hand-off saved at state/series_handoff_2043_partial.json (6 locked rivalries + 6 booked). Live bookings 2043-2052 are in the artifact db (series/y<year>). Do NOT build 2043 until Dan says he is done; then pull series/y2043 via ArtifactData -> convert_series_db.py.
+
+## 2043 PRESEASON done (2026-10-26). Pool s18 drawn, preseason poll filed, notes + page republished. NEXT: Dan picks the week-0 Gameview, then week_cycle.py 0.
