@@ -44,6 +44,7 @@ h2 small{font-weight:600;color:var(--dim);letter-spacing:.04em;font-size:14px;ma
 .opt input{margin:2px 0 0;width:20px;height:20px;accent-color:var(--navy)}
 .opt:focus-within{outline:2px solid var(--navy);outline-offset:2px}
 .nm{font-weight:600} .pos{font-family:var(--display);font-weight:700;letter-spacing:.06em;color:var(--dim);margin-left:4px}
+.pv{margin:5px 0 0;padding-left:17px;font-size:13px;color:var(--ink)} .pv li{margin:1px 0;font-variant-numeric:tabular-nums}
 .ln{color:var(--ink);font-size:14px;margin-top:2px;font-variant-numeric:tabular-nums} .rs{color:var(--dim);font-size:12.5px}
 .tm{display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;vertical-align:bottom;padding:1px 7px 1px 6px;border-radius:6px;border:1px solid rgba(0,0,0,.15);border-left:4px solid var(--ac);background:var(--bg);color:var(--fg);font-weight:600;white-space:nowrap;line-height:1.35}
 .tm.sm{font-size:.92em;padding:0 6px 0 5px;border-left-width:3px}
@@ -99,7 +100,7 @@ $('rates').innerHTML = '<tr><th>Tier</th><th>Per week</th><th>Per season</th><th
 const B = D.ballot, WK = D.week;
 const CATS = [['off','Offensive Player of the Week'],['defense','Defensive Player of the Week'],['st','Special Teams Player of the Week']];
 function candidate(c, name, val){
-  return `<label class="opt"><input type="radio" name="${name}" value="${esc(val)}"><span><span class="nm">${esc(c.name)}</span><span class="pos">${esc(c.pos)}</span> ${chip(c.club, true)}<div class="ln">${esc(c.line)}</div><div class="rs">${esc(c.res)}</div></span></label>`;
+  return `<label class="opt"><input type="radio" name="${name}" value="${esc(val)}"><span><span class="nm">${esc(c.name)}</span><span class="pos">${esc(c.pos)}</span> ${chip(c.club, true)}<div class="ln">${esc(c.line)}</div><div class="rs">${esc(c.res)}</div>${(c.plays && c.plays.length) ? '<ul class="pv">' + c.plays.map(x => '<li>' + esc(x) + '</li>').join('') + '</ul>' : ''}</span></label>`;
 }
 function option(o, name){
   return `<label class="opt"><input type="radio" name="${name}" value="${esc(o.key)}"><span><span class="nm">${esc(o.label)}</span>${o.suggested ? '<span class="sug">Typical</span>' : ''}${o.status === 'indef' ? '<span class="sug warn">Stays out until reinstated</span>' : ''}</span></label>`;

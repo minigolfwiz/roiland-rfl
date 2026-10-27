@@ -1,0 +1,270 @@
+{
+ "year": 2043,
+ "week": 3,
+ "potw": {
+  "off": [
+   {
+    "pid": 9100899,
+    "name": "Efua Ogunleye",
+    "pos": "QB",
+    "club": "Billiataho Greats",
+    "line": "30/47, 438 yds, 5 TD, 1 INT",
+    "res": "W 40-37 vs Demons",
+    "score": 35.32,
+    "plays": []
+   },
+   {
+    "pid": 9034315,
+    "name": "Nigel Sarvashankar",
+    "pos": "RB",
+    "club": "Fiota Bay T-Rexes",
+    "line": "24 car, 126 yds, 4 rec, 44 yds, 2 TD",
+    "res": "W 42-14 vs Dynamos",
+    "score": 29.0,
+    "plays": []
+   },
+   {
+    "pid": 9038807,
+    "name": "Santiago Herrnueva",
+    "pos": "WR",
+    "club": "Fiota Bay T-Rexes",
+    "line": "8 rec, 102 yds, 3 TD",
+    "res": "W 42-14 vs Dynamos",
+    "score": 28.2,
+    "plays": []
+   },
+   {
+    "pid": 9034737,
+    "name": "Lubna Zelenimir",
+    "pos": "QB",
+    "club": "Diveo Demons",
+    "line": "23/36, 355 yds, 3 TD",
+    "res": "L 37-40 at Greats",
+    "score": 27.47,
+    "plays": []
+   },
+   {
+    "pid": 9037426,
+    "name": "Gerhard Rothhagen",
+    "pos": "RB",
+    "club": "Holliday Beetles",
+    "line": "21 car, 75 yds, 4 rec, 69 yds, 2 TD",
+    "res": "W 30-14 at Phenoms",
+    "score": 26.4,
+    "plays": []
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9035672,
+    "name": "Sybil Kalyanprasad",
+    "pos": "LB",
+    "club": "Crayellan Redwoods",
+    "line": "9 tackles, 3 sacks",
+    "res": "W 27-13 at Beavers",
+    "score": 20.4,
+    "plays": []
+   },
+   {
+    "pid": 9034857,
+    "name": "Henriette Braunbauer",
+    "pos": "LB",
+    "club": "Classetto Cavemen",
+    "line": "6 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 41-6 at Swords",
+    "score": 19.6,
+    "plays": [
+     "Q2 3:06 sack and forced fumble (up 11), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9037825,
+    "name": "Yui Zhenshang",
+    "pos": "DL",
+    "club": "Cordelle Raptors",
+    "line": "5 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 23-10 vs Topcats",
+    "score": 19.0,
+    "plays": [
+     "Q1 4:37 sack and forced fumble (tied), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9101205,
+    "name": "Colette Terrelletti",
+    "pos": "DL",
+    "club": "Fiota Swords",
+    "line": "6 tackles, 3 sacks",
+    "res": "L 6-41 vs Cavemen",
+    "score": 18.6,
+    "plays": []
+   },
+   {
+    "pid": 9100773,
+    "name": "Georgia Apopoulos",
+    "pos": "DL",
+    "club": "Hughes City Asteroids",
+    "line": "3 tackles, 3 sacks",
+    "res": "W 31-17 vs Hope",
+    "score": 16.8,
+    "plays": []
+   },
+   {
+    "pid": 9039016,
+    "name": "Maja Birkemark",
+    "pos": "LB",
+    "club": "Hughes City Asteroids",
+    "line": "6 tackles, 1 sack, 1 INT",
+    "res": "W 31-17 vs Hope",
+    "score": 16.6,
+    "plays": [
+     "Q3 3:42 interception returned 23 yds (up 14), led to a touchdown"
+    ]
+   }
+  ],
+  "st": [
+   {
+    "pid": 9101071,
+    "name": "Bassam Al-Kadhim",
+    "pos": "K",
+    "club": "Good River Rangers",
+    "line": "5/6 FG, long 57, 2/2 XP",
+    "res": "W 29-13 vs Renegades",
+    "score": 19.5,
+    "plays": [
+     "Q1 11:22 24-yd GOOD",
+     "Q2 7:37 37-yd GOOD",
+     "Q2 1:08 49-yd MISSED",
+     "Q4 11:30 50-yd GOOD",
+     "Q4 8:36 57-yd GOOD",
+     "Q4 2:02 47-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9034451,
+    "name": "Amparo Sollemyr",
+    "pos": "P",
+    "club": "Queensville Phenoms",
+    "line": "6 punts, 50.2 avg, 5 inside the 20",
+    "res": "L 14-30 vs Beetles",
+    "score": 17.666666666666664,
+    "plays": []
+   },
+   {
+    "pid": 9037423,
+    "name": "Baltazar Kleinmann",
+    "pos": "P",
+    "club": "Diveo Demons",
+    "line": "6 punts, 48.8 avg, 5 inside the 20",
+    "res": "L 37-40 at Greats",
+    "score": 16.333333333333336,
+    "plays": []
+   },
+   {
+    "pid": 9101094,
+    "name": "Anders Nightingale",
+    "pos": "K",
+    "club": "Coachville Mastodons",
+    "line": "4/4 FG, long 51, 1/2 XP",
+    "res": "T 25-25 vs Grays",
+    "score": 15.75,
+    "plays": [
+     "Q2 12:55 36-yd GOOD",
+     "Q2 10:25 51-yd GOOD",
+     "Q4 10:38 32-yd GOOD",
+     "Q4 5:45 50-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101385,
+    "name": "Mio Wakada",
+    "pos": "K",
+    "club": "Holliday Beetles",
+    "line": "3/4 FG, long 61, 3/3 XP",
+    "res": "W 30-14 at Phenoms",
+    "score": 15.25,
+    "plays": [
+     "Q2 5:34 31-yd GOOD",
+     "Q2 2:03 61-yd GOOD",
+     "Q4 7:20 54-yd GOOD",
+     "Q4 0:26 57-yd MISSED"
+    ]
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "firearm",
+   "title": "Firearm at the facility",
+   "who": [
+    {
+     "name": "Nigel Sarvashankar",
+     "pos": "RB",
+     "club": "Fiota Bay T-Rexes",
+     "pid": 9034315
+    }
+   ],
+   "where": "Club facility",
+   "text": "Nigel Sarvashankar (RB, T-Rexes) brought a licensed firearm into the team facility in violation of league policy. The club reported it to the league itself.",
+   "options": [
+    {
+     "key": "k100",
+     "label": "Fine $100K",
+     "games": 0,
+     "fine": 100000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "g1",
+     "label": "1 game + $100K",
+     "games": 1,
+     "fine": 100000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "g2",
+     "label": "2 games",
+     "games": 2,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "g4",
+     "label": "4 games",
+     "games": 4,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W3-1",
+   "tier": "serious",
+   "week": 3
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.02
+  }
+ ]
+}

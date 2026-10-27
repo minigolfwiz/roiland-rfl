@@ -6,6 +6,7 @@ import random, math
 from rfl.engine import depth_chart, ovr, age, DEPTH
 
 Q_LEN = 900
+TACKLES = True  # forward-only from 2043 week 3: tackles and punts inside the 20 (separate random stream; results are unchanged)
 def mmss(t): t = max(0, int(t)); return f"{t // 60}:{t % 60:02d}"
 def clamp(x, a, b): return max(a, min(b, x))
 
@@ -101,6 +102,7 @@ class Game:
         new = 100 - (spot + dist)
         if new <= 0: new = 20 if ctl < 7 else (self.rnd.randint(3, 12) if self.rnd.random() < .5 else 20)
         else: new = max(1, int(new - self.rnd.gauss(4, 5)))
+        if TACKLES and new < 20: s.st(p, 'in20')
         self.burn(6); return new
     def kickoff(self, s, onside=False):
         if onside:
@@ -313,6 +315,7 @@ class Game:
 _orig_st = Side.st
 def _st(self, p, k, v=1):
     _orig_st(self, p, k, v)
+    if TACKLES and p and k == 'sacks': _orig_st(self, p, 'tkl', v)
     if p and k in ('rush_td', 'rec_td'):
         g = self.game if hasattr(self, 'game') else None
         if g is not None:
@@ -327,6 +330,20 @@ def _play(self, s, d, down, dist, spot):
     self._last_yds[s.name] = goal
     return _orig_play(self, s, d, down, dist, spot)
 Game.play = _play
+_play_base = Game.play
+def _play_tkl(self, s, d, down, dist, spot):
+    key = f"tkl|{s.name}|{d.name}|{self.q}|{self.clock}|{spot}|{down}|{dist}|{s.plays_run}"
+    yds, kind, ended = _play_base(self, s, d, down, dist, spot)
+    if TACKLES and kind in ('run', 'pass'):
+        tr = random.Random(key)
+        w = {'run': (.20, .45, .15, .20), 'pass': (.05, .30, .35, .30)}[kind]
+        cat = tr.choices([d.dl, d.lb, d.cb, d.s], w)[0]
+        if not cat: cat = [x for x in (d.lb, d.dl, d.cb, d.s) if x][0] if any((d.lb, d.dl, d.cb, d.s)) else None
+        if cat:
+            who = tr.choices(cat, [max(1, p_['attrs'].get('tkl', p_['abil'])) for p_ in cat])[0]
+            d.st(who, 'tkl')
+    return yds, kind, ended
+Game.play = _play_tkl
 _orig_drive = Game.drive
 def _drive(self, s, spot):
     if not hasattr(self, '_td'): self._td = {}; self._last_yds = {}; self.drives = {'H': 0, 'A': 0}

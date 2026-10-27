@@ -147,13 +147,64 @@ def mk_club(S, rnd, week, res):
 BUILD = {'minor': mk_minor, 'moderate': mk_moderate, 'serious': mk_serious, 'major': mk_major, 'club': mk_club}
 
 # ----------------------------------------------------------------------------- Players of the Week
+import re
+def _tm(c): return c.split()[-1]
+def _margin(score, club_is_home):
+    h, a = [int(x) for x in score.split('-')]; return (h - a) if club_is_home else (a - h)
+def _clock_txt(pl): return f"Q{pl['q']} {pl['t']}" if pl['q'] != 'OT' else f"OT {pl['t']}"
+def _situation(m, pl):
+    """How the game stood from the player's side when the play happened (score string is taken at the play)."""
+    late = pl['q'] == 'OT' or (pl['q'] == 4 and int(pl['t'].split(':')[0]) < 6)
+    if m > 0: s = f"up {m}"
+    elif m < 0: s = f"down {-m}"
+    else: s = "tied"
+    return s + (", late" if late and abs(m) <= 8 else '')
+
+def defender_plays(g, side, p, club):
+    """Turnovers this defender made, with the clock, the score at that moment, and whether it led to points."""
+    out = []; pl = g['plays']; home = (side == 'H'); nm = p['name']
+    for i, e in enumerate(pl):
+        if e['kind'] != 'turnover' or nm not in e['text']: continue
+        txt = e['text']
+        if f"INTERCEPTED by {nm}" in txt: kind = 'interception' + (f" returned {re.search(r'returned (\d+)', txt).group(1)} yds" if 'returned' in txt else '')
+        elif f"sacked by {nm}" in txt and 'FUMBLES' in txt: kind = 'sack and forced fumble'
+        else: continue
+        m = _margin(e['score'], home)  # the log is written before the turnover changes the score
+        led = ''
+        for f in pl[i + 1:]:
+            if f['kind'] in ('td', 'fg', 'fgmiss', 'turnover'):
+                if f['kind'] in ('td', 'fg') and f['team'] == club: led = ', led to a ' + ('touchdown' if f['kind'] == 'td' else 'field goal')
+                break
+        out.append(f"{_clock_txt(e)} {kind} ({_situation(m, e)}){led}")
+    return out
+
+def kicker_plays(g, side, club, k):
+    """Every field-goal attempt with distance, result, clock and what it meant for the game."""
+    pl = g['plays']; home = (side == 'H'); out = []; made = []; miss = []
+    won = g['winner'] == club
+    for i, e in enumerate(pl):
+        if e['team'] != club or e['kind'] not in ('fg', 'fgmiss') or k['name'] not in e['text']: continue
+        d = int(re.search(r'(\d+)-yd', e['text']).group(1)); good = e['kind'] == 'fg'
+        tag = ''
+        if good:
+            made.append(d); after = _margin(e['score'], home); before = after - 3
+            later_opp = any(f['kind'] in ('td', 'fg') and f['team'] != club for f in pl[i + 1:])
+            if (e['q'] == 4 or e['q'] == 'OT') and before <= 0 < after:
+                tag = ', go-ahead' + (' and decisive, never answered' if won and not later_opp else ', later answered')
+            elif (e['q'] == 4 or e['q'] == 'OT') and after == 0: tag = ', tied the game'
+            elif won and not later_opp and 0 < after <= 3 and e['q'] == 4: tag = ', final margin'
+        else: miss.append(d)
+        out.append(f"{_clock_txt(e)} {d}-yd {'GOOD' if good else 'MISSED'}{tag}")
+    return out, made, miss
+
 def potw(S, week, res):
     P = S['players']; offs, defs, sts = [], [], []
     for g in res:
         for side, team in (('H', g['home']), ('A', g['away'])):
             won = (g['home_pts'] > g['away_pts']) == (side == 'H') and g['home_pts'] != g['away_pts']
             score_line = f"{'W' if won else ('T' if g['home_pts'] == g['away_pts'] else 'L')} {g['home_pts'] if side == 'H' else g['away_pts']}-{g['away_pts'] if side == 'H' else g['home_pts']}"
-            opp = g['away'] if side == 'H' else g['home']
+            opp = g['away'] if side == 'H' else g['home']; res_txt = f"{score_line} vs {opp.split()[-1]}" if side == 'H' else f"{score_line} at {opp.split()[-1]}"
+            has_tkl = any('tkl' in v for v in g['stats'][side].values())
             for pid, st in g['stats'][side].items():
                 p = P[str(pid)]; line = []; sc = 0
                 if p['pos'] == 'QB' and st.get('att', 0) >= 10:
@@ -165,21 +216,27 @@ def potw(S, week, res):
                     if st.get('rec', 0): line.append(f"{st['rec']} rec, {st.get('rec_yds', 0)} yds")
                     if st.get('rush_td', 0) + st.get('rec_td', 0): line.append(f"{st.get('rush_td', 0) + st.get('rec_td', 0)} TD")
                     if p['pos'] == 'QB': sc = 0
-                if sc > 0 and p['pos'] != 'QB' or (p['pos'] == 'QB' and sc > 0): offs.append(dict(pid=p['pid'], name=p['name'], pos=p['pos'], club=team, line=', '.join(line), res=f"{score_line} vs {opp.split()[-1]}", score=round(sc, 2)))
-                if p['pos'] in ('DL', 'LB', 'CB', 'S') and (st.get('sacks', 0) or st.get('int_made', 0) or st.get('ff', 0)):
-                    sc = st.get('sacks', 0) * 5 + st.get('int_made', 0) * 6 + st.get('ff', 0) * 4
-                    line = ([f"{st['sacks']:g} sack{'s' if st['sacks'] != 1 else ''}"] if st.get('sacks') else []) + ([f"{st['int_made']} INT"] if st.get('int_made') else []) + ([f"{st['ff']} forced fumble{'s' if st['ff'] != 1 else ''}"] if st.get('ff') else [])
-                    defs.append(dict(pid=p['pid'], name=p['name'], pos=p['pos'], club=team, line=', '.join(line), res=f"{score_line} vs {opp.split()[-1]}", score=sc))
+                if sc > 0: offs.append(dict(pid=p['pid'], name=p['name'], pos=p['pos'], club=team, line=', '.join(line), res=res_txt, score=round(sc, 2), plays=[]))
+                if p['pos'] in ('DL', 'LB', 'CB', 'S') and (st.get('sacks', 0) or st.get('int_made', 0) or st.get('ff', 0) or st.get('tkl', 0) >= 7):
+                    pv = defender_plays(g, side, p, team)
+                    sc = st.get('tkl', 0) * .6 + st.get('sacks', 0) * 5 + st.get('int_made', 0) * 6 + st.get('ff', 0) * 4 + sum(2 for x in pv if 'led to' in x) + sum(1.5 for x in pv if 'late' in x)
+                    line = ([f"{st['tkl']} tackles"] if st.get('tkl') else []) + ([f"{st['sacks']:g} sack{'s' if st['sacks'] != 1 else ''}"] if st.get('sacks') else []) + ([f"{st['int_made']} INT"] if st.get('int_made') else []) + ([f"{st['ff']} forced fumble{'s' if st['ff'] != 1 else ''}"] if st.get('ff') else [])
+                    if not has_tkl: line.append('tackles not tracked this week')
+                    defs.append(dict(pid=p['pid'], name=p['name'], pos=p['pos'], club=team, line=', '.join(line), res=res_txt, score=sc, plays=pv))
                 if p['pos'] == 'K' and st.get('fga', 0) + st.get('xp', 0):
-                    sc = st.get('fg', 0) * 3 + st.get('xp', 0) * .5 - (st.get('fga', 0) - st.get('fg', 0)) * 2
-                    sts.append(dict(pid=p['pid'], name=p['name'], pos='K', club=team, line=f"{st.get('fg', 0)}/{st.get('fga', 0)} FG, {st.get('xp', 0)} XP", res=f"{score_line} vs {opp.split()[-1]}", score=sc))
+                    ks, made, miss = kicker_plays(g, side, team, p)
+                    xpm = sum(1 for e in g['plays'] if e['team'] == team and e['kind'] == 'xpmiss')
+                    dec = sum(1 for x in ks if 'decisive' in x) * 3 + sum(1 for x in ks if 'go-ahead' in x) * 1.5
+                    sc = st.get('fg', 0) * 3 + st.get('xp', 0) * .5 - (st.get('fga', 0) - st.get('fg', 0)) * 2 + sum(max(0, d - 44) for d in made) * .25 + dec
+                    ln = f"{st.get('fg', 0)}/{st.get('fga', 0)} FG" + (f", long {max(made)}" if made else '') + f", {st.get('xp', 0)}/{st.get('xp', 0) + xpm} XP"
+                    sts.append(dict(pid=p['pid'], name=p['name'], pos='K', club=team, line=ln, res=res_txt, score=sc, plays=ks))
                 if p['pos'] == 'P' and st.get('punts', 0) >= 3:
-                    avg = st.get('punt_yds', 0) / st['punts']
-                    sts.append(dict(pid=p['pid'], name=p['name'], pos='P', club=team, line=f"{st['punts']} punts, {avg:.1f} avg", res=f"{score_line} vs {opp.split()[-1]}", score=(avg - 40) * st['punts'] / 6))
+                    avg = st.get('punt_yds', 0) / st['punts']; ln = f"{st['punts']} punts, {avg:.1f} avg" + (f", {st['in20']} inside the 20" if st.get('in20') else (', inside-20 not tracked this week' if not has_tkl else ', none inside the 20'))
+                    sts.append(dict(pid=p['pid'], name=p['name'], pos='P', club=team, line=ln, res=res_txt, score=(avg - 40) * st['punts'] / 6 + st.get('in20', 0) * 1.5, plays=[]))
     top = lambda L, n: sorted(L, key=lambda x: -x['score'])[:n]
     qbs = top([o for o in offs if o['pos'] == 'QB'], 2); skill = top([o for o in offs if o['pos'] != 'QB'], 3)
     off = sorted(qbs + skill, key=lambda x: -x['score'])
-    return dict(off=off, defense=top(defs, 5), st=top(sts, 4))
+    return dict(off=off, defense=top(defs, 6), st=top(sts, 5))
 
 # ----------------------------------------------------------------------------- ballot
 def ballot(S, week):
