@@ -708,3 +708,7 @@ QF (neutral): Roosevelt v Reid St; Lornaman v Costique River; Rogaela St v Tasso
 ## S18 playoff quarterfinals PLAYED (backups pre_s18_qf)
 Roosevelt 30, Reid St 3 (Copper Bowl); Costique River 41, Lornaman 14 (Steam Bowl); Rogaela St 24, Tasson 17 (Lumber Bowl); Yrei Trobniy 24, Hatesei 17 (Star Bowl).
 SF: (2) Roosevelt v (9) Costique River @ 501 Bowl (Stamford, Ciarralotta); (4) Rogaela St v (6) Yrei Trobniy @ Redwood Bowl (Kirkwood, Crayellan). Viewer rebuilt (1012 games). SF preview shown; awaiting go.
+
+## S18 playoff semifinals PLAYED (backups pre_s18_sf)
+Costique River 41, Roosevelt 38 (501 Bowl); Rogaela St 41, Yrei Trobniy 20 (Redwood Bowl). FINAL: (4) Rogaela St v (9) Costique River @ Canesta (Kaji Daun). Series Rogaela St 3-1.
+Awards basis: created state/season_state.pkl.pre_s18_po_r1 as a copy of pre_s18_po1 (snapshot taken after CCGs, before round 1) because run_champ's finalize_season looks for that name. Viewer rebuilt (1014 games). Title-game preview shown; awaiting go.
