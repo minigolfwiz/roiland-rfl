@@ -544,4 +544,9 @@ Preseason top 5: Eona (all 60 firsts), Ranroman State, Dietsche, Rogaela State, 
 Roiland Preseason republished (v6), Media Pool (v52).
 FINDING: games_db in the repo holds only the 980 regular-season S17 games -- the 12 conference finals and 23 playoff games of 2042 are NOT in it (results survive in state/playoff_s17.pkl and history). Check whether the push predates the postseason before relying on box scores for 2042 CCG/playoffs.
 Week 0 Gameview candidates: Skeenerland State at Ranroman State; Ranroman at Will Tech; Orlot at Park Island; Riveral at Burrstone. NEXT: Dan picks -> `python3 week_cycle.py 0 <host>`.
-2026-10-26: Roiland CFB Standings (https://claude.ai/artifact/FMyZDzp2uw1YndJ5s8mrgW) v2 -- through 2042 (Eona d. Dietsche), new Conferences tab + conference filter. Built by export_standings.py -> standings_template.html. NOTE: 2042 playoff games are NOT in games_db (S17 has 980 regular games only); export_standings reads state/playoff_s17.pkl for them.
+
+## 2043 WEEK 0 played (Gameview: Skeenerland State at Ranroman State) -- 2026-10-26
+#2 Ranroman State 38-20 #20 Skeenerland State (Solland 350/5/1 for Ranroman State, Sorlovei 274 rec/3; Cha 236/1 in defeat). #6 Park Island lost 23-24 at home to Orlot (Torrarini 226/1/3 INT; Mesysei 151 rush/1; Lundby 183/2). #10 Ranroman 28-6 at Will Tech. Riveral 33-30 OT at Burrstone; Ireland River 13-10 Rogaela Tech; Mount Cairn 20-17 Repidome.
+Guests 0-2. Poll: Eona 1, Ranroman State 2, Dietsche 3, Rogaela State 4, Barhold 5; Park Island fell 13 to 19th; nobody dropped out. Backup state/season_state.pkl.pre_w0.
+Season viewer (v157) and Media Pool (v53) republished. The 2042 viewer (the only copy of the 12 CCG + 23 playoff box scores) archived at cfb/archive/season_viewer_2042_full.html.gz before being overwritten.
+NEXT: week 1 Gameview pick (Hatesei at Skylar Rose; Eona at Repidome; Rogaela State at Rogaela; Ireland River at UFNH).
