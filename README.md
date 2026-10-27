@@ -6,3 +6,5 @@ State: 2043 season open at week 0 (`data/state_2043.json`, compressed `data/rfl_
 Race to 11 (narrative only): Greats, Redwoods and Brass Tigers each have 10 Mega Bowl titles; see data/rfl_notes.md.
 Reminder for Dan at the end of the 2043 season (after the Mega Bowl): add player discipline traits (affects League Office case odds and in-game penalty rates). Not built yet; see data/rfl_notes.md.
 Second reminder for Dan at the end of the 2043 season: make League Office cases more robust (Dan, 27 Oct 2026; no action needed before then).
+
+Discipline traits BUILT (27 Oct 2026): hidden per-player `disc`/`cond` and coach `disc` (rfl/discipline.py), in-game penalties in rfl/game.py (switch PENALTIES), trait-weighted League Office cases anchored to real flags, yearly drift in offseason.progress; calibration harness rfl/calibrate_discipline.py. NEXT: scope more robust League Office cases with Dan (build only on his go), then the 2043 offseason. Details in data/rfl_notes.md ('Discipline traits').

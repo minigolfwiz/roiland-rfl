@@ -12,6 +12,8 @@ Usage:
 import sys, os, json, math, random
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from rfl.engine import *
+from rfl import discipline as DISC
+from rfl.game import PERSONAL_FOULS
 
 # ----------------------------------------------------------------------------- weekly rates (cases per week across the 40-club league)
 # Reference: the real NFL hands out hundreds of small fines a year and perhaps 20-40 suspensions (most of them PED or conduct policy).
@@ -57,6 +59,28 @@ def eligible(S, club=None, pos=None):
 
 def prior(S, pid): return [d for d in S['season'].get('discipline', []) if d.get('pid') == pid or pid in d.get('pids', [])]
 
+# ----------------------------------------------------------------------------- discipline traits: who ends up on the desk
+# Hidden traits (rfl/discipline.py) tilt the odds. Off-field matters (comments, equipment, PED, DUI, firearm, criminal) follow conduct; on-field
+# conduct cases follow a blend of on-field discipline and conduct, and are anchored to personal fouls that were actually flagged that week.
+# Weights are capped both ways, so the worst-behaved players are likelier but never certain, and clean players keep a real chance.
+def lw(S, p, kind='cond'): return DISC.lo_weight(DISC.norms(S), p, kind)
+ANCHOR = {'late_hit': ('unnecessary roughness', 'roughing the passer'), 'defenseless': ('roughing the passer', 'unnecessary roughness'),
+          'helmet': ('roughing the passer', 'unnecessary roughness'), 'taunt': ('unnecessary roughness',)}
+def flagged(S, res, types):
+    """(game, penalty) pairs for personal fouls of the given types in the week's games, for players still active and not otherwise unavailable."""
+    out = []
+    for g in res:
+        for x in g.get('pens', []):
+            if x['type'] not in types: continue
+            p = S['players'].get(str(x['pid']))
+            if p and p.get('status') == 'active' and not p.get('inj'): out.append((g, x))
+    return out
+def _when(x):
+    return 'in overtime' if x['q'] == 'OT' else f"with {x['t']} left in the {['first', 'second', 'third', 'fourth'][int(x['q']) - 1]} quarter"
+def _flags_note(S, pid):
+    n = S['season']['stats'].get(str(pid), {}).get('pen', 0)
+    return f" It was his {n}th flag of the season." if n >= 6 else ''
+
 # ----------------------------------------------------------------------------- incident builders
 def mk_minor(S, rnd, week, res):
     typ = rnd.choice(['late_hit', 'taunt', 'defenseless', 'helmet', 'comments', 'equip', 'sideline'])
@@ -67,9 +91,18 @@ def mk_minor(S, rnd, week, res):
         return dict(type=typ, title='Sideline conduct', who=[dict(name=c, pos='HC', club=club, pid=None, coach=True)], game=g['id'], where=where,
                     text=f"Head coach {c} was flagged for berating officials over a no-call and followed it with heated comments on the field after the final whistle.",
                     options=[opt('none', 'No action'), opt('warn', 'Warning'), opt('k25', 'Fine $25K', fine=25000, suggested=True), opt('k50', 'Fine $50K', fine=50000)])
-    pool = eligible(S, club, POSW[typ].keys())
-    if not pool: return None
-    p = rnd.choices(pool, [POSW[typ][q['pos']] * (1.6 if q.get('starter') else 1) for q in pool])[0]
+    anchored = None
+    if typ in ANCHOR:
+        fl = flagged(S, res, ANCHOR[typ])
+        if not fl: typ = rnd.choice(['comments', 'equip'])       # nothing was actually flagged this week, so no on-field case is invented
+        else:
+            ws = [lw(S, S['players'][str(x['pid'])], 'mix') for g_, x in fl]
+            g, anchored = rnd.choices(fl, ws)[0]; club = anchored['team']; where = f"{g['away']} at {g['home']}, week {week}"
+    if anchored: p = S['players'][str(anchored['pid'])]
+    else:
+        pool = eligible(S, club, POSW[typ].keys())
+        if not pool: return None
+        p = rnd.choices(pool, [POSW[typ][q['pos']] * (1.6 if q.get('starter') else 1) * lw(S, q, 'cond') for q in pool])[0]
     pr = prior(S, p['pid'])
     texts = {
         'late_hit': f"{p['name']} ({p['pos']}) drove the quarterback into the turf well after the throw and drew an unnecessary roughness flag.",
@@ -80,6 +113,12 @@ def mk_minor(S, rnd, week, res):
         'equip': f"{p['name']} ({p['pos']}) wore non-approved gear on the field after being warned in the pregame check.",
     }
     base = {'late_hit': 'k25', 'taunt': 'k10', 'defenseless': 'k25', 'helmet': 'k25', 'comments': 'k10', 'equip': 'k10'}[typ]
+    if anchored:
+        flag = anchored['type']
+        texts[typ] = {'late_hit': f"{p['name']} ({p['pos']}) was flagged for {flag} {_when(anchored)} on a hit the officials ruled came well after the play was over.",
+                      'taunt': f"{p['name']} ({p['pos']}) was flagged for {flag} {_when(anchored)} after standing over an opponent and taunting him.",
+                      'defenseless': f"{p['name']} ({p['pos']}) was flagged for {flag} {_when(anchored)} on a hit the officials ruled was on a defenseless player.",
+                      'helmet': f"{p['name']} ({p['pos']}) was flagged for {flag} {_when(anchored)} for helmet-to-helmet contact; the player on the other end stayed in the game."}[typ] + _flags_note(S, p['pid'])
     txt = texts[typ] + (f" It is his {['second', 'third', 'fourth'][min(len(pr) - 1, 2)]} case this season. Earlier ruling: {pr[-1]['ruling']}" + (f" (your note: {pr[-1]['note']})" if pr[-1].get('note') else '') + '.' if pr else '')
     sug = base if not pr else ('k50' if base == 'k25' else 'k25')
     return dict(type=typ, title={'late_hit': 'Late hit', 'taunt': 'Taunting', 'defenseless': 'Hit on a defenseless player', 'helmet': 'Helmet-to-helmet contact', 'comments': 'Comments about the officials', 'equip': 'Equipment violation'}[typ],
@@ -92,7 +131,7 @@ def mk_moderate(S, rnd, week, res):
     if typ == 'fight':
         a = eligible(S, g['home'], POSW['fight'].keys()); b = eligible(S, g['away'], POSW['fight'].keys())
         if not a or not b: return None
-        pa = rnd.choices(a, [POSW['fight'][q['pos']] for q in a])[0]; pb = rnd.choices(b, [POSW['fight'][q['pos']] for q in b])[0]
+        pa = rnd.choices(a, [POSW['fight'][q['pos']] * lw(S, q, 'mix') for q in a])[0]; pb = rnd.choices(b, [POSW['fight'][q['pos']] * lw(S, q, 'mix') for q in b])[0]
         return dict(type='fight', title='Fight and ejections', who=[dict(name=pa['name'], pos=pa['pos'], club=g['home'], pid=pa['pid']), dict(name=pb['name'], pos=pb['pos'], club=g['away'], pid=pb['pid'])],
                     game=g['id'], where=where, pids=[pa['pid'], pb['pid']],
                     text=f"A scrum after a goal-line stand turned into a fight. {pa['name']} ({g['home'].split()[-1]}) and {pb['name']} ({g['away'].split()[-1]}) were ejected, and the benches cleared briefly. The ruling applies to both players.",
@@ -100,23 +139,29 @@ def mk_moderate(S, rnd, week, res):
     if typ == 'repeat':
         cand = [d for d in S['season'].get('discipline', []) if d.get('pid') and d.get('fine') and not d.get('games')]
         if not cand: return None
-        d = rnd.choice(cand); p = S['players'].get(str(d['pid']))
+        d = rnd.choices(cand, [lw(S, S['players'][str(x['pid'])], 'mix') if str(x['pid']) in S['players'] else 1 for x in cand])[0]; p = S['players'].get(str(d['pid']))
         if not p or p.get('inj') or p.get('status') != 'active': return None
         return dict(type='repeat', title='Repeat offender', who=[dict(name=p['name'], pos=p['pos'], club=p['club'], pid=p['pid'])], game=g['id'], where=where,
                     text=f"{p['name']} ({p['pos']}) has now been fined {len(prior(S, p['pid'])) + 1} times this season for conduct on the field. The league office has asked for a ruling on whether the fines are working.", prior=len(prior(S, p['pid'])),
                     options=[opt('none', 'No action'), opt('k75', 'Fine $75K', fine=75000), opt('g1', '1 game + $50K', games=1, fine=50000, suggested=True), opt('g2', '2 games', games=2)])
-    side = rnd.choice(['home', 'away']); club = g[side]
-    pool = eligible(S, club, POSW['flagrant'].keys())
-    if not pool: return None
-    p = rnd.choices(pool, [POSW['flagrant'][q['pos']] for q in pool])[0]
+    fl = [(g_, x) for g_, x in flagged(S, res, PERSONAL_FOULS) if x['pos'] in POSW['flagrant']]
+    if fl:      # a flagrant case grows out of a personal foul that was actually flagged this week
+        g, x = rnd.choices(fl, [lw(S, S['players'][str(x_['pid'])], 'mix') for g_, x_ in fl])[0]; club = x['team']; p = S['players'][str(x['pid'])]; where = f"{g['away']} at {g['home']}, week {week}"
+        why = f"was flagged for {x['type']} {_when(x)} and ejected after a review of a hit to the head of a defenseless quarterback."
+    else:
+        side = rnd.choice(['home', 'away']); club = g[side]
+        pool = eligible(S, club, POSW['flagrant'].keys())
+        if not pool: return None
+        p = rnd.choices(pool, [POSW['flagrant'][q['pos']] * lw(S, q, 'mix') for q in pool])[0]
+        why = "was ejected for a hit to the head of a defenseless quarterback."
     return dict(type='flagrant', title='Flagrant hit, ejection', who=[dict(name=p['name'], pos=p['pos'], club=club, pid=p['pid'])], game=g['id'], where=where,
-                text=f"{p['name']} ({p['pos']}) was ejected for a hit to the head of a defenseless quarterback. The opposing player left the game and returned later.",
+                text=f"{p['name']} ({p['pos']}) {why} The opposing player left the game and returned later." + _flags_note(S, p['pid']),
                 options=[opt('none', 'No action'), opt('k50', 'Fine $50K', fine=50000), opt('k75', 'Fine $75K', fine=75000), opt('g1', '1 game + $25K', games=1, fine=25000, suggested=True), opt('g2', '2 games', games=2)])
 
 def mk_serious(S, rnd, week, res):
     typ = rnd.choice(['ped', 'ped', 'dui', 'firearm'])
     pool = eligible(S)
-    p = rnd.choices(pool, [1.5 if q.get('starter') else 1 for q in pool])[0]; who = [dict(name=p['name'], pos=p['pos'], club=p['club'], pid=p['pid'])]
+    p = rnd.choices(pool, [(1.5 if q.get('starter') else 1) * lw(S, q, 'cond') for q in pool])[0]; who = [dict(name=p['name'], pos=p['pos'], club=p['club'], pid=p['pid'])]
     if typ == 'ped':
         return dict(type='ped', title='Performance-enhancing substance', who=who, where='League drug-testing program',
                     text=f"{p['name']} ({p['pos']}, {p['club'].split()[-1]}) tested positive for a banned substance. He says the source was an over-the-counter supplement. The program's first-offense range is 2 to 6 games.",
@@ -130,7 +175,7 @@ def mk_serious(S, rnd, week, res):
                 options=[opt('k100', 'Fine $100K', fine=100000), opt('g1', '1 game + $100K', games=1, fine=100000, suggested=True), opt('g2', '2 games', games=2), opt('g4', '4 games', games=4)])
 
 def mk_major(S, rnd, week, res):
-    pool = eligible(S); p = rnd.choices(pool, [2 if q.get('starter') else 1 for q in pool])[0]
+    pool = eligible(S); p = rnd.choices(pool, [(2 if q.get('starter') else 1) * lw(S, q, 'cond') for q in pool])[0]
     return dict(type='criminal', title='Criminal charges', who=[dict(name=p['name'], pos=p['pos'], club=p['club'], pid=p['pid'])], where='Off the field',
                 text=f"Prosecutors have filed serious criminal charges against {p['name']} ({p['pos']}, {p['club'].split()[-1]}). The club says it is gathering facts. Under the conduct policy the league can act before the case is resolved.",
                 options=[opt('none', 'No action while the case proceeds'), opt('exempt', 'Exempt list: out until the case resolves', games=99, suggested=True), opt('g6', '6 games pending review', games=6), opt('indef', 'Suspended indefinitely', games=99, status='indef')])
@@ -330,6 +375,9 @@ def apply(S, week, dec):
             se['injuries_log'].append(dict(week=week, team=w['club'], pid=p['pid'], name=p['name'], pos=p['pos'], weeks=span, kind=p['inj']['kind']))
         if o.get('pick_round'):
             S.setdefault('pick_penalties', []).append(dict(club=c['who'][0]['club'], round=o['pick_round'], draft=se['year'] + 1, week=week, reason=c['title']))
+        if o['key'] not in ('none', 'warn'):
+            for w in c['who']:
+                if w.get('pid'): DISC.mark_case(P[str(w['pid'])], c['tier'], o['games'], random.Random(f"mark|{c['id']}|{se['year']}"))
         se['discipline'].append(rec)
         out.append(f"{c['title']}: {', '.join(w['name'] for w in c['who'])} - {o['label']}")
     return out

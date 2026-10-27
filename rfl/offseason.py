@@ -6,6 +6,7 @@ import json, sys, os, random, collections, math
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from rfl.engine import *
 from rfl import season as SE
+from rfl import discipline as _disc
 
 HIST = f'{ROOT}/data/rfl_history_1951_2040.json'
 AW_ORDER = ['MVP', 'Offensive Player of the Year', 'Defensive Player of the Year', 'Rookie of the Year', 'Coach of the Year']
@@ -72,6 +73,7 @@ def progress(S, rnd):
         if p.get('inj'):
             p['inj']['weeks'] -= 30                                  # the offseason heals about 30 weeks
             if p['inj']['weeks'] <= 0: p.pop('inj')
+    _disc.progress_traits(S, random.Random(f"disc-progress-{yr}"))   # hidden discipline traits mature (or, for a few, slide); own stream so nothing else shifts
 
 # ------------------------------------------------------------------ retirements
 def hazard(p, yr):

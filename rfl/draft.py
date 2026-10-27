@@ -5,6 +5,7 @@ pool from the college sim's JSON (data/draft_pool_2043.json = cfb/state/draft_po
 import json, random, sys, os, collections
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from rfl.engine import *
+from rfl import discipline as _disc
 YEAR = 2043
 DRY = 'dry' in sys.argv
 S = load(STATE); L = load(f'{ROOT}/data/league.json')
@@ -33,7 +34,8 @@ def load_pool(path):
         if set(at) != set(ATTR[pos]): at = gen_attrs(pos, abil, arch, rnd) if not set(ATTR[pos]) <= set(at) else {k: at[k] for k in ATTR[pos]}
         pool.append(dict(cfb_pid=e['pid'], name=e['name'], pos=pos, cls=e['cls'], college=e['college'], conf=e['conference'], tier=e['tier'], early=bool(e['early_entrant']), sub=sub,
                          abil=abil, pot=pot, dur=float(e['dur']) if e.get('dur') is not None else round(rnd.uniform(.4, .9), 2), arch=arch, attrs=at,
-                         prod=float(e.get('prod') or 0.0), stock=float(e['college_scout_stock']), stats=e.get('final_season_stats') or {}, born=YEAR - (22 if e['cls'] == 'Sr' else 21)))
+                         prod=float(e.get('prod') or 0.0), stock=float(e['college_scout_stock']), stats=e.get('final_season_stats') or {}, born=YEAR - (22 if e['cls'] == 'Sr' else 21),
+                         dsup={k: e[k] for k in ('disc', 'cond', 'discipline', 'conduct') if e.get(k) is not None}))
     return pool
 
 def grade(gm, q, need_qb=False):
@@ -71,6 +73,7 @@ def add_rookie(q, t, draft, salary, years, kind='rookie'):
     p = dict(pid=pid, cfb_pid=q['cfb_pid'], name=q['name'], pos=q['pos'], born=q['born'], college=q['college'], conf=q['conf'], tier=q['tier'], abil=q['abil'], pot=max(q['pot'], q['abil']),
              dur=q['dur'], arch=q['arch'], attrs=q['attrs'], club=t, status='active', real=not q['sub'], draft=draft, career=[[YEAR, t, YEAR]], honors=[], rings=[],
              contract=dict(salary=int(salary), years=years, left=years, signed=YEAR, kind=kind), cls=q['cls'], udfa=kind == 'undrafted')
+    p.update(_disc.trait_for_rookie(q['name'], q['born'], YEAR, q.get('dsup')))   # hidden: from the college sim if it supplies them, otherwise generated
     S['players'][str(pid)] = p; S['clubs'][t]['roster'].append(pid); return p
 
 def run_draft(pool):

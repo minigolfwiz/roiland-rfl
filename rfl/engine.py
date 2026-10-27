@@ -7,7 +7,8 @@ Player: pid, name, pos, born, college, conf, tier, abil (1-10 current), pot (cei
 Club:   name, conf, div, roster [pid...], gm {name, eye, discipline, aggression, bias}, coach {name, skill}, picks {year: [[round, orig_club]...]}
 """
 import json, math, random, hashlib, os
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+from rfl import discipline as _disc
+ROOT =os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Current season year: data/current_year.txt (one number). State files are year-named so a new season never overwrites the old one.
 YEAR = int(open(f'{ROOT}/data/current_year.txt').read().strip()) if os.path.exists(f'{ROOT}/data/current_year.txt') else 2042
 STATE = f'{ROOT}/data/state_{YEAR}.json'; Z64 = f'{ROOT}/data/rfl_state_{YEAR}.z64'
@@ -84,7 +85,7 @@ def gm_profile(name):
     return dict(name=name, eye=round(rnd.uniform(.35, .9), 3), discipline=round(rnd.uniform(.3, .9), 3), aggression=round(rnd.uniform(.2, .8), 3), bias=rnd.sample(POS[:9], 2))
 def coach_profile(name):
     rnd = random.Random(sha(name) ^ 0xC0AC)
-    return dict(name=name, skill=round(rnd.gauss(0, .08), 3), style=rnd.choice(['balanced', 'pass-first', 'run-first', 'aggressive', 'conservative']))
+    return dict(name=name, skill=round(rnd.gauss(0, .08), 3), style=rnd.choice(['balanced', 'pass-first', 'run-first', 'aggressive', 'conservative']), disc=_disc.gen_coach_disc(name))
 
 # ---------------------------------------------------------------- state io
 def load(path): return json.load(open(path))
@@ -100,6 +101,7 @@ def gen_player(S, pos, year, abil, rnd, club=None, age_=None):
     p = dict(pid=pid, name=name, pos=pos, born=year - a, college=None, conf=None, tier=None, abil=round(abil, 2), pot=round(max(abil, abil + rnd.uniform(0, .6)), 2),
              dur=round(rnd.uniform(.4, .9), 2), arch=arch, attrs=gen_attrs(pos, abil, arch, rnd), club=club, status='active', real=False, invented=True,
              contract=dict(salary=int(.004 * cap_for(year)), years=1, left=1, signed=year, kind='street'), draft=None, career=[[year, club, year]] if club else [], honors=[])
+    p.update(_disc.gen_traits(name, year - a, year))     # hidden discipline traits (Dan, 27 Oct 2026)
     S['players'][str(pid)] = p; return p
 def depth_chart(S, t):
     """pos → players sorted best first (active, healthy)."""

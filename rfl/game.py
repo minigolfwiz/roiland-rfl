@@ -4,8 +4,13 @@ Hail Marys, kneel-downs, NFL overtime (both teams possess; regular season can ti
 Returns a result dict with score, plays (scoring + turnovers), per-player stats, injuries."""
 import random, math
 from rfl.engine import depth_chart, ovr, age, DEPTH
+from rfl import discipline as DISC
 
 Q_LEN = 900
+PENALTIES = True  # forward-only from the 2043 offseason: in-game penalties, driven by player and coach discipline (separate random stream, switch off to reproduce the old engine)
+TRAITS = True     # False = every club and player equally disciplined (used to prove the traits do not move league-wide totals)
+PEN_SCALE = 1.2   # global calibration knob (about 5.3 accepted flags and 40 penalty yards per team-game)
+PEN_ADJ = dict(cmp=.0122, run=.095)   # tiny offsetting nudge so that flags (which cancel snaps) do not lower league scoring; applied only while PENALTIES is on
 TACKLES = True  # forward-only from 2043 week 3: tackles and punts inside the 20 (separate random stream; results are unchanged)
 def mmss(t): t = max(0, int(t)); return f"{t // 60}:{t % 60:02d}"
 def clamp(x, a, b): return max(a, min(b, x))
@@ -47,6 +52,7 @@ class Game:
         self.rnd = random.Random(seed); self.S = S; self.year = year; self.playoff = playoff
         self.H = Side(S, home, year, self.rnd); self.A = Side(S, away, year, self.rnd)
         self.plays = []; self.injuries = []; self.q = 1; self.clock = Q_LEN; self.ot = False
+        self.seed = seed; self.pens = []; self.N = DISC.norms(S) if TRAITS else None
     # ---------------------------------------------------------------- helpers
     def other(self, s): return self.A if s is self.H else self.H
     def log(self, kind, s, text, pts=None):
@@ -66,6 +72,7 @@ class Game:
             # pull from the lineup
             s.__init__(self.S, s.name, self.year, self.rnd) if False else self.replace(s, p)
     def replace(self, s, p):
+        s._pc = None
         dc = depth_chart(self.S, s.name)
         g = lambda pos, i: dc[pos][i] if len(dc[pos]) > i else None
         if p['pos'] == 'QB': s.qb = g('QB', 0)
@@ -135,16 +142,19 @@ class Game:
     def hurry(self, s):
         need = self.deficit(s); return need > 0 and ((self.q == 4 and self.clock <= 240) or (self.q == 2 and self.clock <= 90)) or (self.q in (2, 4) and self.clock <= 45 and need >= 0)
     def milk(self, s): return self.q == 4 and self.deficit(s) < 0 and self.clock <= 300
-    # ---------------------------------------------------------------- a play
-    def play(self, s, d, down, dist, spot):
-        """Returns (yards, kind, ended_flag) where kind in run/pass/inc/sack/int/fum/td/scramble."""
-        goal = 100 - spot
+    def _pbias(self, s, down, dist, goal):
         pass_bias = {'balanced': .58, 'pass-first': .66, 'run-first': .5, 'aggressive': .63, 'conservative': .53}[s.style]
         if down == 3 and dist >= 5: pass_bias = .88
         elif down >= 3 and dist <= 2: pass_bias = .38
         if self.hurry(s): pass_bias = .9
         if self.milk(s): pass_bias = .22
         if goal <= 3: pass_bias = .35
+        return pass_bias
+    # ---------------------------------------------------------------- a play
+    def play(self, s, d, down, dist, spot):
+        """Returns (yards, kind, ended_flag) where kind in run/pass/inc/sack/int/fum/td/scramble."""
+        goal = 100 - spot
+        pass_bias = self._pbias(s, down, dist, goal)
         is_pass = self.rnd.random() < pass_bias
         for side_ in (s, d):
             pool = side_.ol + side_.dl + side_.lb + side_.cb + side_.s + ([side_.qb] if side_ is s and side_.qb else [])
@@ -160,7 +170,7 @@ class Game:
                 if self.rnd.random() < .09: d.st(dl, 'ff'); s.st(qb, 'fum'); self.log('turnover', s, f"{qb['name']} sacked by {dl['name'] if dl else 'the rush'} and FUMBLES, {d.name} recover"); return yds, 'fum', True
                 return yds, 'sack', False
             deep = self.rnd.random() < (.2 if goal > 25 else .08) + (.25 if down >= 3 and dist > 8 else 0) + (.4 if self.hurry(s) and self.deficit(s) > 3 else 0)
-            cmp_p = clamp(.69 + .024 * edge - (.24 if deep else 0), .25, .88)
+            cmp_p = clamp(.69 + .024 * edge - (.24 if deep else 0) + (PEN_ADJ['cmp'] if PENALTIES else 0), .25, .88)
             scramble = qb and self.rnd.random() < .04 + .025 * (s.qb_mob - 5)
             if scramble:
                 yds = int(clamp(self.rnd.gauss(2 + s.qb_mob * .9, 6), -4, goal)); s.st(qb, 'car'); s.st(qb, 'rush_yds', yds); self.burn(38 if not self.hurry(s) else 14)
@@ -187,7 +197,7 @@ class Game:
             return 0, 'inc', False
         # run
         rb = s.rb(); edge = s.run_off - d.run_def
-        mu = 3.05 + .5 * edge; yds = int(clamp(self.rnd.gauss(mu, 3.8) + (self.rnd.expovariate(.11) if self.rnd.random() < .07 else 0), -5, goal))
+        mu = 3.05 + .5 * edge + (PEN_ADJ['run'] if PENALTIES else 0); yds = int(clamp(self.rnd.gauss(mu, 3.8) + (self.rnd.expovariate(.11) if self.rnd.random() < .07 else 0), -5, goal))
         s.st(rb, 'car'); s.st(rb, 'rush_yds', yds); self.injury_check(s, rb)
         self.burn(self.rnd.randint(32, 42) if not self.hurry(s) else 15)
         if yds >= goal: s.st(rb, 'rush_td'); return yds, 'td', True
@@ -214,6 +224,11 @@ class Game:
                 if self.rnd.random() < .06 + .01 * (s.deep - 6): rcv = s.receiver(); s.st(qb, 'cmp'); s.st(qb, 'pass_yds', 100 - spot); s.st(qb, 'pass_td'); s.st(rcv, 'rec'); s.st(rcv, 'rec_yds', 100 - spot); s.st(rcv, 'rec_td'); self._td[s.name] = f"HAIL MARY! {qb['name']} to {rcv['name']} for {100 - spot} yards as time expires"; return 'td', 100
                 self.log('inc', s, f"{qb['name']}'s Hail Mary falls incomplete"); return 'clock', spot
             yds, kind, ended = self.play(s, d, down, dist, spot)
+            if kind == 'pen':      # a flag nullified the snap: move the ball, replay the down (or award a first down) and go again
+                spot = clamp(spot + yds, 1, 99)
+                if yds >= 0 and (self._pen['af'] or yds >= dist): down, dist = 1, min(10, 100 - spot)
+                else: dist = max(1, min(dist - yds, 100 - spot))
+                continue
             s.plays_run += 1
             if kind == 'td': return 'td', 100
             if kind in ('int', 'fum'):
@@ -279,7 +294,7 @@ class Game:
     def result(self):
         return dict(home=self.H.name, away=self.A.name, home_pts=self.H.score, away_pts=self.A.score, ot=self.ot,
                     winner=None if self.H.score == self.A.score else (self.H.name if self.H.score > self.A.score else self.A.name),
-                    plays=self.plays, stats={'H': self.H.stats, 'A': self.A.stats}, injuries=self.injuries, drives=getattr(self, 'drives', {'H': 0, 'A': 0}))
+                    plays=self.plays, stats={'H': self.H.stats, 'A': self.A.stats}, injuries=self.injuries, drives=getattr(self, 'drives', {'H': 0, 'A': 0}), pens=self.pens)
     def overtime(self):
         self.ot = True; self.ot_state = {}; self.q = 5; self.clock = 600 if not self.playoff else 900
         self.H.timeouts = self.A.timeouts = 2
@@ -351,6 +366,94 @@ def _drive(self, s, spot):
     self._td[s.name] = f"{s.name} touchdown"
     return _orig_drive(self, s, spot)
 Game.drive = _drive
+
+
+# ---------------------------------------------------------------- penalties (Dan, 27 Oct 2026; forward-only)
+# Flags are drawn before the snap from a separate random stream keyed on the game seed and the situation, so with PENALTIES off the old
+# engine is reproduced exactly. A flag nullifies the snap (no play stats), moves the ball, and the down is replayed or a first is awarded.
+# Rates are per scrimmage play for the side that can commit the foul; 'pass-only' fouls apply to pass plays. Who is flagged, and how often a
+# whole team is flagged, come from the hidden discipline traits (rfl/discipline.py), normalised so the league-wide rate does not move.
+#            key   label                    per-play  yds   presnap pass-only personal  position weights (share of that foul)
+OFF_PEN = [('fs', 'false start',           .0155, 5,    True,  False, False, {'OL': .78, 'TE': .10, 'WR': .09, 'RB': .03}),
+           ('oh', 'offensive holding',     .0130, 10,   False, False, False, {'OL': .82, 'TE': .10, 'RB': .05, 'WR': .03}),
+           ('om', 'illegal formation',     .0065, 5,    True,  False, False, {'OL': .35, 'TE': .25, 'WR': .30, 'QB': .10}),
+           ('opf', 'unnecessary roughness', .0020, 15,  False, False, True,  {'OL': .40, 'WR': .20, 'TE': .15, 'RB': .15, 'QB': .10})]
+DEF_PEN = [('os', 'offside',               .0098, 5,    True,  False, False, {'DL': .72, 'LB': .28}),
+           ('dh', 'defensive holding',     .0080, 5,    False, False, False, {'CB': .55, 'LB': .25, 'S': .20}),
+           ('pi', 'pass interference',     .0105, None, False, True,  False, {'CB': .60, 'S': .20, 'LB': .20}),
+           ('rp', 'roughing the passer',   .0040, 15,   False, True,  False, {'DL': .70, 'LB': .30}),
+           ('dpf', 'unnecessary roughness', .0020, 15,  False, False, True,  {'DL': .30, 'LB': .30, 'S': .25, 'CB': .15})]
+AUTO_FIRST = {'dh', 'pi', 'rp', 'dpf'}
+PERSONAL_FOULS = ('unnecessary roughness', 'roughing the passer')   # the on-field fouls the League Office draws its conduct cases from
+
+def _on_field(s, side):
+    if side == 'o': return {'OL': list(s.ol), 'TE': [s.te] if s.te else [], 'WR': list(s.wrs), 'RB': s.rbs[:1], 'QB': [s.qb] if s.qb else []}
+    return {'DL': list(s.dl), 'LB': list(s.lb), 'CB': list(s.cb), 'S': list(s.s)}
+
+def _pen_profile(g, s, side):
+    """Per foul type: (rate multiplier for the whole unit/team, [(player, weight)]). Cached on the Side until a lineup change."""
+    pc = getattr(s, '_pc', None)
+    if pc is None: pc = s._pc = {}
+    if side in pc: return pc[side]
+    N = g.N; cat = OFF_PEN if side == 'o' else DEF_PEN; unit = _on_field(s, side); out = {}
+    cm = 1.0
+    if N is not None and TRAITS: cm = math.exp(DISC.BETA_COACH * DISC.z_coach(N, s.coach)) / N['Mcoach']
+    for key, label, rate, yds, pre, pass_only, personal, posw in cat:
+        rows = []; tm_num = 0.0; tm_den = 0.0
+        for pos, w in posw.items():
+            ps = [p for p in unit.get(pos, []) if p]
+            for p in ps:
+                pw = w / len(ps)
+                z = 0.0
+                if N is not None and TRAITS: z = DISC.z_mix(N, p, .6) if personal else DISC.z_disc(N, p)
+                rows.append((p, pw * math.exp(DISC.BETA_SEL * z)))
+                tm_num += pw * math.exp(DISC.BETA_TEAM * z); tm_den += pw
+        tm = (tm_num / tm_den / (N['Mteam'] if (N is not None and TRAITS) else 1.0)) if tm_den else 1.0
+        out[key] = (rate * tm * cm * PEN_SCALE, rows)
+    pc[side] = out; return out
+
+def _pen_roll(g, s, d, down, dist, spot):
+    """Returns None (no flag) or the dict describing the accepted flag. Offence = s, defence = d."""
+    pr = random.Random(f"pen|{g.seed}|{g.q}|{g.clock}|{spot}|{down}|{dist}|{s.plays_run}|{len(g.pens)}")
+    goal = 100 - spot
+    is_pass = pr.random() < g._pbias(s, down, dist, goal); u = pr.random()
+    cand = []
+    for side, team, cat in (('o', s, OFF_PEN), ('d', d, DEF_PEN)):
+        prof = _pen_profile(g, team, side)
+        for key, label, rate, yds, pre, pass_only, personal, posw in cat:
+            r = prof[key][0]
+            if pass_only and not is_pass: continue
+            if key == 'pi' and not is_pass: continue
+            cand.append((r, key, label, yds, pre, personal, team, side, prof[key][1]))
+    tot = sum(c[0] for c in cand)
+    if u >= tot: return None
+    acc = 0.0
+    for c in cand:
+        acc += c[0]
+        if u < acc: break
+    r, key, label, yds, pre, personal, team, side, rows = c
+    if not rows: return None
+    p = pr.choices([x[0] for x in rows], [x[1] for x in rows])[0]
+    if key == 'om': label = 'delay of game' if p['pos'] == 'QB' else ('illegal formation' if p['pos'] in ('OL', 'TE') else 'illegal shift')
+    elif key == 'os' and p['pos'] == 'DL' and pr.random() < .5: label = 'neutral zone infraction'
+    elif key == 'dh' and p['pos'] == 'CB' and pr.random() < .3: label = 'illegal contact'
+    if side == 'o': y = -min(yds, max(1, spot // 2))
+    elif key == 'pi': y = max(1, min(int(max(2, min(48, pr.expovariate(1 / 13) + 2))), goal - 1))
+    else: y = max(1, min(yds, max(1, goal // 2)))
+    return dict(key=key, label=label, team=team, player=p, yds=y, af=(side == 'd' and key in AUTO_FIRST), pre=pre, burn=(pr.randint(2, 6) if pre else pr.randint(8, 22)))
+
+_play_nopen = Game.play
+def _play_pen(self, s, d, down, dist, spot):
+    if PENALTIES and self.clock > 0:
+        info = _pen_roll(self, s, d, down, dist, spot)
+        if info:
+            p = info['player']; t = info['team']; self._pen = info; t_snap = mmss(self.clock); self.burn(info['burn'])
+            t.st(p, 'pen'); t.st(p, 'pen_yds', abs(info['yds']))
+            self.pens.append(dict(side='H' if t is self.H else 'A', team=t.name, q=self.q if not self.ot else 'OT', t=t_snap, type=info['label'], pid=p['pid'], name=p['name'], pos=p['pos'], yds=abs(info['yds']),
+                                  down=down, to_go=dist, af=info['af'], against='off' if info['yds'] < 0 else 'def'))
+            return info['yds'], 'pen', False
+    return _play_nopen(self, s, d, down, dist, spot)
+Game.play = _play_pen
 
 def play_game(S, home, away, year, seed, playoff=False):
     g = Game(S, home, away, year, seed, playoff); return g.run()
