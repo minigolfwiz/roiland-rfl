@@ -1,0 +1,349 @@
+{
+ "year": 2043,
+ "week": 17,
+ "potw": {
+  "off": [
+   {
+    "pid": 9034806,
+    "name": "Minato Sorreniy",
+    "pos": "QB",
+    "club": "Wolford Dragons",
+    "line": "22/35, 300 yds, 4 TD, 27 rush yds",
+    "res": "W 41-3 vs Beetles",
+    "score": 29.8,
+    "plays": [
+     "Q1 10:55 7-yd TD pass to Yakubu Vaufort (was tied)",
+     "Q1 0:33 1-yd TD pass to Chiara Georstakis (was up 10)",
+     "Q2 5:25 9-yd TD pass to Chiara Georstakis (was up 17)",
+     "Q3 8:33 15-yd TD pass to Naulei Deynovaw (was up 24)"
+    ]
+   },
+   {
+    "pid": 9034832,
+    "name": "Jiwoo Swiftknife",
+    "pos": "RB",
+    "club": "Ediville Brass Tigers",
+    "line": "16 car, 51 yds, 4 rec, 34 yds, 3 TD",
+    "res": "W 27-20 vs Thunderbugs",
+    "score": 29.5,
+    "plays": [
+     "Q1 12:47 1-yd TD run (was tied)",
+     "Q3 3:19 2-yd TD catch from Zuzana Quisvaw (was down 13)",
+     "Q4 1:49 5-yd TD run (was tied, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9034726,
+    "name": "Tyrell Goldwood",
+    "pos": "RB",
+    "club": "Crayellan Redwoods",
+    "line": "24 car, 195 yds, 1 rec, 17 yds, 1 TD",
+    "res": "W 34-3 at Topcats",
+    "score": 27.2,
+    "plays": [
+     "Q2 3:27 4-yd TD run (was up 4)"
+    ]
+   },
+   {
+    "pid": 9037985,
+    "name": "Joachim Goldberry",
+    "pos": "WR",
+    "club": "Crayellan Redwoods",
+    "line": "11 rec, 146 yds, 2 TD",
+    "res": "W 34-3 at Topcats",
+    "score": 26.6,
+    "plays": [
+     "Q1 1:35 10-yd TD catch from Ladislav Georridis (was tied)",
+     "Q4 13:38 14-yd TD catch from Ladislav Georridis (was up 21)"
+    ]
+   },
+   {
+    "pid": 9035208,
+    "name": "Ladislav Georridis",
+    "pos": "QB",
+    "club": "Crayellan Redwoods",
+    "line": "22/32, 286 yds, 2 TD, 29 rush yds",
+    "res": "W 34-3 at Topcats",
+    "score": 26.37,
+    "plays": [
+     "Q1 1:35 10-yd TD pass to Joachim Goldberry (was tied)",
+     "Q3 5:53 4-yd TD run (was up 11)",
+     "Q4 13:38 14-yd TD pass to Joachim Goldberry (was up 21)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9101101,
+    "name": "Omar Geortellis",
+    "pos": "DL",
+    "club": "Purcell Rapids",
+    "line": "7 tackles, 4 sacks",
+    "res": "L 13-26 at Swords",
+    "score": 24.2,
+    "plays": []
+   },
+   {
+    "pid": 9034250,
+    "name": "Omprakash Kalyanmoorthy",
+    "pos": "LB",
+    "club": "Ediville Brass Tigers",
+    "line": "10 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 27-20 vs Thunderbugs",
+    "score": 22.0,
+    "plays": [
+     "Q3 2:34 sack and forced fumble (down 6), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9038496,
+    "name": "Millicent Blackdale",
+    "pos": "CB",
+    "club": "Ediville Brass Tigers",
+    "line": "10 tackles, 2 INT",
+    "res": "W 27-20 vs Thunderbugs",
+    "score": 20.0,
+    "plays": [
+     "Q1 13:27 interception returned 15 yds (tied), led to a touchdown",
+     "Q2 3:37 interception returned 19 yds (down 6)"
+    ]
+   },
+   {
+    "pid": 9101205,
+    "name": "Colette Terrelletti",
+    "pos": "DL",
+    "club": "Fiota Swords",
+    "line": "4 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 26-13 vs Rapids",
+    "score": 18.4,
+    "plays": [
+     "Q1 8:25 sack and forced fumble (up 3), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9038581,
+    "name": "Lucia Duregard",
+    "pos": "DL",
+    "club": "Wolford Dragons",
+    "line": "3 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 41-3 vs Beetles",
+    "score": 17.8,
+    "plays": [
+     "Q1 2:55 sack and forced fumble (up 10), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9035215,
+    "name": "Nikau Winsmond",
+    "pos": "LB",
+    "club": "Fiota Swords",
+    "line": "13 tackles, 1 sack, 1 forced fumble",
+    "res": "W 26-13 vs Rapids",
+    "score": 16.8,
+    "plays": [
+     "Q4 3:41 sack and forced fumble (up 13)"
+    ]
+   }
+  ],
+  "st": [
+   {
+    "pid": 9038674,
+    "name": "Shaojun Youbao",
+    "pos": "K",
+    "club": "Billiataho Greats",
+    "line": "5/5 FG, long 54, 2/2 XP",
+    "res": "W 29-10 vs Beavers",
+    "score": 21.0,
+    "plays": [
+     "Q2 13:04 25-yd GOOD",
+     "Q2 1:57 35-yd GOOD",
+     "Q3 8:52 54-yd GOOD",
+     "Q4 3:26 54-yd GOOD",
+     "Q4 0:10 25-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9034232,
+    "name": "Lenmana Sanddale",
+    "pos": "P",
+    "club": "Far Farris Raccoons",
+    "line": "8 punts, 47.1 avg, 5 inside the 20",
+    "res": "T 17-17 at Mastodons",
+    "score": 17.0,
+    "plays": []
+   },
+   {
+    "pid": 9037064,
+    "name": "Adaeze Stavroledis",
+    "pos": "P",
+    "club": "Holliday Beetles",
+    "line": "7 punts, 47.7 avg, 4 inside the 20",
+    "res": "L 3-41 at Dragons",
+    "score": 15.000000000000002,
+    "plays": []
+   },
+   {
+    "pid": 9035823,
+    "name": "Tavesei Ceiyosei",
+    "pos": "K",
+    "club": "Fiota Swords",
+    "line": "4/4 FG, long 41, 2/2 XP",
+    "res": "W 26-13 vs Rapids",
+    "score": 13.0,
+    "plays": [
+     "Q1 10:14 41-yd GOOD",
+     "Q1 0:10 24-yd GOOD",
+     "Q3 2:31 29-yd GOOD",
+     "Q4 13:37 30-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9036915,
+    "name": "Franziska Ashwell",
+    "pos": "P",
+    "club": "Ediville Brass Tigers",
+    "line": "5 punts, 46.0 avg, 5 inside the 20",
+    "res": "W 27-20 vs Thunderbugs",
+    "score": 12.5,
+    "plays": []
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "flagrant",
+   "title": "Flagrant hit, ejection",
+   "who": [
+    {
+     "name": "Lucia Duregard",
+     "pos": "DL",
+     "club": "Wolford Dragons",
+     "pid": 9038581
+    }
+   ],
+   "game": "G33",
+   "where": "Holliday Beetles at Wolford Dragons, week 17",
+   "text": "Lucia Duregard (DL) was ejected for a hit to the head of a defenseless quarterback. The opposing player left the game and returned later.",
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k75",
+     "label": "Fine $75K",
+     "games": 0,
+     "fine": 75000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "g1",
+     "label": "1 game + $25K",
+     "games": 1,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "g2",
+     "label": "2 games",
+     "games": 2,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W17-1",
+   "tier": "moderate",
+   "week": 17
+  },
+  {
+   "type": "sideline",
+   "title": "Sideline conduct",
+   "who": [
+    {
+     "name": "Umeko Goldwood",
+     "pos": "HC",
+     "club": "Billiataho Greats",
+     "pid": null,
+     "coach": true
+    }
+   ],
+   "game": "G16",
+   "where": "Sarkady Beavers at Billiataho Greats, week 17",
+   "text": "Head coach Umeko Goldwood was flagged for berating officials over a no-call and followed it with heated comments on the field after the final whistle.",
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W17-2",
+   "tier": "minor",
+   "week": 17
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.02
+  }
+ ]
+}
