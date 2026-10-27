@@ -1,0 +1,363 @@
+{
+ "year": 2043,
+ "week": 14,
+ "potw": {
+  "off": [
+   {
+    "pid": 9038231,
+    "name": "Kivaw Matafolau",
+    "pos": "QB",
+    "club": "Stamford Grays",
+    "line": "29/38, 325 yds, 3 TD, 62 rush yds",
+    "res": "W 34-17 vs Renegades",
+    "score": 34.13,
+    "plays": [
+     "Q1 5:40 3-yd TD pass to Ximena Alcantara (was tied)",
+     "Q2 13:16 1-yd TD pass to Ramatoulaye Menswale (was up 7)",
+     "Q3 8:48 7-yd TD run (was up 7)",
+     "Q4 11:37 14-yd TD pass to Ramatoulaye Menswale (was up 14)"
+    ]
+   },
+   {
+    "pid": 9033790,
+    "name": "Zainab Yiling",
+    "pos": "QB",
+    "club": "Palm Creek Leatherbacks",
+    "line": "25/34, 277 yds, 2 TD, 120 rush yds",
+    "res": "W 27-24 at Tsunami",
+    "score": 30.08,
+    "plays": [
+     "Q3 6:49 24-yd TD pass to Liqin Blackcrane (was down 4)",
+     "Q4 7:07 3-yd TD pass to Liqin Blackcrane (was down 4), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9034725,
+    "name": "Wesley Kaltbrandt",
+    "pos": "RB",
+    "club": "Canesta Dales",
+    "line": "25 car, 83 yds, 1 rec, 26 yds, 3 TD",
+    "res": "W 38-13 at Redwoods",
+    "score": 28.9,
+    "plays": [
+     "Q2 9:38 1-yd TD run (was up 4)",
+     "Q3 3:48 26-yd TD catch from Shaniqua Ackerhuber (was up 18)",
+     "Q4 8:31 2-yd TD run (was up 25)"
+    ]
+   },
+   {
+    "pid": 9034778,
+    "name": "Ramatoulaye Menswale",
+    "pos": "WR",
+    "club": "Stamford Grays",
+    "line": "11 rec, 155 yds, 2 TD",
+    "res": "W 34-17 vs Renegades",
+    "score": 27.5,
+    "plays": [
+     "Q2 13:16 1-yd TD catch from Kivaw Matafolau (was up 7)",
+     "Q4 11:37 14-yd TD catch from Kivaw Matafolau (was up 14)"
+    ]
+   },
+   {
+    "pid": 9101183,
+    "name": "Oliver Kingsborough",
+    "pos": "WR",
+    "club": "Diamond City Hope",
+    "line": "17 rec, 201 yds, 1 TD",
+    "res": "W 29-21 vs Conductors",
+    "score": 26.1,
+    "plays": [
+     "Q1 8:51 2-yd TD catch from Consuelo Hartwick (was tied)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9034503,
+    "name": "Shanice Engelstad",
+    "pos": "LB",
+    "club": "San Saltadac Sea Lions",
+    "line": "11 tackles, 2 sacks, 2 forced fumbles",
+    "res": "L 31-38 vs Phenoms",
+    "score": 28.6,
+    "plays": [
+     "Q2 1:56 sack and forced fumble (down 3), led to a touchdown",
+     "Q4 14:08 sack and forced fumble (down 10), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9037408,
+    "name": "Frode Thornbury",
+    "pos": "LB",
+    "club": "Diamond City Dynamos",
+    "line": "9 tackles, 1 sack, 1 INT, 1 forced fumble",
+    "res": "L 7-20 at Silverbacks",
+    "score": 22.4,
+    "plays": [
+     "Q3 1:45 sack and forced fumble (down 14), led to a touchdown",
+     "Q4 6:24 interception returned 11 yds (down 10)"
+    ]
+   },
+   {
+    "pid": 9037273,
+    "name": "Wapasha Vakalagi",
+    "pos": "LB",
+    "club": "Stanton City Conductors",
+    "line": "8 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 21-29 at Hope",
+    "score": 20.8,
+    "plays": [
+     "Q1 1:19 sack and forced fumble (tied), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9100819,
+    "name": "Maelys Lundvoll",
+    "pos": "LB",
+    "club": "Billiataho Greats",
+    "line": "4 tackles, 2 INT",
+    "res": "W 28-27 at Mastodons",
+    "score": 18.4,
+    "plays": [
+     "Q3 6:16 interception returned 10 yds (down 13), led to a touchdown",
+     "Q3 1:53 interception returned 14 yds (down 6), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9037957,
+    "name": "Akari Furuyama",
+    "pos": "DL",
+    "club": "New Madrid Mastiffs",
+    "line": "2 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 34-21 vs Beetles",
+    "score": 17.2,
+    "plays": [
+     "Q2 0:00 sack and forced fumble (down 4), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9037776,
+    "name": "Chafik Rocaverde",
+    "pos": "DL",
+    "club": "Tasson Thunderbugs",
+    "line": "5 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 34-17 at Rapids",
+    "score": 17.0,
+    "plays": [
+     "Q2 3:42 sack and forced fumble (up 11)"
+    ]
+   }
+  ],
+  "st": [
+   {
+    "pid": 9036005,
+    "name": "Alphonse Ramavasan",
+    "pos": "P",
+    "club": "Hughes City Asteroids",
+    "line": "8 punts, 48.1 avg, 5 inside the 20",
+    "res": "L 14-17 at Bats",
+    "score": 18.333333333333336,
+    "plays": []
+   },
+   {
+    "pid": 9101377,
+    "name": "Rhys Ga-Il",
+    "pos": "K",
+    "club": "Cordelle Raptors",
+    "line": "3/3 FG, long 61, 1/1 XP",
+    "res": "L 16-20 vs Raccoons",
+    "score": 15.75,
+    "plays": [
+     "Q1 2:14 61-yd GOOD",
+     "Q3 11:07 52-yd GOOD",
+     "Q3 1:25 20-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9037423,
+    "name": "Baltazar Kleinmann",
+    "pos": "P",
+    "club": "Diveo Demons",
+    "line": "6 punts, 50.0 avg, 3 inside the 20",
+    "res": "W 16-13 at Swords",
+    "score": 14.5,
+    "plays": []
+   },
+   {
+    "pid": 9101387,
+    "name": "Pooja El-Hakim",
+    "pos": "K",
+    "club": "Diveo Demons",
+    "line": "3/3 FG, long 32, 1/1 XP",
+    "res": "W 16-13 at Swords",
+    "score": 14.0,
+    "plays": [
+     "Q2 8:48 32-yd GOOD",
+     "Q3 5:18 30-yd GOOD",
+     "Q4 5:05 24-yd GOOD, go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9100903,
+    "name": "Reinhold Rosenholz",
+    "pos": "K",
+    "club": "Diamond City Hope",
+    "line": "3/4 FG, long 48, 2/2 XP",
+    "res": "W 29-21 vs Conductors",
+    "score": 13.5,
+    "plays": [
+     "Q2 3:59 56-yd MISSED",
+     "Q2 0:45 29-yd GOOD",
+     "Q3 10:16 28-yd GOOD",
+     "Q4 8:24 48-yd GOOD, go-ahead and decisive, never answered"
+    ]
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "helmet",
+   "title": "Helmet-to-helmet contact",
+   "who": [
+    {
+     "name": "Sareivo Treinovaw",
+     "pos": "S",
+     "club": "Holliday Beetles",
+     "pid": 9037313
+    }
+   ],
+   "game": "G20",
+   "where": "Holliday Beetles at New Madrid Mastiffs, week 14",
+   "text": "Sareivo Treinovaw (S) was penalized for helmet-to-helmet contact on a crossing route; the player on the other end stayed in the game.",
+   "prior": 0,
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W14-1",
+   "tier": "minor",
+   "week": 14
+  },
+  {
+   "type": "comments",
+   "title": "Comments about the officials",
+   "who": [
+    {
+     "name": "Rania Minamura",
+     "pos": "QB",
+     "club": "Eona Topcats",
+     "pid": 9036372
+    }
+   ],
+   "game": "G304",
+   "where": "Eona Topcats at Tengus City Terrors, week 14",
+   "text": "Rania Minamura (QB) told reporters after the game that the officiating crew 'decided the outcome', in comments that went public the same night.",
+   "prior": 0,
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W14-2",
+   "tier": "minor",
+   "week": 14
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.02
+  }
+ ]
+}
