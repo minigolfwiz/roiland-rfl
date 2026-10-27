@@ -587,3 +587,9 @@ NEXT: week 6 Gameview pick (Rogaela State at Antiragal; UNN at UN Ediville; Cent
 Top-10 wins: #1 Rogaela State 38-3 Antiragal; #6 UNN 41-24 at UN Ediville (Kingsworth 377/5/1); #9 Lornaman 28-21 at Coachville. Guests 1-4 (Bragi 35-7 Hofferteltra).
 Poll: Rogaela State 1, Tengus State 2, Ranroman State 3, Krobe State 4, Lornaman 5. Dropped out: Eona, German Shores, Phangrine State. RYSKAMP TWENTY (auto, week 6): Verville, Kyo-Hwan, Yunye, U-Cheol, Lamedeer, DiStefano, Althauer, Northman, Bonatelli, Kingsworth, Freeley, Hochholz, Westton, Darwish, Chrykidis, Filipek, Caldini, Aosaka, Lesinsky, Neitaw. Backup pre_w6. Viewer v163, Media Pool v59.
 NEXT: week 7 Gameview pick (Skylar Rose at Roosevelt; UNN at Central Stanton; Barhold at Marblehead; Tengus State at Costique). Week 8: Dan hand-builds committee ballot; parity monitor.
+
+## 2043 WEEK 7 played (Gameview: Skylar Rose at Roosevelt) -- 2026-10-27
+#11 Roosevelt 30-10 #9 Skylar Rose (Yunye 395/2/0; Verville 239/0/3 INT, Aosaka 178 rec). Ranked losers: #6 UNN won 42-33 at #20 Central Stanton (Kingsworth 478/4, Verfleur 483/5, Karakos 288 rec/3) -- no loss; losers: #9 Skylar Rose; #19 Black Forest 28-32 to Hansenne; #20 Central Stanton 33-42 to UNN; #21 Eona Navy 27-35 to West Hatesei; #22 Stanton 17-36 to Eona; #24 Skeenerland State 23-31 to Northlight; #25 Barhold 20-35 to #14 Marblehead.
+Top-10 wins: #1 Rogaela State 45-3 Krobe; #2 Tengus State 17-10 at Costique; #3 Ranroman State 24-17 at UN Ediville; #5 Lornaman 16-7 at Milharvey. Guests 0-5.
+Poll: Rogaela State 1, Tengus State 2, Ranroman State 3, Lornaman 4 (+1), Krobe State 5. Dropped out: Stanton, Skeenerland State, Barhold. Backup pre_w7. Viewer v164, Media Pool v60.
+NEXT: WEEK 8 -- Dan hand-builds the committee ballot first; Gameview candidates only after his rankings. Parity monitor after week 8. (Provisional media-poll candidates were NOT shown.)
