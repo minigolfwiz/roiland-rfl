@@ -1,0 +1,351 @@
+{
+ "year": 2043,
+ "week": 20,
+ "potw": {
+  "off": [
+   {
+    "pid": 9035404,
+    "name": "Manish Anysei",
+    "pos": "QB",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "24/36, 185 yds, 4 TD, 1 INT, 78 rush yds",
+    "res": "W 40-27 at Rapids",
+    "score": 29.1,
+    "plays": [
+     "Q1 13:18 13-yd TD pass to Sixten Ventemonte (was tied)",
+     "Q1 6:03 3-yd TD pass to Dulce El-Najjar (was tied)",
+     "Q2 9:33 7-yd TD pass to Soledad Ventoletti (was up 4)",
+     "Q3 9:26 14-yd TD run (was up 13)",
+     "Q3 8:39 5-yd TD pass to Dulce El-Najjar (was up 20)",
+     "Q4 7:38 interception thrown (up 27), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9037885,
+    "name": "Waimarie Sharpturtle",
+    "pos": "QB",
+    "club": "Tasson Thunderbugs",
+    "line": "27/37, 326 yds, 3 TD, 56 rush yds",
+    "res": "W 31-6 vs Beetles",
+    "score": 28.77,
+    "plays": [
+     "Q1 1:55 9-yd TD pass to Kojo Lomiani (was down 3)",
+     "Q2 3:00 7-yd TD pass to Heidi Skogqvist (was up 4)",
+     "Q4 9:26 11-yd TD pass to Kojo Lomiani (was up 11)"
+    ]
+   },
+   {
+    "pid": 9034858,
+    "name": "Kojo Lomiani",
+    "pos": "WR",
+    "club": "Tasson Thunderbugs",
+    "line": "15 rec, 165 yds, 2 TD",
+    "res": "W 31-6 vs Beetles",
+    "score": 28.5,
+    "plays": [
+     "Q1 1:55 9-yd TD catch from Waimarie Sharpturtle (was down 3)",
+     "Q4 9:26 11-yd TD catch from Waimarie Sharpturtle (was up 11)"
+    ]
+   },
+   {
+    "pid": 9035218,
+    "name": "Nayeli Brokenrope",
+    "pos": "WR",
+    "club": "Stanton City Conductors",
+    "line": "14 rec, 206 yds, 1 TD",
+    "res": "L 17-20 vs Lions",
+    "score": 27.35,
+    "plays": [
+     "Q4 0:10 12-yd TD catch from Ruzena Myeong-Mok (was down 10), cut the deficit late"
+    ]
+   },
+   {
+    "pid": 9037781,
+    "name": "Bronislaw Svetentsev",
+    "pos": "WR",
+    "club": "Fiota Bay T-Rexes",
+    "line": "8 rec, 106 yds, 2 TD",
+    "res": "W 31-27 at Tsunami",
+    "score": 25.6,
+    "plays": [
+     "Q2 11:14 11-yd TD catch from Ramatoulaye Clayson (was down 7)",
+     "Q4 0:27 17-yd TD catch from Ramatoulaye Clayson (was down 3, late), go-ahead and decisive, never answered"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9034824,
+    "name": "Chafik Georkos",
+    "pos": "LB",
+    "club": "Diamond City Dynamos",
+    "line": "10 tackles, 3 sacks, 1 forced fumble",
+    "res": "L 23-28 vs Grays",
+    "score": 27.0,
+    "plays": [
+     "Q3 10:30 sack and forced fumble (down 1), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9101102,
+    "name": "Zeyu Kuroyanagi",
+    "pos": "LB",
+    "club": "Eona Topcats",
+    "line": "10 tackles, 2 sacks, 1 INT",
+    "res": "W 16-6 at Mastiffs",
+    "score": 24.0,
+    "plays": [
+     "Q4 8:33 interception returned 15 yds (up 7), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9033796,
+    "name": "Stelios Baldettoni",
+    "pos": "DL",
+    "club": "Crayellan Redwoods",
+    "line": "3 tackles, 3 sacks, 1 forced fumble",
+    "res": "W 34-12 vs Greats",
+    "score": 22.8,
+    "plays": [
+     "Q1 7:26 sack and forced fumble (up 3), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9100765,
+    "name": "Holaniy Ostreimyr",
+    "pos": "LB",
+    "club": "Rogaela Rovers",
+    "line": "3 tackles, 1 sack, 2 INT",
+    "res": "L 10-17 at Phenoms",
+    "score": 22.3,
+    "plays": [
+     "Q2 0:51 interception returned 13 yds (down 3), led to a field goal",
+     "Q4 3:36 interception (down 7, late)"
+    ]
+   },
+   {
+    "pid": 9034723,
+    "name": "Ojinjintka Tomselniy",
+    "pos": "LB",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "9 tackles, 2 INT",
+    "res": "W 40-27 at Rapids",
+    "score": 21.4,
+    "plays": [
+     "Q2 1:16 interception returned 20 yds (up 13), led to a touchdown",
+     "Q3 9:15 interception returned 20 yds (up 20), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9037841,
+    "name": "Aslaug Skognes",
+    "pos": "LB",
+    "club": "Costique Bearcats",
+    "line": "8 tackles, 3 sacks",
+    "res": "W 20-3 at Crowns",
+    "score": 19.8,
+    "plays": []
+   }
+  ],
+  "st": [
+   {
+    "pid": 9034743,
+    "name": "Nkechi Latu",
+    "pos": "K",
+    "club": "Classetto Cavemen",
+    "line": "4/4 FG, long 54, 3/3 XP",
+    "res": "W 33-30 at Rangers",
+    "score": 21.0,
+    "plays": [
+     "Q1 9:54 42-yd GOOD",
+     "Q4 9:43 46-yd GOOD",
+     "Q4 7:11 54-yd GOOD",
+     "OT 5:11 24-yd GOOD, go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9033398,
+    "name": "Spiros Yretravaw",
+    "pos": "P",
+    "club": "Diamond City Hope",
+    "line": "8 punts, 49.0 avg, 5 inside the 20",
+    "res": "L 10-17 vs Dragons",
+    "score": 19.5,
+    "plays": []
+   },
+   {
+    "pid": 9101028,
+    "name": "Kirovei Noyosei",
+    "pos": "K",
+    "club": "Canesta Dales",
+    "line": "4/4 FG, long 56, 4/4 XP",
+    "res": "W 40-27 at Leatherbacks",
+    "score": 19.5,
+    "plays": [
+     "Q1 9:39 54-yd GOOD",
+     "Q1 0:36 32-yd GOOD",
+     "Q2 6:56 38-yd GOOD",
+     "Q2 1:18 56-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9036971,
+    "name": "Clive Aalholt",
+    "pos": "P",
+    "club": "Fiota Swords",
+    "line": "8 punts, 47.8 avg, 5 inside the 20",
+    "res": "L 24-27 vs Komodos",
+    "score": 17.833333333333336,
+    "plays": []
+   },
+   {
+    "pid": 9101027,
+    "name": "Beatrice Mingxia",
+    "pos": "P",
+    "club": "Classetto Cavemen",
+    "line": "10 punts, 45.0 avg, 5 inside the 20",
+    "res": "W 33-30 at Rangers",
+    "score": 15.833333333333334,
+    "plays": []
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "late_hit",
+   "title": "Late hit",
+   "who": [
+    {
+     "name": "Esperanza Feldhardt",
+     "pos": "DL",
+     "club": "Hughes City Asteroids",
+     "pid": 9037991
+    }
+   ],
+   "game": "G45",
+   "where": "Hughes City Asteroids at Far Farris Raccoons, week 20",
+   "text": "Esperanza Feldhardt (DL) drove the quarterback into the turf well after the throw and drew an unnecessary roughness flag.",
+   "prior": 0,
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W20-1",
+   "tier": "minor",
+   "week": 20
+  },
+  {
+   "type": "sideline",
+   "title": "Sideline conduct",
+   "who": [
+    {
+     "name": "Yaritza Navaclara",
+     "pos": "HC",
+     "club": "Classetto Cavemen",
+     "pid": null,
+     "coach": true
+    }
+   ],
+   "game": "G351",
+   "where": "Classetto Cavemen at Good River Rangers, week 20",
+   "text": "Head coach Yaritza Navaclara was flagged for berating officials over a no-call and followed it with heated comments on the field after the final whistle.",
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W20-2",
+   "tier": "minor",
+   "week": 20
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.02
+  }
+ ]
+}
