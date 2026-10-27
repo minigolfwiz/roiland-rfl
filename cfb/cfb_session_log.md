@@ -717,3 +717,8 @@ Awards basis: created state/season_state.pkl.pre_s18_po_r1 as a copy of pre_s18_
 CORRECTION: the Ryskamp FOUR step (due right after the CCGs, strict subset of the ten) was missed; done now as the top four pooled by award score. Ryskamp FOUR: Kingsworth (UNN), Verville (Skylar Rose), Yunye (Roosevelt), Neitaw (Leafette). RYSKAMP WINNER: Douglas Kingsworth, UNN QB Jr (4,622 yds, 35 TD, 7 INT). Seumalo (German Shores) led the open board but was outside the pools.
 DPOY Kavya Somaprasad (Orlot Western DL Jr); finalists Fontobruno (Chapel Rock), Blancbourg (Marines), Thornley (Ek Tech). FOY Joaquin Caldini (Lornaman QB Fr); finalists Ramadeva (Vaughn Bay), Balaprasad (Fiota Bay), Ackerbauer (Dietsche). COY Orlot Western (13-0 regular season; CCG champion).
 Awards canonized via finalize_season (history.awards[2043]); champion/runner-up still to be filed when the title game runs.
+
+## S18 (2043) NATIONAL CHAMPIONSHIP PLAYED (Canesta, Kaji Daun; backups pre_s18_champ)
+(9) Costique River 47, (4) Rogaela State 43. Costique River is the 2043 national champion; history.champ[2043]=(Costique River, Rogaela State). A 9 seed won it, beating the 24-seed-era no-bye path of 3 straight; Rogaela State finished 14-3 as runner-up.
+FINAL MEDIA POLL filed (media_history[15], media_final_key=16, backup pre_s18_finalpoll; champion first on all ballots): 1 Costique River 2 Rogaela State 3 Roosevelt 4 Orlot Western 5 Lornaman 6 Krobe State 7 Ekralund State 8 Yrei Trobniy 9 Tengus State 10 UFNH. Season viewer v177 and Media Pool republished.
+NEXT: post-season parity audit (Dan queued; wk 12-14 ranked-lost-to-unranked 40% vs ~26% expected), award title sites 2052+ if due, rollover and 2044 build (teach fill_conf calendar preferences first).
