@@ -704,3 +704,7 @@ R2 (at higher seed): 22 Reid St @ 1 Krobe St; 16 Marblehead @ 2 Roosevelt; 15 Pi
 ## S18 playoff round 2 PLAYED (backups pre_s18_po2)
 Reid St 27, Krobe St 16 (22 over 1); Roosevelt 43, Marblehead 34; Lornaman 41, Pistolheart 3; Rogaela St 14, Leafette 7; Hatesei 24, Eona 21; Yrei Trobniy 37, Orlot Western 0 (unbeaten run ends at 14-1); Tasson 35, Skeenerland St 20; Costique River 56, Fiota Bay 3.
 QF (neutral): Roosevelt v Reid St; Lornaman v Costique River; Rogaela St v Tasson; Hatesei v Yrei Trobniy. Viewer rebuilt (1008 games), publish pending at time of this entry; QF preview next.
+
+## S18 playoff quarterfinals PLAYED (backups pre_s18_qf)
+Roosevelt 30, Reid St 3 (Copper Bowl); Costique River 41, Lornaman 14 (Steam Bowl); Rogaela St 24, Tasson 17 (Lumber Bowl); Yrei Trobniy 24, Hatesei 17 (Star Bowl).
+SF: (2) Roosevelt v (9) Costique River @ 501 Bowl (Stamford, Ciarralotta); (4) Rogaela St v (6) Yrei Trobniy @ Redwood Bowl (Kirkwood, Crayellan). Viewer rebuilt (1012 games). SF preview shown; awaiting go.
