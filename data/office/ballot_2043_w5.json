@@ -1,0 +1,415 @@
+{
+ "year": 2043,
+ "week": 5,
+ "potw": {
+  "off": [
+   {
+    "pid": 9034879,
+    "name": "Ruzena Myeong-Mok",
+    "pos": "QB",
+    "club": "Stanton City Conductors",
+    "line": "22/28, 291 yds, 2 TD",
+    "res": "W 27-17 at Silverbacks",
+    "score": 26.11,
+    "plays": [
+     "Q1 10:59 5-yd TD pass to Ruolan In-Jae (was tied)",
+     "Q2 13:07 9-yd TD run (was up 7)",
+     "Q3 4:49 6-yd TD pass to Sieglinde Matatonga (was up 3)"
+    ]
+   },
+   {
+    "pid": 9100751,
+    "name": "Chengfei Pyeong-Seok",
+    "pos": "QB",
+    "club": "Coachville Mastodons",
+    "line": "24/35, 283 yds, 2 TD",
+    "res": "W 24-20 vs Terrors",
+    "score": 26.04,
+    "plays": [
+     "Q1 9:21 fumble lost (tied), led to a field goal",
+     "Q2 0:20 6-yd TD pass to Okhee Myeong-Cheol (was down 10)",
+     "Q4 5:20 13-yd TD run (was down 10), cut the deficit late",
+     "Q4 0:42 10-yd TD pass to Bogdana Neraoretti (was down 3, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9037872,
+    "name": "Ximena Langfield",
+    "pos": "WR",
+    "club": "Purcell Rapids",
+    "line": "12 rec, 100 yds, 2 TD",
+    "res": "L 25-27 vs Komodos",
+    "score": 22.75,
+    "plays": [
+     "Q1 11:17 1-yd TD catch from Abdelaziz Ibekwe (was tied)",
+     "Q4 2:08 16-yd TD catch from Abdelaziz Ibekwe (was down 8, late), cut the deficit late"
+    ]
+   },
+   {
+    "pid": 9038542,
+    "name": "Haneya Vesoviy",
+    "pos": "WR",
+    "club": "Costique Bearcats",
+    "line": "11 rec, 106 yds, 2 TD",
+    "res": "W 27-21 at Thunderbugs",
+    "score": 22.6,
+    "plays": [
+     "Q3 6:20 10-yd TD catch from Osamu Santascio (was down 4)",
+     "Q4 12:38 15-yd TD catch from Osamu Santascio (was up 3)"
+    ]
+   },
+   {
+    "pid": 9101001,
+    "name": "Darnell Tijani",
+    "pos": "RB",
+    "club": "El Latigo Shredders",
+    "line": "23 car, 69 yds, 2 rec, 30 yds, 2 TD",
+    "res": "W 34-17 vs Phenoms",
+    "score": 21.9,
+    "plays": [
+     "Q1 6:36 2-yd TD run (was tied)",
+     "Q4 6:42 27-yd TD run (was up 14)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9037755,
+    "name": "Pooja Ezenti",
+    "pos": "LB",
+    "club": "Costique Bearcats",
+    "line": "5 tackles, 1 sack, 2 INT",
+    "res": "W 27-21 at Thunderbugs",
+    "score": 22.0,
+    "plays": [
+     "Q4 12:27 interception (up 10), led to a field goal",
+     "Q4 7:17 interception (up 13)"
+    ]
+   },
+   {
+    "pid": 9037822,
+    "name": "Enlai Nagahata",
+    "pos": "LB",
+    "club": "Palm Creek Leatherbacks",
+    "line": "12 tackles, 1 sack, 1 INT",
+    "res": "L 20-21 at Hammerheads",
+    "score": 20.2,
+    "plays": [
+     "Q1 5:50 interception returned 12 yds (up 3), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9100909,
+    "name": "Itzel Bellettoni",
+    "pos": "LB",
+    "club": "Port Logan Commodores",
+    "line": "7 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 17-14 at Tsunami",
+    "score": 20.2,
+    "plays": [
+     "Q4 9:14 sack and forced fumble (down 4), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9100913,
+    "name": "Naulei Quisveiro",
+    "pos": "S",
+    "club": "Underwood Bats",
+    "line": "9 tackles, 2 INT",
+    "res": "W 20-7 at Bees",
+    "score": 19.4,
+    "plays": [
+     "Q2 1:12 interception (up 10)",
+     "Q4 8:00 interception returned 28 yds (up 6), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9035825,
+    "name": "Yansa Thunderstar",
+    "pos": "DL",
+    "club": "Lornaman Renegades",
+    "line": "5 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 23-13 at Raccoons",
+    "score": 19.0,
+    "plays": [
+     "Q1 0:13 sack and forced fumble (up 3), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9036251,
+    "name": "Waltraud Berghauer",
+    "pos": "DL",
+    "club": "El Latigo Shredders",
+    "line": "4 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 34-17 vs Phenoms",
+    "score": 18.4,
+    "plays": [
+     "Q2 8:35 sack and forced fumble (up 7), led to a touchdown"
+    ]
+   }
+  ],
+  "st": [
+   {
+    "pid": 9032535,
+    "name": "Ragnhild Haridhara",
+    "pos": "K",
+    "club": "Eona Topcats",
+    "line": "3/3 FG, long 58, 4/4 XP",
+    "res": "W 37-7 vs Hope",
+    "score": 19.25,
+    "plays": [
+     "Q2 13:58 58-yd GOOD",
+     "Q4 6:34 54-yd GOOD",
+     "Q4 0:29 53-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101380,
+    "name": "Babatunde Herrvieja",
+    "pos": "P",
+    "club": "Bruca Beach Hammerheads",
+    "line": "6 punts, 49.7 avg, 6 inside the 20",
+    "res": "W 21-20 vs Leatherbacks",
+    "score": 18.666666666666664,
+    "plays": []
+   },
+   {
+    "pid": 9036295,
+    "name": "Indira Subrakanth",
+    "pos": "P",
+    "club": "Wolford Dragons",
+    "line": "8 punts, 47.1 avg, 6 inside the 20",
+    "res": "W 16-13 vs Mastiffs",
+    "score": 18.5,
+    "plays": []
+   },
+   {
+    "pid": 9101402,
+    "name": "Lashawn Hazelford",
+    "pos": "P",
+    "club": "Crayellan Redwoods",
+    "line": "7 punts, 47.0 avg, 6 inside the 20",
+    "res": "W 17-10 at Dynamos",
+    "score": 17.166666666666664,
+    "plays": []
+   },
+   {
+    "pid": 9033398,
+    "name": "Spiros Yretravaw",
+    "pos": "P",
+    "club": "Diamond City Hope",
+    "line": "7 punts, 48.0 avg, 4 inside the 20",
+    "res": "L 7-37 at Topcats",
+    "score": 15.333333333333334,
+    "plays": []
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "equip",
+   "title": "Equipment violation",
+   "who": [
+    {
+     "name": "Areum Vesthaug",
+     "pos": "QB",
+     "club": "Good River Rangers",
+     "pid": 9036981
+    }
+   ],
+   "game": "G184",
+   "where": "Good River Rangers at Stamford Grays, week 5",
+   "text": "Areum Vesthaug (QB) wore non-approved gear on the field after being warned in the pregame check.",
+   "prior": 0,
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W5-1",
+   "tier": "minor",
+   "week": 5
+  },
+  {
+   "type": "comments",
+   "title": "Comments about the officials",
+   "who": [
+    {
+     "name": "Semisi Stonerain",
+     "pos": "WR",
+     "club": "Billiataho Greats",
+     "pid": 9100979
+    }
+   ],
+   "game": "G3",
+   "where": "Billiataho Greats at Sarkady Beavers, week 5",
+   "text": "Semisi Stonerain (WR) told reporters after the game that the officiating crew 'decided the outcome', in comments that went public the same night.",
+   "prior": 0,
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W5-2",
+   "tier": "minor",
+   "week": 5
+  },
+  {
+   "type": "late_hit",
+   "title": "Late hit",
+   "who": [
+    {
+     "name": "Naulei Quisveiro",
+     "pos": "S",
+     "club": "Underwood Bats",
+     "pid": 9100913
+    }
+   ],
+   "game": "G179",
+   "where": "Underwood Bats at North Hatesei Bees, week 5",
+   "text": "Naulei Quisveiro (S) drove the quarterback into the turf well after the throw and drew an unnecessary roughness flag.",
+   "prior": 0,
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W5-3",
+   "tier": "minor",
+   "week": 5
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.02
+  }
+ ]
+}
