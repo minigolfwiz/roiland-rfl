@@ -1,0 +1,239 @@
+{
+ "year": 2043,
+ "week": 13,
+ "potw": {
+  "off": [
+   {
+    "pid": 9033790,
+    "name": "Zainab Yiling",
+    "pos": "QB",
+    "club": "Palm Creek Leatherbacks",
+    "line": "26/35, 324 yds, 4 TD, 101 rush yds",
+    "res": "W 48-21 vs Hammerheads",
+    "score": 35.69,
+    "plays": [
+     "Q1 4:52 2-yd TD pass to Lucia Pellatelli (was up 3)",
+     "Q1 2:45 2-yd TD pass to Liqin Blackcrane (was up 10)",
+     "Q3 7:22 9-yd TD pass to Fumiko Midzato (was up 24)",
+     "Q4 5:33 12-yd TD pass to Lucia Pellatelli (was up 27)"
+    ]
+   },
+   {
+    "pid": 9037899,
+    "name": "Chayton Faletele",
+    "pos": "RB",
+    "club": "Billiataho Greats",
+    "line": "23 car, 90 yds, 4 rec, 51 yds, 3 TD",
+    "res": "W 27-9 vs Rovers",
+    "score": 32.1,
+    "plays": [
+     "Q2 10:19 6-yd TD run (was down 6)",
+     "Q2 0:27 5-yd TD run (was up 1)",
+     "Q4 12:07 5-yd TD run (was up 8)"
+    ]
+   },
+   {
+    "pid": 9034735,
+    "name": "Zuzana Quisvaw",
+    "pos": "QB",
+    "club": "Ediville Brass Tigers",
+    "line": "28/38, 298 yds, 4 TD, 42 rush yds",
+    "res": "W 38-17 vs Mastiffs",
+    "score": 30.72,
+    "plays": [
+     "Q1 9:39 6-yd TD pass to Jiwoo Swiftknife (was tied)",
+     "Q2 13:26 15-yd TD pass to Honoka Shimatsu (was up 7)",
+     "Q2 5:21 4-yd TD pass to Korresaw Han-Seok (was up 14)",
+     "Q4 14:30 32-yd TD pass to Rasmus Storfeldt (was up 14)"
+    ]
+   },
+   {
+    "pid": 9100748,
+    "name": "Itsuki Nagamaki",
+    "pos": "WR",
+    "club": "Costique Bearcats",
+    "line": "9 rec, 181 yds, 2 TD",
+    "res": "W 41-24 at Beetles",
+    "score": 30.1,
+    "plays": [
+     "Q1 10:27 15-yd TD catch from Osamu Santascio (was tied)",
+     "Q3 0:38 8-yd TD catch from Osamu Santascio (was up 17)"
+    ]
+   },
+   {
+    "pid": 9101126,
+    "name": "Lucia Pellatelli",
+    "pos": "RB",
+    "club": "Palm Creek Leatherbacks",
+    "line": "18 car, 67 yds, 4 rec, 90 yds, 3 TD",
+    "res": "W 48-21 vs Hammerheads",
+    "score": 29.2,
+    "plays": [
+     "Q1 4:52 2-yd TD catch from Zainab Yiling (was up 3)",
+     "Q2 7:05 12-yd TD run (was up 17)",
+     "Q3 4:34 fumble lost (up 31), led to a touchdown",
+     "Q4 5:33 12-yd TD catch from Zainab Yiling (was up 27)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9101312,
+    "name": "Tupou Runningbird",
+    "pos": "LB",
+    "club": "North Hatesei Bees",
+    "line": "9 tackles, 2 sacks, 2 INT",
+    "res": "W 26-18 at Topcats",
+    "score": 31.4,
+    "plays": [
+     "Q1 5:23 interception returned 10 yds (tied), led to a touchdown",
+     "Q4 4:02 interception (up 9), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9101179,
+    "name": "Daichi Hu-Cheol",
+    "pos": "CB",
+    "club": "Far Farris Raccoons",
+    "line": "9 tackles, 2 INT",
+    "res": "L 20-26 at Crowns",
+    "score": 21.4,
+    "plays": [
+     "Q2 9:37 interception returned 25 yds (down 3), led to a touchdown",
+     "Q3 6:40 interception (tied), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9037441,
+    "name": "Mato Highhorn",
+    "pos": "LB",
+    "club": "Purcell Rapids",
+    "line": "8 tackles, 2 INT",
+    "res": "W 38-24 at Phenoms",
+    "score": 20.8,
+    "plays": [
+     "Q2 9:30 interception returned 9 yds (up 4), led to a touchdown",
+     "Q2 7:13 interception returned 18 yds (up 11), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9035987,
+    "name": "Rhys Longville",
+    "pos": "DL",
+    "club": "South Burke Tsunami",
+    "line": "5 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 13-16 at Silverbacks",
+    "score": 18.5,
+    "plays": [
+     "Q4 0:00 sack and forced fumble (tied, late)"
+    ]
+   },
+   {
+    "pid": 9100849,
+    "name": "Yerin Masukami",
+    "pos": "LB",
+    "club": "Classetto Cavemen",
+    "line": "6 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 16-17 at Demons",
+    "score": 17.6,
+    "plays": [
+     "Q2 7:47 sack and forced fumble (up 6)"
+    ]
+   },
+   {
+    "pid": 9100761,
+    "name": "Annika Schneehagen",
+    "pos": "DL",
+    "club": "El Latigo Shredders",
+    "line": "4 tackles, 3 sacks",
+    "res": "W 13-9 at Renegades",
+    "score": 17.4,
+    "plays": []
+   }
+  ],
+  "st": [
+   {
+    "pid": 9037880,
+    "name": "Louniya Ultreimyr",
+    "pos": "P",
+    "club": "Eona Topcats",
+    "line": "6 punts, 50.0 avg, 4 inside the 20",
+    "res": "L 18-26 vs Bees",
+    "score": 16.0,
+    "plays": []
+   },
+   {
+    "pid": 9101382,
+    "name": "Ziad Panastakis",
+    "pos": "K",
+    "club": "Costique Bearcats",
+    "line": "2/2 FG, long 60, 5/5 XP",
+    "res": "W 41-24 at Beetles",
+    "score": 15.0,
+    "plays": [
+     "Q2 12:24 54-yd GOOD",
+     "Q3 11:57 60-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101026,
+    "name": "Wei Littlesky",
+    "pos": "K",
+    "club": "Sarkady Beavers",
+    "line": "4/5 FG, long 59, 1/1 XP",
+    "res": "W 19-17 vs Terrors",
+    "score": 14.5,
+    "plays": [
+     "Q1 4:46 43-yd GOOD",
+     "Q2 12:39 59-yd GOOD",
+     "Q2 1:37 45-yd GOOD",
+     "Q3 11:02 37-yd GOOD",
+     "Q4 10:00 52-yd MISSED"
+    ]
+   },
+   {
+    "pid": 9036295,
+    "name": "Indira Subrakanth",
+    "pos": "P",
+    "club": "Wolford Dragons",
+    "line": "5 punts, 48.2 avg, 5 inside the 20",
+    "res": "W 27-13 vs T-Rexes",
+    "score": 14.333333333333336,
+    "plays": []
+   },
+   {
+    "pid": 9033312,
+    "name": "Hernan Sarvapatham",
+    "pos": "P",
+    "club": "Lornaman Renegades",
+    "line": "7 punts, 45.6 avg, 4 inside the 20",
+    "res": "L 9-13 vs Shredders",
+    "score": 12.499999999999996,
+    "plays": []
+   }
+  ]
+ },
+ "cases": [],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.02
+  }
+ ]
+}
