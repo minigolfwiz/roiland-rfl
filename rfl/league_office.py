@@ -178,6 +178,38 @@ def defender_plays(g, side, p, club):
         out.append(f"{_clock_txt(e)} {kind} ({_situation(m, e)}){led}")
     return out
 
+
+def offense_plays(g, side, p, club):
+    """Touchdowns this player scored or threw, plus costly turnovers, each with the clock, the score situation and what it meant."""
+    pl = g['plays']; home = (side == 'H'); nm = p['name']; won = g['winner'] == club; out = []; bonus = 0
+    for i, e in enumerate(pl):
+        if e['team'] != club or nm not in e['text']: continue
+        if e['kind'] == 'td':
+            m = re.match(r'(.+?) (\d+)\s?yd TD (?:pass to (.+)|run)', e['text'])
+            if m and m.group(3): lab = f"{m.group(2)}-yd TD pass to {m.group(3)}" if m.group(1) == nm else f"{m.group(2)}-yd TD catch from {m.group(1)}"
+            elif m: lab = f"{m.group(2)}-yd TD run"
+            else: lab = 'touchdown'
+            after = _margin(e['score'], home); before = after - 6; tag = ''
+            late = e['q'] == 'OT' or (e['q'] == 4 and int(e['t'].split(':')[0]) < 8)
+            later_opp = any(f['kind'] in ('td', 'fg') and f['team'] != club for f in pl[i + 1:])
+            if (e['q'] == 4 or e['q'] == 'OT') and before <= 0 < after:
+                tag = ', go-ahead' + (' and decisive, never answered' if won and not later_opp else ', later answered'); bonus += 3 if (won and not later_opp) else 1.5
+            elif (e['q'] == 4 or e['q'] == 'OT') and after == 0: tag = ', tied the game'; bonus += 1
+            elif late and before < 0 and after > -9: tag = ', cut the deficit late'; bonus += .75
+            elif won and not later_opp and e['q'] == 4 and 0 < after <= 8: tag = ', put the game away'; bonus += 1
+            out.append(f"{_clock_txt(e)} {lab} (was {_situation(before, e)}){tag}")
+        elif e['kind'] == 'turnover' and (f"{nm} INTERCEPTED" in e['text'] or f"{nm} FUMBLES" in e['text'] or f"{nm} sacked" in e['text'] and 'FUMBLES' in e['text']):
+            m = _margin(e['score'], home); kind = 'interception thrown' if 'INTERCEPTED' in e['text'] else 'fumble lost'
+            led = ''
+            for f in pl[i + 1:]:
+                if f['kind'] in ('td', 'fg', 'fgmiss', 'turnover'):
+                    if f['kind'] in ('td', 'fg') and f['team'] != club: led = ', led to a ' + ('touchdown' if f['kind'] == 'td' else 'field goal')
+                    break
+            late = e['q'] == 'OT' or (e['q'] == 4 and int(e['t'].split(':')[0]) < 6)
+            if led or (late and abs(m) <= 8): bonus -= 1.5
+            out.append(f"{_clock_txt(e)} {kind} ({_situation(m, e)}){led}")
+    return out, bonus
+
 def kicker_plays(g, side, club, k):
     """Every field-goal attempt with distance, result, clock and what it meant for the game."""
     pl = g['plays']; home = (side == 'H'); out = []; made = []; miss = []
@@ -216,7 +248,9 @@ def potw(S, week, res):
                     if st.get('rec', 0): line.append(f"{st['rec']} rec, {st.get('rec_yds', 0)} yds")
                     if st.get('rush_td', 0) + st.get('rec_td', 0): line.append(f"{st.get('rush_td', 0) + st.get('rec_td', 0)} TD")
                     if p['pos'] == 'QB': sc = 0
-                if sc > 0: offs.append(dict(pid=p['pid'], name=p['name'], pos=p['pos'], club=team, line=', '.join(line), res=res_txt, score=round(sc, 2), plays=[]))
+                if sc > 0:
+                    pv, bn = offense_plays(g, side, p, team); sc += bn
+                    offs.append(dict(pid=p['pid'], name=p['name'], pos=p['pos'], club=team, line=', '.join(line), res=res_txt, score=round(sc, 2), plays=pv))
                 if p['pos'] in ('DL', 'LB', 'CB', 'S') and (st.get('sacks', 0) or st.get('int_made', 0) or st.get('ff', 0) or st.get('tkl', 0) >= 7):
                     pv = defender_plays(g, side, p, team)
                     sc = st.get('tkl', 0) * .6 + st.get('sacks', 0) * 5 + st.get('int_made', 0) * 6 + st.get('ff', 0) * 4 + sum(2 for x in pv if 'led to' in x) + sum(1.5 for x in pv if 'late' in x)

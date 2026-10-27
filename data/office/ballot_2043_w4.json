@@ -1,0 +1,299 @@
+{
+ "year": 2043,
+ "week": 4,
+ "potw": {
+  "off": [
+   {
+    "pid": 9035279,
+    "name": "Barnaby Snowbird",
+    "pos": "QB",
+    "club": "San Saltadac Sea Lions",
+    "line": "20/31, 349 yds, 5 TD, 1 INT",
+    "res": "W 45-28 at Bats",
+    "score": 31.06,
+    "plays": [
+     "Q1 11:54 interception thrown (tied), led to a touchdown",
+     "Q1 10:17 50-yd TD pass to Leonel Ackerstein (was down 7)",
+     "Q1 3:59 39-yd TD pass to Leonel Ackerstein (was tied)",
+     "Q2 14:03 12-yd TD pass to Ngozi Vanmaw (was up 7)",
+     "Q2 2:00 5-yd TD pass to Mei Zelenimir (was up 7)",
+     "Q4 1:15 4-yd TD pass to Dev Kamaprasad (was up 17)"
+    ]
+   },
+   {
+    "pid": 9037346,
+    "name": "Zhenzhen Nakano",
+    "pos": "RB",
+    "club": "Rogaela Rovers",
+    "line": "26 car, 88 yds, 1 rec, 5 yds, 3 TD",
+    "res": "W 31-10 at Dales",
+    "score": 30.3,
+    "plays": [
+     "Q4 3:40 1-yd TD run (was tied, late), go-ahead and decisive, never answered",
+     "Q4 1:51 17-yd TD run (was up 7, late)",
+     "Q4 0:00 3-yd TD run (was up 14)"
+    ]
+   },
+   {
+    "pid": 9036775,
+    "name": "Kirovei Fuentehermosa",
+    "pos": "WR",
+    "club": "Port Logan Commodores",
+    "line": "16 rec, 237 yds, 1 TD",
+    "res": "W 40-20 at Renegades",
+    "score": 29.7,
+    "plays": [
+     "Q3 9:01 7-yd TD catch from Alphonse Neraini (was up 7)"
+    ]
+   },
+   {
+    "pid": 9035709,
+    "name": "Alphonse Neraini",
+    "pos": "QB",
+    "club": "Port Logan Commodores",
+    "line": "36/50, 492 yds, 3 TD",
+    "res": "W 40-20 at Renegades",
+    "score": 28.18,
+    "plays": [
+     "Q2 13:07 8-yd TD pass to Vika Fuamoe (was down 7)",
+     "Q2 4:05 fumble lost (up 7), led to a touchdown",
+     "Q2 0:00 15-yd TD pass to Vika Fuamoe (was tied)",
+     "Q3 9:01 7-yd TD pass to Kirovei Fuentehermosa (was up 7)"
+    ]
+   },
+   {
+    "pid": 9041122,
+    "name": "Vika Fuamoe",
+    "pos": "WR",
+    "club": "Port Logan Commodores",
+    "line": "10 rec, 140 yds, 2 TD",
+    "res": "W 40-20 at Renegades",
+    "score": 26.0,
+    "plays": [
+     "Q2 13:07 8-yd TD catch from Alphonse Neraini (was down 7)",
+     "Q2 0:00 15-yd TD catch from Alphonse Neraini (was tied)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9035801,
+    "name": "Bogdan Penaverde",
+    "pos": "LB",
+    "club": "Rogaela Rovers",
+    "line": "8 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 31-10 at Dales",
+    "score": 20.8,
+    "plays": [
+     "Q4 13:46 sack and forced fumble (down 3), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9032944,
+    "name": "Litowa Kofbayo",
+    "pos": "DL",
+    "club": "Canesta Dales",
+    "line": "8 tackles, 3 sacks",
+    "res": "L 10-31 vs Rovers",
+    "score": 19.8,
+    "plays": []
+   },
+   {
+    "pid": 9034770,
+    "name": "Ataahua Fiororetti",
+    "pos": "DL",
+    "club": "Fiota Bay T-Rexes",
+    "line": "6 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 21-14 at Leatherbacks",
+    "score": 19.6,
+    "plays": [
+     "Q3 1:35 sack and forced fumble (tied), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9100909,
+    "name": "Itzel Bellettoni",
+    "pos": "LB",
+    "club": "Port Logan Commodores",
+    "line": "5 tackles, 3 sacks",
+    "res": "W 40-20 at Renegades",
+    "score": 18.0,
+    "plays": []
+   },
+   {
+    "pid": 9033824,
+    "name": "Chiyo Ackerbauer",
+    "pos": "DL",
+    "club": "Holliday Beetles",
+    "line": "3 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 26-3 vs Swords",
+    "score": 17.8,
+    "plays": [
+     "Q2 7:49 sack and forced fumble (up 3), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9035733,
+    "name": "Ousmane Durdale",
+    "pos": "LB",
+    "club": "Canesta Dales",
+    "line": "3 tackles, 1 sack, 1 INT, 1 forced fumble",
+    "res": "L 10-31 vs Rovers",
+    "score": 16.8,
+    "plays": [
+     "Q1 11:00 interception (tied)",
+     "Q1 3:24 sack and forced fumble (tied)"
+    ]
+   }
+  ],
+  "st": [
+   {
+    "pid": 9101385,
+    "name": "Mio Wakada",
+    "pos": "K",
+    "club": "Holliday Beetles",
+    "line": "4/4 FG, long 58, 2/2 XP",
+    "res": "W 26-3 vs Swords",
+    "score": 20.5,
+    "plays": [
+     "Q1 5:20 27-yd GOOD",
+     "Q2 9:48 56-yd GOOD",
+     "Q3 5:51 48-yd GOOD",
+     "Q3 1:18 58-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9100962,
+    "name": "Lionel Clayshaw",
+    "pos": "P",
+    "club": "New Madrid Mastiffs",
+    "line": "6 punts, 50.2 avg, 4 inside the 20",
+    "res": "W 41-24 at Conductors",
+    "score": 16.166666666666664,
+    "plays": []
+   },
+   {
+    "pid": 9101094,
+    "name": "Anders Nightingale",
+    "pos": "K",
+    "club": "Coachville Mastodons",
+    "line": "4/5 FG, long 54, 1/1 XP",
+    "res": "L 19-22 at Tsunami",
+    "score": 15.0,
+    "plays": [
+     "Q1 4:44 54-yd GOOD",
+     "Q2 4:17 24-yd GOOD",
+     "Q3 4:52 52-yd GOOD",
+     "Q4 9:04 58-yd MISSED",
+     "Q4 2:26 28-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9035943,
+    "name": "Layla Anakoulis",
+    "pos": "K",
+    "club": "Ediville Brass Tigers",
+    "line": "5/6 FG, long 42, 3/3 XP",
+    "res": "W 36-23 at Topcats",
+    "score": 14.5,
+    "plays": [
+     "Q1 10:57 42-yd GOOD",
+     "Q1 3:09 28-yd GOOD",
+     "Q2 12:21 18-yd GOOD",
+     "Q2 0:27 41-yd MISSED",
+     "Q4 2:46 19-yd GOOD",
+     "Q4 0:21 33-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9037936,
+    "name": "Yansa Hazelhurst",
+    "pos": "K",
+    "club": "Crayellan Redwoods",
+    "line": "3/3 FG, long 52, 3/3 XP",
+    "res": "W 30-10 vs Dragons",
+    "score": 14.5,
+    "plays": [
+     "Q2 3:00 52-yd GOOD",
+     "Q3 11:02 51-yd GOOD",
+     "Q4 3:47 45-yd GOOD"
+    ]
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "dui",
+   "title": "Arrest, driving under the influence",
+   "who": [
+    {
+     "name": "Annika Schneehagen",
+     "pos": "DL",
+     "club": "El Latigo Shredders",
+     "pid": 9100761
+    }
+   ],
+   "where": "Off the field",
+   "text": "Annika Schneehagen (DL, Shredders) was arrested early Tuesday for driving under the influence. The club has issued a short statement and says it is cooperating with the league.",
+   "options": [
+    {
+     "key": "k100",
+     "label": "Fine $100K",
+     "games": 0,
+     "fine": 100000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "g1",
+     "label": "1 game + $100K",
+     "games": 1,
+     "fine": 100000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "g2",
+     "label": "2 games + $100K",
+     "games": 2,
+     "fine": 100000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "g4",
+     "label": "4 games",
+     "games": 4,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W4-1",
+   "tier": "serious",
+   "week": 4
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.02
+  }
+ ]
+}
