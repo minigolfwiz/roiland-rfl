@@ -569,3 +569,9 @@ Top-10 wins: #1 Ranroman State 30-14 RU Herriman; #2 Rogaela State 30-0 at Rogae
 Poll: Rogaela State 1, Eastern State 2, Ranroman State 3, Ranroman 4, Barhold 5; Eona fell 15 to 19th. Nobody dropped out. Backup state/season_state.pkl.pre_w3. Viewer v160, Media Pool v56 republished.
 BUG FIXED (gameview_detail.py, pre-fix copy .pre_sortfix): the "last three meetings" lines sorted on b['season']/b['week'], which games from the rebuilt era (8,061 of 16,886) do not carry, so they showed the OLDEST meetings (2025-2034) instead of the latest. Now sorted on the S<n>W<n> game id. Series records were never affected; weeks 1-3 candidate detail only had series of 3 or fewer games, so nothing reported earlier was wrong.
 NEXT: week 4 Gameview pick (Tengus State at Barhold; Ranroman State at Stanton; Ranroman at Ciarralotta; Skylar Rose at Natzumakis).
+
+## 2043 WEEK 4 played (Gameview: Tengus State at Barhold) -- 2026-10-27
+#11 Tengus State 42-24 #5 Barhold at Barhold (Vikstad 256/4/0, Caraascio 179 rush/2; Gyenna 192/1/2 INT). Ranked losers: #7 UFNH 23-31 to #30 Verigon (U-Cheol 326/4/2, Fairhurst 273 rec/4; UFNH 3-2); #10 Roosevelt 31-50 to Barhold Valley (Whitwood 239 rush/4); #22 Hatesei 10-27 to #19 Eona.
+Top-10 wins: #1 Rogaela State 20-6 Keytommiyr; #2 Eastern State 31-24 Leafette; #3 Ranroman State 20-11 at Stanton; #4 Ranroman 14-12 at Ciarralotta; #6 Skylar Rose 19-16 OT at Natzumakis; #8 UNN 37-21 Cordelle; #9 Central Stanton 31-14 at Coachville College. #12 Tasson 38-35 at Krobe (Hochholz 476/1/0). Guests 0-4; season guests 5-70.
+Poll: Rogaela State 1, Ranroman 2, Eastern State 3, Ranroman State 4, Tengus State 5 (+6); Barhold fell 13 to 18th, UFNH 8 to 15th. Dropped out: Hatesei. Verigon in at 21st. Backup state/season_state.pkl.pre_w4. Viewer v161, Media Pool v57.
+NEXT: week 5 Gameview pick (Krobe State at Tasson; Crayellan at Verigon; Eastern State at Coachville; Yrei Trobniy at Natzumakis State).
