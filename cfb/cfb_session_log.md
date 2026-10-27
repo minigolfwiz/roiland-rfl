@@ -618,3 +618,8 @@ Wins: #2 Ranroman State 34-10 Ciarralotta; #3 Tengus State 38-21 Southern Tengus
 Media poll (info only): Rogaela State 1, Tengus State 2, Krobe State 3, UNN 4, Ranroman State 5.
 Committee Ballot v48 built for week 10. Viewer v166, Media Pool v62. Backup pre_w9.
 NEXT: Dan's week 10 ballot; then week 10 Gameview candidates. RYSKAMP: ten due at week 10 (strict subset of the twenty).
+
+## 2043 WEEK 10 COMMITTEE BOARD INSTALLED (after week 9 results) -- state/ballot_s18_w10.json, audit CLEAN
+1 UNN, 2 Ranroman State, 3 Tengus State, 4 Krobe State, 5 Rogaela State, 6 Fiota Bay, 7 Phangrine State, 8 Lornaman, 9 Antiragal State, 10 Yrei Trobniy, 11 Ekralund State, 12 Roosevelt, 13 Leafette, 14 Tasson, 15 Costique River, 16 Ciarralotta State, 17 Keeper, 18 UFNH, 19 Marblehead, 20 German Shores, 21 Orlot Western, 22 Hatesei, 23 Far Farris, 24 South Antiragal, 25 Barhold. Dropped out: Ranroman, Skeenerland, Northlight.
+Week 10 candidates: Krobe State at Rogaela State; UNN at Ranroman State [rivalry; already visited]; Costique River at Fiota Bay; Phangrine State at Eastern State. No passed-over games listed.
+NEXT: week 10 Gameview pick. Ryskamp TEN due after week 10 (auto, subset of the 20).
