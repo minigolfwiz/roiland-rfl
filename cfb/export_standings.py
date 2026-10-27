@@ -73,7 +73,8 @@ def main(out='/home/claude/cfb2/state/standings.json'):
                'champs': sorted([m for m in ms if ti[m]], key=lambda m: -ti[m])[:4],
                'teams_ti': sum(1 for m in ms if ti[m])}
         confs.append(row)
-    out_d = {'through': last_done, 'champ': champ[last_done], 'titles': titles, 'po': po, 'years': years,
+    marks = {t: {'m': U['geo'][t].get('mascot', ''), 'c': U['team_conf'][t], 'col': list(U['team_colors'][t])} for t in U['teams']}
+    out_d = {'marks': marks, 'through': last_done, 'champ': champ[last_done], 'titles': titles, 'po': po, 'years': years,
              'confs': confs, 'po_years': '2026–%d' % last_done}
     json.dump(out_d, open(out, 'w'))
     return out_d
