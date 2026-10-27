@@ -712,3 +712,8 @@ SF: (2) Roosevelt v (9) Costique River @ 501 Bowl (Stamford, Ciarralotta); (4) R
 ## S18 playoff semifinals PLAYED (backups pre_s18_sf)
 Costique River 41, Roosevelt 38 (501 Bowl); Rogaela St 41, Yrei Trobniy 20 (Redwood Bowl). FINAL: (4) Rogaela St v (9) Costique River @ Canesta (Kaji Daun). Series Rogaela St 3-1.
 Awards basis: created state/season_state.pkl.pre_s18_po_r1 as a copy of pre_s18_po1 (snapshot taken after CCGs, before round 1) because run_champ's finalize_season looks for that name. Viewer rebuilt (1014 games). Title-game preview shown; awaiting go.
+
+## S18 (2043) AWARDS NAMED (Dan asked mid-playoff; basis reg season + CCG, snapshot pre_s18_po_r1; backup season_state.pkl.pre_s18_awards)
+CORRECTION: the Ryskamp FOUR step (due right after the CCGs, strict subset of the ten) was missed; done now as the top four pooled by award score. Ryskamp FOUR: Kingsworth (UNN), Verville (Skylar Rose), Yunye (Roosevelt), Neitaw (Leafette). RYSKAMP WINNER: Douglas Kingsworth, UNN QB Jr (4,622 yds, 35 TD, 7 INT). Seumalo (German Shores) led the open board but was outside the pools.
+DPOY Kavya Somaprasad (Orlot Western DL Jr); finalists Fontobruno (Chapel Rock), Blancbourg (Marines), Thornley (Ek Tech). FOY Joaquin Caldini (Lornaman QB Fr); finalists Ramadeva (Vaughn Bay), Balaprasad (Fiota Bay), Ackerbauer (Dietsche). COY Orlot Western (13-0 regular season; CCG champion).
+Awards canonized via finalize_season (history.awards[2043]); champion/runner-up still to be filed when the title game runs.
