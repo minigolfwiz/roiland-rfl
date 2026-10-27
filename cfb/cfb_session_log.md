@@ -611,3 +611,10 @@ NEXT: Dan's week 9 committee ballot; THEN week 9 Gameview candidates.
 1 UNN, 2 Ranroman State, 3 Tengus State, 4 Krobe State, 5 Roosevelt, 6 Rogaela State, 7 Fiota Bay, 8 Phangrine State, 9 Lornaman, 10 Marblehead, 11 Antiragal State, 12 Yrei Trobniy, 13 Ciarralotta State, 14 Ranroman, 15 Leafette, 16 Ekralund State, 17 Keeper, 18 Skeenerland, 19 Tasson, 20 Costique River, 21 German Shores, 22 Northlight, 23 UFNH, 24 Orlot Western, 25 Hatesei. Dropped out: Eona, Crayellan.
 Week 9 candidates: Roosevelt at Yrei Trobniy; Ekralund State at Keeper; Rogaela State at Verigon State; Diveo at Phangrine State (non-conf). Passed: Crayellan at Fiota Bay [rivalry]; Southern Tengus at Tengus State; Keytommiyr at Krobe State.
 NEXT: week 9 Gameview pick.
+
+## 2043 WEEK 9 played (Gameview: Ekralund State at Keeper) -- 2026-10-27
+#16 Ekralund State 38-6 #17 Keeper at Keeper (Hoshikubo 292/2/0; Freeland 271 rec/2; Seo-Kwan 4 INT). Board losses: #5 Roosevelt 27-30 OT to #12 Yrei Trobniy; #10 Marblehead 29-38 to Tengus (Kangrou 171 rush/3); #13 Ciarralotta State 31-34 to Stanton State (Manupati 433/4, Rocheville 363 rec/4; Eaddy 245 rush/3); #14 Ranroman 32-38 to Central Stanton (Verfleur 423/4, Karakos 334 rec/3); #17 Keeper; #18 Skeenerland 20-47 to Barhold; #22 Northlight 10-35 to Costique.
+Wins: #2 Ranroman State 34-10 Ciarralotta; #3 Tengus State 38-21 Southern Tengus; #4 Krobe State 34-10 Keytommiyr; #6 Rogaela State 10-3 at Verigon State; #7 Fiota Bay 20-19 Crayellan; #8 Phangrine State 28-21 Diveo; #9 Lornaman 20-7 at Eastern State. UNN idle. Guests 0-6.
+Media poll (info only): Rogaela State 1, Tengus State 2, Krobe State 3, UNN 4, Ranroman State 5.
+Committee Ballot v48 built for week 10. Viewer v166, Media Pool v62. Backup pre_w9.
+NEXT: Dan's week 10 ballot; then week 10 Gameview candidates. RYSKAMP: ten due at week 10 (strict subset of the twenty).
