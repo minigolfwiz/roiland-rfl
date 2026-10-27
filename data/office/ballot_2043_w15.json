@@ -1,0 +1,236 @@
+{
+ "year": 2043,
+ "week": 15,
+ "potw": {
+  "off": [
+   {
+    "pid": 9034394,
+    "name": "Kotone Wintermere",
+    "pos": "QB",
+    "club": "Tengus City Terrors",
+    "line": "28/39, 354 yds, 4 TD, 1 INT",
+    "res": "W 34-27 at T-Rexes",
+    "score": 29.53,
+    "plays": [
+     "Q1 2:05 18-yd TD pass to Jamal Steinwald (was down 7)",
+     "Q2 8:18 15-yd TD pass to Antoine Freemore (was down 4)",
+     "Q2 1:25 7-yd TD pass to Annika Weinheim (was up 3)",
+     "Q4 4:48 interception thrown (up 7, late), led to a touchdown",
+     "OT 5:03 7-yd TD pass to Nari Man-Kwan (was tied, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9034806,
+    "name": "Minato Sorreniy",
+    "pos": "QB",
+    "club": "Wolford Dragons",
+    "line": "24/40, 343 yds, 4 TD, 1 INT",
+    "res": "W 30-29 vs Bats",
+    "score": 28.42,
+    "plays": [
+     "Q2 10:11 12-yd TD pass to Lourdes Winterbridge (was tied)",
+     "Q3 10:14 8-yd TD pass to Lourdes Winterbridge (was down 4)",
+     "Q4 11:26 66-yd TD pass to Enlai Shaozou (was down 6), tied the game",
+     "Q4 2:51 interception thrown (up 1, late), led to a touchdown",
+     "Q4 1:45 16-yd TD pass to Enlai Shaozou (was down 6, late), tied the game"
+    ]
+   },
+   {
+    "pid": 9101153,
+    "name": "Ruolan In-Jae",
+    "pos": "WR",
+    "club": "Stanton City Conductors",
+    "line": "12 rec, 163 yds, 2 TD",
+    "res": "W 27-24 vs Grays",
+    "score": 28.3,
+    "plays": [
+     "Q1 2:21 8-yd TD catch from Ruzena Myeong-Mok (was tied)",
+     "Q3 0:56 48-yd TD catch from Ruzena Myeong-Mok (was up 1)"
+    ]
+   },
+   {
+    "pid": 9101001,
+    "name": "Darnell Tijani",
+    "pos": "RB",
+    "club": "El Latigo Shredders",
+    "line": "19 car, 80 yds, 2 rec, 16 yds, 3 TD",
+    "res": "W 44-21 at Raccoons",
+    "score": 27.6,
+    "plays": [
+     "Q3 10:30 1-yd TD run (was down 8)",
+     "Q4 7:18 10-yd TD run (was up 9)",
+     "Q4 0:43 18-yd TD run (was up 16)"
+    ]
+   },
+   {
+    "pid": 9037766,
+    "name": "Enlai Shaozou",
+    "pos": "RB",
+    "club": "Wolford Dragons",
+    "line": "18 car, 57 yds, 6 rec, 98 yds, 2 TD",
+    "res": "W 30-29 vs Bats",
+    "score": 25.0,
+    "plays": [
+     "Q3 4:08 fumble lost (up 3), led to a field goal",
+     "Q4 11:26 66-yd TD catch from Minato Sorreniy (was down 6), tied the game",
+     "Q4 1:45 16-yd TD catch from Minato Sorreniy (was down 6, late), tied the game"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9037855,
+    "name": "Selloviy Normeniy",
+    "pos": "DL",
+    "club": "Diamond City Dynamos",
+    "line": "3 tackles, 3 sacks, 1 forced fumble",
+    "res": "W 30-17 vs Commodores",
+    "score": 22.8,
+    "plays": [
+     "Q4 10:29 sack and forced fumble (up 3), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9100765,
+    "name": "Holaniy Ostreimyr",
+    "pos": "LB",
+    "club": "Rogaela Rovers",
+    "line": "7 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 26-28 vs Phenoms",
+    "score": 18.2,
+    "plays": [
+     "Q4 13:33 sack and forced fumble (down 8)"
+    ]
+   },
+   {
+    "pid": 9035262,
+    "name": "Itzel Dahlholt",
+    "pos": "LB",
+    "club": "Fiota Bay T-Rexes",
+    "line": "13 tackles, 2 sacks",
+    "res": "L 27-34 vs Terrors",
+    "score": 17.8,
+    "plays": []
+   },
+   {
+    "pid": 9034908,
+    "name": "Anei Chernovsky",
+    "pos": "LB",
+    "club": "New Madrid Mastiffs",
+    "line": "8 tackles, 1 sack, 1 INT",
+    "res": "L 23-27 at Dales",
+    "score": 17.8,
+    "plays": [
+     "Q4 12:04 interception returned 23 yds (down 4), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9034249,
+    "name": "Gwen Okobayo",
+    "pos": "DL",
+    "club": "Chapel Rock Crowns",
+    "line": "3 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 13-17 vs Tsunami",
+    "score": 17.8,
+    "plays": [
+     "Q4 11:42 sack and forced fumble (down 3), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9034250,
+    "name": "Omprakash Kalyanmoorthy",
+    "pos": "LB",
+    "club": "Ediville Brass Tigers",
+    "line": "8 tackles, 1 sack, 1 INT",
+    "res": "W 30-27 at Beetles",
+    "score": 17.3,
+    "plays": [
+     "Q4 1:04 interception (up 3, late)"
+    ]
+   }
+  ],
+  "st": [
+   {
+    "pid": 9035845,
+    "name": "Amira Al-Khalidi",
+    "pos": "P",
+    "club": "Billiataho Greats",
+    "line": "6 punts, 47.7 avg, 5 inside the 20",
+    "res": "T 10-10 at Bearcats",
+    "score": 15.166666666666664,
+    "plays": []
+   },
+   {
+    "pid": 9035231,
+    "name": "Elodie Do-Kwan",
+    "pos": "P",
+    "club": "Costique Bearcats",
+    "line": "7 punts, 46.3 avg, 5 inside the 20",
+    "res": "T 10-10 vs Greats",
+    "score": 14.833333333333332,
+    "plays": []
+   },
+   {
+    "pid": 9035890,
+    "name": "Lubna Camara",
+    "pos": "K",
+    "club": "New Madrid Mastiffs",
+    "line": "3/3 FG, long 52, 2/2 XP",
+    "res": "L 23-27 at Dales",
+    "score": 14.0,
+    "plays": [
+     "Q1 10:34 34-yd GOOD",
+     "Q2 3:23 52-yd GOOD",
+     "Q4 12:59 52-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101384,
+    "name": "Shaniqua Gueye",
+    "pos": "P",
+    "club": "Diamond City Dynamos",
+    "line": "7 punts, 45.4 avg, 5 inside the 20",
+    "res": "W 30-17 vs Commodores",
+    "score": 13.833333333333336,
+    "plays": []
+   },
+   {
+    "pid": 9100147,
+    "name": "Yusuf Mortlake",
+    "pos": "K",
+    "club": "Diamond City Dynamos",
+    "line": "3/3 FG, long 54, 3/3 XP",
+    "res": "W 30-17 vs Commodores",
+    "score": 13.0,
+    "plays": [
+     "Q1 4:06 22-yd GOOD",
+     "Q2 12:14 54-yd GOOD",
+     "Q4 1:07 26-yd GOOD"
+    ]
+   }
+  ]
+ },
+ "cases": [],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.02
+  }
+ ]
+}
