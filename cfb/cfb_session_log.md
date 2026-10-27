@@ -556,3 +556,9 @@ NEXT: week 1 Gameview pick (Hatesei at Skylar Rose; Eona at Repidome; Rogaela St
 Top-10 wins: #1 Eona 38-31 at Repidome; #4 Rogaela State 27-10 at Rogaela; #5 Barhold 38-3 Holliday; #8 Pistolheart 38-0 and #10 Central Stanton 40-0 over guests. Guests 3-31 on the week (NW Stanton, Harko, Skeenerland Parley won); season guests 3-33.
 Poll: Eona, Ranroman State, Rogaela State, Barhold, UFNH 5th (+8). Dropped out: Park Island, Kaji Daun. In: Roosevelt 23rd, Ciarralotta State 25th. Backup state/season_state.pkl.pre_w1. Viewer and Media Pool republished.
 NEXT: week 2 Gameview pick (North Hatesei at Yrei Trobniy; Black Forest at Ciarralotta State; UFNH at Ekralund State; Marblehead at Crayellan State).
+
+## 2043 WEEK 2 played (Gameview: Black Forest at Ciarralotta State) -- 2026-10-27
+#25 Ciarralotta State 27-17 #18 Black Forest (Manupati 497/3/5 INT, Rocheville 228 rec; Chrykidis 395/1/3 INT). Ranked losers: #5 UFNH 24-27 to Ekralund State (2-1); #6 Pistolheart 37-40 OT to #31 Canesta State at home (Kyo-Hwan 343 rush/3; Clairlac 484/3/4 INT); #18 Black Forest; #22 North Hatesei 3-24 at #13 Yrei Trobniy (0-2).
+Top-10 wins: #2 Ranroman State 45-31 UN Minko; #3 Rogaela State 68-7 LSFA (Althauer 362 rush/4); #7 Ranroman 51-21 Barhold Valley; #8 Eastern State 28-14 Boulder Creek; #10 Tengus State 35-30 Diamond City. Other: German Shores 41-38 OT at #26 Verigon; Kaji Kita 25-24 Diveo State. Guests 0-13; season guests 3-46.
+Poll: Ranroman State 1, Rogaela State 2, Eastern State 3, Eona 4, Barhold 5. Dropped out: North Hatesei. New: Krobe State 21st. Backup state/season_state.pkl.pre_w2. Viewer v159, Media Pool v55 republished.
+NEXT: week 3 Gameview pick (Crayellan at Tasson; Dietsche at Eona; Rogaela State at Rogaela Tech; Skylar Rose at Far Farris).
