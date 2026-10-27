@@ -668,3 +668,8 @@ Media poll (info only): Rogaela State 1, Ekralund State 2, Orlot Western 3, Teng
 Week 14 schedule verified: 76 games, all FBS vs FBS, no guest games (standing rule held).
 Committee Ballot v52 built for week 14. Viewer v170, Media Pool v66. Backup pre_w13.
 NEXT: Dan's week 14 ballot; then week 14 Gameview candidates; parity monitor after week 14; then CCG.
+
+## 2043 WEEK 14 COMMITTEE BOARD INSTALLED (after week 13 results) -- state/ballot_s18_w14.json, audit CLEAN
+1 Rogaela State, 2 Yrei Trobniy, 3 Costique River, 4 Krobe State, 5 Ekralund State, 6 Ciarralotta State, 7 Antiragal State, 8 Tengus State, 9 Lornaman, 10 Roosevelt, 11 Skeenerland State, 12 Leafette, 13 Phangrine State, 14 Marblehead, 15 UFNH, 16 Kaji Daun, 17 Orlot Western, 18 Barhold, 19 Skylar Rose, 20 Fiota Bay, 21 Hatesei, 22 Tasson, 23 South Antiragal, 24 Barhold Valley, 25 UNN. Dropped out: Southern Tengus; Barhold Valley in.
+Week 14 candidates: Ekralund State at Lornaman [rivalry; already visited Lornaman]; Fiota Bay at UFNH [rivalry]; Rogaela State at Dietsche [rivalry]; Yrei Trobniy at Good River [rivalry]. Passed: Leafette at Tasson (already visited Tasson).
+NEXT: week 14 Gameview pick; then parity monitor; CCG.
