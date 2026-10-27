@@ -1,0 +1,345 @@
+{
+ "year": 2043,
+ "week": 1,
+ "potw": {
+  "off": [
+   {
+    "pid": 9033847,
+    "name": "Norbert Tingyao",
+    "pos": "QB",
+    "club": "Chapel Rock Crowns",
+    "line": "22/37, 284 yds, 3 TD",
+    "res": "W 37-26 vs Bees",
+    "score": 29.96
+   },
+   {
+    "pid": 9031836,
+    "name": "DeAndre Tautonu",
+    "pos": "QB",
+    "club": "Classetto Cavemen",
+    "line": "24/30, 329 yds, 3 TD, 42 rush yds",
+    "res": "W 40-13 vs Thunderbugs",
+    "score": 27.96
+   },
+   {
+    "pid": 9039033,
+    "name": "Speranza Braveelk",
+    "pos": "WR",
+    "club": "Canesta Dales",
+    "line": "12 rec, 130 yds, 2 TD",
+    "res": "W 38-17 vs Shredders",
+    "score": 25.0
+   },
+   {
+    "pid": 9037883,
+    "name": "Dongwook Hyun-Won",
+    "pos": "WR",
+    "club": "Rogaela Rovers",
+    "line": "10 rec, 187 yds, 1 TD",
+    "res": "W 27-24 vs Dragons",
+    "score": 24.7
+   },
+   {
+    "pid": 9034746,
+    "name": "Taha Oakborough",
+    "pos": "WR",
+    "club": "Cordelle Raptors",
+    "line": "6 rec, 105 yds, 2 TD",
+    "res": "L 17-20 vs Phenoms",
+    "score": 22.5
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9037755,
+    "name": "Pooja Ezenti",
+    "pos": "LB",
+    "club": "Costique Bearcats",
+    "line": "2 sacks, 1 INT",
+    "res": "W 33-28 vs Renegades",
+    "score": 16
+   },
+   {
+    "pid": 9101128,
+    "name": "Auvenniy Otlemyr",
+    "pos": "DL",
+    "club": "Good River Rangers",
+    "line": "3 sacks",
+    "res": "W 24-23 vs Hammerheads",
+    "score": 15
+   },
+   {
+    "pid": 9034249,
+    "name": "Gwen Okobayo",
+    "pos": "DL",
+    "club": "Chapel Rock Crowns",
+    "line": "2 sacks, 1 forced fumble",
+    "res": "W 37-26 vs Bees",
+    "score": 14
+   },
+   {
+    "pid": 9035782,
+    "name": "Kotone Matsuda",
+    "pos": "DL",
+    "club": "Ediville Brass Tigers",
+    "line": "2 sacks, 1 forced fumble",
+    "res": "L 17-19 vs Commodores",
+    "score": 14
+   },
+   {
+    "pid": 9036236,
+    "name": "Gareth Petitchamp",
+    "pos": "DL",
+    "club": "Hughes City Asteroids",
+    "line": "2 sacks, 1 forced fumble",
+    "res": "W 17-14 vs Mastodons",
+    "score": 14
+   }
+  ],
+  "st": [
+   {
+    "pid": 9034743,
+    "name": "Nkechi Latu",
+    "pos": "K",
+    "club": "Classetto Cavemen",
+    "line": "4/4 FG, 4 XP",
+    "res": "W 40-13 vs Thunderbugs",
+    "score": 14.0
+   },
+   {
+    "pid": 9101382,
+    "name": "Ziad Panastakis",
+    "pos": "K",
+    "club": "Costique Bearcats",
+    "line": "4/5 FG, 3 XP",
+    "res": "W 33-28 vs Renegades",
+    "score": 11.5
+   },
+   {
+    "pid": 9101473,
+    "name": "Halona Eagletree",
+    "pos": "K",
+    "club": "Chapel Rock Crowns",
+    "line": "3/3 FG, 4 XP",
+    "res": "W 37-26 vs Bees",
+    "score": 11.0
+   },
+   {
+    "pid": 9036971,
+    "name": "Clive Aalholt",
+    "pos": "P",
+    "club": "Fiota Swords",
+    "line": "6 punts, 50.7 avg",
+    "res": "W 17-15 vs Terrors",
+    "score": 10.666666666666664
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "fight",
+   "title": "Fight and ejections",
+   "who": [
+    {
+     "name": "Nigel Hollybank",
+     "pos": "OL",
+     "club": "Bruca Beach Hammerheads",
+     "pid": 9036893
+    },
+    {
+     "name": "Tessavei Hartcombe",
+     "pos": "OL",
+     "club": "Good River Rangers",
+     "pid": 9033779
+    }
+   ],
+   "game": "G250",
+   "where": "Good River Rangers at Bruca Beach Hammerheads, week 1",
+   "pids": [
+    9036893,
+    9033779
+   ],
+   "text": "A scrum after a goal-line stand turned into a fight. Nigel Hollybank (Hammerheads) and Tessavei Hartcombe (Rangers) were ejected, and the benches cleared briefly. The ruling applies to both players.",
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k25",
+     "label": "Fine each $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k50",
+     "label": "Fine each $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "g1",
+     "label": "Each sits 1 game + $25K",
+     "games": 1,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W1-1",
+   "tier": "moderate",
+   "week": 1
+  },
+  {
+   "type": "flagrant",
+   "title": "Flagrant hit, ejection",
+   "who": [
+    {
+     "name": "Leonel Prabhakrishnan",
+     "pos": "LB",
+     "club": "Lornaman Renegades",
+     "pid": 9038006
+    }
+   ],
+   "game": "G293",
+   "where": "Lornaman Renegades at Costique Bearcats, week 1",
+   "text": "Leonel Prabhakrishnan (LB) was ejected for a hit to the head of a defenseless quarterback. The opposing player left the game and returned later.",
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k75",
+     "label": "Fine $75K",
+     "games": 0,
+     "fine": 75000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "g1",
+     "label": "1 game + $25K",
+     "games": 1,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "g2",
+     "label": "2 games",
+     "games": 2,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W1-2",
+   "tier": "moderate",
+   "week": 1
+  },
+  {
+   "type": "helmet",
+   "title": "Helmet-to-helmet contact",
+   "who": [
+    {
+     "name": "George Rowborough",
+     "pos": "CB",
+     "club": "Queensville Phenoms",
+     "pid": 9101390
+    }
+   ],
+   "game": "G320",
+   "where": "Queensville Phenoms at Cordelle Raptors, week 1",
+   "text": "George Rowborough (CB) was penalized for helmet-to-helmet contact on a crossing route; the player on the other end stayed in the game.",
+   "prior": 0,
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false
+    }
+   ],
+   "id": "W1-3",
+   "tier": "minor",
+   "week": 1
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.02
+  }
+ ]
+}
