@@ -1,6 +1,49 @@
 {
   "league": "RFL",
-  "pins": [],
+  "pins": [
+    {
+      "host": "Good River Rangers",
+      "id": "G183",
+      "visitor": "Lornaman Renegades",
+      "week": 3
+    },
+    {
+      "host": "Lornaman Renegades",
+      "id": "G199",
+      "visitor": "San Saltadac Sea Lions",
+      "week": 2
+    },
+    {
+      "host": "Diveo Demons",
+      "id": "G9",
+      "visitor": "Crayellan Redwoods",
+      "week": 1
+    },
+    {
+      "host": "Tasson Thunderbugs",
+      "id": "G348",
+      "visitor": "Bruca Beach Hammerheads",
+      "week": 19
+    },
+    {
+      "host": "Eona Topcats",
+      "id": "G319",
+      "visitor": "South Burke Tsunami",
+      "week": 11
+    },
+    {
+      "host": "Crayellan Redwoods",
+      "id": "G7",
+      "visitor": "Billiataho Greats",
+      "week": 20
+    },
+    {
+      "host": "Stanton City Conductors",
+      "id": "G188",
+      "visitor": "Good River Rangers",
+      "week": 19
+    }
+  ],
   "prime": [
     {
       "host": "San Saltadac Sea Lions",
@@ -162,8 +205,267 @@
       "slot": "thu",
       "visitor": "Eona Topcats",
       "week": 2
+    },
+    {
+      "host": "Ediville Brass Tigers",
+      "id": "G114",
+      "slot": "snf",
+      "visitor": "Hughes City Asteroids",
+      "week": 2
+    },
+    {
+      "host": "Good River Rangers",
+      "id": "G180",
+      "slot": "mnf",
+      "visitor": "Stamford Grays",
+      "week": 2
+    },
+    {
+      "host": "Crayellan Redwoods",
+      "id": "G82",
+      "slot": "mnf",
+      "visitor": "Wolford Dragons",
+      "week": 4
+    },
+    {
+      "host": "Crayellan Redwoods",
+      "id": "G92",
+      "slot": "snf",
+      "visitor": "Diamond City Hope",
+      "week": 19
+    },
+    {
+      "host": "Fiota Swords",
+      "id": "G68",
+      "slot": "snf",
+      "visitor": "Verigon Komodos",
+      "week": 20
+    },
+    {
+      "host": "Purcell Rapids",
+      "id": "G76",
+      "slot": "mnf",
+      "visitor": "Verigon Komodos",
+      "week": 5
+    },
+    {
+      "host": "Stamford Grays",
+      "id": "G251",
+      "slot": "mnf",
+      "visitor": "Bruca Beach Hammerheads",
+      "week": 16
+    },
+    {
+      "host": "Good River Rangers",
+      "id": "G182",
+      "slot": "mnf",
+      "visitor": "San Saltadac Sea Lions",
+      "week": 6
+    },
+    {
+      "host": "San Saltadac Sea Lions",
+      "id": "G192",
+      "slot": "snf",
+      "visitor": "Good River Rangers",
+      "week": 18
+    },
+    {
+      "host": "San Saltadac Sea Lions",
+      "id": "G276",
+      "slot": "snf",
+      "visitor": "Vaughn Bay Silverbacks",
+      "week": 3
+    },
+    {
+      "host": "Cordelle Raptors",
+      "id": "G330",
+      "slot": "mnf",
+      "visitor": "San Saltadac Sea Lions",
+      "week": 11
+    },
+    {
+      "host": "Classetto Cavemen",
+      "id": "G103",
+      "slot": "mnf",
+      "visitor": "Crayellan Redwoods",
+      "week": 15
+    },
+    {
+      "host": "Palm Creek Leatherbacks",
+      "id": "G227",
+      "slot": "snf2",
+      "visitor": "Canesta Dales",
+      "week": 20
+    },
+    {
+      "host": "Canesta Dales",
+      "id": "G236",
+      "slot": "snf",
+      "visitor": "Stamford Grays",
+      "week": 11
+    },
+    {
+      "host": "Billiataho Greats",
+      "id": "G17",
+      "slot": "snf",
+      "visitor": "Crayellan Redwoods",
+      "week": 7
+    },
+    {
+      "host": "Queensville Phenoms",
+      "id": "G228",
+      "slot": "mnf",
+      "visitor": "Palm Creek Leatherbacks",
+      "week": 10
+    },
+    {
+      "host": "Tengus City Terrors",
+      "id": "G244",
+      "slot": "snf",
+      "visitor": "Port Logan Commodores",
+      "week": 17
+    },
+    {
+      "host": "Port Logan Commodores",
+      "id": "G204",
+      "slot": "mnf",
+      "visitor": "Vaughn Bay Silverbacks",
+      "week": 12
+    },
+    {
+      "host": "Ediville Brass Tigers",
+      "id": "G29",
+      "slot": "mnf",
+      "visitor": "Holliday Beetles",
+      "week": 19
+    },
+    {
+      "host": "Canesta Dales",
+      "id": "G153",
+      "slot": "snf",
+      "visitor": "Rogaela Rovers",
+      "week": 4
+    },
+    {
+      "host": "Wolford Dragons",
+      "id": "G32",
+      "slot": "snf",
+      "visitor": "New Madrid Mastiffs",
+      "week": 5
+    },
+    {
+      "host": "Costique Bearcats",
+      "id": "G15",
+      "slot": "snf",
+      "visitor": "Billiataho Greats",
+      "week": 15
+    },
+    {
+      "host": "Hughes City Asteroids",
+      "id": "G97",
+      "slot": "snf",
+      "visitor": "Costique Bearcats",
+      "week": 6
+    },
+    {
+      "host": "Diveo Demons",
+      "id": "G10",
+      "slot": "mnf",
+      "visitor": "Costique Bearcats",
+      "week": 9
+    },
+    {
+      "host": "Underwood Bats",
+      "id": "G175",
+      "slot": "mnf",
+      "visitor": "North Hatesei Bees",
+      "week": 8
+    },
+    {
+      "host": "Vaughn Bay Silverbacks",
+      "id": "G241",
+      "slot": "mnf",
+      "visitor": "El Latigo Shredders",
+      "week": 18
+    },
+    {
+      "host": "Diamond City Dynamos",
+      "id": "G219",
+      "slot": "mnf",
+      "visitor": "South Burke Tsunami",
+      "week": 7
+    },
+    {
+      "host": "Diamond City Hope",
+      "id": "G334",
+      "slot": "snf",
+      "visitor": "Stanton City Conductors",
+      "week": 14
+    },
+    {
+      "host": "Fiota Bay T-Rexes",
+      "id": "G209",
+      "slot": "snf",
+      "visitor": "Port Logan Commodores",
+      "week": 9
+    },
+    {
+      "host": "Canesta Dales",
+      "id": "G246",
+      "slot": "mnf",
+      "visitor": "Fiota Bay T-Rexes",
+      "week": 17
+    },
+    {
+      "host": "Chapel Rock Crowns",
+      "id": "G170",
+      "slot": "snf",
+      "visitor": "Underwood Bats",
+      "week": 16
+    },
+    {
+      "host": "Chapel Rock Crowns",
+      "id": "G326",
+      "slot": "mnf",
+      "visitor": "Far Farris Raccoons",
+      "week": 13
+    },
+    {
+      "host": "Coachville Mastodons",
+      "id": "G99",
+      "slot": "mnf",
+      "visitor": "Billiataho Greats",
+      "week": 14
+    },
+    {
+      "host": "Coachville Mastodons",
+      "id": "G115",
+      "slot": "snf",
+      "visitor": "Ediville Brass Tigers",
+      "week": 10
+    },
+    {
+      "host": "Tasson Thunderbugs",
+      "id": "G75",
+      "slot": "snf",
+      "visitor": "Purcell Rapids",
+      "week": 12
+    },
+    {
+      "host": "South Burke Tsunami",
+      "id": "G295",
+      "slot": "snf",
+      "visitor": "Sarkady Beavers",
+      "week": 8
+    },
+    {
+      "host": "Diveo Demons",
+      "id": "G104",
+      "slot": "snf",
+      "visitor": "Classetto Cavemen",
+      "week": 13
     }
   ],
-  "saved": "10/26/2026, 10:33:57 PM",
+  "saved": "10/26/2026, 11:28:48 PM",
   "year": 2043
 }
