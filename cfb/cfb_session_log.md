@@ -722,3 +722,11 @@ Awards canonized via finalize_season (history.awards[2043]); champion/runner-up 
 (9) Costique River 47, (4) Rogaela State 43. Costique River is the 2043 national champion; history.champ[2043]=(Costique River, Rogaela State). A 9 seed won it, beating the 24-seed-era no-bye path of 3 straight; Rogaela State finished 14-3 as runner-up.
 FINAL MEDIA POLL filed (media_history[15], media_final_key=16, backup pre_s18_finalpoll; champion first on all ballots): 1 Costique River 2 Rogaela State 3 Roosevelt 4 Orlot Western 5 Lornaman 6 Krobe State 7 Ekralund State 8 Yrei Trobniy 9 Tengus State 10 UFNH. Season viewer v177 and Media Pool republished.
 NEXT: post-season parity audit (Dan queued; wk 12-14 ranked-lost-to-unranked 40% vs ~26% expected), award title sites 2052+ if due, rollover and 2044 build (teach fill_conf calendar preferences first).
+
+## S18 POST-SEASON PARITY AUDIT (Dan queued) -- see parity_audit_2043.md
+2043 inside the 2038-42 envelope; the 2042 worry (few 2-loss power teams) did not repeat (7/78 at <=2 L). Only flag: weeks 12-14 ranked-lost-to-unranked 40% vs ~26% expected, week-14 favourites 70% vs 80% other weeks (trend since 2040), rivalry favourites 70%. No engine change shipped.
+
+## 2043 offseason, stages 1-2 (rollover to 2044)
+- Stage 1 carousel run (carousel.py): 20 HC vacancies filled (10 fired, 1 retirement [Hansenne], 1 interim not retained [Dove Island], 8 poached HCs backfilled), 30 coordinator moves, 12 raids. Stored in s['carousel_s18']; backups *.pre_s19_carousel.
+- Stage 2 draft pool exported (export_draft_pool.py): state/draft_pool_2044.json, 3,211 declared. Slim top-700 filed to Project as claude/cfb_draft_pool_2044.json; full pool sent to Dan. Waiting on RFL's 280 picks ({"season":18,...}) -> install_rfl_draft.py --commit, then stages 3-7 (portal, recruiting, development, roster_final, rollover).
+- Parity audit 2043 written up in parity_audit_2043.md; no knobs changed. Open for Dan: week-14 soft spot.
