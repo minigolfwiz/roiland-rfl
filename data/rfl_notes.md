@@ -59,3 +59,5 @@
 - Add player discipline traits (Dan, 27 Oct 2026, week 8 desk): a hidden per-player conduct trait, invisible in narrative like other ratings. It should change how likely a player is to be drawn for League Office cases AND the rate of penalties in games. Do not build it before then; bring it up once the season is complete.
 
 - TO REMIND DAN at the end of the 2043 season: make the League Office cases more robust (Dan, 27 Oct 2026, week 18; no action needed before then).
+
+- **Awards (Dan, 27 Oct 2026): from now on present the finalists for each award and let Dan pick the winners; never name winners automatically.** The 2043 finalists are in season.awards (no winners recorded until Dan picks).
