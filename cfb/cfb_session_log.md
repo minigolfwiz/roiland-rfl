@@ -581,3 +581,9 @@ NEXT: week 5 Gameview pick (Krobe State at Tasson; Crayellan at Verigon; Eastern
 Top-10 wins: #1 Rogaela State 27-13 Will Tech; #2 Ranroman 23-13 North Hatesei; #5 Tengus State 14-0 Barhold State; #8 UNN 38-31 Kaji Daun (Kingsworth 467/3/1). Guests 0-6.
 Poll: Rogaela State 1, Ranroman 2, Tengus State 3, Ranroman State 4, Ciarralotta State 5. Dropped out: Dietsche, Pistolheart. Backup state/season_state.pkl.pre_w5. Viewer v162, Media Pool v58.
 NEXT: week 6 Gameview pick (Rogaela State at Antiragal; UNN at UN Ediville; Central Stanton at Ranroman State; Krobe State at S Antiragal State).
+
+## 2043 WEEK 6 played (Gameview: Krobe State at S Antiragal State) -- 2026-10-27
+#7 Krobe State 38-24 #31 S Antiragal State (Freeley 276/4/2; Haruyama 184 rec/1 for SAS). Ranked losers: #2 Ranroman 6-23 to #34 Pistolheart; #5 Ciarralotta State 20-26 OT to Milharvey; #8 Eastern State 20-41 to Ekralund State; #10 Yrei Trobniy 10-29 to Burrstone; #12 Central Stanton 13-38 to #4 Ranroman State; #16 Verigon 37-40 OT to Costique River; #19 Antiragal State 13-30 to #18 Tasson; #21 Skeenerland State 21-30 to #23 Barhold; #22 Eona 7-31 to North Hatesei; #25 Phangrine State 20-36 to #29 Keeper.
+Top-10 wins: #1 Rogaela State 38-3 Antiragal; #6 UNN 41-24 at UN Ediville (Kingsworth 377/5/1); #9 Lornaman 28-21 at Coachville. Guests 1-4 (Bragi 35-7 Hofferteltra).
+Poll: Rogaela State 1, Tengus State 2, Ranroman State 3, Krobe State 4, Lornaman 5. Dropped out: Eona, German Shores, Phangrine State. RYSKAMP TWENTY (auto, week 6): Verville, Kyo-Hwan, Yunye, U-Cheol, Lamedeer, DiStefano, Althauer, Northman, Bonatelli, Kingsworth, Freeley, Hochholz, Westton, Darwish, Chrykidis, Filipek, Caldini, Aosaka, Lesinsky, Neitaw. Backup pre_w6. Viewer v163, Media Pool v59.
+NEXT: week 7 Gameview pick (Skylar Rose at Roosevelt; UNN at Central Stanton; Barhold at Marblehead; Tengus State at Costique). Week 8: Dan hand-builds committee ballot; parity monitor.
