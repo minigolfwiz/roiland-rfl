@@ -550,3 +550,9 @@ Week 0 Gameview candidates: Skeenerland State at Ranroman State; Ranroman at Wil
 Guests 0-2. Poll: Eona 1, Ranroman State 2, Dietsche 3, Rogaela State 4, Barhold 5; Park Island fell 13 to 19th; nobody dropped out. Backup state/season_state.pkl.pre_w0.
 Season viewer (v157) and Media Pool (v53) republished. The 2042 viewer (the only copy of the 12 CCG + 23 playoff box scores) archived at cfb/archive/season_viewer_2042_full.html.gz before being overwritten.
 NEXT: week 1 Gameview pick (Hatesei at Skylar Rose; Eona at Repidome; Rogaela State at Rogaela; Ireland River at UFNH).
+
+## 2043 WEEK 1 played (Gameview: Hatesei at Skylar Rose) -- 2026-10-26
+#14 Skylar Rose 28-20 #15 Hatesei (Verville 301/4/3 INT; Sorlemyr 421/1/3 INT, Milovar 191 rec for Hatesei). Ranked losers: #3 Dietsche 17-30 to East Tasson (Slaviczek 358); #6 Crayellan 21-30 to Hoganelle (Kofmah 379; Omtreimyr 4 INT); #9 North Hatesei 10-28 to West Hatesei (Ashford 295/4); #19 Park Island 13-24 to Reid State (0-2); #24 Kaji Daun 13-21 OT to Far Farris (DL Lourdes Leregard out for the year).
+Top-10 wins: #1 Eona 38-31 at Repidome; #4 Rogaela State 27-10 at Rogaela; #5 Barhold 38-3 Holliday; #8 Pistolheart 38-0 and #10 Central Stanton 40-0 over guests. Guests 3-31 on the week (NW Stanton, Harko, Skeenerland Parley won); season guests 3-33.
+Poll: Eona, Ranroman State, Rogaela State, Barhold, UFNH 5th (+8). Dropped out: Park Island, Kaji Daun. In: Roosevelt 23rd, Ciarralotta State 25th. Backup state/season_state.pkl.pre_w1. Viewer and Media Pool republished.
+NEXT: week 2 Gameview pick (North Hatesei at Yrei Trobniy; Black Forest at Ciarralotta State; UFNH at Ekralund State; Marblehead at Crayellan State).
