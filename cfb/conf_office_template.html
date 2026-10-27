@@ -533,8 +533,9 @@ async function connect(){
   try { db = await window.claude?.use?.('db'); } catch(e){ db = null; }
   if (!db){ loaded = true; setSave('saving unavailable — use the hand-off box', 'bad'); render(); return; }
   try {
-    const doc = await db.doc(DOC).get();
-    if (doc && doc.data && Array.isArray(doc.data.weeks)){
+    const snap = await db.doc(DOC).get();
+    const doc = { data: (snap && typeof snap.data === 'function') ? (snap.exists === false ? null : snap.data()) : (snap && snap.data) };   // snapshot.data() is a function on current runtimes
+    if (doc.data && Array.isArray(doc.data.weeks)){
       // restored BY GAME ID onto a freshly seeded slate, so a change to the slate
       // upstream can never be overwritten by a stale saved copy of it
       const m = new Map(doc.data.weeks.map(r => [r.id, r.week]));
@@ -557,7 +558,7 @@ async function save(){
   if (!loaded || !db) return;
   try {
     let stored = null;
-    try { const d0 = await db.doc(DOC).get(); stored = d0 && d0.data && Array.isArray(d0.data.weeks) ? new Map(d0.data.weeks.map(r => [r.id, r.week])) : null; } catch(e){ stored = null; }
+    try { const d1 = await db.doc(DOC).get(); const dd = (d1 && typeof d1.data === 'function') ? (d1.exists === false ? null : d1.data()) : (d1 && d1.data); stored = dd && Array.isArray(dd.weeks) ? new Map(dd.weeks.map(r => [r.id, r.week])) : null; } catch(e){ stored = null; }
     let pulled = 0;
     if (stored){
       games.forEach(g => {
