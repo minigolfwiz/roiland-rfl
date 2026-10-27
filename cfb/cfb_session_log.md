@@ -700,3 +700,7 @@ Dan's 24-team field (state/field_s18.json) installed via install_field.py -> pla
 ## S18 playoff round 1 PLAYED (backups pre_s18_po1)
 Costique River 42, Dove Island St 14; Skeenerland St 38, Perth Island 31; Reid St 20, Ekralund St 17; Orlot Western 31, Eona Navy 0; Eona 55, German Shores 7; Leafette 35, Kaji Daun 21; Pistolheart 44, Ciarralotta St 16; Marblehead 56, Phangrine St 27.
 R2 (at higher seed): 22 Reid St @ 1 Krobe St; 16 Marblehead @ 2 Roosevelt; 15 Pistolheart @ 3 Lornaman; 14 Leafette @ 4 Rogaela St; 13 Eona @ 5 Hatesei; 12 Orlot Western @ 6 Yrei Trobniy; 10 Skeenerland St @ 7 Tasson; 9 Costique River @ 8 Fiota Bay. Season viewer v173 published. Round 2 preview next; awaiting Dan's go. (playoff_preview.py only handles r1; r2 preview needs P['r2'] pairs.)
+
+## S18 playoff round 2 PLAYED (backups pre_s18_po2)
+Reid St 27, Krobe St 16 (22 over 1); Roosevelt 43, Marblehead 34; Lornaman 41, Pistolheart 3; Rogaela St 14, Leafette 7; Hatesei 24, Eona 21; Yrei Trobniy 37, Orlot Western 0 (unbeaten run ends at 14-1); Tasson 35, Skeenerland St 20; Costique River 56, Fiota Bay 3.
+QF (neutral): Roosevelt v Reid St; Lornaman v Costique River; Rogaela St v Tasson; Hatesei v Yrei Trobniy. Viewer rebuilt (1008 games), publish pending at time of this entry; QF preview next.
