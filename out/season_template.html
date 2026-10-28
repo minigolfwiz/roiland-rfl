@@ -48,11 +48,16 @@ h2.w{font-family:var(--display);font-weight:800;font-size:26px;margin:6px 0 8px}
 @media (min-width:761px){.ov{align-items:center}.sheet{border-radius:16px;max-height:84vh}}
 .sheet h2{font-family:var(--display);font-weight:800;font-size:24px;margin:0 0 2px;line-height:1.1} .sheet .x{float:right;font:inherit;border:1px solid var(--rule);background:var(--chip);color:inherit;border-radius:999px;width:34px;height:34px;cursor:pointer;font-size:18px}
 .sheet table.st td{padding:5px 7px} .sheet table.st td:first-child{width:auto;white-space:nowrap} .sheet table.st tr.tot td{font-weight:700;border-top:2px solid var(--fg)} .sheet thead td{font-family:var(--display);letter-spacing:.06em;text-transform:uppercase;font-size:11px;color:var(--dim);border-top:0}
+
+.schsel{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:0 0 10px} .schsel select{font:inherit;font-size:16px;color:inherit;background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:8px 10px;max-width:100%}
+.schhead{display:flex;gap:10px 14px;align-items:center;flex-wrap:wrap;margin:6px 0 10px} .schhead .sm2{color:var(--dim);font-size:13px}
+table.sch{width:100%;border-collapse:collapse;font-size:14px} table.sch td{padding:7px 6px;border-top:1px solid var(--rule);vertical-align:middle} table.sch tr[data-goto]{cursor:pointer} table.sch tr[data-goto]:hover{background:var(--chip)} table.sch td.n{font-family:var(--display);font-weight:800;font-size:16px;width:34px;color:var(--dim)} table.sch td.r{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums} table.sch small{display:block;color:var(--dim);font-size:11.5px;margin-top:2px}
+table.sch .bye td{color:var(--dim);font-style:italic} .sch b.W{color:#1f7a4d} .sch b.L{color:#b8322a} .sch b.T{color:var(--dim)}
 </style>
 <div class="wrap">
 <h1>RFL 2042 Season</h1>
 <p class="sub">Week by week. Tap a game for its scoring plays, turnovers, box score and leaders; tap a player's name for his season and game-by-game stats. Stand-alone windows are tagged.</p>
-<div class="bar"><button class="tab" id="t-week" type="button" aria-pressed="true">Weeks</button><button class="tab" id="t-stand" type="button" aria-pressed="false">Standings</button><button class="tab" id="t-lead" type="button" aria-pressed="false">Leaders</button><button class="tab" id="t-inj" type="button" aria-pressed="false">Injuries</button><button class="tab" id="t-po" type="button" aria-pressed="false">Playoffs</button><button class="tab" id="t-aw" type="button" aria-pressed="false">Awards</button></div>
+<div class="bar"><button class="tab" id="t-week" type="button" aria-pressed="true">Weeks</button><button class="tab" id="t-stand" type="button" aria-pressed="false">Standings</button><button class="tab" id="t-sch" type="button" aria-pressed="false">Schedules</button><button class="tab" id="t-lead" type="button" aria-pressed="false">Leaders</button><button class="tab" id="t-inj" type="button" aria-pressed="false">Injuries</button><button class="tab" id="t-po" type="button" aria-pressed="false">Playoffs</button><button class="tab" id="t-aw" type="button" aria-pressed="false">Awards</button></div>
 <div class="weeks" id="weeks"></div>
 <div id="out"></div>
 </div>
@@ -157,19 +162,41 @@ function poView(){
   if (D.pgames){ for (const rd of D.pgames.rounds){ h += `<h3>${esc(rd.name)}</h3><div class="gl">` + rd.games.map(gameCard).join('') + '</div>'; } }
   return h;
 }
+let team = null;
+function schedView(){
+  const confs = ['Regal','Majestic'], divs = ['North','West','South','East'];
+  if (!team) team = D.al.Regal.North[0];
+  const opts = confs.map(c => divs.map(d => `<optgroup label="${c} ${d}">` + D.al[c][d].slice().sort().map(t => `<option value="${esc(t)}"${t === team ? ' selected' : ''}>${esc(t)}</option>`).join('') + '</optgroup>').join('')).join('');
+  const games = {}; D.results.forEach(r => r.games.forEach(g => { games[g.id] = g; }));
+  const SH = {thu:'THU', sun:'SUN', snf:'SNF', snf2:'SNF', mnf:'MNF'}, KD = {division:'Division', conference:'Conference', interconference:'Interconference'};
+  let hm = 0, aw = 0, prime = 0, rows = '';
+  for (let w = 1; w <= 20; w++){
+    const g = (D.sched[w] || []).find(x => x.host === team || x.visitor === team);
+    if (!g){ rows += `<tr class="bye"><td class="n">${w}</td><td colspan="3">Bye week</td></tr>`; continue; }
+    const home = g.host === team, opp = home ? g.visitor : g.host; if (home) hm++; else aw++; if (g.slot !== 'sun') prime++;
+    const res = games[g.id]; let r = '<span class="note">' + (w <= D.week_done ? '' : 'to play') + '</span>';
+    if (res){ const mine = home ? res.home_pts : res.away_pts, theirs = home ? res.away_pts : res.home_pts, tag = res.winner === team ? 'W' : (res.winner ? 'L' : 'T'); r = `<b class="${tag}">${tag}</b> ${mine}\u2013${theirs}${res.ot ? ' OT' : ''}`; }
+    rows += `<tr data-goto="${w}"><td class="n">${w}</td><td><span class="note">${home ? 'vs' : 'at'}</span> ${chip(opp, true)}<small>${esc(BRAND[g.host].stadium)}, ${esc(BRAND[g.host].city)} \u00b7 ${KD[g.kind] || esc(g.kind)}</small></td><td><span class="slot ${g.slot}">${SH[g.slot] || ''}</span></td><td class="r">${r}</td></tr>`;
+  }
+  return `<div class="schsel"><label for="sel-team" class="note">Team</label><select id="sel-team">${opts}</select></div>
+    <div class="schhead">${mk(team, 30)}<span><b>${rec(team)}</b></span><span class="sm2">${hm} home, ${aw} road \u00b7 ${prime} stand-alone games</span></div>
+    <div class="tw"><table class="sch">${rows}</table></div><p class="note">Tap a game to open that week.</p>`;
+}
 function render(){
-  ['week','stand','lead','inj','po','aw'].forEach(k => $('t-'+k).setAttribute('aria-pressed', tab === k));
+  ['week','stand','sch','lead','inj','po','aw'].forEach(k => $('t-'+k).setAttribute('aria-pressed', tab === k));
   $('weeks').style.display = tab === 'week' ? 'flex' : 'none';
   $('weeks').innerHTML = Array.from({length:20}, (_, i) => i + 1).map(w => `<button class="tab${w > D.week_done ? ' todo' : ''}" type="button" data-w="${w}" aria-pressed="${w === week}">Wk ${w}</button>`).join('');
-  $('out').innerHTML = tab === 'week' ? weekView() : tab === 'stand' ? standView() : tab === 'lead' ? leadView() : tab === 'inj' ? injView() : tab === 'po' ? poView() : awardView();
+  $('out').innerHTML = tab === 'week' ? weekView() : tab === 'stand' ? standView() : tab === 'sch' ? schedView() : tab === 'lead' ? leadView() : tab === 'inj' ? injView() : tab === 'po' ? poView() : awardView();
 }
 document.addEventListener('click', e => {
   const t = e.target.closest('[id^="t-"]'); if (t && t.id.startsWith('t-') && t.classList.contains('tab') && !t.dataset.w){ tab = t.id.slice(2); render(); return; }
+  const gt = e.target.closest('[data-goto]'); if (gt){ tab = 'week'; week = +gt.dataset.goto; render(); window.scrollTo(0, 0); return; }
   const w = e.target.closest('#weeks .tab'); if (w){ week = +w.dataset.w; render(); return; }
   const wh = e.target.closest('.who'); if (wh){ e.stopPropagation(); openPlayer(wh.dataset.pid); return; }
   if (e.target.closest('[data-close]') || (e.target.id === 'ov')){ $('ov').classList.remove('on'); return; }
   const gc = e.target.closest('.gc[data-g]'); if (gc && !e.target.closest('.tm')) gc.classList.toggle('open');
 });
+document.addEventListener('change', e => { if (e.target.id === 'sel-team'){ team = e.target.value; render(); } });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') $('ov').classList.remove('on'); if (e.key === 'Enter' && e.target.classList.contains('who')) { openPlayer(e.target.dataset.pid); e.preventDefault(); return; } if (e.key === 'Enter' && e.target.classList.contains('gc')) e.target.classList.toggle('open'); });
 render();
 </script>
