@@ -11,4 +11,4 @@ Discipline traits BUILT (27 Oct 2026): hidden per-player `disc`/`cond` and coach
 
 Robust League Office cases BUILT (27 Oct 2026): rfl/case_catalog.py + rfl/cases.py (fact-rolled cases with severity, precedent, probation, appeals, storylines, reinstatement reviews, harsh felony policy, real effects). State in S['office']. NEXT: the 2043 offseason, one stage at a time (wire S['pick_penalties'] into the draft; bump draft.YEAR). Details in data/rfl_notes.md ('League Office case system').
 
-2044 status (28 Oct 2026): weeks 1-4 played (state data/rfl_state_2044.z64); week 3 rulings applied; week 4 League Office ballot live (targeting case plus Freeton appeal), waiting on Dan, then `league_office.py apply 4 file` and `weekly.py 5` (findings for Bats hazing and the bench-clearing scrum are due week 5). Season page has a Schedules tab.
+2044 status (28 Oct 2026): weeks 1-5 played (state data/rfl_state_2044.z64); week 4 rulings applied; week 5 League Office ballot live (Bats hazing findings, bench-clearing findings, two minor cases), waiting on Dan, then `league_office.py apply 5 file` and `weekly.py 6`. Season page has a Schedules tab.

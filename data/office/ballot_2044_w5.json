@@ -1,0 +1,541 @@
+{
+ "year": 2044,
+ "week": 5,
+ "potw": {
+  "off": [
+   {
+    "pid": 9101785,
+    "name": "Halina Akisei",
+    "pos": "RB",
+    "club": "Underwood Bats",
+    "line": "18 car, 65 yds, 1 rec, 82 yds, 3 TD",
+    "res": "W 35-34 at Crowns",
+    "score": 33.7,
+    "plays": [
+     "Q2 0:00 touchdown (was down 3)",
+     "Q3 9:48 7-yd TD run (was up 4)",
+     "Q4 3:14 2-yd TD run (was down 6, late), tied the game"
+    ]
+   },
+   {
+    "pid": 9038231,
+    "name": "Kivaw Matafolau",
+    "pos": "QB",
+    "club": "Canesta Dales",
+    "line": "24/30, 293 yds, 2 TD, 59 rush yds",
+    "res": "W 30-27 at Phenoms",
+    "score": 28.65,
+    "plays": [
+     "Q2 13:01 10-yd TD pass to Speranza Braveelk (was tied)",
+     "Q2 0:21 27-yd TD pass to Imani Gyefrah (was down 4)",
+     "Q3 1:37 10-yd TD run (was tied)"
+    ]
+   },
+   {
+    "pid": 9034311,
+    "name": "Miroslav Se-Seok",
+    "pos": "QB",
+    "club": "Fiota Swords",
+    "line": "31/41, 377 yds, 3 TD, 42 rush yds",
+    "res": "W 34-25 at Thunderbugs",
+    "score": 26.38,
+    "plays": [
+     "Q1 9:43 4-yd TD pass to Tallulah Spottedcrane (was tied)",
+     "Q1 3:31 20-yd TD pass to Tallulah Spottedcrane (was tied)",
+     "Q2 0:14 5-yd TD pass to Tallulah Spottedcrane (was tied)",
+     "Q3 0:00 fumble lost (up 11), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9101165,
+    "name": "Tallulah Spottedcrane",
+    "pos": "WR",
+    "club": "Fiota Swords",
+    "line": "8 rec, 78 yds, 3 TD",
+    "res": "W 34-25 at Thunderbugs",
+    "score": 25.8,
+    "plays": [
+     "Q1 9:43 4-yd TD catch from Miroslav Se-Seok (was tied)",
+     "Q1 3:31 20-yd TD catch from Miroslav Se-Seok (was tied)",
+     "Q2 0:14 5-yd TD catch from Miroslav Se-Seok (was tied)"
+    ]
+   },
+   {
+    "pid": 9035218,
+    "name": "Nayeli Brokenrope",
+    "pos": "WR",
+    "club": "Stanton City Conductors",
+    "line": "7 rec, 134 yds, 2 TD",
+    "res": "W 30-17 vs Lions",
+    "score": 25.4,
+    "plays": [
+     "Q1 4:34 38-yd TD catch from Ruzena Myeong-Mok (was down 4)",
+     "Q2 3:03 11-yd TD catch from Ruzena Myeong-Mok (was up 10)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9035211,
+    "name": "Iosefa Zhuohan",
+    "pos": "LB",
+    "club": "Diveo Demons",
+    "line": "9 tackles, 1 sack, 1 INT, 1 forced fumble",
+    "res": "W 31-15 vs Commodores",
+    "score": 22.4,
+    "plays": [
+     "Q2 5:40 sack and forced fumble (up 7), led to a touchdown",
+     "Q4 3:37 interception returned 8 yds (up 22)"
+    ]
+   },
+   {
+    "pid": 9038352,
+    "name": "Elin Chandragiri",
+    "pos": "LB",
+    "club": "Stamford Grays",
+    "line": "9 tackles, 1 sack, 1 INT",
+    "res": "L 19-20 at Renegades",
+    "score": 18.4,
+    "plays": [
+     "Q2 9:20 interception (up 7), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9034503,
+    "name": "Shanice Engelstad",
+    "pos": "LB",
+    "club": "Diamond City Dynamos",
+    "line": "12 tackles, 2 sacks",
+    "res": "W 24-22 vs T-Rexes",
+    "score": 17.2,
+    "plays": []
+   },
+   {
+    "pid": 9037806,
+    "name": "Estrella Penafranca",
+    "pos": "LB",
+    "club": "Underwood Bats",
+    "line": "6 tackles, 1 sack, 1 INT",
+    "res": "W 35-34 at Crowns",
+    "score": 16.6,
+    "plays": [
+     "Q4 6:12 interception (down 6), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9035269,
+    "name": "Frode Slavanov",
+    "pos": "LB",
+    "club": "Tasson Thunderbugs",
+    "line": "9 tackles, 1 sack, 1 forced fumble",
+    "res": "L 25-34 vs Swords",
+    "score": 16.4,
+    "plays": [
+     "Q3 0:00 sack and forced fumble (down 11), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9035672,
+    "name": "Sybil Kalyanprasad",
+    "pos": "LB",
+    "club": "Crayellan Redwoods",
+    "line": "5 tackles, 1 sack, 1 INT",
+    "res": "L 13-20 vs Raptors",
+    "score": 16.0,
+    "plays": [
+     "Q3 1:18 interception (down 14), led to a touchdown"
+    ]
+   }
+  ],
+  "st": [
+   {
+    "pid": 9037768,
+    "name": "Riku Man-Hwan",
+    "pos": "P",
+    "club": "Good River Rangers",
+    "line": "7 punts, 48.3 avg, 7 inside the 20",
+    "res": "W 20-19 vs Tsunami",
+    "score": 20.166666666666664,
+    "plays": []
+   },
+   {
+    "pid": 9101897,
+    "name": "Deepika El-Husri",
+    "pos": "K",
+    "club": "Rogaela Rovers",
+    "line": "4/4 FG, long 57, 1/1 XP",
+    "res": "W 19-14 vs Bees",
+    "score": 19.0,
+    "plays": [
+     "Q1 6:47 57-yd GOOD",
+     "Q1 1:58 41-yd GOOD",
+     "Q2 5:44 57-yd GOOD",
+     "Q4 12:16 38-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9033398,
+    "name": "Spiros Yretravaw",
+    "pos": "P",
+    "club": "Tasson Thunderbugs",
+    "line": "6 punts, 50.0 avg, 5 inside the 20",
+    "res": "L 25-34 vs Swords",
+    "score": 17.5,
+    "plays": []
+   },
+   {
+    "pid": 9036937,
+    "name": "Talise Quisseil",
+    "pos": "K",
+    "club": "Stanton City Conductors",
+    "line": "3/4 FG, long 57, 3/3 XP",
+    "res": "W 30-17 vs Lions",
+    "score": 15.5,
+    "plays": [
+     "Q1 8:58 47-yd GOOD",
+     "Q3 10:59 56-yd GOOD",
+     "Q3 5:54 57-yd GOOD",
+     "Q4 1:05 60-yd MISSED"
+    ]
+   },
+   {
+    "pid": 9034743,
+    "name": "Nkechi Latu",
+    "pos": "K",
+    "club": "Stamford Grays",
+    "line": "4/4 FG, long 43, 1/1 XP",
+    "res": "L 19-20 at Renegades",
+    "score": 12.5,
+    "plays": [
+     "Q2 11:08 25-yd GOOD",
+     "Q2 7:12 21-yd GOOD",
+     "Q3 10:27 43-yd GOOD",
+     "Q4 2:17 21-yd GOOD"
+    ]
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "hazing",
+   "title": "Findings: Allegation of hazing",
+   "who": [
+    {
+     "name": "Underwood Bats",
+     "pos": "CLUB",
+     "club": "Underwood Bats",
+     "pid": null,
+     "club_level": true
+    }
+   ],
+   "game": null,
+   "where": "League investigation",
+   "text": "The league has finished its investigation of the Bats (opened in week 2). The league's investigators substantiated part of the allegation of a pattern of hazing and rejected the rest. \n\nOriginal matter: A former Bats player alleged in an interview that veterans pressured rookies into paying for team events. The complaint involves money rookies were asked to pay.",
+   "severity": 4.8,
+   "prior": 0,
+   "stage": "findings",
+   "pids": [],
+   "precedent": [],
+   "chain": [
+    "Week 2, 2044: investigation opened"
+   ],
+   "options": [
+    {
+     "key": "k350",
+     "label": "Fine club $350K",
+     "games": 0,
+     "fine": 350000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $350K"
+    },
+    {
+     "key": "k500p4",
+     "label": "Fine $500K + lose a round 4 pick",
+     "games": 0,
+     "fine": 500000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Fined $500K, loses a round 4 pick",
+     "pick_round": 4
+    },
+    {
+     "key": "none",
+     "label": "No further action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": ""
+    }
+   ],
+   "precedent_pick": null,
+   "sid": "2044:W2-1",
+   "tier": "moderate",
+   "id": "W5-1",
+   "week": 5
+  },
+  {
+   "type": "bench_clear",
+   "title": "Findings: Bench-clearing incident",
+   "who": [
+    {
+     "name": "Lomano Toatele",
+     "pos": "OL",
+     "club": "Bruca Beach Hammerheads",
+     "pid": 9101525,
+     "club_level": false
+    }
+   ],
+   "game": null,
+   "where": "League investigation",
+   "text": "The league has finished its investigation of Lomano Toatele (Hammerheads) (opened in week 2). The league's investigators substantiated part of the allegation of the late hit that set off the scrum and rejected the rest. Investigators said some records were provided late and others were incomplete. Investigators said the conduct was limited to one individual.\n\nOriginal matter: A late hit by Lomano Toatele (Hammerheads) set off a bench-clearing scrum against the Leatherbacks. The league fined him and opened a formal investigation into the incident.",
+   "severity": 3.7,
+   "prior": 0,
+   "stage": "findings",
+   "pids": [
+    9101525,
+    9101326
+   ],
+   "precedent": [],
+   "chain": [
+    "Week 2, 2044: investigation opened"
+   ],
+   "options": [
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $10K"
+    },
+    {
+     "key": "g1",
+     "label": "1 game + $15K",
+     "games": 1,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Out 1 game, fined $15K"
+    },
+    {
+     "key": "g2",
+     "label": "2 games + $15K",
+     "games": 2,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Out 2 games, fined $15K"
+    },
+    {
+     "key": "none",
+     "label": "No further action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": ""
+    }
+   ],
+   "precedent_pick": null,
+   "sid": "2044:W2-2",
+   "tier": "moderate",
+   "id": "W5-2",
+   "week": 5
+  },
+  {
+   "type": "helmet",
+   "title": "Contact to the head",
+   "who": [
+    {
+     "name": "Lech Braunbruck",
+     "pos": "S",
+     "club": "Tengus City Terrors",
+     "pid": 9100774
+    }
+   ],
+   "game": "G284",
+   "where": "Billiataho Greats at Tengus City Terrors, week 5",
+   "text": "An unnecessary roughness flag went against Lech Braunbruck (S, Terrors) with 4:46 left in the third quarter for contact to the head. Nari No-Ung (WR, Greats) left for a few plays and returned.\n\nLech Braunbruck's agent, Beatrix Lund, says the player will cooperate with the review.",
+   "severity": 4.5,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9100774,
+    9036912
+   ],
+   "precedent": [
+    "2043 wk 14, Sareivo Treinovaw: Warning (severity 3.6)",
+    "2043 wk 12, Caden Vance: Warning (severity 3.6)",
+    "2043 wk 2, Mateo Lafort: Warning (severity 3.6)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $25K"
+    },
+    {
+     "key": "k40",
+     "label": "Fine $40K",
+     "games": 0,
+     "fine": 40000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $40K"
+    },
+    {
+     "key": "k100",
+     "label": "Fine $100K",
+     "games": 0,
+     "fine": 100000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $100K"
+    }
+   ],
+   "precedent_pick": "none",
+   "tier": "minor",
+   "id": "W5-3",
+   "week": 5
+  },
+  {
+   "type": "taunt",
+   "title": "Taunting",
+   "who": [
+    {
+     "name": "Azucena Dragicky",
+     "pos": "TE",
+     "club": "Good River Rangers",
+     "pid": 9034745
+    }
+   ],
+   "game": "G270",
+   "where": "South Burke Tsunami at Good River Rangers, week 5",
+   "text": "Azucena Dragicky (TE, Rangers) drew a flag with 4:12 left in the fourth quarter for taunting after a play. Officials described it as a single gesture.\n\nAzucena Dragicky has until Friday to respond to the notice.",
+   "severity": 1.3,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9034745,
+    9035405
+   ],
+   "precedent": [
+    "2043 wk 10, Rosario Zamorano: Fine $10K (severity 2.2)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $10K"
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $25K"
+    }
+   ],
+   "precedent_pick": null,
+   "tier": "minor",
+   "id": "W5-4",
+   "week": 5
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": [
+  {
+   "title": "Allegation of hazing",
+   "who": "Underwood Bats",
+   "club": "Underwood Bats",
+   "since": "week 2, 2044",
+   "ruling": "Open a formal investigation, rule on the findings"
+  },
+  {
+   "title": "Bench-clearing incident",
+   "who": "Lomano Toatele",
+   "club": "Bruca Beach Hammerheads",
+   "since": "week 2, 2044",
+   "ruling": "Fine $10K, investigation opened"
+  }
+ ]
+}
