@@ -797,3 +797,6 @@ PUSHED 2026-10-28 (write access restored; repo attached with push): state throug
 ## Season 19 (2044) week 11
 - Gameview: Eona at Pistolheart (Pistolheart 38-27; #1 beat #3). Played wk11 (769 results). Viewer, Media Pool, Gameview map, wk11 committee ballot published. Awaiting Dan's wk11 top 25 before wk12 Gameview candidates.
 - Week 11 committee board installed: 1 Pistolheart, 2 Park Island, 3 Fiota Bay, 4 Diveo State, 5 Eona. Out: Rogaela State, Kaji Daun, New Madrid, Barhold State.
+
+## Season 19 (2044) week 12
+- Gameview: Skeenerland State at Diveo State (28-0 Skeenerland State). Wk12 played (836 results). Kaji Daun beat #1 Pistolheart 30-27. All pages published. Awaiting wk12 committee ballot before wk13 candidates.
