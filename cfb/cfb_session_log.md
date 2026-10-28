@@ -730,3 +730,10 @@ NEXT: post-season parity audit (Dan queued; wk 12-14 ranked-lost-to-unranked 40%
 - Stage 1 carousel run (carousel.py): 20 HC vacancies filled (10 fired, 1 retirement [Hansenne], 1 interim not retained [Dove Island], 8 poached HCs backfilled), 30 coordinator moves, 12 raids. Stored in s['carousel_s18']; backups *.pre_s19_carousel.
 - Stage 2 draft pool exported (export_draft_pool.py): state/draft_pool_2044.json, 3,211 declared. Slim top-700 filed to Project as claude/cfb_draft_pool_2044.json; full pool sent to Dan. Waiting on RFL's 280 picks ({"season":18,...}) -> install_rfl_draft.py --commit, then stages 3-7 (portal, recruiting, development, roster_final, rollover).
 - Parity audit 2043 written up in parity_audit_2043.md; no knobs changed. Open for Dan: week-14 soft spot.
+
+## 2043 offseason, stages 2-7 complete -> 2044 open
+- Stage 2: RFL draft installed (data/rfl_draft_2044_picks.json, 280 picks, 0 rejected; 198 early entrants drafted, 1 subdivision). 2,316 leave college, 872 withdrew to school.
+- Stage 3 portal: 291 transfers, 147 withdrew. Stage 4 recruiting: national class 2,816 (13 five-stars, 282 four-stars), 2,018 spots open, 798 unsigned. Stage 5 development run. Stage 6 roster_final: 1,261 walk-ons, 759 floor fills, rosters 63-65.
+- Stage 7 rollover (--commit): 2043 archived (champion Costique River), classes advanced, 209 redshirts, staff aged, season reset to 2044 (season 19). Backups *.pre_s19_portal/recruit/dev/final/rollover.
+- Preseason top 10: Skeenerland State 10.31, Dietsche, Rogaela State, Pistolheart, Eona, Kaji Kita, Central Stanton, Roosevelt, Kaji Daun, North Hatesei.
+- Dan: leave week 14 alone (no engine change). TODO before 2044 build: teach fill_conf calendar preferences; no week-14 guest games.
