@@ -3144,3 +3144,7 @@ Weeks flow through convert_series_db.py -> noncon_sN_handoff.json -> fill_noncon
 - 2043 non-con booking (Series Office) is IN PROGRESS, Dan finishing later. Partial hand-off saved at state/series_handoff_2043_partial.json (6 locked rivalries + 6 booked). Live bookings 2043-2052 are in the artifact db (series/y<year>). Do NOT build 2043 until Dan says he is done; then pull series/y2043 via ArtifactData -> convert_series_db.py.
 
 ## 2043 PRESEASON done (2026-10-26). Pool s18 drawn, preseason poll filed, notes + page republished. NEXT: Dan picks the week-0 Gameview, then week_cycle.py 0.
+
+## 2044 PRESEASON done (2026-10-28). Pool s19 drawn, preseason poll filed, notes + page republished (Preseason v7, Media Pool v69). NEXT: Dan picks the week-0 Gameview (Crayellan at North Hatesei / Ranroman at Barhold Valley / Churchill at Eona State / Hansenne at Fiota State), then week_cycle.py 0. NOT YET PUSHED to GitHub (read-only access this session).
+
+PUSHED 2026-10-28 (write access restored; repo attached with push): state through 2044 week 3 (next_week 4), games_db parts re-split, 2043 viewer archive. Earlier NOT PUSHED notes for the 2044 preseason and weeks 0-3 are superseded.

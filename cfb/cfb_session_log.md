@@ -753,3 +753,22 @@ NEXT: media pool s19, preseason, week 0. (Dan's reminder: start a NEW CONVERSATI
 
 ## NAME (Dan, 2026-10-28)
 The college football sim is now called RCFB. "resume RCFB season 20XX" = restore cfb/ from GitHub into /home/claude/cfb2 (gunzip state, join games_db parts) and pick up at that season. 2044 status: schedule installed; next media pool s19, preseason, week 0.
+
+## 2044 PRESEASON -- 2026-10-28 (new conversation, container wiped again)
+RESTORED from GitHub (read-only clone of minigolfwiz/roiland-rfl, cfb/ -> /home/claude/cfb2): gunzip state, games_db parts joined; season 19, next_week 0, 980-game schedule, 136 guest rosters/staffs consistent with the installed schedule.
+Media pool s19 drawn by media_pool.make_pool (30 returning / 30 new, no school in all of 2042-44). Preseason poll: run_season.poll_update(seed=10000) -> media_history['pre'], media_ballots[0]. Backup state/season_state.pkl.pre_s19_preseason.
+Preseason top 5: Rogaela State (49 firsts), Eona (9), Costique River (1; defending champions third), North Hatesei, Central Stanton; Orlot Western 20th and German Shores 25th are the L6 teams. 25 notes in state/preseason_notes.json (2043's kept as preseason_notes_s18.json), from export_preseason facts + playoff_s18.pkl results; no mascots/ratings.
+Roiland Preseason republished (v7), Media Pool (v69).
+Week 0 Gameview candidates: Crayellan at North Hatesei; Ranroman at Barhold Valley; Churchill at Eona State; Hansenne at Fiota State. NEXT: Dan picks -> `python3 gameview.py pick 0 <host>` then `python3 week_cycle.py 0 <host>`.
+PERSISTENCE GAP: this session had read-only git access (add_repo push was declined by the auto-mode classifier). state/season_state.pkl.gz, state/preseason*.json, state/media_pool_view.json, cfb_session_log.md and PENDING.md changed locally and are NOT yet pushed to minigolfwiz/roiland-rfl.
+ARCHIVE: 2043 viewer (incl. CCG + playoff box scores) saved at archive/season_viewer_2043_full.html.gz before the 2044 viewer overwrote it (not yet pushed).
+
+## 2044 WEEK 0 played (Gameview North Hatesei). Backup state/season_state.pkl.pre_w0. Poll: Rogaela State, Eona, Costique River, North Hatesei (73-35 over Crayellan; RB Ustevaw Karravaw 345 rush yds, out for the season), Central Stanton; Ranroman (#16) lost 23-7 at Barhold Valley and dropped out. Viewer v178, Media Pool v70. Old 2043 viewer archived. NEXT: Dan picks week-1 Gameview. NOT PUSHED (read-only git).
+
+## 2044 WEEK 1 played (Gameview Skylar Rose 48-35 over Roosevelt). Backup state/season_state.pkl.pre_w1. Poll: Costique River, Eona, North Hatesei, Central Stanton, Ranroman State; #1 Rogaela State lost 30-24 to Rupin State at home (fell to 11th); Tasson dropped out. Viewer + Media Pool republished. NEXT: Dan picks week-2 Gameview. NOT PUSHED (read-only git).
+
+## 2044 WEEK 2 played (Gameview Pistolheart 30-13 over Tengus State). Backup state/season_state.pkl.pre_w2. Poll: Eona, North Hatesei, Costique River, Ranroman State, Skylar Rose; upsets: San Diego Valley 15-13 at #4 Central Stanton, West Hatesei 26-20 OT at #9 Hatesei, Sacred Tomb 31-25 over #12 Eastern State, East Tasson 20-19 at #25 German Shores; dropped out Eastern State, Roosevelt, German Shores. Viewer + Media Pool republished. NEXT: Dan picks week-3 Gameview. NOT PUSHED (read-only git).
+
+## 2044 WEEK 3 played (Gameview Skeenerland State 38-10 over Ranroman State). Backup state/season_state.pkl.pre_w3. Poll: North Hatesei, Eona, Ciarralotta State, Skylar Rose, Costique River; upsets: Southeastern 38-27 over #15 Marblehead, Keeper 36-21 over #16 Lornaman, New Madrid 27-21 at #18 Yrei Trobniy, Stanton 17-19 loss to #5 Skylar Rose (close); dropped out Lornaman, Yrei Trobniy, Stanton. Standing: ALWAYS show both teams' records on Gameview candidates (Dan, wk 3). Viewer + Media Pool republished. NEXT: Dan picks week-4 Gameview. NOT PUSHED (read-only git).
+
+PUSHED 2026-10-28 (write access restored; repo attached with push): state through 2044 week 3 (next_week 4), games_db parts re-split, 2043 viewer archive. Earlier NOT PUSHED notes for the 2044 preseason and weeks 0-3 are superseded.
