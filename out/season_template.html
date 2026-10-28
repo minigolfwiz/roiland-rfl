@@ -53,6 +53,11 @@ h2.w{font-family:var(--display);font-weight:800;font-size:26px;margin:6px 0 8px}
 .schhead{display:flex;gap:10px 14px;align-items:center;flex-wrap:wrap;margin:6px 0 10px} .schhead .sm2{color:var(--dim);font-size:13px}
 table.sch{width:100%;border-collapse:collapse;font-size:14px} table.sch td{padding:7px 6px;border-top:1px solid var(--rule);vertical-align:middle} table.sch tr[data-goto]{cursor:pointer} table.sch tr[data-goto]:hover{background:var(--chip)} table.sch td.n{font-family:var(--display);font-weight:800;font-size:16px;width:34px;color:var(--dim)} table.sch td.r{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums} table.sch small{display:block;color:var(--dim);font-size:11.5px;margin-top:2px}
 table.sch .bye td{color:var(--dim);font-style:italic} .sch b.W{color:#1f7a4d} .sch b.L{color:#b8322a} .sch b.T{color:var(--dim)}
+
+table.sch tr.hm td{background:color-mix(in srgb,var(--tc) 22%,transparent)} table.sch tr.hm td:first-child{box-shadow:inset 6px 0 0 var(--tc)} table.sch tr.aw td:first-child{box-shadow:inset 6px 0 0 transparent;border-left:0}
+table.sch tr.aw td:first-child{background:repeating-linear-gradient(135deg,transparent 0 4px,color-mix(in srgb,var(--dim) 30%,transparent) 4px 5px)}
+.ha{display:inline-block;font-family:var(--display);font-weight:800;font-size:12px;letter-spacing:.1em;line-height:1;padding:3px 7px 2px;border-radius:5px;vertical-align:middle;min-width:48px;text-align:center}
+.ha.h{background:var(--fg);color:var(--bg);border:1.5px solid var(--fg)} .ha.a{background:transparent;color:var(--dim);border:1.5px dashed var(--dim)}
 </style>
 <div class="wrap">
 <h1>RFL 2042 Season</h1>
@@ -176,11 +181,12 @@ function schedView(){
     const home = g.host === team, opp = home ? g.visitor : g.host; if (home) hm++; else aw++; if (g.slot !== 'sun') prime++;
     const res = games[g.id]; let r = '<span class="note">' + (w <= D.week_done ? '' : 'to play') + '</span>';
     if (res){ const mine = home ? res.home_pts : res.away_pts, theirs = home ? res.away_pts : res.home_pts, tag = res.winner === team ? 'W' : (res.winner ? 'L' : 'T'); r = `<b class="${tag}">${tag}</b> ${mine}\u2013${theirs}${res.ot ? ' OT' : ''}`; }
-    rows += `<tr data-goto="${w}"><td class="n">${w}</td><td><span class="note">${home ? 'vs' : 'at'}</span> ${chip(opp, true)}<small>${esc(BRAND[g.host].stadium)}, ${esc(BRAND[g.host].city)} \u00b7 ${KD[g.kind] || esc(g.kind)}</small></td><td><span class="slot ${g.slot}">${SH[g.slot] || ''}</span></td><td class="r">${r}</td></tr>`;
+    rows += `<tr class="${home ? 'hm' : 'aw'}" data-goto="${w}"><td class="n">${w}</td><td><span class="ha ${home ? 'h' : 'a'}">${home ? 'HOME' : 'AWAY'}</span> <span class="note">${home ? 'vs' : '@'}</span> ${chip(opp, true)}<small>${esc(BRAND[g.host].stadium)}, ${esc(BRAND[g.host].city)} \u00b7 ${KD[g.kind] || esc(g.kind)}</small></td><td><span class="slot ${g.slot}">${SH[g.slot] || ''}</span></td><td class="r">${r}</td></tr>`;
   }
   return `<div class="schsel"><label for="sel-team" class="note">Team</label><select id="sel-team">${opts}</select></div>
     <div class="schhead">${mk(team, 30)}<span><b>${rec(team)}</b></span><span class="sm2">${hm} home, ${aw} road \u00b7 ${prime} stand-alone games</span></div>
-    <div class="tw"><table class="sch">${rows}</table></div><p class="note">Tap a game to open that week.</p>`;
+    <p class="note" style="margin:0 0 6px"><span class="ha h">HOME</span> shaded rows are played at ${esc(BRAND[team].stadium)}; <span class="ha a">AWAY</span> rows are on the road. Tap a game to open that week.</p>
+    <div class="tw"><table class="sch" style="--tc:${BRAND[team].wordmark.bg}">${rows}</table></div>`;
 }
 function render(){
   ['week','stand','sch','lead','inj','po','aw'].forEach(k => $('t-'+k).setAttribute('aria-pressed', tab === k));
