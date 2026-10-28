@@ -1,0 +1,351 @@
+{
+ "year": 2044,
+ "week": 3,
+ "potw": {
+  "off": [
+   {
+    "pid": 9038003,
+    "name": "Maisie El-Salim",
+    "pos": "QB",
+    "club": "Rogaela Rovers",
+    "line": "21/32, 242 yds, 3 TD, 73 rush yds",
+    "res": "L 24-30 vs Phenoms",
+    "score": 27.3,
+    "plays": [
+     "Q3 8:03 12-yd TD pass to Dongwook Hyun-Won (was down 14)",
+     "Q4 13:26 16-yd TD pass to Meissa Beslovei (was down 10)",
+     "Q4 3:08 35-yd TD pass to Dongwook Hyun-Won (was down 13), cut the deficit late"
+    ]
+   },
+   {
+    "pid": 9038231,
+    "name": "Kivaw Matafolau",
+    "pos": "QB",
+    "club": "Canesta Dales",
+    "line": "27/35, 215 yds, 2 TD, 32 rush yds",
+    "res": "W 28-25 at Lions",
+    "score": 26.73,
+    "plays": [
+     "Q2 7:01 14-yd TD pass to Imani Gyefrah (was down 6)",
+     "Q3 9:29 8-yd TD pass to Nayeli Nofotalo (was down 2)",
+     "Q4 4:25 17-yd TD run (was down 5, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9038296,
+    "name": "Roviyel Karlosei",
+    "pos": "WR",
+    "club": "New Madrid Mastiffs",
+    "line": "11 rec, 226 yds, 1 TD",
+    "res": "L 20-23 vs Topcats",
+    "score": 26.35,
+    "plays": [
+     "Q4 10:04 fumble lost (down 7)",
+     "Q4 0:02 6-yd TD catch from Gwen Milinsky (was down 10), cut the deficit late"
+    ]
+   },
+   {
+    "pid": 9037817,
+    "name": "Dandan Takakawa",
+    "pos": "TE",
+    "club": "Chapel Rock Crowns",
+    "line": "10 rec, 201 yds, 1 TD",
+    "res": "L 26-30 vs Hammerheads",
+    "score": 26.1,
+    "plays": [
+     "Q4 6:07 6-yd TD catch from Norbert Tingyao (was down 17)"
+    ]
+   },
+   {
+    "pid": 9037440,
+    "name": "Afamasaga Ironmoon",
+    "pos": "WR",
+    "club": "Lornaman Renegades",
+    "line": "9 rec, 140 yds, 2 TD",
+    "res": "W 28-23 at Rangers",
+    "score": 26.0,
+    "plays": [
+     "Q1 1:06 9-yd TD catch from Rin Langdale (was down 7)",
+     "Q3 12:22 23-yd TD catch from Rin Langdale (was up 4)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9101748,
+    "name": "Lagi Silverowl",
+    "pos": "CB",
+    "club": "Fiota Swords",
+    "line": "8 tackles, 2 INT",
+    "res": "W 24-10 vs Komodos",
+    "score": 20.8,
+    "plays": [
+     "Q1 6:24 interception (down 7), led to a touchdown",
+     "Q1 1:06 interception returned 15 yds (tied), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9101675,
+    "name": "Wenbo Shanjian",
+    "pos": "S",
+    "club": "Bruca Beach Hammerheads",
+    "line": "7 tackles, 2 INT",
+    "res": "W 30-26 at Crowns",
+    "score": 20.2,
+    "plays": [
+     "Q2 9:14 interception returned 10 yds (up 10), led to a field goal",
+     "Q3 14:49 interception (up 13), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9035376,
+    "name": "Rin Vegadura",
+    "pos": "LB",
+    "club": "Fiota Bay T-Rexes",
+    "line": "13 tackles, 1 sack, 1 forced fumble",
+    "res": "W 31-28 vs Bees",
+    "score": 18.8,
+    "plays": [
+     "Q3 13:03 sack and forced fumble (down 6), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9038461,
+    "name": "Nkechi Yeboah",
+    "pos": "DL",
+    "club": "Verigon Komodos",
+    "line": "4 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 10-24 at Swords",
+    "score": 18.4,
+    "plays": [
+     "Q2 0:00 sack and forced fumble (down 7), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9037860,
+    "name": "Perei Nomaw",
+    "pos": "LB",
+    "club": "Far Farris Raccoons",
+    "line": "7 tackles, 2 INT",
+    "res": "W 34-21 vs Bats",
+    "score": 18.2,
+    "plays": [
+     "Q3 14:37 interception returned 14 yds (up 3), led to a touchdown",
+     "Q4 1:06 interception returned 10 yds (up 13)"
+    ]
+   },
+   {
+    "pid": 9101618,
+    "name": "Rupert Readborough",
+    "pos": "LB",
+    "club": "Holliday Beetles",
+    "line": "5 tackles, 1 sack, 1 INT",
+    "res": "W 31-24 vs Thunderbugs",
+    "score": 17.5,
+    "plays": [
+     "Q4 0:01 interception returned 16 yds (tied, late), led to a touchdown"
+    ]
+   }
+  ],
+  "st": [
+   {
+    "pid": 9101447,
+    "name": "Anneliese Galliani",
+    "pos": "K",
+    "club": "Wolford Dragons",
+    "line": "4/4 FG, long 57, 3/3 XP",
+    "res": "W 33-6 vs Terrors",
+    "score": 22.25,
+    "plays": [
+     "Q1 0:25 54-yd GOOD",
+     "Q2 2:31 30-yd GOOD",
+     "Q3 12:37 57-yd GOOD",
+     "Q3 7:33 56-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101024,
+    "name": "Dongwook Baiwang",
+    "pos": "K",
+    "club": "San Saltadac Sea Lions",
+    "line": "4/4 FG, long 57, 1/2 XP",
+    "res": "L 25-28 vs Dales",
+    "score": 18.25,
+    "plays": [
+     "Q1 8:17 48-yd GOOD",
+     "Q2 2:36 39-yd GOOD",
+     "Q4 10:42 44-yd GOOD, go-ahead, later answered",
+     "Q4 7:40 57-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9034743,
+    "name": "Nkechi Latu",
+    "pos": "K",
+    "club": "Stamford Grays",
+    "line": "4/4 FG, long 56, 1/1 XP",
+    "res": "W 19-14 at Silverbacks",
+    "score": 17.5,
+    "plays": [
+     "Q1 9:50 48-yd GOOD",
+     "Q1 2:46 29-yd GOOD",
+     "Q2 9:27 48-yd GOOD",
+     "Q4 8:56 56-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101906,
+    "name": "Isla Thornwell",
+    "pos": "K",
+    "club": "Costique Bearcats",
+    "line": "3/4 FG, long 54, 2/2 XP",
+    "res": "W 23-20 at Tigers",
+    "score": 15.0,
+    "plays": [
+     "Q1 9:54 30-yd MISSED",
+     "Q3 3:04 54-yd GOOD",
+     "Q4 8:44 29-yd GOOD",
+     "OT 7:18 38-yd GOOD, go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9101378,
+    "name": "Nikhil Devadeva",
+    "pos": "P",
+    "club": "Underwood Bats",
+    "line": "6 punts, 48.8 avg, 4 inside the 20",
+    "res": "L 21-34 at Raccoons",
+    "score": 14.833333333333336,
+    "plays": []
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "dui",
+   "title": "Arrest for driving under the influence",
+   "who": [
+    {
+     "name": "Shaniqua Freeton",
+     "pos": "DL",
+     "club": "Costique Bearcats",
+     "pid": 9038659
+    }
+   ],
+   "game": null,
+   "where": "Off the field",
+   "text": "Police arrested Shaniqua Freeton (DL, Bearcats) overnight after a traffic stop; officers reported a blood alcohol level above the legal limit.\n\nThe club has issued a short statement and says it is cooperating with the league.",
+   "severity": 4.6,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9038659
+   ],
+   "precedent": [
+    "2043 wk 4, Annika Schneehagen: 2 games + $100K (severity 5.1)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k40",
+     "label": "Fine $40K",
+     "games": 0,
+     "fine": 40000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $40K"
+    },
+    {
+     "key": "k40p",
+     "label": "Fine $40K + conduct program",
+     "games": 0,
+     "fine": 40000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $40K, conduct program",
+     "program": true
+    },
+    {
+     "key": "g1",
+     "label": "1 game + $40K",
+     "games": 1,
+     "fine": 40000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Out 1 game, fined $40K",
+     "program": false
+    },
+    {
+     "key": "g3",
+     "label": "3 games + $40K",
+     "games": 3,
+     "fine": 40000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Out 3 games, fined $40K, conduct program",
+     "program": true
+    },
+    {
+     "key": "g5",
+     "label": "5 games + $40K",
+     "games": 5,
+     "fine": 40000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Out 5 games, fined $40K, conduct program",
+     "program": true
+    }
+   ],
+   "precedent_pick": null,
+   "tier": "serious",
+   "id": "W3-1",
+   "week": 3
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": [
+  {
+   "title": "Allegation of hazing",
+   "who": "Underwood Bats",
+   "club": "Underwood Bats",
+   "since": "week 2, 2044",
+   "ruling": "Open a formal investigation, rule on the findings"
+  },
+  {
+   "title": "Bench-clearing incident",
+   "who": "Lomano Toatele",
+   "club": "Bruca Beach Hammerheads",
+   "since": "week 2, 2044",
+   "ruling": "Fine $10K, investigation opened"
+  }
+ ]
+}

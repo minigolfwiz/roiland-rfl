@@ -422,7 +422,7 @@ def spec_titles(key): return CATALOG[key]['title'] if CATALOG[key]['title'] else
 for _k, _v in FELONY.items(): CATALOG['felony_' + _k]['title'] = _v['title']
 
 # ----------------------------------------------------------------------------------------------------------------------------- follow-ups
-FIND_WHAT = dict(bounty='a pay-for-injury program', hazing='a pattern of hazing', tampering='improper contact with a player under contract', cap='unreported payments', gambling='wagers on league games')
+FIND_WHAT = dict(bench_clear='the late hit that set off the scrum', bounty='a pay-for-injury program', hazing='a pattern of hazing', tampering='improper contact with a player under contract', cap='unreported payments', gambling='wagers on league games')
 FIND_TEXT = dict(
     substantiated=["The league's investigators concluded the allegation of {what} is substantiated.", "After a review of records and interviews, the league found that {what} did occur."],
     partial=["The league's investigators substantiated part of the allegation of {what} and rejected the rest.", "Investigators found some evidence of {what} but could not confirm the full allegation."],
@@ -459,7 +459,7 @@ def build_findings(S, rnd, st, item, week, chain, p):
     sev = clamp(st['sev'] + {'substantiated': 1.4, 'partial': 0.0, 'unfounded': -9}[st['truth']] + d, 1, 10)
     what = FIND_WHAT[key]; text = fmt(r2.choice(FIND_TEXT[st['truth']]), dict(what=what))
     if st['truth'] != 'unfounded': text += ' ' + ' '.join(f['text'].format() for f in facts)
-    lead = f"The league has finished its investigation of the {nick(st['club'])}" if spec['subject'] != 'player' else f"The league has finished its investigation of {st['name']} ({nick(st['club'])})"
+    lead = (f"The league has finished its investigation of the {nick(st['club'])}" if spec['subject'] == 'club' else f"The league has finished its investigation of {st['name']} ({nick(st['club'])})")
     text = '\n\n'.join([lead + ' (opened in week ' + str(st['week']) + '). ' + text, 'Original matter: ' + st['summary']])
     if st['truth'] == 'unfounded':
         opts = [O('clear', 'Close the matter: no violation found', sug=True), O('warn', 'Close the matter with a warning about procedures')]
