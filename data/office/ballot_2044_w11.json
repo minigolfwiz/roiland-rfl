@@ -1,0 +1,241 @@
+{
+ "year": 2044,
+ "week": 11,
+ "potw": {
+  "off": [
+   {
+    "pid": 9033847,
+    "name": "Norbert Tingyao",
+    "pos": "QB",
+    "club": "Chapel Rock Crowns",
+    "line": "31/38, 299 yds, 4 TD, 69 rush yds",
+    "res": "T 28-28 vs Leatherbacks",
+    "score": 34.06,
+    "plays": [
+     "Q1 1:48 10-yd TD pass to Korresaw Gantreimyr (was tied)",
+     "Q2 7:44 6-yd TD pass to Emilio Langshaw (was tied)",
+     "Q3 8:35 8-yd TD pass to Dandan Takakawa (was tied)",
+     "Q4 7:16 10-yd TD pass to Malsook Il-Su (was tied), go-ahead, later answered"
+    ]
+   },
+   {
+    "pid": 9033790,
+    "name": "Zainab Yiling",
+    "pos": "QB",
+    "club": "Palm Creek Leatherbacks",
+    "line": "25/34, 267 yds, 3 TD, 73 rush yds",
+    "res": "T 28-28 at Crowns",
+    "score": 33.3,
+    "plays": [
+     "Q2 11:08 10-yd TD pass to Fumiko Midzato (was down 7)",
+     "Q2 2:10 21-yd TD pass to Fumiko Midzato (was down 7)",
+     "Q3 2:51 2-yd TD pass to Liqin Blackcrane (was down 7)",
+     "Q4 2:40 1-yd TD run (was down 7, late), cut the deficit late"
+    ]
+   },
+   {
+    "pid": 9035242,
+    "name": "Sione Larrazabal",
+    "pos": "RB",
+    "club": "Hughes City Asteroids",
+    "line": "29 car, 84 yds, 2 rec, 10 yds, 3 TD",
+    "res": "W 26-20 at Terrors",
+    "score": 31.9,
+    "plays": [
+     "Q2 6:43 6-yd TD run (was down 7)",
+     "Q4 10:54 4-yd TD run (was tied), go-ahead, later answered",
+     "OT 0:00 3-yd TD run (was tied, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9034339,
+    "name": "Hinata Westden",
+    "pos": "WR",
+    "club": "Stamford Grays",
+    "line": "11 rec, 161 yds, 2 TD",
+    "res": "W 38-31 vs Renegades",
+    "score": 31.1,
+    "plays": [
+     "Q3 1:44 13-yd TD catch from Beatrice Wickcombe (was up 7)",
+     "OT 7:50 7-yd TD catch from Beatrice Wickcombe (was tied, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9035794,
+    "name": "Barnaby Belbourg",
+    "pos": "RB",
+    "club": "Lornaman Renegades",
+    "line": "16 car, 92 yds, 5 rec, 63 yds, 2 TD",
+    "res": "L 31-38 at Grays",
+    "score": 28.25,
+    "plays": [
+     "Q2 1:04 2-yd TD run (was down 11)",
+     "Q4 1:48 22-yd TD catch from Rin Langdale (was down 7, late), cut the deficit late"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9038352,
+    "name": "Elin Chandragiri",
+    "pos": "LB",
+    "club": "Stamford Grays",
+    "line": "11 tackles, 2 sacks, 2 forced fumbles",
+    "res": "W 38-31 vs Renegades",
+    "score": 28.6,
+    "plays": [
+     "Q1 3:06 sack and forced fumble (up 7), led to a touchdown",
+     "Q3 13:42 sack and forced fumble (up 4), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9035269,
+    "name": "Frode Slavanov",
+    "pos": "LB",
+    "club": "Tasson Thunderbugs",
+    "line": "6 tackles, 2 sacks, 2 forced fumbles",
+    "res": "W 34-17 vs Mastiffs",
+    "score": 23.6,
+    "plays": [
+     "Q2 0:54 sack and forced fumble (up 10)",
+     "Q4 6:29 sack and forced fumble (up 17), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9037776,
+    "name": "Chafik Rocaverde",
+    "pos": "DL",
+    "club": "Diamond City Dynamos",
+    "line": "4 tackles, 3 sacks, 1 forced fumble",
+    "res": "W 17-13 vs Dales",
+    "score": 21.4,
+    "plays": [
+     "Q1 8:28 sack and forced fumble (tied)"
+    ]
+   },
+   {
+    "pid": 9101244,
+    "name": "Estrella Belpierre",
+    "pos": "LB",
+    "club": "Tengus City Terrors",
+    "line": "8 tackles, 1 sack, 1 INT",
+    "res": "L 20-26 vs Asteroids",
+    "score": 17.8,
+    "plays": [
+     "Q1 11:38 interception returned 19 yds (tied), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9036284,
+    "name": "Junjie Nanlian",
+    "pos": "LB",
+    "club": "Canesta Dales",
+    "line": "5 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 13-17 at Dynamos",
+    "score": 17.0,
+    "plays": [
+     "Q1 2:15 sack and forced fumble (tied)"
+    ]
+   },
+   {
+    "pid": 9037342,
+    "name": "Osama Chibayo",
+    "pos": "LB",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "9 tackles, 2 sacks",
+    "res": "L 17-24 vs Tsunami",
+    "score": 15.399999999999999,
+    "plays": []
+   }
+  ],
+  "st": [
+   {
+    "pid": 9101859,
+    "name": "Edouard Brookcroft",
+    "pos": "K",
+    "club": "Purcell Rapids",
+    "line": "4/4 FG, long 55, 1/1 XP",
+    "res": "W 19-16 vs Komodos",
+    "score": 19.75,
+    "plays": [
+     "Q2 13:00 37-yd GOOD",
+     "Q3 9:53 43-yd GOOD",
+     "Q3 6:27 55-yd GOOD",
+     "Q4 13:03 27-yd GOOD, go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9101899,
+    "name": "Wenbo Go-Gyu",
+    "pos": "P",
+    "club": "Billiataho Greats",
+    "line": "7 punts, 48.3 avg, 5 inside the 20",
+    "res": "L 7-24 at Dragons",
+    "score": 17.166666666666664,
+    "plays": []
+   },
+   {
+    "pid": 9101387,
+    "name": "Pooja El-Hakim",
+    "pos": "K",
+    "club": "Diveo Demons",
+    "line": "3/3 FG, long 62, 3/3 XP",
+    "res": "W 30-6 vs Beavers",
+    "score": 15.75,
+    "plays": [
+     "Q2 0:00 39-yd GOOD",
+     "Q3 8:51 62-yd GOOD",
+     "Q4 2:39 47-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101385,
+    "name": "Mio Wakada",
+    "pos": "K",
+    "club": "Holliday Beetles",
+    "line": "3/3 FG, long 54, 2/2 XP",
+    "res": "W 23-20 vs Tigers",
+    "score": 14.0,
+    "plays": [
+     "Q1 11:08 54-yd GOOD",
+     "Q2 3:44 44-yd GOOD",
+     "Q3 10:59 50-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9034268,
+    "name": "Siwoo Chikelu",
+    "pos": "P",
+    "club": "Diamond City Dynamos",
+    "line": "7 punts, 45.6 avg, 5 inside the 20",
+    "res": "W 17-13 vs Dales",
+    "score": 13.999999999999996,
+    "plays": []
+   }
+  ]
+ },
+ "cases": [],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": []
+}
