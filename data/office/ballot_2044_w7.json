@@ -1,0 +1,471 @@
+{
+ "year": 2044,
+ "week": 7,
+ "potw": {
+  "off": [
+   {
+    "pid": 9038369,
+    "name": "Isamu Yamasato",
+    "pos": "RB",
+    "club": "Rogaela Rovers",
+    "line": "18 car, 60 yds, 4 rec, 64 yds, 3 TD",
+    "res": "W 36-34 at Shredders",
+    "score": 32.15,
+    "plays": [
+     "Q3 9:26 2-yd TD run (was down 27)",
+     "Q4 3:13 2-yd TD run (was down 13), cut the deficit late",
+     "Q4 0:57 32-yd TD catch from Maisie El-Salim (was down 6, late), tied the game"
+    ]
+   },
+   {
+    "pid": 9036328,
+    "name": "Rin Langdale",
+    "pos": "QB",
+    "club": "Lornaman Renegades",
+    "line": "37/53, 380 yds, 3 TD",
+    "res": "W 31-24 vs Demons",
+    "score": 28.55,
+    "plays": [
+     "Q3 5:51 9-yd TD pass to Afamasaga Ironmoon (was down 14)",
+     "Q4 12:13 34-yd TD pass to Afamasaga Ironmoon (was down 14)",
+     "Q4 3:33 9-yd TD pass to Prokopis Eastworth (was down 7, late), cut the deficit late"
+    ]
+   },
+   {
+    "pid": 9037440,
+    "name": "Afamasaga Ironmoon",
+    "pos": "WR",
+    "club": "Lornaman Renegades",
+    "line": "11 rec, 163 yds, 2 TD",
+    "res": "W 31-24 vs Demons",
+    "score": 28.3,
+    "plays": [
+     "Q3 5:51 9-yd TD catch from Rin Langdale (was down 14)",
+     "Q4 12:13 34-yd TD catch from Rin Langdale (was down 14)"
+    ]
+   },
+   {
+    "pid": 9032836,
+    "name": "Radhika Eichenwetter",
+    "pos": "QB",
+    "club": "Billiataho Greats",
+    "line": "20/23, 235 yds, 4 TD",
+    "res": "W 28-13 vs Tsunami",
+    "score": 26.47,
+    "plays": [
+     "Q2 9:49 5-yd TD pass to Chayton Faletele (was down 3)",
+     "Q3 11:57 24-yd TD pass to Verity Forslund (was down 3)",
+     "Q3 2:11 9-yd TD pass to Dimitrios Xanthokatos (was up 4)",
+     "Q4 6:47 9-yd TD pass to Nari No-Ung (was up 8)"
+    ]
+   },
+   {
+    "pid": 9036223,
+    "name": "Yrei Ganneimyr",
+    "pos": "RB",
+    "club": "Port Logan Commodores",
+    "line": "12 car, 43 yds, 1 rec, 38 yds, 2 TD",
+    "res": "W 20-17 at Lions",
+    "score": 23.1,
+    "plays": [
+     "Q3 5:16 3-yd TD run (was down 7)",
+     "Q4 1:37 1-yd TD run (was down 4, late), go-ahead and decisive, never answered"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9034301,
+    "name": "Diamond Taulagi",
+    "pos": "LB",
+    "club": "Cordelle Raptors",
+    "line": "5 tackles, 2 sacks, 1 INT, 1 forced fumble",
+    "res": "W 30-10 at Raccoons",
+    "score": 25.0,
+    "plays": [
+     "Q2 6:01 interception (down 7), led to a field goal",
+     "Q2 2:11 sack and forced fumble (down 4)"
+    ]
+   },
+   {
+    "pid": 9101052,
+    "name": "Shamar Northwell",
+    "pos": "LB",
+    "club": "El Latigo Shredders",
+    "line": "12 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 34-36 vs Rovers",
+    "score": 23.2,
+    "plays": [
+     "Q2 5:11 sack and forced fumble (up 24), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9037495,
+    "name": "Nayeli Gr\u00fcnholz",
+    "pos": "LB",
+    "club": "Classetto Cavemen",
+    "line": "10 tackles, 3 sacks",
+    "res": "W 30-10 at Thunderbugs",
+    "score": 21.0,
+    "plays": []
+   },
+   {
+    "pid": 9038468,
+    "name": "Radhika Kalyanmani",
+    "pos": "DL",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "6 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 16-10 vs Phenoms",
+    "score": 19.6,
+    "plays": [
+     "Q4 11:24 sack and forced fumble (up 3), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9035881,
+    "name": "Haruto Shenghan",
+    "pos": "DL",
+    "club": "South Burke Tsunami",
+    "line": "6 tackles, 3 sacks",
+    "res": "L 13-28 at Greats",
+    "score": 18.6,
+    "plays": []
+   },
+   {
+    "pid": 9037779,
+    "name": "Gozie Watanuki",
+    "pos": "CB",
+    "club": "Verigon Komodos",
+    "line": "5 tackles, 2 INT",
+    "res": "W 27-23 vs Swords",
+    "score": 18.5,
+    "plays": [
+     "Q3 0:03 interception returned 11 yds (down 10), led to a touchdown",
+     "Q4 3:09 interception returned 9 yds (up 4, late)"
+    ]
+   }
+  ],
+  "st": [
+   {
+    "pid": 9101906,
+    "name": "Isla Thornwell",
+    "pos": "K",
+    "club": "Costique Bearcats",
+    "line": "3/4 FG, long 59, 3/3 XP",
+    "res": "W 30-24 at Rapids",
+    "score": 17.25,
+    "plays": [
+     "Q1 11:37 54-yd GOOD",
+     "Q2 10:42 59-yd GOOD",
+     "Q2 6:16 47-yd MISSED",
+     "Q3 9:46 54-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101904,
+    "name": "Magnus Apotzis",
+    "pos": "P",
+    "club": "North Hatesei Bees",
+    "line": "6 punts, 46.2 avg, 6 inside the 20",
+    "res": "W 20-17 vs Crowns",
+    "score": 15.166666666666664,
+    "plays": []
+   },
+   {
+    "pid": 9035890,
+    "name": "Lubna Camara",
+    "pos": "K",
+    "club": "New Madrid Mastiffs",
+    "line": "4/4 FG, long 51, 0/0 XP",
+    "res": "W 20-17 vs Tigers",
+    "score": 13.75,
+    "plays": [
+     "Q1 8:28 23-yd GOOD",
+     "Q2 9:46 40-yd GOOD",
+     "Q3 10:49 43-yd GOOD",
+     "Q3 1:55 51-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9038621,
+    "name": "Kwame Kone",
+    "pos": "K",
+    "club": "Fiota Swords",
+    "line": "3/3 FG, long 52, 2/2 XP",
+    "res": "L 23-27 at Komodos",
+    "score": 13.25,
+    "plays": [
+     "Q1 8:17 38-yd GOOD",
+     "Q2 1:52 49-yd GOOD",
+     "Q3 4:02 52-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9037423,
+    "name": "Baltazar Kleinmann",
+    "pos": "P",
+    "club": "Diveo Demons",
+    "line": "6 punts, 48.0 avg, 3 inside the 20",
+    "res": "L 24-31 at Renegades",
+    "score": 12.5,
+    "plays": []
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "defenseless",
+   "title": "Hit on a defenseless player",
+   "who": [
+    {
+     "name": "Lyudmila Lambrmelis",
+     "pos": "S",
+     "club": "Eona Topcats",
+     "pid": 9038276
+    }
+   ],
+   "game": "G35",
+   "where": "Eona Topcats at Wolford Dragons, week 7",
+   "text": "Lyudmila Lambrmelis (S, Topcats) hit a player in a defenseless position with 12:22 left in the third quarter and was flagged for unnecessary roughness. Alfie Sandland (LB, Dragons) stayed in the game.\n\nThe players' union has been notified.",
+   "severity": 3.8,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9038276,
+    9100794
+   ],
+   "precedent": [
+    "2043 wk 6, Emeka Lockwood: Warning (severity 3.8)",
+    "2043 wk 2, Shaojun Myeong-Gu: Warning (severity 3.8)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k15",
+     "label": "Fine $15K",
+     "games": 0,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $15K"
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $25K"
+    },
+    {
+     "key": "k75",
+     "label": "Fine $75K",
+     "games": 0,
+     "fine": 75000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $75K"
+    }
+   ],
+   "precedent_pick": "none",
+   "tier": "minor",
+   "id": "W7-1",
+   "week": 7
+  },
+  {
+   "type": "helmet",
+   "title": "Helmet-to-helmet contact",
+   "who": [
+    {
+     "name": "Anais Oakhurst",
+     "pos": "DL",
+     "club": "Rogaela Rovers",
+     "pid": 9037963
+    }
+   ],
+   "game": "G140",
+   "where": "Rogaela Rovers at El Latigo Shredders, week 7",
+   "text": "Anais Oakhurst (DL, Rovers) was flagged for roughing the passer with 4:24 left in the second quarter for helmet-to-helmet contact. Alfie Gyejide (QB, Shredders) stayed in the game.\n\nOfficials in the game, led by Tobias Quillfeather, reported the play to the league.",
+   "severity": 4.2,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9037963,
+    9034297
+   ],
+   "precedent": [
+    "2044 wk 5, Lech Braunbruck: Warning (severity 4.5)",
+    "2043 wk 14, Sareivo Treinovaw: Warning (severity 3.6)",
+    "2043 wk 12, Caden Vance: Warning (severity 3.6)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k15",
+     "label": "Fine $15K",
+     "games": 0,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $15K"
+    },
+    {
+     "key": "k40",
+     "label": "Fine $40K",
+     "games": 0,
+     "fine": 40000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $40K"
+    },
+    {
+     "key": "k75",
+     "label": "Fine $75K",
+     "games": 0,
+     "fine": 75000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $75K"
+    }
+   ],
+   "precedent_pick": "none",
+   "tier": "minor",
+   "id": "W7-2",
+   "week": 7
+  },
+  {
+   "type": "taunt",
+   "title": "Taunting after a play",
+   "who": [
+    {
+     "name": "Jamila Ellery",
+     "pos": "RB",
+     "club": "Tasson Thunderbugs",
+     "pid": 9101925
+    }
+   ],
+   "game": "G73",
+   "where": "Classetto Cavemen at Tasson Thunderbugs, week 7",
+   "text": "Jamila Ellery (RB, Thunderbugs) drew a flag with 10:45 left in the first quarter for taunting after a play. The incident drew a reaction from the home crowd.\n\nJamila Ellery has until Friday to respond to the notice.",
+   "severity": 2.9,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9101925,
+    9037918
+   ],
+   "precedent": [
+    "2043 wk 10, Rosario Zamorano: Fine $10K (severity 2.2)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $10K"
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Fined $25K"
+    },
+    {
+     "key": "k40",
+     "label": "Fine $40K",
+     "games": 0,
+     "fine": 40000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $40K"
+    }
+   ],
+   "precedent_pick": null,
+   "tier": "minor",
+   "id": "W7-3",
+   "week": 7
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": []
+}
