@@ -1,12 +1,13 @@
-"""Free agency for the 2043 season (offseason step 3). Usage: python3 rfl/freeagency.py [dry]
+"""Free agency for the coming season (offseason step 3; YEAR = the season being built, 2044 after the 2043 season). Usage: python3 rfl/freeagency.py [dry] | street
+The veteran market and re-signings run BEFORE the draft; the street-signing fill-in (anonymous journeymen for true holes) runs AFTER the draft and undrafted signings: `python3 rfl/freeagency.py street`.
 Order: contracts tick → clubs decide who to re-sign → the open market (need-based bidding by cap room, GM aggression/discipline)
-→ street signings fill the roster to 46 (the draft adds the rest). Writes S['offseason']['fa'] (log lines + stats). Guarded: runs once.
+→ (after the draft) street signings fill any remaining holes up to 46. Writes S['offseason']['fa'] (log lines + stats). Guarded: runs once.
 Price curve fitted to the 2041–42 free-agent and re-sign deals (salary as a share of the cap by ability and position)."""
 import json, sys, os, random, collections, math
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from rfl.engine import *
 
-YEAR = 2043
+YEAR = 2044
 ANCH = [(6.8, .0038), (7.25, .0045), (7.75, .0069), (8.25, .0146), (8.75, .0239), (9.25, .0483), (9.75, .095), (10.0, .13)]
 PMULT = dict(QB=1.65, OL=1.0, DL=1.0, WR=.9, CB=.9, LB=.9, TE=.9, RB=.75, S=.75, K=.1, P=.1)
 MINROSTER = dict(QB=3, RB=3, WR=5, TE=2, OL=8, DL=7, LB=6, CB=5, S=3, K=1, P=1)   # 44; + 2 extras = 46 before the draft
@@ -111,8 +112,15 @@ def run(S, rnd):
             _, t, bid = best; yrs = years_for(p, rnd); sal = int(min(.17 * cap, bid))
             sign(S, p, t, max(minsal(), sal), yrs, 'free agent'); stats['signed'] += 1
             if notable(p): log.append(f"{p['name']} ({p['pos']}) " + (f"re-signs with {t}, {yrs} yr" if p.get('_prev') == t else f"signs with {t}, {yrs} yr"))
-    # 4. fill every club to the pre-draft roster with street signings (best cheap player available, else a generated journeyman)
-    left = [p for p in pool if not p['club']]
+    for p in P.values(): p.pop('_kept', None); p.pop('_prev', None)
+    for c in S['clubs'].values(): c.pop('_champ', None)
+    stats['unsigned_left'] = sum(1 for p in P.values() if p['status'] == 'active' and not p['club'])
+    return log, stats
+
+def street_fill(S, rnd):
+    """After the draft: fill every club to the camp roster with street signings (best cheap player available, else a generated journeyman)."""
+    P = S['players']; stats = collections.Counter()
+    left = [p for p in P.values() if p['status'] == 'active' and not p['club']]
     for t in S['clubs']:
         roster = S['clubs'][t]['roster']
         while True:
@@ -129,18 +137,7 @@ def run(S, rnd):
             if q is None: q = gen_player(S, pos, YEAR, max(6.0, min(7.4, rnd.gauss(6.8, .35))), rnd, club=None, age_=rnd.randint(24, 31))
             sign(S, q, t, minsal(), 1, 'street'); stats['street'] += 1
             if q in left: left.remove(q)
-    for p in P.values(): p.pop('_kept', None); p.pop('_prev', None)
-    for c in S['clubs'].values(): c.pop('_champ', None)
-    stats['unsigned_left'] = sum(1 for p in P.values() if p['status'] == 'active' and not p['club'])
-    return log, stats
-
-if __name__ == '__main__':
-    path = STATE; S = load(path); dry = len(sys.argv) > 1 and sys.argv[1] == 'dry'
-    assert 'fa' not in S['offseason']['done'], 'free agency already run'
-    rnd = random.Random(2043002); log, stats = run(S, rnd)
-    S['offseason']['fa'] = dict(log=log, stats=dict(stats)); S['offseason']['done'].append('fa')
-    print(dict(stats), len(log))
-    if not dry: save(S, path); write_project_state(S, Z64); print('saved')
+    return stats
 
 def fix_minimums(S, rnd):
     """A full 53-man roster cannot hide a missing K/P/QB: release the weakest player from the most overstocked position and sign one."""
@@ -157,3 +154,17 @@ def fix_minimums(S, rnd):
                 q = cands[0] if cands else gen_player(S, pos, YEAR, max(6.0, min(7.4, rnd.gauss(6.8, .35))), rnd, club=None, age_=rnd.randint(24, 31))
                 sign(S, q, t, minsal(), 1, 'street'); cnt[pos] += 1; fixed.append((t, pos, q['name']))
     return fixed
+
+if __name__ == '__main__':
+    path = STATE; S = load(path); cmd = sys.argv[1] if len(sys.argv) > 1 else ''; dry = cmd == 'dry'
+    if cmd == 'street':
+        assert 'draft' in S['offseason']['done'] and 'street' not in S['offseason']['done'], 'run after the draft, once'
+        rnd = random.Random(2044004); st = street_fill(S, rnd); fx = fix_minimums(S, rnd)
+        S['offseason']['street'] = dict(stats=dict(st), fixed=[list(x) for x in fx]); S['offseason']['done'].append('street')
+        print(dict(st), 'min-roster fixes', fx); save(S, path); write_project_state(S, Z64); print('saved')
+    else:
+        assert 'fa' not in S['offseason']['done'], 'free agency already run'
+        rnd = random.Random(2044002); log, stats = run(S, rnd)
+        S['offseason']['fa'] = dict(log=log, stats=dict(stats)); S['offseason']['done'].append('fa')
+        print(dict(stats), len(log))
+        if not dry: save(S, path); write_project_state(S, Z64); print('saved')

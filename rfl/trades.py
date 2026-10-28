@@ -1,4 +1,4 @@
-"""Offseason step 4: trades for picks and staff moves (2043). Usage: python3 rfl/trades.py [dry]
+"""Offseason step 4: trades for picks and staff moves (YEAR = the season being built; 2044 after the 2043 season). Usage: python3 rfl/trades.py [dry]
 Trades: cap-tight clubs with surplus talent sell to clubs with a real need and room; payment is the buyer's 2043 pick (round by rating).
 Staff: head coaches/GMs are fired, resign or retire; replacements are promoted coordinators/assistant GMs from other clubs (coaching doc updated).
 Also creates 2043 pick ownership for every club. Guarded: runs once. Writes S['offseason']['trades'] and ['staff'] and data/rfl_coaching.json."""
@@ -8,7 +8,8 @@ from rfl.engine import *
 from rfl import season as SE
 from rfl.freeagency import club_pos, MINROSTER
 
-YEAR = 2043
+YEAR = 2044
+SEASON = YEAR - 1          # the season just played; staff records and honours close on it
 COACHING = f'{ROOT}/data/rfl_coaching.json'
 
 # ------------------------------------------------------------------ trades
@@ -38,13 +39,6 @@ def run_trades(S, rnd, target=7):
         # the buyer's pick now belongs to the seller
         log.append(f"{seller} trade {p['name']} ({p['pos']}, {ovr(p):.1f}) to {buyer} for a {YEAR} round-{r} pick"); done.add(p['pid'])
         return True
-    # (a) the Silverbacks have no QB: they buy the best one a cap-tight club can spare
-    for _ in range(1):
-        b = 'Vaughn Bay Silverbacks'
-        cands = [(ovr(P[str(i)]), t, P[str(i)]) for t, c in S['clubs'].items() if t != b and st(t) > .93 for i in c['roster'] if P[str(i)]['pos'] == 'QB' and surplus(t, P[str(i)]) and ovr(P[str(i)]) >= 8.0]
-        cands.sort(key=lambda x: -x[0])
-        for o, t, p in cands:
-            if payroll(S, b) + p['contract']['salary'] < .9 * cap and trade(t, b, p, 'qb'): break
     # (b) general market: tight clubs shed surplus, needy clubs with room buy
     sellers = [t for t in S['clubs'] if st(t) > .93]
     rnd.shuffle(sellers); tries = 0
@@ -97,7 +91,6 @@ def sync_2042(S, D, rnd):
     return n
 
 def run_staff(S, rnd, D):
-    sync_2042(S, D, random.Random(2042777))
     moves = []; conduct = []; C = D['coaches']; G = D['gms']
     rec = S['season']['records']; champ = S['season']['playoffs']['champion']
     pc = lambda t: rec[t]['w'] / max(1, rec[t]['w'] + rec[t]['l'] + rec[t]['t'])
@@ -110,19 +103,19 @@ def run_staff(S, rnd, D):
         while True:
             n = f"{rnd.choice(first)} {rnd.choice(last)}"
             if n not in used: used.add(n); return n
-    # close 2042 on the incumbents: records, titles, awards
+    # close the season on the incumbents: records, titles, awards
     coy = S['season']['awards']['Coach of the Year']['finalists'][0]['name']
     for t, c in S['clubs'].items():
         h = cidx[c['coach']['name']]; g = gidx[c['gm']['name']]; r = rec[t]
         h['hc'] = [h['hc'][0] + r['w'], h['hc'][1] + r['l'], h['hc'][2] + r['t']]; g['rec'] = [g['rec'][0] + r['w'], g['rec'][1] + r['l'], g['rec'][2] + r['t']]
-        if t == champ: h['titles'].append(2042); g['titles'].append(2042)
-        if h['name'] == coy: h['coy'].append(2042)
-    D['coy']['2042'] = dict(name=coy, club=S['season']['awards']['Coach of the Year']['finalists'][0]['club'])
+        if t == champ: h['titles'].append(SEASON); g['titles'].append(SEASON)
+        if h['name'] == coy: h['coy'].append(SEASON)
+    D['coy'][str(SEASON)] = dict(name=coy, club=S['season']['awards']['Coach of the Year']['finalists'][0]['club'])
     def stint(person, role, club):   # current open stint
         s = person['stints'][-1]; assert s[0] == club and s[1] == role and s[3] is None, (person['name'], s)
         return s
     def close(person, role, club, why):
-        s = stint(person, role, club); s[3] = 2042; s[4] = why
+        s = stint(person, role, club); s[3] = SEASON; s[4] = why
     def openst(person, role, club): person['stints'].append([club, role, YEAR, None, None])
     # who leaves
     leave = {}
@@ -171,14 +164,14 @@ def run_staff(S, rnd, D):
         if role == 'HC':
             pool = [x for x in oc if x[0]['name'] not in taken and x[1] != t and ageof(x[0]) <= 62]
             new, from_club, from_role = rnd.choice(pool); taken.add(new['name'])
-            new['stints'][-1][3] = 2042; new['stints'][-1][4] = f"hired as HC by {t}"; openst(new, 'HC', t)
+            new['stints'][-1][3] = SEASON; new['stints'][-1][4] = f"hired as HC by {t}"; openst(new, 'HC', t)
             c['coach'] = coach_profile(new['name'])
             refill.append((from_club, from_role))
             moves.append(f"{t}: {new['name']} replaces {oldname} as head coach")
         else:
             pool = [x for x in agm if x[0]['name'] not in taken and x[1] != t]
             new, from_club = rnd.choice(pool); taken.add(new['name'])
-            new['stints'][-1][3] = 2042; new['stints'][-1][4] = f"hired as GM by {t}"; openst(new, 'GM', t)
+            new['stints'][-1][3] = SEASON; new['stints'][-1][4] = f"hired as GM by {t}"; openst(new, 'GM', t)
             c['gm'] = gm_profile(new['name'])
             S['_agm_vac'] = S.get('_agm_vac', []) + [from_club]
             moves.append(f"{t}: {new['name']} replaces {oldname} as general manager")
@@ -197,7 +190,7 @@ def run_staff(S, rnd, D):
 if __name__ == '__main__':
     path = STATE; S = load(path); dry = len(sys.argv) > 1 and sys.argv[1] == 'dry'
     assert 'fa' in S['offseason']['done'] and 'trades' not in S['offseason']['done'], 'run free agency first / trades already run'
-    rnd = random.Random(2043003); D = load(COACHING)
+    rnd = random.Random(2044003); D = load(COACHING)
     trades = run_trades(S, rnd); moves, conduct = run_staff(S, rnd, D)
     S['offseason']['trades'] = trades; S['offseason']['staff'] = dict(moves=moves, conduct=conduct); S['offseason']['done'].append('trades')
     print(len(trades), 'trades'); [print(' ', x) for x in trades]

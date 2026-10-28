@@ -1,12 +1,12 @@
 """The RFL draft: 7 rounds x 40, need-based, each GM grading on their own eye. Then undrafted signings and camp cuts
 that always leave 3 QB, 1 K, 1 P and real depth. Usage: python3 rfl/draft.py [dry]
 2043 version: works on the live state (data/state_2042.json, offseason step 'draft'), order from the 2042 results,
-pool from the college sim's JSON (data/draft_pool_2043.json = cfb/state/draft_pool_2043.json)."""
+pool from the college sim's JSON (data/draft_pool_2044.json = cfb/state/draft_pool_2044.json)."""
 import json, random, sys, os, collections
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from rfl.engine import *
 from rfl import discipline as _disc
-YEAR = 2043
+YEAR = 2044
 DRY = 'dry' in sys.argv
 S = load(STATE); L = load(f'{ROOT}/data/league.json')
 clubs = sorted(L['teams']); rnd = random.Random(YEAR * 31)
@@ -60,11 +60,22 @@ def needs(t):
     if S['clubs'][t].get('drafted_qb'): out['QB'] = 0
     return out
 
+def apply_pick_penalties():
+    """League Office forfeits: remove one round-N pick from the penalised club (its own first, else any it holds)."""
+    out = []
+    for pen in S.get('pick_penalties', []):
+        if pen.get('draft') != YEAR or pen.get('applied'): continue
+        pk = S['clubs'][pen['club']]['picks'][str(YEAR)]
+        hit = next((x for x in pk if x[0] == pen['round'] and x[1] == pen['club']), None) or next((x for x in pk if x[0] == pen['round']), None)
+        if hit: pk.remove(hit); pen['applied'] = True; out.append((pen['club'], hit, pen['reason']))
+    return out
+
 def pick_order():
     order = S['draft_order']; slots = []
     for r in range(1, ROUNDS + 1):
         for orig in order:
-            owner = next(t for t in clubs if [r, orig] in S['clubs'][t]['picks'][str(YEAR)])
+            owner = next((t for t in clubs if [r, orig] in S['clubs'][t]['picks'][str(YEAR)]), None)
+            if owner is None: continue          # forfeited (League Office penalty)
             slots.append((r, orig, owner))
     return slots
 
@@ -117,6 +128,7 @@ def cuts():
 if __name__ == '__main__':
     assert 'draft' not in S['offseason']['done'], 'draft already run'
     S['draft_order'] = draft_order(S)
+    forfeits = apply_pick_penalties(); print('forfeited picks:', forfeits)
     pool = load_pool(f'{ROOT}/data/draft_pool_{YEAR}.json'); print('pool', len(pool), '| order top5', S['draft_order'][:5], '| last', S['draft_order'][-1])
     picks, avail = run_draft(pool)
     udfa = sign_udfas(avail); cut = cuts()
