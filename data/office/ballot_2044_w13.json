@@ -1,0 +1,404 @@
+{
+ "year": 2044,
+ "week": 13,
+ "potw": {
+  "off": [
+   {
+    "pid": 9037885,
+    "name": "Waimarie Sharpturtle",
+    "pos": "QB",
+    "club": "Tasson Thunderbugs",
+    "line": "29/41, 377 yds, 1 INT, 91 rush yds",
+    "res": "W 30-23 at Raptors",
+    "score": 32.15,
+    "plays": [
+     "Q1 3:35 interception thrown (tied)",
+     "Q4 0:10 4-yd TD run (was down 6, late), tied the game",
+     "OT 5:08 12-yd TD run (was tied, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9101674,
+    "name": "Camila Bonerini",
+    "pos": "WR",
+    "club": "Diveo Demons",
+    "line": "10 rec, 138 yds, 3 TD",
+    "res": "W 38-24 at Greats",
+    "score": 31.8,
+    "plays": [
+     "Q2 0:09 20-yd TD catch from Kangee Birkeset (was down 7)",
+     "Q3 5:09 7-yd TD catch from Kangee Birkeset (was tied)",
+     "Q4 8:07 8-yd TD catch from Kangee Birkeset (was up 14)"
+    ]
+   },
+   {
+    "pid": 9034798,
+    "name": "Kangee Birkeset",
+    "pos": "QB",
+    "club": "Diveo Demons",
+    "line": "25/40, 338 yds, 5 TD, 1 INT, 25 rush yds",
+    "res": "W 38-24 at Greats",
+    "score": 30.69,
+    "plays": [
+     "Q1 8:03 10-yd TD pass to Okhee Vaubourg (was tied)",
+     "Q2 1:55 interception thrown (tied), led to a touchdown",
+     "Q2 0:09 20-yd TD pass to Camila Bonerini (was down 7)",
+     "Q3 5:09 7-yd TD pass to Camila Bonerini (was tied)",
+     "Q4 11:21 7-yd TD pass to Bronislaw Haselwetter (was up 7)",
+     "Q4 8:07 8-yd TD pass to Camila Bonerini (was up 14)"
+    ]
+   },
+   {
+    "pid": 9101126,
+    "name": "Lucia Pellatelli",
+    "pos": "RB",
+    "club": "Palm Creek Leatherbacks",
+    "line": "29 car, 129 yds, 1 rec, 10 yds, 3 TD",
+    "res": "W 31-21 at Hope",
+    "score": 27.4,
+    "plays": [
+     "Q1 1:59 10-yd TD catch from Zainab Yiling (was up 7)",
+     "Q2 10:49 3-yd TD run (was up 7)",
+     "Q2 4:09 fumble lost (up 17), led to a touchdown",
+     "Q3 8:15 1-yd TD run (was up 10)"
+    ]
+   },
+   {
+    "pid": 9101661,
+    "name": "Taeyang Su-Won",
+    "pos": "WR",
+    "club": "Coachville Mastodons",
+    "line": "7 rec, 153 yds, 2 TD",
+    "res": "W 29-26 at Dales",
+    "score": 27.3,
+    "plays": [
+     "Q1 10:30 1-yd TD catch from Chengfei Pyeong-Seok (was tied)",
+     "Q2 8:03 1-yd TD catch from Chengfei Pyeong-Seok (was up 6)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9101244,
+    "name": "Estrella Belpierre",
+    "pos": "LB",
+    "club": "Tengus City Terrors",
+    "line": "7 tackles, 3 INT",
+    "res": "W 33-0 at Tsunami",
+    "score": 28.2,
+    "plays": [
+     "Q1 11:05 interception returned 19 yds (tied), led to a field goal",
+     "Q1 4:24 interception returned 8 yds (up 3), led to a touchdown",
+     "Q4 2:17 interception returned 29 yds (up 26), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9101215,
+    "name": "Catalina Castiani",
+    "pos": "S",
+    "club": "San Saltadac Sea Lions",
+    "line": "4 tackles, 2 INT",
+    "res": "W 41-17 vs Grays",
+    "score": 18.4,
+    "plays": [
+     "Q3 0:38 interception returned 17 yds (up 3), led to a touchdown",
+     "Q4 0:54 interception returned 9 yds (up 17), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9036925,
+    "name": "Honoka Maygate",
+    "pos": "DL",
+    "club": "Tasson Thunderbugs",
+    "line": "5 tackles, 3 sacks",
+    "res": "W 30-23 at Raptors",
+    "score": 18.0,
+    "plays": []
+   },
+   {
+    "pid": 9037488,
+    "name": "Peymyr Vasilakis",
+    "pos": "DL",
+    "club": "Diamond City Dynamos",
+    "line": "4 tackles, 3 sacks",
+    "res": "W 34-33 vs Topcats",
+    "score": 17.4,
+    "plays": []
+   },
+   {
+    "pid": 9101645,
+    "name": "Runa Rasmussen",
+    "pos": "LB",
+    "club": "Wolford Dragons",
+    "line": "7 tackles, 1 sack, 1 INT",
+    "res": "W 27-19 at Bees",
+    "score": 17.2,
+    "plays": [
+     "Q2 10:42 interception (up 4), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9033796,
+    "name": "Stelios Baldettoni",
+    "pos": "DL",
+    "club": "Crayellan Redwoods",
+    "line": "3 tackles, 3 sacks",
+    "res": "W 34-23 vs Silverbacks",
+    "score": 16.8,
+    "plays": []
+   }
+  ],
+  "st": [
+   {
+    "pid": 9101026,
+    "name": "Wei Littlesky",
+    "pos": "K",
+    "club": "Sarkady Beavers",
+    "line": "4/4 FG, long 54, 2/2 XP",
+    "res": "W 26-23 at Conductors",
+    "score": 21.5,
+    "plays": [
+     "Q1 7:29 20-yd GOOD",
+     "Q2 2:41 54-yd GOOD",
+     "Q3 10:33 25-yd GOOD",
+     "Q4 0:00 50-yd GOOD, go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9101386,
+    "name": "Delphine Montpierre",
+    "pos": "K",
+    "club": "Lornaman Renegades",
+    "line": "3/3 FG, long 56, 3/3 XP",
+    "res": "L 30-33 vs Phenoms",
+    "score": 20.0,
+    "plays": [
+     "Q2 11:50 54-yd GOOD",
+     "Q4 13:03 54-yd GOOD, tied the game",
+     "Q4 10:21 56-yd GOOD, go-ahead, later answered"
+    ]
+   },
+   {
+    "pid": 9037247,
+    "name": "Nadine Hamasaki",
+    "pos": "K",
+    "club": "Queensville Phenoms",
+    "line": "4/4 FG, long 48, 3/3 XP",
+    "res": "W 33-30 at Renegades",
+    "score": 19.0,
+    "plays": [
+     "Q2 3:45 48-yd GOOD",
+     "Q3 14:05 41-yd GOOD",
+     "Q4 6:40 35-yd GOOD, tied the game",
+     "OT 5:58 23-yd GOOD, go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9036743,
+    "name": "Itsuki Morisaka",
+    "pos": "K",
+    "club": "North Hatesei Bees",
+    "line": "4/4 FG, long 54, 1/1 XP",
+    "res": "L 19-27 vs Dragons",
+    "score": 17.25,
+    "plays": [
+     "Q1 8:36 33-yd GOOD",
+     "Q1 0:14 53-yd GOOD",
+     "Q2 4:51 54-yd GOOD",
+     "Q3 9:43 31-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9038683,
+    "name": "Jack Rocherive",
+    "pos": "K",
+    "club": "Tengus City Terrors",
+    "line": "4/4 FG, long 57, 3/3 XP",
+    "res": "W 33-0 at Tsunami",
+    "score": 16.75,
+    "plays": [
+     "Q1 10:16 57-yd GOOD",
+     "Q2 6:09 28-yd GOOD",
+     "Q3 8:19 22-yd GOOD",
+     "Q4 3:20 37-yd GOOD"
+    ]
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "taunt",
+   "title": "Unsportsmanlike conduct",
+   "who": [
+    {
+     "name": "Kalani Toatautua",
+     "pos": "LB",
+     "club": "Tengus City Terrors",
+     "pid": 9036790
+    }
+   ],
+   "game": "G245",
+   "where": "Tengus City Terrors at South Burke Tsunami, week 13",
+   "text": "Kalani Toatautua (LB, Terrors) drew a flag with 0:05 left in the fourth quarter for taunting after a play. Officials described it as a single gesture. The incident drew a reaction from the home crowd. It came at a point when his team was ahead by two scores.\n\nKalani Toatautua has until Friday to respond to the notice.",
+   "severity": 2.0,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9036790,
+    9100750
+   ],
+   "precedent": [
+    "2043 wk 10, Rosario Zamorano: Fine $10K (severity 2.2)",
+    "2044 wk 5, Azucena Dragicky: No action (severity 1.3)",
+    "2044 wk 7, Jamila Ellery: No action (severity 2.9)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $10K"
+    },
+    {
+     "key": "k15",
+     "label": "Fine $15K",
+     "games": 0,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $15K"
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $25K"
+    }
+   ],
+   "precedent_pick": "none",
+   "tier": "minor",
+   "id": "W13-1",
+   "week": 13
+  },
+  {
+   "type": "social",
+   "title": "Post about the league office",
+   "who": [
+    {
+     "name": "Prudence Eastbridge",
+     "pos": "RB",
+     "club": "North Hatesei Bees",
+     "pid": 9035859
+    }
+   ],
+   "game": "G308",
+   "where": "Wolford Dragons at North Hatesei Bees, week 13",
+   "text": "Prudence Eastbridge (RB, Bees) posted remarks about an opponent that the league described as unprofessional. It was shared widely before it was removed. Eastbridge apologized in a follow-up post. He said it was written late at night and in frustration. The post contained profanity.\n\nThe Bees say they have spoken with Prudence Eastbridge.",
+   "severity": 2.4,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9035859
+   ],
+   "precedent": [],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $10K"
+    },
+    {
+     "key": "k15",
+     "label": "Fine $15K",
+     "games": 0,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Fined $15K"
+    },
+    {
+     "key": "k40",
+     "label": "Fine $40K",
+     "games": 0,
+     "fine": 40000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $40K"
+    }
+   ],
+   "precedent_pick": null,
+   "tier": "minor",
+   "id": "W13-2",
+   "week": 13
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": []
+}
