@@ -1,0 +1,400 @@
+{
+ "year": 2044,
+ "week": 4,
+ "potw": {
+  "off": [
+   {
+    "pid": 9035241,
+    "name": "Gwen Milinsky",
+    "pos": "QB",
+    "club": "New Madrid Mastiffs",
+    "line": "18/21, 165 yds, 2 TD, 68 rush yds",
+    "res": "W 35-10 at Dragons",
+    "score": 29.13,
+    "plays": [
+     "Q1 10:01 2-yd TD pass to Roviyel Karlosei (was tied)",
+     "Q2 0:25 11-yd TD run (was tied)",
+     "Q4 9:43 16-yd TD pass to Rajesh Hartwick (was up 11)",
+     "Q4 5:03 20-yd TD run (was up 18)"
+    ]
+   },
+   {
+    "pid": 9035209,
+    "name": "Sivoyel Yingzuo",
+    "pos": "QB",
+    "club": "South Burke Tsunami",
+    "line": "23/34, 364 yds, 3 TD",
+    "res": "W 27-3 vs Renegades",
+    "score": 27.56,
+    "plays": [
+     "Q1 11:08 5-yd TD pass to Sota Pyeong-Seong (was tied)",
+     "Q1 0:28 5-yd TD pass to Tuva Seltaw (was up 7)",
+     "Q3 8:21 28-yd TD pass to Wesley Holmtveit (was up 14)"
+    ]
+   },
+   {
+    "pid": 9037306,
+    "name": "Zhenzhen Su-Jae",
+    "pos": "RB",
+    "club": "Diveo Demons",
+    "line": "17 car, 55 yds, 4 rec, 62 yds, 2 TD",
+    "res": "L 27-30 at Beetles",
+    "score": 24.45,
+    "plays": [
+     "Q4 13:18 8-yd TD catch from Kangee Birkeset (was down 11)",
+     "Q4 0:41 39-yd TD catch from Kangee Birkeset (was down 8, late), cut the deficit late"
+    ]
+   },
+   {
+    "pid": 9101677,
+    "name": "Zlata Radushkin",
+    "pos": "RB",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "17 car, 55 yds, 3 rec, 34 yds, 2 TD",
+    "res": "W 30-17 at Dynamos",
+    "score": 23.9,
+    "plays": [
+     "Q4 9:31 9-yd TD catch from Manish Anysei (was down 1), go-ahead and decisive, never answered",
+     "Q4 0:04 2-yd TD catch from Manish Anysei (was up 6, late)"
+    ]
+   },
+   {
+    "pid": 9035898,
+    "name": "Chiyo Morisaka",
+    "pos": "RB",
+    "club": "Chapel Rock Crowns",
+    "line": "18 car, 86 yds, 1 rec, 25 yds, 2 TD",
+    "res": "W 27-14 at Raptors",
+    "score": 23.1,
+    "plays": [
+     "Q2 5:33 7-yd TD run (was up 3)",
+     "Q3 0:46 1-yd TD run (was up 3)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9037952,
+    "name": "Chengfei Leisao",
+    "pos": "DL",
+    "club": "Canesta Dales",
+    "line": "6 tackles, 4 sacks",
+    "res": "L 17-37 vs Leatherbacks",
+    "score": 23.6,
+    "plays": []
+   },
+   {
+    "pid": 9034723,
+    "name": "Ojinjintka Tomselniy",
+    "pos": "LB",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "4 tackles, 1 sack, 1 INT, 1 forced fumble",
+    "res": "W 30-17 at Dynamos",
+    "score": 22.9,
+    "plays": [
+     "Q3 13:35 sack and forced fumble (down 4), led to a field goal",
+     "Q4 3:15 interception returned 15 yds (up 6, late), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9101664,
+    "name": "Lanying Kawatani",
+    "pos": "LB",
+    "club": "Diamond City Dynamos",
+    "line": "9 tackles, 3 sacks",
+    "res": "L 17-30 vs Silverbacks",
+    "score": 20.4,
+    "plays": []
+   },
+   {
+    "pid": 9101618,
+    "name": "Rupert Readborough",
+    "pos": "LB",
+    "club": "Holliday Beetles",
+    "line": "11 tackles, 1 sack, 1 INT",
+    "res": "W 30-27 vs Demons",
+    "score": 19.6,
+    "plays": [
+     "Q4 6:19 interception returned 12 yds (up 5), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9034892,
+    "name": "Bhaskar Krasavsky",
+    "pos": "LB",
+    "club": "Holliday Beetles",
+    "line": "8 tackles, 1 sack, 1 INT",
+    "res": "W 30-27 vs Demons",
+    "score": 17.3,
+    "plays": [
+     "Q4 0:06 interception (tied, late)"
+    ]
+   },
+   {
+    "pid": 9038421,
+    "name": "Douglas Ostrovich",
+    "pos": "LB",
+    "club": "Bruca Beach Hammerheads",
+    "line": "12 tackles, 2 sacks",
+    "res": "L 17-37 vs Rovers",
+    "score": 17.2,
+    "plays": []
+   }
+  ],
+  "st": [
+   {
+    "pid": 9037064,
+    "name": "Adaeze Stavroledis",
+    "pos": "P",
+    "club": "Holliday Beetles",
+    "line": "8 punts, 50.1 avg, 3 inside the 20",
+    "res": "W 30-27 vs Demons",
+    "score": 18.0,
+    "plays": []
+   },
+   {
+    "pid": 9037936,
+    "name": "Yansa Hazelhurst",
+    "pos": "K",
+    "club": "Crayellan Redwoods",
+    "line": "4/4 FG, long 55, 3/3 XP",
+    "res": "W 33-14 at Beavers",
+    "score": 16.25,
+    "plays": [
+     "Q2 4:59 36-yd GOOD",
+     "Q3 3:14 31-yd GOOD",
+     "Q4 3:40 29-yd GOOD",
+     "Q4 0:33 55-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101385,
+    "name": "Mio Wakada",
+    "pos": "K",
+    "club": "Holliday Beetles",
+    "line": "3/3 FG, long 39, 3/3 XP",
+    "res": "W 30-27 vs Demons",
+    "score": 15.0,
+    "plays": [
+     "Q2 5:21 26-yd GOOD",
+     "Q4 1:12 39-yd GOOD",
+     "OT 5:47 28-yd GOOD, go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9101837,
+    "name": "Roswitha Rosenmeier",
+    "pos": "K",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "3/3 FG, long 53, 3/3 XP",
+    "res": "W 30-17 at Dynamos",
+    "score": 14.0,
+    "plays": [
+     "Q1 7:48 49-yd GOOD",
+     "Q2 14:00 53-yd GOOD",
+     "Q3 11:34 36-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101431,
+    "name": "Mingze Hatayama",
+    "pos": "K",
+    "club": "Palm Creek Leatherbacks",
+    "line": "3/4 FG, long 62, 4/4 XP",
+    "res": "W 37-17 at Dales",
+    "score": 13.75,
+    "plays": [
+     "Q1 10:34 62-yd GOOD",
+     "Q1 4:48 28-yd GOOD",
+     "Q3 2:13 45-yd GOOD",
+     "Q4 0:06 53-yd MISSED"
+    ]
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "targeting",
+   "title": "Targeting with injury",
+   "who": [
+    {
+     "name": "Taeyang Haselwetter",
+     "pos": "OL",
+     "club": "Lornaman Renegades",
+     "pid": 9037926
+    }
+   ],
+   "game": "G279",
+   "where": "Lornaman Renegades at South Burke Tsunami, week 4",
+   "text": "Haruto Shenghan (DL, Tsunami) left the game after a hit from Taeyang Haselwetter (OL, Renegades) that drew an unnecessary roughness flag with 5:54 left in the third quarter. Shenghan was diagnosed with a concussion and is expected to miss 3 weeks. Haselwetter reached out to Shenghan after the game.\n\nThe league office has asked the Renegades for their account.",
+   "severity": 7.0,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9037926,
+    9035881
+   ],
+   "precedent": [],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $50K"
+    },
+    {
+     "key": "g2",
+     "label": "2 games + $75K",
+     "games": 2,
+     "fine": 75000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Out 2 games, fined $75K"
+    },
+    {
+     "key": "g3",
+     "label": "3 games + $75K",
+     "games": 3,
+     "fine": 75000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Out 3 games, fined $75K"
+    },
+    {
+     "key": "g4",
+     "label": "4 games",
+     "games": 4,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Out 4 games"
+    },
+    {
+     "key": "g5",
+     "label": "5 games",
+     "games": 5,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Out 5 games"
+    }
+   ],
+   "precedent_pick": null,
+   "tier": "moderate",
+   "id": "W4-1",
+   "week": 4
+  },
+  {
+   "type": "appeal",
+   "title": "Appeal: Arrest for driving under the influence",
+   "who": [
+    {
+     "name": "Shaniqua Freeton",
+     "pos": "DL",
+     "club": "Costique Bearcats",
+     "pid": 9038659
+    }
+   ],
+   "game": null,
+   "where": "League office",
+   "text": "The players' union has appealed, arguing the penalty is out of line with earlier rulings for similar conduct. Shaniqua Freeton (DL, Bearcats) was ruled on in week 3, 2044: Arrest for driving under the influence, 5 games + $40K. Comparable earlier rulings (severity within a point) imposed a median of 2 games, against 5 here.",
+   "severity": 3.6,
+   "prior": 0,
+   "stage": "appeal",
+   "pids": [
+    9038659
+   ],
+   "precedent": [],
+   "chain": [
+    "Week 3, 2044: Arrest for driving under the influence, 5 games + $40K"
+   ],
+   "options": [
+    {
+     "key": "uphold",
+     "label": "Uphold the ruling",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Uphold the ruling"
+    },
+    {
+     "key": "red",
+     "label": "Reduce by 1 game",
+     "games": -1,
+     "fine": 0,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Reduce by 1 game",
+     "adjust": true
+    },
+    {
+     "key": "over",
+     "label": "Overturn the suspension (fine stands)",
+     "games": -5,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Overturn the suspension (fine stands)",
+     "adjust": true
+    }
+   ],
+   "precedent_pick": null,
+   "rid": "W3-1",
+   "ryear": 2044,
+   "tier": "appeal",
+   "id": "W4-2",
+   "week": 4
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": [
+  {
+   "title": "Allegation of hazing",
+   "who": "Underwood Bats",
+   "club": "Underwood Bats",
+   "since": "week 2, 2044",
+   "ruling": "Open a formal investigation, rule on the findings"
+  },
+  {
+   "title": "Bench-clearing incident",
+   "who": "Lomano Toatele",
+   "club": "Bruca Beach Hammerheads",
+   "since": "week 2, 2044",
+   "ruling": "Fine $10K, investigation opened"
+  }
+ ]
+}
