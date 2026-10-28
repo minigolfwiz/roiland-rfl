@@ -108,16 +108,20 @@ def flex_check(S, week):
         return lead - (rec[t]['w'] + .5 * rec[t]['t'])
     left = 20 - week + 1
     notes = []
-    for g in se['schedule'][w]:
-        if not g['slot'].startswith('snf'): continue
-        a, b = g['host'], g['visitor']
-        dire = pct(a) < .5 and pct(b) < .5 and max(behind(a), behind(b)) >= min(4, left + 1)
-        if not dire: continue
-        cands = [x for x in se['schedule'][w] if x['slot'] == 'sun' and pct(x['host']) > .5 and pct(x['visitor']) > .5]
-        if not cands: continue
-        best = max(cands, key=lambda x: pct(x['host']) + pct(x['visitor']) + (.1 if x['kind'] == 'division' else 0))
-        best['slot'], g['slot'] = g['slot'], 'sun'
-        notes.append(f"week {week}: {g['visitor']} at {g['host']} flexed out of Sunday night for {best['visitor']} at {best['host']}")
+    nxt = se['schedule'].get(str(week + 1), [])
+    thu_next = {t for x in nxt if x['slot'] == 'thu' for t in (x['host'], x['visitor'])}   # clubs on short rest if moved to Monday night
+    for slot, label in (('snf', 'Sunday night'), ('mnf', 'Monday night')):
+        for g in [x for x in se['schedule'][w] if x['slot'].startswith(slot)]:
+            a, b = g['host'], g['visitor']
+            dire = pct(a) < .5 and pct(b) < .5 and max(behind(a), behind(b)) >= min(4, left + 1)
+            if not dire: continue
+            cands = [x for x in se['schedule'][w] if x['slot'] == 'sun' and pct(x['host']) > .5 and pct(x['visitor']) > .5]
+            if slot == 'mnf':   # Dan, 28 Oct 2026: MNF can flex too, but neither incoming club may play the next Thursday
+                cands = [x for x in cands if x['host'] not in thu_next and x['visitor'] not in thu_next]
+            if not cands: continue
+            best = max(cands, key=lambda x: pct(x['host']) + pct(x['visitor']) + (.1 if x['kind'] == 'division' else 0))
+            best['slot'], g['slot'] = g['slot'], 'sun'
+            notes.append(f"week {week}: {g['visitor']} at {g['host']} flexed out of {label} for {best['visitor']} at {best['host']}")
     se.setdefault('flexes', []).extend(notes)
     return notes or None
 
