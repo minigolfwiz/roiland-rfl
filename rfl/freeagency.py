@@ -144,10 +144,10 @@ def fix_minimums(S, rnd):
     P = S['players']; fixed = []
     for t, c in S['clubs'].items():
         cnt = collections.Counter(P[str(i)]['pos'] for i in c['roster'])
-        for pos, m in (('QB', 3), ('K', 1), ('P', 1)):
+        for pos, m in MINROSTER.items():
             while cnt[pos] < m:
                 if len(c['roster']) >= 53:
-                    over = max((x for x in MINROSTER if x not in ('QB', 'K', 'P')), key=lambda x: cnt[x] - MINROSTER[x])
+                    over = max((x for x in MINROSTER if x not in ('QB', 'K', 'P') and x != pos), key=lambda x: cnt[x] - MINROSTER[x])
                     cut = min((P[str(i)] for i in c['roster'] if P[str(i)]['pos'] == over), key=lambda q: q['abil'])
                     c['roster'].remove(cut['pid']); cut['club'] = None; cut['contract'] = None; cnt[over] -= 1
                 cands = sorted([q for q in P.values() if q['status'] == 'active' and not q['club'] and q['pos'] == pos], key=lambda q: -q['abil'])

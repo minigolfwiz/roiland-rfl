@@ -38,7 +38,15 @@
 - Second round: Asteroids 30–Greats 17; Bearcats 50–Komodos 7; Silverbacks 52–T-Rexes 13; Sea Lions 44–Dales 31.
 - Conference championships: Bearcats 33, Asteroids 27 (OT, walk-off TD, no extra point); Sea Lions 41, Silverbacks 38.
 - Awards (regular season only): MVP Osamu Santascio (Bearcats QB, 5,117 yds, 48 TD); OPOY Santascio; DPOY DeAndre Rosenqvist (Rangers S, 6 INT); Rookie of the Year Kaito Huada (Commodores DL, 12 sacks); Coach of the Year Nobuo Ultreimyr (Rangers, 13-5; Bearcats coach Hajun Bustamante was not a finalist, which Dan may want to override). Mega Bowl MVP Santascio. Finalists are stored in `season.awards`.
-- Next: the 2043 offseason (retirements, free agency, staff moves, draft). No 2043 engine step has been built yet.
+- Next: the 2043 offseason (see its section below).
+
+## 2043 offseason (building the 2044 season) — DONE through the draft (27 Oct 2026)
+- Stages run in order and tracked in `S['offseason']['done']`: close, retire, fa, trades, draft, street. YEAR convention: in freeagency/trades/draft, YEAR = the season being built (2044); `SEASON = YEAR-1` closes staff records. An earlier free agency run used YEAR=2043 by mistake and was discarded and redone.
+- **Free agency is split (Dan, 27 Oct):** veteran market and re-signs run before the draft (`freeagency.py`); the journeyman "street" fill-ins run after the draft and undrafted signings (`freeagency.py street`, which also runs `fix_minimums` for every position minimum). Rosters were 37-50 before the draft, 51-53 after.
+- 137 retirements, 7 trades (surplus starters for 2044 picks), 10 staff moves (6 new head coaches or GMs of note: Bats, Demons, Beetles, Renegades, Sea Lions coaches; GMs at Hope, Topcats, T-Rexes, Renegades, Beavers). `S['pick_penalties']` is now consumed by `draft.apply_pick_penalties` (none were queued this year).
+- **2044 draft:** order Komodos, Beetles, Rapids, Renegades, Mastodons ... Dales last; 280 picks; 1 Komodos Nikhil Al-Husri LB, 2 Beetles Rupert Readborough LB, 3 Rapids Ximena Coldcombe OL, 4 Renegades Zhenzhen Zhigong LB, 5 Mastodons Ngaio Malieanua DL (9.81, best talent). First QB 27th (Leatherbacks, Alessia Verville). 205 undrafted signed. Pool: the project copy holds only the top 700 by stock. Return file `claude/rfl_draft_2044_picks.json`; book `claude/rfl_draft_book_2044.json`. History blocks `offseason_2044`, `draft_order_2044`, `draft_2044` recorded in the history file.
+- Cap 2044 is $345.9M; a few clubs sit a little over it from rookie deals (allowed; rookies and street minimums do not require space).
+- **Next:** build the 2044 schedule (rotation from `rfl_matchups.py`, Dan places games in the Office, `fill_anneal` completes), broadcast slots, Mega Bowl site (2044 host from `rfl_mega_bowl_sites.json`), then play the season. Archive page still needs the 2044 draft step (`archive_draft.py` is the 2043 version; parametrize to 2044).
 
 ## Engine (rebuilt) — `claude/code/`
 - `rfl_engine.py`: player/club dicts, cap (2042 $309.5M), market value, GM/coach profiles (deterministic from name), depth charts, strength, depth-player generator, `compact_state`/`expand_state` for the project copy.
