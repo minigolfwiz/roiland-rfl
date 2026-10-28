@@ -1,0 +1,404 @@
+{
+ "year": 2044,
+ "week": 12,
+ "potw": {
+  "off": [
+   {
+    "pid": 9100815,
+    "name": "Beatrice Wickcombe",
+    "pos": "QB",
+    "club": "Stamford Grays",
+    "line": "33/48, 358 yds, 5 TD, 25 rush yds",
+    "res": "W 36-30 at Dragons",
+    "score": 41.49,
+    "plays": [
+     "Q1 3:06 1-yd TD pass to Ximena Alcantara (was down 3)",
+     "Q2 7:31 5-yd TD pass to Ximena Alcantara (was up 4)",
+     "Q4 1:30 6-yd TD pass to Chafik Sarvashankar (was down 6, late), tied the game",
+     "OT 5:06 2-yd TD pass to Chafik Sarvashankar (was tied, late), go-ahead, later answered",
+     "OT 0:13 52-yd TD pass to Ramatoulaye Menswale (was tied, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9038364,
+    "name": "Xinyi Songzheng",
+    "pos": "RB",
+    "club": "Coachville Mastodons",
+    "line": "16 car, 95 yds, 4 rec, 79 yds, 4 TD",
+    "res": "W 34-10 vs Raptors",
+    "score": 41.4,
+    "plays": [
+     "Q1 0:06 4-yd TD run (was tied)",
+     "Q2 1:49 23-yd TD run (was up 7)",
+     "Q3 5:52 24-yd TD catch from Chengfei Pyeong-Seok (was up 14)",
+     "Q4 8:13 36-yd TD catch from Chengfei Pyeong-Seok (was up 17)"
+    ]
+   },
+   {
+    "pid": 9034735,
+    "name": "Zuzana Quisvaw",
+    "pos": "QB",
+    "club": "Ediville Brass Tigers",
+    "line": "30/42, 339 yds, 5 TD, 55 rush yds",
+    "res": "L 35-38 vs Rovers",
+    "score": 38.73,
+    "plays": [
+     "Q1 6:25 1-yd TD pass to Thyra Vikmark (was tied)",
+     "Q2 12:37 6-yd TD pass to Honoka Shimatsu (was tied)",
+     "Q2 0:00 10-yd TD pass to Rasmus Storfeldt (was down 3)",
+     "Q3 6:02 7-yd TD pass to Honoka Shimatsu (was down 3)",
+     "Q4 3:16 6-yd TD pass to Thyra Vikmark (was down 3, late), go-ahead, later answered"
+    ]
+   },
+   {
+    "pid": 9037360,
+    "name": "Liqin Qihuan",
+    "pos": "RB",
+    "club": "Good River Rangers",
+    "line": "26 car, 135 yds, 2 rec, 37 yds, 3 TD",
+    "res": "W 35-27 at Komodos",
+    "score": 35.2,
+    "plays": [
+     "Q1 5:27 2-yd TD run (was tied)",
+     "Q2 0:13 5-yd TD run (was up 8)",
+     "Q3 8:16 5-yd TD run (was up 8)"
+    ]
+   },
+   {
+    "pid": 9036449,
+    "name": "Bogdana Neraoretti",
+    "pos": "WR",
+    "club": "Lornaman Renegades",
+    "line": "12 rec, 205 yds, 1 TD",
+    "res": "W 20-17 vs Lions",
+    "score": 26.5,
+    "plays": [
+     "Q2 3:56 1-yd TD catch from Rin Langdale (was down 2)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9038309,
+    "name": "Shreya Somarajan",
+    "pos": "LB",
+    "club": "San Saltadac Sea Lions",
+    "line": "5 tackles, 1 sack, 1 INT, 1 forced fumble",
+    "res": "L 17-20 at Renegades",
+    "score": 22.0,
+    "plays": [
+     "Q2 9:11 interception (down 1), led to a field goal",
+     "Q4 5:16 sack and forced fumble (down 11), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9101226,
+    "name": "William Ravenbury",
+    "pos": "DL",
+    "club": "El Latigo Shredders",
+    "line": "5 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 27-14 vs Demons",
+    "score": 19.0,
+    "plays": [
+     "Q1 12:21 sack and forced fumble (tied), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9039016,
+    "name": "Maja Birkemark",
+    "pos": "LB",
+    "club": "Hughes City Asteroids",
+    "line": "10 tackles, 1 sack, 1 INT",
+    "res": "L 20-21 at Raccoons",
+    "score": 19.0,
+    "plays": [
+     "Q1 7:18 interception (tied), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9101692,
+    "name": "Emil Hochberger",
+    "pos": "DL",
+    "club": "Chapel Rock Crowns",
+    "line": "5 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 34-19 vs Beetles",
+    "score": 19.0,
+    "plays": [
+     "Q2 3:09 sack and forced fumble (up 7), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9100757,
+    "name": "Fiona Sandnes",
+    "pos": "LB",
+    "club": "North Hatesei Bees",
+    "line": "6 tackles, 3 sacks",
+    "res": "W 20-13 at Greats",
+    "score": 18.6,
+    "plays": []
+   },
+   {
+    "pid": 9101030,
+    "name": "Yaa Al-Hakim",
+    "pos": "LB",
+    "club": "Palm Creek Leatherbacks",
+    "line": "8 tackles, 2 sacks",
+    "res": "W 30-9 vs Terrors",
+    "score": 14.8,
+    "plays": []
+   }
+  ],
+  "st": [
+   {
+    "pid": 9101837,
+    "name": "Roswitha Rosenmeier",
+    "pos": "K",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "3/4 FG, long 58, 3/3 XP",
+    "res": "W 30-24 at Conductors",
+    "score": 14.25,
+    "plays": [
+     "Q2 12:20 41-yd MISSED",
+     "Q2 2:52 58-yd GOOD",
+     "Q3 11:54 53-yd GOOD",
+     "Q3 5:30 24-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9035890,
+    "name": "Lubna Camara",
+    "pos": "K",
+    "club": "New Madrid Mastiffs",
+    "line": "3/3 FG, long 52, 5/5 XP",
+    "res": "W 44-21 at Topcats",
+    "score": 13.5,
+    "plays": [
+     "Q3 2:44 38-yd GOOD",
+     "Q4 6:10 32-yd GOOD",
+     "Q4 1:05 52-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101431,
+    "name": "Mingze Hatayama",
+    "pos": "K",
+    "club": "Palm Creek Leatherbacks",
+    "line": "3/3 FG, long 55, 3/3 XP",
+    "res": "W 30-9 vs Terrors",
+    "score": 13.25,
+    "plays": [
+     "Q1 3:50 29-yd GOOD",
+     "Q3 9:26 55-yd GOOD",
+     "Q4 4:22 18-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101385,
+    "name": "Mio Wakada",
+    "pos": "K",
+    "club": "Holliday Beetles",
+    "line": "4/4 FG, long 44, 1/1 XP",
+    "res": "L 19-34 at Crowns",
+    "score": 12.5,
+    "plays": [
+     "Q1 5:29 44-yd GOOD",
+     "Q2 0:16 20-yd GOOD",
+     "Q3 8:34 22-yd GOOD",
+     "Q3 2:46 35-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101753,
+    "name": "Runa Lindtveit",
+    "pos": "P",
+    "club": "Stamford Grays",
+    "line": "6 punts, 47.7 avg, 3 inside the 20",
+    "res": "W 36-30 at Dragons",
+    "score": 12.166666666666664,
+    "plays": []
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "review",
+   "title": "Reinstatement review",
+   "who": [
+    {
+     "name": "Hannelore Langshaw",
+     "pos": "DL",
+     "club": "El Latigo Shredders",
+     "pid": 9101146
+    }
+   ],
+   "game": null,
+   "where": "League office",
+   "text": "Hannelore Langshaw (DL, Shredders) has served the minimum period of his indefinite suspension (16 games) and is eligible for reinstatement. He has had no further incidents. The players' union filed a letter asking for reinstatement.\n\nOriginal matter: Criminal charges (2043, week 16): Exempt list: out until the case resolves.",
+   "severity": 4.5,
+   "prior": 0,
+   "stage": "review",
+   "pids": [
+    9101146
+   ],
+   "precedent": [],
+   "chain": [
+    "Criminal charges (2043, week 16): Exempt list: out until the case resolves"
+   ],
+   "options": [
+    {
+     "key": "reinstate",
+     "label": "Reinstate now",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "One year of probation",
+     "reinstate": true,
+     "probation": true
+    },
+    {
+     "key": "rein_p",
+     "label": "Reinstate after 4 more games, with a conduct program",
+     "games": 4,
+     "fine": 0,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Out 4 games, conduct program, one year of probation",
+     "program": true,
+     "probation": true,
+     "reinstate": true
+    },
+    {
+     "key": "defer8",
+     "label": "Keep him out another 8 games, then review again",
+     "games": 99,
+     "fine": 0,
+     "status": "indef",
+     "suggested": false,
+     "blurb": "Out indefinitely, review after 8 games",
+     "indef_min": 8,
+     "defer": 8
+    },
+    {
+     "key": "ban",
+     "label": "Permanent ban from the league",
+     "games": 99,
+     "fine": 0,
+     "status": "ban",
+     "suggested": false,
+     "blurb": "Permanent ban",
+     "ban": true
+    }
+   ],
+   "precedent_pick": null,
+   "tier": "review",
+   "id": "W12-1",
+   "week": 12
+  },
+  {
+   "type": "fight",
+   "title": "Scuffle that emptied the benches",
+   "who": [
+    {
+     "name": "Yansa Thunderstar",
+     "pos": "DL",
+     "club": "Lornaman Renegades",
+     "pid": 9035825
+    },
+    {
+     "name": "Belen Herrblanca",
+     "pos": "DL",
+     "club": "San Saltadac Sea Lions",
+     "pid": 9100816
+    }
+   ],
+   "game": "G199",
+   "where": "San Saltadac Sea Lions at Lornaman Renegades, week 12",
+   "text": "Yansa Thunderstar (DL, Renegades) and Belen Herrblanca (DL, Sea Lions) were ejected after a fight broke out between the lines.\n\nThe league office has asked both clubs for statements.",
+   "severity": 4.6,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9035825,
+    9100816
+   ],
+   "precedent": [
+    "2043 wk 1, Nigel Hollybank: Fine each $25K (severity 4.4)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k15",
+     "label": "Fine $15K",
+     "games": 0,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $15K"
+    },
+    {
+     "key": "g1",
+     "label": "1 game + $25K",
+     "games": 1,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Out 1 game, fined $25K"
+    },
+    {
+     "key": "g2",
+     "label": "2 games + $25K",
+     "games": 2,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Out 2 games, fined $25K"
+    },
+    {
+     "key": "g3",
+     "label": "3 games + $25K",
+     "games": 3,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Out 3 games, fined $25K"
+    }
+   ],
+   "precedent_pick": null,
+   "tier": "moderate",
+   "id": "W12-2",
+   "week": 12
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": []
+}
