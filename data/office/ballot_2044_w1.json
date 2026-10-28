@@ -1,0 +1,397 @@
+{
+ "year": 2044,
+ "week": 1,
+ "potw": {
+  "off": [
+   {
+    "pid": 9034394,
+    "name": "Kotone Wintermere",
+    "pos": "QB",
+    "club": "Tengus City Terrors",
+    "line": "23/31, 331 yds, 5 TD",
+    "res": "W 38-27 vs Rovers",
+    "score": 33.57,
+    "plays": [
+     "Q1 11:34 7-yd TD pass to Nari Man-Kwan (was tied)",
+     "Q2 12:21 5-yd TD pass to Nari Man-Kwan (was up 4)",
+     "Q2 8:07 52-yd TD pass to Aisake Stonesky (was up 11)",
+     "Q3 10:08 16-yd TD pass to Aisake Stonesky (was up 18)",
+     "Q3 2:21 8-yd TD pass to Masaru Wakamaki (was up 22)"
+    ]
+   },
+   {
+    "pid": 9036731,
+    "name": "Dongmei Panbo",
+    "pos": "QB",
+    "club": "Queensville Phenoms",
+    "line": "36/50, 393 yds, 3 TD",
+    "res": "W 30-23 at Dales",
+    "score": 31.79,
+    "plays": [
+     "Q3 5:11 17-yd TD pass to Tokala Sugitsu (was down 7)",
+     "Q4 8:12 9-yd TD pass to Bronislaw Dobrimir (was down 7)",
+     "Q4 4:01 10-yd TD pass to Bronislaw Dobrimir (was tied, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9037899,
+    "name": "Chayton Faletele",
+    "pos": "RB",
+    "club": "Billiataho Greats",
+    "line": "20 car, 69 yds, 4 rec, 88 yds, 2 TD",
+    "res": "W 24-14 vs Tigers",
+    "score": 27.7,
+    "plays": [
+     "Q4 12:06 1-yd TD run (was up 3)",
+     "Q4 2:05 3-yd TD run (was up 3, late)"
+    ]
+   },
+   {
+    "pid": 9037334,
+    "name": "Aisake Stonesky",
+    "pos": "RB",
+    "club": "Tengus City Terrors",
+    "line": "17 car, 77 yds, 2 rec, 68 yds, 2 TD",
+    "res": "W 38-27 vs Rovers",
+    "score": 26.5,
+    "plays": [
+     "Q2 8:07 52-yd TD catch from Kotone Wintermere (was up 11)",
+     "Q3 10:08 16-yd TD catch from Kotone Wintermere (was up 18)"
+    ]
+   },
+   {
+    "pid": 9101785,
+    "name": "Halina Akisei",
+    "pos": "RB",
+    "club": "Underwood Bats",
+    "line": "30 car, 158 yds, 3 rec, 21 yds, 2 TD",
+    "res": "T 20-20 vs Hammerheads",
+    "score": 25.4,
+    "plays": [
+     "Q3 8:34 2-yd TD run (was tied)",
+     "Q4 7:10 4-yd TD run (was up 1)",
+     "OT 5:27 fumble lost (tied, late)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9036716,
+    "name": "Vikram Rothecker",
+    "pos": "LB",
+    "club": "Bruca Beach Hammerheads",
+    "line": "8 tackles, 3 sacks",
+    "res": "T 20-20 at Bats",
+    "score": 19.8,
+    "plays": []
+   },
+   {
+    "pid": 9035283,
+    "name": "Hinemoa Gong",
+    "pos": "LB",
+    "club": "Underwood Bats",
+    "line": "10 tackles, 1 sack, 1 INT",
+    "res": "T 20-20 vs Hammerheads",
+    "score": 19.0,
+    "plays": [
+     "Q3 9:52 interception returned 7 yds (tied), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9038514,
+    "name": "Chenguang Beisha",
+    "pos": "LB",
+    "club": "Stanton City Conductors",
+    "line": "4 tackles, 2 INT",
+    "res": "L 16-24 vs Grays",
+    "score": 18.4,
+    "plays": [
+     "Q3 9:25 interception returned 21 yds (down 14), led to a field goal",
+     "Q3 0:18 interception (down 8), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9101680,
+    "name": "Ilaria Grijalva",
+    "pos": "DL",
+    "club": "Cordelle Raptors",
+    "line": "4 tackles, 3 sacks",
+    "res": "W 34-24 vs Raccoons",
+    "score": 17.4,
+    "plays": []
+   },
+   {
+    "pid": 9038352,
+    "name": "Elin Chandragiri",
+    "pos": "LB",
+    "club": "Stamford Grays",
+    "line": "4 tackles, 2 INT",
+    "res": "W 24-16 at Conductors",
+    "score": 16.4,
+    "plays": [
+     "Q1 12:07 interception (tied), led to a touchdown",
+     "Q2 0:08 interception (up 14)"
+    ]
+   },
+   {
+    "pid": 9034503,
+    "name": "Shanice Engelstad",
+    "pos": "LB",
+    "club": "Diamond City Dynamos",
+    "line": "10 tackles, 2 sacks",
+    "res": "W 31-10 vs Tsunami",
+    "score": 16.0,
+    "plays": []
+   }
+  ],
+  "st": [
+   {
+    "pid": 9101026,
+    "name": "Wei Littlesky",
+    "pos": "K",
+    "club": "Sarkady Beavers",
+    "line": "5/5 FG, long 59, 1/1 XP",
+    "res": "W 22-13 vs Komodos",
+    "score": 27.75,
+    "plays": [
+     "Q1 2:16 59-yd GOOD",
+     "Q3 3:36 52-yd GOOD",
+     "Q4 11:24 52-yd GOOD, go-ahead and decisive, never answered",
+     "Q4 9:20 28-yd GOOD",
+     "Q4 1:15 18-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101795,
+    "name": "Ryoji Cheon-Jun",
+    "pos": "K",
+    "club": "Bruca Beach Hammerheads",
+    "line": "4/4 FG, long 58, 0/0 XP",
+    "res": "T 20-20 at Bats",
+    "score": 20.0,
+    "plays": [
+     "Q2 6:15 52-yd GOOD",
+     "Q2 0:17 58-yd GOOD",
+     "Q3 7:30 45-yd GOOD",
+     "Q4 13:05 53-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9034325,
+    "name": "Wesley Wallgren",
+    "pos": "K",
+    "club": "El Latigo Shredders",
+    "line": "3/3 FG, long 57, 3/3 XP",
+    "res": "W 30-24 at Bees",
+    "score": 16.5,
+    "plays": [
+     "Q2 4:22 55-yd GOOD",
+     "Q4 12:57 57-yd GOOD",
+     "Q4 2:35 29-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101897,
+    "name": "Deepika El-Husri",
+    "pos": "K",
+    "club": "Rogaela Rovers",
+    "line": "4/4 FG, long 53, 1/1 XP",
+    "res": "L 27-38 at Terrors",
+    "score": 15.75,
+    "plays": [
+     "Q1 6:52 48-yd GOOD",
+     "Q2 0:19 22-yd GOOD",
+     "Q3 7:07 53-yd GOOD",
+     "Q4 12:43 30-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9034232,
+    "name": "Lenmana Sanddale",
+    "pos": "P",
+    "club": "Far Farris Raccoons",
+    "line": "5 punts, 50.8 avg, 4 inside the 20",
+    "res": "L 24-34 at Raptors",
+    "score": 14.999999999999998,
+    "plays": []
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "gesture",
+   "title": "Altercation with the stands",
+   "who": [
+    {
+     "name": "Shamar Hazelwick",
+     "pos": "RB",
+     "club": "Fiota Swords",
+     "pid": 9038910
+    }
+   ],
+   "game": "G65",
+   "where": "Fiota Swords at Classetto Cavemen, week 1",
+   "text": "Shamar Hazelwick (RB, Swords) was penalized with 6:09 left in the first quarter for a gesture directed at spectators.\n\nThe Swords say they will handle it internally.",
+   "severity": 2.3,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9038910,
+    9034857
+   ],
+   "precedent": [],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $10K"
+    },
+    {
+     "key": "k15",
+     "label": "Fine $15K",
+     "games": 0,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Fined $15K"
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $25K"
+    }
+   ],
+   "precedent_pick": null,
+   "tier": "minor",
+   "id": "W1-1",
+   "week": 1
+  },
+  {
+   "type": "late_hit",
+   "title": "Late hit on a ball carrier",
+   "who": [
+    {
+     "name": "Sorei Quisnovaw",
+     "pos": "DL",
+     "club": "Underwood Bats",
+     "pid": 9037304
+    }
+   ],
+   "game": "G172",
+   "where": "Bruca Beach Hammerheads at Underwood Bats, week 1",
+   "text": "Officials flagged Sorei Quisnovaw (DL, Bats) for unnecessary roughness with 11:13 left in the third quarter; replays show the contact landed after the whistle. Hollis Palsson (TE, Hammerheads) left the game with a hamstring injury and is expected to miss 1 week.\n\nThe league office has asked the Bats for their account.",
+   "severity": 4.2,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9037304,
+    9038298
+   ],
+   "precedent": [
+    "2043 wk 20, Esperanza Feldhardt: Fine $10K (severity 3.2)",
+    "2043 wk 11, Daesung Tingyao: Fine $25K + 1-game suspension (severity 3.2)",
+    "2043 wk 6, Itzel Bellettoni: Warning (severity 3.2)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k15",
+     "label": "Fine $15K",
+     "games": 0,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Fined $15K"
+    },
+    {
+     "key": "k40",
+     "label": "Fine $40K",
+     "games": 0,
+     "fine": 40000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $40K"
+    },
+    {
+     "key": "k75",
+     "label": "Fine $75K",
+     "games": 0,
+     "fine": 75000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $75K"
+    }
+   ],
+   "precedent_pick": "k15",
+   "tier": "minor",
+   "id": "W1-2",
+   "week": 1
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": []
+}

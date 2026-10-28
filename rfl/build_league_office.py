@@ -171,7 +171,7 @@ function apply(d){
 async function init(){
   render();
   if (B){
-    try { const db = await claude.use('db'); if (db){ dbRef = db.doc('office/w' + WK);
+    try { const db = await claude.use('db'); if (db){ dbRef = db.doc(D.year === 2043 ? 'office/w' + WK : 'office/y' + D.year + 'w' + WK);
         const snap = await dbRef.get(); if (snap.exists){ apply(snap.data()); update(); saved = true; setStatus(); } } } catch (e) {}
     $('copy').hidden = !!dbRef; if (!dbRef){ $('copy').hidden = false; }
     $('submit').onclick = async () => {
