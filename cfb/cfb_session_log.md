@@ -737,3 +737,6 @@ NEXT: post-season parity audit (Dan queued; wk 12-14 ranked-lost-to-unranked 40%
 - Stage 7 rollover (--commit): 2043 archived (champion Costique River), classes advanced, 209 redshirts, staff aged, season reset to 2044 (season 19). Backups *.pre_s19_portal/recruit/dev/final/rollover.
 - Preseason top 10: Skeenerland State 10.31, Dietsche, Rogaela State, Pistolheart, Eona, Kaji Kita, Central Stanton, Roosevelt, Kaji Daun, North Hatesei.
 - Dan: leave week 14 alone (no engine change). TODO before 2044 build: teach fill_conf calendar preferences; no week-14 guest games.
+
+## 2044 SCHEDULE -- Series Office rolled forward (2026-10-27)
+Dan: "send me the same multi-year noncon builder". conf_plan.py 19 10 re-run (2044-2050 slates identical to the old plan; 2053 added; pre-copy conf_plan.json.pre_s19) -> export_series_board.py (window 2044-2053) -> series_office_template.html with __DATA__/__SEED__ -> republished over artifact FsJi7pHPnmBhXVkj6BTAcb (v17, db docs series/y<year> kept). Seed = Dan's live bookings pulled from the db (2044: 88 games, 2045: 68, 2046: 50, 2047: 39, 2048: 28, 2049: 21, 2050: 28, 2051: 17, 2052: 21; 2053 empty), state/series_live/. NEXT: Dan finishes 2044 bookings -> pull series/y2044 -> convert_series_db.py -> fill_noncon -> fix_p6_hosting -> export_conf_board -> fill_conf -> install_hand_schedule --commit (no week-14 guests).

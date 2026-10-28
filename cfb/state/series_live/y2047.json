@@ -1,0 +1,279 @@
+{
+  "games": [
+    {
+      "h": "Crayellan State",
+      "sid": null,
+      "sub": false,
+      "v": "Southern Tengus",
+      "week": 3
+    },
+    {
+      "h": "Kaji Kita State",
+      "sid": null,
+      "sub": false,
+      "v": "Southern Tengus",
+      "week": 14
+    },
+    {
+      "h": "Southern Tengus",
+      "sid": null,
+      "sub": true,
+      "v": "Greater Billiataho",
+      "week": 1
+    },
+    {
+      "h": "Barhold",
+      "sid": null,
+      "sub": false,
+      "v": "North Hatesei",
+      "week": 3
+    },
+    {
+      "h": "Marblehead",
+      "sid": null,
+      "sub": false,
+      "v": "Fiota Bay",
+      "week": 3
+    },
+    {
+      "h": "Stanton",
+      "sid": null,
+      "sub": false,
+      "v": "Barhold Valley",
+      "week": 2
+    },
+    {
+      "h": "Barhold State",
+      "sid": null,
+      "sub": false,
+      "v": "Good River",
+      "week": 1
+    },
+    {
+      "h": "Ciarralotta",
+      "sid": null,
+      "sub": false,
+      "v": "Ciarralotta Tech",
+      "week": 1
+    },
+    {
+      "h": "Yrei Trobniy",
+      "sid": null,
+      "sub": false,
+      "v": "Ciarralotta State",
+      "week": 3
+    },
+    {
+      "h": "Diveo",
+      "sid": null,
+      "sub": false,
+      "v": "Burrstone",
+      "week": 3
+    },
+    {
+      "h": "Burrstone",
+      "sid": null,
+      "sub": false,
+      "v": "UN Steelbridge",
+      "week": 0
+    },
+    {
+      "h": "Harrell",
+      "sid": null,
+      "sub": false,
+      "v": "Coachville",
+      "week": 3
+    },
+    {
+      "h": "Coachville",
+      "sid": null,
+      "sub": false,
+      "v": "Orlot",
+      "week": 1
+    },
+    {
+      "h": "Rogaela State",
+      "sid": null,
+      "sub": false,
+      "v": "Ciarralotta Tech",
+      "week": 3
+    },
+    {
+      "h": "Tengus State",
+      "sid": null,
+      "sub": false,
+      "v": "Rogaela State",
+      "week": 1
+    },
+    {
+      "h": "Ranroman State",
+      "sid": null,
+      "sub": false,
+      "v": "Natzumakis",
+      "week": 1
+    },
+    {
+      "h": "Ranroman State",
+      "sid": null,
+      "sub": false,
+      "v": "West Hatesei St",
+      "week": 2
+    },
+    {
+      "h": "Marines",
+      "sid": null,
+      "sub": false,
+      "v": "Ranroman State",
+      "week": 3
+    },
+    {
+      "h": "Roosevelt Mines",
+      "sid": null,
+      "sub": false,
+      "v": "Tengus State",
+      "week": 2
+    },
+    {
+      "h": "Tengus State",
+      "sid": null,
+      "sub": true,
+      "v": "Rouska",
+      "week": 3
+    },
+    {
+      "h": "Kaji Daun",
+      "sid": null,
+      "sub": false,
+      "v": "Keytommiyr",
+      "week": 1
+    },
+    {
+      "h": "Kaji Daun",
+      "sid": null,
+      "sub": true,
+      "v": "Guerra",
+      "week": 13
+    },
+    {
+      "h": "Ranroman",
+      "sid": null,
+      "sub": false,
+      "v": "Coastal Ranroman",
+      "week": 2
+    },
+    {
+      "h": "Ranroman",
+      "sid": null,
+      "sub": false,
+      "v": "Skylar Rose",
+      "week": 3
+    },
+    {
+      "h": "Ranroman",
+      "sid": null,
+      "sub": true,
+      "v": "Lake Triton",
+      "week": 1
+    },
+    {
+      "h": "Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "Fiota Bay",
+      "week": 1
+    },
+    {
+      "h": "Kaji Kita",
+      "sid": null,
+      "sub": false,
+      "v": "Cordelle",
+      "week": 1
+    },
+    {
+      "h": "Diveo State",
+      "sid": null,
+      "sub": false,
+      "v": "Park Island",
+      "week": 3
+    },
+    {
+      "h": "Dove Island",
+      "sid": null,
+      "sub": false,
+      "v": "Crayellan",
+      "week": 3
+    },
+    {
+      "h": "Marblehead",
+      "sid": null,
+      "sub": false,
+      "v": "Crayellan State",
+      "week": 1
+    },
+    {
+      "h": "Leafette",
+      "sid": null,
+      "sub": false,
+      "v": "Hughes State",
+      "week": 1
+    },
+    {
+      "h": "Tasson",
+      "sid": null,
+      "sub": false,
+      "v": "UN Minko",
+      "week": 14
+    },
+    {
+      "h": "North Verigon",
+      "sid": null,
+      "sub": false,
+      "v": "Leafette",
+      "week": 14
+    },
+    {
+      "h": "Diamond City",
+      "sid": null,
+      "sub": false,
+      "v": "Stanton",
+      "week": 1
+    },
+    {
+      "h": "Dove Island State",
+      "sid": "ai2",
+      "sub": false,
+      "v": "East Tasson",
+      "week": 5
+    },
+    {
+      "h": "Krobe",
+      "sid": "ai3",
+      "sub": false,
+      "v": "East Costique",
+      "week": 8
+    },
+    {
+      "h": "Skeenerland",
+      "sid": "ai6",
+      "sub": false,
+      "v": "S Antiragal State",
+      "week": 8
+    },
+    {
+      "h": "Lito Rock State",
+      "sid": "ai7",
+      "sub": false,
+      "v": "Clark",
+      "week": 6
+    },
+    {
+      "h": "Chinolka",
+      "sid": null,
+      "sub": false,
+      "v": "Sacred Tomb",
+      "week": 6
+    }
+  ],
+  "saved": "added by Claude",
+  "year": 2047
+}

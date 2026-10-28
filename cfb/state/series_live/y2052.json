@@ -1,0 +1,153 @@
+{
+  "games": [
+    {
+      "h": "Southern Tengus",
+      "sid": null,
+      "sub": false,
+      "v": "UNN",
+      "week": 14
+    },
+    {
+      "h": "North Hatesei",
+      "sid": null,
+      "sub": true,
+      "v": "Pietro Tadal",
+      "week": 13
+    },
+    {
+      "h": "North Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "Barhold",
+      "week": 2
+    },
+    {
+      "h": "Ciarralotta Tech",
+      "sid": null,
+      "sub": false,
+      "v": "Ciarralotta",
+      "week": 1
+    },
+    {
+      "h": "Skeenerland State",
+      "sid": null,
+      "sub": false,
+      "v": "Eona",
+      "week": 2
+    },
+    {
+      "h": "Coachville",
+      "sid": null,
+      "sub": false,
+      "v": "Central Stanton",
+      "week": 1
+    },
+    {
+      "h": "Ranroman",
+      "sid": null,
+      "sub": false,
+      "v": "Ciarralotta State",
+      "week": 4
+    },
+    {
+      "h": "Antiragal",
+      "sid": null,
+      "sub": false,
+      "v": "Stanton",
+      "week": 3
+    },
+    {
+      "h": "Pistolheart",
+      "sid": null,
+      "sub": false,
+      "v": "Dietsche",
+      "week": 1
+    },
+    {
+      "h": "Rogaela State",
+      "sid": null,
+      "sub": false,
+      "v": "Tengus State",
+      "week": 1
+    },
+    {
+      "h": "Ranroman State",
+      "sid": null,
+      "sub": false,
+      "v": "Fiota Bay",
+      "week": 5
+    },
+    {
+      "h": "Tengus State",
+      "sid": null,
+      "sub": false,
+      "v": "Reid State",
+      "week": 2
+    },
+    {
+      "h": "Rogaela",
+      "sid": null,
+      "sub": false,
+      "v": "Eastern State",
+      "week": 1
+    },
+    {
+      "h": "Antiragal State",
+      "sid": null,
+      "sub": false,
+      "v": "Yrei Trobniy",
+      "week": 1
+    },
+    {
+      "h": "Skylar Rose",
+      "sid": null,
+      "sub": false,
+      "v": "Northlight",
+      "week": 2
+    },
+    {
+      "h": "Crayellan",
+      "sid": null,
+      "sub": false,
+      "v": "Dove Island",
+      "week": 2
+    },
+    {
+      "h": "Phangrine State",
+      "sid": null,
+      "sub": false,
+      "v": "Orlot",
+      "week": 3
+    },
+    {
+      "h": "Dove Island State",
+      "sid": null,
+      "sub": false,
+      "v": "Dove Island",
+      "week": 3
+    },
+    {
+      "h": "Eternal Fox",
+      "sid": null,
+      "sub": false,
+      "v": "Keeper",
+      "week": 1
+    },
+    {
+      "h": "Keytommiyr",
+      "sid": "ai11",
+      "sub": false,
+      "v": "Greene",
+      "week": 6
+    },
+    {
+      "h": "Coachville",
+      "sid": null,
+      "sub": false,
+      "v": "Far Farris",
+      "week": 8
+    }
+  ],
+  "saved": "added by Claude",
+  "year": 2052
+}
