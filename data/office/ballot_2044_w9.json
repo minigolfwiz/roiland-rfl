@@ -1,0 +1,319 @@
+{
+ "year": 2044,
+ "week": 9,
+ "potw": {
+  "off": [
+   {
+    "pid": 9034282,
+    "name": "Emilio Langshaw",
+    "pos": "WR",
+    "club": "Chapel Rock Crowns",
+    "line": "9 rec, 180 yds, 3 TD",
+    "res": "L 31-34 at Renegades",
+    "score": 36.75,
+    "plays": [
+     "Q2 0:49 21-yd TD catch from Boubacar Grimaldi (was down 11)",
+     "Q3 1:50 19-yd TD catch from Boubacar Grimaldi (was down 18)",
+     "Q4 0:00 13-yd TD catch from Boubacar Grimaldi (was down 10), cut the deficit late"
+    ]
+   },
+   {
+    "pid": 9035406,
+    "name": "Amelia Qinpin",
+    "pos": "QB",
+    "club": "Cordelle Raptors",
+    "line": "27/31, 319 yds, 3 TD, 63 rush yds",
+    "res": "W 38-13 vs Beavers",
+    "score": 33.96,
+    "plays": [
+     "Q2 10:00 15-yd TD pass to Osamu Guansou (was up 7)",
+     "Q3 3:45 3-yd TD pass to Thibault Sierrafranca (was up 11)",
+     "Q4 12:46 18-yd TD run (was up 18)",
+     "Q4 1:16 3-yd TD pass to Osamu Guansou (was up 25)"
+    ]
+   },
+   {
+    "pid": 9034806,
+    "name": "Minato Sorreniy",
+    "pos": "QB",
+    "club": "Wolford Dragons",
+    "line": "33/43, 331 yds, 4 TD, 43 rush yds",
+    "res": "T 30-30 at Tigers",
+    "score": 33.61,
+    "plays": [
+     "Q1 4:21 8-yd TD pass to Yakubu Vaufort (was down 7)",
+     "Q1 0:22 16-yd TD pass to Raghav Ganguly (was tied)",
+     "Q2 4:16 2-yd TD pass to Yakubu Vaufort (was up 7)",
+     "OT 4:51 17-yd TD pass to Kamala Ravivasan (was tied, late), go-ahead, later answered"
+    ]
+   },
+   {
+    "pid": 9035218,
+    "name": "Nayeli Brokenrope",
+    "pos": "WR",
+    "club": "Stanton City Conductors",
+    "line": "10 rec, 200 yds, 1 TD",
+    "res": "L 26-31 at Commodores",
+    "score": 26.75,
+    "plays": [
+     "Q4 1:51 9-yd TD catch from Ruzena Myeong-Mok (was down 11), cut the deficit late"
+    ]
+   },
+   {
+    "pid": 9037894,
+    "name": "Isla Toafusi",
+    "pos": "RB",
+    "club": "Stamford Grays",
+    "line": "22 car, 84 yds, 4 rec, 77 yds, 2 TD",
+    "res": "L 21-28 at Cavemen",
+    "score": 24.35,
+    "plays": [
+     "Q1 8:41 1-yd TD run (was tied)",
+     "Q4 3:36 fumble lost (down 7, late), led to a touchdown",
+     "Q4 1:43 10-yd TD catch from Beatrice Wickcombe (was down 14), cut the deficit late"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9037769,
+    "name": "Loredana Ulselniy",
+    "pos": "DL",
+    "club": "Diamond City Dynamos",
+    "line": "3 tackles, 3 sacks, 1 forced fumble",
+    "res": "W 20-10 vs Rangers",
+    "score": 24.3,
+    "plays": [
+     "Q4 4:05 sack and forced fumble (up 3, late), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9040118,
+    "name": "Ruta Fonotagata",
+    "pos": "LB",
+    "club": "Classetto Cavemen",
+    "line": "10 tackles, 3 sacks",
+    "res": "W 28-21 vs Grays",
+    "score": 21.0,
+    "plays": []
+   },
+   {
+    "pid": 9035269,
+    "name": "Frode Slavanov",
+    "pos": "LB",
+    "club": "Tasson Thunderbugs",
+    "line": "10 tackles, 1 sack, 1 INT",
+    "res": "W 29-24 vs Demons",
+    "score": 19.0,
+    "plays": [
+     "Q2 1:41 interception (down 4), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9037261,
+    "name": "Dalia Okobayo",
+    "pos": "LB",
+    "club": "Purcell Rapids",
+    "line": "5 tackles, 1 sack, 1 INT",
+    "res": "W 13-12 at Swords",
+    "score": 16.0,
+    "plays": [
+     "Q3 3:59 interception (up 1), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9101239,
+    "name": "Adjoa Terrablanca",
+    "pos": "LB",
+    "club": "Chapel Rock Crowns",
+    "line": "8 tackles, 1 sack, 1 INT",
+    "res": "L 31-34 at Renegades",
+    "score": 15.8,
+    "plays": [
+     "Q1 2:16 interception (down 4)"
+    ]
+   },
+   {
+    "pid": 9037420,
+    "name": "Hollis Winsbury",
+    "pos": "S",
+    "club": "Classetto Cavemen",
+    "line": "11 tackles, 1 INT",
+    "res": "W 28-21 vs Grays",
+    "score": 14.6,
+    "plays": [
+     "Q3 12:35 interception returned 14 yds (up 7), led to a touchdown"
+    ]
+   }
+  ],
+  "st": [
+   {
+    "pid": 9101795,
+    "name": "Ryoji Cheon-Jun",
+    "pos": "K",
+    "club": "Bruca Beach Hammerheads",
+    "line": "6/6 FG, long 52, 2/2 XP",
+    "res": "W 32-14 vs T-Rexes",
+    "score": 23.75,
+    "plays": [
+     "Q2 10:22 46-yd GOOD",
+     "Q2 7:47 52-yd GOOD",
+     "Q3 3:46 51-yd GOOD",
+     "Q4 13:29 46-yd GOOD",
+     "Q4 5:30 34-yd GOOD",
+     "Q4 1:35 20-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9037064,
+    "name": "Adaeze Stavroledis",
+    "pos": "P",
+    "club": "Holliday Beetles",
+    "line": "6 punts, 49.0 avg, 4 inside the 20",
+    "res": "W 27-20 vs Topcats",
+    "score": 15.0,
+    "plays": []
+   },
+   {
+    "pid": 9101331,
+    "name": "Mstislav Redturtle",
+    "pos": "K",
+    "club": "Verigon Komodos",
+    "line": "4/4 FG, long 51, 2/2 XP",
+    "res": "W 26-20 vs Raccoons",
+    "score": 14.75,
+    "plays": [
+     "Q1 7:27 26-yd GOOD",
+     "Q2 12:20 51-yd GOOD",
+     "Q2 3:37 22-yd GOOD",
+     "Q3 12:50 39-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9038621,
+    "name": "Kwame Kone",
+    "pos": "K",
+    "club": "Fiota Swords",
+    "line": "4/4 FG, long 49, 0/0 XP",
+    "res": "L 12-13 vs Rapids",
+    "score": 14.0,
+    "plays": [
+     "Q1 12:20 49-yd GOOD",
+     "Q1 4:16 35-yd GOOD",
+     "Q2 1:00 33-yd GOOD",
+     "Q4 13:27 47-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9034268,
+    "name": "Siwoo Chikelu",
+    "pos": "P",
+    "club": "Diamond City Dynamos",
+    "line": "7 punts, 45.1 avg, 5 inside the 20",
+    "res": "W 20-10 vs Rangers",
+    "score": 13.500000000000004,
+    "plays": []
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "equip",
+   "title": "Uniform violation",
+   "who": [
+    {
+     "name": "Ladislav Georridis",
+     "pos": "QB",
+     "club": "Crayellan Redwoods",
+     "pid": 9035208
+    }
+   ],
+   "game": "G13",
+   "where": "Crayellan Redwoods at Costique Bearcats, week 9",
+   "text": "Ladislav Georridis (QB, Redwoods) wore non-approved gear on the field after being warned in the pregame check. He had been warned about the same item in practice. The league's equipment staff said the item posed a safety concern. It was his first equipment violation.\n\nThe league's uniform policy provides for fines on a sliding scale.",
+   "severity": 2.6,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9035208
+   ],
+   "precedent": [
+    "2043 wk 5, Areum Vesthaug: Fine $10K (severity 1.8)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $10K"
+    },
+    {
+     "key": "k15",
+     "label": "Fine $15K",
+     "games": 0,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Fined $15K"
+    },
+    {
+     "key": "k40",
+     "label": "Fine $40K",
+     "games": 0,
+     "fine": 40000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $40K"
+    }
+   ],
+   "precedent_pick": null,
+   "tier": "minor",
+   "id": "W9-1",
+   "week": 9
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": []
+}
