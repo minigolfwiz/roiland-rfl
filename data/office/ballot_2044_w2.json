@@ -1,0 +1,377 @@
+{
+ "year": 2044,
+ "week": 2,
+ "potw": {
+  "off": [
+   {
+    "pid": 9100834,
+    "name": "Chiara Georstakis",
+    "pos": "WR",
+    "club": "Wolford Dragons",
+    "line": "15 rec, 176 yds, 2 TD",
+    "res": "L 31-37 at Beavers",
+    "score": 31.1,
+    "plays": [
+     "Q2 9:46 2-yd TD catch from Minato Sorreniy (was tied)",
+     "Q4 9:51 1-yd TD catch from Minato Sorreniy (was tied), go-ahead, later answered"
+    ]
+   },
+   {
+    "pid": 9034310,
+    "name": "Okhee Vaubourg",
+    "pos": "WR",
+    "club": "Diveo Demons",
+    "line": "11 rec, 108 yds, 3 TD",
+    "res": "W 34-26 vs Raccoons",
+    "score": 29.8,
+    "plays": [
+     "Q1 9:42 5-yd TD catch from Kangee Birkeset (was tied)",
+     "Q1 0:56 14-yd TD catch from Kangee Birkeset (was up 4)",
+     "Q4 7:57 12-yd TD catch from Kangee Birkeset (was up 2), put the game away"
+    ]
+   },
+   {
+    "pid": 9036313,
+    "name": "Fumiko Midzato",
+    "pos": "WR",
+    "club": "Palm Creek Leatherbacks",
+    "line": "6 rec, 107 yds, 3 TD",
+    "res": "W 34-23 at Hammerheads",
+    "score": 28.7,
+    "plays": [
+     "Q1 11:55 11-yd TD catch from Zainab Yiling (was tied)",
+     "Q1 0:51 51-yd TD catch from Zainab Yiling (was down 3)",
+     "Q2 6:05 9-yd TD catch from Zainab Yiling (was up 4)"
+    ]
+   },
+   {
+    "pid": 9033283,
+    "name": "Imani Chimah",
+    "pos": "QB",
+    "club": "Classetto Cavemen",
+    "line": "21/33, 229 yds, 3 TD, 77 rush yds",
+    "res": "W 45-16 at Rapids",
+    "score": 27.79,
+    "plays": [
+     "Q1 13:30 fumble lost (tied), led to a field goal",
+     "Q2 13:34 3-yd TD pass to Darnell Thornton (was tied)",
+     "Q2 5:47 24-yd TD pass to Darnell Thornton (was up 7)",
+     "Q3 7:57 10-yd TD pass to Darnell Thornton (was up 18)",
+     "Q4 0:19 5-yd TD run (was up 29)"
+    ]
+   },
+   {
+    "pid": 9034735,
+    "name": "Zuzana Quisvaw",
+    "pos": "QB",
+    "club": "Ediville Brass Tigers",
+    "line": "20/26, 230 yds, 3 TD",
+    "res": "W 42-28 at Komodos",
+    "score": 27.73,
+    "plays": [
+     "Q1 6:41 1-yd TD run (was tied)",
+     "Q2 9:14 10-yd TD pass to Tamsin Ashlow (was down 7)",
+     "Q3 12:54 32-yd TD pass to Thyra Vikmark (was up 7)",
+     "Q4 6:10 5-yd TD pass to Tamsin Ashlow (was up 14)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9038868,
+    "name": "Amara Ashmore",
+    "pos": "LB",
+    "club": "Diamond City Hope",
+    "line": "8 tackles, 2 sacks, 1 INT",
+    "res": "W 21-16 at Thunderbugs",
+    "score": 22.3,
+    "plays": [
+     "Q4 0:50 interception returned 18 yds (up 5, late)"
+    ]
+   },
+   {
+    "pid": 9034321,
+    "name": "Adelheid Hartham",
+    "pos": "DL",
+    "club": "Crayellan Redwoods",
+    "line": "3 tackles, 2 sacks, 2 forced fumbles",
+    "res": "L 24-27 vs Greats",
+    "score": 21.8,
+    "plays": [
+     "Q1 6:04 sack and forced fumble (down 7), led to a touchdown",
+     "Q2 4:50 sack and forced fumble (tied)"
+    ]
+   },
+   {
+    "pid": 9034250,
+    "name": "Omprakash Kalyanmoorthy",
+    "pos": "LB",
+    "club": "Ediville Brass Tigers",
+    "line": "6 tackles, 2 INT",
+    "res": "W 42-28 at Komodos",
+    "score": 19.6,
+    "plays": [
+     "Q2 10:59 interception returned 14 yds (down 7), led to a touchdown",
+     "Q3 5:02 interception returned 23 yds (up 14), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9101185,
+    "name": "Hina Lurong",
+    "pos": "LB",
+    "club": "Sarkady Beavers",
+    "line": "9 tackles, 1 sack, 1 INT",
+    "res": "W 37-31 vs Dragons",
+    "score": 18.4,
+    "plays": [
+     "Q3 3:10 interception returned 26 yds (down 7), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9037958,
+    "name": "Runa Havdahl",
+    "pos": "S",
+    "club": "Ediville Brass Tigers",
+    "line": "4 tackles, 2 INT",
+    "res": "W 42-28 at Komodos",
+    "score": 18.4,
+    "plays": [
+     "Q1 7:25 interception returned 21 yds (tied), led to a touchdown",
+     "Q4 8:26 interception (up 14), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9035386,
+    "name": "Nokosi Meslemyr",
+    "pos": "LB",
+    "club": "Wolford Dragons",
+    "line": "7 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 31-37 at Beavers",
+    "score": 18.2,
+    "plays": [
+     "Q2 0:32 sack and forced fumble (up 7)"
+    ]
+   }
+  ],
+  "st": [
+   {
+    "pid": 9037467,
+    "name": "Ishani Bernhardt",
+    "pos": "K",
+    "club": "Far Farris Raccoons",
+    "line": "4/4 FG, long 61, 2/2 XP",
+    "res": "L 26-34 at Demons",
+    "score": 20.5,
+    "plays": [
+     "Q1 5:06 39-yd GOOD",
+     "Q2 7:18 48-yd GOOD",
+     "Q3 5:19 61-yd GOOD",
+     "Q4 11:09 53-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9034739,
+    "name": "Nadine Jorseil",
+    "pos": "P",
+    "club": "Rogaela Rovers",
+    "line": "7 punts, 49.1 avg, 5 inside the 20",
+    "res": "L 17-23 vs Rangers",
+    "score": 18.16666666666667,
+    "plays": []
+   },
+   {
+    "pid": 9101024,
+    "name": "Dongwook Baiwang",
+    "pos": "K",
+    "club": "San Saltadac Sea Lions",
+    "line": "4/5 FG, long 61, 0/0 XP",
+    "res": "L 12-13 at Mastiffs",
+    "score": 17.25,
+    "plays": [
+     "Q1 11:41 61-yd GOOD",
+     "Q1 7:03 56-yd GOOD",
+     "Q2 12:02 29-yd GOOD",
+     "Q3 7:06 36-yd GOOD",
+     "Q4 4:02 62-yd MISSED"
+    ]
+   },
+   {
+    "pid": 9101385,
+    "name": "Mio Wakada",
+    "pos": "K",
+    "club": "Holliday Beetles",
+    "line": "4/4 FG, long 52, 1/1 XP",
+    "res": "L 19-23 at Mastodons",
+    "score": 16.0,
+    "plays": [
+     "Q2 13:43 30-yd GOOD",
+     "Q2 0:45 23-yd GOOD",
+     "Q3 2:36 37-yd GOOD",
+     "Q4 8:51 52-yd GOOD, go-ahead, later answered"
+    ]
+   },
+   {
+    "pid": 9036971,
+    "name": "Clive Aalholt",
+    "pos": "P",
+    "club": "Fiota Swords",
+    "line": "8 punts, 47.6 avg, 3 inside the 20",
+    "res": "L 17-20 at Dynamos",
+    "score": 14.666666666666666,
+    "plays": []
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "hazing",
+   "title": "Allegation of hazing",
+   "who": [
+    {
+     "name": "Underwood Bats",
+     "pos": "CLUB",
+     "club": "Underwood Bats",
+     "pid": null,
+     "club_level": true
+    }
+   ],
+   "game": "G266",
+   "where": "League investigation",
+   "text": "A former Bats player alleged in an interview that veterans pressured rookies into paying for team events. The complaint involves money rookies were asked to pay.\n\nThe league's workplace policy bars hazing in any form.",
+   "severity": 4.8,
+   "prior": 0,
+   "stage": "new",
+   "pids": [],
+   "precedent": [],
+   "options": [
+    {
+     "key": "open",
+     "label": "Open a formal investigation, rule on the findings",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "",
+     "open_story": true
+    },
+    {
+     "key": "dismiss",
+     "label": "Close the matter: no action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": ""
+    }
+   ],
+   "precedent_pick": null,
+   "tier": "moderate",
+   "id": "W2-1",
+   "week": 2,
+   "sid": "2044:W2-1"
+  },
+  {
+   "type": "bench_clear",
+   "title": "Bench-clearing incident",
+   "who": [
+    {
+     "name": "Lomano Toatele",
+     "pos": "OL",
+     "club": "Bruca Beach Hammerheads",
+     "pid": 9101525
+    },
+    {
+     "name": "Sergei Mladenko",
+     "pos": "OL",
+     "club": "Palm Creek Leatherbacks",
+     "pid": 9101326
+    }
+   ],
+   "game": "G160",
+   "where": "Palm Creek Leatherbacks at Bruca Beach Hammerheads, week 2",
+   "text": "A late hit led to a bench-clearing scrum in the third quarter. Lomano Toatele (Hammerheads) and Sergei Mladenko (Leatherbacks) were singled out by officials. Order was restored in under a minute.\n\nBoth head coaches have been asked to speak with the commissioner's staff.",
+   "severity": 3.3,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9101525,
+    9101326
+   ],
+   "precedent": [],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $10K"
+    },
+    {
+     "key": "g1",
+     "label": "1 game + $15K",
+     "games": 1,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Out 1 game, fined $15K"
+    },
+    {
+     "key": "g2",
+     "label": "2 games + $15K",
+     "games": 2,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Out 2 games, fined $15K"
+    }
+   ],
+   "precedent_pick": null,
+   "tier": "moderate",
+   "id": "W2-2",
+   "week": 2
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": []
+}
