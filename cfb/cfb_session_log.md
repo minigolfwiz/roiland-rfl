@@ -750,3 +750,6 @@ Series Office series/y2044 (v130) pulled -> Kaji Kita was booked 4 times (locked
 First fill_conf left UNN and Chinolka with week-14 byes: Great Fourteen had an odd number free in wk14 and UNN's 3 non-con were all Dan's (wks 1-3). Fix (auto games only): UN Ediville v Burrell (guest) + Kaji Daun State v Hughes State -> UN Ediville hosts Kaji Daun State in WEEK 14, Hughes State hosts Burrell. Pre-fix copy noncon_s19.json.pre_w14fix.
 export_conf_board (0 problems) -> fill_conf (attempt 1, 0 hard violations) -> conf_sched_s19.json -> install_hand_schedule --commit, audit CLEAN. 980 games (684 conf, 296 non-con, 136 guests), by week 0-14: 12/82/68/69/68/67/68/67/65/67/68/68/67/68/76. All Dan's weeks/hosts held; 0 guests in week 14; W14 rotation BV-KKS in week 14, Skylar Rose v Roosevelt Mines wk14. Backups *.pre_s19_sched.
 NEXT: media pool s19, preseason, week 0. (Dan's reminder: start a NEW CONVERSATION once the schedule is installed.)
+
+## NAME (Dan, 2026-10-28)
+The college football sim is now called RCFB. "resume RCFB season 20XX" = restore cfb/ from GitHub into /home/claude/cfb2 (gunzip state, join games_db parts) and pick up at that season. 2044 status: schedule installed; next media pool s19, preseason, week 0.
