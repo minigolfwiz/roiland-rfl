@@ -1,0 +1,237 @@
+{
+ "year": 2044,
+ "week": 6,
+ "potw": {
+  "off": [
+   {
+    "pid": 9035791,
+    "name": "Gunhild Vesthaug",
+    "pos": "QB",
+    "club": "Sarkady Beavers",
+    "line": "20/29, 314 yds, 3 TD, 65 rush yds",
+    "res": "W 28-21 vs Hope",
+    "score": 31.89,
+    "plays": [
+     "Q1 7:52 17-yd TD pass to Tama Nwanti (was tied)",
+     "Q2 4:56 9-yd TD pass to Maisie Althauer (was tied)",
+     "Q4 7:06 7-yd TD pass to Isamu Hu-Ho (was tied), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9100851,
+    "name": "Sota Masunaga",
+    "pos": "RB",
+    "club": "Eona Topcats",
+    "line": "21 car, 98 yds, 1 rec, 15 yds, 3 TD",
+    "res": "W 35-7 at Hammerheads",
+    "score": 29.3,
+    "plays": [
+     "Q2 7:48 1-yd TD run (was up 7)",
+     "Q3 3:16 5-yd TD run (was up 14)",
+     "Q4 9:42 2-yd TD run (was up 21)"
+    ]
+   },
+   {
+    "pid": 9040204,
+    "name": "Bruno Rioserna",
+    "pos": "QB",
+    "club": "Fiota Bay T-Rexes",
+    "line": "33/46, 496 yds, 3 TD, 1 INT",
+    "res": "W 33-30 vs Rovers",
+    "score": 28.56,
+    "plays": [
+     "Q2 11:47 interception thrown (down 4), led to a touchdown",
+     "Q2 0:49 26-yd TD pass to Santiago Herrnueva (was down 17)",
+     "Q3 11:06 17-yd TD pass to Tsumugi Skoghus (was down 10)",
+     "Q4 1:34 16-yd TD pass to Hyunwoo Kaiduo (was down 7, late), cut the deficit late"
+    ]
+   },
+   {
+    "pid": 9038364,
+    "name": "Xinyi Songzheng",
+    "pos": "RB",
+    "club": "Coachville Mastodons",
+    "line": "34 car, 166 yds, 2 TD",
+    "res": "W 28-20 vs Cavemen",
+    "score": 24.1,
+    "plays": [
+     "Q1 4:29 1-yd TD run (was up 4)",
+     "Q2 13:07 1-yd TD run (was up 11)",
+     "Q2 7:25 fumble lost (up 15), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9038679,
+    "name": "Thibault Qingfu",
+    "pos": "WR",
+    "club": "Underwood Bats",
+    "line": "6 rec, 60 yds, 3 TD",
+    "res": "W 28-16 vs Renegades",
+    "score": 24.0,
+    "plays": [
+     "Q1 8:49 18-yd TD catch from Orivaw Nagamaki (was down 7)",
+     "Q2 9:55 12-yd TD catch from Orivaw Nagamaki (was tied)",
+     "Q2 2:49 11-yd TD catch from Orivaw Nagamaki (was up 7)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9037373,
+    "name": "Nobuo Lanxu",
+    "pos": "DL",
+    "club": "Tengus City Terrors",
+    "line": "3 tackles, 3 sacks, 1 forced fumble",
+    "res": "W 28-24 at Phenoms",
+    "score": 22.3,
+    "plays": [
+     "Q4 2:46 sack and forced fumble (up 4, late)"
+    ]
+   },
+   {
+    "pid": 9033796,
+    "name": "Stelios Baldettoni",
+    "pos": "DL",
+    "club": "Crayellan Redwoods",
+    "line": "3 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 30-24 at Swords",
+    "score": 19.3,
+    "plays": [
+     "Q4 1:01 sack and forced fumble (tied, late), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9034908,
+    "name": "Anei Chernovsky",
+    "pos": "LB",
+    "club": "North Hatesei Bees",
+    "line": "5 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 14-13 at Leatherbacks",
+    "score": 18.5,
+    "plays": [
+     "Q4 2:34 sack and forced fumble (up 1, late)"
+    ]
+   },
+   {
+    "pid": 9035907,
+    "name": "Mariama Svetentsev",
+    "pos": "LB",
+    "club": "Chapel Rock Crowns",
+    "line": "9 tackles, 1 sack, 1 INT",
+    "res": "L 27-30 vs Dynamos",
+    "score": 18.4,
+    "plays": [
+     "Q4 10:00 interception (down 10), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9101133,
+    "name": "Ernest Fjelldahl",
+    "pos": "DL",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "5 tackles, 3 sacks",
+    "res": "L 21-24 at Tsunami",
+    "score": 18.0,
+    "plays": []
+   },
+   {
+    "pid": 9037755,
+    "name": "Pooja Ezenti",
+    "pos": "LB",
+    "club": "Costique Bearcats",
+    "line": "10 tackles, 1 sack, 1 INT",
+    "res": "T 14-14 vs Greats",
+    "score": 17.0,
+    "plays": [
+     "Q3 11:13 interception (up 11)"
+    ]
+   }
+  ],
+  "st": [
+   {
+    "pid": 9101899,
+    "name": "Wenbo Go-Gyu",
+    "pos": "P",
+    "club": "Billiataho Greats",
+    "line": "7 punts, 49.4 avg, 7 inside the 20",
+    "res": "T 14-14 at Bearcats",
+    "score": 21.5,
+    "plays": []
+   },
+   {
+    "pid": 9101025,
+    "name": "Adwoa Adechukwu",
+    "pos": "K",
+    "club": "Fiota Bay T-Rexes",
+    "line": "4/4 FG, long 48, 3/3 XP",
+    "res": "W 33-30 vs Rovers",
+    "score": 19.0,
+    "plays": [
+     "Q1 7:39 43-yd GOOD",
+     "Q4 12:11 48-yd GOOD",
+     "Q4 7:13 30-yd GOOD",
+     "OT 5:11 29-yd GOOD, go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9036971,
+    "name": "Clive Aalholt",
+    "pos": "P",
+    "club": "Fiota Swords",
+    "line": "8 punts, 46.0 avg, 3 inside the 20",
+    "res": "L 24-30 vs Redwoods",
+    "score": 12.5,
+    "plays": []
+   },
+   {
+    "pid": 9034451,
+    "name": "Amparo Sollemyr",
+    "pos": "P",
+    "club": "Queensville Phenoms",
+    "line": "5 punts, 47.8 avg, 4 inside the 20",
+    "res": "L 24-28 vs Terrors",
+    "score": 12.499999999999996,
+    "plays": []
+   },
+   {
+    "pid": 9101900,
+    "name": "Rocio Camparini",
+    "pos": "K",
+    "club": "Classetto Cavemen",
+    "line": "4/4 FG, long 44, 0/0 XP",
+    "res": "L 20-28 at Mastodons",
+    "score": 12.0,
+    "plays": [
+     "Q1 10:48 44-yd GOOD",
+     "Q2 10:04 44-yd GOOD",
+     "Q2 3:56 22-yd GOOD",
+     "Q4 13:33 41-yd GOOD"
+    ]
+   }
+  ]
+ },
+ "cases": [],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": []
+}

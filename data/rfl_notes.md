@@ -103,3 +103,7 @@
 **Benching (answered 27 Oct):** the engine does bench players. `season.update_form` moves form (±0.45 cap) from performance; `season.set_lineups` re-sorts by ovr+form with an incumbent hold of 0.18 (`HOLD`), so benchings are rare. Weekly lineups are NOT stored (only the current `starter` flag), so past benchings can't be reconstructed exactly. Dan declined the optional changes (weekly lineup log, "Benched" recap line, QB-specific hold tuning); real NFL rate is roughly 2–5 non-injury QB benchings a year of 32. Do not build unless he asks.
 **2043 underperformers/benched report (shared with Dan):** blocked QBs Aokawa, Rosenbach, Panbo, Zhenbin; role-loss RBs Danewick, Chrypoulos; biggest underperformer Kaito Huada (reigning ROY, 1 sack vs 12).
 **Standing rules:** fully detailed recaps; Dan picks award winners from finalists; seeds with every playoff team mention; Race to 11 lore only; pull --rebase before pushing (repo shared with CFB).
+
+## League Office findings (Dan, 28 Oct 2026, 2044 week 5)
+- Findings cases must say plainly which player was found at fault; bench-clearing findings now name the at-fault player and state whether the other was cleared or partly at fault (`build_findings` in `rfl/cases.py`). Dan's stance: the new League Office does not hold back on punishing felonious activity (week 4 appeal upheld).
+- 2044 week 2 bench-clearing: Toatele (Hammerheads OL) was drawn as the late-hit player ($10K), findings week 5 ruled 1 game + $15K. Bats hazing findings week 5 ruled $500K + a 2045 round 4 pick.

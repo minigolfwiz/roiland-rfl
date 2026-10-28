@@ -461,6 +461,12 @@ def build_findings(S, rnd, st, item, week, chain, p):
     if st['truth'] != 'unfounded': text += ' ' + ' '.join(f['text'].format() for f in facts)
     lead = (f"The league has finished its investigation of the {nick(st['club'])}" if spec['subject'] == 'club' else f"The league has finished its investigation of {st['name']} ({nick(st['club'])})")
     text = '\n\n'.join([lead + ' (opened in week ' + str(st['week']) + '). ' + text, 'Original matter: ' + st['summary']])
+    if key == 'bench_clear' and len(st['pids']) > 1:      # Dan (2044 wk 5): findings must say plainly which player was found at fault
+        P = S['players']; a, b = P[str(st['pids'][0])], P[str(st['pids'][1])]; A = f"{a['name']} ({nick(a['club'])} {a['pos']})"; B = f"{b['name']} ({nick(b['club'])} {b['pos']})"
+        verdict = {'substantiated': f"Investigators found {A} at fault for the late hit that set off the scrum. {B} was not found at fault.",
+                   'partial': f"Investigators found {A} at fault for the late hit that set off the scrum, and found {B} partly at fault for escalating it.",
+                   'unfounded': f"Investigators could not establish that either player was at fault: neither {A} nor {B} was found responsible."}[st['truth']]
+        text = '\n\n'.join([f"The league has finished its investigation of the bench-clearing scrum in week {st['week']}, {st['year']}. " + verdict, 'Original matter: ' + st['summary']])
     if st['truth'] == 'unfounded':
         opts = [O('clear', 'Close the matter: no violation found', sug=True), O('warn', 'Close the matter with a warning about procedures')]
         fv = fine_for(3.0) * (6 if spec['subject'] != 'player' else 1)
