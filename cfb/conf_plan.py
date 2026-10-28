@@ -98,10 +98,12 @@ def draw_conference(conf, season, hosts, played, series_home, last_meet, seed):
 # conference game among them is locked to week 14 so the third team is free for a week-14 non-con game.
 W14_ROT = {"Western Coast": ["Skylar Rose", "Kaji Kita State", "Barhold Valley"]}   # left-out team, in rotation
 
+W14_OVERRIDE = {2047: "Kaji Kita State"}   # Dan booked Southern Tengus at KKS in wk 14, 2047
+
 def apply_w14_rotation(plan, first):
     for ci, (conf, trio) in enumerate(W14_ROT.items()):
         for year, p in plan.items():
-            left = trio[(int(year) - 2044) % 3]
+            left = W14_OVERRIDE.get(int(year), trio[(int(year) - 2044) % 3])
             gs = [g for g in p["conferences"][conf] if g["a"] in trio and g["b"] in trio and left not in (g["a"], g["b"])]
             assert len(gs) == 1, (year, conf, left, gs)
             gs[0]["week"] = 14; gs[0]["locked"] = True; gs[0]["type"] = "w14_rotation"
