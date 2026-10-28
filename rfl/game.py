@@ -50,6 +50,8 @@ class Side:
         if not self.rbs: return self.qb
         return self.rbs[0] if len(self.rbs) == 1 or self.rnd.random() < .72 else self.rbs[1]
 
+OT_TWO_POINT_FROM = 2045   # from this season on, overtime touchdowns must be followed by a two-point try
+
 class Game:
     def __init__(self, S, home, away, year, seed, playoff=False):
         self.rnd = random.Random(seed); self.S = S; self.year = year; self.playoff = playoff
@@ -313,6 +315,7 @@ class Game:
                 s.score += 6; self.log('td', s, self.td_text(s), 6)
                 diff = s.score - d.score; self.ot_poss = possessions
                 if possessions >= 2 and diff > 0: self.plays[-1]['noxp'] = True   # walk-off TD: both teams have had the ball and this one leads, so the game ends on the touchdown — no extra point
+                elif self.year >= OT_TWO_POINT_FROM: self.two_point(s, d)   # 2045+ rule (Dan, 28 Oct 2026): no kicked extra points in overtime, every OT touchdown (not a walk-off) must go for 2
                 elif possessions >= 2 and diff == 0: self.two_point(s, d) if self.rnd.random() < .5 else self.xp(s)   # answering a TD that missed its XP: the try wins it
                 else: self.xp(s)   # first possession (the opponent still gets the ball), or answering a TD+XP: the kick ties it
             if res == 'fg': pass

@@ -11,4 +11,4 @@ Discipline traits BUILT (27 Oct 2026): hidden per-player `disc`/`cond` and coach
 
 Robust League Office cases BUILT (27 Oct 2026): rfl/case_catalog.py + rfl/cases.py (fact-rolled cases with severity, precedent, probation, appeals, storylines, reinstatement reviews, harsh felony policy, real effects). State in S['office']. NEXT: the 2043 offseason, one stage at a time (wire S['pick_penalties'] into the draft; bump draft.YEAR). Details in data/rfl_notes.md ('League Office case system').
 
-2044 status (28 Oct 2026): weeks 1-9 played (state data/rfl_state_2044.z64); week 8 desk applied; week 9 League Office ballot live (one minor case), waiting on Dan, then `league_office.py apply 9 file` and `weekly.py 10`. Season page has a Schedules tab.
+2044 status (28 Oct 2026): weeks 1-10 played (state data/rfl_state_2044.z64); week 9 desk applied; week 10 League Office ballot live (Players of the Week only, no cases), waiting on Dan, then `league_office.py apply 10 file` and `weekly.py 11`. New rule for 2045: no kicked XPs in overtime (`game.OT_TWO_POINT_FROM`). Season page has a Schedules tab.
