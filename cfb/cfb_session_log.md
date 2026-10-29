@@ -815,3 +815,4 @@ Tengus State 31 Marblehead 24; Krobe State 55 Keytommiyr 16; Pistolheart 34 Eona
 RYSKAMP FOUR (strict subset of ten): Clairlac, Baifei, Wolfbruck, Vasulingam. Selection Board built+published; awaiting Dan's 24-team field JSON -> install_field.py. Parity monitor (current season, no arg) wk14 ok.
 
 ## 2044 PLAYOFF FIELD INSTALLED (state/field_s19.json -> playoff_s19.pkl). Seeds: 1 Pistolheart, 2 Eona, 3 UFNH, 4 Roosevelt, 5 Phangrine State, 6 Ciarralotta State, 7 Krobe State, 8 Tengus State | 9 UNN, 10 Skeenerland, 11 Marblehead, 12 Skeenerland State, 13 Barhold, 14 North Hatesei, 15 Kaji Daun, 16 Ranroman, 17 Leafette, 18 Ranroman State, 19 German Shores, 20 NE Rogaela, 21 New Madrid, 22 Wolford, 23 VSSC, 24 Underwood. R1 preview shown, NOT PLAYED.
+- Playoff preview format: Dan asked previews be mobile-friendly; now published as artifact FuosurU7aayp5kR4iANeWE via playoff_preview_page.py.

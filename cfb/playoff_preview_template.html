@@ -1,0 +1,57 @@
+<title>Playoff Preview</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: one game per card, stacked; teams stack inside each card so nothing scrolls sideways at 400px. */
+:root{--bg:#f3f4f1;--card:#fff;--fg:#1b2420;--mute:#5d6a63;--line:#d9ddd6;--accent:#1f5f46;--hi:#e8efe9;--win:#1f7a4d;--loss:#a63a2e;
+--disp:"Barlow Condensed","Arial Narrow",sans-serif;--body:"Source Sans 3",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121715;--card:#1b221f;--fg:#e8ede9;--mute:#9aa8a0;--line:#2c3631;--accent:#6fcf9e;--hi:#22302a;--win:#6fcf9e;--loss:#e58a7e;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121715;--card:#1b221f;--fg:#e8ede9;--mute:#9aa8a0;--line:#2c3631;--accent:#6fcf9e;--hi:#22302a;--win:#6fcf9e;--loss:#e58a7e;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.45 var(--body);padding-block:20px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+header h1{font:700 2rem/1.05 var(--disp);letter-spacing:.02em;text-transform:uppercase;margin:0;text-wrap:balance}
+header p{margin:4px 0 0;color:var(--mute);font-size:.9rem}
+nav{display:flex;flex-wrap:wrap;gap:6px}
+nav a{font:600 .8rem var(--body);padding:5px 9px;border:1px solid var(--line);border-radius:6px;color:var(--fg);text-decoration:none;background:var(--card)}
+article{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.top{padding:12px 14px;border-bottom:1px solid var(--line)}
+.match{font:700 1.35rem/1.15 var(--disp);letter-spacing:.02em;text-transform:uppercase;text-wrap:balance}
+.match small{font:600 .8rem var(--body);color:var(--mute);text-transform:none;letter-spacing:0}
+.meta{margin-top:6px;font-size:.85rem;color:var(--mute);display:flex;flex-direction:column;gap:2px}
+.team{padding:12px 14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.team+.team{border-top:1px solid var(--line)}
+.th{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.seed{font:700 .8rem var(--disp);background:var(--accent);color:var(--bg);padding:1px 7px;border-radius:4px;letter-spacing:.04em}
+.tn{font:700 1.2rem var(--disp);text-transform:uppercase;letter-spacing:.02em}
+.rec{font-variant-numeric:tabular-nums;color:var(--mute);font-weight:600}
+.host{font:600 .7rem var(--body);text-transform:uppercase;letter-spacing:.08em;color:var(--accent)}
+.sub{font-size:.82rem;color:var(--mute)}
+dl{margin:0;display:grid;grid-template-columns:5.2rem 1fr;gap:3px 10px;font-size:.88rem;font-variant-numeric:tabular-nums}
+dt{color:var(--mute);font-weight:600}
+dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.l{color:var(--loss)}.w{color:var(--win)}
+</style>
+<main>
+<header><h1 id="h"></h1><p id="sub"></p></header>
+<nav id="nav"></nav>
+<div id="games" style="display:flex;flex-direction:column;gap:16px"></div>
+</main>
+<script>
+const D=__DATA__;
+document.getElementById('h').textContent=D.year+' '+D.round;
+document.getElementById('sub').textContent=D.games.length+' games · higher seed hosts on campus';
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const team=(t,host)=>`<section class="team"><div class="th"><span class="seed">#${t.seed}</span><span class="tn">${esc(t.name)}</span><span class="rec">${t.rec}</span>${host?'<span class="host">Home</span>':''}</div>
+<div class="sub">${esc(t.conf)} · HC ${esc(t.hc)}${t.ten!=null?' (yr '+t.ten+')':''}</div>
+<dl><dt>Scoring</dt><dd>${t.ppg} for, ${t.papg} against per game</dd>
+<dt>Losses</dt><dd class="l">${t.losses.length?t.losses.map(esc).join('; '):'None'}</dd>
+<dt>Best wins</dt><dd class="w">${t.wins.map(esc).join('; ')}</dd>
+${t.stars.map(s=>`<dt>${s[0]}</dt><dd>${esc(s[1])} ${s[2]}: ${s[3]}</dd>`).join('')}</dl></section>`;
+const nav=document.getElementById('nav'),box=document.getElementById('games');
+D.games.forEach((g,i)=>{
+ nav.insertAdjacentHTML('beforeend',`<a href="#g${i}">${g.away.seed} @ ${g.home.seed}</a>`);
+ box.insertAdjacentHTML('beforeend',`<article id="g${i}"><div class="top"><div class="match">${esc(g.away.name)} at ${esc(g.home.name)}</div>
+ <div class="meta"><span>${esc(g.venue)}</span><span>Series: ${esc(g.series)}</span></div></div>${team(g.home,true)}${team(g.away,false)}</article>`);
+});
+</script>
