@@ -3187,3 +3187,4 @@ PUSHED 2026-10-28 (write access restored; repo attached with push): state throug
 - [Ryskamp] winner named (Clairlac). Title game still awaiting Dan's go.
 - [RULING] Ryskamp: Dan picks the four and the winner from 2045 on. At the post-CCG checkpoint present the ten and WAIT. 2044 stands (Clairlac).
 - [2044 DONE] Title game played, awards canonized, final poll filed. NEXT: parity monitor (no arg) + audit, title sites 2045+, rollover. Title game format: one quarter at a time, result last.
+- CORRECTION (Dan, 29 Oct): title-game quarter-by-quarter narration MUST show the running score after every scoring play and at the end of each quarter; only the final result/champion banner waits for the bottom.
