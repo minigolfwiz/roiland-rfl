@@ -848,3 +848,8 @@ NEXT: Stage 2, the 2045 draft pool for the RFL (needs Dan).
 ## 2044-45 OFFSEASON -- Stage 2 of 7 IN PROGRESS: 2045 draft pool handed to the RFL (2026-10-29)
 export_draft_pool.py -> state/draft_pool_2045.json: 3,459 declared (2,076 seniors, 1,360 early entrants, 23 subdivision). State untouched (verified byte-identical). Slim top-700 filed to Project as claude/cfb_draft_pool_2045.json; full pool sent to Dan.
 WAITING on RFL's 280 picks ({"season":19,...}) -> install_rfl_draft.py --commit, then stages 3-7 (portal, recruiting, development, roster_final, rollover).
+
+## 2044-45 OFFSEASON -- Stage 2 of 7 COMPLETE: the 2045 draft, run by the RFL (2026-10-29)
+install_rfl_draft.py --forfeits=1 --commit (new flag: League Office pick forfeits shrink the draft; 2045 had 279 picks, round 4 one short). Backups state/{season_state,rosters}.pkl.pre_s20_draft. s['draft_s19']: 279 picks (170 juniors, 109 seniors, 1 subdivision). 2,424 leave college, 1,012 declared underclassmen withdrew to school.
+#1 Alessia Boischamp (Eona DL Jr) to Bruca Beach; #2 Verity Hyun-Nam (UFNH DL) to Eona; #3 Freya Osterberg (Tasson LB) to Chapel Rock. Verigon 12 draftees, Orlot 8. Great Fourteen 48, Power North 45, Mountain Valley 41.
+NEXT: Stage 3 portal.

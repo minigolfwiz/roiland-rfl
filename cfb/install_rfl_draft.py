@@ -29,8 +29,10 @@ for p in rfl['picks']:
                   'eligible': True, 'declared': True, 'early': e['early_entrant'], 'subdivision': e['subdivision']})
 picks.sort(key=lambda p: p['overall'])
 print('%d valid picks (%d rejected: not in pool / duplicate)' % (len(picks), len(bad)), bad[:10])
-assert len(picks) == 280, 'expected 280 picks'
-assert [p['overall'] for p in picks] == list(range(1, 281)), 'overall numbering must be 1..280'
+# League Office pick forfeitures shrink the draft (2045: one round-4 pick); pass --forfeits=N
+FORF = next((int(a.split('=')[1]) for a in sys.argv if a.startswith('--forfeits=')), 0)
+assert len(picks) == 280 - FORF, 'expected %d picks' % (280 - FORF)
+assert [p['overall'] for p in picks] == list(range(1, 281 - FORF)), 'overall numbering must be 1..%d' % (280 - FORF)
 early = sum(1 for p in picks if p['early']); subs = sum(1 for p in picks if p['subdivision'])
 print('early entrants drafted %d | subdivision %d | round-1 colleges: %s' % (early, subs, [p['team'] for p in picks[:40]]))
 if commit:
