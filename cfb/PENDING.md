@@ -3172,3 +3172,4 @@ PUSHED 2026-10-28 (write access restored; repo attached with push): state throug
 - [wk11] Awaiting committee ballot state/ballot_s19_w11.json; then install (backup pre_w11board), rebuild viewer, give wk12 candidates (Skeenerland State@Diveo State, Pistolheart@Kaji Daun, Skeenerland@Tengus, Fiota Bay@Parchynt).
 - [wk11] Committee board installed (audit clean); viewer republished v193. Wk12 candidates given to Dan.
 - [wk12] Awaiting ballot_s19_w12.json; then install (backup pre_w12board), rebuild viewer, give wk13 candidates (Diveo State@Skeenerland, Roosevelt@Park Island, Ranroman State@Greene, Ranroman@Pistolheart[visited]).
+- [wk12] Committee board installed (audit clean); viewer republished. Wk13 candidates given to Dan.
