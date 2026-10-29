@@ -809,3 +809,7 @@ PUSHED 2026-10-28 (write access restored; repo attached with push): state throug
 ## Season 19 (2044) week 14 (regular season complete, 980/980)
 - Gameview: UFNH at Fiota Bay (UFNH 34-26; #4 beat #10). Pages published. Awaiting wk14 committee ballot. Then: CCGs (ccg.py), Ryskamp four after CCGs, parity monitor wk14 (header bug).
 - Week 14 board installed (ballot_s19_w14.json): 1 Pistolheart, 2 Eona, 3 UFNH, 4 Ciarralotta State, 5 Skeenerland. Out: Dietsche, Costique. CCG preview shown (not played). parity_monitor.py takes a SEASON number (not week): earlier '2033 through week 14' header was my misuse; run with no arg for current season.
+
+## 2044 CONFERENCE FINALS PLAYED (ccg.py --commit; backups season_state.pkl.pre_s19_ccg, games_db.pkl.pre_s19_ccg)
+Tengus State 31 Marblehead 24; Krobe State 55 Keytommiyr 16; Pistolheart 34 Eona 23; Roosevelt 34 Park Island 28; Phangrine State 41 Ciarralotta State 7; UFNH 14 Fiota Bay 6; NE Rogaela 26 Palisades 10; New Madrid 37 Black Forest 34; Wolford 34 West Hatesei 0; German Shores 10 East Tasson 0; VSSC 41 Rupin State 17; Underwood 17 Chapel Rock 13.
+RYSKAMP FOUR (strict subset of ten): Clairlac, Baifei, Wolfbruck, Vasulingam. Selection Board built+published; awaiting Dan's 24-team field JSON -> install_field.py. Parity monitor (current season, no arg) wk14 ok.
