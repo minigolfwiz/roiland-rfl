@@ -119,3 +119,5 @@
 - 2044 week 20 flex (Dan, manual): the first Sunday-night game (Dales at Crowns) was swapped out for Hope at Dragons (logged in `season.flexes`). Week 20 had two SNF games, no MNF.
 
 - 2044 round 1 (28 Oct 2026): Mastodons (1) 28, Redwoods (8) 23; Cavemen (2) 30, Raptors (7) 20 (Raptors used an emergency kicker, 0-for-2 on long field goals, with Ga-Il on the exempt list); Bearcats (3) 30, Greats (6) 20; Asteroids (5) 16, Dragons (4) 13; Renegades (8) 27, Dynamos (1) 16; Leatherbacks (2) 41, Phenoms (7) 14; Commodores (6) 34, Bats (3) 28 OT; Dales (4) 16, Bees (5) 13. **Race to 11: the Redwoods and Greats both lost in round 1 and the Brass Tigers missed the field, so no club can win an 11th title in 2044; all three stay on 10.**
+
+- **Standing rule (Dan, 29 Oct 2026): as soon as a playoff round completes, immediately give the full previews for the next round in the same reply, without waiting to be asked. Previews follow the Preview standard (venue, series, regular-season meetings, surprise reads, no ratings), include seeds, and keep the Race to 11 in view.**
