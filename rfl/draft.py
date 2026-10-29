@@ -11,7 +11,7 @@ DRY = 'dry' in sys.argv
 S = load(STATE); L = load(f'{ROOT}/data/league.json')
 clubs = sorted(L['teams']); rnd = random.Random(YEAR * 31)
 ROUNDS = 7
-QBP, NEEDK, RUN = .65, .16, .012   # QB premium (no QB need), need weight, positional-run penalty per same-position pick already made
+QBHUNT, QBSET, QBLATE, NEEDK, RUN = 1.3, -.2, .15, .16, .012   # QB bonus when hunting a franchise QB / settled / late rounds; need weight; positional-run penalty
 
 def draft_order(S):
     """Worst to best: non-playoff clubs by record (point differential, points scored break ties), then playoff exits by round, champion last."""
@@ -38,13 +38,22 @@ def load_pool(path):
                          dsup={k: e[k] for k in ('disc', 'cond', 'discipline', 'conduct') if e.get(k) is not None}))
     return pool
 
-def grade(gm, q, need_qb=False):
+# Draft-board position value (real drafts: QB, edge/DL, OL, WR, CB go early; S, LB, RB, TE slide). Fades out by round 5.
+POSVAL = dict(DL=.30, OL=.25, WR=.20, CB=.10, TE=-.10, S=-.35, LB=-.40, RB=-.50)
+def qb_hunt(t):
+    """A club is hunting a franchise QB when its starter is mediocre, ageing, or missing."""
+    qs = depth_chart(S, t)['QB']
+    if not qs: return True
+    q = qs[0]; return ovr(q) < 8.4 or age(q, YEAR) >= 34
+
+def grade(gm, q, need_qb=False, rd=1):
     r = random.Random(sha(gm['name'] + q['name']))
     noise = r.gauss(0, (1 - gm['eye']) * .55)
     v = q['abil'] + gm['aggression'] * .7 * max(0, q['pot'] - q['abil']) + noise
     if q['pos'] in gm['bias']: v += .25
     if q['pos'] in ('K', 'P'): v -= 1.6
-    if q['pos'] == 'QB': v += (1.5 if need_qb else QBP)
+    v += POSVAL.get(q['pos'], 0) * max(0, 1 - (rd - 1) / 4)
+    if q['pos'] == 'QB': v += (QBHUNT if need_qb else (QBLATE if rd >= 3 else QBSET))
     if q['sub']: v -= .4
     return v
 
@@ -91,7 +100,7 @@ def run_draft(pool):
     picks = []; avail = list(pool); run = collections.Counter()
     for i, (r, orig, owner) in enumerate(pick_order(), 1):
         gm = S['clubs'][owner]['gm']; nd = needs(owner)
-        best = max(avail, key=lambda q: (grade(gm, q, nd['QB'] > .8) - RUN * run[q['pos']]) * (1 + NEEDK * min(nd[q['pos']], 3.0)) - (1.4 if q['pos'] in ('K', 'P') and r < 3 else 0) - (1.2 if q['pos'] == 'QB' and S['clubs'][owner].get('drafted_qb') else 0))
+        best = max(avail, key=lambda q: (grade(gm, q, qb_hunt(owner) and not S['clubs'][owner].get('drafted_qb'), r) - RUN * run[q['pos']]) * (1 + NEEDK * min(nd[q['pos']], 3.0)) - (1.4 if q['pos'] in ('K', 'P') and r < 3 else 0) - (1.2 if q['pos'] == 'QB' and S['clubs'][owner].get('drafted_qb') else 0))
         if best['pos'] == 'QB': S['clubs'][owner]['drafted_qb'] = True
         avail.remove(best); run[best['pos']] += 1
         pl = add_rookie(best, owner, dict(year=YEAR, round=r, pick=i, club=owner), rookie_salary(YEAR, i), 4 if r == 1 else 3)
