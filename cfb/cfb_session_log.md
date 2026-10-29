@@ -804,3 +804,4 @@ PUSHED 2026-10-28 (write access restored; repo attached with push): state throug
 
 ## Season 19 (2044) week 13
 - Gameview: Roosevelt at Park Island (Roosevelt 38-33; #13 beat #1). Wk13 played. Pages published. Awaiting wk13 ballot before wk14 candidates.
+- Week 13 committee board installed: 1 Pistolheart, 2 Eona, 3 Ciarralotta State, 4 UFNH, 5 Skeenerland. Out: Ranroman, Greene, Lornaman. In: Black Forest, German Shores, Costique.

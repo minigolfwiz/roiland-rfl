@@ -3174,3 +3174,4 @@ PUSHED 2026-10-28 (write access restored; repo attached with push): state throug
 - [wk12] Awaiting ballot_s19_w12.json; then install (backup pre_w12board), rebuild viewer, give wk13 candidates (Diveo State@Skeenerland, Roosevelt@Park Island, Ranroman State@Greene, Ranroman@Pistolheart[visited]).
 - [wk12] Committee board installed (audit clean); viewer republished. Wk13 candidates given to Dan.
 - [wk13] Awaiting ballot_s19_w13.json; install (backup pre_w13board), rebuild viewer, wk14 candidates (UFNH@Fiota Bay, Skeenerland@Skeenerland State[visited], Ranroman@Ranroman State, Park Island@Burrstone). Ryskamp cut to 4 due after next checkpoint.
+- [wk13] Committee board installed (audit clean); viewer republished. Wk14 candidates given.
