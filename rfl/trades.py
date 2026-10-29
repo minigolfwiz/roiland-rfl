@@ -28,7 +28,9 @@ def run_trades(S, rnd, target=7):
         return ovr(p) - ovr(pl[n - 1])
     def surplus(t, p):
         pl = starters(t, p['pos']); n = DEPTH[p['pos']][0]
-        return len(pl) > n and p in pl[n - 1:] or (len(pl) >= n and pl.index(p) >= n - 1 and p['pos'] == 'QB')
+        if any(y >= YEAR - 3 for y, _ in p.get('honors', [])): return False        # recent award winners are never shopped (Dan, 29 Oct 2026: the two-time MVP was traded)
+        if p['pos'] == 'QB': return len(pl) > n and p in pl[n:]                      # a starting QB is never surplus, only the backup behind him
+        return len(pl) > n and p in pl[n - 1:]
     done = set()
     def trade(seller, buyer, p, why):
         r = pick_round(p)
