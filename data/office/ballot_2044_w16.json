@@ -1,0 +1,454 @@
+{
+ "year": 2044,
+ "week": 16,
+ "potw": {
+  "off": [
+   {
+    "pid": 9037244,
+    "name": "Manaia Snowbird",
+    "pos": "RB",
+    "club": "Diamond City Dynamos",
+    "line": "26 car, 128 yds, 3 rec, 25 yds, 3 TD",
+    "res": "W 42-17 at Phenoms",
+    "score": 33.3,
+    "plays": [
+     "Q2 13:13 1-yd TD run (was up 14)",
+     "Q3 11:02 19-yd TD run (was up 11)",
+     "Q4 10:13 5-yd TD catch from Lakshmi Balamoorthy (was up 25)"
+    ]
+   },
+   {
+    "pid": 9036725,
+    "name": "Lakshmi Balamoorthy",
+    "pos": "QB",
+    "club": "Diamond City Dynamos",
+    "line": "23/35, 274 yds, 4 TD, 54 rush yds",
+    "res": "W 42-17 at Phenoms",
+    "score": 30.56,
+    "plays": [
+     "Q1 9:13 27-yd TD pass to Soren Moafusi (was tied)",
+     "Q1 6:48 9-yd TD pass to Rostislav Borowicz (was up 7)",
+     "Q3 3:59 4-yd TD pass to Sione Highhawk (was up 18)",
+     "Q4 10:13 5-yd TD pass to Manaia Snowbird (was up 25)"
+    ]
+   },
+   {
+    "pid": 9035404,
+    "name": "Manish Anysei",
+    "pos": "QB",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "32/46, 401 yds, 4 TD, 2 INT, 27 rush yds",
+    "res": "W 34-28 at Commodores",
+    "score": 28.84,
+    "plays": [
+     "Q1 11:24 6-yd TD pass to Nokosi Faitai (was tied)",
+     "Q2 13:12 19-yd TD pass to Dulce El-Najjar (was up 7)",
+     "Q2 9:32 fumble lost (up 14), led to a touchdown",
+     "Q2 7:27 interception thrown (up 7)",
+     "Q2 3:17 interception thrown (up 7)",
+     "Q4 6:39 9-yd TD pass to Mariama Khoury (was down 4), go-ahead, later answered",
+     "Q4 2:27 6-yd TD pass to Mariama Khoury (was down 4, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9100951,
+    "name": "Xinyi Shiramura",
+    "pos": "WR",
+    "club": "Coachville Mastodons",
+    "line": "7 rec, 123 yds, 2 TD",
+    "res": "W 27-24 at Raptors",
+    "score": 25.8,
+    "plays": [
+     "Q2 4:55 6-yd TD catch from Chengfei Pyeong-Seok (was down 4)",
+     "Q4 3:18 19-yd TD catch from Chengfei Pyeong-Seok (was down 4, late), go-ahead, later answered"
+    ]
+   },
+   {
+    "pid": 9034314,
+    "name": "Dulce El-Najjar",
+    "pos": "WR",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "12 rec, 190 yds, 1 TD",
+    "res": "W 34-28 at Commodores",
+    "score": 25.0,
+    "plays": [
+     "Q2 13:12 19-yd TD catch from Manish Anysei (was up 7)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9100828,
+    "name": "Howahkan Lonecreek",
+    "pos": "LB",
+    "club": "Costique Bearcats",
+    "line": "6 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 21-24 vs Beetles",
+    "score": 19.6,
+    "plays": [
+     "Q2 13:29 sack and forced fumble (up 4), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9033983,
+    "name": "Ustevaw Rowley",
+    "pos": "DL",
+    "club": "Palm Creek Leatherbacks",
+    "line": "3 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 44-17 vs Tsunami",
+    "score": 17.8,
+    "plays": [
+     "Q1 7:54 sack and forced fumble (down 3), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9035907,
+    "name": "Mariama Svetentsev",
+    "pos": "LB",
+    "club": "Chapel Rock Crowns",
+    "line": "7 tackles, 1 sack, 1 INT",
+    "res": "W 23-17 vs Bees",
+    "score": 17.2,
+    "plays": [
+     "Q2 3:46 interception (tied), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9101134,
+    "name": "Haeun Asaura",
+    "pos": "LB",
+    "club": "Hughes City Asteroids",
+    "line": "5 tackles, 1 sack, 1 INT",
+    "res": "W 24-17 vs Demons",
+    "score": 16.0,
+    "plays": [
+     "Q2 2:46 interception (up 7), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9100849,
+    "name": "Yerin Masukami",
+    "pos": "LB",
+    "club": "Classetto Cavemen",
+    "line": "9 tackles, 2 sacks",
+    "res": "L 23-31 vs Terrors",
+    "score": 15.399999999999999,
+    "plays": []
+   },
+   {
+    "pid": 9035376,
+    "name": "Rin Vegadura",
+    "pos": "LB",
+    "club": "Fiota Bay T-Rexes",
+    "line": "9 tackles, 2 sacks",
+    "res": "W 24-20 at Renegades",
+    "score": 15.399999999999999,
+    "plays": []
+   }
+  ],
+  "st": [
+   {
+    "pid": 9035845,
+    "name": "Amira Al-Khalidi",
+    "pos": "P",
+    "club": "Ediville Brass Tigers",
+    "line": "8 punts, 47.8 avg, 5 inside the 20",
+    "res": "W 20-19 vs Rangers",
+    "score": 17.833333333333336,
+    "plays": []
+   },
+   {
+    "pid": 9037768,
+    "name": "Riku Man-Hwan",
+    "pos": "P",
+    "club": "Good River Rangers",
+    "line": "7 punts, 48.0 avg, 5 inside the 20",
+    "res": "L 19-20 at Tigers",
+    "score": 16.833333333333336,
+    "plays": []
+   },
+   {
+    "pid": 9101431,
+    "name": "Mingze Hatayama",
+    "pos": "K",
+    "club": "Palm Creek Leatherbacks",
+    "line": "3/4 FG, long 61, 5/5 XP",
+    "res": "W 44-17 vs Tsunami",
+    "score": 15.25,
+    "plays": [
+     "Q3 3:19 29-yd GOOD",
+     "Q3 0:10 61-yd GOOD",
+     "Q4 9:29 47-yd MISSED",
+     "Q4 6:57 50-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101026,
+    "name": "Wei Littlesky",
+    "pos": "K",
+    "club": "Sarkady Beavers",
+    "line": "3/3 FG, long 58, 0/0 XP",
+    "res": "L 9-14 at Redwoods",
+    "score": 13.75,
+    "plays": [
+     "Q1 9:31 58-yd GOOD",
+     "Q1 5:48 34-yd GOOD",
+     "Q2 0:25 49-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9036421,
+    "name": "Enlai Gyesowah",
+    "pos": "P",
+    "club": "San Saltadac Sea Lions",
+    "line": "4 punts, 49.8 avg, 4 inside the 20",
+    "res": "L 24-38 at Thunderbugs",
+    "score": 12.5,
+    "plays": []
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "felony_sexual",
+   "title": "Sexual assault investigation",
+   "who": [
+    {
+     "name": "Rhys Ga-Il",
+     "pos": "K",
+     "club": "Cordelle Raptors",
+     "pid": 9101377
+    }
+   ],
+   "game": null,
+   "where": "Off the field",
+   "text": "Rhys Ga-Il (K, Raptors) was taken into custody for questioning in a sexual assault complaint; no formal charges have been filed. The complainant's identity has not been released. Police say the complainant has been cooperative with investigators. Police have not released the report. His attorney says there is video that tells a different story.\n\nThe club says it is gathering facts. Under the league's conduct policy the commissioner can act before the court case ends, and the league applies its own standard to this kind of conduct whatever the courts decide.",
+   "severity": 8.0,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9101377
+   ],
+   "precedent": [],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action while the case proceeds",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "exempt",
+     "label": "Exempt list: out until the case resolves",
+     "games": 99,
+     "fine": 0,
+     "status": "exempt",
+     "suggested": true,
+     "blurb": "Exempt list until resolved",
+     "exempt": true
+    },
+    {
+     "key": "indef20",
+     "label": "Suspended indefinitely, review after 20 games",
+     "games": 99,
+     "fine": 0,
+     "status": "indef",
+     "suggested": false,
+     "blurb": "Out indefinitely, review after 20 games",
+     "indef_min": 20
+    },
+    {
+     "key": "indef40",
+     "label": "Suspended indefinitely, review after 40 games",
+     "games": 99,
+     "fine": 0,
+     "status": "indef",
+     "suggested": false,
+     "blurb": "Out indefinitely, review after 40 games",
+     "indef_min": 40
+    }
+   ],
+   "precedent_pick": null,
+   "tier": "major",
+   "id": "W16-1",
+   "week": 16,
+   "sid": "2044:W16-1"
+  },
+  {
+   "type": "flagrant",
+   "title": "Flagrant hit, ejection",
+   "who": [
+    {
+     "name": "Baltazar Liangzong",
+     "pos": "DL",
+     "club": "Holliday Beetles",
+     "pid": 9037789
+    }
+   ],
+   "game": "G86",
+   "where": "Holliday Beetles at Costique Bearcats, week 16",
+   "text": "Baltazar Liangzong (DL, Beetles) was ejected with 14:55 left in the third quarter after a roughing the passer flag for a hit the officials called flagrant. Film review showed the contact was close to the whistle. It happened in front of a national television audience. Teammates had to hold Liangzong back as he left the field.\n\nThe league office has asked the Beetles for their account.",
+   "severity": 5.0,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9037789,
+    9034234
+   ],
+   "precedent": [
+    "2043 wk 17, Lucia Duregard: Fine $50K (severity 5.0)",
+    "2043 wk 7, Vidar Solberg: 1 game + $25K (severity 5.0)",
+    "2043 wk 7, Dongmei Jingda: 1 game + $25K (severity 5.0)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $25K"
+    },
+    {
+     "key": "g1",
+     "label": "1 game + $40K",
+     "games": 1,
+     "fine": 40000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Out 1 game, fined $40K"
+    },
+    {
+     "key": "g2",
+     "label": "2 games + $40K",
+     "games": 2,
+     "fine": 40000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Out 2 games, fined $40K"
+    },
+    {
+     "key": "g3",
+     "label": "3 games + $40K",
+     "games": 3,
+     "fine": 40000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Out 3 games, fined $40K"
+    }
+   ],
+   "precedent_pick": "g1",
+   "tier": "moderate",
+   "id": "W16-2",
+   "week": 16
+  },
+  {
+   "type": "coach_sideline",
+   "title": "Coach berates officials",
+   "who": [
+    {
+     "name": "Hajun Bustamante",
+     "pos": "HC",
+     "club": "Costique Bearcats",
+     "pid": null,
+     "coach": true
+    }
+   ],
+   "game": "G86",
+   "where": "Holliday Beetles at Costique Bearcats, week 16",
+   "text": "Hajun Bustamante (Bearcats) followed an official onto the field to argue a call and was warned twice. Bustamante drew a 15-yard unsportsmanlike flag for it. Bustamante said in his postgame news conference that he lost his composure.\n\nThe Bearcats say they will not comment further.",
+   "severity": 2.6,
+   "prior": 0,
+   "stage": "new",
+   "pids": [],
+   "precedent": [],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k15",
+     "label": "Fine $15K",
+     "games": 0,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $15K"
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Fined $25K"
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $50K"
+    }
+   ],
+   "precedent_pick": null,
+   "tier": "minor",
+   "id": "W16-3",
+   "week": 16
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": []
+}
