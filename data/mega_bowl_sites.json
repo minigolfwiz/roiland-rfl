@@ -1,1 +1,32 @@
-{"note": "Trimmed to the 2043 site; the full rotation (1951-2050) is in the project doc claude/rfl_mega_bowl_sites.json", "sites": [{"year": 2043, "host": "Hughes City Asteroids", "conf": "Regal", "div": "South", "city": "Hughes City", "state": "South Antiragal", "stadium": "Calvin Field"}]}
+{
+ "note": "Trimmed to 2043-2045; the full rotation (1951-2050) is in the project doc claude/rfl_mega_bowl_sites.json",
+ "sites": [
+  {
+   "year": 2043,
+   "host": "Hughes City Asteroids",
+   "conf": "Regal",
+   "div": "South",
+   "city": "Hughes City",
+   "state": "South Antiragal",
+   "stadium": "Calvin Field"
+  },
+  {
+   "year": 2044,
+   "host": "Fiota Bay T-Rexes",
+   "conf": "Majestic",
+   "div": "East",
+   "city": "Fiota Bay",
+   "state": "Fiota",
+   "stadium": "Prehistoria Stadium"
+  },
+  {
+   "year": 2045,
+   "host": "Wolford Dragons",
+   "conf": "Regal",
+   "div": "West",
+   "city": "Marymond",
+   "state": "Wolford",
+   "stadium": "One Wolford Stadium"
+  }
+ ]
+}
