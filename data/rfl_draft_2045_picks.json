@@ -1,0 +1,4134 @@
+{
+"season": 19,
+"picks": [
+{
+"overall": 1,
+"round": 1,
+"pick": 1,
+"rfl_team": "Bruca Beach Hammerheads",
+"pid": 2018190,
+"name": "Alessia Boischamp",
+"via": null
+},
+{
+"overall": 2,
+"round": 1,
+"pick": 2,
+"rfl_team": "Eona Topcats",
+"pid": 2017996,
+"name": "Erik Hak-Nam",
+"via": null
+},
+{
+"overall": 3,
+"round": 1,
+"pick": 3,
+"rfl_team": "Chapel Rock Crowns",
+"pid": 2017499,
+"name": "Yannis Torremonte",
+"via": null
+},
+{
+"overall": 4,
+"round": 1,
+"pick": 4,
+"rfl_team": "Purcell Rapids",
+"pid": 2019699,
+"name": "Verity Hyun-Nam",
+"via": null
+},
+{
+"overall": 5,
+"round": 1,
+"pick": 5,
+"rfl_team": "South Burke Tsunami",
+"pid": 2018407,
+"name": "Tetsuro Wakabayashi",
+"via": null
+},
+{
+"overall": 6,
+"round": 1,
+"pick": 6,
+"rfl_team": "Verigon Komodos",
+"pid": 2018866,
+"name": "Kiyomi Kitamaki",
+"via": null
+},
+{
+"overall": 7,
+"round": 1,
+"pick": 7,
+"rfl_team": "Far Farris Raccoons",
+"pid": 2019493,
+"name": "Itzel Torrabella",
+"via": null
+},
+{
+"overall": 8,
+"round": 1,
+"pick": 8,
+"rfl_team": "Tengus City Terrors",
+"pid": 2019458,
+"name": "Michio Sugita",
+"via": null
+},
+{
+"overall": 9,
+"round": 1,
+"pick": 9,
+"rfl_team": "Rogaela Rovers",
+"pid": 2019670,
+"name": "Mireille Grijalva",
+"via": null
+},
+{
+"overall": 10,
+"round": 1,
+"pick": 10,
+"rfl_team": "Sarkady Beavers",
+"pid": 2015125,
+"name": "Esteban Forteoni",
+"via": null
+},
+{
+"overall": 11,
+"round": 1,
+"pick": 11,
+"rfl_team": "Fiota Bay T-Rexes",
+"pid": 2018130,
+"name": "Yannaw Yentrovaw",
+"via": null
+},
+{
+"overall": 12,
+"round": 1,
+"pick": 12,
+"rfl_team": "Diveo Demons",
+"pid": 2017396,
+"name": "Tessa Bierhoff",
+"via": null
+},
+{
+"overall": 13,
+"round": 1,
+"pick": 13,
+"rfl_team": "San Saltadac Sea Lions",
+"pid": 2018522,
+"name": "Ziad Anywale",
+"via": null
+},
+{
+"overall": 14,
+"round": 1,
+"pick": 14,
+"rfl_team": "Tasson Thunderbugs",
+"pid": 2015920,
+"name": "Joaquin Lomarini",
+"via": null
+},
+{
+"overall": 15,
+"round": 1,
+"pick": 15,
+"rfl_team": "Holliday Beetles",
+"pid": 2019841,
+"name": "Iosefa Halatele",
+"via": null
+},
+{
+"overall": 16,
+"round": 1,
+"pick": 16,
+"rfl_team": "Vaughn Bay Silverbacks",
+"pid": 2019618,
+"name": "Freya Osterberg",
+"via": null
+},
+{
+"overall": 17,
+"round": 1,
+"pick": 17,
+"rfl_team": "Stamford Grays",
+"pid": 2017172,
+"name": "Tamsin Kirchdorf",
+"via": null
+},
+{
+"overall": 18,
+"round": 1,
+"pick": 18,
+"rfl_team": "Fiota Swords",
+"pid": 2017935,
+"name": "Jalen Eastlow",
+"via": null
+},
+{
+"overall": 19,
+"round": 1,
+"pick": 19,
+"rfl_team": "Ediville Brass Tigers",
+"pid": 2016294,
+"name": "Mio Iwagawa",
+"via": null
+},
+{
+"overall": 20,
+"round": 1,
+"pick": 20,
+"rfl_team": "Diamond City Hope",
+"pid": 2017205,
+"name": "Oliver Goldstead",
+"via": null
+},
+{
+"overall": 21,
+"round": 1,
+"pick": 21,
+"rfl_team": "New Madrid Mastiffs",
+"pid": 2015113,
+"name": "Qamar Somakaran",
+"via": null
+},
+{
+"overall": 22,
+"round": 1,
+"pick": 22,
+"rfl_team": "Good River Rangers",
+"pid": 2015399,
+"name": "Wapasha Lamedeer",
+"via": null
+},
+{
+"overall": 23,
+"round": 1,
+"pick": 23,
+"rfl_team": "Stanton City Conductors",
+"pid": 2018007,
+"name": "Cristobal Penanueva",
+"via": null
+},
+{
+"overall": 24,
+"round": 1,
+"pick": 24,
+"rfl_team": "El Latigo Shredders",
+"pid": 2019062,
+"name": "Hosei Mesysei",
+"via": null
+},
+{
+"overall": 25,
+"round": 1,
+"pick": 25,
+"rfl_team": "Crayellan Redwoods",
+"pid": 2013604,
+"name": "Chaska Fonoti",
+"via": null
+},
+{
+"overall": 26,
+"round": 1,
+"pick": 26,
+"rfl_team": "Queensville Phenoms",
+"pid": 2019494,
+"name": "Xiuying Ningshai",
+"via": null
+},
+{
+"overall": 27,
+"round": 1,
+"pick": 27,
+"rfl_team": "Billiataho Greats",
+"pid": 2016113,
+"name": "Sina Ulumoe",
+"via": null
+},
+{
+"overall": 28,
+"round": 1,
+"pick": 28,
+"rfl_team": "Cordelle Raptors",
+"pid": 2016241,
+"name": "Fatai Spottedrain",
+"via": null
+},
+{
+"overall": 29,
+"round": 1,
+"pick": 29,
+"rfl_team": "North Hatesei Bees",
+"pid": 2018946,
+"name": "Tengfei Renreniy",
+"via": null
+},
+{
+"overall": 30,
+"round": 1,
+"pick": 30,
+"rfl_team": "Wolford Dragons",
+"pid": 2018155,
+"name": "Edward Thornley",
+"via": null
+},
+{
+"overall": 31,
+"round": 1,
+"pick": 31,
+"rfl_team": "Underwood Bats",
+"pid": 2019713,
+"name": "Andre Yorkmore",
+"via": null
+},
+{
+"overall": 32,
+"round": 1,
+"pick": 32,
+"rfl_team": "Diamond City Dynamos",
+"pid": 2017903,
+"name": "Latoya Coledale",
+"via": null
+},
+{
+"overall": 33,
+"round": 1,
+"pick": 33,
+"rfl_team": "Hughes City Asteroids",
+"pid": 2016705,
+"name": "Yuma Momose",
+"via": null
+},
+{
+"overall": 34,
+"round": 1,
+"pick": 34,
+"rfl_team": "Canesta Dales",
+"pid": 2019619,
+"name": "Martina Ventimiglia",
+"via": null
+},
+{
+"overall": 35,
+"round": 1,
+"pick": 35,
+"rfl_team": "Palm Creek Leatherbacks",
+"pid": 2018595,
+"name": "Boyoung Tae-Seok",
+"via": null
+},
+{
+"overall": 36,
+"round": 1,
+"pick": 36,
+"rfl_team": "Classetto Cavemen",
+"pid": 2015397,
+"name": "Martina Passichelli",
+"via": null
+},
+{
+"overall": 37,
+"round": 1,
+"pick": 37,
+"rfl_team": "Lornaman Renegades",
+"pid": 2019132,
+"name": "Andres Clairlac",
+"via": null
+},
+{
+"overall": 38,
+"round": 1,
+"pick": 38,
+"rfl_team": "Coachville Mastodons",
+"pid": 2014043,
+"name": "Noemie Cataldo",
+"via": null
+},
+{
+"overall": 39,
+"round": 1,
+"pick": 39,
+"rfl_team": "Costique Bearcats",
+"pid": 2018567,
+"name": "Peymyr Virsemyr",
+"via": null
+},
+{
+"overall": 40,
+"round": 1,
+"pick": 40,
+"rfl_team": "Port Logan Commodores",
+"pid": 2017886,
+"name": "Doyoon Beom-Sik",
+"via": null
+},
+{
+"overall": 41,
+"round": 2,
+"pick": 1,
+"rfl_team": "Bruca Beach Hammerheads",
+"pid": 2015295,
+"name": "Latoya Minakami",
+"via": null
+},
+{
+"overall": 42,
+"round": 2,
+"pick": 2,
+"rfl_team": "Eona Topcats",
+"pid": 2019299,
+"name": "Lionel Hollydale",
+"via": null
+},
+{
+"overall": 43,
+"round": 2,
+"pick": 3,
+"rfl_team": "Chapel Rock Crowns",
+"pid": 2018232,
+"name": "Joaquin Penarica",
+"via": null
+},
+{
+"overall": 44,
+"round": 2,
+"pick": 4,
+"rfl_team": "Purcell Rapids",
+"pid": 2016850,
+"name": "Haeun Yunye",
+"via": null
+},
+{
+"overall": 45,
+"round": 2,
+"pick": 5,
+"rfl_team": "South Burke Tsunami",
+"pid": 2019179,
+"name": "Renshu Yi-Seok",
+"via": null
+},
+{
+"overall": 46,
+"round": 2,
+"pick": 6,
+"rfl_team": "Verigon Komodos",
+"pid": 2018668,
+"name": "Fanta Nwasah",
+"via": null
+},
+{
+"overall": 47,
+"round": 2,
+"pick": 7,
+"rfl_team": "Far Farris Raccoons",
+"pid": 2017887,
+"name": "Joachim Granmo",
+"via": null
+},
+{
+"overall": 48,
+"round": 2,
+"pick": 8,
+"rfl_team": "Palm Creek Leatherbacks",
+"pid": 2019978,
+"name": "Alessia Palsson",
+"via": "Tengus City Terrors"
+},
+{
+"overall": 49,
+"round": 2,
+"pick": 9,
+"rfl_team": "Rogaela Rovers",
+"pid": 2015341,
+"name": "Anselmo Lepierre",
+"via": null
+},
+{
+"overall": 50,
+"round": 2,
+"pick": 10,
+"rfl_team": "Sarkady Beavers",
+"pid": 2016809,
+"name": "Octavia Danecott",
+"via": null
+},
+{
+"overall": 51,
+"round": 2,
+"pick": 11,
+"rfl_team": "Fiota Bay T-Rexes",
+"pid": 2018064,
+"name": "Xinyi Won",
+"via": null
+},
+{
+"overall": 52,
+"round": 2,
+"pick": 12,
+"rfl_team": "Diveo Demons",
+"pid": 2016972,
+"name": "Otto Wolfbaum",
+"via": null
+},
+{
+"overall": 53,
+"round": 2,
+"pick": 13,
+"rfl_team": "San Saltadac Sea Lions",
+"pid": 2018992,
+"name": "Ibrahima Kalokos",
+"via": null
+},
+{
+"overall": 54,
+"round": 2,
+"pick": 14,
+"rfl_team": "Tasson Thunderbugs",
+"pid": 2013895,
+"name": "Annika Stennes",
+"via": null
+},
+{
+"overall": 55,
+"round": 2,
+"pick": 15,
+"rfl_team": "Holliday Beetles",
+"pid": 2019120,
+"name": "Stamatia Georzoglou",
+"via": null
+},
+{
+"overall": 56,
+"round": 2,
+"pick": 16,
+"rfl_team": "Vaughn Bay Silverbacks",
+"pid": 2019672,
+"name": "Esteban Sotohermosa",
+"via": null
+},
+{
+"overall": 57,
+"round": 2,
+"pick": 17,
+"rfl_team": "Stamford Grays",
+"pid": 2018264,
+"name": "Jack Ducour",
+"via": null
+},
+{
+"overall": 58,
+"round": 2,
+"pick": 18,
+"rfl_team": "Fiota Swords",
+"pid": 2015524,
+"name": "Poppy Northfield",
+"via": null
+},
+{
+"overall": 59,
+"round": 2,
+"pick": 19,
+"rfl_team": "Ediville Brass Tigers",
+"pid": 2016462,
+"name": "Otto Kingston",
+"via": null
+},
+{
+"overall": 60,
+"round": 2,
+"pick": 20,
+"rfl_team": "Diamond City Hope",
+"pid": 2016974,
+"name": "Torhild Gr\u00fcnbruck",
+"via": null
+},
+{
+"overall": 61,
+"round": 2,
+"pick": 21,
+"rfl_team": "New Madrid Mastiffs",
+"pid": 2019064,
+"name": "Ilaria Apogiannis",
+"via": null
+},
+{
+"overall": 62,
+"round": 2,
+"pick": 22,
+"rfl_team": "Good River Rangers",
+"pid": 2019937,
+"name": "Triantafyllia Demekopoulos",
+"via": null
+},
+{
+"overall": 63,
+"round": 2,
+"pick": 23,
+"rfl_team": "Stanton City Conductors",
+"pid": 2019733,
+"name": "Marlene Schneeecker",
+"via": null
+},
+{
+"overall": 64,
+"round": 2,
+"pick": 24,
+"rfl_team": "El Latigo Shredders",
+"pid": 2015727,
+"name": "Henry Fagerholm",
+"via": null
+},
+{
+"overall": 65,
+"round": 2,
+"pick": 25,
+"rfl_team": "Crayellan Redwoods",
+"pid": 2019842,
+"name": "Guadalupe Caraavanti",
+"via": null
+},
+{
+"overall": 66,
+"round": 2,
+"pick": 26,
+"rfl_team": "Queensville Phenoms",
+"pid": 2015726,
+"name": "Percy Sandwell",
+"via": null
+},
+{
+"overall": 67,
+"round": 2,
+"pick": 27,
+"rfl_team": "Billiataho Greats",
+"pid": 2019327,
+"name": "Kiyomi Uhm",
+"via": null
+},
+{
+"overall": 68,
+"round": 2,
+"pick": 28,
+"rfl_team": "Cordelle Raptors",
+"pid": 2019286,
+"name": "Ladislav Starovsky",
+"via": null
+},
+{
+"overall": 69,
+"round": 2,
+"pick": 29,
+"rfl_team": "North Hatesei Bees",
+"pid": 2019584,
+"name": "Varun Balaraj",
+"via": null
+},
+{
+"overall": 70,
+"round": 2,
+"pick": 30,
+"rfl_team": "Coachville Mastodons",
+"pid": 2017074,
+"name": "Diego Mirablanca",
+"via": "Wolford Dragons"
+},
+{
+"overall": 71,
+"round": 2,
+"pick": 31,
+"rfl_team": "Underwood Bats",
+"pid": 2012908,
+"name": "Chengfei Ningbo",
+"via": null
+},
+{
+"overall": 72,
+"round": 2,
+"pick": 32,
+"rfl_team": "Diamond City Dynamos",
+"pid": 2019671,
+"name": "Tessa Vikstad",
+"via": null
+},
+{
+"overall": 73,
+"round": 2,
+"pick": 33,
+"rfl_team": "Hughes City Asteroids",
+"pid": 2017800,
+"name": "Wanda Vyecek",
+"via": null
+},
+{
+"overall": 74,
+"round": 2,
+"pick": 34,
+"rfl_team": "Canesta Dales",
+"pid": 2015398,
+"name": "Sorei Keylaniy",
+"via": null
+},
+{
+"overall": 75,
+"round": 2,
+"pick": 35,
+"rfl_team": "Palm Creek Leatherbacks",
+"pid": 2018945,
+"name": "Fatoumata Al-Hadid",
+"via": null
+},
+{
+"overall": 76,
+"round": 2,
+"pick": 36,
+"rfl_team": "Classetto Cavemen",
+"pid": 2019328,
+"name": "Gerasimos Apovelis",
+"via": null
+},
+{
+"overall": 77,
+"round": 2,
+"pick": 37,
+"rfl_team": "Lornaman Renegades",
+"pid": 2017546,
+"name": "Keisha Sandlow",
+"via": null
+},
+{
+"overall": 78,
+"round": 2,
+"pick": 38,
+"rfl_team": "Coachville Mastodons",
+"pid": 2018008,
+"name": "Kwame Ismirrei",
+"via": null
+},
+{
+"overall": 79,
+"round": 2,
+"pick": 39,
+"rfl_team": "Costique Bearcats",
+"pid": 2017684,
+"name": "Jihoon Yukimaki",
+"via": null
+},
+{
+"overall": 80,
+"round": 2,
+"pick": 40,
+"rfl_team": "Port Logan Commodores",
+"pid": 2015574,
+"name": "Aminata Sandwick",
+"via": null
+},
+{
+"overall": 81,
+"round": 3,
+"pick": 1,
+"rfl_team": "Bruca Beach Hammerheads",
+"pid": 2016011,
+"name": "Efrain Charbec",
+"via": null
+},
+{
+"overall": 82,
+"round": 3,
+"pick": 2,
+"rfl_team": "Eona Topcats",
+"pid": 2015796,
+"name": "Oskar Tannenbrunner",
+"via": null
+},
+{
+"overall": 83,
+"round": 3,
+"pick": 3,
+"rfl_team": "Chapel Rock Crowns",
+"pid": 2017333,
+"name": "Percy Nishiyama",
+"via": null
+},
+{
+"overall": 84,
+"round": 3,
+"pick": 4,
+"rfl_team": "Purcell Rapids",
+"pid": 2019300,
+"name": "Sixten Sandset",
+"via": null
+},
+{
+"overall": 85,
+"round": 3,
+"pick": 5,
+"rfl_team": "South Burke Tsunami",
+"pid": 2015781,
+"name": "Daichi Su-Cheol",
+"via": null
+},
+{
+"overall": 86,
+"round": 3,
+"pick": 6,
+"rfl_team": "Verigon Komodos",
+"pid": 2017920,
+"name": "Yestev Omtreimyr",
+"via": null
+},
+{
+"overall": 87,
+"round": 3,
+"pick": 7,
+"rfl_team": "Classetto Cavemen",
+"pid": 2019133,
+"name": "Ryusei Takazaki",
+"via": "Far Farris Raccoons"
+},
+{
+"overall": 88,
+"round": 3,
+"pick": 8,
+"rfl_team": "Stanton City Conductors",
+"pid": 2018231,
+"name": "Tage Tormark",
+"via": "Tengus City Terrors"
+},
+{
+"overall": 89,
+"round": 3,
+"pick": 9,
+"rfl_team": "Rogaela Rovers",
+"pid": 2016463,
+"name": "Treinu Neitaw",
+"via": null
+},
+{
+"overall": 90,
+"round": 3,
+"pick": 10,
+"rfl_team": "Sarkady Beavers",
+"pid": 2015672,
+"name": "Anei Norravaw",
+"via": null
+},
+{
+"overall": 91,
+"round": 3,
+"pick": 11,
+"rfl_team": "Fiota Bay T-Rexes",
+"pid": 2017917,
+"name": "Radhika Thiruvengadam",
+"via": null
+},
+{
+"overall": 92,
+"round": 3,
+"pick": 12,
+"rfl_team": "Diveo Demons",
+"pid": 2015401,
+"name": "Hwanki Su-Nam",
+"via": null
+},
+{
+"overall": 93,
+"round": 3,
+"pick": 13,
+"rfl_team": "San Saltadac Sea Lions",
+"pid": 2016552,
+"name": "Annika Tannenwetter",
+"via": null
+},
+{
+"overall": 94,
+"round": 3,
+"pick": 14,
+"rfl_team": "Tasson Thunderbugs",
+"pid": 2017009,
+"name": "Tupou Kalamalu",
+"via": null
+},
+{
+"overall": 95,
+"round": 3,
+"pick": 15,
+"rfl_team": "Holliday Beetles",
+"pid": 2019769,
+"name": "Gareth Goldbank",
+"via": null
+},
+{
+"overall": 96,
+"round": 3,
+"pick": 16,
+"rfl_team": "New Madrid Mastiffs",
+"pid": 2019827,
+"name": "Gonzalo Rifai",
+"via": "Vaughn Bay Silverbacks"
+},
+{
+"overall": 97,
+"round": 3,
+"pick": 17,
+"rfl_team": "Stamford Grays",
+"pid": 2017600,
+"name": "Celestine Terrini",
+"via": null
+},
+{
+"overall": 98,
+"round": 3,
+"pick": 18,
+"rfl_team": "Fiota Swords",
+"pid": 2017702,
+"name": "Winona Manupati",
+"via": null
+},
+{
+"overall": 99,
+"round": 3,
+"pick": 19,
+"rfl_team": "Ediville Brass Tigers",
+"pid": 2017722,
+"name": "Seulgi Ga-Mok",
+"via": null
+},
+{
+"overall": 100,
+"round": 3,
+"pick": 20,
+"rfl_team": "Diamond City Hope",
+"pid": 2015061,
+"name": "Ifeanyi Winsbury",
+"via": null
+},
+{
+"overall": 101,
+"round": 3,
+"pick": 21,
+"rfl_team": "New Madrid Mastiffs",
+"pid": 2018043,
+"name": "Liqin Linyao",
+"via": null
+},
+{
+"overall": 102,
+"round": 3,
+"pick": 22,
+"rfl_team": "Good River Rangers",
+"pid": 2017500,
+"name": "Nabil Devacharya",
+"via": null
+},
+{
+"overall": 103,
+"round": 3,
+"pick": 23,
+"rfl_team": "Stanton City Conductors",
+"pid": 2019028,
+"name": "Youngchul Cheon-Sik",
+"via": null
+},
+{
+"overall": 104,
+"round": 3,
+"pick": 24,
+"rfl_team": "El Latigo Shredders",
+"pid": 2017866,
+"name": "Irina Lambrpoulos",
+"via": null
+},
+{
+"overall": 105,
+"round": 3,
+"pick": 25,
+"rfl_team": "Crayellan Redwoods",
+"pid": 2018683,
+"name": "Reinhold Milarek",
+"via": null
+},
+{
+"overall": 106,
+"round": 3,
+"pick": 26,
+"rfl_team": "Queensville Phenoms",
+"pid": 2018823,
+"name": "Maelys Fioroncelli",
+"via": null
+},
+{
+"overall": 107,
+"round": 3,
+"pick": 27,
+"rfl_team": "Billiataho Greats",
+"pid": 2016045,
+"name": "Yaroslav Ulyanov",
+"via": null
+},
+{
+"overall": 108,
+"round": 3,
+"pick": 28,
+"rfl_team": "Cordelle Raptors",
+"pid": 2019552,
+"name": "Tessa Stengren",
+"via": null
+},
+{
+"overall": 109,
+"round": 3,
+"pick": 29,
+"rfl_team": "North Hatesei Bees",
+"pid": 2018192,
+"name": "Weimin Labec",
+"via": null
+},
+{
+"overall": 110,
+"round": 3,
+"pick": 30,
+"rfl_team": "Holliday Beetles",
+"pid": 2019178,
+"name": "Tessa Northcombe",
+"via": "Wolford Dragons"
+},
+{
+"overall": 111,
+"round": 3,
+"pick": 31,
+"rfl_team": "Underwood Bats",
+"pid": 2017064,
+"name": "Fabrice Elmfield",
+"via": null
+},
+{
+"overall": 112,
+"round": 3,
+"pick": 32,
+"rfl_team": "Diamond City Dynamos",
+"pid": 2016595,
+"name": "Ataahua Tallwater",
+"via": null
+},
+{
+"overall": 113,
+"round": 3,
+"pick": 33,
+"rfl_team": "Hughes City Asteroids",
+"pid": 2014546,
+"name": "Wolfgang Birkevoll",
+"via": null
+},
+{
+"overall": 114,
+"round": 3,
+"pick": 34,
+"rfl_team": "Canesta Dales",
+"pid": 2018278,
+"name": "Xavier Ezenti",
+"via": null
+},
+{
+"overall": 115,
+"round": 3,
+"pick": 35,
+"rfl_team": "Palm Creek Leatherbacks",
+"pid": 2016999,
+"name": "Ravonei Komaw",
+"via": null
+},
+{
+"overall": 116,
+"round": 3,
+"pick": 36,
+"rfl_team": "Classetto Cavemen",
+"pid": 2016466,
+"name": "Rhys Lundby",
+"via": null
+},
+{
+"overall": 117,
+"round": 3,
+"pick": 37,
+"rfl_team": "Lornaman Renegades",
+"pid": 2018745,
+"name": "Bogdan Dobrovich",
+"via": null
+},
+{
+"overall": 118,
+"round": 3,
+"pick": 38,
+"rfl_team": "Coachville Mastodons",
+"pid": 2018408,
+"name": "Anthi Mesvaw",
+"via": null
+},
+{
+"overall": 119,
+"round": 3,
+"pick": 39,
+"rfl_team": "Coachville Mastodons",
+"pid": 2018835,
+"name": "Jamal Yorkmore",
+"via": "Costique Bearcats"
+},
+{
+"overall": 120,
+"round": 3,
+"pick": 40,
+"rfl_team": "Port Logan Commodores",
+"pid": 2013267,
+"name": "Jumana El-Amin",
+"via": null
+},
+{
+"overall": 121,
+"round": 4,
+"pick": 1,
+"rfl_team": "Bruca Beach Hammerheads",
+"pid": 2015116,
+"name": "Zitkala Zafeipoulos",
+"via": null
+},
+{
+"overall": 122,
+"round": 4,
+"pick": 2,
+"rfl_team": "Eona Topcats",
+"pid": 2015468,
+"name": "Irmgard Westdale",
+"via": null
+},
+{
+"overall": 123,
+"round": 4,
+"pick": 3,
+"rfl_team": "Chapel Rock Crowns",
+"pid": 2015826,
+"name": "Siegfried Teylemyr",
+"via": null
+},
+{
+"overall": 124,
+"round": 4,
+"pick": 4,
+"rfl_team": "Purcell Rapids",
+"pid": 2019198,
+"name": "Ayanna Byun",
+"via": null
+},
+{
+"overall": 125,
+"round": 4,
+"pick": 5,
+"rfl_team": "South Burke Tsunami",
+"pid": 2018569,
+"name": "Jumana Padmarajan",
+"via": null
+},
+{
+"overall": 126,
+"round": 4,
+"pick": 6,
+"rfl_team": "Verigon Komodos",
+"pid": 2018265,
+"name": "Hernan Lecour",
+"via": null
+},
+{
+"overall": 127,
+"round": 4,
+"pick": 7,
+"rfl_team": "Far Farris Raccoons",
+"pid": 2016639,
+"name": "Zhaohui Si-Jae",
+"via": null
+},
+{
+"overall": 128,
+"round": 4,
+"pick": 8,
+"rfl_team": "Tengus City Terrors",
+"pid": 2016902,
+"name": "Annika Hochwetter",
+"via": null
+},
+{
+"overall": 129,
+"round": 4,
+"pick": 9,
+"rfl_team": "Rogaela Rovers",
+"pid": 2018117,
+"name": "Elan Swiftriver",
+"via": null
+},
+{
+"overall": 130,
+"round": 4,
+"pick": 10,
+"rfl_team": "Sarkady Beavers",
+"pid": 2017524,
+"name": "Odile Albareal",
+"via": null
+},
+{
+"overall": 131,
+"round": 4,
+"pick": 11,
+"rfl_team": "Fiota Bay T-Rexes",
+"pid": 2017570,
+"name": "Peizhi Chunyu",
+"via": null
+},
+{
+"overall": 132,
+"round": 4,
+"pick": 12,
+"rfl_team": "Diveo Demons",
+"pid": 2019979,
+"name": "Ustevaw Standingtree",
+"via": null
+},
+{
+"overall": 133,
+"round": 4,
+"pick": 13,
+"rfl_team": "San Saltadac Sea Lions",
+"pid": 2017701,
+"name": "Yaritza Buenaserna",
+"via": null
+},
+{
+"overall": 134,
+"round": 4,
+"pick": 14,
+"rfl_team": "Tasson Thunderbugs",
+"pid": 2015060,
+"name": "Snezana Wolfbruck",
+"via": null
+},
+{
+"overall": 135,
+"round": 4,
+"pick": 15,
+"rfl_team": "Holliday Beetles",
+"pid": 2018916,
+"name": "Delphine Fuentereal",
+"via": null
+},
+{
+"overall": 136,
+"round": 4,
+"pick": 16,
+"rfl_team": "Vaughn Bay Silverbacks",
+"pid": 2019329,
+"name": "Mele Fenfield",
+"via": null
+},
+{
+"overall": 137,
+"round": 4,
+"pick": 17,
+"rfl_team": "Stamford Grays",
+"pid": 2014627,
+"name": "Meivo Ceireniy",
+"via": null
+},
+{
+"overall": 138,
+"round": 4,
+"pick": 18,
+"rfl_team": "Fiota Swords",
+"pid": 2017206,
+"name": "Tyrell Eastdale",
+"via": null
+},
+{
+"overall": 139,
+"round": 4,
+"pick": 19,
+"rfl_team": "Ediville Brass Tigers",
+"pid": 2019767,
+"name": "Torhild Havdahl",
+"via": null
+},
+{
+"overall": 140,
+"round": 4,
+"pick": 20,
+"rfl_team": "Diamond City Hope",
+"pid": 2015098,
+"name": "Louniya Deyoviy",
+"via": null
+},
+{
+"overall": 141,
+"round": 4,
+"pick": 21,
+"rfl_team": "New Madrid Mastiffs",
+"pid": 2017547,
+"name": "Ayanna Cephas",
+"via": null
+},
+{
+"overall": 142,
+"round": 4,
+"pick": 22,
+"rfl_team": "Good River Rangers",
+"pid": 2019509,
+"name": "Zitkala Masusato",
+"via": null
+},
+{
+"overall": 143,
+"round": 4,
+"pick": 23,
+"rfl_team": "Stanton City Conductors",
+"pid": 2019265,
+"name": "Hyunwoo Vestby",
+"via": null
+},
+{
+"overall": 144,
+"round": 4,
+"pick": 24,
+"rfl_team": "El Latigo Shredders",
+"pid": 2015610,
+"name": "Haneya Aumirrei",
+"via": null
+},
+{
+"overall": 145,
+"round": 4,
+"pick": 25,
+"rfl_team": "Crayellan Redwoods",
+"pid": 2015559,
+"name": "Tunde Rowley",
+"via": null
+},
+{
+"overall": 146,
+"round": 4,
+"pick": 26,
+"rfl_team": "Queensville Phenoms",
+"pid": 2018166,
+"name": "Hernan Passelletti",
+"via": null
+},
+{
+"overall": 147,
+"round": 4,
+"pick": 27,
+"rfl_team": "Billiataho Greats",
+"pid": 2018009,
+"name": "Zainabu Onyemah",
+"via": null
+},
+{
+"overall": 148,
+"round": 4,
+"pick": 28,
+"rfl_team": "Cordelle Raptors",
+"pid": 2019846,
+"name": "Alfie Ashwood",
+"via": null
+},
+{
+"overall": 149,
+"round": 4,
+"pick": 29,
+"rfl_team": "North Hatesei Bees",
+"pid": 2016876,
+"name": "Siegfried Zeleninsky",
+"via": null
+},
+{
+"overall": 150,
+"round": 4,
+"pick": 30,
+"rfl_team": "Wolford Dragons",
+"pid": 2017727,
+"name": "Divya Skogvoll",
+"via": null
+},
+{
+"overall": 151,
+"round": 4,
+"pick": 31,
+"rfl_team": "Diamond City Dynamos",
+"pid": 2015470,
+"name": "Ziad Adanse",
+"via": null
+},
+{
+"overall": 152,
+"round": 4,
+"pick": 32,
+"rfl_team": "Hughes City Asteroids",
+"pid": 2015540,
+"name": "Barthelemy Marettoni",
+"via": null
+},
+{
+"overall": 153,
+"round": 4,
+"pick": 33,
+"rfl_team": "Canesta Dales",
+"pid": 2018193,
+"name": "Tariq Yawbayo",
+"via": null
+},
+{
+"overall": 154,
+"round": 4,
+"pick": 34,
+"rfl_team": "Palm Creek Leatherbacks",
+"pid": 2019556,
+"name": "Kangdae Qipang",
+"via": null
+},
+{
+"overall": 155,
+"round": 4,
+"pick": 35,
+"rfl_team": "Classetto Cavemen",
+"pid": 2018543,
+"name": "Raimondo Monteserna",
+"via": null
+},
+{
+"overall": 156,
+"round": 4,
+"pick": 36,
+"rfl_team": "Lornaman Renegades",
+"pid": 2017557,
+"name": "Antoine Hazelfield",
+"via": null
+},
+{
+"overall": 157,
+"round": 4,
+"pick": 37,
+"rfl_team": "Coachville Mastodons",
+"pid": 2013236,
+"name": "Heilala Highfox",
+"via": null
+},
+{
+"overall": 158,
+"round": 4,
+"pick": 38,
+"rfl_team": "Costique Bearcats",
+"pid": 2015563,
+"name": "Latoya Ravencombe",
+"via": null
+},
+{
+"overall": 159,
+"round": 4,
+"pick": 39,
+"rfl_team": "Port Logan Commodores",
+"pid": 2019559,
+"name": "Seulgi Terakado",
+"via": null
+},
+{
+"overall": 160,
+"round": 5,
+"pick": 40,
+"rfl_team": "Bruca Beach Hammerheads",
+"pid": 2018191,
+"name": "Aslaug Lindenmayer",
+"via": null
+},
+{
+"overall": 161,
+"round": 5,
+"pick": 1,
+"rfl_team": "Eona Topcats",
+"pid": 2016464,
+"name": "Baard Havdahl",
+"via": null
+},
+{
+"overall": 162,
+"round": 5,
+"pick": 2,
+"rfl_team": "Chapel Rock Crowns",
+"pid": 2015869,
+"name": "Esteban Navareal",
+"via": null
+},
+{
+"overall": 163,
+"round": 5,
+"pick": 3,
+"rfl_team": "Purcell Rapids",
+"pid": 2015505,
+"name": "Zitkala Kickingbird",
+"via": null
+},
+{
+"overall": 164,
+"round": 5,
+"pick": 4,
+"rfl_team": "South Burke Tsunami",
+"pid": 2018698,
+"name": "Meiling Xiaruan",
+"via": null
+},
+{
+"overall": 165,
+"round": 5,
+"pick": 5,
+"rfl_team": "Verigon Komodos",
+"pid": 2016144,
+"name": "Ekene Okosah",
+"via": null
+},
+{
+"overall": 166,
+"round": 5,
+"pick": 6,
+"rfl_team": "Far Farris Raccoons",
+"pid": 2018044,
+"name": "Lech Yamabe",
+"via": null
+},
+{
+"overall": 167,
+"round": 5,
+"pick": 7,
+"rfl_team": "Tengus City Terrors",
+"pid": 2015812,
+"name": "Aurelio Pellemonte",
+"via": null
+},
+{
+"overall": 168,
+"round": 5,
+"pick": 8,
+"rfl_team": "Rogaela Rovers",
+"pid": 2019290,
+"name": "Mathis Navagrande",
+"via": null
+},
+{
+"overall": 169,
+"round": 5,
+"pick": 9,
+"rfl_team": "Sarkady Beavers",
+"pid": 2017137,
+"name": "Quentin Grandville",
+"via": null
+},
+{
+"overall": 170,
+"round": 5,
+"pick": 10,
+"rfl_team": "Fiota Bay T-Rexes",
+"pid": 2019177,
+"name": "Tamika Westberry",
+"via": null
+},
+{
+"overall": 171,
+"round": 5,
+"pick": 11,
+"rfl_team": "Diveo Demons",
+"pid": 2014911,
+"name": "Cortez Hazelden",
+"via": null
+},
+{
+"overall": 172,
+"round": 5,
+"pick": 12,
+"rfl_team": "San Saltadac Sea Lions",
+"pid": 2017685,
+"name": "Rania Zongduo",
+"via": null
+},
+{
+"overall": 173,
+"round": 5,
+"pick": 13,
+"rfl_team": "Tasson Thunderbugs",
+"pid": 2016812,
+"name": "Winona Rowden",
+"via": null
+},
+{
+"overall": 174,
+"round": 5,
+"pick": 14,
+"rfl_team": "Holliday Beetles",
+"pid": 2016407,
+"name": "Nobuo Weon-Gil",
+"via": null
+},
+{
+"overall": 175,
+"round": 5,
+"pick": 15,
+"rfl_team": "Vaughn Bay Silverbacks",
+"pid": 2017587,
+"name": "Ayanna Obadele",
+"via": null
+},
+{
+"overall": 176,
+"round": 5,
+"pick": 16,
+"rfl_team": "Stamford Grays",
+"pid": 2019771,
+"name": "Byungho Gwang-Su",
+"via": null
+},
+{
+"overall": 177,
+"round": 5,
+"pick": 17,
+"rfl_team": "Fiota Swords",
+"pid": 2017432,
+"name": "Deja Sefsah",
+"via": null
+},
+{
+"overall": 178,
+"round": 5,
+"pick": 18,
+"rfl_team": "Ediville Brass Tigers",
+"pid": 2017526,
+"name": "Sangwoo Man-Hwan",
+"via": null
+},
+{
+"overall": 179,
+"round": 5,
+"pick": 19,
+"rfl_team": "Diamond City Hope",
+"pid": 2016796,
+"name": "Amparo Fonlac",
+"via": null
+},
+{
+"overall": 180,
+"round": 5,
+"pick": 20,
+"rfl_team": "New Madrid Mastiffs",
+"pid": 2018993,
+"name": "Guanting Yunfei",
+"via": null
+},
+{
+"overall": 181,
+"round": 5,
+"pick": 21,
+"rfl_team": "Good River Rangers",
+"pid": 2018735,
+"name": "Thibault Santabella",
+"via": null
+},
+{
+"overall": 182,
+"round": 5,
+"pick": 22,
+"rfl_team": "Stanton City Conductors",
+"pid": 2018994,
+"name": "Uili Kickingbear",
+"via": null
+},
+{
+"overall": 183,
+"round": 5,
+"pick": 23,
+"rfl_team": "El Latigo Shredders",
+"pid": 2019583,
+"name": "Narendra El-Kadhim",
+"via": null
+},
+{
+"overall": 184,
+"round": 5,
+"pick": 24,
+"rfl_team": "Crayellan Redwoods",
+"pid": 2017466,
+"name": "Oliver Rangsi",
+"via": null
+},
+{
+"overall": 185,
+"round": 5,
+"pick": 25,
+"rfl_team": "Queensville Phenoms",
+"pid": 2019766,
+"name": "Amara Woodridge",
+"via": null
+},
+{
+"overall": 186,
+"round": 5,
+"pick": 26,
+"rfl_team": "Billiataho Greats",
+"pid": 2013672,
+"name": "Harendra Rochepierre",
+"via": null
+},
+{
+"overall": 187,
+"round": 5,
+"pick": 27,
+"rfl_team": "Cordelle Raptors",
+"pid": 2018570,
+"name": "Istas Faoa",
+"via": null
+},
+{
+"overall": 188,
+"round": 5,
+"pick": 28,
+"rfl_team": "North Hatesei Bees",
+"pid": 2015927,
+"name": "Roviyel Coldfield",
+"via": null
+},
+{
+"overall": 189,
+"round": 5,
+"pick": 29,
+"rfl_team": "Wolford Dragons",
+"pid": 2017135,
+"name": "Maelys Marerini",
+"via": null
+},
+{
+"overall": 190,
+"round": 5,
+"pick": 30,
+"rfl_team": "Underwood Bats",
+"pid": 2019135,
+"name": "Runa Granland",
+"via": null
+},
+{
+"overall": 191,
+"round": 5,
+"pick": 31,
+"rfl_team": "Diamond City Dynamos",
+"pid": 2015609,
+"name": "Hinata Si-Rim",
+"via": null
+},
+{
+"overall": 192,
+"round": 5,
+"pick": 32,
+"rfl_team": "Hughes City Asteroids",
+"pid": 2017269,
+"name": "Callum Malchamp",
+"via": null
+},
+{
+"overall": 193,
+"round": 5,
+"pick": 33,
+"rfl_team": "Canesta Dales",
+"pid": 2018133,
+"name": "Florian Vieuxbonne",
+"via": null
+},
+{
+"overall": 194,
+"round": 5,
+"pick": 34,
+"rfl_team": "Palm Creek Leatherbacks",
+"pid": 2018200,
+"name": "Ofa Redbuffalo",
+"via": null
+},
+{
+"overall": 195,
+"round": 5,
+"pick": 35,
+"rfl_team": "Classetto Cavemen",
+"pid": 2018697,
+"name": "Halina Argytidis",
+"via": null
+},
+{
+"overall": 196,
+"round": 5,
+"pick": 36,
+"rfl_team": "Lornaman Renegades",
+"pid": 2019843,
+"name": "Taeksoo Seo-Jae",
+"via": null
+},
+{
+"overall": 197,
+"round": 5,
+"pick": 37,
+"rfl_team": "Coachville Mastodons",
+"pid": 2017918,
+"name": "Lamis Madhusekaran",
+"via": null
+},
+{
+"overall": 198,
+"round": 5,
+"pick": 38,
+"rfl_team": "Costique Bearcats",
+"pid": 2016977,
+"name": "Zainab Obanti",
+"via": null
+},
+{
+"overall": 199,
+"round": 5,
+"pick": 39,
+"rfl_team": "Port Logan Commodores",
+"pid": 2019673,
+"name": "Youngchul Sang-Kwan",
+"via": null
+},
+{
+"overall": 200,
+"round": 6,
+"pick": 40,
+"rfl_team": "Bruca Beach Hammerheads",
+"pid": 2019844,
+"name": "Wesley Hazelbourne",
+"via": null
+},
+{
+"overall": 201,
+"round": 6,
+"pick": 1,
+"rfl_team": "Eona Topcats",
+"pid": 2015673,
+"name": "Oliver Mayworth",
+"via": null
+},
+{
+"overall": 202,
+"round": 6,
+"pick": 2,
+"rfl_team": "Chapel Rock Crowns",
+"pid": 2015677,
+"name": "Anders Osterberg",
+"via": null
+},
+{
+"overall": 203,
+"round": 6,
+"pick": 3,
+"rfl_team": "Purcell Rapids",
+"pid": 2015213,
+"name": "Alfie Kaltenbrunner",
+"via": null
+},
+{
+"overall": 204,
+"round": 6,
+"pick": 4,
+"rfl_team": "South Burke Tsunami",
+"pid": 2019302,
+"name": "Jalen Ezechi",
+"via": null
+},
+{
+"overall": 205,
+"round": 6,
+"pick": 5,
+"rfl_team": "Verigon Komodos",
+"pid": 2016064,
+"name": "Salif Al-Habash",
+"via": null
+},
+{
+"overall": 206,
+"round": 6,
+"pick": 6,
+"rfl_team": "Far Farris Raccoons",
+"pid": 2017937,
+"name": "Armand Cranemore",
+"via": null
+},
+{
+"overall": 207,
+"round": 6,
+"pick": 7,
+"rfl_team": "Tengus City Terrors",
+"pid": 2019443,
+"name": "Selvaw Lorravaw",
+"via": null
+},
+{
+"overall": 208,
+"round": 6,
+"pick": 8,
+"rfl_team": "Rogaela Rovers",
+"pid": 2019461,
+"name": "Roviyel Litovei",
+"via": null
+},
+{
+"overall": 209,
+"round": 6,
+"pick": 9,
+"rfl_team": "Sarkady Beavers",
+"pid": 2018737,
+"name": "Qamar Panakatos",
+"via": null
+},
+{
+"overall": 210,
+"round": 6,
+"pick": 10,
+"rfl_team": "Fiota Bay T-Rexes",
+"pid": 2019651,
+"name": "Antoine Tetdele",
+"via": null
+},
+{
+"overall": 211,
+"round": 6,
+"pick": 11,
+"rfl_team": "Diveo Demons",
+"pid": 2017320,
+"name": "Bertram Eikeheim",
+"via": null
+},
+{
+"overall": 212,
+"round": 6,
+"pick": 12,
+"rfl_team": "San Saltadac Sea Lions",
+"pid": 2018918,
+"name": "Zainab Panatidis",
+"via": null
+},
+{
+"overall": 213,
+"round": 6,
+"pick": 13,
+"rfl_team": "Tasson Thunderbugs",
+"pid": 2015814,
+"name": "Yaa Jayapatham",
+"via": null
+},
+{
+"overall": 214,
+"round": 6,
+"pick": 14,
+"rfl_team": "Holliday Beetles",
+"pid": 2019301,
+"name": "Abena Salalonga",
+"via": null
+},
+{
+"overall": 215,
+"round": 6,
+"pick": 15,
+"rfl_team": "Vaughn Bay Silverbacks",
+"pid": 2018669,
+"name": "Imogen Grannes",
+"via": null
+},
+{
+"overall": 216,
+"round": 6,
+"pick": 16,
+"rfl_team": "Stamford Grays",
+"pid": 2019200,
+"name": "Nanami Kamimaki",
+"via": null
+},
+{
+"overall": 217,
+"round": 6,
+"pick": 17,
+"rfl_team": "Fiota Swords",
+"pid": 2015830,
+"name": "Insook Tanimaki",
+"via": null
+},
+{
+"overall": 218,
+"round": 6,
+"pick": 18,
+"rfl_team": "Ediville Brass Tigers",
+"pid": 2017138,
+"name": "Latoya Marshwell",
+"via": null
+},
+{
+"overall": 219,
+"round": 6,
+"pick": 19,
+"rfl_team": "Diamond City Hope",
+"pid": 2016077,
+"name": "Veronique Longlieu",
+"via": null
+},
+{
+"overall": 220,
+"round": 6,
+"pick": 20,
+"rfl_team": "New Madrid Mastiffs",
+"pid": 2015676,
+"name": "Nico Vignobruno",
+"via": null
+},
+{
+"overall": 221,
+"round": 6,
+"pick": 21,
+"rfl_team": "Good River Rangers",
+"pid": 2016791,
+"name": "Feiyan Baoying",
+"via": null
+},
+{
+"overall": 222,
+"round": 6,
+"pick": 22,
+"rfl_team": "Stanton City Conductors",
+"pid": 2015827,
+"name": "Stavros Vallatelli",
+"via": null
+},
+{
+"overall": 223,
+"round": 6,
+"pick": 23,
+"rfl_team": "El Latigo Shredders",
+"pid": 2016308,
+"name": "Milagros Salaiani",
+"via": null
+},
+{
+"overall": 224,
+"round": 6,
+"pick": 24,
+"rfl_team": "Crayellan Redwoods",
+"pid": 2017699,
+"name": "Wesley Marshton",
+"via": null
+},
+{
+"overall": 225,
+"round": 6,
+"pick": 25,
+"rfl_team": "Queensville Phenoms",
+"pid": 2019397,
+"name": "Urmila Padmanabhan",
+"via": null
+},
+{
+"overall": 226,
+"round": 6,
+"pick": 26,
+"rfl_team": "Billiataho Greats",
+"pid": 2016978,
+"name": "Ebony Colewick",
+"via": null
+},
+{
+"overall": 227,
+"round": 6,
+"pick": 27,
+"rfl_team": "Cordelle Raptors",
+"pid": 2019845,
+"name": "Callisto Neraiani",
+"via": null
+},
+{
+"overall": 228,
+"round": 6,
+"pick": 28,
+"rfl_team": "North Hatesei Bees",
+"pid": 2018523,
+"name": "Fabrice Walkingrain",
+"via": null
+},
+{
+"overall": 229,
+"round": 6,
+"pick": 29,
+"rfl_team": "Wolford Dragons",
+"pid": 2015590,
+"name": "Ruolan Yingpeng",
+"via": null
+},
+{
+"overall": 230,
+"round": 6,
+"pick": 30,
+"rfl_team": "Underwood Bats",
+"pid": 2019674,
+"name": "Hollis Mesmeniy",
+"via": null
+},
+{
+"overall": 231,
+"round": 6,
+"pick": 31,
+"rfl_team": "Diamond City Dynamos",
+"pid": 2015526,
+"name": "Fanta Anysah",
+"via": null
+},
+{
+"overall": 232,
+"round": 6,
+"pick": 32,
+"rfl_team": "Hughes City Asteroids",
+"pid": 2019553,
+"name": "Titilayo Ogunleye",
+"via": null
+},
+{
+"overall": 233,
+"round": 6,
+"pick": 33,
+"rfl_team": "Canesta Dales",
+"pid": 2016101,
+"name": "Alphonse Kingsford",
+"via": null
+},
+{
+"overall": 234,
+"round": 6,
+"pick": 34,
+"rfl_team": "Palm Creek Leatherbacks",
+"pid": 2016075,
+"name": "Samira Papakidis",
+"via": null
+},
+{
+"overall": 235,
+"round": 6,
+"pick": 35,
+"rfl_team": "Classetto Cavemen",
+"pid": 2014074,
+"name": "Dobromir Falkenhoff",
+"via": null
+},
+{
+"overall": 236,
+"round": 6,
+"pick": 36,
+"rfl_team": "Lornaman Renegades",
+"pid": 2015440,
+"name": "Kiara Langson",
+"via": null
+},
+{
+"overall": 237,
+"round": 6,
+"pick": 37,
+"rfl_team": "Coachville Mastodons",
+"pid": 2016295,
+"name": "Hernan Montelonga",
+"via": null
+},
+{
+"overall": 238,
+"round": 6,
+"pick": 38,
+"rfl_team": "Costique Bearcats",
+"pid": 2016404,
+"name": "Annika Eichenholz",
+"via": null
+},
+{
+"overall": 239,
+"round": 6,
+"pick": 39,
+"rfl_team": "Port Logan Commodores",
+"pid": 2017817,
+"name": "Gaspard Elvborg",
+"via": null
+},
+{
+"overall": 240,
+"round": 7,
+"pick": 40,
+"rfl_team": "Bruca Beach Hammerheads",
+"pid": 2016509,
+"name": "Leilani Spottedowl",
+"via": null
+},
+{
+"overall": 241,
+"round": 7,
+"pick": 1,
+"rfl_team": "Eona Topcats",
+"pid": 2015738,
+"name": "Jamal Onyejide",
+"via": null
+},
+{
+"overall": 242,
+"round": 7,
+"pick": 2,
+"rfl_team": "Chapel Rock Crowns",
+"pid": 2017704,
+"name": "Rangi Kalatagata",
+"via": null
+},
+{
+"overall": 243,
+"round": 7,
+"pick": 3,
+"rfl_team": "Purcell Rapids",
+"pid": 2017723,
+"name": "Ren Shizan",
+"via": null
+},
+{
+"overall": 244,
+"round": 7,
+"pick": 4,
+"rfl_team": "South Burke Tsunami",
+"pid": 2018296,
+"name": "Ustevaw Virmeniy",
+"via": null
+},
+{
+"overall": 245,
+"round": 7,
+"pick": 5,
+"rfl_team": "Verigon Komodos",
+"pid": 2015674,
+"name": "Cristobal Montelletti",
+"via": null
+},
+{
+"overall": 246,
+"round": 7,
+"pick": 6,
+"rfl_team": "Far Farris Raccoons",
+"pid": 2013530,
+"name": "Barthelemy Longpierre",
+"via": null
+},
+{
+"overall": 247,
+"round": 7,
+"pick": 7,
+"rfl_team": "Tengus City Terrors",
+"pid": 2018167,
+"name": "Mateo Cabrafranca",
+"via": null
+},
+{
+"overall": 248,
+"round": 7,
+"pick": 8,
+"rfl_team": "Rogaela Rovers",
+"pid": "SUB_22",
+"name": "Peymyr Livei",
+"via": null
+},
+{
+"overall": 249,
+"round": 7,
+"pick": 9,
+"rfl_team": "Sarkady Beavers",
+"pid": "SUB_3",
+"name": "Kivaw Auvaw",
+"via": null
+},
+{
+"overall": 250,
+"round": 7,
+"pick": 10,
+"rfl_team": "Fiota Bay T-Rexes",
+"pid": 2017509,
+"name": "Mose Swiftantler",
+"via": null
+},
+{
+"overall": 251,
+"round": 7,
+"pick": 11,
+"rfl_team": "Diveo Demons",
+"pid": 2017341,
+"name": "Tuva Halapio",
+"via": null
+},
+{
+"overall": 252,
+"round": 7,
+"pick": 12,
+"rfl_team": "San Saltadac Sea Lions",
+"pid": 2017076,
+"name": "Wakana Qingpen",
+"via": null
+},
+{
+"overall": 253,
+"round": 7,
+"pick": 13,
+"rfl_team": "Tasson Thunderbugs",
+"pid": 2018131,
+"name": "Kiona Eaglebear",
+"via": null
+},
+{
+"overall": 254,
+"round": 7,
+"pick": 14,
+"rfl_team": "Holliday Beetles",
+"pid": 2017729,
+"name": "Edouard Tirsemyr",
+"via": null
+},
+{
+"overall": 255,
+"round": 7,
+"pick": 15,
+"rfl_team": "Vaughn Bay Silverbacks",
+"pid": 2016310,
+"name": "Katsuo Langbridge",
+"via": null
+},
+{
+"overall": 256,
+"round": 7,
+"pick": 16,
+"rfl_team": "Stamford Grays",
+"pid": 2016792,
+"name": "Katarina Blauhuber",
+"via": null
+},
+{
+"overall": 257,
+"round": 7,
+"pick": 17,
+"rfl_team": "Fiota Swords",
+"pid": 2015833,
+"name": "Ruzena Wolfmeier",
+"via": null
+},
+{
+"overall": 258,
+"round": 7,
+"pick": 18,
+"rfl_team": "Ediville Brass Tigers",
+"pid": 2019396,
+"name": "Imani Bamidele",
+"via": null
+},
+{
+"overall": 259,
+"round": 7,
+"pick": 19,
+"rfl_team": "Diamond City Hope",
+"pid": 2016159,
+"name": "Chumani Walkingcloud",
+"via": null
+},
+{
+"overall": 260,
+"round": 7,
+"pick": 20,
+"rfl_team": "New Madrid Mastiffs",
+"pid": 2016877,
+"name": "Antonella Se-Kwan",
+"via": null
+},
+{
+"overall": 261,
+"round": 7,
+"pick": 21,
+"rfl_team": "Good River Rangers",
+"pid": 2017002,
+"name": "Meivo Tomniy",
+"via": null
+},
+{
+"overall": 262,
+"round": 7,
+"pick": 22,
+"rfl_team": "Stanton City Conductors",
+"pid": 2018042,
+"name": "Efrain Miraclara",
+"via": null
+},
+{
+"overall": 263,
+"round": 7,
+"pick": 23,
+"rfl_team": "El Latigo Shredders",
+"pid": 2018134,
+"name": "Rupert Havstrand",
+"via": null
+},
+{
+"overall": 264,
+"round": 7,
+"pick": 24,
+"rfl_team": "Crayellan Redwoods",
+"pid": 2018878,
+"name": "Perla Montedura",
+"via": null
+},
+{
+"overall": 265,
+"round": 7,
+"pick": 25,
+"rfl_team": "Queensville Phenoms",
+"pid": 2015300,
+"name": "Latoya Schwarzbrunner",
+"via": null
+},
+{
+"overall": 266,
+"round": 7,
+"pick": 26,
+"rfl_team": "Billiataho Greats",
+"pid": 2018277,
+"name": "Lionel Rowwick",
+"via": null
+},
+{
+"overall": 267,
+"round": 7,
+"pick": 27,
+"rfl_team": "Cordelle Raptors",
+"pid": 2016545,
+"name": "Shota Qinian",
+"via": null
+},
+{
+"overall": 268,
+"round": 7,
+"pick": 28,
+"rfl_team": "North Hatesei Bees",
+"pid": 2019201,
+"name": "Jaehyun Hu-Nam",
+"via": null
+},
+{
+"overall": 269,
+"round": 7,
+"pick": 29,
+"rfl_team": "Wolford Dragons",
+"pid": 2015577,
+"name": "Volker Kaczmarek",
+"via": null
+},
+{
+"overall": 270,
+"round": 7,
+"pick": 30,
+"rfl_team": "Underwood Bats",
+"pid": 2019067,
+"name": "Kaito Mengqian",
+"via": null
+},
+{
+"overall": 271,
+"round": 7,
+"pick": 31,
+"rfl_team": "Diamond City Dynamos",
+"pid": 2017922,
+"name": "Ousmane Al-Madani",
+"via": null
+},
+{
+"overall": 272,
+"round": 7,
+"pick": 32,
+"rfl_team": "Hughes City Asteroids",
+"pid": 2018065,
+"name": "Mija No-Hwan",
+"via": null
+},
+{
+"overall": 273,
+"round": 7,
+"pick": 33,
+"rfl_team": "Canesta Dales",
+"pid": 2018812,
+"name": "Verity Rowwell",
+"via": null
+},
+{
+"overall": 274,
+"round": 7,
+"pick": 34,
+"rfl_team": "Palm Creek Leatherbacks",
+"pid": 2017889,
+"name": "Percy Wickshaw",
+"via": null
+},
+{
+"overall": 275,
+"round": 7,
+"pick": 35,
+"rfl_team": "Classetto Cavemen",
+"pid": 2015612,
+"name": "Weimin Okamura",
+"via": null
+},
+{
+"overall": 276,
+"round": 7,
+"pick": 36,
+"rfl_team": "Lornaman Renegades",
+"pid": 2019703,
+"name": "Lakshman Ananddhara",
+"via": null
+},
+{
+"overall": 277,
+"round": 7,
+"pick": 37,
+"rfl_team": "Coachville Mastodons",
+"pid": 2012828,
+"name": "Mija Je-Bae",
+"via": null
+},
+{
+"overall": 278,
+"round": 7,
+"pick": 38,
+"rfl_team": "Costique Bearcats",
+"pid": 2017093,
+"name": "Mariana Petitpre",
+"via": null
+},
+{
+"overall": 279,
+"round": 7,
+"pick": 39,
+"rfl_team": "Port Logan Commodores",
+"pid": 2017223,
+"name": "Valentina Beaurive",
+"via": null
+}
+],
+"undrafted_signed": [
+{
+"pid": "SUB_18",
+"name": "Giulia Jin",
+"rfl_team": "Vaughn Bay Silverbacks"
+},
+{
+"pid": "SUB_19",
+"name": "Signe Navaclara",
+"rfl_team": "El Latigo Shredders"
+},
+{
+"pid": "SUB_13",
+"name": "Dante Bonfiglio",
+"rfl_team": "El Latigo Shredders"
+},
+{
+"pid": 2016044,
+"name": "Salif Birkevik",
+"rfl_team": "Vaughn Bay Silverbacks"
+},
+{
+"pid": 2015710,
+"name": "Selloviy Holteniy",
+"rfl_team": "Crayellan Redwoods"
+},
+{
+"pid": 2015731,
+"name": "Adebayo Freeland",
+"rfl_team": "Vaughn Bay Silverbacks"
+},
+{
+"pid": 2017174,
+"name": "Corentin Ventoretti",
+"rfl_team": "Vaughn Bay Silverbacks"
+},
+{
+"pid": 2016424,
+"name": "Lifen Longqu",
+"rfl_team": "Queensville Phenoms"
+},
+{
+"pid": 2015541,
+"name": "Debashish Umavarma",
+"rfl_team": "El Latigo Shredders"
+},
+{
+"pid": 2016046,
+"name": "Eunkyung Yueliang",
+"rfl_team": "Far Farris Raccoons"
+},
+{
+"pid": 2015064,
+"name": "Eldrid Eikehus",
+"rfl_team": "Sarkady Beavers"
+},
+{
+"pid": 2014808,
+"name": "Rosario Salavieja",
+"rfl_team": "Sarkady Beavers"
+},
+{
+"pid": 2016853,
+"name": "Soledad Rocanegro",
+"rfl_team": "Vaughn Bay Silverbacks"
+},
+{
+"pid": "SUB_7",
+"name": "Torhild Langwood",
+"rfl_team": "Tasson Thunderbugs"
+},
+{
+"pid": 2016640,
+"name": "Kiona Crookedwolf",
+"rfl_team": "Queensville Phenoms"
+},
+{
+"pid": 2017000,
+"name": "Quentin Vauville",
+"rfl_team": "Queensville Phenoms"
+},
+{
+"pid": 2015625,
+"name": "Kangdae Nagarajan",
+"rfl_team": "Stanton City Conductors"
+},
+{
+"pid": 2012922,
+"name": "Gunther Volecek",
+"rfl_team": "Tasson Thunderbugs"
+},
+{
+"pid": 2016935,
+"name": "Solene Torrascio",
+"rfl_team": "Stamford Grays"
+},
+{
+"pid": 2017046,
+"name": "Ptaysanwee Blackfox",
+"rfl_team": "Far Farris Raccoons"
+},
+{
+"pid": 2017338,
+"name": "Thibault Duterre",
+"rfl_team": "Far Farris Raccoons"
+},
+{
+"pid": 2015279,
+"name": "Nana Chukbayo",
+"rfl_team": "Queensville Phenoms"
+},
+{
+"pid": 2015418,
+"name": "Cortez Durwick",
+"rfl_team": "Queensville Phenoms"
+},
+{
+"pid": 2016405,
+"name": "Daesung Ra-Bae",
+"rfl_team": "Sarkady Beavers"
+},
+{
+"pid": 2016707,
+"name": "Tatiana Hirotsu",
+"rfl_team": "Queensville Phenoms"
+},
+{
+"pid": 2015742,
+"name": "Samira Al-Wahidi",
+"rfl_team": "Queensville Phenoms"
+},
+{
+"pid": 2015659,
+"name": "Chumani Winterham",
+"rfl_team": "Bruca Beach Hammerheads"
+},
+{
+"pid": 2016597,
+"name": "Anselmo Valbosque",
+"rfl_team": "Palm Creek Leatherbacks"
+},
+{
+"pid": 2016206,
+"name": "Xiuying Yinzhen",
+"rfl_team": "San Saltadac Sea Lions"
+},
+{
+"pid": 2015953,
+"name": "Lanying Songsun",
+"rfl_team": "Underwood Bats"
+},
+{
+"pid": 2015405,
+"name": "Agnieszka Karamakis",
+"rfl_team": "Classetto Cavemen"
+},
+{
+"pid": 2017091,
+"name": "Tavesei Ceiyosei",
+"rfl_team": "San Saltadac Sea Lions"
+},
+{
+"pid": 2015117,
+"name": "Umeko Ju-Gu",
+"rfl_team": "Queensville Phenoms"
+},
+{
+"pid": 2015892,
+"name": "Tomas Vignettoni",
+"rfl_team": "Port Logan Commodores"
+},
+{
+"pid": 2015301,
+"name": "Rajesh Vasuraj",
+"rfl_team": "Diamond City Hope"
+},
+{
+"pid": 2017004,
+"name": "Yaping Rongzei",
+"rfl_team": "Queensville Phenoms"
+},
+{
+"pid": 2016423,
+"name": "Jianyu Ga-Su",
+"rfl_team": "Diamond City Hope"
+},
+{
+"pid": 2012921,
+"name": "Kyungja Bang",
+"rfl_team": "Stamford Grays"
+},
+{
+"pid": 2017381,
+"name": "Thomas Wickridge",
+"rfl_team": "Far Farris Raccoons"
+},
+{
+"pid": 2016043,
+"name": "Fouad Al-Hashim",
+"rfl_team": "Far Farris Raccoons"
+},
+{
+"pid": 2015739,
+"name": "Bronwyn Ludendorf",
+"rfl_team": "Cordelle Raptors"
+},
+{
+"pid": 2015561,
+"name": "Danica Deylaniy",
+"rfl_team": "Port Logan Commodores"
+},
+{
+"pid": 2017006,
+"name": "Lenmana Usoanua",
+"rfl_team": "San Saltadac Sea Lions"
+},
+{
+"pid": 2015402,
+"name": "Ousmane Oluchi",
+"rfl_team": "Queensville Phenoms"
+},
+{
+"pid": 2014674,
+"name": "Naulei Tirtravaw",
+"rfl_team": "Port Logan Commodores"
+},
+{
+"pid": 2015763,
+"name": "Omyr Storhaug",
+"rfl_team": "Sarkady Beavers"
+},
+{
+"pid": "SUB_1",
+"name": "George Faleolo",
+"rfl_team": "Port Logan Commodores"
+},
+{
+"pid": 2015743,
+"name": "Alofa Niumuli",
+"rfl_team": "Rogaela Rovers"
+},
+{
+"pid": 2017275,
+"name": "Zlata Radovsky",
+"rfl_team": "San Saltadac Sea Lions"
+},
+{
+"pid": 2016207,
+"name": "Yuting Kyo-Seok",
+"rfl_team": "New Madrid Mastiffs"
+},
+{
+"pid": 2016016,
+"name": "Kjell Aalstad",
+"rfl_team": "Sarkady Beavers"
+},
+{
+"pid": 2017363,
+"name": "Faisal Padmagiri",
+"rfl_team": "El Latigo Shredders"
+},
+{
+"pid": 2017181,
+"name": "Chike Buenarica",
+"rfl_team": "Tasson Thunderbugs"
+},
+{
+"pid": 2016028,
+"name": "Jamila Achebe",
+"rfl_team": "Costique Bearcats"
+},
+{
+"pid": 2017139,
+"name": "Anguo Zelenyshyn",
+"rfl_team": "Cordelle Raptors"
+},
+{
+"pid": 2016114,
+"name": "Fumiko Xiongmian",
+"rfl_team": "Classetto Cavemen"
+},
+{
+"pid": 2015182,
+"name": "Fang Xuegang",
+"rfl_team": "El Latigo Shredders"
+},
+{
+"pid": 2016015,
+"name": "Cristobal Apokatos",
+"rfl_team": "North Hatesei Bees"
+},
+{
+"pid": "SUB_15",
+"name": "Sangchul Yi-Gil",
+"rfl_team": "El Latigo Shredders"
+},
+{
+"pid": 2017026,
+"name": "Korresaw Besmaw",
+"rfl_team": "El Latigo Shredders"
+},
+{
+"pid": 2015099,
+"name": "Amedeo Belkov",
+"rfl_team": "Queensville Phenoms"
+},
+{
+"pid": 2016224,
+"name": "Sangwoo Nalan",
+"rfl_team": "Palm Creek Leatherbacks"
+},
+{
+"pid": 2014450,
+"name": "Nneka Westman",
+"rfl_team": "Crayellan Redwoods"
+},
+{
+"pid": 2016161,
+"name": "Lashawn Whitlock",
+"rfl_team": "Palm Creek Leatherbacks"
+},
+{
+"pid": 2016794,
+"name": "Jack Nwawale",
+"rfl_team": "San Saltadac Sea Lions"
+},
+{
+"pid": 2015994,
+"name": "Palmira Panathakis",
+"rfl_team": "El Latigo Shredders"
+},
+{
+"pid": 2015376,
+"name": "Amira Wintermere",
+"rfl_team": "Tengus City Terrors"
+},
+{
+"pid": 2016100,
+"name": "Rania Papadopoulos",
+"rfl_team": "Holliday Beetles"
+},
+{
+"pid": 2016900,
+"name": "Hyejin Ju-Jae",
+"rfl_team": "Tengus City Terrors"
+},
+{
+"pid": 2016855,
+"name": "Porfirio Valcour",
+"rfl_team": "Palm Creek Leatherbacks"
+},
+{
+"pid": 2016017,
+"name": "Saga Puentelonga",
+"rfl_team": "Diveo Demons"
+},
+{
+"pid": 2015732,
+"name": "Siegfried Hochhoff",
+"rfl_team": "Stamford Grays"
+},
+{
+"pid": 2015882,
+"name": "Charlotte Wickton",
+"rfl_team": "San Saltadac Sea Lions"
+},
+{
+"pid": "SUB_14",
+"name": "Clemence Yorkgate",
+"rfl_team": "Wolford Dragons"
+},
+{
+"pid": 2016709,
+"name": "Ryoji Thackeray",
+"rfl_team": "San Saltadac Sea Lions"
+},
+{
+"pid": 2015592,
+"name": "Tsumugi Eun-Ho",
+"rfl_team": "Good River Rangers"
+},
+{
+"pid": 2016818,
+"name": "Jerome Serraoncelli",
+"rfl_team": "Diamond City Dynamos"
+},
+{
+"pid": 2017066,
+"name": "Divya El-Halabi",
+"rfl_team": "Hughes City Asteroids"
+},
+{
+"pid": 2016852,
+"name": "Jerome Folajide",
+"rfl_team": "Underwood Bats"
+},
+{
+"pid": 2015298,
+"name": "Henrik Weinhorn",
+"rfl_team": "Tasson Thunderbugs"
+},
+{
+"pid": 2015421,
+"name": "Terrell Hanakami",
+"rfl_team": "Crayellan Redwoods"
+},
+{
+"pid": 2015282,
+"name": "Bogdan Malentsev",
+"rfl_team": "Canesta Dales"
+},
+{
+"pid": 2016687,
+"name": "Celestine Neufleur",
+"rfl_team": "El Latigo Shredders"
+},
+{
+"pid": 2017433,
+"name": "Cristobal Fioroletti",
+"rfl_team": "Verigon Komodos"
+},
+{
+"pid": 2015611,
+"name": "Widad Fadel",
+"rfl_team": "Underwood Bats"
+},
+{
+"pid": 2015158,
+"name": "Hannelore Stonemore",
+"rfl_team": "Fiota Bay T-Rexes"
+},
+{
+"pid": 2015728,
+"name": "Tamsin Westbrook",
+"rfl_team": "Good River Rangers"
+},
+{
+"pid": 2016989,
+"name": "Dante Maratelli",
+"rfl_team": "Underwood Bats"
+},
+{
+"pid": 2016356,
+"name": "Palmira Grimaldi",
+"rfl_team": "Palm Creek Leatherbacks"
+},
+{
+"pid": 2017221,
+"name": "Raafat Galarza",
+"rfl_team": "South Burke Tsunami"
+},
+{
+"pid": 2016726,
+"name": "Taha Qaddoumi",
+"rfl_team": "Rogaela Rovers"
+},
+{
+"pid": 2013642,
+"name": "Yelena Pananides",
+"rfl_team": "Cordelle Raptors"
+},
+{
+"pid": 2016560,
+"name": "Shamar Gyesei",
+"rfl_team": "Eona Topcats"
+},
+{
+"pid": 2015386,
+"name": "Zlata Neuhaus",
+"rfl_team": "Hughes City Asteroids"
+},
+{
+"pid": 2016888,
+"name": "Erik Goldhurst",
+"rfl_team": "Crayellan Redwoods"
+},
+{
+"pid": 2015487,
+"name": "Anei Osrovei",
+"rfl_team": "Underwood Bats"
+},
+{
+"pid": 2015527,
+"name": "Percy Brookley",
+"rfl_team": "Crayellan Redwoods"
+},
+{
+"pid": 2016357,
+"name": "Urmila Jankowski",
+"rfl_team": "Tasson Thunderbugs"
+},
+{
+"pid": 2016322,
+"name": "Triantafyllia Slavicky",
+"rfl_team": "Crayellan Redwoods"
+},
+{
+"pid": 2015374,
+"name": "Jagdish Indrasekaran",
+"rfl_team": "Good River Rangers"
+},
+{
+"pid": 2017361,
+"name": "Kalisi Walkingbear",
+"rfl_team": "Eona Topcats"
+},
+{
+"pid": 2017190,
+"name": "Gemma Yunpan",
+"rfl_team": "New Madrid Mastiffs"
+},
+{
+"pid": 2016737,
+"name": "Tevin Greenbury",
+"rfl_team": "Port Logan Commodores"
+},
+{
+"pid": 2017071,
+"name": "Heeyoung Se-Kwan",
+"rfl_team": "San Saltadac Sea Lions"
+},
+{
+"pid": 2015139,
+"name": "Gwen Vikvik",
+"rfl_team": "Costique Bearcats"
+},
+{
+"pid": 2015442,
+"name": "Kendrick Greenworth",
+"rfl_team": "Cordelle Raptors"
+},
+{
+"pid": 2016019,
+"name": "Halaevalu Bluefeather",
+"rfl_team": "Classetto Cavemen"
+},
+{
+"pid": 2016048,
+"name": "Callisto Altaclara",
+"rfl_team": "Holliday Beetles"
+},
+{
+"pid": 2016296,
+"name": "Mamadou Chichi",
+"rfl_team": "Diamond City Dynamos"
+},
+{
+"pid": 2017140,
+"name": "Paytah Whitecloud",
+"rfl_team": "Costique Bearcats"
+},
+{
+"pid": 2016546,
+"name": "Raimondo Torrarini",
+"rfl_team": "El Latigo Shredders"
+},
+{
+"pid": 2015986,
+"name": "Litowa Isreniy",
+"rfl_team": "Cordelle Raptors"
+},
+{
+"pid": 2016178,
+"name": "Zainab Adafrah",
+"rfl_team": "Costique Bearcats"
+},
+{
+"pid": 2015304,
+"name": "Zainab Kesapatham",
+"rfl_team": "Lornaman Renegades"
+},
+{
+"pid": 2016724,
+"name": "Hwanki Je-Jin",
+"rfl_team": "Diamond City Dynamos"
+},
+{
+"pid": 2015081,
+"name": "Gwen Hazelmore",
+"rfl_team": "Good River Rangers"
+},
+{
+"pid": 2016738,
+"name": "Wapasha Vakatasi",
+"rfl_team": "Verigon Komodos"
+},
+{
+"pid": 2015319,
+"name": "Oluwaseun Ostrovec",
+"rfl_team": "Lornaman Renegades"
+},
+{
+"pid": 2015100,
+"name": "Donnell Amafrah",
+"rfl_team": "Crayellan Redwoods"
+},
+{
+"pid": 2016854,
+"name": "Thyra Goldholz",
+"rfl_team": "San Saltadac Sea Lions"
+},
+{
+"pid": 2017348,
+"name": "Boubacar Duregard",
+"rfl_team": "El Latigo Shredders"
+},
+{
+"pid": 2015040,
+"name": "Thierno Kingswell",
+"rfl_team": "Stamford Grays"
+},
+{
+"pid": "SUB_21",
+"name": "Roviyel Peyrovei",
+"rfl_team": "Classetto Cavemen"
+},
+{
+"pid": 2015460,
+"name": "Azucena Penareal",
+"rfl_team": "Chapel Rock Crowns"
+},
+{
+"pid": 2015299,
+"name": "Kalliope Triamakis",
+"rfl_team": "El Latigo Shredders"
+},
+{
+"pid": 2017078,
+"name": "Sabine Asamaki",
+"rfl_team": "El Latigo Shredders"
+},
+{
+"pid": 2015078,
+"name": "Alfie Fenwood",
+"rfl_team": "Underwood Bats"
+},
+{
+"pid": 2015082,
+"name": "Nobuo Ja-Won",
+"rfl_team": "San Saltadac Sea Lions"
+},
+{
+"pid": 2017027,
+"name": "Cortez Langton",
+"rfl_team": "Chapel Rock Crowns"
+},
+{
+"pid": 2015688,
+"name": "Yestev Starushkin",
+"rfl_team": "Palm Creek Leatherbacks"
+},
+{
+"pid": 2016226,
+"name": "Belen Neubec",
+"rfl_team": "Costique Bearcats"
+},
+{
+"pid": 2017336,
+"name": "Alphonse Beaucour",
+"rfl_team": "San Saltadac Sea Lions"
+},
+{
+"pid": 2017179,
+"name": "Minjun Nnasah",
+"rfl_team": "Tengus City Terrors"
+},
+{
+"pid": 2015810,
+"name": "Ataahua Bluewolf",
+"rfl_team": "Lornaman Renegades"
+},
+{
+"pid": 2015231,
+"name": "Darius Blackwell",
+"rfl_team": "New Madrid Mastiffs"
+},
+{
+"pid": 2017272,
+"name": "Yuma Moritake",
+"rfl_team": "Palm Creek Leatherbacks"
+},
+{
+"pid": 2017176,
+"name": "Amelia Sandston",
+"rfl_team": "San Saltadac Sea Lions"
+},
+{
+"pid": 2016976,
+"name": "Gustav Falkenhorn",
+"rfl_team": "South Burke Tsunami"
+},
+{
+"pid": 2014708,
+"name": "Siwoo No-Kwan",
+"rfl_team": "Classetto Cavemen"
+},
+{
+"pid": 2015560,
+"name": "Qamar Dhanasekaran",
+"rfl_team": "Billiataho Greats"
+},
+{
+"pid": 2015302,
+"name": "Kenta Fukagawa",
+"rfl_team": "Stanton City Conductors"
+},
+{
+"pid": 2016481,
+"name": "Rosalia Vignatelli",
+"rfl_team": "Fiota Bay T-Rexes"
+},
+{
+"pid": 2015126,
+"name": "Irmgard Solfors",
+"rfl_team": "Hughes City Asteroids"
+},
+{
+"pid": 2016244,
+"name": "Itzel Elmley",
+"rfl_team": "South Burke Tsunami"
+},
+{
+"pid": 2015422,
+"name": "Cecily Brookmere",
+"rfl_team": "El Latigo Shredders"
+},
+{
+"pid": 2016690,
+"name": "Chiara Bellanelli",
+"rfl_team": "Good River Rangers"
+},
+{
+"pid": 2016795,
+"name": "Mstislav Vasilaledis",
+"rfl_team": "El Latigo Shredders"
+},
+{
+"pid": 2014738,
+"name": "Bozena Nwateng",
+"rfl_team": "El Latigo Shredders"
+},
+{
+"pid": 2017230,
+"name": "Hania Toapeau",
+"rfl_team": "Eona Topcats"
+},
+{
+"pid": 2016451,
+"name": "Jerome Apomatos",
+"rfl_team": "Verigon Komodos"
+},
+{
+"pid": 2015971,
+"name": "Poppy Novyshyn",
+"rfl_team": "South Burke Tsunami"
+},
+{
+"pid": 2016813,
+"name": "Bogdan Krasicky",
+"rfl_team": "Billiataho Greats"
+},
+{
+"pid": 2017318,
+"name": "Chike Camara",
+"rfl_team": "Stamford Grays"
+},
+{
+"pid": 2013579,
+"name": "Jamal Yorkridge",
+"rfl_team": "Tengus City Terrors"
+},
+{
+"pid": 2015643,
+"name": "Ohanzee Laumalie",
+"rfl_team": "Hughes City Asteroids"
+},
+{
+"pid": 2015745,
+"name": "Lifen Fanggong",
+"rfl_team": "Hughes City Asteroids"
+},
+{
+"pid": 2016548,
+"name": "Dyami Toamanino",
+"rfl_team": "Crayellan Redwoods"
+},
+{
+"pid": 2015591,
+"name": "Solene Kirouac",
+"rfl_team": "New Madrid Mastiffs"
+},
+{
+"pid": 2015343,
+"name": "Dandan Asagaki",
+"rfl_team": "Coachville Mastodons"
+},
+{
+"pid": 2016147,
+"name": "Ohanzee Chandracharya",
+"rfl_team": "South Burke Tsunami"
+},
+{
+"pid": 2015232,
+"name": "Liv Granlund",
+"rfl_team": "Bruca Beach Hammerheads"
+},
+{
+"pid": 2017321,
+"name": "Yansa Highhawk",
+"rfl_team": "Crayellan Redwoods"
+},
+{
+"pid": 2016776,
+"name": "Umberto Palumbo",
+"rfl_team": "Diamond City Dynamos"
+},
+{
+"pid": 2016954,
+"name": "Lukas Zelenowicz",
+"rfl_team": "Crayellan Redwoods"
+},
+{
+"pid": 2017383,
+"name": "Digby Cranecombe",
+"rfl_team": "Tengus City Terrors"
+},
+{
+"pid": 2016562,
+"name": "Gemma Albabosque",
+"rfl_team": "Coachville Mastodons"
+},
+{
+"pid": 2015831,
+"name": "Esperanza Neraoncelli",
+"rfl_team": "San Saltadac Sea Lions"
+},
+{
+"pid": 2017339,
+"name": "Ilaria Puentedura",
+"rfl_team": "San Saltadac Sea Lions"
+},
+{
+"pid": 2015184,
+"name": "Salvatore Lomelletti",
+"rfl_team": "Hughes City Asteroids"
+},
+{
+"pid": 2016243,
+"name": "Maha Nagarajan",
+"rfl_team": "Canesta Dales"
+},
+{
+"pid": 2016435,
+"name": "Gwen Tordahl",
+"rfl_team": "Hughes City Asteroids"
+},
+{
+"pid": 2016661,
+"name": "Rafael Caldarini",
+"rfl_team": "Palm Creek Leatherbacks"
+},
+{
+"pid": 2015762,
+"name": "Kangdae Wenren",
+"rfl_team": "North Hatesei Bees"
+},
+{
+"pid": 2017436,
+"name": "Annika Weststead",
+"rfl_team": "Ediville Brass Tigers"
+},
+{
+"pid": 2016242,
+"name": "Hamza Chandramoorthy",
+"rfl_team": "Purcell Rapids"
+},
+{
+"pid": 2016936,
+"name": "Emilio Casaseca",
+"rfl_team": "Good River Rangers"
+},
+{
+"pid": 2015314,
+"name": "Lukas Stenstad",
+"rfl_team": "Hughes City Asteroids"
+},
+{
+"pid": 2015121,
+"name": "Tancredi Lazzaro",
+"rfl_team": "Crayellan Redwoods"
+},
+{
+"pid": 2017469,
+"name": "Ayanna Ravenford",
+"rfl_team": "Chapel Rock Crowns"
+},
+{
+"pid": 2015486,
+"name": "Terrell Hairston",
+"rfl_team": "Hughes City Asteroids"
+},
+{
+"pid": "SUB_5",
+"name": "Chiyo Ichinari",
+"rfl_team": "San Saltadac Sea Lions"
+},
+{
+"pid": 2015616,
+"name": "Waltraud Fuavao",
+"rfl_team": "Diamond City Dynamos"
+},
+{
+"pid": 2015753,
+"name": "Kiyomi Ichimaki",
+"rfl_team": "Rogaela Rovers"
+},
+{
+"pid": 2015079,
+"name": "Karin Highwood",
+"rfl_team": "Coachville Mastodons"
+},
+{
+"pid": 2016955,
+"name": "Gunhild Blancterre",
+"rfl_team": "Verigon Komodos"
+},
+{
+"pid": 2014011,
+"name": "Tage Hollerbach",
+"rfl_team": "Stanton City Conductors"
+},
+{
+"pid": 2015936,
+"name": "Colette Vieuxfort",
+"rfl_team": "Eona Topcats"
+},
+{
+"pid": 2016857,
+"name": "Tavesei Selveiro",
+"rfl_team": "Holliday Beetles"
+},
+{
+"pid": "SUB_12",
+"name": "Sefo Duregard",
+"rfl_team": "Classetto Cavemen"
+},
+{
+"pid": 2015127,
+"name": "Angelique Rocheclair",
+"rfl_team": "Crayellan Redwoods"
+},
+{
+"pid": 2016412,
+"name": "Immacolata Villanueva",
+"rfl_team": "Stanton City Conductors"
+},
+{
+"pid": 2017290,
+"name": "Perla Duterre",
+"rfl_team": "Stanton City Conductors"
+},
+{
+"pid": 2015988,
+"name": "Rocio Elmmere",
+"rfl_team": "Lornaman Renegades"
+},
+{
+"pid": 2017148,
+"name": "Naitrei Solselniy",
+"rfl_team": "Fiota Bay T-Rexes"
+},
+{
+"pid": 2017208,
+"name": "Bronwyn Gr\u00fcnbrandt",
+"rfl_team": "New Madrid Mastiffs"
+},
+{
+"pid": 2017271,
+"name": "Lech Morino",
+"rfl_team": "Verigon Komodos"
+},
+{
+"pid": 2015101,
+"name": "Clive Lundfeldt",
+"rfl_team": "Hughes City Asteroids"
+},
+{
+"pid": 2016408,
+"name": "Esperanza Lomoletti",
+"rfl_team": "Classetto Cavemen"
+},
+{
+"pid": 2015243,
+"name": "Marlene Cherniczek",
+"rfl_team": "Chapel Rock Crowns"
+},
+{
+"pid": 2017094,
+"name": "Elin Bergmeier",
+"rfl_team": "Classetto Cavemen"
+},
+{
+"pid": 2017001,
+"name": "Fang Peitian",
+"rfl_team": "Hughes City Asteroids"
+},
+{
+"pid": 2016688,
+"name": "Bertram Rosenkamp",
+"rfl_team": "Stamford Grays"
+},
+{
+"pid": 2015713,
+"name": "Ossavei Dornbusch",
+"rfl_team": "Canesta Dales"
+},
+{
+"pid": 2016623,
+"name": "Kysei Eastwick",
+"rfl_team": "Palm Creek Leatherbacks"
+},
+{
+"pid": 2015847,
+"name": "Sangwoo Ja-Jin",
+"rfl_team": "Lornaman Renegades"
+},
+{
+"pid": 2016102,
+"name": "Laurent Gersten",
+"rfl_team": "Diamond City Dynamos"
+},
+{
+"pid": 2015593,
+"name": "Jagdish Oberoi",
+"rfl_team": "Holliday Beetles"
+},
+{
+"pid": 2016078,
+"name": "Ananya Subrakaran",
+"rfl_team": "Classetto Cavemen"
+},
+{
+"pid": 2017468,
+"name": "Yuma Fujimaki",
+"rfl_team": "Stanton City Conductors"
+},
+{
+"pid": 2013533,
+"name": "Erik Brzezinski",
+"rfl_team": "Palm Creek Leatherbacks"
+},
+{
+"pid": 2016338,
+"name": "Bjorn Sandvik",
+"rfl_team": "Good River Rangers"
+},
+{
+"pid": 2015855,
+"name": "Consuelo Rochecour",
+"rfl_team": "Diamond City Hope"
+},
+{
+"pid": 2016817,
+"name": "Shota No-Tak",
+"rfl_team": "Diamond City Hope"
+},
+{
+"pid": 2016032,
+"name": "Jayla Yorkford",
+"rfl_team": "Eona Topcats"
+},
+{
+"pid": 2017142,
+"name": "Minjun Tae-Il",
+"rfl_team": "Bruca Beach Hammerheads"
+},
+{
+"pid": 2016816,
+"name": "Henry Readton",
+"rfl_team": "Palm Creek Leatherbacks"
+},
+{
+"pid": 2015562,
+"name": "Brunhilde Chernecek",
+"rfl_team": "Hughes City Asteroids"
+},
+{
+"pid": 2015783,
+"name": "Ryoji Wensheng",
+"rfl_team": "Fiota Bay T-Rexes"
+},
+{
+"pid": 2015829,
+"name": "Zaire Winswick",
+"rfl_team": "Bruca Beach Hammerheads"
+},
+{
+"pid": 2017114,
+"name": "Sachiko Xiongbai",
+"rfl_team": "Stamford Grays"
+},
+{
+"pid": 2016988,
+"name": "Solene Malville",
+"rfl_team": "Canesta Dales"
+},
+{
+"pid": 2016067,
+"name": "Mingze Ashikaga",
+"rfl_team": "North Hatesei Bees"
+},
+{
+"pid": 2016760,
+"name": "Aslaug Rothbach",
+"rfl_team": "Palm Creek Leatherbacks"
+},
+{
+"pid": 2015987,
+"name": "Yantrei Fenoviy",
+"rfl_team": "Coachville Mastodons"
+},
+{
+"pid": 2016065,
+"name": "Cecily Blackwood",
+"rfl_team": "Hughes City Asteroids"
+},
+{
+"pid": 2016599,
+"name": "Guadalupe Montelonga",
+"rfl_team": "Stamford Grays"
+},
+{
+"pid": 2015042,
+"name": "Chiyo Fukatani",
+"rfl_team": "Coachville Mastodons"
+},
+{
+"pid": 2016904,
+"name": "Waimarie Stonepipe",
+"rfl_team": "Ediville Brass Tigers"
+},
+{
+"pid": 2015594,
+"name": "Katsuo Shiramine",
+"rfl_team": "Coachville Mastodons"
+},
+{
+"pid": 2015475,
+"name": "Hernan Vyinsky",
+"rfl_team": "Classetto Cavemen"
+},
+{
+"pid": 2016386,
+"name": "Tsuvai Peireniy",
+"rfl_team": "Coachville Mastodons"
+},
+{
+"pid": 2015908,
+"name": "Jamila Gyechukwu",
+"rfl_team": "Wolford Dragons"
+},
+{
+"pid": 2016800,
+"name": "Taiga Tanihara",
+"rfl_team": "Fiota Swords"
+},
+{
+"pid": 2015895,
+"name": "Kotone Asabe",
+"rfl_team": "Lornaman Renegades"
+},
+{
+"pid": 2015389,
+"name": "Cecily Hazelbridge",
+"rfl_team": "Coachville Mastodons"
+},
+{
+"pid": 2017303,
+"name": "Lanying Leizen",
+"rfl_team": "Coachville Mastodons"
+},
+{
+"pid": 2013674,
+"name": "Nari Wanman",
+"rfl_team": "Bruca Beach Hammerheads"
+},
+{
+"pid": 2016991,
+"name": "Chiara Gallanelli",
+"rfl_team": "Diamond City Hope"
+},
+{
+"pid": 2017149,
+"name": "Estevaw Jortravaw",
+"rfl_team": "New Madrid Mastiffs"
+},
+{
+"pid": 2015782,
+"name": "Sina Usotele",
+"rfl_team": "New Madrid Mastiffs"
+},
+{
+"pid": 2016205,
+"name": "Bolin Lianjie",
+"rfl_team": "Diamond City Hope"
+},
+{
+"pid": 2017437,
+"name": "Padma Chandraraj",
+"rfl_team": "New Madrid Mastiffs"
+},
+{
+"pid": 2014304,
+"name": "Devonte Sefsei",
+"rfl_team": "Ediville Brass Tigers"
+},
+{
+"pid": 2016793,
+"name": "Kanei Issavaw",
+"rfl_team": "Stanton City Conductors"
+},
+{
+"pid": 2015303,
+"name": "Porfirio Castdura",
+"rfl_team": "Diamond City Hope"
+},
+{
+"pid": 2016692,
+"name": "Mei Fangzheng",
+"rfl_team": "Classetto Cavemen"
+},
+{
+"pid": "SUB_6",
+"name": "Digby Brookworth",
+"rfl_team": "Diamond City Hope"
+},
+{
+"pid": 2015939,
+"name": "Nikhil Morigaki",
+"rfl_team": "Purcell Rapids"
+},
+{
+"pid": 2016409,
+"name": "Haneya Koyosei",
+"rfl_team": "North Hatesei Bees"
+},
+{
+"pid": 2016413,
+"name": "Gwen Bernbaum",
+"rfl_team": "Fiota Swords"
+},
+{
+"pid": 2016762,
+"name": "Imogen Graycott",
+"rfl_team": "Rogaela Rovers"
+},
+{
+"pid": 2015544,
+"name": "George Daneham",
+"rfl_team": "Diveo Demons"
+},
+{
+"pid": 2015067,
+"name": "Dante Xantholedis",
+"rfl_team": "Fiota Swords"
+},
+{
+"pid": 2016162,
+"name": "Corrado Qiza",
+"rfl_team": "Classetto Cavemen"
+},
+{
+"pid": "SUB_11",
+"name": "Bilal Gangavarma",
+"rfl_team": "Stanton City Conductors"
+},
+{
+"pid": 2016670,
+"name": "Jalen Hawfield",
+"rfl_team": "Stamford Grays"
+},
+{
+"pid": 2015306,
+"name": "Noemi Stenvoll",
+"rfl_team": "Bruca Beach Hammerheads"
+},
+{
+"pid": 2015845,
+"name": "Naulei Teravaw",
+"rfl_team": "Fiota Swords"
+},
+{
+"pid": 2015186,
+"name": "Jiwoo Yanagibashi",
+"rfl_team": "Bruca Beach Hammerheads"
+},
+{
+"pid": 2016980,
+"name": "Hotah Sarvacharya",
+"rfl_team": "Stanton City Conductors"
+},
+{
+"pid": 2016146,
+"name": "Keyto Orsini",
+"rfl_team": "Fiota Swords"
+},
+{
+"pid": 2016482,
+"name": "Ohanzee Vakafusi",
+"rfl_team": "Chapel Rock Crowns"
+},
+{
+"pid": 2016815,
+"name": "Honoka Xianpan",
+"rfl_team": "Canesta Dales"
+},
+{
+"pid": 2015344,
+"name": "Winona Ahoia",
+"rfl_team": "Holliday Beetles"
+},
+{
+"pid": 2013705,
+"name": "Jerome Okonna",
+"rfl_team": "North Hatesei Bees"
+},
+{
+"pid": 2016115,
+"name": "Haruto Thunderowl",
+"rfl_team": "Fiota Bay T-Rexes"
+},
+{
+"pid": 2016093,
+"name": "Jack Vieuxbourg",
+"rfl_team": "Holliday Beetles"
+},
+{
+"pid": 2015246,
+"name": "Mikhail Gerontakis",
+"rfl_team": "Stanton City Conductors"
+},
+{
+"pid": 2017281,
+"name": "Ormyr Karmeniy",
+"rfl_team": "Diamond City Dynamos"
+},
+{
+"pid": 2015350,
+"name": "Ludmila Starenko",
+"rfl_team": "Rogaela Rovers"
+},
+{
+"pid": 2017116,
+"name": "Shreya Ramaraj",
+"rfl_team": "Bruca Beach Hammerheads"
+},
+{
+"pid": "SUB_9",
+"name": "Tariq Jenkins-Ray",
+"rfl_team": "Holliday Beetles"
+},
+{
+"pid": 2015884,
+"name": "Precious Falkenberger",
+"rfl_team": "Bruca Beach Hammerheads"
+},
+{
+"pid": 2016488,
+"name": "Akari Shirakawa",
+"rfl_team": "Wolford Dragons"
+},
+{
+"pid": 2015662,
+"name": "Tsuvai Taolei",
+"rfl_team": "Bruca Beach Hammerheads"
+},
+{
+"pid": 2017278,
+"name": "Xanthi Karadopoulos",
+"rfl_team": "Ediville Brass Tigers"
+},
+{
+"pid": 2017411,
+"name": "Aurelio Urrutia",
+"rfl_team": "Diamond City Dynamos"
+},
+{
+"pid": 2015129,
+"name": "Dieter Hoshizaki",
+"rfl_team": "Wolford Dragons"
+},
+{
+"pid": 2015891,
+"name": "Bianca Stavrokopoulos",
+"rfl_team": "Canesta Dales"
+},
+{
+"pid": 2017398,
+"name": "Ettore Fontoni",
+"rfl_team": "Diveo Demons"
+},
+{
+"pid": 2016385,
+"name": "Afamasaga Fatumoana",
+"rfl_team": "Ediville Brass Tigers"
+},
+{
+"pid": 2012803,
+"name": "Dahye In-Nam",
+"rfl_team": "Holliday Beetles"
+},
+{
+"pid": 2017399,
+"name": "Meissa Osmeniy",
+"rfl_team": "Billiataho Greats"
+},
+{
+"pid": 2016282,
+"name": "Anders Hochwald",
+"rfl_team": "Diamond City Dynamos"
+},
+{
+"pid": 2015342,
+"name": "Chaska Boismont",
+"rfl_team": "Bruca Beach Hammerheads"
+},
+{
+"pid": 2016532,
+"name": "Sooyoung Un-Gyu",
+"rfl_team": "Billiataho Greats"
+},
+{
+"pid": 2016889,
+"name": "Ladislav Chrykidis",
+"rfl_team": "Purcell Rapids"
+},
+{
+"pid": 2015388,
+"name": "Mahdi Kondopoulos",
+"rfl_team": "Rogaela Rovers"
+},
+{
+"pid": 2017413,
+"name": "Tama Fonopati",
+"rfl_team": "Bruca Beach Hammerheads"
+},
+{
+"pid": 2017225,
+"name": "Aminata Meinian",
+"rfl_team": "Canesta Dales"
+},
+{
+"pid": 2017077,
+"name": "Ishani Prabharaman",
+"rfl_team": "Billiataho Greats"
+},
+{
+"pid": 2016094,
+"name": "Corentin Verfort",
+"rfl_team": "Canesta Dales"
+},
+{
+"pid": 2015085,
+"name": "Anselmo Kagekado",
+"rfl_team": "Fiota Bay T-Rexes"
+},
+{
+"pid": 2015893,
+"name": "Nobuo Aozuka",
+"rfl_team": "Purcell Rapids"
+},
+{
+"pid": 2015846,
+"name": "Tamika Hargreaves",
+"rfl_team": "Rogaela Rovers"
+},
+{
+"pid": 2016533,
+"name": "Amedeo Nadkarni",
+"rfl_team": "Ediville Brass Tigers"
+},
+{
+"pid": 2013754,
+"name": "Tetsuro Zhizui",
+"rfl_team": "Rogaela Rovers"
+},
+{
+"pid": 2016325,
+"name": "Guadalupe Delgadillo",
+"rfl_team": "Wolford Dragons"
+},
+{
+"pid": 2016531,
+"name": "Halvar Steinecker",
+"rfl_team": "Purcell Rapids"
+},
+{
+"pid": 2015118,
+"name": "Tamsin Buenareal",
+"rfl_team": "Canesta Dales"
+},
+{
+"pid": 2015575,
+"name": "Nigel Stenmo",
+"rfl_team": "Ediville Brass Tigers"
+},
+{
+"pid": 2016878,
+"name": "Barnaby Rochepre",
+"rfl_team": "Diamond City Dynamos"
+},
+{
+"pid": 2014811,
+"name": "Sieglinde Radzinsky",
+"rfl_team": "Rogaela Rovers"
+},
+{
+"pid": 2015733,
+"name": "Gwen Marshcroft",
+"rfl_team": "Rogaela Rovers"
+},
+{
+"pid": 2016441,
+"name": "Sakura Masube",
+"rfl_team": "Fiota Bay T-Rexes"
+},
+{
+"pid": 2015313,
+"name": "Torben Schwarzfelder",
+"rfl_team": "Rogaela Rovers"
+},
+{
+"pid": 2015786,
+"name": "Fiorella Elefdopoulos",
+"rfl_team": "Ediville Brass Tigers"
+},
+{
+"pid": "SUB_2",
+"name": "Tinglan Fujinami",
+"rfl_team": "Diamond City Dynamos"
+},
+{
+"pid": 2017159,
+"name": "Sergei Falkenhoff",
+"rfl_team": "Fiota Bay T-Rexes"
+},
+{
+"pid": 2015141,
+"name": "Shengli Leilei",
+"rfl_team": "Diamond City Dynamos"
+},
+{
+"pid": 2016563,
+"name": "Leonardo Torremayor",
+"rfl_team": "Diamond City Dynamos"
+},
+{
+"pid": 2015041,
+"name": "Diego Cabranegro",
+"rfl_team": "Fiota Bay T-Rexes"
+},
+{
+"pid": 2017350,
+"name": "Guadalupe Salaettoni",
+"rfl_team": "Diveo Demons"
+},
+{
+"pid": 2017180,
+"name": "Kendrick Stoneridge",
+"rfl_team": "Canesta Dales"
+},
+{
+"pid": 2015938,
+"name": "Percy Stenvoll",
+"rfl_team": "Fiota Bay T-Rexes"
+},
+{
+"pid": 2017412,
+"name": "Henry Wickhurst",
+"rfl_team": "Diveo Demons"
+},
+{
+"pid": 2015461,
+"name": "Nils Schneehagen",
+"rfl_team": "Diveo Demons"
+},
+{
+"pid": 2016470,
+"name": "Amira Ju-Seok",
+"rfl_team": "Fiota Bay T-Rexes"
+},
+{
+"pid": 2017445,
+"name": "Tomoe Matsuda",
+"rfl_team": "Diveo Demons"
+},
+{
+"pid": 2016906,
+"name": "Tanisha Ezebuike",
+"rfl_team": "Diveo Demons"
+},
+{
+"pid": 2015244,
+"name": "Indira Walkingstick",
+"rfl_team": "Canesta Dales"
+},
+{
+"pid": 2015752,
+"name": "Ellovei Lommirrei",
+"rfl_team": "Canesta Dales"
+},
+{
+"pid": 2015754,
+"name": "Chike Kwajide",
+"rfl_team": "Canesta Dales"
+}
+],
+"note": "Picks in the order the RFL made them; \"via\" is the club whose slot it originally was. Undrafted seniors listed were signed as free agents; undrafted underclassmen returned to school."
+}
