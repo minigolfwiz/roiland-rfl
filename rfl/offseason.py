@@ -76,12 +76,24 @@ def progress(S, rnd):
     _disc.progress_traits(S, random.Random(f"disc-progress-{yr}"))   # hidden discipline traits mature (or, for a few, slide); own stream so nothing else shifts
 
 # ------------------------------------------------------------------ retirements
+# Position-specific career curves (Dan, 29 Oct 2026, from real football career lengths): RBs have the shortest careers (most are gone before 30), WRs and
+# defensive backs peak and retire in their early 30s, linemen/LBs/TEs last a little longer, kickers and punters last longest, QBs play well into their mid-to-late
+# 30s or early 40s with top QBs pushing past 37-39. Each list is (age at the coming season <=, yearly retirement chance).
+CURVES = dict(
+    RB=[(24, .012), (25, .04), (26, .07), (27, .10), (28, .15), (29, .22), (30, .35), (31, .50), (99, .70)],
+    WR=[(26, .008), (28, .015), (29, .03), (30, .06), (31, .12), (32, .22), (33, .35), (34, .50), (35, .65), (99, .80)],
+    CB=[(26, .008), (28, .015), (29, .03), (30, .06), (31, .12), (32, .22), (33, .35), (34, .50), (35, .65), (99, .80)],
+    S=[(26, .008), (28, .015), (29, .03), (30, .06), (31, .12), (32, .22), (33, .35), (34, .50), (35, .65), (99, .80)],
+    OL=[(27, .006), (29, .01), (30, .02), (31, .035), (32, .06), (33, .10), (34, .17), (35, .27), (36, .40), (37, .55), (99, .70)],
+    DL=[(27, .006), (29, .01), (30, .02), (31, .035), (32, .06), (33, .10), (34, .17), (35, .27), (36, .40), (37, .55), (99, .70)],
+    TE=[(27, .006), (29, .01), (30, .02), (31, .035), (32, .06), (33, .10), (34, .17), (35, .27), (36, .40), (37, .55), (99, .70)],
+    LB=[(26, .008), (28, .012), (29, .025), (30, .04), (31, .07), (32, .12), (33, .19), (34, .30), (35, .42), (36, .55), (99, .70)],
+    QB=[(30, .004), (33, .015), (34, .03), (35, .05), (36, .08), (37, .12), (38, .20), (39, .30), (40, .42), (41, .55), (99, .75)],
+    K=[(30, .004), (34, .01), (36, .03), (38, .06), (40, .12), (41, .22), (42, .35), (99, .6)],
+    P=[(30, .004), (34, .01), (36, .03), (38, .06), (40, .12), (41, .22), (42, .35), (99, .6)])
 def hazard(p, yr):
     a = yr + 1 - p['born']                                  # age at the coming season, as in the 2042 offseason list
-    base = [(24, .004), (27, .008), (29, .017), (30, .028), (31, .04), (32, .06), (33, .18), (34, .45), (35, .6), (99, .75)]
-    h = next(v for lim, v in base if a <= lim)
-    if p['pos'] in ('QB', 'K', 'P'): h *= .6
-    elif p['pos'] in ('RB', 'CB', 'S'): h *= 1.3
+    h = next(v for lim, v in CURVES[p['pos']] if a <= lim)
     ov = ovr(p)
     h *= 1.8 if ov < 6.5 else (.5 if ov >= 8.5 else 1.0)
     if p.get('starter') and a <= 30: h *= .4                    # producers/starters rarely walk away early (Neraini rule, 23 Oct 2026)
