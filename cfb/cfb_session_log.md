@@ -808,3 +808,4 @@ PUSHED 2026-10-28 (write access restored; repo attached with push): state throug
 
 ## Season 19 (2044) week 14 (regular season complete, 980/980)
 - Gameview: UFNH at Fiota Bay (UFNH 34-26; #4 beat #10). Pages published. Awaiting wk14 committee ballot. Then: CCGs (ccg.py), Ryskamp four after CCGs, parity monitor wk14 (header bug).
+- Week 14 board installed (ballot_s19_w14.json): 1 Pistolheart, 2 Eona, 3 UFNH, 4 Ciarralotta State, 5 Skeenerland. Out: Dietsche, Costique. CCG preview shown (not played). parity_monitor.py takes a SEASON number (not week): earlier '2033 through week 14' header was my misuse; run with no arg for current season.

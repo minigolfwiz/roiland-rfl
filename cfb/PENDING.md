@@ -3176,3 +3176,4 @@ PUSHED 2026-10-28 (write access restored; repo attached with push): state throug
 - [wk13] Awaiting ballot_s19_w13.json; install (backup pre_w13board), rebuild viewer, wk14 candidates (UFNH@Fiota Bay, Skeenerland@Skeenerland State[visited], Ranroman@Ranroman State, Park Island@Burrstone). Ryskamp cut to 4 due after next checkpoint.
 - [wk13] Committee board installed (audit clean); viewer republished. Wk14 candidates given.
 - [wk14] REGULAR SEASON COMPLETE. Awaiting ballot_s19_w14.json; install (backup pre_w14board), rebuild viewer. Then conference championship games (ccg.py), Ryskamp four, parity monitor wk14.
+- [wk14] Board installed; viewer v199. CCG preview shown to Dan (NOT PLAYED); awaiting go -> backup, python3 ccg.py --commit. Then Ryskamp four, selection ballot.
