@@ -128,3 +128,5 @@
 - 2044 conference finals: Bearcats (3) 21, Mastodons (1) 6 at Steam Bowl; Commodores (6) 24, Renegades (8) 17 in OT at Lumber Bowl. Mega Bowl: (3) Bearcats vs (6) Commodores at Prehistoria Stadium, Fiota Bay. Race to 11 stays 10-10-10. (Note: the round 2 line above says Chimah 6 INT; the box score had 5.)
 
 - 2044 Mega Bowl: Commodores (6) 37, Bearcats (3) 27 at Prehistoria Stadium, Fiota Bay. Champions: Port Logan Commodores (2nd title, 2026 and 2044; Mega Bowl record 2-7). MVP Yrei Ganneimyr (RB). Race to 11 ledger final for 2044: Redwoods, Greats, Brass Tigers 10 each. Next: Ga-Il felony and Komodos filming findings, then the 2045 offseason.
+
+- STANDING RULE (Dan, 29 Oct 2026): Mega Bowl and every playoff round recap must be spoiler-free at the top: narrate each game in order (quarter by quarter, running score after every scoring play and quarter end), and put final scores, winners, standouts, injuries and the Race to 11 consequence at the bottom. Do not open the reply with the result. Applies without being asked.
