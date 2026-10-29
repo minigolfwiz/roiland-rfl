@@ -805,3 +805,6 @@ PUSHED 2026-10-28 (write access restored; repo attached with push): state throug
 ## Season 19 (2044) week 13
 - Gameview: Roosevelt at Park Island (Roosevelt 38-33; #13 beat #1). Wk13 played. Pages published. Awaiting wk13 ballot before wk14 candidates.
 - Week 13 committee board installed: 1 Pistolheart, 2 Eona, 3 Ciarralotta State, 4 UFNH, 5 Skeenerland. Out: Ranroman, Greene, Lornaman. In: Black Forest, German Shores, Costique.
+
+## Season 19 (2044) week 14 (regular season complete, 980/980)
+- Gameview: UFNH at Fiota Bay (UFNH 34-26; #4 beat #10). Pages published. Awaiting wk14 committee ballot. Then: CCGs (ccg.py), Ryskamp four after CCGs, parity monitor wk14 (header bug).

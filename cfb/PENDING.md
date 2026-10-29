@@ -3175,3 +3175,4 @@ PUSHED 2026-10-28 (write access restored; repo attached with push): state throug
 - [wk12] Committee board installed (audit clean); viewer republished. Wk13 candidates given to Dan.
 - [wk13] Awaiting ballot_s19_w13.json; install (backup pre_w13board), rebuild viewer, wk14 candidates (UFNH@Fiota Bay, Skeenerland@Skeenerland State[visited], Ranroman@Ranroman State, Park Island@Burrstone). Ryskamp cut to 4 due after next checkpoint.
 - [wk13] Committee board installed (audit clean); viewer republished. Wk14 candidates given.
+- [wk14] REGULAR SEASON COMPLETE. Awaiting ballot_s19_w14.json; install (backup pre_w14board), rebuild viewer. Then conference championship games (ccg.py), Ryskamp four, parity monitor wk14.
