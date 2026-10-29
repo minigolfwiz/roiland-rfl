@@ -3183,3 +3183,4 @@ PUSHED 2026-10-28 (write access restored; repo attached with push): state throug
 - [playoff] R1 played with corrected field (Park Island at 18), viewer republished. R2 preview shown in chat; awaiting go (backup pre_s19_po2 first; python3 -c 'import playoff; playoff.run_round2()'). Previews in chat, mobile-readable, no tables.
 - [playoff] R2 played, viewer republished. QF preview shown; awaiting go (backup pre_s19_po_qf; playoff.run_qf()).
 - [playoff] QF played, viewer republished. SF preview shown; awaiting go (backup pre_s19_posf; playoff.run_sf()).
+- [playoff] SF played, viewer republished. Title game preview shown; awaiting go (backup pre_s19_po_champ; playoff.run_champ()).

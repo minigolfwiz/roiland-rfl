@@ -824,3 +824,5 @@ QF (neutral, rotation): 1 Pistolheart v 18 Park Island @ 501 Bowl, Stamford (Cia
 
 ## 2044 PLAYOFF QUARTERFINALS PLAYED (backups *.pkl.pre_s19_poqf): Pistolheart 38 Park Island 17 @501 Bowl; Barhold 24 Eona 18 @Steam Bowl; Roosevelt 49 UNN 28 @Copper Bowl; Krobe State 34 Phangrine State 0 @Redwood Bowl.
 SF: 1 Pistolheart v 13 Barhold @ Star Bowl, Ediville (Natzumakis); 4 Roosevelt v 7 Krobe State @ Lumber Bowl, Port Logan (Fiota). Preview in chat; NOT PLAYED.
+
+## 2044 PLAYOFF SEMIFINALS PLAYED (backups *.pkl.pre_s19_posf): Pistolheart 49 Barhold 33 @Star Bowl; Roosevelt 30 Krobe State 24 @Lumber Bowl. NATIONAL CHAMPIONSHIP: 1 Pistolheart v 4 Roosevelt. Preview in chat; NOT PLAYED. After title: final media poll, Ryskamp winner + awards (finalists), parity monitor post-season, parity audit, title sites 2045+ (show full list), republish viewer.

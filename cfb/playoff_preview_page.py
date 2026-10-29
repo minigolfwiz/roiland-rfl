@@ -34,6 +34,9 @@ if rnd in ('qf','sf'):
     for h,l in PV.P[rnd]:
         v=CM.rotation_venue(s['season'],rnd.upper(),h,used,l); used.add(v['city'])
         VEN[h]='%s, %s, %s'%(v['name'],v['city'],v['state'])
+if rnd=='final':
+    import committee as CM
+    v=CM.champ_venue(s['season']); VEN[PV.P['final'][0]]='%s (%s), %s'%(v.get('name') or 'Championship',v['city'],v['state'])
 def game(h,a):
     rk={x:r for r,x in s.get('committee_poll_current',[])}
     w,last=series(db,h,a); n=sum(w.values())
@@ -47,6 +50,7 @@ def game(h,a):
 if rnd=='r2' and 'r2' not in PV.P:
     import playoff as PL
     pairs=PL._pair_host(PV.P,PV.P['byes'],[r['winner'] for r in PV.P['r1_results']])
+elif rnd=='final': pairs=[PV.P['final']]
 else: pairs=PV.P[rnd]
 data={'year':2025+s['season'],'round':LABEL.get(rnd,rnd),'games':[game(h,a) for h,a in pairs]}
 tpl=open('playoff_preview_template.html').read()
