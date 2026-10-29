@@ -115,3 +115,5 @@
 - 2044 week 16: Raptors K Rhys Ga-Il put on the exempt list (sexual assault investigation; felony resolution pending). Beetles DL Baltazar Liangzong: no penalty, Dan asked for an investigation into whether the hit was flagrant — opened by hand as a `flagrant` investigation story (`S-W16-2-2044`, hidden truth drawn deterministically; findings due week 20). Added `FIND_WHAT['flagrant']` and a findings override in `cases.build_findings`. Note: a "No action" key does not open a story; use an open_story option or open it by hand.
 
 - 2044 week 18: Komodos fined $250K for illegal filming (camera aimed at the Bats sideline); Dan asked for an investigation into whether more action is needed — opened by hand as a `filming` investigation story (`S-W18-1-2044`, hidden truth unfounded, findings due 4 weeks out, i.e. after the regular season). Tsunami WR Korresaw Peynovaw fined $10K for naming an official (Dan: "Fine for naming a specific official"). Added `FIND_WHAT['filming']`.
+
+- 2044 week 20 flex (Dan, manual): the first Sunday-night game (Dales at Crowns) was swapped out for Hope at Dragons (logged in `season.flexes`). Week 20 had two SNF games, no MNF.

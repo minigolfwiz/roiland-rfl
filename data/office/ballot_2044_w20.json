@@ -1,0 +1,503 @@
+{
+ "year": 2044,
+ "week": 20,
+ "potw": {
+  "off": [
+   {
+    "pid": 9034832,
+    "name": "Jiwoo Swiftknife",
+    "pos": "RB",
+    "club": "Ediville Brass Tigers",
+    "line": "26 car, 86 yds, 3 rec, 89 yds, 3 TD",
+    "res": "W 45-28 vs Rapids",
+    "score": 35.5,
+    "plays": [
+     "Q3 10:38 2-yd TD run (was down 11)",
+     "Q3 3:12 14-yd TD catch from Zuzana Quisvaw (was down 4)",
+     "Q4 4:48 1-yd TD run (was up 3, late)"
+    ]
+   },
+   {
+    "pid": 9034315,
+    "name": "Nigel Sarvashankar",
+    "pos": "RB",
+    "club": "Fiota Bay T-Rexes",
+    "line": "16 car, 35 yds, 4 rec, 50 yds, 3 TD",
+    "res": "W 28-27 at Tsunami",
+    "score": 30.25,
+    "plays": [
+     "Q2 10:04 1-yd TD run (was down 4)",
+     "Q4 6:38 7-yd TD run (was down 11), cut the deficit late",
+     "Q4 3:43 7-yd TD catch from Bruno Rioserna (was down 5, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9035279,
+    "name": "Barnaby Snowbird",
+    "pos": "QB",
+    "club": "San Saltadac Sea Lions",
+    "line": "21/27, 324 yds, 3 TD, 55 rush yds",
+    "res": "W 31-17 vs Renegades",
+    "score": 28.63,
+    "plays": [
+     "Q2 0:00 touchdown (was down 3)",
+     "Q3 1:21 7-yd TD pass to Signe Moala (was up 7)",
+     "Q4 10:58 12-yd TD pass to Leonel Ackerstein (was up 14)"
+    ]
+   },
+   {
+    "pid": 9034234,
+    "name": "Osamu Santascio",
+    "pos": "QB",
+    "club": "Costique Bearcats",
+    "line": "23/33, 314 yds, 4 TD, 1 INT, 38 rush yds",
+    "res": "W 48-14 vs Beavers",
+    "score": 28.09,
+    "plays": [
+     "Q1 9:11 5-yd TD pass to Finn Vestgaard (was tied)",
+     "Q1 3:34 interception thrown (up 7)",
+     "Q1 1:07 21-yd TD pass to Finn Vestgaard (was up 7)",
+     "Q3 6:25 3-yd TD pass to Jerome Hawshaw (was up 20)",
+     "Q4 9:36 3-yd TD pass to Itsuki Nagamaki (was up 20)"
+    ]
+   },
+   {
+    "pid": 9035280,
+    "name": "Leonel Ackerstein",
+    "pos": "WR",
+    "club": "San Saltadac Sea Lions",
+    "line": "7 rec, 117 yds, 2 TD",
+    "res": "W 31-17 vs Renegades",
+    "score": 23.7,
+    "plays": [
+     "Q2 0:00 touchdown (was down 3)",
+     "Q4 10:58 12-yd TD catch from Barnaby Snowbird (was up 14)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9038011,
+    "name": "Guadalupe Goldberry",
+    "pos": "DL",
+    "club": "Coachville Mastodons",
+    "line": "6 tackles, 4 sacks",
+    "res": "L 12-28 at Swords",
+    "score": 23.6,
+    "plays": []
+   },
+   {
+    "pid": 9035211,
+    "name": "Iosefa Zhuohan",
+    "pos": "LB",
+    "club": "Diveo Demons",
+    "line": "7 tackles, 3 sacks",
+    "res": "W 23-16 vs Greats",
+    "score": 19.2,
+    "plays": []
+   },
+   {
+    "pid": 9037860,
+    "name": "Perei Nomaw",
+    "pos": "LB",
+    "club": "Far Farris Raccoons",
+    "line": "5 tackles, 2 sacks, 1 INT",
+    "res": "W 33-16 at Rovers",
+    "score": 19.0,
+    "plays": [
+     "Q4 0:28 interception returned 16 yds (up 17)"
+    ]
+   },
+   {
+    "pid": 9101140,
+    "name": "Nikau Bluedeer",
+    "pos": "LB",
+    "club": "South Burke Tsunami",
+    "line": "4 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 27-28 vs T-Rexes",
+    "score": 18.4,
+    "plays": [
+     "Q3 5:52 sack and forced fumble (up 7), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9101174,
+    "name": "Chaewon Peimirrei",
+    "pos": "LB",
+    "club": "Hughes City Asteroids",
+    "line": "7 tackles, 2 INT",
+    "res": "T 21-21 at Raptors",
+    "score": 18.2,
+    "plays": [
+     "Q1 8:18 interception (up 7)",
+     "Q3 14:18 interception returned 19 yds (tied), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9101682,
+    "name": "Agnieszka Demedopoulos",
+    "pos": "DL",
+    "club": "Fiota Bay T-Rexes",
+    "line": "3 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 28-27 at Tsunami",
+    "score": 17.8,
+    "plays": [
+     "Q2 10:41 sack and forced fumble (down 4), led to a touchdown"
+    ]
+   }
+  ],
+  "st": [
+   {
+    "pid": 9101753,
+    "name": "Runa Lindtveit",
+    "pos": "P",
+    "club": "Stamford Grays",
+    "line": "8 punts, 47.6 avg, 7 inside the 20",
+    "res": "L 14-23 vs Rangers",
+    "score": 20.666666666666664,
+    "plays": []
+   },
+   {
+    "pid": 9037467,
+    "name": "Ishani Bernhardt",
+    "pos": "K",
+    "club": "Far Farris Raccoons",
+    "line": "4/4 FG, long 59, 3/3 XP",
+    "res": "W 33-16 at Rovers",
+    "score": 18.75,
+    "plays": [
+     "Q1 11:56 50-yd GOOD",
+     "Q1 7:11 36-yd GOOD",
+     "Q1 1:43 59-yd GOOD",
+     "Q4 1:11 44-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9037423,
+    "name": "Baltazar Kleinmann",
+    "pos": "P",
+    "club": "Diveo Demons",
+    "line": "6 punts, 50.3 avg, 4 inside the 20",
+    "res": "W 23-16 vs Greats",
+    "score": 16.333333333333336,
+    "plays": []
+   },
+   {
+    "pid": 9101378,
+    "name": "Nikhil Devadeva",
+    "pos": "P",
+    "club": "Underwood Bats",
+    "line": "7 punts, 48.6 avg, 3 inside the 20",
+    "res": "W 23-17 at Hammerheads",
+    "score": 14.499999999999998,
+    "plays": []
+   },
+   {
+    "pid": 9036005,
+    "name": "Alphonse Ramavasan",
+    "pos": "P",
+    "club": "Hughes City Asteroids",
+    "line": "6 punts, 46.2 avg, 5 inside the 20",
+    "res": "T 21-21 at Raptors",
+    "score": 13.666666666666664,
+    "plays": []
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "flagrant",
+   "title": "Findings: Flagrant hit, ejection",
+   "who": [
+    {
+     "name": "Baltazar Liangzong",
+     "pos": "DL",
+     "club": "Holliday Beetles",
+     "pid": 9037789,
+     "club_level": false
+    }
+   ],
+   "game": null,
+   "where": "League investigation",
+   "text": "The league has finished its review of the hit by Baltazar Liangzong (Beetles) in week 16, 2044. Investigators concluded that Baltazar Liangzong's hit was flagrant: avoidable contact that was clearly late.\n\nOriginal matter: Baltazar Liangzong (DL, Beetles) was ejected with 14:55 left in the third quarter after a roughing the passer flag for a hit the officials called flagrant. Film review showed the contact was close to the whistle. It happened in front of a national television audience. Teammates had to hold Liangzong back as he left the field.",
+   "severity": 6.4,
+   "prior": 0,
+   "stage": "findings",
+   "pids": [
+    9037789
+   ],
+   "precedent": [],
+   "chain": [
+    "Week 16, 2044: investigation opened"
+   ],
+   "options": [
+    {
+     "key": "k40",
+     "label": "Fine $40K",
+     "games": 0,
+     "fine": 40000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $40K"
+    },
+    {
+     "key": "g1",
+     "label": "1 game + $75K",
+     "games": 1,
+     "fine": 75000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Out 1 game, fined $75K"
+    },
+    {
+     "key": "g2",
+     "label": "2 games + $75K",
+     "games": 2,
+     "fine": 75000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Out 2 games, fined $75K"
+    },
+    {
+     "key": "g3",
+     "label": "3 games + $75K",
+     "games": 3,
+     "fine": 75000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Out 3 games, fined $75K"
+    },
+    {
+     "key": "g4",
+     "label": "4 games",
+     "games": 4,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Out 4 games"
+    },
+    {
+     "key": "none",
+     "label": "No further action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": ""
+    }
+   ],
+   "precedent_pick": null,
+   "sid": "S-W16-2-2044",
+   "tier": "moderate",
+   "id": "W20-1",
+   "week": 20
+  },
+  {
+   "type": "helmet",
+   "title": "Illegal use of the helmet",
+   "who": [
+    {
+     "name": "Vlassis Panatidis",
+     "pos": "S",
+     "club": "Coachville Mastodons",
+     "pid": 9038401
+    }
+   ],
+   "game": "G137",
+   "where": "Coachville Mastodons at Fiota Swords, week 20",
+   "text": "Vlassis Panatidis (S, Mastodons) led with the crown of his helmet with 2:10 left in the third quarter and drew an unnecessary roughness flag. Lashawn Vignovese (WR, Swords) left for a few plays and returned. Panatidis told reporters he would play it the same way again.\n\nVlassis Panatidis's agent, Imogen Valdez, says the player will cooperate with the review.",
+   "severity": 4.9,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9038401,
+    9037337
+   ],
+   "precedent": [
+    "2044 wk 5, Lech Braunbruck: Warning (severity 4.5)",
+    "2044 wk 7, Anais Oakhurst: Warning (severity 4.2)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $25K"
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $50K"
+    },
+    {
+     "key": "k100",
+     "label": "Fine $100K",
+     "games": 0,
+     "fine": 100000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $100K"
+    }
+   ],
+   "precedent_pick": "none",
+   "tier": "minor",
+   "id": "W20-2",
+   "week": 20
+  },
+  {
+   "type": "helmet",
+   "title": "Illegal use of the helmet",
+   "who": [
+    {
+     "name": "Jongdae Yukibashi",
+     "pos": "OL",
+     "club": "Diamond City Hope",
+     "pid": 9036779
+    }
+   ],
+   "game": "G116",
+   "where": "Diamond City Hope at Wolford Dragons, week 20",
+   "text": "Jongdae Yukibashi (OL, Hope) was flagged for unnecessary roughness with 5:19 left in the second quarter for helmet-to-helmet contact. Yakubu Vaufort (WR, Dragons) stayed in the game. Yukibashi sought out Vaufort after the game to apologize.\n\nJongdae Yukibashi's agent, Beatrix Lund, says the player will cooperate with the review.",
+   "severity": 3.1,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9036779,
+    9037972
+   ],
+   "precedent": [
+    "2044 wk 14, Kjell Renvaw: No action (severity 3.1)",
+    "2043 wk 14, Sareivo Treinovaw: Warning (severity 3.6)",
+    "2043 wk 12, Caden Vance: Warning (severity 3.6)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $10K"
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $25K"
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $50K"
+    }
+   ],
+   "precedent_pick": "none",
+   "tier": "minor",
+   "id": "W20-3",
+   "week": 20
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": [
+  {
+   "title": "Sexual assault investigation",
+   "who": "Rhys Ga-Il",
+   "club": "Cordelle Raptors",
+   "since": "week 16, 2044",
+   "ruling": "Exempt list: out until the case resolves"
+  },
+  {
+   "title": "Flagrant hit, ejection",
+   "who": "Baltazar Liangzong",
+   "club": "Holliday Beetles",
+   "since": "week 16, 2044",
+   "ruling": ""
+  },
+  {
+   "title": "Illegal filming",
+   "who": "Verigon Komodos",
+   "club": "Verigon Komodos",
+   "since": "week 18, 2044",
+   "ruling": ""
+  },
+  {
+   "title": "Exempt list",
+   "who": "Rhys Ga-Il",
+   "club": "Cordelle Raptors",
+   "since": "",
+   "ruling": ""
+  }
+ ]
+}
