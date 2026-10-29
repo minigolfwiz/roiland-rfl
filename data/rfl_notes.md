@@ -111,3 +111,5 @@
 - 2044 week 2 bench-clearing: Toatele (Hammerheads OL) was drawn as the late-hit player ($10K), findings week 5 ruled 1 game + $15K. Bats hazing findings week 5 ruled $500K + a 2045 round 4 pick.
 
 - 2044 week 9 uniform violation: Ladislav Georridis (Redwoods QB) fined $15K; Dan: warning of suspension for repeated use (recorded in `S['office']['watch']`; a repeat equipment violation should draw a suspension).
+
+- 2044 week 16: Raptors K Rhys Ga-Il put on the exempt list (sexual assault investigation; felony resolution pending). Beetles DL Baltazar Liangzong: no penalty, Dan asked for an investigation into whether the hit was flagrant — opened by hand as a `flagrant` investigation story (`S-W16-2-2044`, hidden truth drawn deterministically; findings due week 20). Added `FIND_WHAT['flagrant']` and a findings override in `cases.build_findings`. Note: a "No action" key does not open a story; use an open_story option or open it by hand.

@@ -422,7 +422,7 @@ def spec_titles(key): return CATALOG[key]['title'] if CATALOG[key]['title'] else
 for _k, _v in FELONY.items(): CATALOG['felony_' + _k]['title'] = _v['title']
 
 # ----------------------------------------------------------------------------------------------------------------------------- follow-ups
-FIND_WHAT = dict(bench_clear='the late hit that set off the scrum', bounty='a pay-for-injury program', hazing='a pattern of hazing', tampering='improper contact with a player under contract', cap='unreported payments', gambling='wagers on league games')
+FIND_WHAT = dict(flagrant='a flagrant hit', bench_clear='the late hit that set off the scrum', bounty='a pay-for-injury program', hazing='a pattern of hazing', tampering='improper contact with a player under contract', cap='unreported payments', gambling='wagers on league games')
 FIND_TEXT = dict(
     substantiated=["The league's investigators concluded the allegation of {what} is substantiated.", "After a review of records and interviews, the league found that {what} did occur."],
     partial=["The league's investigators substantiated part of the allegation of {what} and rejected the rest.", "Investigators found some evidence of {what} but could not confirm the full allegation."],
@@ -467,6 +467,11 @@ def build_findings(S, rnd, st, item, week, chain, p):
                    'partial': f"Investigators found {A} at fault for the late hit that set off the scrum, and found {B} partly at fault for escalating it.",
                    'unfounded': f"Investigators could not establish that either player was at fault: neither {A} nor {B} was found responsible."}[st['truth']]
         text = '\n\n'.join([f"The league has finished its investigation of the bench-clearing scrum in week {st['week']}, {st['year']}. " + verdict, 'Original matter: ' + st['summary']])
+    if key == 'flagrant':      # Dan (2044 wk 16): investigation to settle whether the hit was flagrant; findings say so plainly
+        verdict = {'substantiated': f"Investigators concluded that {st['name']}'s hit was flagrant: avoidable contact that was clearly late.",
+                   'partial': f"Investigators concluded that {st['name']}'s hit was reckless but not flagrant: avoidable, though the timing was close to the whistle.",
+                   'unfounded': f"Investigators concluded that {st['name']}'s hit was not flagrant: the contact was close to the whistle and the league found no violation."}[st['truth']]
+        text = '\n\n'.join([f"The league has finished its review of the hit by {st['name']} ({nick(st['club'])}) in week {st['week']}, {st['year']}. " + verdict, 'Original matter: ' + st['summary']])
     if st['truth'] == 'unfounded':
         opts = [O('clear', 'Close the matter: no violation found', sug=True), O('warn', 'Close the matter with a warning about procedures')]
         fv = fine_for(3.0) * (6 if spec['subject'] != 'player' else 1)

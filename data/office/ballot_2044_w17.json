@@ -1,0 +1,494 @@
+{
+ "year": 2044,
+ "week": 17,
+ "potw": {
+  "off": [
+   {
+    "pid": 9033790,
+    "name": "Zainab Yiling",
+    "pos": "QB",
+    "club": "Palm Creek Leatherbacks",
+    "line": "20/34, 333 yds, 2 TD, 94 rush yds",
+    "res": "W 38-21 at Lions",
+    "score": 37.59,
+    "plays": [
+     "Q1 7:23 4-yd TD run (was tied)",
+     "Q2 10:38 8-yd TD pass to Liqin Blackcrane (was up 14)",
+     "Q3 9:42 32-yd TD pass to Fumiko Midzato (was up 14)",
+     "Q3 3:20 7-yd TD run (was up 21)"
+    ]
+   },
+   {
+    "pid": 9036981,
+    "name": "Areum Vesthaug",
+    "pos": "QB",
+    "club": "Good River Rangers",
+    "line": "27/44, 440 yds, 3 TD",
+    "res": "W 27-26 at Conductors",
+    "score": 32.87,
+    "plays": [
+     "Q3 5:54 4-yd TD pass to Eleanor Ashford (was down 7)",
+     "Q4 5:04 6-yd TD pass to Paytah Radenko (was down 6, late), tied the game",
+     "Q4 1:16 8-yd TD pass to Tahatan Runningwater (was down 6, late), tied the game"
+    ]
+   },
+   {
+    "pid": 9035740,
+    "name": "Hugh Haselheim",
+    "pos": "WR",
+    "club": "Purcell Rapids",
+    "line": "7 rec, 120 yds, 2 TD",
+    "res": "W 27-21 at Komodos",
+    "score": 27.0,
+    "plays": [
+     "Q3 4:17 9-yd TD catch from Abdelaziz Ibekwe (was up 1)",
+     "OT 3:06 17-yd TD catch from Abdelaziz Ibekwe (was tied, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9037790,
+    "name": "Mikhail Nikonidis",
+    "pos": "RB",
+    "club": "Diamond City Hope",
+    "line": "27 car, 106 yds, 2 rec, 27 yds, 2 TD",
+    "res": "L 20-27 at Raptors",
+    "score": 26.05,
+    "plays": [
+     "Q2 0:11 2-yd TD run (was down 17)",
+     "Q4 1:44 1-yd TD run (was down 14), cut the deficit late"
+    ]
+   },
+   {
+    "pid": 9035242,
+    "name": "Sione Larrazabal",
+    "pos": "RB",
+    "club": "Hughes City Asteroids",
+    "line": "32 car, 131 yds, 2 TD",
+    "res": "W 20-6 at Beetles",
+    "score": 25.1,
+    "plays": [
+     "Q2 9:25 4-yd TD run (was up 3)",
+     "Q4 13:57 2-yd TD run (was up 13)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9034799,
+    "name": "Beatrice Appiah",
+    "pos": "LB",
+    "club": "Billiataho Greats",
+    "line": "9 tackles, 3 sacks, 1 forced fumble",
+    "res": "W 24-21 vs Beavers",
+    "score": 24.4,
+    "plays": [
+     "Q2 2:06 sack and forced fumble (up 11)"
+    ]
+   },
+   {
+    "pid": 9039522,
+    "name": "Ustevaw Quisniy",
+    "pos": "CB",
+    "club": "Hughes City Asteroids",
+    "line": "7 tackles, 3 INT",
+    "res": "W 20-6 at Beetles",
+    "score": 24.2,
+    "plays": [
+     "Q1 6:49 interception returned 9 yds (tied), led to a field goal",
+     "Q3 10:37 interception returned 16 yds (up 13)",
+     "Q4 3:20 interception (up 14)"
+    ]
+   },
+   {
+    "pid": 9034908,
+    "name": "Anei Chernovsky",
+    "pos": "LB",
+    "club": "North Hatesei Bees",
+    "line": "8 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 30-20 vs Bats",
+    "score": 20.8,
+    "plays": [
+     "Q2 6:55 sack and forced fumble (down 3), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9035907,
+    "name": "Mariama Svetentsev",
+    "pos": "LB",
+    "club": "Chapel Rock Crowns",
+    "line": "6 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 24-17 at Hammerheads",
+    "score": 19.6,
+    "plays": [
+     "Q3 11:03 sack and forced fumble (up 11), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9101709,
+    "name": "Snezana Kleinbauer",
+    "pos": "LB",
+    "club": "Rogaela Rovers",
+    "line": "5 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 10-22 vs Commodores",
+    "score": 19.0,
+    "plays": [
+     "Q2 8:19 sack and forced fumble (down 3), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9033795,
+    "name": "Paytah Qaddoumi",
+    "pos": "DL",
+    "club": "Eona Topcats",
+    "line": "5 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 23-38 at Swords",
+    "score": 19.0,
+    "plays": [
+     "Q3 3:14 sack and forced fumble (down 11), led to a field goal"
+    ]
+   }
+  ],
+  "st": [
+   {
+    "pid": 9037950,
+    "name": "Luca Tingdi",
+    "pos": "K",
+    "club": "Port Logan Commodores",
+    "line": "5/5 FG, long 55, 1/1 XP",
+    "res": "W 22-10 at Rovers",
+    "score": 20.0,
+    "plays": [
+     "Q1 9:45 48-yd GOOD",
+     "Q3 12:04 47-yd GOOD",
+     "Q3 5:18 27-yd GOOD",
+     "Q3 1:41 55-yd GOOD",
+     "Q4 10:17 23-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9036937,
+    "name": "Talise Quisseil",
+    "pos": "K",
+    "club": "Stanton City Conductors",
+    "line": "4/5 FG, long 55, 2/2 XP",
+    "res": "L 26-27 vs Rangers",
+    "score": 15.5,
+    "plays": [
+     "Q1 3:43 45-yd MISSED",
+     "Q2 8:46 19-yd GOOD",
+     "Q2 5:07 50-yd GOOD",
+     "Q3 1:19 55-yd GOOD",
+     "Q4 13:31 45-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9034451,
+    "name": "Amparo Sollemyr",
+    "pos": "P",
+    "club": "Queensville Phenoms",
+    "line": "8 punts, 45.9 avg, 5 inside the 20",
+    "res": "W 27-6 at Mastiffs",
+    "score": 15.333333333333332,
+    "plays": []
+   },
+   {
+    "pid": 9036455,
+    "name": "Jongdae Rasmussen",
+    "pos": "P",
+    "club": "Fiota Bay T-Rexes",
+    "line": "6 punts, 48.2 avg, 4 inside the 20",
+    "res": "L 7-27 vs Silverbacks",
+    "score": 14.166666666666664,
+    "plays": []
+   },
+   {
+    "pid": 9101086,
+    "name": "Zara Wexley",
+    "pos": "P",
+    "club": "South Burke Tsunami",
+    "line": "7 punts, 47.9 avg, 3 inside the 20",
+    "res": "L 17-27 vs Cavemen",
+    "score": 13.666666666666663,
+    "plays": []
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "flagrant",
+   "title": "Ejected for a hit to the head",
+   "who": [
+    {
+     "name": "Maximo Penalarga",
+     "pos": "DL",
+     "club": "Underwood Bats",
+     "pid": 9101150
+    }
+   ],
+   "game": "G179",
+   "where": "Underwood Bats at North Hatesei Bees, week 17",
+   "text": "Officials ejected Maximo Penalarga (DL, Bats) with 11:11 left in the third quarter for a hit on Rohan Chakraborty (QB, Bees) that drew a roughing the passer flag. Rohan Chakraborty (QB, Bees) left for a few plays and returned. Penalarga sought out Chakraborty after the game to apologize.\n\nOfficials in the game, led by Isidro Valmont, reported the play to the league.",
+   "severity": 4.4,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9101150,
+    9101671
+   ],
+   "precedent": [
+    "2044 wk 16, Baltazar Liangzong: No action (severity 5.0)",
+    "2043 wk 17, Lucia Duregard: Fine $50K (severity 5.0)",
+    "2043 wk 7, Vidar Solberg: 1 game + $25K (severity 5.0)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k15",
+     "label": "Fine $15K",
+     "games": 0,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Fined $15K"
+    },
+    {
+     "key": "g1",
+     "label": "1 game + $25K",
+     "games": 1,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Out 1 game, fined $25K"
+    },
+    {
+     "key": "g2",
+     "label": "2 games + $25K",
+     "games": 2,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Out 2 games, fined $25K"
+    },
+    {
+     "key": "g3",
+     "label": "3 games + $25K",
+     "games": 3,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Out 3 games, fined $25K"
+    }
+   ],
+   "precedent_pick": "k15",
+   "tier": "moderate",
+   "id": "W17-1",
+   "week": 17
+  },
+  {
+   "type": "fan",
+   "title": "Confrontation with a fan",
+   "who": [
+    {
+     "name": "Belen Caraerini",
+     "pos": "CB",
+     "club": "Queensville Phenoms",
+     "pid": 9101234
+    }
+   ],
+   "game": "G300",
+   "where": "Queensville Phenoms at New Madrid Mastiffs, week 17",
+   "text": "Belen Caraerini (CB, Phenoms) threw a towel at a fan who was heckling him after the game. Video of the exchange circulated on social media.\n\nThe Phenoms say the player was provoked.",
+   "severity": 4.2,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9101234
+   ],
+   "precedent": [
+    "2044 wk 15, Georgia Yenteniy: Fine $15K (severity 3.8)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k15",
+     "label": "Fine $15K",
+     "games": 0,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $15K"
+    },
+    {
+     "key": "k40",
+     "label": "Fine $40K",
+     "games": 0,
+     "fine": 40000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Fined $40K"
+    },
+    {
+     "key": "k75",
+     "label": "Fine $75K",
+     "games": 0,
+     "fine": 75000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $75K"
+    }
+   ],
+   "precedent_pick": null,
+   "tier": "minor",
+   "id": "W17-2",
+   "week": 17
+  },
+  {
+   "type": "defenseless",
+   "title": "Hit on a defenseless player",
+   "who": [
+    {
+     "name": "Zhenzhen Zhigong",
+     "pos": "LB",
+     "club": "Lornaman Renegades",
+     "pid": 9101620
+    }
+   ],
+   "game": "G230",
+   "where": "Lornaman Renegades at El Latigo Shredders, week 17",
+   "text": "Zhenzhen Zhigong (LB, Renegades) was flagged for roughing the passer with 5:50 left in the first quarter for a hit on a player the officials judged defenseless. Alfie Gyejide (QB, Shredders) stayed in the game.\n\nThe league office has asked the Renegades for their account.",
+   "severity": 3.2,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9101620,
+    9034297
+   ],
+   "precedent": [
+    "2044 wk 7, Lyudmila Lambrmelis: Warning (severity 3.8)",
+    "2043 wk 6, Emeka Lockwood: Warning (severity 3.8)",
+    "2043 wk 2, Shaojun Myeong-Gu: Warning (severity 3.8)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $10K"
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $25K"
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $50K"
+    }
+   ],
+   "precedent_pick": "none",
+   "tier": "minor",
+   "id": "W17-3",
+   "week": 17
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": [
+  {
+   "title": "Sexual assault investigation",
+   "who": "Rhys Ga-Il",
+   "club": "Cordelle Raptors",
+   "since": "week 16, 2044",
+   "ruling": "Exempt list: out until the case resolves"
+  },
+  {
+   "title": "Flagrant hit, ejection",
+   "who": "Baltazar Liangzong",
+   "club": "Holliday Beetles",
+   "since": "week 16, 2044",
+   "ruling": ""
+  },
+  {
+   "title": "Exempt list",
+   "who": "Rhys Ga-Il",
+   "club": "Cordelle Raptors",
+   "since": "",
+   "ruling": ""
+  }
+ ]
+}
