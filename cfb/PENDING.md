@@ -3178,3 +3178,4 @@ PUSHED 2026-10-28 (write access restored; repo attached with push): state throug
 - [wk14] REGULAR SEASON COMPLETE. Awaiting ballot_s19_w14.json; install (backup pre_w14board), rebuild viewer. Then conference championship games (ccg.py), Ryskamp four, parity monitor wk14.
 - [wk14] Board installed; viewer v199. CCG preview shown to Dan (NOT PLAYED); awaiting go -> backup, python3 ccg.py --commit. Then Ryskamp four, selection ballot.
 - [CCG done] Ryskamp four set. WAITING on Dan's 24-team field -> install_field.py; one playoff round at a time; republish viewer each round.
+- [playoff] Field installed; R1 preview shown; awaiting Dan's go to play round 1 (backup first: season_state.pkl.pre_s19_po1; one round at a time, republish viewer after).
