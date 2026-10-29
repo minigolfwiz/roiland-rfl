@@ -51,7 +51,12 @@ def run_finalization(seed=67020):
     derive_attrs = ns['derive_attrs']
 
     s = SE.load_state()
-    signed = (s.get("recruiting_s%d" % s.get("season", 1), {}) or {}).get("signed", {})
+    # GUARD (2044 offseason bug): recruiting.py's __main__ only printed the class size, the
+    # signing step was never stored, and this stage quietly filled the whole 2044 freshman
+    # class with 2,020 walk-ons instead. A missing recruiting record is now a hard stop.
+    _rec = s.get("recruiting_s%d" % s.get("season", 1))
+    assert _rec and _rec.get("signed"), "no recruiting_s%d in state: run recruiting.py --commit first" % s.get("season", 1)
+    signed = _rec.get("signed", {})
 
     used = {p["name"] for r in E.ROSTERS.values() for p in r}
     used |= {c[r]["name"] for c in E.COACHES.values() for r in ("HC", "OC", "DC") if c.get(r)}

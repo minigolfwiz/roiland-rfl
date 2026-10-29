@@ -3191,3 +3191,6 @@ PUSHED 2026-10-28 (write access restored; repo attached with push): state throug
 - STANDING (Dan, 29 Oct): at the end of every season, show the all-time national title standings (history.book titles/runnerup; grouped by title count, mobile-friendly, in chat). Shown for 2044.
 
 ## 2044-45 OFFSEASON (Dan, 29 Oct 2026): audits done, Stage 1 carousel done. NEXT: Stage 2 draft pool for RFL (export_draft_pool.py -> state/draft_pool_2045.json), then install_rfl_draft.py --commit, then stages 3-7. Title sites already awarded through 2051 (OFFSEASON_TODO.md). Rollover then 2045 build (teach fill_conf calendar preferences first; tell Dan to start a new conversation once the schedule is built).
+
+## OPEN (Dan's call, 2026-10-29): the 2044 freshman class was 2,020 walk-ons (stage 4 signing skipped in the 2043 offseason). Options: (A) leave it, canon stands; (B) lift ratings (not names/stats/results) of the 2,081 sophomores toward a normal signed class and recompute preseason ratings; (C) compensate forward (larger 2046 class). Guards added: recruiting.py --commit, roster_final.py assert.
+## NEXT: 2045 schedule build (teach fill_conf the calendar preferences first), then tell Dan to start a new conversation.

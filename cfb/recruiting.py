@@ -247,20 +247,19 @@ def run_recruiting(recruits, needs, s, seed=64010):
     return signed_by_team, avail
 
 if __name__ == "__main__":
+    # Stage 4. `python3 recruiting.py` sizes the class (dry run); `--commit` signs it and
+    # stores s['recruiting_s<N>'] = {class_size, needs_total, signed, unsigned}. Before 2045
+    # this block only printed the size and the signing was assembled by hand, which was
+    # skipped in the 2043-44 offseason (the 2044 freshman class became 2,020 walk-ons).
+    import sys
     s = SE.load_state()
-    # compute needs
     sizes = {t: len(r) for t, r in E.ROSTERS.items()}
     leaving_by_team = collections.defaultdict(int)
     for t, r in E.ROSTERS.items():
         for pl in r:
-            if pl.get("_leaving"): leaving_by_team[t]+=1
-    # 63, not 62. `roster_final.ROSTER_MIN` is 63, so a 62 target left 151 of 152
-    # programmes exactly one player short and stage 6 manufactured a walk-on for almost
-    # every team in the league, every single year -- ~152 phantom players a cycle to
-    # paper over a one-player disagreement between two constants, while hundreds of real
-    # recruits went unsigned. Raised rather than lowering ROSTER_MIN so the spot goes to
-    # an actual recruit. (Dan, 2038.)
-    TARGET=63
+            if pl.get("_leaving"): leaving_by_team[t] += 1
+    # 63, not 62: roster_final.ROSTER_MIN is 63 (Dan, 2038); see git history for why.
+    TARGET = 63
     needs = {t: max(0, TARGET-(sizes[t]-leaving_by_team[t])) for t in E.ROSTERS}
     needs_total = sum(needs.values())
     n_total = national_class_size(s.get("season", 1), needs_total)
@@ -269,3 +268,11 @@ if __name__ == "__main__":
     print("class star distribution:", dict(sorted(Counter(r["stars"] for r in recruits).items(), reverse=True)))
     print("national class:", len(recruits), "| roster spots open:", needs_total,
           "| will go unsigned:", len(recruits) - needs_total)
+    if "--commit" in sys.argv:
+        N = s.get("season", 1)
+        assert "recruiting_s%d" % N not in s, "recruiting already stored for season %d" % N
+        signed, unsigned = run_recruiting(recruits, needs, s)
+        s["recruiting_s%d" % N] = {"class_size": n_total, "needs_total": needs_total,
+                                   "signed": dict(signed), "unsigned": unsigned}
+        SE.save_state(s)
+        print("STORED recruiting_s%d: signed %d, unsigned %d" % (N, sum(len(v) for v in signed.values()), len(unsigned)))
