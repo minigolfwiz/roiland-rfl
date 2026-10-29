@@ -130,3 +130,5 @@
 - 2044 Mega Bowl: Commodores (6) 37, Bearcats (3) 27 at Prehistoria Stadium, Fiota Bay. Champions: Port Logan Commodores (2nd title, 2026 and 2044; Mega Bowl record 2-7). MVP Yrei Ganneimyr (RB). Race to 11 ledger final for 2044: Redwoods, Greats, Brass Tigers 10 each. Next: Ga-Il felony and Komodos filming findings, then the 2045 offseason.
 
 - STANDING RULE (Dan, 29 Oct 2026): Mega Bowl and every playoff round recap must be spoiler-free at the top: narrate each game in order (quarter by quarter, running score after every scoring play and quarter end), and put final scores, winners, standouts, injuries and the Race to 11 consequence at the bottom. Do not open the reply with the result. Applies without being asked.
+
+- 2044 offseason League Office ballot (week 21, special; `league_office.py offseason`, builder takes RFL_OFFICE_WEEK=21): Rhys Ga-Il (K, Raptors) 16 games, conduct program, probation for a year (Dan's note: review after 16 games); Komodos filming: closed, no violation. The special ballot only carries due follow-ups, no POTW.
