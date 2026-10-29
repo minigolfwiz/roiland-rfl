@@ -3189,3 +3189,5 @@ PUSHED 2026-10-28 (write access restored; repo attached with push): state throug
 - [2044 DONE] Title game played, awards canonized, final poll filed. NEXT: parity monitor (no arg) + audit, title sites 2045+, rollover. Title game format: one quarter at a time, result last.
 - CORRECTION (Dan, 29 Oct): title-game quarter-by-quarter narration MUST show the running score after every scoring play and at the end of each quarter; only the final result/champion banner waits for the bottom.
 - STANDING (Dan, 29 Oct): at the end of every season, show the all-time national title standings (history.book titles/runnerup; grouped by title count, mobile-friendly, in chat). Shown for 2044.
+
+## 2044-45 OFFSEASON (Dan, 29 Oct 2026): audits done, Stage 1 carousel done. NEXT: Stage 2 draft pool for RFL (export_draft_pool.py -> state/draft_pool_2045.json), then install_rfl_draft.py --commit, then stages 3-7. Title sites already awarded through 2051 (OFFSEASON_TODO.md). Rollover then 2045 build (teach fill_conf calendar preferences first; tell Dan to start a new conversation once the schedule is built).

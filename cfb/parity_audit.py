@@ -8,7 +8,7 @@ SUB.register(E); U=E.U
 s=SE.load_state(); db=load_db()
 TEAMS=set(U['teams']); TIER={t:U['tiers'][U['team_conf'][t]] for t in TEAMS}
 POWER={t for t in TEAMS if TIER[t]=='P6'}
-SEAS=[13,14,15,16,17]
+SEAS=[13,14,15,16,17,18,19]
 def arch(n,key):
     if n==s['season']: return s.get(key) or {}
     return (s['season_archive'].get(str(n)) or {}).get(key) or {}

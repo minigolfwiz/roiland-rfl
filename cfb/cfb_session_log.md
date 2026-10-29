@@ -834,3 +834,13 @@ SF: 1 Pistolheart v 13 Barhold @ Star Bowl, Ediville (Natzumakis); 4 Roosevelt v
 ## 2044 NATIONAL CHAMPIONSHIP PLAYED (Coachville, Stanton; backups *.pkl.pre_s19_pochamp): (4) Roosevelt 31, (1) Pistolheart 19. Roosevelt is the 2044 national champion; history.champ[2044]=(Roosevelt, Pistolheart). Awards canonized by finalize_season: Ryskamp Andres Clairlac (Dan's pick stands), DPOY Alessia Boischamp (Eona DL Jr), FOY Catalina Georledis (Will Tech QB Fr), COY German Shores. FINAL MEDIA POLL filed (media_history[15], media_final_key=16, backup season_state.pkl.pre_s19_finalpoll): 1 Roosevelt 2 Pistolheart 3 Barhold 4 Black Forest 5 Ciarralotta State 6 UFNH 7 Tengus State 8 Park Island 9 Krobe State 10 Eona. NEW STANDING RULE (Dan, 29 Oct): national championship is narrated one quarter at a time with the result only at the bottom (as the RFL Mega Bowl). NEXT: post-season parity monitor + audit, award 2045+ title sites (show full previous list), rollover/2045.
 - CORRECTION (Dan, 29 Oct): title-game quarter-by-quarter narration MUST show the running score after every scoring play and at the end of each quarter; only the final result/champion banner waits for the bottom.
 - STANDING (Dan, 29 Oct): at the end of every season, show the all-time national title standings (history.book titles/runnerup; grouped by title count, mobile-friendly, in chat). Shown for 2044.
+
+## 2044 POST-SEASON PARITY AUDIT (Dan queued) -- see parity_audit_2044.md
+2044 inside the envelope; weeks 12-14 ranked-lost-to-unranked 22% (exp 25%), week-14 favourites 91%. 10/78 power teams at <=2 L. Flags: strength spread sd 7.90 (lowest since 2038) and guest margin +18.3 (lowest). No engine change shipped.
+
+## 2044-45 OFFSEASON -- Stage 1 of 7 COMPLETE: coaching carousel (2026-10-29)
+Backups state/{season_state,rosters,coaches,universe,seed_registry}.pkl.pre_s20_carousel; s['carousel_s19']. Prestige step ran (152 moved on 980 results).
+19 HC hires, 29 coordinator moves, 12 raids. Vacancies: 10 offseason firings, 2 retirements (Tasson State, Verigon), 2 interims not retained
+(Costique River, Central Stanton), 5 poached away. Poached HCs: Brookborough Eona Navy -> Central Stanton; Latu Ciarralotta State -> Leafette;
+Bernard UN Minko -> North Verigon; Lafleur Hansenne -> Barhold Valley; Otoviy New Madrid -> Crimson Mount. Retread: Areum Kleinheim (fired Eternal Fox) at New Madrid.
+NEXT: Stage 2, the 2045 draft pool for the RFL (needs Dan).
