@@ -11,4 +11,4 @@ Discipline traits BUILT (27 Oct 2026): hidden per-player `disc`/`cond` and coach
 
 Robust League Office cases BUILT (27 Oct 2026): rfl/case_catalog.py + rfl/cases.py (fact-rolled cases with severity, precedent, probation, appeals, storylines, reinstatement reviews, harsh felony policy, real effects). State in S['office']. NEXT: the 2043 offseason, one stage at a time (wire S['pick_penalties'] into the draft; bump draft.YEAR). Details in data/rfl_notes.md ('League Office case system').
 
-2044 status (29 Oct 2026): awards chosen; conference finals played; Mega Bowl (3) Bearcats vs (6) Commodores at Prehistoria Stadium, Fiota Bay. Next: Mega Bowl previews, then `season.py playoffs megabowl` on Dan's go. Ga-Il felony and Komodos filming findings still open. 2045: no kicked XPs in overtime (`game.OT_TWO_POINT_FROM`).
+2044 status (29 Oct 2026): season complete; Commodores won the Mega Bowl 37-27 over the Bearcats. Next: open findings (Ga-Il felony, Komodos filming), then the 2045 offseason. 2045: no kicked XPs in overtime (`game.OT_TWO_POINT_FROM`).
