@@ -3180,3 +3180,4 @@ PUSHED 2026-10-28 (write access restored; repo attached with push): state throug
 - [CCG done] Ryskamp four set. WAITING on Dan's 24-team field -> install_field.py; one playoff round at a time; republish viewer each round.
 - [playoff] Field installed; R1 preview shown; awaiting Dan's go to play round 1 (backup first: season_state.pkl.pre_s19_po1; one round at a time, republish viewer after).
 - Playoff previews are now a mobile-friendly artifact (Dan, wk after CCG): playoff_preview_page.py <rnd> builds playoff_preview.html from playoff_preview_template.html; artifact https://claude.ai/artifact/FuosurU7aayp5kR4iANeWE; republish each round. No ratings shown.
+- [playoff] R1 played, viewer republished (v201). R2 preview shown in chat; awaiting go (backup pre_s19_po2 first; python3 -c 'import playoff; playoff.run_round2()'). Previews in chat, mobile-readable, no tables.
