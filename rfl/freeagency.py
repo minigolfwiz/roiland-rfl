@@ -7,7 +7,7 @@ import json, sys, os, random, collections, math
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from rfl.engine import *
 
-YEAR = 2044
+YEAR = 2045
 ANCH = [(6.8, .0038), (7.25, .0045), (7.75, .0069), (8.25, .0146), (8.75, .0239), (9.25, .0483), (9.75, .095), (10.0, .13)]
 PMULT = dict(QB=1.65, OL=1.0, DL=1.0, WR=.9, CB=.9, LB=.9, TE=.9, RB=.75, S=.75, K=.1, P=.1)
 MINROSTER = dict(QB=3, RB=3, WR=5, TE=2, OL=8, DL=7, LB=6, CB=5, S=3, K=1, P=1)   # 44; + 2 extras = 46 before the draft
@@ -159,12 +159,12 @@ if __name__ == '__main__':
     path = STATE; S = load(path); cmd = sys.argv[1] if len(sys.argv) > 1 else ''; dry = cmd == 'dry'
     if cmd == 'street':
         assert 'draft' in S['offseason']['done'] and 'street' not in S['offseason']['done'], 'run after the draft, once'
-        rnd = random.Random(2044004); st = street_fill(S, rnd); fx = fix_minimums(S, rnd)
+        rnd = random.Random(2045004); st = street_fill(S, rnd); fx = fix_minimums(S, rnd)
         S['offseason']['street'] = dict(stats=dict(st), fixed=[list(x) for x in fx]); S['offseason']['done'].append('street')
         print(dict(st), 'min-roster fixes', fx); save(S, path); write_project_state(S, Z64); print('saved')
     else:
         assert 'fa' not in S['offseason']['done'], 'free agency already run'
-        rnd = random.Random(2044002); log, stats = run(S, rnd)
+        rnd = random.Random(2045002); log, stats = run(S, rnd)
         S['offseason']['fa'] = dict(log=log, stats=dict(stats)); S['offseason']['done'].append('fa')
         print(dict(stats), len(log))
         if not dry: save(S, path); write_project_state(S, Z64); print('saved')

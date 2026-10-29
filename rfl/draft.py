@@ -6,7 +6,7 @@ import json, random, sys, os, collections
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from rfl.engine import *
 from rfl import discipline as _disc
-YEAR = 2044
+YEAR = 2045
 DRY = 'dry' in sys.argv
 S = load(STATE); L = load(f'{ROOT}/data/league.json')
 clubs = sorted(L['teams']); rnd = random.Random(YEAR * 31)

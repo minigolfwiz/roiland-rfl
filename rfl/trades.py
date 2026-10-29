@@ -8,7 +8,7 @@ from rfl.engine import *
 from rfl import season as SE
 from rfl.freeagency import club_pos, MINROSTER
 
-YEAR = 2044
+YEAR = 2045
 SEASON = YEAR - 1          # the season just played; staff records and honours close on it
 COACHING = f'{ROOT}/data/rfl_coaching.json'
 
@@ -190,7 +190,7 @@ def run_staff(S, rnd, D):
 if __name__ == '__main__':
     path = STATE; S = load(path); dry = len(sys.argv) > 1 and sys.argv[1] == 'dry'
     assert 'fa' in S['offseason']['done'] and 'trades' not in S['offseason']['done'], 'run free agency first / trades already run'
-    rnd = random.Random(2044003); D = load(COACHING)
+    rnd = random.Random(2045003); D = load(COACHING)
     trades = run_trades(S, rnd); moves, conduct = run_staff(S, rnd, D)
     S['offseason']['trades'] = trades; S['offseason']['staff'] = dict(moves=moves, conduct=conduct); S['offseason']['done'].append('trades')
     print(len(trades), 'trades'); [print(' ', x) for x in trades]
