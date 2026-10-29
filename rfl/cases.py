@@ -422,7 +422,7 @@ def spec_titles(key): return CATALOG[key]['title'] if CATALOG[key]['title'] else
 for _k, _v in FELONY.items(): CATALOG['felony_' + _k]['title'] = _v['title']
 
 # ----------------------------------------------------------------------------------------------------------------------------- follow-ups
-FIND_WHAT = dict(flagrant='a flagrant hit', bench_clear='the late hit that set off the scrum', bounty='a pay-for-injury program', hazing='a pattern of hazing', tampering='improper contact with a player under contract', cap='unreported payments', gambling='wagers on league games')
+FIND_WHAT = dict(filming='illegally filming opponents', flagrant='a flagrant hit', bench_clear='the late hit that set off the scrum', bounty='a pay-for-injury program', hazing='a pattern of hazing', tampering='improper contact with a player under contract', cap='unreported payments', gambling='wagers on league games')
 FIND_TEXT = dict(
     substantiated=["The league's investigators concluded the allegation of {what} is substantiated.", "After a review of records and interviews, the league found that {what} did occur."],
     partial=["The league's investigators substantiated part of the allegation of {what} and rejected the rest.", "Investigators found some evidence of {what} but could not confirm the full allegation."],

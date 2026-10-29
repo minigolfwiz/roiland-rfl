@@ -1,0 +1,356 @@
+{
+ "year": 2044,
+ "week": 19,
+ "potw": {
+  "off": [
+   {
+    "pid": 9033283,
+    "name": "Imani Chimah",
+    "pos": "QB",
+    "club": "Classetto Cavemen",
+    "line": "21/26, 228 yds, 6 TD, 88 rush yds",
+    "res": "W 49-27 at Komodos",
+    "score": 43.99,
+    "plays": [
+     "Q1 7:04 6-yd TD pass to Gunther Slavanov (was tied)",
+     "Q2 12:11 20-yd TD pass to Vikram Mirablanca (was up 4)",
+     "Q2 3:42 6-yd TD pass to Gunther Slavanov (was up 8)",
+     "Q3 13:19 7-yd TD pass to Darnell Thornton (was up 8)",
+     "Q3 5:54 2-yd TD pass to Darnell Thornton (was up 8)",
+     "Q4 6:48 5-yd TD run (was up 15)",
+     "Q4 0:11 3-yd TD pass to Vikram Mirablanca (was up 22)"
+    ]
+   },
+   {
+    "pid": 9037455,
+    "name": "Vikram Mirablanca",
+    "pos": "RB",
+    "club": "Classetto Cavemen",
+    "line": "18 car, 123 yds, 3 rec, 38 yds, 2 TD",
+    "res": "W 49-27 at Komodos",
+    "score": 28.1,
+    "plays": [
+     "Q2 12:11 20-yd TD catch from Imani Chimah (was up 4)",
+     "Q4 0:11 3-yd TD catch from Imani Chimah (was up 22)"
+    ]
+   },
+   {
+    "pid": 9033847,
+    "name": "Norbert Tingyao",
+    "pos": "QB",
+    "club": "Chapel Rock Crowns",
+    "line": "27/38, 378 yds, 2 TD, 49 rush yds",
+    "res": "L 17-21 at Demons",
+    "score": 27.89,
+    "plays": [
+     "Q3 8:20 12-yd TD pass to Dandan Takakawa (was down 11)",
+     "Q4 11:46 17-yd TD pass to Malsook Il-Su (was down 4), go-ahead, later answered"
+    ]
+   },
+   {
+    "pid": 9101677,
+    "name": "Zlata Radushkin",
+    "pos": "RB",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "18 car, 82 yds, 4 rec, 46 yds, 2 TD",
+    "res": "W 35-24 vs T-Rexes",
+    "score": 27.8,
+    "plays": [
+     "Q2 6:16 4-yd TD catch from Manish Anysei (was up 14)",
+     "Q4 6:41 8-yd TD catch from Manish Anysei (was down 3), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9036297,
+    "name": "Jonas Lindhus",
+    "pos": "WR",
+    "club": "El Latigo Shredders",
+    "line": "10 rec, 154 yds, 2 TD",
+    "res": "W 38-33 at Beetles",
+    "score": 27.4,
+    "plays": [
+     "Q1 11:41 42-yd TD catch from Alfie Gyejide (was tied)",
+     "Q3 5:21 10-yd TD catch from Alfie Gyejide (was down 3)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9034908,
+    "name": "Anei Chernovsky",
+    "pos": "LB",
+    "club": "North Hatesei Bees",
+    "line": "13 tackles, 1 sack, 1 INT",
+    "res": "L 7-33 at Asteroids",
+    "score": 20.8,
+    "plays": [
+     "Q1 3:04 interception returned 26 yds (down 3), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9037330,
+    "name": "Nakia Tetkwe",
+    "pos": "S",
+    "club": "Good River Rangers",
+    "line": "7 tackles, 2 INT",
+    "res": "W 35-29 vs Bats",
+    "score": 20.2,
+    "plays": [
+     "Q2 5:54 interception (down 10), led to a field goal",
+     "Q3 11:56 interception returned 19 yds (up 3), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9034258,
+    "name": "Baard Krasavsky",
+    "pos": "CB",
+    "club": "Crayellan Redwoods",
+    "line": "6 tackles, 2 INT",
+    "res": "W 36-22 at Mastiffs",
+    "score": 19.6,
+    "plays": [
+     "Q1 14:19 interception returned 18 yds (tied), led to a touchdown",
+     "Q2 9:16 interception (up 6), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9034852,
+    "name": "Kjell Renvaw",
+    "pos": "LB",
+    "club": "Crayellan Redwoods",
+    "line": "6 tackles, 2 INT",
+    "res": "W 36-22 at Mastiffs",
+    "score": 19.6,
+    "plays": [
+     "Q2 1:23 interception returned 6 yds (up 9), led to a touchdown",
+     "Q4 13:11 interception returned 12 yds (up 9), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9101174,
+    "name": "Chaewon Peimirrei",
+    "pos": "LB",
+    "club": "Hughes City Asteroids",
+    "line": "1 tackles, 1 sack, 2 INT",
+    "res": "W 33-7 vs Bees",
+    "score": 19.6,
+    "plays": [
+     "Q1 3:54 interception (up 3)",
+     "Q4 2:49 interception returned 22 yds (up 19), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9038338,
+    "name": "Shota Longhai",
+    "pos": "DL",
+    "club": "Tasson Thunderbugs",
+    "line": "6 tackles, 3 sacks",
+    "res": "W 20-17 at Bearcats",
+    "score": 18.6,
+    "plays": []
+   }
+  ],
+  "st": [
+   {
+    "pid": 9038621,
+    "name": "Kwame Kone",
+    "pos": "K",
+    "club": "Fiota Swords",
+    "line": "4/5 FG, long 55, 2/2 XP",
+    "res": "W 26-24 vs Conductors",
+    "score": 18.25,
+    "plays": [
+     "Q1 5:44 55-yd GOOD",
+     "Q2 0:10 29-yd GOOD",
+     "Q3 6:44 40-yd GOOD",
+     "Q4 13:35 48-yd MISSED",
+     "Q4 0:38 31-yd GOOD, go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9101094,
+    "name": "Anders Nightingale",
+    "pos": "K",
+    "club": "Coachville Mastodons",
+    "line": "4/4 FG, long 35, 2/2 XP",
+    "res": "W 26-24 vs Hammerheads",
+    "score": 17.5,
+    "plays": [
+     "Q1 8:36 35-yd GOOD",
+     "Q3 6:10 28-yd GOOD",
+     "Q4 9:14 23-yd GOOD",
+     "Q4 1:14 30-yd GOOD, go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9037423,
+    "name": "Baltazar Kleinmann",
+    "pos": "P",
+    "club": "Diveo Demons",
+    "line": "5 punts, 51.4 avg, 5 inside the 20",
+    "res": "W 21-17 vs Crowns",
+    "score": 17.0,
+    "plays": []
+   },
+   {
+    "pid": 9101071,
+    "name": "Bassam Al-Kadhim",
+    "pos": "K",
+    "club": "Good River Rangers",
+    "line": "5/6 FG, long 56, 2/2 XP",
+    "res": "W 35-29 vs Bats",
+    "score": 17.0,
+    "plays": [
+     "Q1 3:39 56-yd MISSED",
+     "Q2 13:07 40-yd GOOD",
+     "Q2 3:35 23-yd GOOD",
+     "Q3 12:47 56-yd GOOD",
+     "Q4 12:33 37-yd GOOD",
+     "Q4 4:02 41-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9034232,
+    "name": "Lenmana Sanddale",
+    "pos": "P",
+    "club": "Far Farris Raccoons",
+    "line": "5 punts, 50.6 avg, 5 inside the 20",
+    "res": "W 20-10 vs Topcats",
+    "score": 16.333333333333336,
+    "plays": []
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "late_hit",
+   "title": "Late hit",
+   "who": [
+    {
+     "name": "Corentin Fonmont",
+     "pos": "TE",
+     "club": "Lornaman Renegades",
+     "pid": 9101700
+    }
+   ],
+   "game": "G354",
+   "where": "Lornaman Renegades at Purcell Rapids, week 19",
+   "text": "Corentin Fonmont (TE, Renegades) was flagged for unnecessary roughness with 5:46 left in the first quarter on a hit the officials ruled came well after the play was over. Radoslav Oikonomides (S, Rapids) left for a few plays and returned. Fonmont sought out Oikonomides after the game to apologize. The league's film review found the contact was avoidable.\n\nCorentin Fonmont's agent, Harlan Quist, says the player will cooperate with the review.",
+   "severity": 3.7,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9101700,
+    9101699
+   ],
+   "precedent": [
+    "2044 wk 1, Sorei Quisnovaw: Fine $75K + 1-game suspension (severity 4.2)",
+    "2043 wk 20, Esperanza Feldhardt: Fine $10K (severity 3.2)",
+    "2043 wk 11, Daesung Tingyao: Fine $25K + 1-game suspension (severity 3.2)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k15",
+     "label": "Fine $15K",
+     "games": 0,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $15K"
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Fined $25K"
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $50K"
+    }
+   ],
+   "precedent_pick": "k25",
+   "tier": "minor",
+   "id": "W19-1",
+   "week": 19
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": [
+  {
+   "title": "Sexual assault investigation",
+   "who": "Rhys Ga-Il",
+   "club": "Cordelle Raptors",
+   "since": "week 16, 2044",
+   "ruling": "Exempt list: out until the case resolves"
+  },
+  {
+   "title": "Flagrant hit, ejection",
+   "who": "Baltazar Liangzong",
+   "club": "Holliday Beetles",
+   "since": "week 16, 2044",
+   "ruling": ""
+  },
+  {
+   "title": "Illegal filming",
+   "who": "Verigon Komodos",
+   "club": "Verigon Komodos",
+   "since": "week 18, 2044",
+   "ruling": ""
+  },
+  {
+   "title": "Exempt list",
+   "who": "Rhys Ga-Il",
+   "club": "Cordelle Raptors",
+   "since": "",
+   "ruling": ""
+  }
+ ]
+}
