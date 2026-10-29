@@ -3184,3 +3184,4 @@ PUSHED 2026-10-28 (write access restored; repo attached with push): state throug
 - [playoff] R2 played, viewer republished. QF preview shown; awaiting go (backup pre_s19_po_qf; playoff.run_qf()).
 - [playoff] QF played, viewer republished. SF preview shown; awaiting go (backup pre_s19_posf; playoff.run_sf()).
 - [playoff] SF played, viewer republished. Title game preview shown; awaiting go (backup pre_s19_po_champ; playoff.run_champ()).
+- [Ryskamp] winner named (Clairlac). Title game still awaiting Dan's go.
