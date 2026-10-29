@@ -1,0 +1,215 @@
+{
+ "year": 2044,
+ "week": 21,
+ "potw": {
+  "off": [],
+  "defense": [],
+  "st": []
+ },
+ "cases": [
+  {
+   "type": "felony_sexual",
+   "title": "Resolution: Sexual assault investigation",
+   "who": [
+    {
+     "name": "Rhys Ga-Il",
+     "pos": "K",
+     "club": "Cordelle Raptors",
+     "pid": 9101377
+    }
+   ],
+   "game": null,
+   "where": "Off the field",
+   "text": "Prosecutors dropped the charges against Rhys Ga-Il arising from a sexual assault complaint. Independent of the court, the league's investigators concluded the conduct occurred. \n\nOriginal matter: Rhys Ga-Il (K, Raptors) was taken into custody for questioning in a sexual assault complaint; no formal charges have been filed. The complainant's identity has not been released. Police say the complainant has been cooperative with investigators. Police have not released the report. His attorney says there is video that tells a different story. Your ruling then: Exempt list: out until the case resolves.",
+   "severity": 7.8,
+   "prior": 0,
+   "stage": "resolution",
+   "pids": [
+    9101377
+   ],
+   "precedent": [],
+   "chain": [],
+   "options": [
+    {
+     "key": "ban",
+     "label": "Permanent ban from the league",
+     "games": 99,
+     "fine": 0,
+     "status": "ban",
+     "suggested": false,
+     "blurb": "Permanent ban",
+     "ban": true
+    },
+    {
+     "key": "indef40",
+     "label": "Suspended indefinitely, review after 40 games",
+     "games": 99,
+     "fine": 0,
+     "status": "indef",
+     "suggested": false,
+     "blurb": "Out indefinitely, review after 40 games",
+     "indef_min": 40
+    },
+    {
+     "key": "indef20",
+     "label": "Suspended indefinitely, review after 20 games",
+     "games": 99,
+     "fine": 0,
+     "status": "indef",
+     "suggested": false,
+     "blurb": "Out indefinitely, review after 20 games",
+     "indef_min": 20
+    },
+    {
+     "key": "g16",
+     "label": "16 games, conduct program and probation",
+     "games": 16,
+     "fine": 0,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Out 16 games, conduct program, one year of probation",
+     "program": true,
+     "probation": true
+    },
+    {
+     "key": "g8",
+     "label": "8 games, conduct program and probation",
+     "games": 8,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Out 8 games, conduct program, one year of probation",
+     "program": true,
+     "probation": true
+    },
+    {
+     "key": "g4",
+     "label": "4 games and a conduct program",
+     "games": 4,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Out 4 games, conduct program",
+     "program": true
+    },
+    {
+     "key": "rein",
+     "label": "Reinstate with no further discipline",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    }
+   ],
+   "precedent_pick": null,
+   "sid": "2044:W16-1",
+   "tier": "major",
+   "id": "W21-1",
+   "week": 21
+  },
+  {
+   "type": "filming",
+   "title": "Findings: Illegal filming",
+   "who": [
+    {
+     "name": "Verigon Komodos",
+     "pos": "CLUB",
+     "club": "Verigon Komodos",
+     "pid": null,
+     "club_level": true
+    }
+   ],
+   "game": null,
+   "where": "League investigation",
+   "text": "The league has finished its investigation of the Komodos (opened in week 18). The league's investigators found no evidence to support the allegation of illegally filming opponents.\n\nOriginal matter: Security found an unauthorized camera aimed at the Bats sideline during pregame warmups for the Komodos. The club has no prior violation.",
+   "severity": 1.0,
+   "prior": 0,
+   "stage": "findings",
+   "pids": [],
+   "precedent": [],
+   "chain": [
+    "Week 18, 2044: investigation opened"
+   ],
+   "options": [
+    {
+     "key": "clear",
+     "label": "Close the matter: no violation found",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": true,
+     "blurb": ""
+    },
+    {
+     "key": "warn",
+     "label": "Close the matter with a warning about procedures",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": ""
+    },
+    {
+     "key": "k150",
+     "label": "Fine $150K for failing to cooperate fully",
+     "games": 0,
+     "fine": 150000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": ""
+    }
+   ],
+   "precedent_pick": null,
+   "sid": "S-W18-1-2044",
+   "tier": "club",
+   "id": "W21-2",
+   "week": 21
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": [
+  {
+   "title": "Sexual assault investigation",
+   "who": "Rhys Ga-Il",
+   "club": "Cordelle Raptors",
+   "since": "week 16, 2044",
+   "ruling": "Exempt list: out until the case resolves"
+  },
+  {
+   "title": "Illegal filming",
+   "who": "Verigon Komodos",
+   "club": "Verigon Komodos",
+   "since": "week 18, 2044",
+   "ruling": ""
+  },
+  {
+   "title": "Exempt list",
+   "who": "Rhys Ga-Il",
+   "club": "Cordelle Raptors",
+   "since": "",
+   "ruling": ""
+  }
+ ]
+}

@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from rfl.engine import *
 
 S = load(STATE); se = S['season']; year = se['year']
-week = se['week_done']
+week = int(os.environ.get('RFL_OFFICE_WEEK', se['week_done']))
 bpath = f'{ROOT}/data/office/ballot_{year}_w{week}.json'
 pending = os.path.exists(bpath) and str(week) not in se.get('potw', {})
 B = json.load(open(bpath)) if pending else None
@@ -114,7 +114,7 @@ function render(){
   const m = $('main');
   if (!B){ m.innerHTML = '<div class="empty">Nothing is waiting. The ballot for the next week appears here once that week has been played.</div>'; $('bar').hidden = true;
     $('status').classList.add('done'); $('stxt').innerHTML = '<b>All caught up.</b> Week ' + WK + ' is decided.'; return; }
-  let h = `<h2>Players of the Week<small>week ${WK}</small></h2><p class="hint">One from each list. Candidates are the top performers by the week's box scores.</p>`;
+  let h = CATS.some(([k]) => (B.potw[k] || []).length) ? `<h2>Players of the Week<small>week ${WK}</small></h2><p class="hint">One from each list. Candidates are the top performers by the week's box scores.</p>` : '';
   for (const [k, label] of CATS){ const L = B.potw[k] || []; if (!L.length) continue;
     h += `<div class="grp"><h3>${label}</h3>` + L.map(c => candidate(c, 'p-' + k, c.pid)).join('') + '</div>'; }
   h += `<h2>Cases<small>${B.cases.length ? B.cases.length + ' this week' : 'none this week'}</small></h2>`;
@@ -161,7 +161,7 @@ function update(){
 }
 function setStatus(){
   const s = $('status'); s.classList.toggle('done', saved);
-  $('stxt').innerHTML = saved ? '<b>Submitted.</b> Tell Claude you are done and week ' + (WK + 1) + ' plays. You can still change answers until then.' : '<b>Waiting on you.</b> Week ' + WK + ' is played. Make your picks and rulings, then submit.';
+  $('stxt').innerHTML = saved ? '<b>Submitted.</b> Tell Claude you are done and week ' + (WK + 1) + ' plays. You can still change answers until then.' : '<b>Waiting on you.</b> ' + (WK > 20 ? 'The season is over; these matters came due.' : 'Week ' + WK + ' is played.') + ' Make your picks and rulings, then submit.';
 }
 function apply(d){
   if (!d) return;

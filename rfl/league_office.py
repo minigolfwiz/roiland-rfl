@@ -153,6 +153,21 @@ def ballot(S, week):
     os.makedirs(f'{ROOT}/data/office', exist_ok=True)
     json.dump(B, open(path, 'w'), indent=1); return B
 
+def offseason_ballot(S, week=21):
+    """Special ballot between seasons: only the follow-ups that are still due (no Players of the Week, no new cases)."""
+    se = S['season']; path = f'{ROOT}/data/office/ballot_{se["year"]}_w{week}.json'
+    if os.path.exists(path): raise SystemExit(f'ballot already exists: {path}')
+    o = CS.office(S); rnd = random.Random(f"league-office-{se['year']}-{week}"); cases = []
+    due = [d for d in o['due'] if d['kind'] in ('findings', 'felony', 'court')]; o['due'] = [d for d in o['due'] if d not in due]
+    for it in due:
+        c = CS.follow_up(S, rnd, it, week)
+        if not c: continue
+        c['_it'] = it; c['tier'] = 'major' if c['type'].startswith('felony') else CS.CATALOG[c['type']]['tier']; cases.append(c)
+    for i, c in enumerate(cases):
+        c['id'] = f"W{week}-{i + 1}"; c['week'] = week; c.pop('_story', None); c.pop('_it', None); c.pop('facts', None)
+    B = dict(year=se['year'], week=week, potw=dict(off=[], defense=[], st=[]), cases=cases, rates=[dict(tier=t, mean=m) for t, m in RATES], open=open_storylines(S))
+    json.dump(B, open(path, 'w'), indent=1); return B
+
 def open_storylines(S):
     """Public one-liners about matters still open (never the hidden truth)."""
     o = CS.office(S); now = CS.tick(S); out = []
@@ -191,5 +206,7 @@ if __name__ == '__main__':
         B = ballot(S, int(sys.argv[2])); save(S, STATE); write_project_state(S, Z64)
         print(json.dumps({'cases': [(c['id'], c['tier'], c['title'], [w['name'] for w in c['who']], c['severity']) for c in B['cases']],
                           'potw': {k: [(x['name'], x['pos'], x['club'].split()[-1], x['line']) for x in v] for k, v in B['potw'].items()}}, indent=1))
+    elif cmd == 'offseason':
+        B = offseason_ballot(S); save(S, STATE); write_project_state(S, Z64); print([(c['id'], c['title'], [w['name'] for w in c['who']], c['severity']) for c in B['cases']])
     elif cmd == 'apply':
         lines = apply(S, int(sys.argv[2]), json.load(open(sys.argv[3]))); save(S, STATE); write_project_state(S, Z64); print('\n'.join(lines))
