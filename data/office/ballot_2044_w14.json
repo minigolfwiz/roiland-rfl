@@ -1,0 +1,388 @@
+{
+ "year": 2044,
+ "week": 14,
+ "potw": {
+  "off": [
+   {
+    "pid": 9034297,
+    "name": "Alfie Gyejide",
+    "pos": "QB",
+    "club": "El Latigo Shredders",
+    "line": "33/45, 389 yds, 3 TD, 52 rush yds",
+    "res": "T 20-20 at Rovers",
+    "score": 31.03,
+    "plays": [
+     "Q1 9:31 19-yd TD pass to Gudrun Rosenwetter (was tied)",
+     "Q2 0:39 4-yd TD pass to Taha Oakborough (was down 4)",
+     "Q4 14:30 5-yd TD pass to Chafik Belkov (was up 3)"
+    ]
+   },
+   {
+    "pid": 9036328,
+    "name": "Rin Langdale",
+    "pos": "QB",
+    "club": "Lornaman Renegades",
+    "line": "26/40, 264 yds, 4 TD",
+    "res": "W 30-24 at Beetles",
+    "score": 29.56,
+    "plays": [
+     "Q1 9:16 6-yd TD pass to Corentin Fonmont (was down 7)",
+     "Q2 14:27 1-yd TD pass to Afamasaga Ironmoon (was down 1)",
+     "Q2 4:42 9-yd TD pass to Afamasaga Ironmoon (was up 6)",
+     "Q4 0:41 8-yd TD pass to Corentin Fonmont (was down 1, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9035242,
+    "name": "Sione Larrazabal",
+    "pos": "RB",
+    "club": "Hughes City Asteroids",
+    "line": "23 car, 161 yds, 1 rec, 0 yds, 2 TD",
+    "res": "W 40-26 vs Tsunami",
+    "score": 28.1,
+    "plays": [
+     "Q3 8:21 1-yd TD run (was up 3)",
+     "Q4 12:19 19-yd TD run (was up 10)"
+    ]
+   },
+   {
+    "pid": 9038275,
+    "name": "Gudrun Rosenwetter",
+    "pos": "WR",
+    "club": "El Latigo Shredders",
+    "line": "12 rec, 211 yds, 1 TD",
+    "res": "T 20-20 at Rovers",
+    "score": 27.1,
+    "plays": [
+     "Q1 9:31 19-yd TD catch from Alfie Gyejide (was tied)"
+    ]
+   },
+   {
+    "pid": 9101700,
+    "name": "Corentin Fonmont",
+    "pos": "TE",
+    "club": "Lornaman Renegades",
+    "line": "6 rec, 100 yds, 2 TD",
+    "res": "W 30-24 at Beetles",
+    "score": 25.0,
+    "plays": [
+     "Q1 9:16 6-yd TD catch from Rin Langdale (was down 7)",
+     "Q4 0:41 8-yd TD catch from Rin Langdale (was down 1, late), go-ahead and decisive, never answered"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9035679,
+    "name": "Sota Haruhara",
+    "pos": "LB",
+    "club": "Crayellan Redwoods",
+    "line": "9 tackles, 1 sack, 1 INT, 1 forced fumble",
+    "res": "W 27-20 at Phenoms",
+    "score": 23.9,
+    "plays": [
+     "Q2 13:07 sack and forced fumble (up 4), led to a touchdown",
+     "Q4 0:39 interception returned 9 yds (up 7, late)"
+    ]
+   },
+   {
+    "pid": 9038006,
+    "name": "Leonel Prabhakrishnan",
+    "pos": "LB",
+    "club": "Lornaman Renegades",
+    "line": "7 tackles, 2 INT",
+    "res": "W 30-24 at Beetles",
+    "score": 20.2,
+    "plays": [
+     "Q1 1:48 interception (down 1), led to a touchdown",
+     "Q2 11:49 interception (up 6), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9034444,
+    "name": "Moussa Highcreek",
+    "pos": "DL",
+    "club": "Tengus City Terrors",
+    "line": "5 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 13-19 vs T-Rexes",
+    "score": 19.0,
+    "plays": [
+     "Q3 7:57 sack and forced fumble (up 1), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9038011,
+    "name": "Guadalupe Goldberry",
+    "pos": "DL",
+    "club": "Coachville Mastodons",
+    "line": "3 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 41-24 at Tigers",
+    "score": 17.8,
+    "plays": [
+     "Q3 4:38 sack and forced fumble (up 7), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9034852,
+    "name": "Kjell Renvaw",
+    "pos": "LB",
+    "club": "Crayellan Redwoods",
+    "line": "9 tackles, 2 sacks",
+    "res": "W 27-20 at Phenoms",
+    "score": 15.399999999999999,
+    "plays": []
+   },
+   {
+    "pid": 9035211,
+    "name": "Iosefa Zhuohan",
+    "pos": "LB",
+    "club": "Diveo Demons",
+    "line": "7 tackles, 2 sacks",
+    "res": "L 10-31 vs Mastiffs",
+    "score": 14.2,
+    "plays": []
+   }
+  ],
+  "st": [
+   {
+    "pid": 9035917,
+    "name": "Abena Ramadan",
+    "pos": "K",
+    "club": "Hughes City Asteroids",
+    "line": "4/4 FG, long 57, 4/4 XP",
+    "res": "W 40-26 vs Tsunami",
+    "score": 20.0,
+    "plays": [
+     "Q1 8:06 26-yd GOOD",
+     "Q2 13:13 41-yd GOOD",
+     "Q2 1:07 57-yd GOOD",
+     "Q4 1:01 55-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101377,
+    "name": "Rhys Ga-Il",
+    "pos": "K",
+    "club": "Cordelle Raptors",
+    "line": "4/4 FG, long 50, 3/3 XP",
+    "res": "W 33-23 at Rapids",
+    "score": 15.0,
+    "plays": [
+     "Q2 12:08 28-yd GOOD",
+     "Q2 5:28 24-yd GOOD",
+     "Q2 0:27 38-yd GOOD",
+     "Q3 0:40 50-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101402,
+    "name": "Lashawn Hazelford",
+    "pos": "P",
+    "club": "Crayellan Redwoods",
+    "line": "6 punts, 47.3 avg, 5 inside the 20",
+    "res": "W 27-20 at Phenoms",
+    "score": 14.833333333333336,
+    "plays": []
+   },
+   {
+    "pid": 9101476,
+    "name": "Romain Langbridge",
+    "pos": "P",
+    "club": "Cordelle Raptors",
+    "line": "6 punts, 50.0 avg, 3 inside the 20",
+    "res": "W 33-23 at Rapids",
+    "score": 14.5,
+    "plays": []
+   },
+   {
+    "pid": 9035231,
+    "name": "Elodie Do-Kwan",
+    "pos": "P",
+    "club": "Costique Bearcats",
+    "line": "7 punts, 45.9 avg, 5 inside the 20",
+    "res": "W 17-10 at Beavers",
+    "score": 14.333333333333329,
+    "plays": []
+   }
+  ]
+ },
+ "cases": [
+  {
+   "type": "helmet",
+   "title": "Contact to the head",
+   "who": [
+    {
+     "name": "Kjell Renvaw",
+     "pos": "LB",
+     "club": "Crayellan Redwoods",
+     "pid": 9034852
+    }
+   ],
+   "game": "G281",
+   "where": "Crayellan Redwoods at Queensville Phenoms, week 14",
+   "text": "Kjell Renvaw (LB, Redwoods) led with the crown of his helmet with 14:45 left in the third quarter and drew an unnecessary roughness flag. Divya Sadavarma (CB, Phenoms) stayed in the game. Film review showed the contact was close to the whistle.\n\nThe players' union has been notified.",
+   "severity": 3.1,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9034852,
+    9038575
+   ],
+   "precedent": [
+    "2043 wk 14, Sareivo Treinovaw: Warning (severity 3.6)",
+    "2043 wk 12, Caden Vance: Warning (severity 3.6)",
+    "2043 wk 2, Mateo Lafort: Warning (severity 3.6)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $10K"
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $25K"
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $50K"
+    }
+   ],
+   "precedent_pick": "none",
+   "tier": "minor",
+   "id": "W14-1",
+   "week": 14
+  },
+  {
+   "type": "late_hit",
+   "title": "Late hit",
+   "who": [
+    {
+     "name": "Andre Kalomatos",
+     "pos": "DL",
+     "club": "Hughes City Asteroids",
+     "pid": 9035919
+    }
+   ],
+   "game": "G337",
+   "where": "South Burke Tsunami at Hughes City Asteroids, week 14",
+   "text": "Officials flagged Andre Kalomatos (DL, Asteroids) for roughing the passer with 11:44 left in the second quarter; replays show the contact landed after the whistle. Sivoyel Yingzuo (QB, Tsunami) stayed in the game. Kalomatos told reporters he would play it the same way again. The league's film review found the contact was avoidable.\n\nThe players' union has been notified.",
+   "severity": 4.8,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9035919,
+    9035209
+   ],
+   "precedent": [
+    "2044 wk 1, Sorei Quisnovaw: Fine $75K + 1-game suspension (severity 4.2)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $25K"
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Fined $50K"
+    },
+    {
+     "key": "k100",
+     "label": "Fine $100K",
+     "games": 0,
+     "fine": 100000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $100K"
+    }
+   ],
+   "precedent_pick": null,
+   "tier": "minor",
+   "id": "W14-2",
+   "week": 14
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": []
+}
