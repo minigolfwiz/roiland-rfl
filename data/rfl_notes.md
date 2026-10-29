@@ -123,3 +123,6 @@
 - **Standing rule (Dan, 29 Oct 2026): as soon as a playoff round completes, immediately give the full previews for the next round in the same reply, without waiting to be asked. Previews follow the Preview standard (venue, series, regular-season meetings, surprise reads, no ratings), include seeds, and keep the Race to 11 in view.**
 
 - 2044 round 2: Mastodons (1) 52, Asteroids (5) 20; Bearcats (3) 27, Cavemen (2) 3 (Imani Chimah threw 6 INT); Renegades (8) 26, Leatherbacks (2) 20; Commodores (6) 28, Dales (4) 22 (defending champions out). Conference finals: Regal (1) Mastodons vs (3) Bearcats at Steam Bowl; Majestic (6) Commodores vs (8) Renegades at the Lumber Bowl.
+
+- 2044 awards (Dan's picks): MVP Zainab Yiling, OPOY Minato Sorreniy, DPOY Yerin Masukami, ROY Taeyang Su-Won, COY Peizhi Puatautua (stored as finalists[0] plus awards[k]['winner']).
+- 2044 conference finals: Bearcats (3) 21, Mastodons (1) 6 at Steam Bowl; Commodores (6) 24, Renegades (8) 17 in OT at Lumber Bowl. Mega Bowl: (3) Bearcats vs (6) Commodores at Prehistoria Stadium, Fiota Bay. Race to 11 stays 10-10-10. (Note: the round 2 line above says Chimah 6 INT; the box score had 5.)
