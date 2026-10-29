@@ -3185,3 +3185,4 @@ PUSHED 2026-10-28 (write access restored; repo attached with push): state throug
 - [playoff] QF played, viewer republished. SF preview shown; awaiting go (backup pre_s19_posf; playoff.run_sf()).
 - [playoff] SF played, viewer republished. Title game preview shown; awaiting go (backup pre_s19_po_champ; playoff.run_champ()).
 - [Ryskamp] winner named (Clairlac). Title game still awaiting Dan's go.
+- [RULING] Ryskamp: Dan picks the four and the winner from 2045 on. At the post-CCG checkpoint present the ten and WAIT. 2044 stands (Clairlac).
