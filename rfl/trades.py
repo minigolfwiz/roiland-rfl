@@ -13,10 +13,16 @@ SEASON = YEAR - 1          # the season just played; staff records and honours c
 COACHING = f'{ROOT}/data/rfl_coaching.json'
 
 # ------------------------------------------------------------------ trades
+def trade_value(p):
+    """What a club should pay: rating, discounted for age past 29 and short contracts, with a premium for QBs (the same shape the free-agent market uses)."""
+    age = YEAR - p['born']; v = ovr(p) - .12 * max(0, age - 29) + (.1 if (p.get('contract') or {}).get('left', 0) >= 2 else 0)
+    return v + (.5 if p['pos'] == 'QB' else 0)
 def pick_round(p):
-    o = ovr(p)
-    return 1 if o >= 9.3 else (2 if o >= 8.5 else 3)
+    v = trade_value(p)
+    return 1 if v >= 9.3 else (2 if v >= 8.5 else 3)
+MIN_UPGRADE = {1: 1.0, 2: .8, 3: .5}   # a buyer must get a real upgrade for what it pays: the higher the pick, the bigger the upgrade
 
+AUDIT = []; UP = {}
 def run_trades(S, rnd, target=7):
     P = S['players']; cap = cap_for(YEAR); log = []
     for t, c in S['clubs'].items(): c['picks'][str(YEAR)] = [[r, t] for r in range(1, 8)]
@@ -40,6 +46,7 @@ def run_trades(S, rnd, target=7):
         S['clubs'][seller]['roster'].remove(p['pid']); S['clubs'][buyer]['roster'].append(p['pid']); p['club'] = buyer
         # the buyer's pick now belongs to the seller
         log.append(f"{seller} trade {p['name']} ({p['pos']}, {ovr(p):.1f}) to {buyer} for a {YEAR} round-{r} pick"); done.add(p['pid'])
+        AUDIT.append(dict(seller=seller, buyer=buyer, name=p['name'], pos=p['pos'], rnd=r, value=round(trade_value(p), 2), upgrade=round(UP.get(p['pid'], 0), 2), salary=p['contract']['salary']))
         return True
     # (b) general market: tight clubs shed surplus, needy clubs with room buy
     sellers = [t for t in S['clubs'] if st(t) > .93]
@@ -47,12 +54,13 @@ def run_trades(S, rnd, target=7):
     while len(log) < target and tries < 400:
         tries += 1
         t = rnd.choice(sellers)
-        ps = [P[str(i)] for i in S['clubs'][t]['roster'] if P[str(i)]['pid'] not in done and ovr(P[str(i)]) >= 8.2 and P[str(i)]['pos'] not in ('K', 'P') and surplus(t, P[str(i)])]
+        ps = [P[str(i)] for i in S['clubs'][t]['roster'] if P[str(i)]['pid'] not in done and trade_value(P[str(i)]) >= 8.2 and P[str(i)]['pos'] not in ('K', 'P') and surplus(t, P[str(i)])]
         if not ps: continue
         p = rnd.choice(ps); sal = p['contract']['salary']
-        buyers = [(need(b, p), b) for b in S['clubs'] if b != t and len(S['clubs'][b]['roster']) < 53 and payroll(S, b) + sal < .92 * cap and need(b, p) > .5]
+        buyers = [(need(b, p), b) for b in S['clubs'] if b != t and len(S['clubs'][b]['roster']) < 53 and payroll(S, b) + sal < .92 * cap and need(b, p) >= MIN_UPGRADE[pick_round(p)] and any(x[0] == pick_round(p) and x[1] == b for x in S['clubs'][b]['picks'][str(YEAR)])]
         if not buyers: continue
-        buyers.sort(reverse=True); b = buyers[0][1] if rnd.random() < .6 else rnd.choice(buyers)[1]
+        upg = {bb: nb for nb, bb in buyers}
+        buyers.sort(reverse=True); b = buyers[0][1] if rnd.random() < .6 else rnd.choice(buyers)[1]; UP[p['pid']] = upg[b]
         trade(t, b, p, 'market')
     return log
 
@@ -195,7 +203,7 @@ if __name__ == '__main__':
     rnd = random.Random(2045003); D = load(COACHING)
     trades = run_trades(S, rnd); moves, conduct = run_staff(S, rnd, D)
     S['offseason']['trades'] = trades; S['offseason']['staff'] = dict(moves=moves, conduct=conduct); S['offseason']['done'].append('trades')
-    print(len(trades), 'trades'); [print(' ', x) for x in trades]
+    print(len(trades), 'trades'); [print(' ', x) for x in trades]; [print('   audit', a) for a in AUDIT]
     print(len(moves), 'staff moves'); [print(' ', x) for x in moves]; [print(' ', x) for x in conduct]
     if not dry:
         save(S, path); write_project_state(S, Z64); json.dump(D, open(COACHING, 'w'), separators=(',', ':'), ensure_ascii=False); print('saved')
