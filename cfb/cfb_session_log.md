@@ -844,3 +844,7 @@ Backups state/{season_state,rosters,coaches,universe,seed_registry}.pkl.pre_s20_
 (Costique River, Central Stanton), 5 poached away. Poached HCs: Brookborough Eona Navy -> Central Stanton; Latu Ciarralotta State -> Leafette;
 Bernard UN Minko -> North Verigon; Lafleur Hansenne -> Barhold Valley; Otoviy New Madrid -> Crimson Mount. Retread: Areum Kleinheim (fired Eternal Fox) at New Madrid.
 NEXT: Stage 2, the 2045 draft pool for the RFL (needs Dan).
+
+## 2044-45 OFFSEASON -- Stage 2 of 7 IN PROGRESS: 2045 draft pool handed to the RFL (2026-10-29)
+export_draft_pool.py -> state/draft_pool_2045.json: 3,459 declared (2,076 seniors, 1,360 early entrants, 23 subdivision). State untouched (verified byte-identical). Slim top-700 filed to Project as claude/cfb_draft_pool_2045.json; full pool sent to Dan.
+WAITING on RFL's 280 picks ({"season":19,...}) -> install_rfl_draft.py --commit, then stages 3-7 (portal, recruiting, development, roster_final, rollover).
