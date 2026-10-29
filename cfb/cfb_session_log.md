@@ -801,3 +801,6 @@ PUSHED 2026-10-28 (write access restored; repo attached with push): state throug
 ## Season 19 (2044) week 12
 - Gameview: Skeenerland State at Diveo State (28-0 Skeenerland State). Wk12 played (836 results). Kaji Daun beat #1 Pistolheart 30-27. All pages published. Awaiting wk12 committee ballot before wk13 candidates.
 - Week 12 committee board installed: 1 Park Island, 2 Fiota Bay, 3 Pistolheart, 4 Eona, 5 Ciarralotta State. Out: Rogaela. In: Kaji Daun (25).
+
+## Season 19 (2044) week 13
+- Gameview: Roosevelt at Park Island (Roosevelt 38-33; #13 beat #1). Wk13 played. Pages published. Awaiting wk13 ballot before wk14 candidates.
