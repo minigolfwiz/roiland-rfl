@@ -821,3 +821,6 @@ RYSKAMP FOUR (strict subset of ten): Clairlac, Baifei, Wolfbruck, Vasulingam. Se
 
 ## 2044 PLAYOFF ROUND 2 PLAYED (backups *.pkl.pre_s19_po2 for season_state, rosters, seed_registry, games_db, playoff_s19): Pistolheart 23 VSSC 14; Eona 27 New Madrid 21; Park Island 41 UFNH 10; Roosevelt 28 Ranroman 22; Phangrine State 24 North Hatesei 19; Barhold 31 Ciarralotta State 0; Krobe State 21 Marblehead 3; UNN 56 Tengus State 7.
 QF (neutral, rotation): 1 Pistolheart v 18 Park Island @ 501 Bowl, Stamford (Ciarralotta); 2 Eona v 13 Barhold @ Steam Bowl, Coachville (Stanton); 4 Roosevelt v 9 UNN @ Copper Bowl, Billiataho (Roosevelt); 5 Phangrine State v 7 Krobe State @ Redwood Bowl, Kirkwood (Crayellan). Preview shown in chat; NOT PLAYED.
+
+## 2044 PLAYOFF QUARTERFINALS PLAYED (backups *.pkl.pre_s19_poqf): Pistolheart 38 Park Island 17 @501 Bowl; Barhold 24 Eona 18 @Steam Bowl; Roosevelt 49 UNN 28 @Copper Bowl; Krobe State 34 Phangrine State 0 @Redwood Bowl.
+SF: 1 Pistolheart v 13 Barhold @ Star Bowl, Ediville (Natzumakis); 4 Roosevelt v 7 Krobe State @ Lumber Bowl, Port Logan (Fiota). Preview in chat; NOT PLAYED.
