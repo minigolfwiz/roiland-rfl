@@ -27,6 +27,13 @@ def team(t):
     return {'name':t,'seed':seed.get(t),'rec':'%d-%d'%(r['W'],r['L']),'conf':U['team_conf'].get(t),
       'hc':c['HC']['name'],'ten':c['HC'].get('tenure'),'oc':c['OC']['name'],'dc':c['DC']['name'],
       'ppg':round(pf/n,1),'papg':round(pa/n,1),'losses':losses,'wins':[w for _,w in wins],'stars':stars}
+VEN={}
+if rnd in ('qf','sf'):
+    import committee as CM
+    used=set(PV.P.get('venues_used') or [])
+    for h,l in PV.P[rnd]:
+        v=CM.rotation_venue(s['season'],rnd.upper(),h,used,l); used.add(v['city'])
+        VEN[h]='%s, %s, %s'%(v['name'],v['city'],v['state'])
 def game(h,a):
     rk={x:r for r,x in s.get('committee_poll_current',[])}
     w,last=series(db,h,a); n=sum(w.values())
@@ -35,7 +42,7 @@ def game(h,a):
         ser='%d meetings, %s %d-%d %s. Last: %s won %d-%d (%d)'%(n,h,w[h],w[a],a,ws,max(b['home_score'],b['away_score']),min(b['home_score'],b['away_score']),2025+last[0][0])
         if n==1: ser='1 meeting: %s won %d-%d (%d)'%(ws,max(b['home_score'],b['away_score']),min(b['home_score'],b['away_score']),2025+last[0][0])
     else: ser='First meeting'
-    return {'home':team(h),'away':team(a),'venue':'%s campus (%s)'%(h,U['geo'][h]['state']),'series':ser,
+    return {'home':team(h),'away':team(a),'venue':VEN.get(h,'%s campus (%s)'%(h,U['geo'][h]['state'])),'series':ser,
             'ranks':{h:rk.get(h),a:rk.get(a)}}
 if rnd=='r2' and 'r2' not in PV.P:
     import playoff as PL

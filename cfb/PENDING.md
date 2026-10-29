@@ -3181,3 +3181,4 @@ PUSHED 2026-10-28 (write access restored; repo attached with push): state throug
 - [playoff] Field installed; R1 preview shown; awaiting Dan's go to play round 1 (backup first: season_state.pkl.pre_s19_po1; one round at a time, republish viewer after).
 - Playoff previews are now a mobile-friendly artifact (Dan, wk after CCG): playoff_preview_page.py <rnd> builds playoff_preview.html from playoff_preview_template.html; artifact https://claude.ai/artifact/FuosurU7aayp5kR4iANeWE; republish each round. No ratings shown.
 - [playoff] R1 played with corrected field (Park Island at 18), viewer republished. R2 preview shown in chat; awaiting go (backup pre_s19_po2 first; python3 -c 'import playoff; playoff.run_round2()'). Previews in chat, mobile-readable, no tables.
+- [playoff] R2 played, viewer republished. QF preview shown; awaiting go (backup pre_s19_po_qf; playoff.run_qf()).
