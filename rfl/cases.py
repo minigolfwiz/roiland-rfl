@@ -510,6 +510,27 @@ def review_precedent(S, h, sev, n=4):
     rows = sorted(rows, key=lambda x: abs(x['sev'] - sev))[:n]
     return [f"{x['year']} wk {x['week']}, {x.get('name') or ''}: {x['label']} (severity {x['sev']})" for x in rows]
 
+
+def social_findings(S, st, p, r2):
+    """Findings for a social-media investigation, concrete like the Matsuda review (Dan, 2045 wk 3 after his complaint that findings were not specific)."""
+    name = st['name']; nk = nick(st['club']); tr = st['truth']
+    prior = [x for x in history_for(S, p['pid']) if not (x['id'] == 'W1-2' and x['year'] == st['year'])]
+    if tr == 'substantiated':
+        n = r2.choice([3, 4, 5]); k = r2.choice([2, 3]); k = min(k, n)
+        review = (f"Investigators went through {name}'s public accounts back to the start of training camp and found {n} earlier posts mocking opposing fans, {k} of them aimed at Rapids supporters. "
+                  f"{n - 1} were deleted after the viral video drew attention. None of the posts threatened anyone or used slurs; the league's concern is the pattern, which its social media policy treats separately from a single video.")
+        club = f"The {nk} cooperated, said they had not seen the earlier posts, and have asked {name} to stop posting about opposing fans."
+    elif tr == 'partial':
+        review = (f"Investigators went through {name}'s public accounts back to the start of training camp and found one earlier post of the same kind, a week before the viral video, which is still up. They found no pattern beyond that single post.")
+        club = f"The {nk} cooperated and have spoken with {name} again."
+    else:
+        review = (f"Investigators went through {name}'s public accounts back to the start of training camp and found no other posts aimed at opposing fans. The viral video was a one-off.")
+        club = f"The {nk} cooperated fully."
+    paras = [f"The league has finished its investigation of {name} ({p['pos']}, {nk}) (opened in week {st['week']}).", 'THE REVIEW. ' + review, 'THE CLUB. ' + club,
+             'RECORD. ' + (f"{name} has {len(prior)} earlier case{'s' if len(prior) != 1 else ''} on the desk in the last three seasons." if prior else f"{name} has no earlier cases on the desk."),
+             f"WHERE THINGS STAND. Your ruling at the time was no action, with a request to investigate. The video was removed and {name} apologized in a follow-up post."]
+    return '\n\n'.join(paras)
+
 def build_findings(S, rnd, st, item, week, chain, p):
     key = st['type']; spec = dict(CATALOG[key], id=key); r2 = random.Random(rnd.random())
     facts, d = roll_facts(r2, FIND_FACTS, {}, 0)
@@ -529,6 +550,7 @@ def build_findings(S, rnd, st, item, week, chain, p):
                    'partial': f"Investigators concluded that {st['name']}'s hit was reckless but not flagrant: avoidable, though the timing was close to the whistle.",
                    'unfounded': f"Investigators concluded that {st['name']}'s hit was not flagrant: the contact was close to the whistle and the league found no violation."}[st['truth']]
         text = '\n\n'.join([f"The league has finished its review of the hit by {st['name']} ({nick(st['club'])}) in week {st['week']}, {st['year']}. " + verdict, 'Original matter: ' + st['summary']])
+    if key == 'social' and p and not st.get('review_of'): text = social_findings(S, st, p, r2)      # concrete findings (Dan, 2045 wk 3)
     rid = st.get('review_of'); h_rev = None; rf = None; sev_note = None
     if rid:      # Dan (2045 wk 1): rule now, investigate, and lessen the punishment if the findings warrant it; wk 2: findings must be specific, built from the game record
         h_rev = next((x for x in office(S)['history'] if x['id'] == rid and x['year'] == st['year']), None)
@@ -558,6 +580,7 @@ def build_findings(S, rnd, st, item, week, chain, p):
     case = dict(type=key, title=f"Findings: {st['title']}", who=[dict(name=st['name'], pos=('CLUB' if spec['subject'] == 'club' else (S['players'][str(st['pids'][0])]['pos'] if st['pids'] else 'STAFF')), club=st['club'], pid=(st['pids'] or [None])[0], club_level=spec['subject'] == 'club')],
                 game=None, where='League investigation', text=text, severity=round(sev if st['truth'] != 'unfounded' else 1.0, 1), prior=0, stage='findings', pids=st['pids'], precedent=[], chain=chain + [f"Week {st['week']}, {st['year']}: investigation opened"], facts=[st['truth']] + [f['id'] for f in facts], options=opts, precedent_pick=None, sid=item['sid'])
     if h_rev: case.update(rid=h_rev['id'], ryear=h_rev['year'], precedent=review_precedent(S, h_rev, case['severity']))
+    elif key == 'social': case['precedent'] = [f"{h['year']} wk {h['week']}, {h.get('name') or ''}: {h['label']} (severity {h['sev']})" for h in precedent_for(S, 'social', case['severity'], st['pids'][0] if st['pids'] else None)]
     return case
 
 def build_court(S, rnd, st, item, week, chain, p):

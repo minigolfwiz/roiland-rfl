@@ -1,0 +1,497 @@
+{
+ "year": 2045,
+ "week": 3,
+ "potw": {
+  "off": [
+   {
+    "pid": 9036201,
+    "name": "Terrell Durland",
+    "pos": "QB",
+    "club": "Underwood Bats",
+    "line": "25/35, 321 yds, 3 TD, 77 rush yds",
+    "res": "W 51-7 vs Bees",
+    "score": 39.97,
+    "plays": [
+     "Q1 3:30 10-yd TD pass to Abiodun Mensnse (was up 6)",
+     "Q2 11:23 17-yd TD run (was up 13)",
+     "Q3 8:32 9-yd TD pass to Abiodun Mensnse (was up 30)",
+     "Q3 1:08 3-yd TD run (was up 37)",
+     "Q4 7:05 12-yd TD pass to Abiodun Mensnse (was up 44)"
+    ]
+   },
+   {
+    "pid": 9034506,
+    "name": "Indira Hansei",
+    "pos": "QB",
+    "club": "Far Farris Raccoons",
+    "line": "16/21, 260 yds, 4 TD, 64 rush yds",
+    "res": "W 42-17 at Raptors",
+    "score": 35.67,
+    "plays": [
+     "Q1 9:39 5-yd TD run (was tied)",
+     "Q1 1:05 13-yd TD pass to Solveig Yorkcroft (was up 4)",
+     "Q3 5:12 9-yd TD pass to Kanei Ulvaw (was up 4)",
+     "Q4 11:41 43-yd TD pass to Kanei Ulvaw (was up 11)",
+     "Q4 8:46 35-yd TD pass to Solveig Yorkcroft (was up 18)"
+    ]
+   },
+   {
+    "pid": 9035768,
+    "name": "Abiodun Mensnse",
+    "pos": "WR",
+    "club": "Underwood Bats",
+    "line": "10 rec, 141 yds, 3 TD",
+    "res": "W 51-7 vs Bees",
+    "score": 32.1,
+    "plays": [
+     "Q1 3:30 10-yd TD catch from Terrell Durland (was up 6)",
+     "Q3 8:32 9-yd TD catch from Terrell Durland (was up 30)",
+     "Q4 7:05 12-yd TD catch from Terrell Durland (was up 44)"
+    ]
+   },
+   {
+    "pid": 9101622,
+    "name": "Maisie Althauer",
+    "pos": "RB",
+    "club": "Sarkady Beavers",
+    "line": "21 car, 112 yds, 3 rec, 40 yds, 2 TD",
+    "res": "W 30-24 vs Bearcats",
+    "score": 31.7,
+    "plays": [
+     "Q4 12:21 1-yd TD run (was tied), go-ahead, later answered",
+     "OT 5:04 5-yd TD run (was tied, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9037817,
+    "name": "Dandan Takakawa",
+    "pos": "TE",
+    "club": "Chapel Rock Crowns",
+    "line": "9 rec, 164 yds, 2 TD",
+    "res": "L 17-27 at Leatherbacks",
+    "score": 28.4,
+    "plays": [
+     "Q2 0:22 15-yd TD catch from Boubacar Grimaldi (was down 14)",
+     "Q4 1:52 7-yd TD catch from Boubacar Grimaldi (was down 17)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9101231,
+    "name": "Solveig Forsnes",
+    "pos": "LB",
+    "club": "New Madrid Mastiffs",
+    "line": "5 tackles, 3 sacks, 1 forced fumble",
+    "res": "W 20-10 at Rapids",
+    "score": 24.0,
+    "plays": [
+     "Q4 13:01 sack and forced fumble (up 7), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9101740,
+    "name": "Nicolas Sotoclara",
+    "pos": "DL",
+    "club": "Lornaman Renegades",
+    "line": "7 tackles, 3 sacks",
+    "res": "L 23-27 vs Tsunami",
+    "score": 19.2,
+    "plays": []
+   },
+   {
+    "pid": 9037909,
+    "name": "Mei Xuling",
+    "pos": "LB",
+    "club": "Canesta Dales",
+    "line": "10 tackles, 1 sack, 1 INT",
+    "res": "L 27-30 vs Lions",
+    "score": 19.0,
+    "plays": [
+     "Q2 12:56 interception returned 13 yds (down 3), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9037464,
+    "name": "Rafael Yamazuka",
+    "pos": "DL",
+    "club": "Chapel Rock Crowns",
+    "line": "4 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 17-27 at Leatherbacks",
+    "score": 18.4,
+    "plays": [
+     "Q1 10:59 sack and forced fumble (tied), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9035861,
+    "name": "Yannis Chuknna",
+    "pos": "DL",
+    "club": "South Burke Tsunami",
+    "line": "3 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 27-23 at Renegades",
+    "score": 17.8,
+    "plays": [
+     "Q1 13:41 sack and forced fumble (tied), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9036832,
+    "name": "Daichi Shimagawa",
+    "pos": "LB",
+    "club": "Billiataho Greats",
+    "line": "11 tackles, 1 sack, 1 forced fumble",
+    "res": "W 27-24 vs Dragons",
+    "score": 17.6,
+    "plays": [
+     "Q2 13:00 sack and forced fumble (tied), led to a touchdown"
+    ]
+   }
+  ],
+  "st": [],
+  "st_cands": [
+   {
+    "pid": 9101899,
+    "name": "Wenbo Go-Gyu",
+    "pos": "P",
+    "club": "Billiataho Greats",
+    "line": "9 punts, 47.0 avg, 6 inside the 20",
+    "res": "W 27-24 vs Dragons",
+    "score": 19.5,
+    "plays": []
+   },
+   {
+    "pid": 9038674,
+    "name": "Shaojun Youbao",
+    "pos": "K",
+    "club": "Billiataho Greats",
+    "line": "2/2 FG, long 59, 3/3 XP",
+    "res": "W 27-24 vs Dragons",
+    "score": 18.0,
+    "plays": [
+     "Q3 2:22 53-yd GOOD",
+     "OT 2:18 59-yd GOOD, go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9035917,
+    "name": "Abena Ramadan",
+    "pos": "K",
+    "club": "Hughes City Asteroids",
+    "line": "3/3 FG, long 61, 3/3 XP",
+    "res": "W 30-17 at Hammerheads",
+    "score": 17.5,
+    "plays": [
+     "Q1 6:54 55-yd GOOD",
+     "Q2 1:18 61-yd GOOD",
+     "Q4 4:03 29-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9036005,
+    "name": "Alphonse Ramavasan",
+    "pos": "P",
+    "club": "Hughes City Asteroids",
+    "line": "7 punts, 48.1 avg, 4 inside the 20",
+    "res": "W 30-17 at Hammerheads",
+    "score": 15.500000000000004,
+    "plays": []
+   },
+   {
+    "pid": 9101901,
+    "name": "Thomas Eichenmeier",
+    "pos": "K",
+    "club": "Tasson Thunderbugs",
+    "line": "2/2 FG, long 54, 3/3 XP",
+    "res": "W 27-24 at Shredders",
+    "score": 14.5,
+    "plays": [
+     "Q2 13:13 54-yd GOOD",
+     "Q4 1:50 32-yd GOOD, go-ahead and decisive, never answered"
+    ]
+   }
+  ],
+  "st_pick": {
+   "pid": 9038674,
+   "name": "Shaojun Youbao",
+   "pos": "K",
+   "club": "Billiataho Greats",
+   "line": "2/2 FG, long 59, 3/3 XP",
+   "res": "W 27-24 vs Dragons",
+   "score": 18.0,
+   "plays": [
+    "Q3 2:22 53-yd GOOD",
+    "OT 2:18 59-yd GOOD, go-ahead and decisive, never answered"
+   ],
+   "why": "Claude's pick: a 59-yd field goal to win it in overtime, plus a 53-yarder in the third quarter, perfect on the day. The punter (Go-Gyu, 9 punts, 6 inside the 20) scored a bit higher on the box score, but a game-winning kick carries more."
+  }
+ },
+ "cases": [
+  {
+   "type": "social",
+   "title": "Findings: Social media post",
+   "who": [
+    {
+     "name": "Nakia Langston",
+     "pos": "DL",
+     "club": "Rogaela Rovers",
+     "pid": 9101155,
+     "club_level": false
+    }
+   ],
+   "game": null,
+   "where": "League investigation",
+   "text": "The league has finished its investigation of Nakia Langston (DL, Rovers) (opened in week 1).\n\nTHE REVIEW. Investigators went through Nakia Langston's public accounts back to the start of training camp and found 4 earlier posts mocking opposing fans, 2 of them aimed at Rapids supporters. 3 were deleted after the viral video drew attention. None of the posts threatened anyone or used slurs; the league's concern is the pattern, which its social media policy treats separately from a single video.\n\nTHE CLUB. The Rovers cooperated, said they had not seen the earlier posts, and have asked Nakia Langston to stop posting about opposing fans.\n\nRECORD. Nakia Langston has no earlier cases on the desk.\n\nWHERE THINGS STAND. Your ruling at the time was no action, with a request to investigate. The video was removed and Nakia Langston apologized in a follow-up post.",
+   "severity": 3.2,
+   "prior": 0,
+   "stage": "findings",
+   "pids": [
+    9101155
+   ],
+   "precedent": [
+    "2044 wk 13, Prudence Eastbridge: Warning (severity 2.4)"
+   ],
+   "chain": [
+    "Week 1, 2045: investigation opened"
+   ],
+   "options": [
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $10K"
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Fined $25K"
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $50K"
+    },
+    {
+     "key": "none",
+     "label": "No further action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": ""
+    }
+   ],
+   "precedent_pick": null,
+   "sid": "2045:W1-2",
+   "tier": "minor",
+   "id": "W3-1",
+   "week": 3
+  },
+  {
+   "type": "late_hit",
+   "title": "Late hit",
+   "who": [
+    {
+     "name": "Padma Devacharya",
+     "pos": "LB",
+     "club": "Verigon Komodos",
+     "pid": 9101657
+    }
+   ],
+   "game": "G60",
+   "where": "Classetto Cavemen at Verigon Komodos, week 3",
+   "text": "Officials flagged Padma Devacharya (LB, Komodos) for roughing the passer with 9:02 left in the second quarter; replays show the contact landed after the whistle. Film review showed the contact was close to the whistle.\n\nOfficials in the game, led by Petra Hollowell, reported the play to the league.",
+   "severity": 2.2,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9101657,
+    9033283
+   ],
+   "precedent": [
+    "2043 wk 20, Esperanza Feldhardt: Fine $10K (severity 3.2)",
+    "2043 wk 11, Daesung Tingyao: Fine $25K + 1-game suspension (severity 3.2)",
+    "2043 wk 6, Itzel Bellettoni: Warning (severity 3.2)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Fined $10K"
+    },
+    {
+     "key": "k15",
+     "label": "Fine $15K",
+     "games": 0,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $15K"
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $25K"
+    }
+   ],
+   "precedent_pick": "k10",
+   "tier": "minor",
+   "id": "W3-2",
+   "week": 3
+  },
+  {
+   "type": "comments",
+   "title": "Public criticism of a crew",
+   "who": [
+    {
+     "name": "Lakshman Ganguly",
+     "pos": "WR",
+     "club": "Tasson Thunderbugs",
+     "pid": 9101147
+    }
+   ],
+   "game": "G343",
+   "where": "Tasson Thunderbugs at El Latigo Shredders, week 3",
+   "text": "Lakshman Ganguly (WR, Thunderbugs) said in a postgame interview that the officials 'should be ashamed'.\n\nThe players' union says it is reviewing the remarks.",
+   "severity": 2.4,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9101147
+   ],
+   "precedent": [
+    "2043 wk 18, Darnell Eastfield: Warning (severity 2.4)",
+    "2043 wk 14, Rania Minamura: Warning (severity 2.4)",
+    "2043 wk 8, Yaa Northley: Warning (severity 2.4)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $10K"
+    },
+    {
+     "key": "k15",
+     "label": "Fine $15K",
+     "games": 0,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $15K"
+    },
+    {
+     "key": "k40",
+     "label": "Fine $40K",
+     "games": 0,
+     "fine": 40000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $40K"
+    }
+   ],
+   "precedent_pick": "none",
+   "tier": "minor",
+   "id": "W3-3",
+   "week": 3
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": [
+  {
+   "title": "Social media post",
+   "who": "Nakia Langston",
+   "club": "Rogaela Rovers",
+   "since": "week 1, 2045",
+   "ruling": ""
+  }
+ ]
+}

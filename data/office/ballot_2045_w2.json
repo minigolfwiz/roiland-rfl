@@ -316,12 +316,12 @@
     },
     {
      "key": "overf",
-     "label": "Lift the remaining suspension and halve the fine to $50K",
+     "label": "Lift the remaining suspension and reduce the fine by $10K to $90K",
      "games": -2,
-     "fine": -50000,
+     "fine": -10000,
      "status": "ok",
      "suggested": true,
-     "blurb": "Lift the remaining suspension and halve the fine to $50K",
+     "blurb": "Lift the remaining suspension and reduce the fine by $10K to $90K",
      "adjust": true
     }
    ],
