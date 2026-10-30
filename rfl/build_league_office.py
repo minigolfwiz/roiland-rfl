@@ -103,7 +103,7 @@ const fmtMean = m => m < .1 ? m.toFixed(3) : m.toFixed(2);
 $('rates').innerHTML = '<tr><th>Tier</th><th>Per week</th><th>Per season</th><th>Covers</th></tr>' + D.rates.map(r => `<tr><td><b>${TIER[r[0]]}</b></td><td class="n">${fmtMean(r[1])}</td><td class="n">${PERSEASON[r[0]]}</td><td>${COVERS[r[0]]}</td></tr>`).join('');
 
 const B = D.ballot, WK = D.week;
-const CATS = [['off','Offensive Player of the Week'],['defense','Defensive Player of the Week'],['st','Special Teams Player of the Week']];
+const CATS = [['off','Offensive Player of the Week'],['defense','Defensive Player of the Week']];
 function candidate(c, name, val){
   return `<label class="opt"><input type="radio" name="${name}" value="${esc(val)}"><span><span class="nm">${esc(c.name)}</span><span class="pos">${esc(c.pos)}</span> ${chip(c.club, true)}<div class="ln">${esc(c.line)}</div><div class="rs">${esc(c.res)}</div>${(c.plays && c.plays.length) ? '<ul class="pv">' + c.plays.map(x => '<li>' + esc(x) + '</li>').join('') + '</ul>' : ''}</span></label>`;
 }
@@ -117,6 +117,8 @@ function render(){
   let h = CATS.some(([k]) => (B.potw[k] || []).length) ? `<h2>Players of the Week<small>week ${WK}</small></h2><p class="hint">One from each list. Candidates are the top performers by the week's box scores.</p>` : '';
   for (const [k, label] of CATS){ const L = B.potw[k] || []; if (!L.length) continue;
     h += `<div class="grp"><h3>${label}</h3>` + L.map(c => candidate(c, 'p-' + k, c.pid)).join('') + '</div>'; }
+  if (B.potw.st_pick){ const c = B.potw.st_pick;
+    h += `<div class="grp"><h3>Special Teams Player of the Week<span class="sug">Claude's pick</span></h3><div class="opt" style="cursor:default;grid-template-columns:minmax(0,1fr)"><span><span class="nm">${esc(c.name)}</span><span class="pos">${esc(c.pos)}</span> ${chip(c.club, true)}<div class="ln">${esc(c.line)}</div><div class="rs">${esc(c.res)}</div>${(c.plays && c.plays.length) ? '<ul class="pv">' + c.plays.map(x => '<li>' + esc(x) + '</li>').join('') + '</ul>' : ''}${c.why ? '<div class="rs">' + esc(c.why) + '</div>' : ''}</span></div></div>`; }
   h += `<h2>Cases<small>${B.cases.length ? B.cases.length + ' this week' : 'none this week'}</small></h2>`;
   if (!B.cases.length) h += '<div class="empty">No cases reached the league office this week.</div>';
   for (const c of B.cases){

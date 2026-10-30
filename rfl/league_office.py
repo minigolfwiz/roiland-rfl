@@ -143,6 +143,12 @@ def potw(S, week, res):
     return dict(off=off, defense=top(defs, 6), st=top(sts, 5))
 
 # ----------------------------------------------------------------------------- ballot
+def claude_picks_st(B):
+    """Dan (30 Oct 2026): Claude picks the Special Teams Player of the Week; he only chooses offense and defense. Default pick = top box-score score; Claude may override
+    by hand after reading the plays (clutch kicks count), writing `why`. The page shows the pick as a card, never as a vote."""
+    cands = B['potw'].get('st') or []
+    if cands: B['potw']['st_cands'] = cands; B['potw']['st_pick'] = dict(cands[0], why='Top performer by the box score.'); B['potw']['st'] = []
+
 def ballot(S, week):
     se = S['season']; assert se['week_done'] == week, f"week {week} not the last played ({se['week_done']})"
     path = f'{ROOT}/data/office/ballot_{se["year"]}_w{week}.json'
@@ -150,6 +156,7 @@ def ballot(S, week):
     res = se['results'][str(week)]
     cases = CS.draw(S, week, res)
     B = dict(year=se['year'], week=week, potw=potw(S, week, res), cases=cases, rates=[dict(tier=t, mean=m) for t, m in RATES], open=open_storylines(S))
+    claude_picks_st(B)
     os.makedirs(f'{ROOT}/data/office', exist_ok=True)
     json.dump(B, open(path, 'w'), indent=1); return B
 
@@ -188,6 +195,7 @@ def apply(S, week, dec):
     win = {}
     for k, label in cats.items():
         pid = dec['potw'].get(k)
+        if k == 'st' and pid is None and B['potw'].get('st_pick'): pid = B['potw']['st_pick']['pid']; B['potw']['st'] = B['potw']['st_cands']      # Claude's own pick
         if pid is None: continue
         c = next(x for x in B['potw'][k] if x['pid'] == int(pid)); win[k] = dict(pid=c['pid'], name=c['name'], pos=c['pos'], club=c['club'], line=c['line'])
         out.append(f"{label}: {c['name']} ({c['pos']}, {c['club']}) {c['line']}")

@@ -149,7 +149,8 @@
     ]
    }
   ],
-  "st": [
+  "st": [],
+  "st_cands": [
    {
     "pid": 9035860,
     "name": "Zinovia Chrylidis",
@@ -223,7 +224,23 @@
     "score": 16.0,
     "plays": []
    }
-  ]
+  ],
+  "st_pick": {
+   "pid": 9101859,
+   "name": "Edouard Brookcroft",
+   "pos": "K",
+   "club": "Purcell Rapids",
+   "line": "3/4 FG, long 60, 1/1 XP",
+   "res": "W 16-13 at Cavemen",
+   "score": 18.75,
+   "plays": [
+    "Q3 7:33 58-yd MISSED",
+    "Q4 13:05 60-yd GOOD, tied the game",
+    "Q4 7:03 39-yd GOOD, go-ahead, later answered",
+    "OT 3:26 49-yd GOOD, go-ahead and decisive, never answered"
+   ],
+   "why": "Claude's pick: a 60-yd kick to tie it late, a go-ahead 39-yarder, and the 49-yd game-winner in overtime, which outweighs a higher kick count in a blowout."
+  }
  },
  "cases": [
   {
