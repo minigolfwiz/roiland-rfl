@@ -257,15 +257,20 @@
    ],
    "game": null,
    "where": "League investigation",
-   "text": "The league has finished its review of the hit by Kotone Matsuda (Beavers) in week 1, 2045. Investigators concluded that Kotone Matsuda's hit was avoidable, but found real mitigating circumstances in how the play developed. Your ruling at the time: 3 games + $100K.\n\nOriginal matter: Kotone Matsuda (DL, Beavers) was flagged for roughing the passer with 7:35 left in the first quarter on a play that ended with Barnaby Kingsbank (S, Demons) being helped from the field. Kingsbank was diagnosed with a hamstring injury and is expected to miss 1 week. The league's film review found the hit was avoidable. The players' union says it will support Matsuda through the process.",
-   "severity": 7.1,
+   "text": "The league has finished its review of the hit by Kotone Matsuda (Beavers) in week 1, 2045 (Diveo Demons at Sarkady Beavers).\n\nTHE PLAY. Kotone Matsuda (DL, Beavers) was flagged for roughing the passer on Tessa Bierhoff (Demons QB) with 7:35 left in the first quarter, 2 and 10, a 15-yard penalty and an automatic first down. Film review found that the contact came after the ball was out, about a step late, and was avoidable. There was no contact to the head or neck area and no helmet-to-helmet contact.\n\nTHE INJURY. The original ballot tied this hit to Barnaby Kingsbank (S, Demons), who left the game with a hamstring injury (out 1 week). The game record does not support that link. His injury is logged with 11:22 left in the second quarter, about 11 minutes of game time after the flag, on a different play. Tessa Bierhoff was not injured. The injury should not have counted against Kotone Matsuda, and it drove much of the original severity.\n\nRECORD. Kotone Matsuda has no earlier cases on the desk.\n\nWHERE THINGS STAND. Your ruling was 3 games + $100K. Kotone Matsuda has served 1 of 3 games; the $100K fine stands.",
+   "severity": 4.6,
    "prior": 0,
    "stage": "findings",
    "pids": [
     9035782,
     9100786
    ],
-   "precedent": [],
+   "precedent": [
+    "2044 wk 5, Lech Braunbruck: Warning (severity 4.5)",
+    "2044 wk 17, Maximo Penalarga: Fine $15K (severity 4.4)",
+    "2044 wk 14, Andre Kalomatos: Fine $50K (severity 4.8)",
+    "2044 wk 20, Vlassis Panatidis: No action (severity 4.9)"
+   ],
    "chain": [
     "Week 1, 2045: investigation opened"
    ],
@@ -285,7 +290,7 @@
      "games": -1,
      "fine": 0,
      "status": "ok",
-     "suggested": true,
+     "suggested": false,
      "blurb": "Reduce the suspension by 1 game",
      "adjust": true
     },
@@ -315,7 +320,7 @@
      "games": -2,
      "fine": -50000,
      "status": "ok",
-     "suggested": false,
+     "suggested": true,
      "blurb": "Lift the remaining suspension and halve the fine to $50K",
      "adjust": true
     }

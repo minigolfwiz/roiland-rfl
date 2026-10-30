@@ -134,12 +134,12 @@ def subject(S, rnd, spec, week, res, used, key):
     if kind in ('flag', 'flag_injury'):
         fl = flagged(S, res, spec['anchor'], used)
         if kind == 'flag_injury':       # only a play with a real injury to an opponent in that game
-            fl = [(g, x) for g, x in fl if any(i['team'] != x['team'] for i in g['injuries'])]
+            fl = [(g, x) for g, x in fl if injury_link(g, x)]      # 2045 wk 2 fix: the injury must be logged on that play, not anywhere in the game
         if not fl: return None
         g, x = rnd.choices(fl, [lw(S, S['players'][str(x_['pid'])], 'mix') * (1.0 + .05 * S['season']['stats'].get(str(x_['pid']), {}).get('pen', 0)) for g_, x_ in fl])[0]
         p = S['players'][str(x['pid'])]; club = x['team']; oppc = g['away'] if club == g['home'] else g['home']
         ctx = base_ctx(S, rnd, club); ctx.update(name=p['name'], last=p['name'].split()[-1], pos=p['pos'], opp=nick(oppc), oppclub=oppc, flag=x['type'], when=when_of(x), onick=nick(oppc), game=g['id'])
-        injs = [i for i in g['injuries'] if i['team'] == oppc]
+        _lk = injury_link(g, x); injs = [i for i in g['injuries'] if i['team'] == oppc and _lk and _lk['text'].startswith(i['name'])]      # only an injury logged on this play can be the victim
         want = VICTIM_POS[x['type']]
         victim = None
         for i in injs:        # a real injury to an opponent in this game is the victim when the position fits
@@ -453,6 +453,63 @@ def follow_up(S, rnd, item, week):
     if st['kind'] == 'court': return build_court(S, rnd, st, item, week, chain, p)
     if st['kind'] == 'felony': return build_resolution(S, rnd, st, item, week, chain, p)
 
+
+def _secs(t): m, sec = str(t).split(':'); return int(m) * 60 + int(sec)
+def _left(q, t):      # seconds of regulation left; OT counts as 0 left
+    return (4 - int(q)) * 900 + _secs(t) if str(q).isdigit() and int(q) <= 4 else 0
+def injury_link(g, x):
+    """Fix (Dan, 2045 wk 2): a flag only counts as 'the hit that injured' an opponent when that injury is logged within a minute of game clock after the flag. Returns the injury log entry or None."""
+    for e in g['plays']:
+        if e['kind'] != 'injury' or e['team'] == x['team'] or str(e['q']) != str(x['q']) or str(x['q']) == 'OT': continue
+        if 0 <= _secs(x['t']) - _secs(e['t']) <= 60: return e
+    return None
+def opp_injuries(g, x):
+    return [e for e in g['plays'] if e['kind'] == 'injury' and e['team'] != x['team']]
+
+def review_facts(S, st, h, p):
+    """Concrete, record-based findings for a review of a ruling (week 1, 2045 Matsuda). Never shows hidden ratings."""
+    g = next((x for x in S['season']['results'].get(str(st['week']), []) if x.get('id') == st.get('game')), None)
+    if not g: return None
+    flag = next((x for x in g.get('pens', []) if x['pid'] == p['pid']), None)
+    if not flag: return None
+    oppc = g['away'] if flag['team'] == g['home'] else g['home']; side = 'H' if oppc == g['home'] else 'A'
+    qb = max(((pid, v) for pid, v in g['stats'][side].items() if S['players'][str(pid)]['pos'] == 'QB' and v.get('att')), key=lambda kv: kv[1]['att'], default=None)
+    link = injury_link(g, flag); other = opp_injuries(g, flag)
+    gap = None
+    if not link and other:
+        e = other[0]; gap = (_left(flag['q'], flag['t']) - _left(e['q'], e['t'])) / 60
+    return dict(g=g, flag=flag, oppc=oppc, qb=S['players'][str(qb[0])] if qb else None, link=link, other=other, gap=gap)
+
+def review_text(S, st, h, p, rf):
+    ORD = ['first', 'second', 'third', 'fourth']; fl = rf['flag']; g = rf['g']; tr = st['truth']; nk = nick(st['club']); name = st['name']
+    qbn = f"{rf['qb']['name']} ({nick(rf['oppc'])} QB)" if rf['qb'] else f"the {nick(rf['oppc'])} quarterback"
+    when = f"{fl['t']} left in the {ORD[int(fl['q']) - 1]} quarter" if str(fl['q']).isdigit() else f"{fl['t']} left in overtime"
+    play = f"{name} ({p['pos']}, {nk}) was flagged for {fl['type']} on {qbn} with {when}, {fl['down']} and {fl['to_go']}, a {fl['yds']}-yard penalty" + (' and an automatic first down.' if fl.get('af') else '.')
+    film = {'substantiated': "Film review found that the contact came well after the ball was out, was avoidable, and included forcible contact to the head and neck area.",
+            'partial': "Film review found that the contact came after the ball was out, about a step late, and was avoidable. There was no contact to the head or neck area and no helmet-to-helmet contact.",
+            'unfounded': "Film review found that the pass was still in the air as he made contact. The flag was marginal and the contact was not clearly avoidable."}[tr]
+    paras = [f"The league has finished its review of the hit by {name} ({nk}) in week {st['week']}, {st['year']} ({g['away']} at {g['home']}).", 'THE PLAY. ' + play + ' ' + film]
+    def _inj(e):
+        nm = e['text'].split(' (')[0]; d = next((x for x in g['injuries'] if x['name'] == nm), None)
+        return nm, (f"{d['pos']}, {nick(d['team'])}" if d else ''), (f"a {d['kind']} injury (out {d['weeks']} week{'s' if d['weeks'] != 1 else ''})" if d and d['weeks'] < 99 else (f"a {d['kind']} (out for the season)" if d else 'an injury'))
+    if rf['link']:
+        nm, who, what = _inj(rf['link']); paras.append(f"THE INJURY. {nm} ({who}) left the game with {what} on the same play. The injury counts against {name}.")
+    elif rf['other']:
+        e = rf['other'][0]; nm, who, what = _inj(e)
+        paras.append(f"THE INJURY. The original ballot tied this hit to {nm} ({who}), who left the game with {what}. The game record does not support that link. His injury is logged with {e['t']} left in the {ORD[int(e['q']) - 1]} quarter, about {rf['gap']:.0f} minutes of game time after the flag, on a different play. {rf['qb']['name'] if rf['qb'] else 'The quarterback'} was not injured. The injury should not have counted against {name}, and it drove much of the original severity.")
+    else: paras.append("THE INJURY. No opponent was injured on the play.")
+    prior = history_for(S, p['pid'])
+    prior = [x for x in prior if x['id'] != h['id'] or x['year'] != h['year']]
+    paras.append("RECORD. " + (f"{name} has {len(prior)} earlier case{'s' if len(prior) != 1 else ''} on the desk in the last three seasons." if prior else f"{name} has no earlier cases on the desk."))
+    served = h['games'] - (min(h['games'], p['inj']['weeks']) if p.get('inj') and p['inj']['kind'] == 'suspended' else h['games'])
+    paras.append(f"WHERE THINGS STAND. Your ruling was {h['label']}. {name} has served {served} of {h['games']} games; the {money(h['fine'])} fine stands.")
+    return '\n\n'.join(paras)
+
+def review_precedent(S, h, sev, n=4):
+    o = office(S); rows = [x for x in o['history'] if x['type'] in ('late_hit', 'helmet', 'defenseless', 'flagrant', 'targeting') and not (x['id'] == h['id'] and x['year'] == h['year']) and x.get('stage', 'new') in ('new', 'findings')]
+    rows = sorted(rows, key=lambda x: abs(x['sev'] - sev))[:n]
+    return [f"{x['year']} wk {x['week']}, {x.get('name') or ''}: {x['label']} (severity {x['sev']})" for x in rows]
+
 def build_findings(S, rnd, st, item, week, chain, p):
     key = st['type']; spec = dict(CATALOG[key], id=key); r2 = random.Random(rnd.random())
     facts, d = roll_facts(r2, FIND_FACTS, {}, 0)
@@ -472,14 +529,13 @@ def build_findings(S, rnd, st, item, week, chain, p):
                    'partial': f"Investigators concluded that {st['name']}'s hit was reckless but not flagrant: avoidable, though the timing was close to the whistle.",
                    'unfounded': f"Investigators concluded that {st['name']}'s hit was not flagrant: the contact was close to the whistle and the league found no violation."}[st['truth']]
         text = '\n\n'.join([f"The league has finished its review of the hit by {st['name']} ({nick(st['club'])}) in week {st['week']}, {st['year']}. " + verdict, 'Original matter: ' + st['summary']])
-    rid = st.get('review_of'); h_rev = None
-    if rid:      # Dan (2045 wk 1): rule now, investigate, and lessen the punishment if the findings warrant it
+    rid = st.get('review_of'); h_rev = None; rf = None; sev_note = None
+    if rid:      # Dan (2045 wk 1): rule now, investigate, and lessen the punishment if the findings warrant it; wk 2: findings must be specific, built from the game record
         h_rev = next((x for x in office(S)['history'] if x['id'] == rid and x['year'] == st['year']), None)
-        if h_rev:
-            verdict = {'substantiated': f"Investigators concluded that {st['name']}'s hit was avoidable and that the original ruling fit the contact.",
-                       'partial': f"Investigators concluded that {st['name']}'s hit was avoidable, but found real mitigating circumstances in how the play developed.",
-                       'unfounded': f"Investigators concluded that the contact by {st['name']} was not clearly avoidable given how the play developed, and that the original ruling overstated the case."}[st['truth']]
-            text = '\n\n'.join([f"The league has finished its review of the hit by {st['name']} ({nick(st['club'])}) in week {st['week']}, {st['year']}. " + verdict + f" Your ruling at the time: {h_rev['label']}.", 'Original matter: ' + st['summary']])
+        if h_rev and p:
+            rf = review_facts(S, st, h_rev, p)
+            if rf: text = review_text(S, st, h_rev, p, rf)
+            if rf and not rf['link'] and rf['other']: sev = clamp(sev - 2.5, 1, 10)      # the injury aggravator does not hold
     if st['truth'] == 'unfounded':
         opts = [O('clear', 'Close the matter: no violation found', sug=True), O('warn', 'Close the matter with a warning about procedures')]
         fv = fine_for(3.0) * (6 if spec['subject'] != 'player' else 1)
@@ -490,17 +546,18 @@ def build_findings(S, rnd, st, item, week, chain, p):
         opts = [o for o in opts if o['key'] != 'none'] + [O('none', 'No further action')]
     if h_rev:
         tr = st['truth']; left = min(h_rev['games'], p['inj']['weeks']) if (p and p.get('inj') and p['inj']['kind'] == 'suspended' and h_rev['games'] < 99) else 0; fn = h_rev['fine']
-        opts = [O('uphold', 'Uphold the ruling as it stands', sug=(tr == 'substantiated'))]
-        if left >= 2: opts.append(O('red', 'Reduce the suspension by 1 game', games=-1, adjust=True, sug=(tr == 'partial' and fn == 0)))
-        if left >= 1: opts.append(O('over', f"Lift the remaining suspension ({left} game{'s' if left != 1 else ''}); the fine stands", games=-left, adjust=True, sug=(tr == 'partial' and left == 1)))
-        if fn: opts.append(O('redf', f"Halve the fine to {money(fn // 2)}", fine=-(fn // 2), adjust=True, sug=(tr == 'partial' and left == 0)))
-        if left >= 1 and fn: opts.append(O('overf', f"Lift the remaining suspension and halve the fine to {money(fn // 2)}", games=-left, fine=-(fn // 2), adjust=True, sug=(tr == 'unfounded')))
-        if tr == 'partial' and left >= 2 and fn: opts[1]['suggested'] = True
+        nolink = bool(rf and not rf['link'] and rf['other'])
+        sk = 'overf' if (nolink or tr == 'unfounded') and left >= 1 and fn else ('uphold' if tr == 'substantiated' else ('over' if left >= 1 else ('redf' if fn else 'uphold')))
+        opts = [O('uphold', 'Uphold the ruling as it stands', sug=(sk == 'uphold'))]
+        if left >= 2: opts.append(O('red', 'Reduce the suspension by 1 game', games=-1, adjust=True, sug=False))
+        if left >= 1: opts.append(O('over', f"Lift the remaining suspension ({left} game{'s' if left != 1 else ''}); the fine stands", games=-left, adjust=True, sug=(sk == 'over')))
+        if fn: opts.append(O('redf', f"Halve the fine to {money(fn // 2)}", fine=-(fn // 2), adjust=True, sug=(sk == 'redf')))
+        if left >= 1 and fn: opts.append(O('overf', f"Lift the remaining suspension and halve the fine to {money(fn // 2)}", games=-left, fine=-(fn // 2), adjust=True, sug=(sk == 'overf')))
         for x in opts: x['blurb'] = x['label']
         if not any(x['suggested'] for x in opts): opts[0]['suggested'] = True
     case = dict(type=key, title=f"Findings: {st['title']}", who=[dict(name=st['name'], pos=('CLUB' if spec['subject'] == 'club' else (S['players'][str(st['pids'][0])]['pos'] if st['pids'] else 'STAFF')), club=st['club'], pid=(st['pids'] or [None])[0], club_level=spec['subject'] == 'club')],
                 game=None, where='League investigation', text=text, severity=round(sev if st['truth'] != 'unfounded' else 1.0, 1), prior=0, stage='findings', pids=st['pids'], precedent=[], chain=chain + [f"Week {st['week']}, {st['year']}: investigation opened"], facts=[st['truth']] + [f['id'] for f in facts], options=opts, precedent_pick=None, sid=item['sid'])
-    if h_rev: case.update(rid=h_rev['id'], ryear=h_rev['year'])
+    if h_rev: case.update(rid=h_rev['id'], ryear=h_rev['year'], precedent=review_precedent(S, h_rev, case['severity']))
     return case
 
 def build_court(S, rnd, st, item, week, chain, p):
@@ -605,7 +662,7 @@ def open_investigation(S, week, c, review=False, due_in=None):
     di = due_in or (1 if review else rnd.choice([2, 3, 3, 4]))
     w = c['who'][0]
     st = dict(kind='investigation', type=c['type'], truth=truth, sev=sev, due_in=di, club=w['club'], pids=list(c['pids']), facts=[], title=c['title'], name=w['name'], next_kind='findings',
-              week=week, year=year, summary=c['text'].split('\n\n')[0], chain=[])
+              week=week, year=year, summary=c['text'].split('\n\n')[0], chain=[], game=c.get('game'))
     if review: st['review_of'] = c['id']
     of['stories'][sid] = st; of['due'] = [d for d in of['due'] if not (d.get('kind') == 'appeal' and d.get('rid') == c['id'] and review)]
     of['due'].append(dict(tick=now + di, kind='findings', sid=sid)); return st
