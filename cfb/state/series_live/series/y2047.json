@@ -307,8 +307,57 @@
       "sub": false,
       "v": "Krobe State",
       "week": 1
+    },
+    {
+      "h": "Eona",
+      "sid": null,
+      "sub": false,
+      "v": "Will Tech",
+      "week": 1
+    },
+    {
+      "h": "Lornaman",
+      "sid": null,
+      "sub": false,
+      "v": "Central Stanton",
+      "week": 1
+    },
+    {
+      "h": "Far Farris State",
+      "sid": null,
+      "sub": false,
+      "v": "Skeenerland State",
+      "week": 1
+    },
+    {
+      "h": "Skeenerland State",
+      "sid": null,
+      "sub": false,
+      "v": "Rupin State",
+      "week": 2
+    },
+    {
+      "h": "Skeenerland State",
+      "sid": null,
+      "sub": true,
+      "v": "Stanisburg",
+      "week": 8
+    },
+    {
+      "h": "North Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "Cherry Lake",
+      "week": 2
+    },
+    {
+      "h": "North Hatesei",
+      "sid": null,
+      "sub": true,
+      "v": "Freyr",
+      "week": 9
     }
   ],
-  "saved": "10/28/2026, 12:37:27 AM",
+  "saved": "10/30/2026, 1:02:07 PM",
   "year": 2047
 }

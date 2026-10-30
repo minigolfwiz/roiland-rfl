@@ -167,8 +167,29 @@
       "sub": false,
       "v": "Verigon",
       "week": 2
+    },
+    {
+      "h": "Central Stanton",
+      "sid": null,
+      "sub": false,
+      "v": "Lornaman",
+      "week": 3
+    },
+    {
+      "h": "North Hatesei",
+      "sid": null,
+      "sub": true,
+      "v": "Anderville Tech",
+      "week": 10
+    },
+    {
+      "h": "North Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "Marines",
+      "week": 2
     }
   ],
-  "saved": "10/28/2026, 12:23:18 AM",
+  "saved": "10/30/2026, 1:02:55 PM",
   "year": 2049
 }

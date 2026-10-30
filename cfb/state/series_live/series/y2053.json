@@ -13,8 +13,22 @@
       "sub": false,
       "v": "Southern Tengus",
       "week": 14
+    },
+    {
+      "h": "Will Tech",
+      "sid": null,
+      "sub": false,
+      "v": "Eona",
+      "week": 1
+    },
+    {
+      "h": "North Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "Marines",
+      "week": 3
     }
   ],
-  "saved": "10/28/2026, 12:21:02 AM",
+  "saved": "10/30/2026, 1:03:15 PM",
   "year": 2053
 }
