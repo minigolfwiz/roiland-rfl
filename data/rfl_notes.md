@@ -147,3 +147,5 @@
 - Draft realism (29 Oct 2026, Dan): R1 was nearly all defence. draft.py now has POSVAL (DL/OL/WR up, S/LB/RB/TE down, fading by round 5) and qb_hunt() (starter under 8.4 or 34+ = hunting a franchise QB, big bonus; settled clubs reach for QBs rarely). Replayed on the 2045 pre-draft state: 4 QBs in R1 (was 3, with only one real hunter pattern), 20 QBs total (was 25), more OL/WR/DL up top. Applies from the 2046 draft; the 2045 draft stands.
 
 - **Three-letter codes (Dan, 29 Oct 2026): Sarkady Beavers = BER, Costique Bearcats = BEV** (so they no longer collide as BEA). Every other club keeps its first three letters of the nickname. Use these whenever codes appear in replies, tables or pages.
+
+- **2045 schedule installed (30 Oct 2026).** Dan placed all prime games (20 TNF, 19 MNF, 20 SNF + week-20 second SNF, no pins). Fill: seed 11 (FIXW 8), cost 0, none of his games moved, every club has two byes in the 4-11 / 12-18 windows. data/current_year.txt = 2045; state_2045.json started (week 0). Next: play week 1. Mega Bowl 2045 site: Wolford Dragons, One Wolford Stadium.
