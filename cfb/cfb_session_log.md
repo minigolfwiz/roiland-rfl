@@ -878,3 +878,10 @@ NEXT: new conversation -> RESTORE from GitHub -> media pool s20, preseason poll 
 ## SERIES OFFICE SAVE (Dan, 2026-10-30 13:06)
 Pulled all series/y2043-y2054 docs from the Series Office db into state/series_live/series/ (Dan's latest bookings: 2046 66 games, 2047 ~, 2053-54 started) and mirrored to the repo. Change on Dan's request: 2046 Park Island hosts RPU (guest) moved from week 3 to week 4 (db series/y2046 v69; Park Island's other 2046 games are weeks 1 and 2, no clash).
 
+
+## 2045 PRESEASON -- 2026-10-30 (new conversation, restored from GitHub)
+RESTORED from minigolfwiz/roiland-rfl cfb/ -> /home/claude/cfb2 (gunzip state, games_db parts joined): season 20, next_week 0, 2045 schedule installed. Push access OK this session.
+Media pool s20 drawn by media_pool.make_pool (30 returning / 30 new). Preseason poll: run_season.poll_update(seed=10000) -> media_history['pre'], media_ballots[0]. Backup state/season_state.pkl.pre_s20_preseason.
+Preseason top 5: Roosevelt (35 firsts, defending champions, first title), Eona (15), North Hatesei (2), Rogaela State (6), Pistolheart (0); German Shores 25th is the only L6 team. 25 notes in state/preseason_notes.json (2044's kept as preseason_notes_s19.json), from export_preseason facts + playoff_s19.pkl results; no mascots/ratings.
+Roiland Preseason republished (v8), Media Pool (v86).
+Week 0 Gameview candidates: North Hatesei at Crayellan; Eternal Fox at Park Island; Hansenne at Antiragal State; Greene at Burrstone. NEXT: Dan picks -> `python3 gameview.py pick 0 <host>` then `python3 week_cycle.py 0 <host>`.
