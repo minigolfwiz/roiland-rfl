@@ -34,6 +34,8 @@ HANDOFF = '/home/claude/cfb2/state/conf_s%d_handoff.json' % _SN
 WEEKS = list(range(15))
 RIV = 14
 HARD = 1000.0
+import pickle as _pk
+_TIER = _pk.load(open('/home/claude/cfb2/state/universe.pkl', 'rb'))['tiers']
 
 # soft weights
 W0_CONF = 20.0          # a conference game in week 0
@@ -41,6 +43,12 @@ W1_CONF = 8.0           # a conference game in week 1
 W0_NC_OVER = 4.0        # each non-conference game in week 0 past one per conference
 HOME3 = 0.6             # a three-game home or road run: legal, mildly discouraged
 LEVEL = 0.15            # per game off a level week count
+# Dan's standing calendar preferences (2043, taught to the filler for the 2045 build):
+W_LATE_HOME = 12.0      # no home game anywhere in weeks 11-14 (power programmes above all)
+W_LATE_HOME_P6 = 18.0
+W_BYE_SPAN = 3.0        # per week short of 6 when all three byes sit inside a short window
+W_BYE_GAP2 = 2.0        # two byes only one game apart (weeks 0 and 2, 4 and 6 ...)
+W_RUN = 3.0             # per game past six in an unbroken run of games between byes
 
 
 class Cal:
@@ -114,6 +122,16 @@ class Cal:
                     else: s += HOME3 * 2
                 elif n == 3: s += HOME3
             i = j
+        # soft (Dan, 2043): a home game somewhere in weeks 11-14
+        if not any(row[w] and row[w]['host'] == t for w in (11, 12, 13, 14)):
+            s += W_LATE_HOME_P6 if _TIER[self.conf_of[t]] == 'P6' else W_LATE_HOME
+        # soft (Dan, 2043): byes spread through the year, long unbroken runs broken up
+        if len(byes) == 3:
+            span = byes[-1] - byes[0]
+            if span < 6: s += W_BYE_SPAN * (6 - span)
+            s += W_BYE_GAP2 * sum(1 for i in range(1, 3) if byes[i] - byes[i - 1] == 2)
+        edges = [-1] + byes + [15]
+        s += W_RUN * sum(max(0, (edges[i + 1] - edges[i] - 1) - 6) for i in range(len(edges) - 1))
         # soft: week 0 / 1 conference games
         for w, pen in ((0, W0_CONF), (1, W1_CONF)):
             g = row[w]

@@ -1,0 +1,153 @@
+{
+  "games": [
+    {
+      "h": "UNN",
+      "sid": null,
+      "sub": false,
+      "v": "Southern Tengus",
+      "week": 14
+    },
+    {
+      "h": "Rogaela State",
+      "sid": null,
+      "sub": false,
+      "v": "North Hatesei",
+      "week": 1
+    },
+    {
+      "h": "Eona",
+      "sid": null,
+      "sub": false,
+      "v": "Skeenerland State",
+      "week": 0
+    },
+    {
+      "h": "Central Stanton",
+      "sid": null,
+      "sub": false,
+      "v": "Coachville",
+      "week": 7
+    },
+    {
+      "h": "Burrstone",
+      "sid": null,
+      "sub": false,
+      "v": "Denver State",
+      "week": 2
+    },
+    {
+      "h": "Ciarralotta State",
+      "sid": null,
+      "sub": false,
+      "v": "Pistolheart",
+      "week": 1
+    },
+    {
+      "h": "Reid State",
+      "sid": null,
+      "sub": false,
+      "v": "Tengus State",
+      "week": 1
+    },
+    {
+      "h": "Kaji Daun",
+      "sid": null,
+      "sub": true,
+      "v": "Yarrola",
+      "week": 13
+    },
+    {
+      "h": "Natzumakis",
+      "sid": null,
+      "sub": false,
+      "v": "Ranroman",
+      "week": 13
+    },
+    {
+      "h": "Yrei Trobniy",
+      "sid": null,
+      "sub": false,
+      "v": "Antiragal State",
+      "week": 1
+    },
+    {
+      "h": "Northlight",
+      "sid": null,
+      "sub": false,
+      "v": "Skylar Rose",
+      "week": 3
+    },
+    {
+      "h": "Verigon",
+      "sid": null,
+      "sub": false,
+      "v": "Marblehead",
+      "week": 3
+    },
+    {
+      "h": "Orlot",
+      "sid": null,
+      "sub": false,
+      "v": "Phangrine State",
+      "week": 5
+    },
+    {
+      "h": "Keeper",
+      "sid": null,
+      "sub": false,
+      "v": "Eternal Fox",
+      "week": 3
+    },
+    {
+      "h": "Keeper",
+      "sid": "ai10",
+      "sub": false,
+      "v": "Dove Island",
+      "week": 2
+    },
+    {
+      "h": "Queensville",
+      "sid": null,
+      "sub": false,
+      "v": "Tasson State",
+      "week": 8
+    },
+    {
+      "h": "Holliday",
+      "sid": null,
+      "sub": false,
+      "v": "Roosevelt Mines",
+      "week": 5
+    },
+    {
+      "h": "Rogaela State",
+      "sid": null,
+      "sub": false,
+      "v": "Queensville",
+      "week": 2
+    },
+    {
+      "h": "Lornaman",
+      "sid": null,
+      "sub": false,
+      "v": "Ranroman State",
+      "week": 1
+    },
+    {
+      "h": "Tengus State",
+      "sid": null,
+      "sub": false,
+      "v": "Hatesei",
+      "week": 3
+    },
+    {
+      "h": "Skylar Rose",
+      "sid": null,
+      "sub": false,
+      "v": "North Verigon",
+      "week": 1
+    }
+  ],
+  "saved": "10/28/2026, 12:20:11 AM",
+  "year": 2051
+}

@@ -3194,3 +3194,5 @@ PUSHED 2026-10-28 (write access restored; repo attached with push): state throug
 
 ## RESOLVED (Dan: make it real; retro_class_2044.py applied): the 2044 freshman class was 2,020 walk-ons (stage 4 signing skipped in the 2043 offseason). Options: (A) leave it, canon stands; (B) lift ratings (not names/stats/results) of the 2,081 sophomores toward a normal signed class and recompute preseason ratings; (C) compensate forward (larger 2046 class). Guards added: recruiting.py --commit, roster_final.py assert.
 ## NEXT: 2045 schedule build (teach fill_conf the calendar preferences first), then tell Dan to start a new conversation.
+
+## 2045 SCHEDULE INSTALLED (2026-10-30). START A NEW CONVERSATION: "Resume RCFB season 2045" -> media pool s20 (media_pool.make_pool), preseason poll (run_season.poll_update seed 10000), preseason notes + page, week 0. Standing from 2044 close: show all-time title standings + conference titles at each season end; Dan picks Ryskamp four + winner himself from 2045; title game narrated one quarter at a time.

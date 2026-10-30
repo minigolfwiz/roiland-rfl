@@ -1,0 +1,174 @@
+{
+  "games": [
+    {
+      "h": "Barhold Valley",
+      "sid": null,
+      "sub": false,
+      "v": "Southern Tengus",
+      "week": 14
+    },
+    {
+      "h": "North Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "Rogaela State",
+      "week": 1
+    },
+    {
+      "h": "Barhold",
+      "sid": null,
+      "sub": false,
+      "v": "Crayellan",
+      "week": 1
+    },
+    {
+      "h": "Antiragal State",
+      "sid": null,
+      "sub": false,
+      "v": "UNN",
+      "week": 3
+    },
+    {
+      "h": "South Antiragal",
+      "sid": null,
+      "sub": false,
+      "v": "Coachville",
+      "week": 2
+    },
+    {
+      "h": "UFNH",
+      "sid": null,
+      "sub": false,
+      "v": "Keytommiyr",
+      "week": 4
+    },
+    {
+      "h": "Eona",
+      "sid": null,
+      "sub": false,
+      "v": "Ekralund State",
+      "week": 3
+    },
+    {
+      "h": "Dietsche",
+      "sid": null,
+      "sub": false,
+      "v": "Pistolheart",
+      "week": 1
+    },
+    {
+      "h": "Fiota Bay",
+      "sid": null,
+      "sub": false,
+      "v": "Ranroman State",
+      "week": 2
+    },
+    {
+      "h": "Far Farris State",
+      "sid": null,
+      "sub": false,
+      "v": "Tengus State",
+      "week": 7
+    },
+    {
+      "h": "Kaji Daun",
+      "sid": null,
+      "sub": true,
+      "v": "Ursus",
+      "week": 13
+    },
+    {
+      "h": "Eastern State",
+      "sid": null,
+      "sub": false,
+      "v": "Rogaela",
+      "week": 3
+    },
+    {
+      "h": "Ranroman",
+      "sid": null,
+      "sub": false,
+      "v": "Natzumakis",
+      "week": 4
+    },
+    {
+      "h": "Ekralund State",
+      "sid": null,
+      "sub": false,
+      "v": "Leafette",
+      "week": 1
+    },
+    {
+      "h": "Riveral",
+      "sid": null,
+      "sub": false,
+      "v": "Will Tech",
+      "week": 1
+    },
+    {
+      "h": "Dove Island",
+      "sid": null,
+      "sub": false,
+      "v": "Fiota Bay",
+      "week": 3
+    },
+    {
+      "h": "S Antiragal State",
+      "sid": "ai6",
+      "sub": false,
+      "v": "Skeenerland",
+      "week": 3
+    },
+    {
+      "h": "Clark",
+      "sid": "ai7",
+      "sub": false,
+      "v": "Lito Rock State",
+      "week": 6
+    },
+    {
+      "h": "Dove Island",
+      "sid": "ai10",
+      "sub": false,
+      "v": "Keeper",
+      "week": 7
+    },
+    {
+      "h": "Westburg",
+      "sid": null,
+      "sub": false,
+      "v": "Rogaela Tech",
+      "week": 3
+    },
+    {
+      "h": "Verigon",
+      "sid": null,
+      "sub": false,
+      "v": "Ciarralotta Tech",
+      "week": 6
+    },
+    {
+      "h": "Black Forest",
+      "sid": null,
+      "sub": false,
+      "v": "Dietsche",
+      "week": 3
+    },
+    {
+      "h": "Far Farris",
+      "sid": null,
+      "sub": false,
+      "v": "Pistolheart",
+      "week": 4
+    },
+    {
+      "h": "German Shores",
+      "sid": null,
+      "sub": false,
+      "v": "Verigon",
+      "week": 2
+    }
+  ],
+  "saved": "10/28/2026, 12:23:18 AM",
+  "year": 2049
+}

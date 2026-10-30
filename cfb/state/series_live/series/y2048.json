@@ -1,0 +1,202 @@
+{
+  "games": [
+    {
+      "h": "Southern Tengus",
+      "sid": null,
+      "sub": false,
+      "v": "Lito Rock State",
+      "week": 14
+    },
+    {
+      "h": "North Hatesei",
+      "sid": null,
+      "sub": true,
+      "v": "US Fall Beach",
+      "week": 13
+    },
+    {
+      "h": "Ciarralotta Tech",
+      "sid": null,
+      "sub": false,
+      "v": "North Hatesei",
+      "week": 1
+    },
+    {
+      "h": "North Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "Repidome",
+      "week": 2
+    },
+    {
+      "h": "Canesta State",
+      "sid": null,
+      "sub": false,
+      "v": "Barhold",
+      "week": 3
+    },
+    {
+      "h": "Dietsche",
+      "sid": null,
+      "sub": false,
+      "v": "Eona",
+      "week": 3
+    },
+    {
+      "h": "Central Stanton",
+      "sid": null,
+      "sub": false,
+      "v": "Costique River",
+      "week": 2
+    },
+    {
+      "h": "UNN",
+      "sid": null,
+      "sub": false,
+      "v": "Antiragal State",
+      "week": 1
+    },
+    {
+      "h": "Coachville",
+      "sid": null,
+      "sub": false,
+      "v": "South Antiragal",
+      "week": 2
+    },
+    {
+      "h": "Stanton State",
+      "sid": null,
+      "sub": false,
+      "v": "Orlot",
+      "week": 1
+    },
+    {
+      "h": "Keytommiyr",
+      "sid": null,
+      "sub": false,
+      "v": "UFNH",
+      "week": 3
+    },
+    {
+      "h": "UFNH",
+      "sid": null,
+      "sub": false,
+      "v": "Perri Park",
+      "week": 4
+    },
+    {
+      "h": "Ranroman State",
+      "sid": null,
+      "sub": false,
+      "v": "Coastal Ranroman",
+      "week": 1
+    },
+    {
+      "h": "Ranroman State",
+      "sid": null,
+      "sub": false,
+      "v": "Marines",
+      "week": 2
+    },
+    {
+      "h": "Ranroman State",
+      "sid": null,
+      "sub": true,
+      "v": "Hunter",
+      "week": 3
+    },
+    {
+      "h": "Skeenerland State",
+      "sid": null,
+      "sub": false,
+      "v": "Rogaela State",
+      "week": 1
+    },
+    {
+      "h": "Antiragal",
+      "sid": null,
+      "sub": false,
+      "v": "Eastern State",
+      "week": 1
+    },
+    {
+      "h": "Park Island",
+      "sid": null,
+      "sub": false,
+      "v": "Vaughn Bay State",
+      "week": 0
+    },
+    {
+      "h": "Marblehead",
+      "sid": null,
+      "sub": false,
+      "v": "Verigon",
+      "week": 2
+    },
+    {
+      "h": "Stanton",
+      "sid": null,
+      "sub": false,
+      "v": "Crayellan State",
+      "week": 1
+    },
+    {
+      "h": "Will Tech",
+      "sid": null,
+      "sub": false,
+      "v": "Riveral",
+      "week": 4
+    },
+    {
+      "h": "Northlight",
+      "sid": null,
+      "sub": false,
+      "v": "Dove Island",
+      "week": 0
+    },
+    {
+      "h": "Perri Park",
+      "sid": "ai4",
+      "sub": false,
+      "v": "San Diego Valley",
+      "week": 8
+    },
+    {
+      "h": "Rogaela",
+      "sid": "ai5",
+      "sub": false,
+      "v": "Stanton",
+      "week": 5
+    },
+    {
+      "h": "Riveral State",
+      "sid": "ai8",
+      "sub": false,
+      "v": "NE Rogaela",
+      "week": 3
+    },
+    {
+      "h": "David Harrison",
+      "sid": "ai9",
+      "sub": false,
+      "v": "Orlot Western",
+      "week": 6
+    },
+    {
+      "h": "UFNH",
+      "sid": null,
+      "sub": false,
+      "v": "Ciarralotta State",
+      "week": 7
+    },
+    {
+      "h": "Fiota Bay",
+      "sid": null,
+      "sub": false,
+      "v": "Antiragal State",
+      "week": 3
+    }
+  ],
+  "saved": "added by Claude",
+  "year": 2048
+}

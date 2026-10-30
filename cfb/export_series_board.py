@@ -34,7 +34,7 @@ def build(out='/home/claude/cfb2/state/series_board.json'):
     locked = []
     for L in base['locked']:
         locked.append({'a': L['a'], 'b': L['b'], 'week': L['week'], 'type': L['type'],
-                       'host0': L['host'], 'record': L.get('record')})
+                       'host0': (L['host'] if (years[0] - base['year']) % 2 == 0 else (L['b'] if L['host'] == L['a'] else L['a'])), 'record': L.get('record')})
     payload = {
         'first_year': years[0], 'years': years, 'slots': base['slots'],
         'conferences': base['conferences'], 'teams': teams, 'subs': base['subs'],
