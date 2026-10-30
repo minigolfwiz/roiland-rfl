@@ -14,3 +14,5 @@ Robust League Office cases BUILT (27 Oct 2026): rfl/case_catalog.py + rfl/cases.
 2044 status (29 Oct 2026): season complete; Commodores won the Mega Bowl 37-27 over the Bearcats. Next: open findings (Ga-Il felony, Komodos filming), then the 2045 offseason. 2045: no kicked XPs in overtime (`game.OT_TWO_POINT_FROM`).
 
 2045 status (30 Oct 2026): schedule installed; week 1 played and the week 1 League Office ballot built (Players of the Week + 3 cases, awaiting Dan). Season page: RFL 2045 Season (https://claude.ai/artifact/R8yjoeoQcDA3Y2dFJgzyTM). Flow: Dan decides on the League Office page -> `league_office.py apply 1 file` -> `weekly.py 2`. Restore: `python3 -c "import sys; sys.path.insert(0,'.'); from rfl.engine import *; save(read_project_state('data/rfl_state_2045.z64'),'data/state_2045.json')"`.
+
+2045 status (30 Oct 2026, later): week 1 desk decided and applied; week 2 played; week 2 League Office ballot built (Matsuda review findings + Players of the Week, awaiting Dan). Next: Dan decides -> `league_office.py apply 2 file` (decisions db doc is `office/y2045w2`) -> `weekly.py 3`.

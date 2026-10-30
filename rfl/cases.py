@@ -422,7 +422,7 @@ def spec_titles(key): return CATALOG[key]['title'] if CATALOG[key]['title'] else
 for _k, _v in FELONY.items(): CATALOG['felony_' + _k]['title'] = _v['title']
 
 # ----------------------------------------------------------------------------------------------------------------------------- follow-ups
-FIND_WHAT = dict(filming='illegally filming opponents', flagrant='a flagrant hit', bench_clear='the late hit that set off the scrum', bounty='a pay-for-injury program', hazing='a pattern of hazing', tampering='improper contact with a player under contract', cap='unreported payments', gambling='wagers on league games')
+FIND_WHAT = dict(targeting='a dangerous hit', social='a pattern of posts aimed at opposing fans', filming='illegally filming opponents', flagrant='a flagrant hit', bench_clear='the late hit that set off the scrum', bounty='a pay-for-injury program', hazing='a pattern of hazing', tampering='improper contact with a player under contract', cap='unreported payments', gambling='wagers on league games')
 FIND_TEXT = dict(
     substantiated=["The league's investigators concluded the allegation of {what} is substantiated.", "After a review of records and interviews, the league found that {what} did occur."],
     partial=["The league's investigators substantiated part of the allegation of {what} and rejected the rest.", "Investigators found some evidence of {what} but could not confirm the full allegation."],
@@ -472,6 +472,14 @@ def build_findings(S, rnd, st, item, week, chain, p):
                    'partial': f"Investigators concluded that {st['name']}'s hit was reckless but not flagrant: avoidable, though the timing was close to the whistle.",
                    'unfounded': f"Investigators concluded that {st['name']}'s hit was not flagrant: the contact was close to the whistle and the league found no violation."}[st['truth']]
         text = '\n\n'.join([f"The league has finished its review of the hit by {st['name']} ({nick(st['club'])}) in week {st['week']}, {st['year']}. " + verdict, 'Original matter: ' + st['summary']])
+    rid = st.get('review_of'); h_rev = None
+    if rid:      # Dan (2045 wk 1): rule now, investigate, and lessen the punishment if the findings warrant it
+        h_rev = next((x for x in office(S)['history'] if x['id'] == rid and x['year'] == st['year']), None)
+        if h_rev:
+            verdict = {'substantiated': f"Investigators concluded that {st['name']}'s hit was avoidable and that the original ruling fit the contact.",
+                       'partial': f"Investigators concluded that {st['name']}'s hit was avoidable, but found real mitigating circumstances in how the play developed.",
+                       'unfounded': f"Investigators concluded that the contact by {st['name']} was not clearly avoidable given how the play developed, and that the original ruling overstated the case."}[st['truth']]
+            text = '\n\n'.join([f"The league has finished its review of the hit by {st['name']} ({nick(st['club'])}) in week {st['week']}, {st['year']}. " + verdict + f" Your ruling at the time: {h_rev['label']}.", 'Original matter: ' + st['summary']])
     if st['truth'] == 'unfounded':
         opts = [O('clear', 'Close the matter: no violation found', sug=True), O('warn', 'Close the matter with a warning about procedures')]
         fv = fine_for(3.0) * (6 if spec['subject'] != 'player' else 1)
@@ -480,8 +488,19 @@ def build_findings(S, rnd, st, item, week, chain, p):
         ids = {f['id'] for f in facts}
         kind = spec['ladder']; opts = ladder(kind, sev, [dict(id=i) for i in ids] + [dict(id=x) for x in st.get('facts', []) if x in ('coach_aware', 'intent', 'own', 'gm_aware')], {}, spec)
         opts = [o for o in opts if o['key'] != 'none'] + [O('none', 'No further action')]
+    if h_rev:
+        tr = st['truth']; left = min(h_rev['games'], p['inj']['weeks']) if (p and p.get('inj') and p['inj']['kind'] == 'suspended' and h_rev['games'] < 99) else 0; fn = h_rev['fine']
+        opts = [O('uphold', 'Uphold the ruling as it stands', sug=(tr == 'substantiated'))]
+        if left >= 2: opts.append(O('red', 'Reduce the suspension by 1 game', games=-1, adjust=True, sug=(tr == 'partial' and fn == 0)))
+        if left >= 1: opts.append(O('over', f"Lift the remaining suspension ({left} game{'s' if left != 1 else ''}); the fine stands", games=-left, adjust=True, sug=(tr == 'partial' and left == 1)))
+        if fn: opts.append(O('redf', f"Halve the fine to {money(fn // 2)}", fine=-(fn // 2), adjust=True, sug=(tr == 'partial' and left == 0)))
+        if left >= 1 and fn: opts.append(O('overf', f"Lift the remaining suspension and halve the fine to {money(fn // 2)}", games=-left, fine=-(fn // 2), adjust=True, sug=(tr == 'unfounded')))
+        if tr == 'partial' and left >= 2 and fn: opts[1]['suggested'] = True
+        for x in opts: x['blurb'] = x['label']
+        if not any(x['suggested'] for x in opts): opts[0]['suggested'] = True
     case = dict(type=key, title=f"Findings: {st['title']}", who=[dict(name=st['name'], pos=('CLUB' if spec['subject'] == 'club' else (S['players'][str(st['pids'][0])]['pos'] if st['pids'] else 'STAFF')), club=st['club'], pid=(st['pids'] or [None])[0], club_level=spec['subject'] == 'club')],
                 game=None, where='League investigation', text=text, severity=round(sev if st['truth'] != 'unfounded' else 1.0, 1), prior=0, stage='findings', pids=st['pids'], precedent=[], chain=chain + [f"Week {st['week']}, {st['year']}: investigation opened"], facts=[st['truth']] + [f['id'] for f in facts], options=opts, precedent_pick=None, sid=item['sid'])
+    if h_rev: case.update(rid=h_rev['id'], ryear=h_rev['year'])
     return case
 
 def build_court(S, rnd, st, item, week, chain, p):
@@ -573,6 +592,23 @@ def build_appeal(S, rnd, item, week):
     if not any(x['suggested'] for x in opts): opts[0]['suggested'] = True
     return dict(type='appeal', title=f"Appeal: {h['title']}", who=[_who(p, p['club'])], game=None, where='League office', text=text, severity=round(sev, 1), prior=0, stage='appeal', pids=[p['pid']], precedent=[], chain=[ref_line(h)],
                 facts=[g] + [f.get('id', 'x') for f in facts], options=opts, precedent_pick=None, rid=h['id'], ryear=h['year'])
+
+
+def open_investigation(S, week, c, review=False, due_in=None):
+    """Open an investigation by hand from a ballot case Dan ruled on (his note asked for one). review=True: a quick review of the ruling itself (due next week) whose
+    findings can lessen the punishment. Hidden truth is drawn deterministically from the case id. Call after apply_case so the history row exists."""
+    of = office(S); year = S['season']['year']; now = tick(S, week); sid = f"{year}:{c['id']}"
+    rnd = random.Random(f"hand-open|{year}|{c['id']}"); sev = c['severity']; roll = rnd.random()
+    if review: truth = 'substantiated' if roll < .50 else ('partial' if roll < .85 else 'unfounded')
+    else:
+        p_sub = clamp(.25 + .07 * (sev - 3), .15, .8); truth = 'substantiated' if roll < p_sub else ('partial' if roll < p_sub + .22 else 'unfounded')
+    di = due_in or (1 if review else rnd.choice([2, 3, 3, 4]))
+    w = c['who'][0]
+    st = dict(kind='investigation', type=c['type'], truth=truth, sev=sev, due_in=di, club=w['club'], pids=list(c['pids']), facts=[], title=c['title'], name=w['name'], next_kind='findings',
+              week=week, year=year, summary=c['text'].split('\n\n')[0], chain=[])
+    if review: st['review_of'] = c['id']
+    of['stories'][sid] = st; of['due'] = [d for d in of['due'] if not (d.get('kind') == 'appeal' and d.get('rid') == c['id'] and review)]
+    of['due'].append(dict(tick=now + di, kind='findings', sid=sid)); return st
 
 # ----------------------------------------------------------------------------------------------------------------------------- weekly draw
 RATES = [('minor', 0.90), ('moderate', 0.25), ('serious', 0.08), ('major', 0.015), ('club', 0.05)]
@@ -672,7 +708,7 @@ def apply_case(S, week, c, d):
                 _clear_hold(p)
                 if o['games']: suspend(S, p, club, week, o['games'])
                 notes.append(f"{p['name']} is reinstated" + (f" after {o['games']} more games" if o['games'] else ''))
-        elif stage == 'appeal':
+        elif stage == 'appeal' or (stage == 'findings' and c.get('rid')):
             h = next((x for x in of['history'] if x['id'] == c['rid'] and x['year'] == c['ryear']), None)
             if o['games'] < 0 and p.get('inj') and p['inj']['kind'] == 'suspended':
                 p['inj']['weeks'] += o['games']
@@ -680,7 +716,7 @@ def apply_case(S, week, c, d):
                 else: notes.append(f"{p['name']}'s suspension is shortened")
             if h:
                 h['games'] = max(0, h['games'] + o['games']) if h['games'] < 99 else h['games']; h['fine'] = max(0, h['fine'] + o['fine'])
-                if o['key'] != 'uphold': h['label'] += ' (changed on appeal)'
+                if o['key'] != 'uphold': h['label'] += ' (changed on appeal)' if stage == 'appeal' else ' (changed after review)'
         elif stage == 'resolution' and c['type'].startswith('felony') or (stage == 'resolution' and o.get('adjust') is None and False):
             _clear_hold(p)
             _apply_penalty(S, p, club, week, now, o, c, rnd, notes, status, indef_min)
@@ -699,7 +735,7 @@ def apply_case(S, week, c, d):
         else:
             if stage == 'findings': pass
             _apply_penalty(S, p, club, week, now, o, c, rnd, notes, status, indef_min)
-        if o['key'] not in ('none', 'warn', 'dismiss', 'clear', 'keep', 'uphold', 'rein', 'reinstate') and c['tier'] in ('minor', 'moderate', 'serious', 'major', 'club'):
+        if o['key'] not in ('none', 'warn', 'dismiss', 'clear', 'keep', 'uphold', 'rein', 'reinstate') and not o.get('adjust') and c['tier'] in ('minor', 'moderate', 'serious', 'major', 'club'):
             DISC.mark_case(p, c['tier'], max(0, o['games']), random.Random(f"mark|{c['id']}|{year}"))
     if o.get('pick_round'):
         S.setdefault('pick_penalties', []).append(dict(club=clubs[0], round=o['pick_round'], draft=year + 1, week=week, reason=c['title'], year=year)); notes.append(f"{nick(clubs[0])} lose a round {o['pick_round']} pick in the {year + 1} draft")
