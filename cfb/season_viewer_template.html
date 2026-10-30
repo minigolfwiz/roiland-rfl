@@ -241,8 +241,12 @@ const BOARDS = {}, BOARD_SRC = {};
    ballot until the committee's first board (after week 8 from 2039); from that week on
    the committee is. A media board published in a committee week is dropped so the
    badge on a game is always from one source, never both. */
-Object.entries(DATA.media || {}).forEach(([w, list]) => {
-  const m = {}; list.forEach((t, i) => m[t] = i + 1); BOARDS[+w] = m; BOARD_SRC[+w] = 'media';
+Object.entries(DATA.media || {}).forEach(([w0, list]) => {
+  // the preseason poll is the board every week-0 game is played against: it is filed as week -1
+  // ('pre' would otherwise become NaN and leave week 0 unranked -- the bug of 2042-44)
+  const w = (w0 === 'pre' || w0 === 'preseason') ? -1 : +w0;
+  if (Number.isNaN(w)) return;
+  const m = {}; list.forEach((t, i) => m[t] = i + 1); BOARDS[w] = m; BOARD_SRC[w] = 'media';
 });
 const COMM_WEEKS = Object.keys(DATA.committee || {}).map(Number);
 const FIRST_COMM = COMM_WEEKS.length ? Math.min(...COMM_WEEKS) : null;
@@ -581,7 +585,7 @@ function renderRanked(){
     body = `<div class="empty">No ranking has been published yet this season.</div>`;
   } else if (!board){
     body = `<div class="empty">Nobody was ranked going into ${weekLabel(week).toLowerCase()} —
-      the first board of ${DATA.year} came after week ${BOARD_WEEKS[0]}.</div>`;
+      the first board of ${DATA.year} came ${BOARD_WEEKS[0] < 0 ? 'before the season' : 'after week ' + BOARD_WEEKS[0]}.</div>`;
   } else if (!rows.length){
     body = '<div class="empty">No ranked team played this week.</div>';
   } else {
@@ -591,7 +595,7 @@ function renderRanked(){
   el('viewRanked').innerHTML = `${nav}
     <h2 class="sec">${weekLabel(week)} · ranked
       <em>${rows.length} game${rows.length === 1 ? '' : 's'}${upsets ? ` · ${upsets} upset${upsets === 1 ? '' : 's'}` : ''}</em></h2>
-    ${week >= 16 && DATA.seeds && Object.keys(DATA.seeds).length ? `<p class="note">By playoff seed.</p>` : board ? `<p class="note">Against the ${srcBefore(week) === 'media' ? 'media poll' : 'committee board'} published after week ${BOARD_WEEKS.filter(w => w < week).pop()}.</p>` : ''}
+    ${week >= 16 && DATA.seeds && Object.keys(DATA.seeds).length ? `<p class="note">By playoff seed.</p>` : board ? `<p class="note">Against the ${srcBefore(week) === 'media' ? 'media poll' : 'committee board'} published ${(wk => wk < 0 ? 'before the season' : 'after week ' + wk)(BOARD_WEEKS.filter(w => w < week).pop())}.</p>` : ''}
     ${body}`;
 }
 

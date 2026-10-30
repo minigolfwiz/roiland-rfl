@@ -225,8 +225,8 @@ def build(out='/home/claude/cfb2/state/schedule_view.json', season=None):
         "committee": {str(k): list(v) for k, v in (s.get("committee_history") or {}).items()},
         # the media poll after each week, same shape -- the ranking of record until the
         # committee's first board (Dan, 2039)
-        "media": {str(k): [x[1] if isinstance(x, (list, tuple)) else x for x in v]
-                  for k, v in (s.get("media_history") or {}).items()},
+        "media": {("-1" if k == "pre" else str(k)): [x[1] if isinstance(x, (list, tuple)) else x for x in v]
+                  for k, v in (s.get("media_history") or {}).items()},   # 'pre' = the preseason poll, filed as week -1 so week 0 games are ranked against it (Dan, 2045)
         # the playoff seeds, once a field is installed: during the postseason the viewer
         # badges teams by SEED rather than committee rank (Dan, 2039)
         "seeds": _playoff_seeds(season),

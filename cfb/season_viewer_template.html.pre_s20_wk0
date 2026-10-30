@@ -1,0 +1,740 @@
+<title>Roiland Season</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=UnifrakturCook:wght@700&family=Oswald:wght@600;700&family=Alfa+Slab+One&family=Orbitron:wght@800;900&family=Bungee&family=Bowlby+One+SC&family=Archivo+Black&family=Rye&family=Righteous&display=swap">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+/* Same ledger palette as the Committee Room and the Scheduling Office — this is the
+   third room in the same building. Reading, not operating: the week is the spine, and
+   any game opens into its own scoring summary and box score. */
+:root{
+  --paper:#f4efe4; --ink:#1d1a15; --dim:#6b6355; --rule:#d8cfbb; --card:#fffdf7;
+  --brass:#8a6410; --brass-soft:#b99a52; --win:#2f5d4a; --loss:#8c2f2f;
+  --chip:#e9e1cd; --warn:#8a5a12; --media:#395f84;
+  --display:"Spectral",Georgia,"Times New Roman",serif;
+  --body:"Spectral",Georgia,serif;
+  --data:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+  --paper:#17150f; --ink:#ece6d7; --dim:#938b78; --rule:#332e24; --card:#201d15;
+  --brass:#d2ab5e; --brass-soft:#8a7542; --win:#79c3a2; --loss:#e0786f;
+  --chip:#2a2619; --warn:#d8a24a; color-scheme:dark; --media:#86b0d6;
+}}
+:root[data-theme="dark"]{
+  --paper:#17150f; --ink:#ece6d7; --dim:#938b78; --rule:#332e24; --card:#201d15;
+  --brass:#d2ab5e; --brass-soft:#8a7542; --win:#79c3a2; --loss:#e0786f;
+  --chip:#2a2619; --warn:#d8a24a; color-scheme:dark; --media:#86b0d6;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);margin:0;
+     font-size:15px;line-height:1.45}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:16px;padding-block:0 60px}
+main > *{min-width:0}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;
+  background:color-mix(in srgb,var(--paper) 94%,transparent);
+  backdrop-filter:blur(6px);border-bottom:1px solid var(--rule);padding-block:11px;margin-bottom:14px}
+.topin{max-width:1180px;margin:0 auto;padding-inline:16px;display:flex;gap:12px;
+  align-items:baseline;flex-wrap:wrap}
+h1{font-family:var(--display);font-size:20px;font-weight:600;margin:0}
+h1 span{color:var(--brass)}
+.yr{font-family:var(--data);font-size:11.5px;color:var(--dim);letter-spacing:.14em}
+.spacer{flex:1 1 auto}
+.count{font-family:var(--data);font-size:12px;color:var(--dim)}
+.count b{color:var(--ink);font-weight:700}
+
+button{font:inherit;cursor:pointer;border-radius:4px;border:1px solid var(--rule);
+  background:var(--card);color:var(--ink);padding:6px 11px;font-size:13px}
+button:hover{border-color:var(--brass-soft)}
+button:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+button[aria-pressed="true"]{background:var(--brass);border-color:var(--brass);
+  color:var(--paper);font-weight:700}
+button.tiny{padding:3px 8px;font-size:11.5px}
+nav.tabs{display:flex;gap:4px;margin-bottom:12px;flex-wrap:wrap}
+
+h2.sec{font-family:var(--data);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--dim);margin:0 0 9px;padding-bottom:6px;border-bottom:1px solid var(--rule);
+  display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+h2.sec em{font-style:normal;color:var(--brass);letter-spacing:.06em}
+
+.weeknav{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px}
+.weeknav button{font-family:var(--data);font-size:12px;padding:5px 10px;min-width:38px}
+.weeknav button.done{border-color:var(--brass-soft)}
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.filters input,.filters select{flex:1 1 150px;min-width:0;font:inherit;font-size:13px;
+  padding:5px 9px;border:1px solid var(--rule);border-radius:4px;background:var(--card);color:var(--ink)}
+select{max-width:100%}
+
+ul.games{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+li.game{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;
+  background:var(--card);border:1px solid var(--rule);border-radius:4px;
+  padding:7px 10px;cursor:pointer;min-width:0}
+.bdg{flex:0 0 auto;display:flex}
+.bdg svg{width:19px;height:19px;display:block}
+li.game:hover{border-color:var(--brass-soft)}
+li.game.unplayed{cursor:default;opacity:.82}
+li.game.unplayed:hover{border-color:var(--rule)}
+.bar{align-self:stretch;border-radius:4px 0 0 4px;min-height:34px}
+.matchup{min-width:0}
+.side{display:flex;gap:7px;align-items:baseline;min-width:0}
+.side .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.side .sc{font-family:var(--data);font-weight:700;font-variant-numeric:tabular-nums;
+  margin-left:auto;padding-left:10px}
+.side .nm.tlink{cursor:pointer;text-decoration:underline;text-decoration-color:transparent;
+  text-underline-offset:3px;transition:text-decoration-color .12s}
+li.game:hover .nm.tlink{text-decoration-color:var(--brass-soft)}
+.side .nm.tlink:hover{color:var(--brass);text-decoration-color:var(--brass)}
+.side.w .nm{font-weight:700}
+.side.w .sc{color:var(--win)}
+.side.l .nm{color:var(--dim)}
+.side.l .sc{color:var(--dim)}
+.mini{font-family:var(--data);font-size:10.5px;color:var(--dim)}
+.meta{font-family:var(--data);font-size:11px;color:var(--dim);text-align:right;white-space:nowrap}
+.badge{font-family:var(--data);font-size:9px;letter-spacing:.07em;text-transform:uppercase;
+  padding:1px 5px;border-radius:3px;background:var(--chip);color:var(--dim);white-space:nowrap}
+.badge.ot{color:var(--brass);border:1px solid var(--brass);background:transparent}
+.badge.conf{color:var(--dim)}
+.badge.rk{background:var(--brass);color:var(--paper);font-weight:700}
+/* media poll rank: same shape, slate instead of brass, so the two rankings never read as one */
+.badge.rk.media{background:var(--media)}
+/* playoff seed: brass outline, paper fill, so it reads as a different number from a rank */
+.badge.rk.seed{background:transparent;color:var(--brass);border:1.5px solid var(--brass);padding-top:0;padding-bottom:0}
+
+.empty{border:1px dashed var(--rule);border-radius:5px;padding:26px 18px;text-align:center;
+  color:var(--dim);font-size:13.5px}
+.note{font-size:12.5px;color:var(--dim);margin:10px 0 0}
+
+/* team slate */
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:5px}
+.tcard{display:flex;gap:9px;align-items:center;background:var(--card);border:1px solid var(--rule);
+  border-radius:4px;padding:6px 9px;cursor:pointer;min-width:0}
+.bdg.lg svg{width:24px;height:24px}
+.bdg.xl svg{width:46px;height:46px}
+.tcard:hover{border-color:var(--brass-soft)}
+.tcard .sw{width:3px;align-self:stretch;min-height:26px;border-radius:4px 0 0 4px}
+.tcard b{font-weight:600;font-size:13.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tcard small{color:var(--dim);font-family:var(--data);font-size:10.5px;display:block}
+.byerow{display:flex;align-items:center;gap:9px;margin:4px 0;font-family:var(--data);
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.byerow::before,.byerow::after{content:"";height:1px;background:var(--rule);flex:1}
+.byerow.nextup{color:var(--brass)}
+.byerow.nextup::before,.byerow.nextup::after{background:var(--brass);opacity:.5}
+
+/* drawer */
+.scrim{position:fixed;inset:0;background:#0007;z-index:50}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(640px,100%);z-index:51;
+  background:var(--paper);border-left:1px solid var(--rule);overflow:auto;
+  padding:0 18px calc(30px + env(safe-area-inset-bottom,0px))}
+/* clears the host app's header so the close button is actually clickable, then sticks */
+.dhead{display:flex;justify-content:space-between;align-items:center;gap:12px;
+  position:sticky;top:0;z-index:3;background:var(--paper);
+  padding-top:calc(62px + env(safe-area-inset-top,0px));padding-bottom:10px;
+  border-bottom:1px solid var(--rule);margin-bottom:12px}
+.final{display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:center;
+  background:var(--card);border:1px solid var(--rule);border-radius:5px;padding:12px 14px;margin-bottom:14px}
+.final .t{font-family:var(--display);font-size:19px;font-weight:600;min-width:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.final .t small{display:block;font-family:var(--data);font-size:10.5px;color:var(--dim);font-weight:400}
+.final .p{font-family:var(--display);font-size:27px;font-weight:700;font-variant-numeric:tabular-nums;
+  text-align:right}
+.final .lose .t,.final .lose .p{color:var(--dim)}
+.qtr{display:flex;align-items:center;gap:9px;margin:14px 0 7px;font-family:var(--data);
+  font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--brass)}
+.qtr::after{content:"";height:1px;background:var(--rule);flex:1}
+ul.plays{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px}
+li.play{display:grid;grid-template-columns:44px 1fr auto;gap:9px;align-items:baseline;
+  padding:5px 7px;border-radius:4px;border-left:3px solid var(--rule);background:var(--card)}
+li.play .ck{font-family:var(--data);font-size:11px;color:var(--dim);font-variant-numeric:tabular-nums}
+li.play .ds{font-size:13.5px;min-width:0}
+li.play .ds b{font-weight:600}
+li.play.turnover{background:transparent;border-left-style:dashed;opacity:.82}
+li.play.turnover .ds{font-style:italic}
+li.play.turnover .rs{font-weight:700;letter-spacing:.08em;color:var(--loss)}
+li.play .rs{font-family:var(--data);font-size:12px;font-variant-numeric:tabular-nums;
+  color:var(--dim);white-space:nowrap}
+/* standings: one ledger per conference, conference record first because that is what the
+   table is for; the overall record and the margin sit to its right in data type */
+.standgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px;align-items:start}
+.standgrid > div{min-width:0}
+table.stand{width:100%;border-collapse:collapse;font-size:13px}
+table.stand th{font-family:var(--data);font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--dim);font-weight:400;padding:3px 5px;border-bottom:1px solid var(--rule);text-align:right}
+table.stand th:first-child,table.stand td:first-child{text-align:left}
+table.stand td{padding:4px 5px;border-bottom:1px solid var(--rule);text-align:right;
+  font-family:var(--data);font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap}
+table.stand td:first-child{font-family:var(--body);font-size:13.5px;white-space:normal}
+table.stand td.cr{font-weight:700;color:var(--ink)}
+table.stand tr.lead td{background:color-mix(in srgb,var(--brass) 9%,transparent)}
+table.stand td .stk{color:var(--dim);margin-left:4px}
+table.stand td .stk.w{color:var(--win)} table.stand td .stk.l{color:var(--loss)}
+.standhead{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:10px 0 4px}
+.standhead b{font-family:var(--display);font-size:15px;font-weight:600}
+.standhead small{font-family:var(--data);font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--dim)}
+table.box{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:4px}
+table.box th{font-family:var(--data);font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--dim);text-align:right;font-weight:400;padding:4px 5px;border-bottom:1px solid var(--rule)}
+table.box th:first-child{text-align:left}
+table.box td{padding:4px 5px;border-bottom:1px solid var(--rule);text-align:right;
+  font-family:var(--data);font-variant-numeric:tabular-nums;font-size:12.5px}
+table.box td:first-child{text-align:left;font-family:var(--body);font-size:13.5px}
+table.box td .ps{font-family:var(--data);font-size:10px;color:var(--dim);margin-left:5px}
+.unit{font-family:var(--data);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--brass);margin:13px 0 4px}
+.tablewrap{overflow-x:auto}
+.sideswitch{display:flex;gap:4px;margin:14px 0 6px;flex-wrap:wrap}
+
+@media (max-width:760px){
+  .filters input,.filters select{font-size:16px}
+  .wrap{padding-inline:14px}
+  header.top{padding-block:8px}
+  .yr{display:none}
+  h1{font-size:17px}
+  .drawer{width:100%;padding:14px 14px 30px}
+  .final .p{font-size:23px}
+  li.play{grid-template-columns:40px 1fr;row-gap:2px}
+  li.play .rs{grid-column:2;justify-self:start}
+  .tgrid{grid-template-columns:1fr 1fr}
+  button{padding:7px 12px}
+}
+</style>
+
+<header class="top">
+  <div class="topin">
+    <h1>Roiland <span>Season</span></h1>
+    <span class="yr" id="yrline"></span>
+    <span class="spacer"></span>
+    <span class="count" id="counts"></span>
+    <button class="tiny" id="themeBtn" title="light / dark">◐</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="tabs">
+    <button id="tabWeek" aria-pressed="true">By week</button>
+    <button id="tabRanked" aria-pressed="false">Ranked</button>
+    <button id="tabStand" aria-pressed="false">Standings</button>
+    <button id="tabTeam" aria-pressed="false">By team</button>
+  </nav>
+  <main>
+    <div id="viewWeek"></div>
+    <div id="viewRanked" hidden></div>
+    <div id="viewStand" hidden></div>
+    <div id="viewTeam" hidden></div>
+  </main>
+</div>
+<div id="drawerHost"></div>
+
+<script>
+__MARKS__
+
+const DATA = __DATA__;
+const T = DATA.teams;
+const GAMES = DATA.games;
+const UNITS = DATA.units;
+/* ---------- who was ranked, and WHEN ----------
+   The committee publishes a board after each week, so a game in week W was played against
+   the board from week W-1. Ranking a week's games off the final board would be hindsight:
+   a team that collapsed in November would still show "#3" beside a September win. BOARDS
+   is keyed by the week the board was published; rankAt() walks back to the most recent one
+   that existed before the week being looked at. */
+const BOARDS = {}, BOARD_SRC = {};
+/* Two rankings, one timeline. The MEDIA poll is the ranking of record from the preseason
+   ballot until the committee's first board (after week 8 from 2039); from that week on
+   the committee is. A media board published in a committee week is dropped so the
+   badge on a game is always from one source, never both. */
+Object.entries(DATA.media || {}).forEach(([w, list]) => {
+  const m = {}; list.forEach((t, i) => m[t] = i + 1); BOARDS[+w] = m; BOARD_SRC[+w] = 'media';
+});
+const COMM_WEEKS = Object.keys(DATA.committee || {}).map(Number);
+const FIRST_COMM = COMM_WEEKS.length ? Math.min(...COMM_WEEKS) : null;
+if (FIRST_COMM !== null) for (const w of Object.keys(BOARDS).map(Number)) if (w >= FIRST_COMM) { delete BOARDS[w]; delete BOARD_SRC[w]; }
+Object.entries(DATA.committee || {}).forEach(([w, list]) => {
+  const m = {}; list.forEach((t, i) => m[t] = i + 1); BOARDS[+w] = m; BOARD_SRC[+w] = 'committee';
+});
+const BOARD_WEEKS = Object.keys(BOARDS).map(Number).sort((a, b) => a - b);
+function srcBefore(week){
+  let best = null;
+  for (const w of BOARD_WEEKS) if (w < week) best = w;
+  return best === null ? null : BOARD_SRC[best];
+}
+function boardBefore(week){
+  let best = null;
+  for (const w of BOARD_WEEKS) if (w < week) best = w;
+  return best === null ? null : BOARDS[best];
+}
+function rankAt(team, week){
+  const b = boardBefore(week);
+  return b ? (b[team] || null) : null;
+}
+/* the current board, for anywhere a team's standing today is what matters */
+const RANK = BOARD_WEEKS.length ? BOARDS[BOARD_WEEKS[BOARD_WEEKS.length - 1]]
+                                : (() => { const m = {};
+                                    (DATA.poll || []).forEach(([r, t]) => m[t] = r); return m; })();
+const ranksExist = BOARD_WEEKS.length > 0;
+// how each stat reads as a column header
+const LABEL = {
+  Att:'Att', Comp:'Cmp', PassYds:'Pass yds', PassTD:'TD', INT:'INT', SackedFor:'Sack yds',
+  RushAtt:'Car', RushYds:'Rush yds', RushTD:'TD',
+  Targets:'Tgt', Rec:'Rec', RecYds:'Rec yds', RecTD:'TD',
+  Tackles:'Tkl', Sacks:'Sack', INT_def:'INT', FumRec:'FR', DefTD:'TD', Safety:'Sfty',
+  FGMade:'FG', FGAtt:'FGA', XPMade:'XP', XPAtt:'XPA',
+  Punts:'Punts', PuntYds:'Punt yds', PuntRetYds:'PR yds',
+  Penalties:'Pen', PenYds:'Pen yds',
+};
+
+let view = 'week';
+let week = null;
+let team = null;
+let filt = { q:'', conf:'' };
+let drawerSide = null;
+let currentGid = null;
+
+const el = id => document.getElementById(id);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c =>
+  ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const played = g => g.id !== undefined;
+/* every team in the payload already carries its mascot, conference and canon colours */
+function badge(name){
+  const t = T[name];
+  if (!t) return '';
+  return mark({ name, mascot: t.mascot || '', conf: t.sub ? 'Subdivision' : t.conf,
+                col: t.col });
+}
+const WEEKS = [...new Set(GAMES.map(g => g.w))].sort((a,b) => a-b);
+/* Weeks 15 and up are the postseason: conference finals, then one week per playoff round. */
+const POST = { 15:['Conference titles','CCG'], 16:['Playoff first round','R1'],
+               17:['Playoff second round','R2'], 18:['Quarterfinals','QF'],
+               19:['Semifinals','SF'], 20:['National championship','NC'], 99:['Playoff','PO'] };
+const weekLabel = w => POST[w] ? POST[w][0] : w === 0 ? 'Week 0' : 'Week ' + w;
+const weekTab   = w => POST[w] ? POST[w][1] : w;
+const REGULAR   = 14;                       /* last week that can contain a bye */
+
+/* ---------- records, computed from results rather than carried ---------- */
+const REC = {};
+function buildRecords(){
+  Object.keys(T).forEach(t => REC[t] = { w:0, l:0, cw:0, cl:0, pf:0, pa:0 });
+  GAMES.forEach(g => {
+    if (!played(g)) return;
+    const hw = g.hs > g.as;
+    const H = REC[g.h], A = REC[g.a];
+    if (H){ H.pf += g.hs; H.pa += g.as; hw ? H.w++ : H.l++; if (g.c){ hw ? H.cw++ : H.cl++; } }
+    if (A){ A.pf += g.as; A.pa += g.hs; hw ? A.l++ : A.w++; if (g.c){ hw ? A.cl++ : A.cw++; } }
+  });
+}
+const recStr = t => REC[t] ? REC[t].w + '-' + REC[t].l : '';
+
+/* ---------- one game row ---------- */
+function gameRow(g, fromTeam){
+  const done = played(g);
+  const hw = done && g.hs > g.as;
+  // ranked as of the board that stood going INTO this game's week, not today's board
+  const rk = t => {
+    // playoff rounds (week 16 on) show the SEED, not the ranking
+    if (g.w >= 16 && DATA.seeds && DATA.seeds[t]) return `<span class="badge rk seed" title="playoff seed">${DATA.seeds[t]} seed</span> `;
+    const r = rankAt(t, g.w);
+    return r ? `<span class="badge rk ${srcBefore(g.w) === 'media' ? 'media' : ''}" title="${srcBefore(g.w) === 'media' ? 'media poll' : 'committee'} rank going into this week">#${r}</span> ` : ''; };
+  // the team's NAME opens that team's season; anywhere else on the row opens the game
+  const side = (t, score, winner) => `
+    <div class="side ${done ? (winner ? 'w' : 'l') : ''}">
+      <span class="bdg">${badge(t)}</span>${rk(t)}<span class="nm ${T[t] && !T[t].sub ? 'tlink' : ''}"
+        ${T[t] && !T[t].sub ? `data-team="${esc(t)}" title="open ${esc(t)}'s season"` : ''}
+        >${esc(t)}</span>
+      <span class="mini">${T[t] && !T[t].sub ? esc(recStr(t)) : 'subdivision'}</span>
+      <span class="sc">${done ? score : ''}</span>
+    </div>`;
+  const tags = [];
+  if (g.ot) tags.push(`<span class="badge ot">${g.ot > 1 ? g.ot + 'OT' : 'OT'}</span>`);
+  if (g.c) tags.push('<span class="badge conf">conf</span>');
+  if (g.sub) tags.push('<span class="badge">guest</span>');
+  return `<li class="game ${done ? '' : 'unplayed'}" ${done ? `data-g="${esc(g.id)}"` : ''}>
+    <span class="matchup">
+      ${side(g.a, g.as, done && !hw)}
+      ${side(g.h, g.hs, hw)}
+    </span>
+    <span class="meta">${fromTeam ? weekLabel(g.w) + '<br>' : ''}${tags.join(' ')}
+      ${done ? '' : '<span class="badge">scheduled</span>'}</span>
+  </li>`;
+}
+
+/* ---------- by week ---------- */
+function renderWeek(){
+  const confs = Object.keys(DATA.conferences).sort();
+  const q = filt.q.trim().toLowerCase();
+  let rows = GAMES.filter(g => g.w === week);
+  if (filt.conf) rows = rows.filter(g =>
+    (T[g.h] && T[g.h].conf === filt.conf) || (T[g.a] && T[g.a].conf === filt.conf));
+  if (q) rows = rows.filter(g => g.h.toLowerCase().includes(q) || g.a.toLowerCase().includes(q));
+  // finished games first, then the fixtures
+  rows.sort((x,y) => (played(y) - played(x))
+    || (played(x) ? Math.abs(x.hs-x.as) - Math.abs(y.hs-y.as) : x.h.localeCompare(y.h)));
+
+  const inWeek = GAMES.filter(g => g.w === week);
+  const donec = inWeek.filter(played).length;
+  el('viewWeek').innerHTML = `
+    <div class="weeknav">${WEEKS.map(w => {
+      const all = GAMES.filter(g => g.w === w);
+      const d = all.filter(played).length;
+      return `<button data-w="${w}" aria-pressed="${w===week}"
+        class="${d===all.length && all.length ? 'done' : ''}"
+        title="${d} of ${all.length} played">${weekTab(w)}</button>`;
+    }).join('')}</div>
+    <h2 class="sec">${weekLabel(week)}
+      <em>${donec} of ${inWeek.length} played</em></h2>
+    <div class="filters">
+      <input id="q" placeholder="search a team" value="${esc(filt.q)}" autocomplete="off">
+      <select id="fConf"><option value="">all conferences</option>
+        ${confs.map(c => `<option value="${esc(c)}" ${filt.conf===c?'selected':''}>${esc(c)}</option>`).join('')}
+      </select>
+    </div>
+    ${rows.length ? `<ul class="games">${rows.map(g => gameRow(g, false)).join('')}</ul>`
+      : '<div class="empty">no games match</div>'}
+    ${donec === 0 && inWeek.length ? '<p class="note">This week has not been simulated yet.</p>' : ''}`;
+}
+
+/* ---------- by team ---------- */
+function renderTeam(){
+  if (!team){
+    const q = filt.q.trim().toLowerCase();
+    const confs = Object.keys(DATA.conferences).sort();
+    let list = Object.keys(T).filter(t => !T[t].sub);
+    if (filt.conf) list = list.filter(t => T[t].conf === filt.conf);
+    if (q) list = list.filter(t => t.toLowerCase().includes(q)
+      || (T[t].mascot||'').toLowerCase().includes(q));
+    list.sort();
+    el('viewTeam').innerHTML = `
+      <h2 class="sec">Programs <em>${list.length}</em></h2>
+      <div class="filters">
+        <input id="q2" placeholder="search a team" value="${esc(filt.q)}" autocomplete="off">
+        <select id="fConf2"><option value="">all conferences</option>
+          ${confs.map(c => `<option value="${esc(c)}" ${filt.conf===c?'selected':''}>${esc(c)}</option>`).join('')}
+        </select>
+      </div>
+      <div class="tgrid">${list.map(t => `<div class="tcard" data-t="${esc(t)}">
+        <span class="bdg lg">${badge(t)}</span>
+        <span style="min-width:0"><b>${esc(t)}</b>
+          <small>${esc(T[t].conf)}${recStr(t) ? ' · ' + recStr(t) : ''}</small></span>
+      </div>`).join('')}</div>`;
+    return;
+  }
+
+  const mine = GAMES.filter(g => g.h === team || g.a === team).sort((a,b) => a.w - b.w);
+  const r = REC[team] || {w:0,l:0,cw:0,cl:0,pf:0,pa:0};
+  // A bye is simply a regular-season week this team has no game in. That is true of a
+  // finished season as much as a live one, so the weeks a team sat out are marked either
+  // way rather than leaving an unexplained gap in the slate.
+  const byes = [];
+  const wks = new Set(mine.filter(g => g.w <= REGULAR).map(g => g.w));
+  for (const w of WEEKS) if (w <= REGULAR && !wks.has(w)) byes.push(w);
+  // lay the slate out in week order, dropping a marker where the byes fall
+  const rowsOut = [];
+  let bi = 0;
+  const nextUp = DATA.live ? mine.find(g => !played(g)) : null;
+  for (const g of mine){
+    while (bi < byes.length && byes[bi] < g.w){
+      rowsOut.push(`<div class="byerow">${weekLabel(byes[bi])} — bye</div>`); bi++;
+    }
+    if (g === nextUp) rowsOut.push('<div class="byerow nextup">next up</div>');
+    rowsOut.push(gameRow(g, true));
+  }
+  while (bi < byes.length){ rowsOut.push(`<div class="byerow">${weekLabel(byes[bi])} — bye</div>`); bi++; }
+
+  el('viewTeam').innerHTML = `
+    <h2 class="sec"><button class="tiny" id="backTeams">‹ all programs</button>
+      <em>${esc(T[team].conf)}</em></h2>
+    <div class="final" style="margin-bottom:12px">
+      <div class="t" style="display:flex;align-items:center;gap:11px">
+        <span class="bdg xl">${badge(team)}</span>
+        <span style="min-width:0;overflow:hidden;text-overflow:ellipsis">${esc(T[team].full)}
+        <small>${esc(T[team].conf)} · ${T[team].tier}${RANK[team] ? ' · ranked #' + RANK[team] : ''}</small></span></div>
+      <div class="p">${r.w}-${r.l}</div>
+      <div class="mini" style="grid-column:1/-1">
+        conference ${r.cw}-${r.cl} · points ${r.pf}–${r.pa}
+        ${r.w+r.l ? '· margin ' + (r.pf-r.pa > 0 ? '+' : '') + (r.pf-r.pa) : ''}</div>
+    </div>
+    <ul class="games">${rowsOut.join('')}</ul>`;
+}
+
+/* ---------- the game drawer ---------- */
+function openGame(gid){
+  const g = GAMES.find(x => x.id === gid);
+  const b = DATA.boxes[gid];
+  if (!g || !b) return;
+  const hw = g.hs > g.as;
+  drawerSide = drawerSide || g.h;
+
+  // scoring plays, grouped by quarter, with the clock counting down
+  let qnow = null;
+  const plays = (b.sp || []).map(([q, clock, tm, desc, score, kind]) => {
+    let head = '';
+    if (q !== qnow){
+      qnow = q;
+      head = `<div class="qtr">${q <= 4 ? 'Quarter ' + q : 'Overtime' + (q > 5 ? ' ' + (q-4) : '')}</div>`;
+    }
+    const mm = Math.floor((clock||0)/60), ss = String((clock||0)%60).padStart(2,'0');
+    const col = (T[tm]||{}).col ? T[tm].col[0] : 'var(--rule)';
+    // a turnover changes possession and nothing on the scoreboard, so it carries the
+    // losing team's colour but is set back from the scores around it and shows the
+    // takeaway in place of a score
+    if (kind){
+      return head + `<li class="play turnover" style="border-left-color:${col}">
+        <span class="ck">${mm}:${ss}</span>
+        <span class="ds"><b>${esc(tm)}</b> — ${esc(desc)}</span>
+        <span class="rs">${kind === 'int' ? 'INT' : 'FUM'}</span></li>`;
+    }
+    return head + `<li class="play" style="border-left-color:${col}">
+      <span class="ck">${mm}:${ss}</span>
+      <span class="ds"><b>${esc(tm)}</b> — ${esc(desc)}</span>
+      <span class="rs">${score[0]}–${score[1]}</span></li>`;
+  }).join('');
+
+  const sides = [g.a, g.h];
+  const forTeam = drawerSide;
+  const lines = (b.pl || []).filter(p => p[3] === forTeam);
+  const boxHtml = UNITS.map(([unit, keys]) => {
+    const rows = lines.filter(p => keys.some(k => p[4][k]));
+    if (!rows.length) return '';
+    const used = keys.filter(k => rows.some(p => p[4][k]));
+    rows.sort((x,y) => (y[4][used[0]]||0) - (x[4][used[0]]||0));
+    return `<div class="unit">${unit}</div>
+      <div class="tablewrap"><table class="box"><thead><tr><th>Player</th>
+        ${used.map(k => `<th>${esc(LABEL[k] || k)}</th>`).join('')}
+      </tr></thead><tbody>
+        ${rows.map(p => `<tr><td>${esc(p[0])}<span class="ps">${esc(p[1])} ${esc(p[2])}</span></td>
+          ${used.map(k => `<td>${p[4][k] ?? '—'}</td>`).join('')}</tr>`).join('')}
+      </tbody></table></div>`;
+  }).join('');
+
+  el('drawerHost').innerHTML = `
+    <div class="scrim" data-close></div>
+    <aside class="drawer" role="dialog" aria-label="game detail">
+      <div class="dhead">
+        <div>
+          <div class="mini">${weekLabel(g.w)}${g.c ? ' · conference game' : ''}${g.sub ? ' · subdivision guest' : ''}${b.venue ? ' · ' + esc(b.venue) : ''}</div>
+        </div>
+        <button class="tiny" data-close>close</button>
+      </div>
+      <div class="final">
+        <div class="t ${hw ? 'lose' : ''}"><span class="bdg lg" style="vertical-align:-6px;display:inline-flex">${badge(g.a)}</span> <span class="${T[g.a] && !T[g.a].sub ? 'tlink' : ''}"
+          ${T[g.a] && !T[g.a].sub ? `data-team="${esc(g.a)}"` : ''}>${esc(g.a)}</span>
+          <small>${T[g.a] && !T[g.a].sub ? esc(T[g.a].conf) + ' · ' + esc(recStr(g.a)) : 'subdivision'}</small></div>
+        <div class="p ${hw ? 'lose' : ''}">${g.as}</div>
+        <div class="t ${hw ? '' : 'lose'}"><span class="bdg lg" style="vertical-align:-6px;display:inline-flex">${badge(g.h)}</span> <span class="${T[g.h] && !T[g.h].sub ? 'tlink' : ''}"
+          ${T[g.h] && !T[g.h].sub ? `data-team="${esc(g.h)}"` : ''}>${esc(g.h)}</span>
+          <small>${T[g.h] && !T[g.h].sub ? esc(T[g.h].conf) + ' · ' + esc(recStr(g.h)) : 'subdivision'} · home</small></div>
+        <div class="p ${hw ? '' : 'lose'}">${g.hs}</div>
+        ${g.ot ? `<div class="mini" style="grid-column:1/-1">${g.ot > 1 ? g.ot + ' overtimes' : 'overtime'}</div>` : ''}
+      </div>
+
+      <h2 class="sec">Scoring &amp; turnovers <em>${(b.sp||[]).filter(r=>!r[5]).length} scores ·
+        ${(b.sp||[]).filter(r=>r[5]).length} turnovers</em></h2>
+      ${plays ? `<ul class="plays">${plays}</ul>`
+        : '<div class="empty">no scoring plays recorded</div>'}
+
+      <h2 class="sec" style="margin-top:20px">Box score</h2>
+      <div class="sideswitch">
+        ${sides.map(t => `<button class="tiny" data-side="${esc(t)}"
+          aria-pressed="${t===forTeam}">${esc(t)}</button>`).join('')}
+      </div>
+      ${boxHtml || '<div class="empty">no statistics recorded for this side</div>'}
+    </aside>`;
+  fitAll(el('drawerHost'));
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer(){
+  el('drawerHost').innerHTML = '';
+  drawerSide = null;
+  document.body.style.overflow = '';
+}
+
+/* ---------- ranked games only ----------
+   Just the week's games involving a ranked team, best rank first, so a week reads the way
+   a scoreboard show would open it. "Ranked" means ranked going into the week, so an upset
+   still shows the number the loser carried at kickoff. */
+function renderRanked(){
+  const board = boardBefore(week);
+  const inWeek = GAMES.filter(g => g.w === week);
+  const seedOf = t => (week >= 16 && DATA.seeds && DATA.seeds[t]) ? DATA.seeds[t] : null;
+  let rows = inWeek
+    .map(g => ({ g, r: week >= 16 ? Math.min(seedOf(g.h) || 99, seedOf(g.a) || 99)
+                                  : Math.min(rankAt(g.h, g.w) || 99, rankAt(g.a, g.w) || 99) }))
+    .filter(x => x.r < 99)
+    .sort((a, b) => a.r - b.r || a.g.h.localeCompare(b.g.h));
+
+  const upsets = rows.filter(({ g }) => {
+    if (!played(g)) return false;
+    const rh = rankAt(g.h, g.w), ra = rankAt(g.a, g.w);
+    const homeWon = g.hs > g.as;
+    // a ranked team losing, to anybody worse-ranked or unranked
+    if (rh && !homeWon && (!ra || ra > rh)) return true;
+    if (ra && homeWon && (!rh || rh > ra)) return true;
+    return false;
+  }).length;
+
+  const nav = `<div class="weeknav">${WEEKS.map(w => {
+      const n = GAMES.filter(g => g.w === w)
+        .filter(g => rankAt(g.h, w) || rankAt(g.a, w)).length;
+      return `<button data-w="${w}" aria-pressed="${w === week}" ${n ? '' : 'class="done"'}
+        title="${n} ranked game${n === 1 ? '' : 's'}">${weekTab(w)}</button>`;
+    }).join('')}</div>`;
+
+  let body;
+  if (!ranksExist){
+    body = `<div class="empty">No ranking has been published yet this season.</div>`;
+  } else if (!board){
+    body = `<div class="empty">Nobody was ranked going into ${weekLabel(week).toLowerCase()} —
+      the first board of ${DATA.year} came after week ${BOARD_WEEKS[0]}.</div>`;
+  } else if (!rows.length){
+    body = '<div class="empty">No ranked team played this week.</div>';
+  } else {
+    body = `<ul class="games">${rows.map(x => gameRow(x.g, false)).join('')}</ul>`;
+  }
+
+  el('viewRanked').innerHTML = `${nav}
+    <h2 class="sec">${weekLabel(week)} · ranked
+      <em>${rows.length} game${rows.length === 1 ? '' : 's'}${upsets ? ` · ${upsets} upset${upsets === 1 ? '' : 's'}` : ''}</em></h2>
+    ${week >= 16 && DATA.seeds && Object.keys(DATA.seeds).length ? `<p class="note">By playoff seed.</p>` : board ? `<p class="note">Against the ${srcBefore(week) === 'media' ? 'media poll' : 'committee board'} published after week ${BOARD_WEEKS.filter(w => w < week).pop()}.</p>` : ''}
+    ${body}`;
+}
+
+/* ---------- shell ---------- */
+/* ---------- standings, as of any week ----------
+   Records are rebuilt from the games through the chosen week, so the table is the
+   conference as it stood that Saturday night, not today's table with a label on it.
+   Order: conference wins, then conference losses, then overall win rate, then points
+   margin in conference play. The head-to-head and divisional tie-breaks the real
+   conferences use are not modelled here -- this is the ledger, not the seeding. */
+let standWeek = null;
+function recordsThrough(wk){
+  const R = {};
+  Object.keys(T).forEach(t => R[t] = { w:0, l:0, cw:0, cl:0, cpf:0, cpa:0, pf:0, pa:0, seq:[] });
+  GAMES.filter(g => played(g) && g.w <= wk).sort((a,b) => a.w - b.w).forEach(g => {
+    const hw = g.hs > g.as, H = R[g.h], A = R[g.a];
+    if (H){ H.pf += g.hs; H.pa += g.as; hw ? H.w++ : H.l++; H.seq.push(hw ? 'W' : 'L');
+            if (g.c){ hw ? H.cw++ : H.cl++; H.cpf += g.hs; H.cpa += g.as; } }
+    if (A){ A.pf += g.as; A.pa += g.hs; hw ? A.l++ : A.w++; A.seq.push(hw ? 'L' : 'W');
+            if (g.c){ hw ? A.cl++ : A.cw++; A.cpf += g.as; A.cpa += g.hs; } }
+  });
+  return R;
+}
+function streakOf(seq){
+  if (!seq.length) return '';
+  const last = seq[seq.length-1]; let n = 0;
+  for (let i = seq.length-1; i >= 0 && seq[i] === last; i--) n++;
+  return `<span class="stk ${last.toLowerCase()}">${last}${n}</span>`;
+}
+function renderStand(){
+  const playedWeeks = WEEKS.filter(w => w <= REGULAR && GAMES.some(g => g.w === w && played(g)));
+  if (standWeek === null || !playedWeeks.includes(standWeek)) standWeek = playedWeeks.length ? playedWeeks[playedWeeks.length-1] : WEEKS[0];
+  const nav = `<div class="weeknav">${WEEKS.filter(w => w <= REGULAR).map(w =>
+      `<button data-sw="${w}" aria-pressed="${w === standWeek}" ${playedWeeks.includes(w) ? '' : 'disabled'}>${weekTab(w)}</button>`).join('')}</div>`;
+  const R = recordsThrough(standWeek);
+  const board = boardBefore(standWeek + 1) || {};
+  const rankTag = t => board[t] ? `<span class="badge rk ${srcBefore(standWeek + 1) === 'media' ? 'media' : ''}">#${board[t]}</span> ` : '';
+  const confs = Object.keys(DATA.conferences).sort((a, b) => {
+    const ta = T[DATA.conferences[a][0]].tier, tb = T[DATA.conferences[b][0]].tier;
+    return ta === tb ? a.localeCompare(b) : (ta === 'P6' ? -1 : 1);
+  });
+  const tables = confs.map(c => {
+    const teams = DATA.conferences[c].slice().sort((x, y) => {
+      const a = R[x], b = R[y];
+      const pa = a.w + a.l ? a.w / (a.w + a.l) : 0, pb = b.w + b.l ? b.w / (b.w + b.l) : 0;
+      return (b.cw - a.cw) || (a.cl - b.cl) || (pb - pa) || ((b.cpf - b.cpa) - (a.cpf - a.cpa)) || x.localeCompare(y);
+    });
+    const top = R[teams[0]];
+    const rows = teams.map(t => { const r = R[t];
+      const lead = r.cw === top.cw && r.cl === top.cl && (r.cw + r.cl) > 0;
+      return `<tr class="${lead ? 'lead' : ''}"><td><span class="bdg">${badge(t)}</span> ${rankTag(t)}<span class="tlink" data-team="${esc(t)}">${esc(t)}</span></td>
+        <td class="cr">${r.cw}-${r.cl}</td><td>${r.w}-${r.l}${streakOf(r.seq)}</td>
+        <td>${r.pf}-${r.pa}</td><td>${(r.cpf - r.cpa) > 0 ? '+' : ''}${r.cpf - r.cpa}</td></tr>`; }).join('');
+    return `<div><div class="standhead"><b>${esc(c)}</b><small>${T[teams[0]].tier}</small></div>
+      <table class="stand"><thead><tr><th>Team</th><th>Conf</th><th>Overall</th><th>PF-PA</th><th>Conf ±</th></tr></thead>
+      <tbody>${rows}</tbody></table></div>`;
+  }).join('');
+  el('viewStand').innerHTML = `${nav}
+    <h2 class="sec">Standings through ${weekLabel(standWeek).toLowerCase()}
+      <em>conference record first · shaded rows share the lead</em></h2>
+    <div class="standgrid">${tables}</div>`;
+}
+
+function render(){
+  queueMicrotask(() => fitAll());
+  const done = GAMES.filter(played).length;
+  el('counts').innerHTML = `<b>${done}</b> of ${GAMES.length} games played`;
+  if (view === 'week') renderWeek();
+  else if (view === 'ranked') renderRanked();
+  else if (view === 'stand') renderStand();
+  else renderTeam();
+}
+function setView(v){
+  view = v;
+  el('viewWeek').hidden = v !== 'week';
+  el('viewRanked').hidden = v !== 'ranked';
+  el('viewStand').hidden = v !== 'stand';
+  el('viewTeam').hidden = v !== 'team';
+  el('tabWeek').setAttribute('aria-pressed', v === 'week');
+  el('tabRanked').setAttribute('aria-pressed', v === 'ranked');
+  el('tabStand').setAttribute('aria-pressed', v === 'stand');
+  el('tabTeam').setAttribute('aria-pressed', v === 'team');
+  render();
+}
+
+function openTeam(t){
+  team = t;
+  closeDrawer();
+  setView('team');
+  window.scrollTo({ top:0, behavior:'smooth' });
+}
+
+document.addEventListener('click', e => {
+  const sw = e.target.closest('[data-sw]');
+  if (sw && !sw.disabled){ standWeek = +sw.dataset.sw; render(); return; }
+  // a team's name wins over whatever it sits inside — a game row, or the drawer header
+  const tl = e.target.closest('[data-team]');
+  if (tl){ e.stopPropagation(); openTeam(tl.dataset.team); return; }
+  if (e.target.closest('[data-close]')){ closeDrawer(); return; }
+  const b = e.target.closest('button');
+  if (b && b.dataset.w !== undefined){ week = +b.dataset.w; render(); return; }
+  if (b && b.dataset.side){ drawerSide = b.dataset.side; openGame(currentGid); return; }
+  if (b && b.id === 'backTeams'){ team = null; render(); return; }
+  const tc = e.target.closest('.tcard');
+  if (tc){ team = tc.dataset.t; render(); window.scrollTo({top:0,behavior:'smooth'}); return; }
+  const li = e.target.closest('li.game');
+  if (li && li.dataset.g){ currentGid = li.dataset.g; openGame(currentGid); }
+});
+document.addEventListener('input', e => {
+  if (e.target.id === 'q' || e.target.id === 'q2'){
+    filt.q = e.target.value;
+    const pos = e.target.selectionStart, id = e.target.id;
+    render();
+    const n = el(id); if (n){ n.focus(); try { n.setSelectionRange(pos,pos); } catch(_){} }
+  }
+});
+document.addEventListener('change', e => {
+  if (e.target.id === 'fConf' || e.target.id === 'fConf2'){ filt.conf = e.target.value; render(); }
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape'){ closeDrawer(); return; }
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+  if (view === 'week' && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')){
+    const i = WEEKS.indexOf(week);
+    const j = Math.min(WEEKS.length-1, Math.max(0, i + (e.key === 'ArrowRight' ? 1 : -1)));
+    week = WEEKS[j]; render();
+  }
+});
+el('tabWeek').addEventListener('click', () => setView('week'));
+el('tabRanked').addEventListener('click', () => setView('ranked'));
+el('tabStand').addEventListener('click', () => setView('stand'));
+el('tabTeam').addEventListener('click', () => { team = null; setView('team'); });
+el('themeBtn').addEventListener('click', () => {
+  const cur = document.documentElement.getAttribute('data-theme');
+  document.documentElement.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+});
+
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => fitAll());
+window.addEventListener('load', () => fitAll());
+buildRecords();
+// open on the most recent week that has been played, or the first week otherwise
+const lastPlayed = WEEKS.filter(w => GAMES.some(g => g.w === w && played(g)));
+week = lastPlayed.length ? lastPlayed[lastPlayed.length-1] : WEEKS[0];
+el('yrline').textContent = DATA.year + ' SEASON';
+setView('week');
+</script>
