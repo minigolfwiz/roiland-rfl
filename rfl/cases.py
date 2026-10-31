@@ -358,6 +358,43 @@ def words_detail(S, key, op, ctx, facts, g=None, club=None):
     bits.append(SEV_NOTE[tier])
     return ' '.join(bits)
 
+
+def detail_extra(S, rnd, key, who, facts, game=None, week=None):
+    """Concrete specifics for DUI, injury-report and bounty cases (Dan, 2045 wk 8: wants the actual facts, not generic lines)."""
+    ids = {f['id'] for f in facts}; club = who[0]['club']; out = []
+    if key == 'dui':
+        bac = rnd.choice([.15, .16, .17]) if 'high_bac' in ids else rnd.choice([.09, .10, .11, .12])
+        why = rnd.choice(['for speeding 22 mph over the limit', 'for weaving across lanes', 'after running a red light', 'for a broken tail light'])
+        t = rnd.choice(['12:40', '1:15', '1:50', '2:25']); fl = bac >= .15
+        out.append(f"THE DETAILS: he was stopped at {t} a.m. {why}. A breath test measured his blood alcohol at {bac:.2f} (the legal limit is .08{', nearly double' if fl else ''}). He was charged with misdemeanor DUI and released the same morning.")
+        if 'crash' in ids: out.append("The vehicle had struck a parked car before the stop; police estimated the damage at about $4,000 and reported no injuries.")
+        if 'ride' in ids: out.append("A teammate was a passenger and was not cited.")
+        out.append("A first DUI is normally ruled on the circumstances; a reading at or above .15, a crash or a second offense is what moves a ruling toward a suspension.")
+    elif key == 'injury_report':
+        P = [p for p in S['players'].values() if p.get('club') == club and p.get('starter')]
+        p = max(P, key=lambda x: x['abil']) if P else None
+        if p:
+            played = None
+            if game:
+                g = next((r for r in S['season']['results'].get(str(week), []) if r.get('id') == game), None)
+                if g:
+                    side = 'H' if g['home'] == club else 'A'; played = (str(p['pid']) in g['stats'][side]) or (p['pid'] in g['stats'][side])
+            out.append(f"THE DETAILS: the player is {p['name']} ({p['pos']}). He missed every practice that week, and the report the club filed listed him with no injury designation." + (" He played in the game." if played else (" He did not play in the game." if played is False else '')))
+            out.append("The league's rule is that a player who misses practice with an injury must appear on the report; a first violation is usually a fine, and a repeat can cost draft picks.")
+    elif key in ('bounty', 'hazing'):
+        if key == 'bounty':
+            inj = []
+            for wk, res in sorted(S['season']['results'].items(), key=lambda kv: int(kv[0])):
+                for g in res:
+                    if club in (g['home'], g['away']):
+                        for i in g.get('injuries', []):
+                            if i['team'] != club and i['weeks'] >= 2: inj.append((int(wk), i))
+            if inj:
+                out.append(f"THE DETAILS: {len(inj)} opposing player{'s' if len(inj) != 1 else ''} left {nick(club)} games with injuries of 2 or more weeks this season: " + '; '.join(f"week {w}, {i['name']} ({i['pos']}, {nick(i['team'])}), {i['weeks']} wks, {i['kind']}" for w, i in inj[:6]) + '.')
+            else: out.append(f"THE DETAILS: no opposing player has left a {nick(club)} game with an injury of 2 or more weeks this season.")
+        out.append(f"The allegation comes from a former {nick(club)} staffer. A bounty ruling depends on whether messages or payments are found.")
+    return ' '.join(out)
+
 def st_ok(spec): return spec.get('story') not in ('investigation', 'court')
 def game_detail(S, g, who, key, pid=None):
     """Concrete facts from the logged game for a new (non-investigation) case, so the desk can rule on specifics. Only logged events are cited."""
@@ -430,6 +467,7 @@ def build_case(S, rnd, key, week, res, used):
     closer = fmt(r2.choice(spec['closers']), ctx)
     _g = next((x for x in (res or []) if x.get('id') == game), None) if game else None
     _gd = words_detail(S, key, op, ctx, facts, _g, who[0].get('club')) if st_ok(spec) else ''
+    _gd = (_gd + ' ' + detail_extra(S, r2, key, who, facts, game, week)).strip()
     text = '\n\n'.join(x for x in [(body + ' ' + fact_txt).strip(), _gd, ' '.join(extra + [closer])] if x)
     prec = precedent_for(S, key, sev, pid)
     story = None; opts = None
