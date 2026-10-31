@@ -1,0 +1,406 @@
+{
+ "year": 2045,
+ "week": 6,
+ "potw": {
+  "off": [
+   {
+    "pid": 9034311,
+    "name": "Miroslav Se-Seok",
+    "pos": "QB",
+    "club": "Fiota Swords",
+    "line": "23/38, 362 yds, 4 TD",
+    "res": "W 28-23 vs Dragons",
+    "score": 36.28,
+    "plays": [
+     "Q1 0:21 12-yd TD pass to Lashawn Vignovese (was down 3)",
+     "Q4 11:34 14-yd TD pass to Nari Man-Kwan (was down 6), tied the game",
+     "Q4 3:35 34-yd TD pass to Tallulah Spottedcrane (was down 6, late), tied the game",
+     "Q4 0:27 26-yd TD pass to Lashawn Vignovese (was down 2, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9035242,
+    "name": "Sione Larrazabal",
+    "pos": "RB",
+    "club": "Hughes City Asteroids",
+    "line": "19 car, 67 yds, 1 rec, 34 yds, 4 TD",
+    "res": "W 55-13 vs Raptors",
+    "score": 34.1,
+    "plays": [
+     "Q1 11:11 3-yd TD run (was tied)",
+     "Q3 3:11 34-yd TD catch from Alastair Gangaprasad (was up 11)",
+     "Q4 2:58 4-yd TD run (was up 28)",
+     "Q4 0:01 1-yd TD run (was up 35)"
+    ]
+   },
+   {
+    "pid": 9036201,
+    "name": "Terrell Durland",
+    "pos": "QB",
+    "club": "Underwood Bats",
+    "line": "18/27, 243 yds, 3 TD, 85 rush yds",
+    "res": "W 35-21 at Crowns",
+    "score": 32.39,
+    "plays": [
+     "Q1 0:51 24-yd TD pass to Zoe Naimeniy (was down 7)",
+     "Q2 5:04 2-yd TD pass to Zoe Naimeniy (was tied)",
+     "Q3 10:01 5-yd TD pass to Abiodun Mensnse (was up 7)",
+     "Q4 11:36 20-yd TD run (was up 7)"
+    ]
+   },
+   {
+    "pid": 9037337,
+    "name": "Lashawn Vignovese",
+    "pos": "WR",
+    "club": "Fiota Swords",
+    "line": "10 rec, 143 yds, 2 TD",
+    "res": "W 28-23 vs Dragons",
+    "score": 29.3,
+    "plays": [
+     "Q1 0:21 12-yd TD catch from Miroslav Se-Seok (was down 3)",
+     "Q4 0:27 26-yd TD catch from Miroslav Se-Seok (was down 2, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9037969,
+    "name": "Zoe Naimeniy",
+    "pos": "WR",
+    "club": "Underwood Bats",
+    "line": "8 rec, 152 yds, 2 TD",
+    "res": "W 35-21 at Crowns",
+    "score": 27.2,
+    "plays": [
+     "Q1 0:51 24-yd TD catch from Terrell Durland (was down 7)",
+     "Q2 5:04 2-yd TD catch from Terrell Durland (was tied)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9035262,
+    "name": "Itzel Dahlholt",
+    "pos": "LB",
+    "club": "Holliday Beetles",
+    "line": "8 tackles, 2 sacks, 1 INT",
+    "res": "L 24-27 at Demons",
+    "score": 20.8,
+    "plays": [
+     "Q3 11:12 interception (up 3)"
+    ]
+   },
+   {
+    "pid": 9035369,
+    "name": "Akari Lambrnides",
+    "pos": "LB",
+    "club": "Stamford Grays",
+    "line": "12 tackles, 1 sack, 1 forced fumble",
+    "res": "W 38-27 at Raccoons",
+    "score": 19.7,
+    "plays": [
+     "Q4 3:08 sack and forced fumble (down 3, late), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9036839,
+    "name": "Seulgi Hezhuo",
+    "pos": "LB",
+    "club": "Sarkady Beavers",
+    "line": "12 tackles, 1 sack, 1 INT",
+    "res": "L 7-30 at Leatherbacks",
+    "score": 18.2,
+    "plays": [
+     "Q1 2:41 interception (down 10)"
+    ]
+   },
+   {
+    "pid": 9038398,
+    "name": "Dimitrios Gradovsky",
+    "pos": "S",
+    "club": "Diamond City Hope",
+    "line": "7 tackles, 2 INT",
+    "res": "L 20-26 vs Bearcats",
+    "score": 18.2,
+    "plays": [
+     "Q3 10:53 interception returned 12 yds (down 10)",
+     "Q4 7:50 interception (down 3), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9100819,
+    "name": "Maelys Lundvoll",
+    "pos": "LB",
+    "club": "North Hatesei Bees",
+    "line": "7 tackles, 1 sack, 1 INT",
+    "res": "W 20-6 at Tsunami",
+    "score": 17.2,
+    "plays": [
+     "Q1 12:15 interception (tied), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9035215,
+    "name": "Nikau Winsmond",
+    "pos": "LB",
+    "club": "Fiota Swords",
+    "line": "10 tackles, 2 sacks",
+    "res": "W 28-23 vs Dragons",
+    "score": 16.0,
+    "plays": []
+   }
+  ],
+  "st": [],
+  "st_cands": [
+   {
+    "pid": 9101470,
+    "name": "Gareth Bjornstad",
+    "pos": "K",
+    "club": "Diveo Demons",
+    "line": "2/3 FG, long 58, 3/3 XP",
+    "res": "W 27-24 vs Beetles",
+    "score": 13.5,
+    "plays": [
+     "Q2 4:16 48-yd MISSED",
+     "Q4 11:47 58-yd GOOD, tied the game",
+     "Q4 0:02 23-yd GOOD, go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9035917,
+    "name": "Abena Ramadan",
+    "pos": "K",
+    "club": "Hughes City Asteroids",
+    "line": "2/2 FG, long 58, 7/7 XP",
+    "res": "W 55-13 vs Raptors",
+    "score": 13.0,
+    "plays": [
+     "Q3 10:34 44-yd GOOD",
+     "Q4 11:40 58-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101027,
+    "name": "Beatrice Mingxia",
+    "pos": "P",
+    "club": "Classetto Cavemen",
+    "line": "5 punts, 47.0 avg, 4 inside the 20",
+    "res": "W 35-31 vs Komodos",
+    "score": 11.833333333333332,
+    "plays": []
+   },
+   {
+    "pid": 9034268,
+    "name": "Siwoo Chikelu",
+    "pos": "P",
+    "club": "Diamond City Dynamos",
+    "line": "4 punts, 48.5 avg, 4 inside the 20",
+    "res": "L 14-21 at Dales",
+    "score": 11.666666666666668,
+    "plays": []
+   },
+   {
+    "pid": 9102454,
+    "name": "Clemence Yorkgate",
+    "pos": "K",
+    "club": "Wolford Dragons",
+    "line": "3/4 FG, long 51, 2/2 XP",
+    "res": "L 23-28 at Swords",
+    "score": 11.25,
+    "plays": [
+     "Q1 7:46 33-yd GOOD",
+     "Q2 10:28 36-yd GOOD",
+     "Q3 1:54 34-yd MISSED",
+     "Q4 1:22 51-yd GOOD, go-ahead, later answered"
+    ]
+   }
+  ],
+  "st_pick": {
+   "pid": 9101470,
+   "name": "Gareth Bjornstad",
+   "pos": "K",
+   "club": "Diveo Demons",
+   "line": "2/3 FG, long 58, 3/3 XP",
+   "res": "W 27-24 vs Beetles",
+   "score": 13.5,
+   "plays": [
+    "Q2 4:16 48-yd MISSED",
+    "Q4 11:47 58-yd GOOD, tied the game",
+    "Q4 0:02 23-yd GOOD, go-ahead and decisive, never answered"
+   ],
+   "why": "Claude's pick: tied the game with a 58-yarder in the fourth quarter, then won it with a 23-yard field goal with 2 seconds left in the 27-24 win over the Beetles."
+  }
+ },
+ "cases": [
+  {
+   "type": "comments",
+   "title": "Remarks after a loss",
+   "who": [
+    {
+     "name": "Belen Herrblanca",
+     "pos": "DL",
+     "club": "San Saltadac Sea Lions",
+     "pid": 9100816
+    }
+   ],
+   "game": "G251",
+   "where": "Bruca Beach Hammerheads at San Saltadac Sea Lions, week 6",
+   "text": "Belen Herrblanca (DL, Sea Lions) told reporters after the game that the officiating crew had 'decided the outcome'.\n\nHe has 1 earlier case on the desk in the last three seasons. Most recent: Scuffle that emptied the benches (2044, week 12): Fine $15K. The players' union says it is reviewing the remarks.",
+   "severity": 3.9,
+   "prior": 1,
+   "stage": "new",
+   "pids": [
+    9100816
+   ],
+   "precedent": [
+    "2044 wk 18, Korresaw Peynovaw: Fine $10K (severity 3.4)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k15",
+     "label": "Fine $15K",
+     "games": 0,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $15K"
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Fined $25K"
+    },
+    {
+     "key": "k75",
+     "label": "Fine $75K",
+     "games": 0,
+     "fine": 75000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $75K"
+    }
+   ],
+   "precedent_pick": null,
+   "tier": "minor",
+   "id": "W6-1",
+   "week": 6
+  },
+  {
+   "type": "coach_sideline",
+   "title": "Sideline conduct",
+   "who": [
+    {
+     "name": "Yaritza Navaclara",
+     "pos": "HC",
+     "club": "Classetto Cavemen",
+     "pid": null,
+     "coach": true
+    }
+   ],
+   "game": "G64",
+   "where": "Verigon Komodos at Classetto Cavemen, week 6",
+   "text": "Yaritza Navaclara, head coach of the Cavemen, was flagged for sideline conduct after a heated exchange with Isidro Valmont.\n\nThe Cavemen say they will not comment further.",
+   "severity": 2.9,
+   "prior": 0,
+   "stage": "new",
+   "pids": [],
+   "precedent": [
+    "2044 wk 16, Hajun Bustamante: Warning (severity 2.6)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $25K"
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Fined $50K"
+    },
+    {
+     "key": "k100",
+     "label": "Fine $100K",
+     "games": 0,
+     "fine": 100000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $100K"
+    }
+   ],
+   "precedent_pick": null,
+   "tier": "minor",
+   "id": "W6-2",
+   "week": 6
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": []
+}
