@@ -1,0 +1,260 @@
+{
+ "year": 2045,
+ "week": 4,
+ "potw": {
+  "off": [
+   {
+    "pid": 9101643,
+    "name": "Alessia Verville",
+    "pos": "QB",
+    "club": "Palm Creek Leatherbacks",
+    "line": "27/36, 295 yds, 4 TD, 1 INT, 98 rush yds",
+    "res": "W 41-21 at Bats",
+    "score": 32.83,
+    "plays": [
+     "Q2 11:29 2-yd TD pass to Fumiko Midzato (was down 1)",
+     "Q2 4:16 7-yd TD pass to Taiga Huanchen (was up 6)",
+     "Q2 0:24 4-yd TD pass to Diego Oakhurst (was up 13)",
+     "Q3 11:47 interception thrown (up 20), led to a touchdown",
+     "Q3 9:44 fumble lost (up 13)",
+     "Q3 6:53 4-yd TD pass to Diego Oakhurst (was up 13)",
+     "Q3 1:43 9-yd TD run (was up 20)"
+    ]
+   },
+   {
+    "pid": 9034255,
+    "name": "Jongdae Marchetti",
+    "pos": "QB",
+    "club": "Ediville Brass Tigers",
+    "line": "22/31, 353 yds, 4 TD, 33 rush yds",
+    "res": "W 34-17 vs Komodos",
+    "score": 32.32,
+    "plays": [
+     "Q1 11:05 13-yd TD pass to Thyra Vikmark (was tied)",
+     "Q2 5:33 36-yd TD pass to Tamsin Ashlow (was tied)",
+     "Q3 6:09 17-yd TD pass to Thyra Vikmark (was up 7)",
+     "Q3 2:04 8-yd TD pass to Haneya Vesoviy (was up 14)"
+    ]
+   },
+   {
+    "pid": 9102127,
+    "name": "Cristobal Penanueva",
+    "pos": "TE",
+    "club": "Stanton City Conductors",
+    "line": "7 rec, 112 yds, 3 TD",
+    "res": "W 28-7 at T-Rexes",
+    "score": 29.2,
+    "plays": [
+     "Q1 11:11 9-yd TD catch from Ruzena Myeong-Mok (was tied)",
+     "Q1 9:16 8-yd TD catch from Ruzena Myeong-Mok (was up 7)",
+     "Q2 10:32 24-yd TD catch from Ruzena Myeong-Mok (was up 14)"
+    ]
+   },
+   {
+    "pid": 9037971,
+    "name": "Diego Oakhurst",
+    "pos": "WR",
+    "club": "Palm Creek Leatherbacks",
+    "line": "10 rec, 118 yds, 2 TD",
+    "res": "W 41-21 at Bats",
+    "score": 23.8,
+    "plays": [
+     "Q2 0:24 4-yd TD catch from Alessia Verville (was up 13)",
+     "Q3 6:53 4-yd TD catch from Alessia Verville (was up 13)"
+    ]
+   },
+   {
+    "pid": 9038933,
+    "name": "Thyra Vikmark",
+    "pos": "WR",
+    "club": "Ediville Brass Tigers",
+    "line": "4 rec, 105 yds, 2 TD",
+    "res": "W 34-17 vs Komodos",
+    "score": 22.5,
+    "plays": [
+     "Q1 11:05 13-yd TD catch from Jongdae Marchetti (was tied)",
+     "Q3 6:09 17-yd TD catch from Jongdae Marchetti (was up 7)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9102120,
+    "name": "Yannis Torremonte",
+    "pos": "LB",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "8 tackles, 2 sacks, 1 forced fumble",
+    "res": "T 20-20 vs Commodores",
+    "score": 22.3,
+    "plays": [
+     "Q4 4:36 sack and forced fumble (down 7, late), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9101653,
+    "name": "Treiva Rolaniy",
+    "pos": "LB",
+    "club": "Good River Rangers",
+    "line": "8 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 23-19 vs Grays",
+    "score": 20.3,
+    "plays": [
+     "Q4 3:19 sack and forced fumble (up 4, late)"
+    ]
+   },
+   {
+    "pid": 9100780,
+    "name": "Waltraud Malyshyn",
+    "pos": "S",
+    "club": "Palm Creek Leatherbacks",
+    "line": "6 tackles, 2 INT",
+    "res": "W 41-21 at Bats",
+    "score": 19.6,
+    "plays": [
+     "Q2 2:58 interception (up 13), led to a touchdown",
+     "Q3 9:38 interception (up 13), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9035735,
+    "name": "Kjell Rosenqvist",
+    "pos": "DL",
+    "club": "Fiota Bay T-Rexes",
+    "line": "3 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 7-28 vs Conductors",
+    "score": 17.8,
+    "plays": [
+     "Q3 2:02 sack and forced fumble (down 28), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9035901,
+    "name": "Itsuki Meise",
+    "pos": "LB",
+    "club": "Canesta Dales",
+    "line": "7 tackles, 1 sack, 1 INT",
+    "res": "W 26-13 vs Shredders",
+    "score": 17.2,
+    "plays": [
+     "Q1 13:03 interception returned 24 yds (tied), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9101695,
+    "name": "Maisie Danemere",
+    "pos": "LB",
+    "club": "Ediville Brass Tigers",
+    "line": "12 tackles, 2 sacks",
+    "res": "W 34-17 vs Komodos",
+    "score": 17.2,
+    "plays": []
+   }
+  ],
+  "st": [],
+  "st_cands": [
+   {
+    "pid": 9037064,
+    "name": "Adaeze Stavroledis",
+    "pos": "P",
+    "club": "Holliday Beetles",
+    "line": "6 punts, 48.2 avg, 6 inside the 20",
+    "res": "W 24-19 vs Mastodons",
+    "score": 17.166666666666664,
+    "plays": []
+   },
+   {
+    "pid": 9101026,
+    "name": "Wei Littlesky",
+    "pos": "K",
+    "club": "Sarkady Beavers",
+    "line": "4/5 FG, long 54, 1/1 XP",
+    "res": "L 19-20 vs Greats",
+    "score": 13.75,
+    "plays": [
+     "Q1 11:41 34-yd GOOD",
+     "Q2 8:38 42-yd MISSED",
+     "Q2 0:00 29-yd GOOD",
+     "Q3 6:10 47-yd GOOD",
+     "Q4 5:06 54-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9035201,
+    "name": "Nemiy Akisah",
+    "pos": "P",
+    "club": "Verigon Komodos",
+    "line": "6 punts, 46.0 avg, 5 inside the 20",
+    "res": "L 17-34 at Tigers",
+    "score": 13.5,
+    "plays": []
+   },
+   {
+    "pid": 9037247,
+    "name": "Nadine Hamasaki",
+    "pos": "K",
+    "club": "Queensville Phenoms",
+    "line": "3/3 FG, long 54, 3/3 XP",
+    "res": "W 30-17 at Terrors",
+    "score": 13.0,
+    "plays": [
+     "Q1 0:14 27-yd GOOD",
+     "Q2 9:27 54-yd GOOD",
+     "Q2 2:59 36-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9102454,
+    "name": "Clemence Yorkgate",
+    "pos": "K",
+    "club": "Wolford Dragons",
+    "line": "5/7 FG, long 45, 2/2 XP",
+    "res": "W 29-7 vs Raptors",
+    "score": 12.25,
+    "plays": [
+     "Q1 11:24 44-yd MISSED",
+     "Q1 1:32 38-yd GOOD",
+     "Q2 6:29 21-yd GOOD",
+     "Q2 0:52 45-yd GOOD",
+     "Q3 5:34 37-yd GOOD",
+     "Q4 12:28 44-yd GOOD",
+     "Q4 3:22 58-yd MISSED"
+    ]
+   }
+  ],
+  "st_pick": {
+   "pid": 9037064,
+   "name": "Adaeze Stavroledis",
+   "pos": "P",
+   "club": "Holliday Beetles",
+   "line": "6 punts, 48.2 avg, 6 inside the 20",
+   "res": "W 24-19 vs Mastodons",
+   "score": 17.166666666666664,
+   "plays": [],
+   "why": "Claude's pick: all six punts landed inside the 20 (48.2 average) in a five-point win over the Mastodons, in a week with no game-deciding kicks. Wei Littlesky (Beavers K) went 4/5 with a 54-yarder but missed a 42-yarder in a one-point loss."
+  }
+ },
+ "cases": [],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": []
+}

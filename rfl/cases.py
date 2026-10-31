@@ -337,6 +337,8 @@ def build_case(S, rnd, key, week, res, used):
         if prior:
             sev += min(2.0, .55 * len(prior)); last = prior[-1]
             extra.append(f"He has {len(prior)} earlier case{'s' if len(prior) != 1 else ''} on the desk in the last three seasons. Most recent: {history_lines(last)}" + (f" (your note: {last['note']})" if last.get('note') else '') + '.')
+        for w_ in office(S).get('watch', []):      # Dan's standing notes ("fine if it gets more severe", "suspension for repeated use"): cited in the text, a little heavier
+            if w_.get('name') == who[0]['name']: sev += .8; extra.append(f"The desk has a standing note on him: {w_['note']}")
         pr = p.get('probation')
         if pr and tick(S) <= pr['until']:
             sev += 1.0; extra.append(f"He is on conduct probation from the {pr['title']} ruling, so any further discipline is treated more seriously.")
