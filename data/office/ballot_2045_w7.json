@@ -1,0 +1,418 @@
+{
+ "year": 2045,
+ "week": 7,
+ "potw": {
+  "off": [
+   {
+    "pid": 9036223,
+    "name": "Yrei Ganneimyr",
+    "pos": "RB",
+    "club": "Port Logan Commodores",
+    "line": "23 car, 79 yds, 3 rec, 53 yds, 4 TD",
+    "res": "W 38-17 vs Tsunami",
+    "score": 37.2,
+    "plays": [
+     "Q1 6:39 2-yd TD run (was tied)",
+     "Q3 10:36 3-yd TD run (was up 7)",
+     "Q4 14:18 10-yd TD catch from Alfie Gyejide (was up 14)",
+     "Q4 4:28 2-yd TD run (was up 21)"
+    ]
+   },
+   {
+    "pid": 9035381,
+    "name": "Shaniqua Ackerhuber",
+    "pos": "QB",
+    "club": "Good River Rangers",
+    "line": "18/29, 219 yds, 58 rush yds",
+    "res": "W 31-20 vs Renegades",
+    "score": 27.63,
+    "plays": [
+     "Q2 6:16 12-yd TD run (was tied)",
+     "Q2 3:49 16-yd TD run (was up 7)",
+     "Q4 13:08 4-yd TD run (was up 4)"
+    ]
+   },
+   {
+    "pid": 9035723,
+    "name": "Rongrong Xiazan",
+    "pos": "WR",
+    "club": "Holliday Beetles",
+    "line": "6 rec, 156 yds, 2 TD",
+    "res": "W 31-13 vs Dragons",
+    "score": 27.6,
+    "plays": [
+     "Q2 13:41 46-yd TD catch from Georgia Yenteniy (was tied)",
+     "Q2 6:06 9-yd TD catch from Georgia Yenteniy (was up 4)"
+    ]
+   },
+   {
+    "pid": 9100760,
+    "name": "Georgia Yenteniy",
+    "pos": "QB",
+    "club": "Holliday Beetles",
+    "line": "14/22, 257 yds, 4 TD",
+    "res": "W 31-13 vs Dragons",
+    "score": 26.95,
+    "plays": [
+     "Q2 13:41 46-yd TD pass to Rongrong Xiazan (was tied)",
+     "Q2 6:06 9-yd TD pass to Rongrong Xiazan (was up 4)",
+     "Q3 11:11 14-yd TD pass to Gunhild Achterberg (was up 11)",
+     "Q4 14:42 4-yd TD pass to Gunhild Achterberg (was up 18)"
+    ]
+   },
+   {
+    "pid": 9037368,
+    "name": "Sieglinde Forshus",
+    "pos": "WR",
+    "club": "Purcell Rapids",
+    "line": "12 rec, 189 yds, 1 TD",
+    "res": "W 40-14 vs T-Rexes",
+    "score": 24.9,
+    "plays": [
+     "Q2 2:43 48-yd TD catch from Minjun Pengzha (was down 5)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9100842,
+    "name": "Anders Hollywood",
+    "pos": "LB",
+    "club": "Purcell Rapids",
+    "line": "3 tackles, 1 sack, 3 INT",
+    "res": "W 40-14 vs T-Rexes",
+    "score": 30.8,
+    "plays": [
+     "Q1 5:22 interception returned 14 yds (down 4), led to a field goal",
+     "Q2 9:36 interception returned 14 yds (down 1), led to a field goal",
+     "Q3 6:27 interception (up 9), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9038703,
+    "name": "Mikhail Kirchmann",
+    "pos": "LB",
+    "club": "Palm Creek Leatherbacks",
+    "line": "10 tackles, 3 sacks, 1 forced fumble",
+    "res": "W 21-18 vs Lions",
+    "score": 27.0,
+    "plays": [
+     "Q4 9:00 sack and forced fumble (up 4), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9035679,
+    "name": "Sota Haruhara",
+    "pos": "LB",
+    "club": "Crayellan Redwoods",
+    "line": "12 tackles, 1 sack, 1 INT, 1 forced fumble",
+    "res": "W 26-17 vs Demons",
+    "score": 24.2,
+    "plays": [
+     "Q2 6:54 sack and forced fumble (down 3), led to a field goal",
+     "Q4 6:03 interception returned 32 yds (up 6)"
+    ]
+   },
+   {
+    "pid": 9036284,
+    "name": "Junjie Nanlian",
+    "pos": "LB",
+    "club": "Canesta Dales",
+    "line": "8 tackles, 2 INT",
+    "res": "W 28-27 at Asteroids",
+    "score": 22.3,
+    "plays": [
+     "Q4 13:01 interception (down 10), led to a touchdown",
+     "Q4 2:55 interception (down 6, late), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9102120,
+    "name": "Yannis Torremonte",
+    "pos": "LB",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "13 tackles, 1 sack, 1 forced fumble",
+    "res": "W 23-20 vs Dynamos",
+    "score": 20.3,
+    "plays": [
+     "Q4 0:38 sack and forced fumble (tied, late), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9101174,
+    "name": "Chaewon Peimirrei",
+    "pos": "LB",
+    "club": "Hughes City Asteroids",
+    "line": "9 tackles, 1 sack, 1 INT",
+    "res": "L 27-28 vs Dales",
+    "score": 17.9,
+    "plays": [
+     "Q4 3:01 interception returned 9 yds (up 6, late)"
+    ]
+   }
+  ],
+  "st": [],
+  "st_cands": [
+   {
+    "pid": 9101837,
+    "name": "Roswitha Rosenmeier",
+    "pos": "K",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "3/3 FG, long 58, 2/2 XP",
+    "res": "W 23-20 vs Dynamos",
+    "score": 18.0,
+    "plays": [
+     "Q1 2:08 34-yd GOOD",
+     "Q4 12:39 58-yd GOOD",
+     "OT 4:23 38-yd GOOD, go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9101904,
+    "name": "Magnus Apotzis",
+    "pos": "P",
+    "club": "North Hatesei Bees",
+    "line": "7 punts, 48.7 avg, 4 inside the 20",
+    "res": "W 23-14 vs Crowns",
+    "score": 16.166666666666668,
+    "plays": []
+   },
+   {
+    "pid": 9101859,
+    "name": "Edouard Brookcroft",
+    "pos": "K",
+    "club": "Purcell Rapids",
+    "line": "4/4 FG, long 45, 4/4 XP",
+    "res": "W 40-14 vs T-Rexes",
+    "score": 14.25,
+    "plays": [
+     "Q1 6:15 20-yd GOOD",
+     "Q1 2:17 23-yd GOOD",
+     "Q2 6:13 45-yd GOOD",
+     "Q4 11:26 24-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9038683,
+    "name": "Jack Rocherive",
+    "pos": "K",
+    "club": "Tengus City Terrors",
+    "line": "3/3 FG, long 56, 2/2 XP",
+    "res": "W 23-10 at Rovers",
+    "score": 14.0,
+    "plays": [
+     "Q1 12:44 56-yd GOOD",
+     "Q2 11:08 22-yd GOOD",
+     "Q4 6:39 48-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101906,
+    "name": "Isla Thornwell",
+    "pos": "K",
+    "club": "Costique Bearcats",
+    "line": "3/4 FG, long 50, 2/2 XP",
+    "res": "W 23-10 vs Beavers",
+    "score": 14.0,
+    "plays": [
+     "Q2 3:38 50-yd GOOD",
+     "Q2 0:34 57-yd MISSED",
+     "Q4 13:30 33-yd GOOD, go-ahead and decisive, never answered",
+     "Q4 4:00 43-yd GOOD"
+    ]
+   }
+  ],
+  "st_pick": {
+   "pid": 9101837,
+   "name": "Roswitha Rosenmeier",
+   "pos": "K",
+   "club": "Vaughn Bay Silverbacks",
+   "line": "3/3 FG, long 58, 2/2 XP",
+   "res": "W 23-20 vs Dynamos",
+   "score": 18.0,
+   "plays": [
+    "Q1 2:08 34-yd GOOD",
+    "Q4 12:39 58-yd GOOD",
+    "OT 4:23 38-yd GOOD, go-ahead and decisive, never answered"
+   ],
+   "why": "Claude's pick: 3-for-3 on field goals, including a 58-yarder in the fourth quarter and the 38-yard overtime winner in the Silverbacks' 23-20 win over the Dynamos."
+  }
+ },
+ "cases": [
+  {
+   "type": "defenseless",
+   "title": "Hit on a defenseless player",
+   "who": [
+    {
+     "name": "Mamadou Gangalingam",
+     "pos": "DL",
+     "club": "Chapel Rock Crowns",
+     "pid": 9100810
+    }
+   ],
+   "game": "G178",
+   "where": "Chapel Rock Crowns at North Hatesei Bees, week 7",
+   "text": "Officials penalized Mamadou Gangalingam (DL, Crowns) with 11:24 left in the first quarter for unnecessary roughness after a hit on a receiver who had not yet secured the ball. Torsten Toatautua (WR, Bees) left for a few plays and returned. The league's film review found the contact was avoidable. It happened in front of a national television audience.\n\nTHE GAME: the Crowns lost 23-14 at the Bees, week 7. Accepted flags: Crowns 5 for 38 yds, Bees 3 for 15 yds. Calls against the Crowns: unnecessary roughness on Mamadou Gangalingam (DL), Q1 11:24, 15 yds, automatic first down; unnecessary roughness on Dandan Takakawa (TE), Q4 4:13, 10 yds; offside on Rafael Yamazuka (DL), Q2 12:00, 5 yds. Flags on him: unnecessary roughness, Q1 11:24, 15 yds. Season so far: 3 accepted flags on him.\n\nThe league office has asked the Crowns for their account.",
+   "severity": 5.2,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9100810,
+    9037984
+   ],
+   "precedent": [],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $25K"
+    },
+    {
+     "key": "k50",
+     "label": "Fine $50K",
+     "games": 0,
+     "fine": 50000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Fined $50K"
+    },
+    {
+     "key": "k100",
+     "label": "Fine $100K",
+     "games": 0,
+     "fine": 100000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $100K"
+    }
+   ],
+   "precedent_pick": null,
+   "tier": "minor",
+   "id": "W7-1",
+   "week": 7
+  },
+  {
+   "type": "defenseless",
+   "title": "Hit on a defenseless player",
+   "who": [
+    {
+     "name": "Spiros Elefvelis",
+     "pos": "S",
+     "club": "Sarkady Beavers",
+     "pid": 9101145
+    }
+   ],
+   "game": "G12",
+   "where": "Sarkady Beavers at Costique Bearcats, week 7",
+   "text": "Spiros Elefvelis (S, Beavers) was flagged for unnecessary roughness with 10:25 left in the second quarter for a hit on a player the officials judged defenseless. Aslaug Skognes (LB, Bearcats) left for a few plays and returned. Elefvelis sought out Skognes after the game to apologize. The league's film review found the contact was avoidable.\n\nTHE GAME: the Beavers lost 23-10 at the Bearcats, week 7. Accepted flags: Beavers 5 for 34 yds, Bearcats 6 for 35 yds. Calls against the Beavers: offensive holding on Esteban Forteoni (OL), Q1 0:40, 10 yds; unnecessary roughness on Spiros Elefvelis (S), Q2 10:25, 9 yds, automatic first down; illegal shift on Emilio Sotolarga (WR), Q1 0:21, 5 yds. Flags on him: unnecessary roughness, Q2 10:25, 9 yds. Season so far: 1 accepted flag on him.\n\nThe players' union has been notified.",
+   "severity": 4.0,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9101145,
+    9037841
+   ],
+   "precedent": [
+    "2044 wk 7, Lyudmila Lambrmelis: Warning (severity 3.8)",
+    "2043 wk 6, Emeka Lockwood: Warning (severity 3.8)",
+    "2043 wk 2, Shaojun Myeong-Gu: Warning (severity 3.8)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k15",
+     "label": "Fine $15K",
+     "games": 0,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $15K"
+    },
+    {
+     "key": "k40",
+     "label": "Fine $40K",
+     "games": 0,
+     "fine": 40000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $40K"
+    },
+    {
+     "key": "k75",
+     "label": "Fine $75K",
+     "games": 0,
+     "fine": 75000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $75K"
+    }
+   ],
+   "precedent_pick": "none",
+   "tier": "minor",
+   "id": "W7-2",
+   "week": 7
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": []
+}

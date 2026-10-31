@@ -315,6 +315,39 @@ def anchor_to_precedent(opts, prec, repeat):
 
 # ----------------------------------------------------------------------------------------------------------------------------- building a new case
 def sigs_of(S): return set(office(S)['sigs'])
+
+def st_ok(spec): return spec.get('story') not in ('investigation', 'court')
+def game_detail(S, g, who, key, pid=None):
+    """Concrete facts from the logged game for a new (non-investigation) case, so the desk can rule on specifics. Only logged events are cited."""
+    if not g: return ''
+    club = who[0]['club']; opp = g['away'] if g['home'] == club else g['home']
+    mine = g['home_pts'] if g['home'] == club else g['away_pts']; theirs = g['away_pts'] if g['home'] == club else g['home_pts']
+    res = 'won' if mine > theirs else ('lost' if mine < theirs else 'tied')
+    out = [f"THE GAME: the {nick(club)} {res} {max(mine, theirs)}-{min(mine, theirs)} {'at' if g['home'] != club else 'against'} the {nick(opp)}{' in overtime' if g.get('ot') else ''}, week {g['week']}."]
+    pens = g.get('pens', []); mp = [x for x in pens if x['team'] == club]; op = [x for x in pens if x['team'] == opp]
+    out.append(f"Accepted flags: {nick(club)} {len(mp)} for {sum(x['yds'] for x in mp)} yds, {nick(opp)} {len(op)} for {sum(x['yds'] for x in op)} yds.")
+    if mp:
+        big = sorted(mp, key=lambda x: -x['yds'])[:3]
+        out.append("Calls against the " + nick(club) + ": " + '; '.join(f"{x['type']} on {x['name']} ({x['pos']}), Q{x['q']} {x['t']}, {x['yds']} yds" + (', automatic first down' if x.get('af') else '') for x in big) + '.')
+    if pid:
+        P = S['players'][str(pid)]; side = 'H' if g['home'] == club else 'A'; v = g['stats'][side].get(str(pid)) or g['stats'][side].get(pid) or {}
+        bits = []
+        if v.get('pass_yds'): bits.append(f"{v.get('pass_yds')} pass yds, {v.get('pass_td', 0)} TD, {v.get('ints', 0)} INT")
+        if v.get('rush_yds'): bits.append(f"{v.get('rush_yds')} rush yds")
+        if v.get('rec'): bits.append(f"{v.get('rec')} rec, {v.get('rec_yds', 0)} yds")
+        if v.get('tackles') or v.get('sacks'): bits.append(f"{v.get('tackles', 0)} tackles, {v.get('sacks', 0)} sacks")
+        mine_p = [x for x in mp if x.get('pid') == pid]
+        if bits: out.append(f"His game: {', '.join(bits)}.")
+        if mine_p: out.append("Flags on him: " + '; '.join(f"{x['type']}, Q{x['q']} {x['t']}, {x['yds']} yds" for x in mine_p) + '.')
+        sf = (S['season']['stats'].get(str(pid)) or {}).get('pen', 0)
+        out.append(f"Season so far: {sf} accepted flag{'s' if sf != 1 else ''} on him.")
+    else:
+        rec = S['season']['records'].get(club) or {}
+        out.append(f"The {nick(club)} are {rec.get('w', 0)}-{rec.get('l', 0)}{'-%d' % rec['t'] if rec.get('t') else ''} after this game.")
+        near = [x for x in g.get('plays', []) if x.get('kind') in ('turnover', 'td')][-3:]
+        if near: out.append("Last scoring and turnover plays of the game: " + '; '.join(f"Q{x['q']} {x['t']} {x['text']} ({x['score']})" for x in near) + '.')
+    return ' '.join(out)
+
 def build_case(S, rnd, key, week, res, used):
     """Build one new case of type `key`. Returns (case, story) or None. `story` is hidden data to store (never put on the page)."""
     spec = dict(CATALOG[key], id=key)
@@ -353,7 +386,9 @@ def build_case(S, rnd, key, week, res, used):
     body = fmt(spec['openers'][op], ctx)
     fact_txt = ' '.join(fmt(f['text'], ctx) for f in facts)
     closer = fmt(r2.choice(spec['closers']), ctx)
-    text = '\n\n'.join(x for x in [(body + ' ' + fact_txt).strip(), ' '.join(extra + [closer])] if x)
+    _g = next((x for x in (res or []) if x.get('id') == game), None) if game else None
+    _gd = game_detail(S, _g, who, key, pid) if st_ok(spec) else ''
+    text = '\n\n'.join(x for x in [(body + ' ' + fact_txt).strip(), _gd, ' '.join(extra + [closer])] if x)
     prec = precedent_for(S, key, sev, pid)
     story = None; opts = None
     st = spec.get('story')
