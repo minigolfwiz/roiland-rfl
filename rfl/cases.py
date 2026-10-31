@@ -316,6 +316,48 @@ def anchor_to_precedent(opts, prec, repeat):
 # ----------------------------------------------------------------------------------------------------------------------------- building a new case
 def sigs_of(S): return set(office(S)['sigs'])
 
+
+# --- 2045 wk 7: Dan asked for specifics on what was said and how severe it was (not game details). Quotes and severity are written to match the opener.
+WORDS = {
+ 'comments': {  # opener index -> (tier, quotes, target)
+   0: ('moderate', ["\"That game was decided by the crew, not by the two teams. Three calls in the second half changed everything and none of them were right.\"", "\"I'm not going to say anything I'll get fined for. I'll just say the crew decided the outcome and everybody saw it.\""], 'the crew\'s competence'),
+   1: ('serious', ["\"They were calling that game for the {opp}. That's not a mistake, that's a decision, and the league knows it.\"", "\"Every flag went one way. You can't tell me that crew wasn't trying to help the {opp}.\""], 'the crew\'s honesty: he alleges bias, which the media policy treats more severely than criticism of calls'),
+   2: ('moderate', ["\"Those officials should be ashamed. We play all week and they take it away with three flags.\"", "\"They should be ashamed of how that game was called, and I told the crew that on the way off the field.\""], 'the crew personally, without alleging bias')},
+ 'coach_sideline': {
+   0: ('moderate', ["\"That's a hold on every snap and you've missed it all day. Look at the film!\"", "\"Get it right! You've missed that three times!\""], 'a missed call, argued from the sideline and continued after the whistle'),
+   1: ('mild', ["\"That's pass interference. Look at it again.\"", "\"What do you see that I don't? Tell me what you saw.\""], 'a heated exchange from the sideline, with no physical contact'),
+   2: ('serious', ["\"I'm not going back until you tell me what you saw!\"", "\"You owe me an explanation. I'll wait right here.\""], 'he followed the official onto the field and ignored two warnings')},
+ 'sideline_gm': {
+   0: ('serious', ["\"You cost us that game and you know it.\"", "\"I want that call explained, and I'm not leaving until somebody does it.\""], 'a face-to-face confrontation with a referee in the tunnel'),
+   1: ('moderate', ["\"The league has a problem with consistency and nobody in New York wants to talk about it.\"", "\"I'd like to know who grades these crews, because it isn't working.\""], 'a public criticism of the league office'),
+   2: ('moderate', ["\"I was asking a question, not causing a scene.\""], 'an argument with stadium staff that ended with an ejection from the press box')},
+ 'owner_comments': {
+   0: ('moderate', ["\"The officiating this year has been an embarrassment, and the schedule doesn't help.\""], 'the league\'s officiating and scheduling, on live radio'),
+   1: ('serious', ["\"Their ownership has never run a serious franchise. Everybody in this league knows it.\""], 'a rival club\'s ownership by name'),
+   2: ('moderate', ["\"The broadcast partners treat our games like filler.\""], 'the league\'s broadcast partners')},
+}
+SEV_NOTE = dict(mild='Mild: disagreement with a call, no accusation of bias, no physical contact.',
+                moderate='Moderate: sharper criticism, but of calls and competence rather than honesty.',
+                serious='Serious: it accuses someone of bias, ignores warnings, or goes after a person by name.')
+def words_detail(S, key, op, ctx, facts, g=None, club=None):
+    w = WORDS.get(key, {}).get(op)
+    if not w: return ''
+    tier, quotes, target = w
+    q = quotes[hash((key, op, ctx.get('name', ''), g.get('id') if g else '')) % len(quotes)] if False else quotes[sum(map(ord, f"{key}{op}{ctx.get('name','')}")) % len(quotes)]
+    ids = {f['id'] for f in facts}
+    bits = [f"WHAT WAS SAID OR DONE: {fmt(q, ctx)}", f"Aimed at: {target}."]
+    if 'profane' in ids: bits.append("Profanity also aired live (not reproduced here).")
+    if 'doubled' in ids: bits.append("He repeated them in a second interview the next day.")
+    if 'named' in ids: bits.append("He named an official.")
+    if 'walked_back' in ids or 'apology' in ids: bits.append("He backed off afterwards.")
+    if 'defiant' in ids: bits.append("He stood by the remarks afterwards.")
+    if key == 'coach_sideline' and g:
+        mine = [x for x in g.get('pens', []) if x['team'] == club and x['type'] in ('pass interference', 'offensive holding', 'defensive holding', 'roughing the passer', 'unnecessary roughness')]
+        if mine:
+            x = mine[0]; bits.append(f"The call he was arguing was likely the {x['type']} on {x['name']} ({x['pos']}), Q{x['q']} {x['t']}, {x['yds']} yds.")
+    bits.append(SEV_NOTE[tier])
+    return ' '.join(bits)
+
 def st_ok(spec): return spec.get('story') not in ('investigation', 'court')
 def game_detail(S, g, who, key, pid=None):
     """Concrete facts from the logged game for a new (non-investigation) case, so the desk can rule on specifics. Only logged events are cited."""
@@ -387,7 +429,7 @@ def build_case(S, rnd, key, week, res, used):
     fact_txt = ' '.join(fmt(f['text'], ctx) for f in facts)
     closer = fmt(r2.choice(spec['closers']), ctx)
     _g = next((x for x in (res or []) if x.get('id') == game), None) if game else None
-    _gd = game_detail(S, _g, who, key, pid) if st_ok(spec) else ''
+    _gd = words_detail(S, key, op, ctx, facts, _g, who[0].get('club')) if st_ok(spec) else ''
     text = '\n\n'.join(x for x in [(body + ' ' + fact_txt).strip(), _gd, ' '.join(extra + [closer])] if x)
     prec = precedent_for(S, key, sev, pid)
     story = None; opts = None
