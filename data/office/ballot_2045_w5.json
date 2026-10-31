@@ -1,0 +1,246 @@
+{
+ "year": 2045,
+ "week": 5,
+ "potw": {
+  "off": [
+   {
+    "pid": 9036959,
+    "name": "Sefo Montucci",
+    "pos": "RB",
+    "club": "Costique Bearcats",
+    "line": "21 car, 74 yds, 6 rec, 59 yds, 4 TD",
+    "res": "W 37-14 vs Tigers",
+    "score": 37.3,
+    "plays": [
+     "Q2 13:54 2-yd TD run (was tied)",
+     "Q2 6:01 7-yd TD run (was up 7)",
+     "Q3 8:23 2-yd TD run (was up 14)",
+     "Q4 4:33 3-yd TD run (was up 17)"
+    ]
+   },
+   {
+    "pid": 9034394,
+    "name": "Kotone Wintermere",
+    "pos": "QB",
+    "club": "Tengus City Terrors",
+    "line": "31/34, 310 yds, 5 TD",
+    "res": "W 45-7 at Shredders",
+    "score": 32.87,
+    "plays": [
+     "Q1 5:02 1-yd TD pass to Masaru Wakamaki (was up 7)",
+     "Q2 7:55 3-yd TD pass to Michio Sugita (was up 14)",
+     "Q2 1:33 1-yd TD pass to Annika Weinheim (was up 21)",
+     "Q4 12:55 7-yd TD pass to Masaru Wakamaki (was up 28)",
+     "Q4 7:43 29-yd TD pass to Masaru Wakamaki (was up 35)"
+    ]
+   },
+   {
+    "pid": 9033283,
+    "name": "Imani Chimah",
+    "pos": "QB",
+    "club": "Classetto Cavemen",
+    "line": "19/26, 206 yds, 1 TD, 88 rush yds",
+    "res": "W 24-16 at Thunderbugs",
+    "score": 31.11,
+    "plays": [
+     "Q2 3:42 14-yd TD pass to Gerasimos Apovelis (was down 3)",
+     "Q3 5:41 3-yd TD run (was down 2)",
+     "Q4 12:08 5-yd TD run (was down 2), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9101260,
+    "name": "Korresaw Pellavanti",
+    "pos": "RB",
+    "club": "South Burke Tsunami",
+    "line": "28 car, 123 yds, 3 rec, 55 yds, 2 TD",
+    "res": "W 41-24 at Komodos",
+    "score": 29.8,
+    "plays": [
+     "Q2 14:38 3-yd TD run (was up 7)",
+     "Q4 5:09 1-yd TD run (was up 24)"
+    ]
+   },
+   {
+    "pid": 9101638,
+    "name": "Masaru Wakamaki",
+    "pos": "WR",
+    "club": "Tengus City Terrors",
+    "line": "13 rec, 113 yds, 3 TD",
+    "res": "W 45-7 at Shredders",
+    "score": 29.3,
+    "plays": [
+     "Q1 5:02 1-yd TD catch from Kotone Wintermere (was up 7)",
+     "Q4 12:55 7-yd TD catch from Kotone Wintermere (was up 28)",
+     "Q4 7:43 29-yd TD catch from Kotone Wintermere (was up 35)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9039156,
+    "name": "Severine Valcour",
+    "pos": "DL",
+    "club": "Ediville Brass Tigers",
+    "line": "8 tackles, 3 sacks",
+    "res": "L 14-37 at Bearcats",
+    "score": 19.8,
+    "plays": []
+   },
+   {
+    "pid": 9035907,
+    "name": "Mariama Svetentsev",
+    "pos": "LB",
+    "club": "Chapel Rock Crowns",
+    "line": "4 tackles, 1 sack, 1 INT",
+    "res": "W 28-17 vs Silverbacks",
+    "score": 15.4,
+    "plays": [
+     "Q2 14:01 interception (down 7), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9101134,
+    "name": "Haeun Asaura",
+    "pos": "LB",
+    "club": "Hughes City Asteroids",
+    "line": "9 tackles, 2 sacks",
+    "res": "W 10-7 at Mastiffs",
+    "score": 15.399999999999999,
+    "plays": []
+   },
+   {
+    "pid": 9101174,
+    "name": "Chaewon Peimirrei",
+    "pos": "LB",
+    "club": "Hughes City Asteroids",
+    "line": "8 tackles, 2 sacks",
+    "res": "W 10-7 at Mastiffs",
+    "score": 14.8,
+    "plays": []
+   },
+   {
+    "pid": 9038868,
+    "name": "Amara Ashmore",
+    "pos": "LB",
+    "club": "Diamond City Hope",
+    "line": "11 tackles, 1 INT",
+    "res": "W 31-17 at Mastodons",
+    "score": 14.6,
+    "plays": [
+     "Q1 2:03 interception returned 9 yds (up 7), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9100828,
+    "name": "Howahkan Lonecreek",
+    "pos": "LB",
+    "club": "Queensville Phenoms",
+    "line": "6 tackles, 1 sack, 1 forced fumble",
+    "res": "W 31-23 vs Rovers",
+    "score": 14.1,
+    "plays": [
+     "Q4 0:58 sack and forced fumble (up 8, late)"
+    ]
+   }
+  ],
+  "st": [],
+  "st_cands": [
+   {
+    "pid": 9037880,
+    "name": "Louniya Ultreimyr",
+    "pos": "P",
+    "club": "Eona Topcats",
+    "line": "8 punts, 49.9 avg, 7 inside the 20",
+    "res": "L 3-16 vs Leatherbacks",
+    "score": 23.666666666666664,
+    "plays": []
+   },
+   {
+    "pid": 9101051,
+    "name": "Keyto Ngapule",
+    "pos": "P",
+    "club": "Purcell Rapids",
+    "line": "8 punts, 48.2 avg, 7 inside the 20",
+    "res": "L 10-16 at Raptors",
+    "score": 21.5,
+    "plays": []
+   },
+   {
+    "pid": 9100962,
+    "name": "Lionel Clayshaw",
+    "pos": "P",
+    "club": "New Madrid Mastiffs",
+    "line": "7 punts, 46.9 avg, 5 inside the 20",
+    "res": "L 7-10 vs Asteroids",
+    "score": 15.499999999999996,
+    "plays": []
+   },
+   {
+    "pid": 9101024,
+    "name": "Dongwook Baiwang",
+    "pos": "K",
+    "club": "San Saltadac Sea Lions",
+    "line": "2/2 FG, long 50, 2/2 XP",
+    "res": "W 20-17 at Grays",
+    "score": 13.25,
+    "plays": [
+     "Q3 10:20 45-yd GOOD",
+     "Q4 4:17 50-yd GOOD, go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9101902,
+    "name": "Xavier Kirkland",
+    "pos": "K",
+    "club": "Diamond City Dynamos",
+    "line": "3/3 FG, long 52, 3/3 XP",
+    "res": "W 30-7 vs Hammerheads",
+    "score": 12.5,
+    "plays": [
+     "Q1 9:10 32-yd GOOD",
+     "Q1 2:57 44-yd GOOD",
+     "Q3 6:55 52-yd GOOD"
+    ]
+   }
+  ],
+  "st_pick": {
+   "pid": 9101024,
+   "name": "Dongwook Baiwang",
+   "pos": "K",
+   "club": "San Saltadac Sea Lions",
+   "line": "2/2 FG, long 50, 2/2 XP",
+   "res": "W 20-17 at Grays",
+   "score": 13.25,
+   "plays": [
+    "Q3 10:20 45-yd GOOD",
+    "Q4 4:17 50-yd GOOD, go-ahead and decisive, never answered"
+   ],
+   "why": "Claude's pick: a 45-yarder and then a 50-yard go-ahead field goal late in the fourth quarter that decided a 20-17 road win. Two punters scored higher on the box score, but both were on losing teams."
+  }
+ },
+ "cases": [],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": []
+}
