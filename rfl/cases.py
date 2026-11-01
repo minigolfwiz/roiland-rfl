@@ -539,7 +539,7 @@ def spec_titles(key): return CATALOG[key]['title'] if CATALOG[key]['title'] else
 for _k, _v in FELONY.items(): CATALOG['felony_' + _k]['title'] = _v['title']
 
 # ----------------------------------------------------------------------------------------------------------------------------- follow-ups
-FIND_WHAT = dict(targeting='a dangerous hit', social='a pattern of posts aimed at opposing fans', filming='illegally filming opponents', flagrant='a flagrant hit', bench_clear='the late hit that set off the scrum', bounty='a pay-for-injury program', hazing='a pattern of hazing', tampering='improper contact with a player under contract', cap='unreported payments', gambling='wagers on league games')
+FIND_WHAT = dict(injury_report='a misleading injury report', targeting='a dangerous hit', social='a pattern of posts aimed at opposing fans', filming='illegally filming opponents', flagrant='a flagrant hit', bench_clear='the late hit that set off the scrum', bounty='a pay-for-injury program', hazing='a pattern of hazing', tampering='improper contact with a player under contract', cap='unreported payments', gambling='wagers on league games')
 FIND_TEXT = dict(
     substantiated=["The league's investigators concluded the allegation of {what} is substantiated.", "After a review of records and interviews, the league found that {what} did occur."],
     partial=["The league's investigators substantiated part of the allegation of {what} and rejected the rest.", "Investigators found some evidence of {what} but could not confirm the full allegation."],
@@ -667,6 +667,13 @@ def build_findings(S, rnd, st, item, week, chain, p):
                    'partial': f"Investigators concluded that {st['name']}'s hit was reckless but not flagrant: avoidable, though the timing was close to the whistle.",
                    'unfounded': f"Investigators concluded that {st['name']}'s hit was not flagrant: the contact was close to the whistle and the league found no violation."}[st['truth']]
         text = '\n\n'.join([f"The league has finished its review of the hit by {st['name']} ({nick(st['club'])}) in week {st['week']}, {st['year']}. " + verdict, 'Original matter: ' + st['summary']])
+    if key == 'injury_report':      # 2045 wk 11 fix: the hand-opened investigation had no findings text (KeyError); findings now name the player and say what investigators found
+        _P = [x for x in S['players'].values() if x.get('club') == st['club'] and x.get('starter')]; _p = max(_P, key=lambda x: x['abil']) if _P else None
+        _n = f"{_p['name']} ({_p['pos']})" if _p else 'the player'; nk_ = nick(st['club'])
+        verdict = {'substantiated': f"Investigators concluded the {nk_} knew before they filed the report that {_n} was injured and had missed every practice that week, and listed him with no injury designation anyway. Practice attendance sheets and the athletic training staff's notes both show the injury was documented before the filing.",
+                   'partial': f"Investigators concluded the report about {_n} was inaccurate but found no intent to mislead: the injury was recorded by the training staff and never passed to the football staff who filed the report.",
+                   'unfounded': f"Investigators concluded the report about {_n} was accurate when filed: his missed practices were a planned rest, and the injury that kept him from playing came up on game day."}[st['truth']]
+        text = '\n\n'.join([f"The league has finished its investigation of the {nk_} injury report (opened in week {st['week']}, {st['year']}). " + verdict, 'Original matter: ' + st['summary']])
     if key == 'social' and p and not st.get('review_of'): text = social_findings(S, st, p, r2)      # concrete findings (Dan, 2045 wk 3)
     rid = st.get('review_of'); h_rev = None; rf = None; sev_note = None
     if rid:      # Dan (2045 wk 1): rule now, investigate, and lessen the punishment if the findings warrant it; wk 2: findings must be specific, built from the game record
