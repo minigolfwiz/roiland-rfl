@@ -1,0 +1,278 @@
+{
+ "year": 2045,
+ "week": 10,
+ "potw": {
+  "off": [
+   {
+    "pid": 9035381,
+    "name": "Shaniqua Ackerhuber",
+    "pos": "QB",
+    "club": "Good River Rangers",
+    "line": "30/40, 372 yds, 2 TD, 120 rush yds",
+    "res": "W 41-24 vs Conductors",
+    "score": 40.88,
+    "plays": [
+     "Q2 13:45 29-yd TD pass to Eleanor Ashford (was up 3)",
+     "Q2 6:37 12-yd TD run (was up 10)",
+     "Q3 8:55 10-yd TD pass to Maha Stavrokatos (was up 10)",
+     "Q4 6:56 13-yd TD run (was up 14)"
+    ]
+   },
+   {
+    "pid": 9101785,
+    "name": "Halina Akisei",
+    "pos": "RB",
+    "club": "Underwood Bats",
+    "line": "24 car, 99 yds, 3 rec, 42 yds, 4 TD",
+    "res": "W 31-28 vs Raptors",
+    "score": 34.35,
+    "plays": [
+     "Q1 12:21 38-yd TD catch from Terrell Durland (was tied)",
+     "Q2 1:36 5-yd TD run (was tied)",
+     "Q3 1:26 fumble lost (down 7), led to a touchdown",
+     "Q4 11:06 1-yd TD catch from Terrell Durland (was down 14)",
+     "Q4 5:59 3-yd TD catch from Terrell Durland (was down 7, late), cut the deficit late"
+    ]
+   },
+   {
+    "pid": 9101802,
+    "name": "Kanei Neitaw",
+    "pos": "QB",
+    "club": "Fiota Bay T-Rexes",
+    "line": "24/34, 323 yds, 3 TD, 52 rush yds",
+    "res": "W 31-14 at Commodores",
+    "score": 33.39,
+    "plays": [
+     "Q1 6:21 1-yd TD pass to Santiago Herrnueva (was tied)",
+     "Q2 7:59 19-yd TD pass to Bronislaw Svetentsev (was up 10)",
+     "Q3 3:24 22-yd TD pass to Vincenza Kingswell (was up 17)",
+     "Q4 6:01 8-yd TD run (was up 17)"
+    ]
+   },
+   {
+    "pid": 9035794,
+    "name": "Barnaby Belbourg",
+    "pos": "RB",
+    "club": "Canesta Dales",
+    "line": "21 car, 59 yds, 3 rec, 60 yds, 3 TD",
+    "res": "W 31-29 at Phenoms",
+    "score": 29.9,
+    "plays": [
+     "Q2 6:55 8-yd TD catch from Kivaw Matafolau (was down 6)",
+     "Q3 4:54 10-yd TD catch from Kivaw Matafolau (was down 3)",
+     "Q4 4:05 7-yd TD run (was up 1, late)"
+    ]
+   },
+   {
+    "pid": 9039028,
+    "name": "Gunther Slavanov",
+    "pos": "WR",
+    "club": "Holliday Beetles",
+    "line": "10 rec, 148 yds, 2 TD",
+    "res": "T 34-34 at Rovers",
+    "score": 28.3,
+    "plays": [
+     "Q1 7:04 6-yd TD catch from Georgia Yenteniy (was tied)",
+     "Q4 2:32 11-yd TD catch from Georgia Yenteniy (was down 5, late), go-ahead, later answered"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9101705,
+    "name": "Hollis Yorkfield",
+    "pos": "LB",
+    "club": "Underwood Bats",
+    "line": "9 tackles, 2 sacks, 1 INT",
+    "res": "W 31-28 vs Raptors",
+    "score": 23.4,
+    "plays": [
+     "Q4 7:49 interception returned 18 yds (down 7), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9100849,
+    "name": "Yerin Masukami",
+    "pos": "LB",
+    "club": "Purcell Rapids",
+    "line": "4 tackles, 1 sack, 1 INT, 1 forced fumble",
+    "res": "W 23-15 vs Demons",
+    "score": 21.4,
+    "plays": [
+     "Q3 6:51 interception returned 22 yds (up 4), led to a touchdown",
+     "Q4 9:03 sack and forced fumble (up 8), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9034301,
+    "name": "Diamond Taulagi",
+    "pos": "LB",
+    "club": "Cordelle Raptors",
+    "line": "8 tackles, 3 sacks",
+    "res": "L 28-31 at Bats",
+    "score": 19.8,
+    "plays": []
+   },
+   {
+    "pid": 9035369,
+    "name": "Akari Lambrnides",
+    "pos": "LB",
+    "club": "Stamford Grays",
+    "line": "9 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 27-17 at Bearcats",
+    "score": 19.4,
+    "plays": [
+     "Q3 11:55 sack and forced fumble (up 7)"
+    ]
+   },
+   {
+    "pid": 9037483,
+    "name": "Bastian Bhadravasan",
+    "pos": "S",
+    "club": "New Madrid Mastiffs",
+    "line": "5 tackles, 2 INT",
+    "res": "W 19-7 vs Beavers",
+    "score": 19.0,
+    "plays": [
+     "Q3 12:52 interception returned 22 yds (tied), led to a field goal",
+     "Q3 0:41 interception returned 19 yds (up 6), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9037755,
+    "name": "Pooja Ezenti",
+    "pos": "LB",
+    "club": "Costique Bearcats",
+    "line": "8 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 17-27 vs Grays",
+    "score": 18.8,
+    "plays": [
+     "Q3 8:59 sack and forced fumble (down 7)"
+    ]
+   }
+  ],
+  "st": [],
+  "st_cands": [
+   {
+    "pid": 9038683,
+    "name": "Jack Rocherive",
+    "pos": "K",
+    "club": "Tengus City Terrors",
+    "line": "4/4 FG, long 57, 1/1 XP",
+    "res": "L 19-23 at Lions",
+    "score": 17.25,
+    "plays": [
+     "Q1 3:07 57-yd GOOD",
+     "Q2 2:49 44-yd GOOD",
+     "Q3 8:51 50-yd GOOD",
+     "Q4 6:43 23-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101911,
+    "name": "Elharith Anamatos",
+    "pos": "P",
+    "club": "Far Farris Raccoons",
+    "line": "5 punts, 50.2 avg, 4 inside the 20",
+    "res": "L 17-20 at Asteroids",
+    "score": 14.500000000000002,
+    "plays": []
+   },
+   {
+    "pid": 9038621,
+    "name": "Kwame Kone",
+    "pos": "K",
+    "club": "Fiota Swords",
+    "line": "4/5 FG, long 54, 2/2 XP",
+    "res": "L 34-42 vs Silverbacks",
+    "score": 14.0,
+    "plays": [
+     "Q1 7:51 23-yd GOOD",
+     "Q2 5:05 46-yd GOOD",
+     "Q2 0:18 59-yd MISSED",
+     "Q3 12:35 54-yd GOOD",
+     "Q4 10:26 42-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101900,
+    "name": "Rocio Camparini",
+    "pos": "K",
+    "club": "Classetto Cavemen",
+    "line": "3/3 FG, long 55, 1/1 XP",
+    "res": "L 16-20 vs Tigers",
+    "score": 13.25,
+    "plays": [
+     "Q1 2:45 55-yd GOOD",
+     "Q3 7:12 48-yd GOOD",
+     "Q4 9:52 29-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101031,
+    "name": "Tatsuya Murong",
+    "pos": "P",
+    "club": "Port Logan Commodores",
+    "line": "8 punts, 45.2 avg, 4 inside the 20",
+    "res": "L 14-31 vs T-Rexes",
+    "score": 13.0,
+    "plays": []
+   }
+  ],
+  "st_pick": {
+   "pid": 9038683,
+   "name": "Jack Rocherive",
+   "pos": "K",
+   "club": "Tengus City Terrors",
+   "line": "4/4 FG, long 57, 1/1 XP",
+   "res": "L 19-23 at Lions",
+   "score": 17.25,
+   "plays": [
+    "Q1 3:07 57-yd GOOD",
+    "Q2 2:49 44-yd GOOD",
+    "Q3 8:51 50-yd GOOD",
+    "Q4 6:43 23-yd GOOD"
+   ],
+   "why": "Claude's pick: 4-for-4 on field goals (57, 44, 50 and 23 yards) accounted for 12 of the Terrors' 19 points in a 19-23 loss at Lions. Nobody on a winning team had a stronger kicking day."
+  }
+ },
+ "cases": [],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": [
+  {
+   "title": "Pay-for-injury allegation",
+   "who": "El Latigo Shredders",
+   "club": "El Latigo Shredders",
+   "since": "week 8, 2045",
+   "ruling": "Open a formal investigation, rule on the findings"
+  },
+  {
+   "title": "Inaccurate injury listing",
+   "who": "Tengus City Terrors",
+   "club": "Tengus City Terrors",
+   "since": "week 8, 2045",
+   "ruling": ""
+  }
+ ]
+}
