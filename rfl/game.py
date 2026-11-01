@@ -50,6 +50,7 @@ class Side:
         if not self.rbs: return self.qb
         return self.rbs[0] if len(self.rbs) == 1 or self.rnd.random() < .72 else self.rbs[1]
 
+TWO_LEAD_FROM = 2045   # from week 9 of 2045: coaches with a 5- or 12-point lead in the 4th go for two
 OT_TWO_POINT_FROM = 2045   # from this season on, overtime touchdowns must be followed by a two-point try
 
 class Game:
@@ -143,7 +144,11 @@ class Game:
         d = self.deficit(s)  # after the touchdown
         if not (self.q == 4 or self.ot): return False
         if self.ot: return False
-        return d in (2, 5, 10, 16, 13) or (d == -1 and self.clock < 300) or (d == 0 and self.clock < 120 and self.rnd.random() < .25)
+        if d in (2, 5, 10, 16, 13) or (d == -1 and self.clock < 300) or (d == 0 and self.clock < 120 and self.rnd.random() < .25): return True
+        # 2045 wk 9 fix (Dan, 1 Nov 2026): the old chart only covered trailing teams. Leading by 5 or 12 after the TD, the try makes it a 7- or 14-point game (a TD alone only ties), so most coaches go for two.
+        if d in (-5, -12) and self.q == 4 and self.clock > 90 and self.year >= TWO_LEAD_FROM:
+            return self.rnd.random() < {'aggressive': .9, 'balanced': .75, 'pass-first': .75, 'run-first': .7, 'conservative': .5}.get(s.style, .7)
+        return False
     def hurry(self, s):
         need = self.deficit(s); return need > 0 and ((self.q == 4 and self.clock <= 240) or (self.q == 2 and self.clock <= 90)) or (self.q in (2, 4) and self.clock <= 45 and need >= 0)
     def milk(self, s): return self.q == 4 and self.deficit(s) < 0 and self.clock <= 300
