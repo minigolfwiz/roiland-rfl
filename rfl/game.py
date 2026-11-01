@@ -146,8 +146,8 @@ class Game:
         if self.ot: return False
         if d in (2, 5, 10, 16, 13) or (d == -1 and self.clock < 300) or (d == 0 and self.clock < 120 and self.rnd.random() < .25): return True
         # 2045 wk 9 fix (Dan, 1 Nov 2026): the old chart only covered trailing teams. Leading by 5 or 12 after the TD, the try makes it a 7- or 14-point game (a TD alone only ties), so most coaches go for two.
-        if d in (-5, -12) and self.q == 4 and self.clock > 90 and self.year >= TWO_LEAD_FROM:
-            return self.rnd.random() < {'aggressive': .9, 'balanced': .75, 'pass-first': .75, 'run-first': .7, 'conservative': .5}.get(s.style, .7)
+        if d in (-5, -12) and self.q == 4 and self.year >= TWO_LEAD_FROM:      # any time in Q4: modern NFL coaches follow the chart almost every time
+            return self.rnd.random() < {'aggressive': .97, 'balanced': .93, 'pass-first': .93, 'run-first': .9, 'conservative': .8}.get(s.style, .9)
         return False
     def hurry(self, s):
         need = self.deficit(s); return need > 0 and ((self.q == 4 and self.clock <= 240) or (self.q == 2 and self.clock <= 90)) or (self.q in (2, 4) and self.clock <= 45 and need >= 0)
