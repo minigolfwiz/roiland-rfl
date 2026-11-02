@@ -185,3 +185,8 @@
 ## 2045 week 16 decisions / week 17 stage
 - Week 19 primetime: morning T-Rexes at Rovers, afternoon Grays at Sea Lions, evening Beetles at Rangers. No cases in week 16.
 - Week 17 played automatically. Ballot: W17-1 Khoury obscene gesture (text hand-expanded with what happened/severity); week 20 primetime pick.
+
+## 2045 week 17 decisions / week 18 stage
+- Week 20 primetime: morning Crowns at Commodores, afternoon Phenoms at Bees, evening Sea Lions at Mastodons. All primetime weeks (through 20) are now booked.
+- W17-1 Khoury obscene gesture: no action.
+- Week 18 played automatically. Ballot: W18-1 Minamura (Topcats QB) helmet-to-helmet on Trosemyr (Raccoons RB); text hand-expanded. No primetime picks left to make.

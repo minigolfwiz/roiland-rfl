@@ -1,0 +1,584 @@
+{
+ "year": 2045,
+ "week": 18,
+ "potw": {
+  "off": [
+   {
+    "pid": 9035364,
+    "name": "Yannis Blancbec",
+    "pos": "QB",
+    "club": "Verigon Komodos",
+    "line": "30/45, 333 yds, 3 TD, 48 rush yds",
+    "res": "W 40-23 at Rapids",
+    "score": 33.52,
+    "plays": [
+     "Q2 0:11 5-yd TD pass to Malsook Il-Su (was down 1)",
+     "Q3 3:50 11-yd TD run (was up 9)",
+     "Q4 12:24 12-yd TD pass to Malsook Il-Su (was up 9)",
+     "Q4 5:38 26-yd TD pass to Deepika Gangadeva (was up 10)"
+    ]
+   },
+   {
+    "pid": 9036725,
+    "name": "Lakshmi Balamoorthy",
+    "pos": "QB",
+    "club": "Wolford Dragons",
+    "line": "28/38, 282 yds, 5 TD, 1 INT, 53 rush yds",
+    "res": "W 38-10 vs Cavemen",
+    "score": 30.31,
+    "plays": [
+     "Q1 11:31 interception thrown (down 3), led to a touchdown",
+     "Q2 12:53 2-yd TD pass to Chiara Georstakis (was down 10)",
+     "Q2 12:02 5-yd TD pass to Chiara Georstakis (was down 3)",
+     "Q3 5:26 6-yd TD pass to Chiara Georstakis (was up 7)",
+     "Q4 14:12 19-yd TD pass to Chiara Georstakis (was up 14)",
+     "Q4 4:44 2-yd TD pass to George Wintercott (was up 21)"
+    ]
+   },
+   {
+    "pid": 9100834,
+    "name": "Chiara Georstakis",
+    "pos": "WR",
+    "club": "Wolford Dragons",
+    "line": "9 rec, 61 yds, 4 TD",
+    "res": "W 38-10 vs Cavemen",
+    "score": 30.1,
+    "plays": [
+     "Q2 12:53 2-yd TD catch from Lakshmi Balamoorthy (was down 10)",
+     "Q2 12:02 5-yd TD catch from Lakshmi Balamoorthy (was down 3)",
+     "Q3 5:26 6-yd TD catch from Lakshmi Balamoorthy (was up 7)",
+     "Q4 14:12 19-yd TD catch from Lakshmi Balamoorthy (was up 14)"
+    ]
+   },
+   {
+    "pid": 9101731,
+    "name": "Dimitrios Xanthokatos",
+    "pos": "WR",
+    "club": "Billiataho Greats",
+    "line": "10 rec, 191 yds, 1 TD",
+    "res": "W 34-17 vs Bearcats",
+    "score": 25.1,
+    "plays": [
+     "Q3 9:38 12-yd TD catch from Belen Altalarga (was tied)"
+    ]
+   },
+   {
+    "pid": 9036321,
+    "name": "Maha Forseng",
+    "pos": "WR",
+    "club": "South Burke Tsunami",
+    "line": "13 rec, 101 yds, 2 TD",
+    "res": "W 31-29 vs Rovers",
+    "score": 23.6,
+    "plays": [
+     "Q1 1:42 9-yd TD catch from Ramatoulaye Clayson (was down 3)",
+     "Q4 12:13 11-yd TD catch from Ramatoulaye Clayson (was down 2), go-ahead, later answered"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9036298,
+    "name": "Dandan Fujinuma",
+    "pos": "LB",
+    "club": "San Saltadac Sea Lions",
+    "line": "6 tackles, 1 sack, 2 INT",
+    "res": "W 13-7 vs Rangers",
+    "score": 22.6,
+    "plays": [
+     "Q1 13:18 interception (tied)",
+     "Q2 14:14 interception returned 6 yds (tied), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9037458,
+    "name": "Saga Ceiyosei",
+    "pos": "S",
+    "club": "Wolford Dragons",
+    "line": "2 tackles, 2 INT",
+    "res": "W 38-10 vs Cavemen",
+    "score": 17.2,
+    "plays": [
+     "Q1 1:52 interception returned 8 yds (down 10), led to a touchdown",
+     "Q4 6:11 interception returned 7 yds (up 21), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9037344,
+    "name": "Haoran Qichen",
+    "pos": "LB",
+    "club": "Billiataho Greats",
+    "line": "5 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 34-17 vs Bearcats",
+    "score": 17.0,
+    "plays": [
+     "Q4 2:50 sack and forced fumble (up 17)"
+    ]
+   },
+   {
+    "pid": 9101321,
+    "name": "Adjoa Kontellis",
+    "pos": "DL",
+    "club": "Ediville Brass Tigers",
+    "line": "3 tackles, 3 sacks",
+    "res": "L 20-34 vs Mastiffs",
+    "score": 16.8,
+    "plays": []
+   },
+   {
+    "pid": 9035679,
+    "name": "Sota Haruhara",
+    "pos": "LB",
+    "club": "Crayellan Redwoods",
+    "line": "6 tackles, 1 sack, 1 INT",
+    "res": "W 37-10 at Beavers",
+    "score": 16.6,
+    "plays": [
+     "Q1 2:06 interception (up 3), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9036832,
+    "name": "Daichi Shimagawa",
+    "pos": "LB",
+    "club": "Billiataho Greats",
+    "line": "4 tackles, 1 sack, 1 INT",
+    "res": "W 34-17 vs Bearcats",
+    "score": 15.4,
+    "plays": [
+     "Q3 2:49 interception returned 40 yds (up 3), led to a touchdown"
+    ]
+   }
+  ],
+  "st": [],
+  "st_cands": [
+   {
+    "pid": 9101901,
+    "name": "Thomas Eichenmeier",
+    "pos": "K",
+    "club": "Tasson Thunderbugs",
+    "line": "4/4 FG, long 49, 3/3 XP",
+    "res": "L 33-34 at Demons",
+    "score": 16.0,
+    "plays": [
+     "Q1 4:26 46-yd GOOD",
+     "Q2 10:59 47-yd GOOD",
+     "Q3 5:26 49-yd GOOD",
+     "Q4 5:30 33-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9037768,
+    "name": "Riku Man-Hwan",
+    "pos": "P",
+    "club": "Good River Rangers",
+    "line": "5 punts, 51.2 avg, 4 inside the 20",
+    "res": "L 7-13 at Lions",
+    "score": 15.333333333333336,
+    "plays": []
+   },
+   {
+    "pid": 9036455,
+    "name": "Jongdae Rasmussen",
+    "pos": "P",
+    "club": "Fiota Bay T-Rexes",
+    "line": "7 punts, 47.7 avg, 4 inside the 20",
+    "res": "L 9-24 at Silverbacks",
+    "score": 15.000000000000002,
+    "plays": []
+   },
+   {
+    "pid": 9101331,
+    "name": "Mstislav Redturtle",
+    "pos": "K",
+    "club": "Verigon Komodos",
+    "line": "4/5 FG, long 53, 4/4 XP",
+    "res": "W 40-23 at Rapids",
+    "score": 14.75,
+    "plays": [
+     "Q1 10:56 45-yd GOOD",
+     "Q1 3:28 45-yd GOOD",
+     "Q2 12:34 62-yd MISSED",
+     "Q2 5:52 53-yd GOOD",
+     "Q3 11:33 32-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101897,
+    "name": "Deepika El-Husri",
+    "pos": "K",
+    "club": "Rogaela Rovers",
+    "line": "3/3 FG, long 55, 2/2 XP",
+    "res": "L 29-31 at Tsunami",
+    "score": 14.5,
+    "plays": [
+     "Q1 7:20 55-yd GOOD",
+     "Q2 13:05 44-yd GOOD",
+     "Q3 2:46 51-yd GOOD"
+    ]
+   }
+  ],
+  "st_pick": {
+   "pid": 9101901,
+   "name": "Thomas Eichenmeier",
+   "pos": "K",
+   "club": "Tasson Thunderbugs",
+   "line": "4/4 FG, long 49, 3/3 XP",
+   "res": "L 33-34 at Demons",
+   "score": 16.0,
+   "plays": [
+    "Q1 4:26 46-yd GOOD",
+    "Q2 10:59 47-yd GOOD",
+    "Q3 5:26 49-yd GOOD",
+    "Q4 5:30 33-yd GOOD"
+   ],
+   "why": "Top performer by the box score."
+  }
+ },
+ "cases": [
+  {
+   "type": "helmet",
+   "title": "Helmet-to-helmet contact",
+   "who": [
+    {
+     "name": "Rania Minamura",
+     "pos": "QB",
+     "club": "Eona Topcats",
+     "pid": 9036372
+    }
+   ],
+   "game": "G118",
+   "where": "Far Farris Raccoons at Eona Topcats, week 18",
+   "text": "Rania Minamura (QB, Topcats) was flagged for unnecessary roughness with 7:05 left in the first quarter for contact to the head of Ivanei Trosemyr (RB, Raccoons). Trosemyr left for a few plays and returned. It happened in front of a national television audience.\n\nWHAT HAPPENED: on the Raccoons' ball-carrier's run, Minamura came in as the closing tackler and led with the crown of his helmet into Trosemyr's helmet while Trosemyr was already being wrapped up by a teammate. No punch, no words, no continued contact after the whistle. Trosemyr passed the concussion check and came back.\n\nSEVERITY: moderate. The league's film review found the contact was avoidable: Minamura had time to lower his target and did not. Quarterbacks are protected, but when one is the tackler he is held to the same standard as any defender. He has 1 earlier case on the desk in the last three seasons (comments about the officials, 2043 week 14: warning), nothing for dangerous play. The Topcats have been asked for their account and have not yet given one.",
+   "severity": 5.5,
+   "prior": 1,
+   "stage": "new",
+   "pids": [
+    9036372,
+    9101946
+   ],
+   "precedent": [
+    "2044 wk 20, Vlassis Panatidis: No action (severity 4.9)",
+    "2044 wk 5, Lech Braunbruck: Warning (severity 4.5)",
+    "2044 wk 7, Anais Oakhurst: Warning (severity 4.2)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Fined $25K"
+    },
+    {
+     "key": "k75",
+     "label": "Fine $75K",
+     "games": 0,
+     "fine": 75000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $75K"
+    },
+    {
+     "key": "k150",
+     "label": "Fine $150K",
+     "games": 0,
+     "fine": 150000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $150K"
+    }
+   ],
+   "precedent_pick": "k25",
+   "tier": "minor",
+   "id": "W18-1",
+   "week": 18
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": [],
+ "prime": [],
+ "teamPrime": {
+  "Billiataho Greats": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Bruca Beach Hammerheads": {
+   "ph": 1,
+   "pa": 0,
+   "bh": 0,
+   "ba": 1
+  },
+  "Canesta Dales": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Chapel Rock Crowns": {
+   "ph": 2,
+   "pa": 1,
+   "bh": 0,
+   "ba": 1
+  },
+  "Classetto Cavemen": {
+   "ph": 2,
+   "pa": 1,
+   "bh": 0,
+   "ba": 1
+  },
+  "Coachville Mastodons": {
+   "ph": 2,
+   "pa": 3,
+   "bh": 1,
+   "ba": 0
+  },
+  "Cordelle Raptors": {
+   "ph": 1,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Costique Bearcats": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Crayellan Redwoods": {
+   "ph": 2,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Diamond City Dynamos": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 1,
+   "ba": 0
+  },
+  "Diamond City Hope": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Diveo Demons": {
+   "ph": 1,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Ediville Brass Tigers": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "El Latigo Shredders": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Eona Topcats": {
+   "ph": 1,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Far Farris Raccoons": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Fiota Bay T-Rexes": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 0,
+   "ba": 1
+  },
+  "Fiota Swords": {
+   "ph": 1,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Good River Rangers": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 1,
+   "ba": 0
+  },
+  "Holliday Beetles": {
+   "ph": 2,
+   "pa": 1,
+   "bh": 0,
+   "ba": 1
+  },
+  "Hughes City Asteroids": {
+   "ph": 1,
+   "pa": 3,
+   "bh": 1,
+   "ba": 0
+  },
+  "Lornaman Renegades": {
+   "ph": 2,
+   "pa": 0,
+   "bh": 0,
+   "ba": 1
+  },
+  "New Madrid Mastiffs": {
+   "ph": 3,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "North Hatesei Bees": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 1,
+   "ba": 0
+  },
+  "Palm Creek Leatherbacks": {
+   "ph": 3,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Port Logan Commodores": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 1,
+   "ba": 0
+  },
+  "Purcell Rapids": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Queensville Phenoms": {
+   "ph": 3,
+   "pa": 2,
+   "bh": 0,
+   "ba": 1
+  },
+  "Rogaela Rovers": {
+   "ph": 0,
+   "pa": 2,
+   "bh": 2,
+   "ba": 0
+  },
+  "San Saltadac Sea Lions": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 1,
+   "ba": 1
+  },
+  "Sarkady Beavers": {
+   "ph": 1,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "South Burke Tsunami": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Stamford Grays": {
+   "ph": 2,
+   "pa": 1,
+   "bh": 0,
+   "ba": 1
+  },
+  "Stanton City Conductors": {
+   "ph": 2,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Tasson Thunderbugs": {
+   "ph": 2,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Tengus City Terrors": {
+   "ph": 1,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Underwood Bats": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Vaughn Bay Silverbacks": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Verigon Komodos": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Wolford Dragons": {
+   "ph": 3,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  }
+ }
+}
