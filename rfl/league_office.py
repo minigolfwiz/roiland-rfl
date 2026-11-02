@@ -277,6 +277,13 @@ def apply(S, week, dec):
     for c in B['cases']:
         rec, notes = CS.apply_case(S, week, c, dec['rulings'][c['id']])
         out.append(f"{c['title']}: {', '.join(w['name'] for w in c['who'])} - {rec['ruling']}" + (' (' + '; '.join(notes) + ')' if notes else ''))
+    for a in B.get('awards') or []:      # Dan picks award winners on the week 20 ballot: the winner goes first in finalists and is recorded as 'winner'
+        pick = (dec.get('awards') or {}).get(a['key'])
+        if pick is None: raise SystemExit(f"missing award pick for {a['key']}")
+        fs = se['awards'][a['key']]['finalists']
+        w_ = next(f for f in fs if str(f.get('pid', f.get('club'))) == str(pick))
+        se['awards'][a['key']]['finalists'] = [w_] + [f for f in fs if f is not w_]; se['awards'][a['key']]['winner'] = w_
+        out.append(f"{a['key']}: {w_['name']} ({w_.get('pos') or 'HC'}, {w_['club']})")
     return out
 
 if __name__ == '__main__':

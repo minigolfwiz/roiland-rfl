@@ -198,3 +198,4 @@
 - Week 20 OT: Topcats 29-23 Beavers (Bestaw 2yd TD run, 2pt failed, Littlesky 47-yd FG missed), Dales 17-14 Terrors (Noyosei 32-yd FG).
 - Playoff field (not yet played): Regal 1 Greats 12-5-1, 2 Redwoods 11-6-1, 3 Cavemen 11-7, 4 Rapids 11-7, 5 Hope 10-8, 6 Tigers 9-8-1, 7 Beetles 9-8-1, 8 Asteroids 9-9. Majestic 1 Leatherbacks 15-3, 2 Bees 14-4, 3 Lions 13-5, 4 Phenoms 11-6-1, 5 Dales 11-7, 6 Silverbacks 9-8-1, 7 Dynamos 9-8-1, 8 Commodores 9-8-1.
 - Awards finalists computed (season.awards); Dan picks winners.
+- League Office week 20 now carries a "Season awards" section (radio picks per award, from `ballot.awards`); `league_office.apply` records dec['awards'] as `season.awards[k]['winner']` and moves the winner to finalists[0]. Dan's request (2 Nov 2026): award picks by click, not typed.

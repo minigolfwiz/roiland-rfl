@@ -574,5 +574,177 @@
    "bh": 0,
    "ba": 0
   }
- }
+ },
+ "awards": [
+  {
+   "key": "MVP",
+   "award": "Rocaverde Award",
+   "finalists": [
+    {
+     "id": "9038231",
+     "name": "Kivaw Matafolau",
+     "pos": "QB",
+     "club": "Canesta Dales",
+     "line": "4,562 yds, 38 TD, 10 INT"
+    },
+    {
+     "id": "9037368",
+     "name": "Sieglinde Forshus",
+     "pos": "WR",
+     "club": "Purcell Rapids",
+     "line": "140 rec, 1,783 yds, 13 TD"
+    },
+    {
+     "id": "9036731",
+     "name": "Dongmei Panbo",
+     "pos": "QB",
+     "club": "Queensville Phenoms",
+     "line": "5,528 yds, 41 TD, 10 INT"
+    },
+    {
+     "id": "9037233",
+     "name": "Boyoung Konnides",
+     "pos": "RB",
+     "club": "San Saltadac Sea Lions",
+     "line": "1,228 rush yds, 17 TD, 220 rec yds"
+    }
+   ]
+  },
+  {
+   "key": "Offensive Player of the Year",
+   "award": "Hasselbach Award",
+   "finalists": [
+    {
+     "id": "9038231",
+     "name": "Kivaw Matafolau",
+     "pos": "QB",
+     "club": "Canesta Dales",
+     "line": "4,562 yds, 38 TD, 10 INT"
+    },
+    {
+     "id": "9037368",
+     "name": "Sieglinde Forshus",
+     "pos": "WR",
+     "club": "Purcell Rapids",
+     "line": "140 rec, 1,783 yds, 13 TD"
+    },
+    {
+     "id": "9036731",
+     "name": "Dongmei Panbo",
+     "pos": "QB",
+     "club": "Queensville Phenoms",
+     "line": "5,528 yds, 41 TD, 10 INT"
+    },
+    {
+     "id": "9037233",
+     "name": "Boyoung Konnides",
+     "pos": "RB",
+     "club": "San Saltadac Sea Lions",
+     "line": "1,228 rush yds, 17 TD, 220 rec yds"
+    }
+   ]
+  },
+  {
+   "key": "Defensive Player of the Year",
+   "award": "Fjelltveit Award",
+   "finalists": [
+    {
+     "id": "9037283",
+     "name": "Honoka Haruta",
+     "pos": "CB",
+     "club": "North Hatesei Bees",
+     "line": "6 INT"
+    },
+    {
+     "id": "9100842",
+     "name": "Anders Hollywood",
+     "pos": "LB",
+     "club": "Purcell Rapids",
+     "line": "8 sacks, 1 FF, 7 INT"
+    },
+    {
+     "id": "9102106",
+     "name": "Verity Hyun-Nam",
+     "pos": "DL",
+     "club": "Eona Topcats",
+     "line": "14 sacks, 1 FF, 0 INT"
+    },
+    {
+     "id": "9034889",
+     "name": "Aurelio Yorkshaw",
+     "pos": "DL",
+     "club": "Good River Rangers",
+     "line": "14 sacks, 0 FF, 0 INT"
+    }
+   ]
+  },
+  {
+   "key": "Rookie of the Year",
+   "award": "Rookie of the Year",
+   "finalists": [
+    {
+     "id": "9102127",
+     "name": "Cristobal Penanueva",
+     "pos": "TE",
+     "club": "Stanton City Conductors",
+     "line": "66 rec, 711 yds, 10 TD"
+    },
+    {
+     "id": "9102106",
+     "name": "Verity Hyun-Nam",
+     "pos": "DL",
+     "club": "Eona Topcats",
+     "line": "14 sacks, 1 FF, 0 INT"
+    },
+    {
+     "id": "9102111",
+     "name": "Itzel Torrabella",
+     "pos": "RB",
+     "club": "Far Farris Raccoons",
+     "line": "1,371 rush yds, 12 TD, 199 rec yds"
+    },
+    {
+     "id": "9102174",
+     "name": "Diego Mirablanca",
+     "pos": "S",
+     "club": "Coachville Mastodons",
+     "line": "5 INT"
+    }
+   ]
+  },
+  {
+   "key": "Coach of the Year",
+   "award": "Yuanlin Award",
+   "finalists": [
+    {
+     "id": "Palm Creek Leatherbacks",
+     "name": "Ruta Albaverde",
+     "pos": "HC",
+     "club": "Palm Creek Leatherbacks",
+     "line": "15-3"
+    },
+    {
+     "id": "North Hatesei Bees",
+     "name": "Keisha Albaverde",
+     "pos": "HC",
+     "club": "North Hatesei Bees",
+     "line": "14-4"
+    },
+    {
+     "id": "Billiataho Greats",
+     "name": "Xiulan Tingdi",
+     "pos": "HC",
+     "club": "Billiataho Greats",
+     "line": "12-5-1"
+    },
+    {
+     "id": "San Saltadac Sea Lions",
+     "name": "Umeko Ha-Ho",
+     "pos": "HC",
+     "club": "San Saltadac Sea Lions",
+     "line": "13-5"
+    }
+   ]
+  }
+ ]
 }

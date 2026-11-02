@@ -167,6 +167,8 @@ function render(){
       ${(c.precedent && c.precedent.length) ? '<div class="ctx"><b>Precedent, similar severity</b><ul>' + c.precedent.map(x => '<li>' + esc(x) + '</li>').join('') + '</ul></div>' : ''}
       <div class="where">${esc(c.where)}${c.prior ? ' · earlier cases: ' + c.prior : ''}</div><div style="margin-top:8px">${c.options.map(o => option(o, 'c-' + c.id)).join('')}</div>
       <textarea id="note-${c.id}" placeholder="Optional note for the record" rows="1"></textarea></div>`; }
+  if ((B.awards || []).length){ h += `<h2>Season awards<small>pick a winner for each</small></h2>`;
+    for (const a of B.awards) h += `<div class="case"><h3>${esc(a.key)}<span class="rs"> · ${esc(a.award)}</span></h3><div style="margin-top:8px">${a.finalists.map(f => `<label class="opt"><input type="radio" name="aw-${esc(a.key)}" value="${esc(f.id)}"><span><span class="nm">${esc(f.name)}</span><span class="pos">${esc(f.pos)}</span> ${chip(f.club, true)}<div class="ln">${esc(f.line)}</div></span></label>`).join('')}</div></div>`; }
   if ((B.open || []).length) h += `<h2>Open matters<small>still unresolved</small></h2><div class="ctx">` + B.open.map(x => `<div>${esc(x.title)}: <span class="nm">${esc(x.who)}</span> ${chip(x.club, true)} <span class="rs">${esc(x.since)}${x.ruling ? ' · your ruling: ' + esc(x.ruling) : ''}</span></div>`).join('') + '</div>';
   m.innerHTML = h; $('bar').hidden = false;
   m.addEventListener('change', e => { const t = e.target; if (t.tagName === 'SELECT' && t.id.startsWith('ps-') && t.value){ document.querySelectorAll(`select[data-week="${t.dataset.week}"]`).forEach(x => { if (x !== t && x.value === t.value) x.value = ''; }); } refreshPrime(); update(); });
@@ -177,18 +179,21 @@ function val(name){ const x = document.querySelector(`input[name="${name}"]:chec
 function collect(){
   const prime = primeState();
   const rulings = {}; for (const c of B.cases){ const v = val('c-' + c.id); if (v) rulings[c.id] = {key: v, note: ($('note-' + c.id).value || '').trim()}; }
-  return {week: WK, prime, rulings};
+  const awards = {}; for (const a of (B.awards || [])){ const v = val('aw-' + a.key); if (v) awards[a.key] = v; }
+  return {week: WK, prime, rulings, awards};
 }
 function missing(){
   const d = collect(); let n = 0;
   for (const W of (B.prime || [])) for (const [k] of SLOTS) if (!(d.prime[W.week] || {})[k]) n++;
   for (const c of B.cases) if (!d.rulings[c.id]) n++;
+  for (const a of (B.awards || [])) if (!d.awards[a.key]) n++;
   return n;
 }
 function summary(){
   const d = collect(); const L = ['Week ' + WK + ' decisions'];
   for (const W of (B.prime || [])){ const o = d.prime[W.week] || {}; for (const [k, l] of SLOTS){ const g = W.games.find(x => x.id === o[k]); if (g) L.push('Week ' + W.week + ' Sunday ' + l.toLowerCase() + ': ' + g.visitor + ' at ' + g.host); } }
   for (const c of B.cases){ const r = d.rulings[c.id]; if (r){ const o = c.options.find(x => x.key === r.key); L.push(c.id + ' ' + c.title + ' - ' + c.who.map(w => w.name).join(' & ') + ': ' + o.label + (r.note ? ' [' + r.note + ']' : '')); } }
+  for (const a of (B.awards || [])){ const v = d.awards[a.key]; const f = a.finalists.find(x => x.id === v); if (f) L.push(a.key + ': ' + f.name + ' (' + f.club + ')'); }
   return L.join('\n');
 }
 let saved = false, dbRef = null;
@@ -206,6 +211,7 @@ function apply(d){
   if (!d) return;
   for (const wk in (d.prime || {})) for (const sl in d.prime[wk]){ const x = $('ps-' + d.prime[wk][sl]); if (x) x.value = sl; }
   refreshPrime();
+  for (const k in (d.awards || {})){ const x = document.querySelector(`input[name="aw-${k}"][value="${d.awards[k]}"]`); if (x) x.checked = true; }
   for (const id in (d.rulings || {})){ const r = d.rulings[id]; const x = document.querySelector(`input[name="c-${id}"][value="${r.key}"]`); if (x) x.checked = true; const t = $('note-' + id); if (t && r.note) t.value = r.note; }
 }
 async function init(){
