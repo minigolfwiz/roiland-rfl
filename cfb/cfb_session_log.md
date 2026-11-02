@@ -949,3 +949,7 @@ Selection Board (playoff field builder) rebuilt for 2045 and published to the ex
 Still to do after the field/bracket: national title sites for 2045+ (show the full list of previous sites), end-of-season title standings, parity audit, Ryskamp past-winners review reminder.
 
 Selection Board ordering fixed (Dan): the candidate list now opens with his week-14 board of record in his order (shown as "your board #n"), then everyone else in the computer's order; "seed from committee" now seeds from his board. Backups: export_playoff_board.py.pre_boardorder, playoff_board_template.html.pre_boardorder.
+
+## 2045 PLAYOFF FIELD INSTALLED (state/field_s20.json -> playoff_s20.pkl)
+Byes: 1 Tengus State, 2 Rogaela State, 3 UNN, 4 Keeper, 5 North Hatesei, 6 Ciarralotta Tech, 7 Costique River, 8 Pistolheart.
+R1 (at the higher seed): 24 Palisades @ 9 Eastern State; 23 Ediville State @ 10 Eona; 22 Rupin State @ 11 Skeenerland State; 21 Lito Rock State @ 12 Marblehead; 20 New Madrid @ 13 Will Tech; 19 Marines @ 14 Central Stanton; 18 Yrei Trobniy @ 15 Roosevelt; 17 South Antiragal @ 16 Antiragal State. R1 previews shown in chat, NOT PLAYED; awaiting Dan's go.
