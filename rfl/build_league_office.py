@@ -130,7 +130,7 @@ function primeHTML(){
   for (const W of P){
     h += `<div class="grp" data-week="${W.week}"><h3>Week ${W.week}</h3><div class="pk" id="pk-${W.week}"></div>` + W.games.map(g => `<div class="pg" id="pg-${g.id}"><div class="row"><div class="tms">${chip(g.visitor, true)} <span class="rs">at</span> ${chip(g.host, true)} <span class="rs">${esc(g.kind)}</span></div>
       <select id="ps-${g.id}" data-week="${W.week}" aria-label="Slot for ${esc(g.visitor)} at ${esc(g.host)}"><option value="">Not primetime</option>${SLOTS.map(([k, l]) => `<option value="${k}">${l} primetime</option>`).join('')}</select></div>
-      <div class="tl">${teamLine(g.visitor, g.vr, g.vs)}${teamLine(g.host, g.hr, g.hs)}</div></div>`).join('') + '</div>';
+      <div class="tl">${teamLine(g.visitor, g.vr, g.vs)}${teamLine(g.host, g.hr, g.hs)}</div></div>`).join('') + `<div class="pk" id="pk2-${W.week}"></div></div>`;
   }
   const T = B.teamPrime || {}; const rows = Object.keys(T).sort((a, b) => (T[b].ph + T[b].pa + T[b].bh + T[b].ba) - (T[a].ph + T[a].pa + T[a].bh + T[a].ba) || a.localeCompare(b));
   h += `<details><summary>Every club's primetime games</summary><div class="tw"><table><tr><th>Club</th><th>Home</th><th>Away</th><th>Total</th></tr>` + rows.map(t => `<tr><td>${chip(t, true)}</td><td class="n">${T[t].ph + T[t].bh}</td><td class="n">${T[t].pa + T[t].ba}</td><td class="n">${T[t].ph + T[t].bh + T[t].pa + T[t].ba}</td></tr>`).join('') + '</table></div></details>';
@@ -145,7 +145,8 @@ function refreshPrime(){
   const st = primeState();
   for (const W of (B.prime || [])){
     const o = st[W.week] || {}; const by = {}; W.games.forEach(g => by[g.id] = g);
-    $('pk-' + W.week).innerHTML = SLOTS.map(([k, l]) => { const g = by[o[k]]; return `<div><b>${l}</b>: ${g ? esc(g.visitor) + ' at ' + esc(g.host) : '<span class="warn">not chosen</span>'}</div>`; }).join('');
+    const pkh = SLOTS.map(([k, l]) => { const g = by[o[k]]; return `<div><b>${l}</b>: ${g ? esc(g.visitor) + ' at ' + esc(g.host) : '<span class="warn">not chosen</span>'}</div>`; }).join('');
+    $('pk-' + W.week).innerHTML = pkh; $('pk2-' + W.week).innerHTML = pkh;
     W.games.forEach(g => $('pg-' + g.id).classList.toggle('sel', !!$('ps-' + g.id).value));
   }
 }

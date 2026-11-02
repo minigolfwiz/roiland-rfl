@@ -175,3 +175,9 @@
 - **2045 week 12 decisions (Dan, 1 Nov 2026):** W12-1 Shredders pay-for-injury: $1.5M fine + round 1 pick (2046) + head coach off the sideline 3 games; W12-2 Elmshaw (Greats DL): no action, note "Meet with the player to discuss their needs at this time"; W12-3 Gradovsky (Hope S): $25K. Week 15 primetime: morning Phenoms at Commodores, afternoon Hope at Asteroids, evening Silverbacks at Grays. **Week 13:** played automatically (Beavers 13, Demons 13 OT tie; Leatherbacks 11-1). No cases on the week 13 ballot; primetime pick for week 16.
 - **2045 week 13 decisions (Dan, 2 Nov 2026):** no cases; week 16 primetime: morning Mastiffs at Dragons, afternoon Raccoons at Mastodons, evening Terrors at Phenoms. **Week 14:** played automatically (Bees 30, Leatherbacks 20 on Thursday night; Leatherbacks 11-2; Terrors 41, Crowns 0). No cases on the week 14 ballot; primetime pick for week 17. The flex check (evening game) starts with week 15.
 - **2045 week 14 decisions (Dan, 2 Nov 2026):** no cases; week 17 primetime: morning Dynamos at Rangers, afternoon Asteroids at Hope, evening Rapids at Bearcats. **Week 15:** played automatically (first week of the evening flex check: no flex needed). Two OT ties (Brass Tigers 21, Mastiffs 21; Tsunami 13, Terrors 13); Leatherbacks on bye, still 11-2 with the Bees and Lions at 11-3. Ballot: W15-1 Kalyanprasad (Swords HC) sideline conduct, W15-2 Sugitsu (Topcats WR) missed media (second this season); primetime pick for week 18.
+
+## 2045 week 15 decisions / week 16 stage
+- Week 18 primetime: Sunday morning Mastodons at Leatherbacks, afternoon Komodos at Rapids, evening Mastiffs at Brass Tigers.
+- W15-1 Kalyanprasad warning; W15-2 Sugitsu warning.
+- Week 16 played: Redwoods–Greats 20-20 OT tie; no cases. Only week 19 primetime to pick.
+- League Office page now shows the Morning/Afternoon/Evening picks box both above and below each week's candidate list (pk-W, pk2-W).
