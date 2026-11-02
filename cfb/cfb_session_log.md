@@ -947,3 +947,5 @@ Dan forgot to pick the four finalists before naming the winner and said Claude m
 NEXT SEASON: ccg.py now prints a reminder after the conference finals to have Dan pick the four finalists before the winner (also in project memory).
 Selection Board (playoff field builder) rebuilt for 2045 and published to the existing artifact; awaiting Dan's 24-team field JSON -> install_field.py (first run writes the bracket, no dry run).
 Still to do after the field/bracket: national title sites for 2045+ (show the full list of previous sites), end-of-season title standings, parity audit, Ryskamp past-winners review reminder.
+
+Selection Board ordering fixed (Dan): the candidate list now opens with his week-14 board of record in his order (shown as "your board #n"), then everyone else in the computer's order; "seed from committee" now seeds from his board. Backups: export_playoff_board.py.pre_boardorder, playoff_board_template.html.pre_boardorder.

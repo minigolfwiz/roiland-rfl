@@ -55,6 +55,10 @@ def build(out='/home/claude/cfb2/state/playoff_board.json'):
     for t in games:
         games[t].sort(key=lambda g: g["w"])
 
+    # Dan's own board of record leads the list, in his order (the same convention as the
+    # weekly ballot page); everyone else follows in the computer's order.
+    board = [tm for _r, tm in sorted(s.get("committee_poll_current") or [])][:25]
+    board_rank = {tm: i + 1 for i, tm in enumerate(board)}
     teams = []
     for t in ranked:
         r = s["record"][t]
@@ -66,7 +70,7 @@ def build(out='/home/claude/cfb2/state/playoff_board.json'):
             "col": list(COLORS.get(t, ["#555", "#999"])),
             "W": r["W"], "L": r["L"], "cW": r.get("confW", 0), "cL": r.get("confL", 0),
             "pf": r.get("PF", 0), "pa": r.get("PA", 0),
-            "cRank": rank_of[t], "rating": round(eff[t], 2), "ratingRank": rating_rank[t],
+            "cRank": rank_of[t], "bRank": board_rank.get(t), "rating": round(eff[t], 2), "ratingRank": rating_rank[t],
             "champ": champ_of.get(t),                       # conference won, or None
             "qw": sum(1 for x in g if x["won"] and x["oppRank"] and x["oppRank"] <= 30),
             "bl": sum(1 for x in g if not x["won"] and x["oppRank"] and x["oppRank"] > 90),
@@ -80,7 +84,7 @@ def build(out='/home/claude/cfb2/state/playoff_board.json'):
         "teams": teams,
         "conferences": sorted(U["conferences"].keys()),
         "champions": [{"conf": c, "team": t} for c, t in sorted(champs.items())],
-        "final_committee": last,           # the week-14 board, as a starting reference
+        "final_committee": board or last,  # Dan's board of record, the starting reference
     })
 
 

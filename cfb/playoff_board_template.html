@@ -183,7 +183,7 @@ textarea{width:100%;min-height:80px;font-family:var(--data);font-size:11px;backg
         <button id="fUn" aria-pressed="false">unranked only</button>
         <button id="fP6" aria-pressed="false">P6</button>
         <button id="fL6" aria-pressed="false">L6</button>
-        <button id="fSort" aria-pressed="false" title="committee order, or raw rating">rating order</button>
+        <button id="fSort" aria-pressed="false" title="your board first, or raw rating">rating order</button>
       </div>
       <div class="scroller"><ul class="list" id="board"></ul></div>
       <p class="note">The number at left is where the computer has them. <b>+</b> drops a team
@@ -253,8 +253,9 @@ function renderBoard(){
     return true;
   });
   if (filt.sort === 'rating') rows = rows.slice().sort((a,b) => a.ratingRank - b.ratingRank);
+  else rows = rows.slice().sort((a,b) => (a.bRank ? a.bRank : 1000 + a.cRank) - (b.bRank ? b.bRank : 1000 + b.cRank));
   el('board').innerHTML = rows.map(t => {
-    const n = filt.sort === 'rating' ? t.ratingRank : t.cRank;
+    const n = filt.sort === 'rating' ? t.ratingRank : (t.bRank || t.cRank);
     const on = seated.has(t.name);
     return `<li class="row ${on?'seated':''}">
       <span class="cr">${n}</span>
@@ -282,7 +283,7 @@ function renderBallot(){
       <span class="seedno">${i+1}</span>
       <span class="bdg">${badge(n)}</span>
       <span class="nm" data-look="${esc(n)}"><b>${esc(n)}</b>
-        <small>${CH[n]?'<b style="color:var(--brass)">'+esc(CH[n])+' champion</b> · ':''}computer #${t.cRank}</small></span>
+        <small>${CH[n]?'<b style="color:var(--brass)">'+esc(CH[n])+' champion</b> · ':''}${t.bRank ? 'your board #'+t.bRank+' · ' : ''}computer #${t.cRank}</small></span>
       <span class="rec">${t.W}-${t.L}</span>
       <span class="acts">
         <button class="tiny" data-up="${i}" ${i===0?'disabled':''}>↑</button>
