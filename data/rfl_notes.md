@@ -190,3 +190,11 @@
 - Week 20 primetime: morning Crowns at Commodores, afternoon Phenoms at Bees, evening Sea Lions at Mastodons. All primetime weeks (through 20) are now booked.
 - W17-1 Khoury obscene gesture: no action.
 - Week 18 played automatically. Ballot: W18-1 Minamura (Topcats QB) helmet-to-helmet on Trosemyr (Raccoons RB); text hand-expanded. No primetime picks left to make.
+
+## 2045 week 18 decisions / weeks 19-20 played (regular season complete)
+- W18-1 Minamura: no action. Dan's note: "Why would a quarterback ever tackle a running back from the opposing team? That makes no sense." My hand-written text was wrong (invented a QB tackling a ball-carrier; the generator had picked an opposing RB as the victim regardless of position). FIX FORWARD (not retroactive): in `cases.py` an offensive offender (QB RB WR TE OL K P) on an unnecessary-roughness flag can only hit an opposing DL/LB/CB/S. Ruling stands.
+- W20-1 ballot text had a false line ("second flag of that kind against the Dragons") — the Dragons had only one unnecessary-roughness flag; removed from the expanded text. Generator may still emit this kind of line elsewhere; check.
+- Week 19 had no cases, no primetime to pick; played automatically along with week 20 (desk was empty). Week 19 OT: Leatherbacks 20-17 Terrors (Valcour 25-yd FG), Crowns 16-10 Redwoods (Jegal 17yd TD run), Grays 26-23 Sea Lions (Takahara 35-yd FG), Asteroids 33-27 Cavemen (Gangaprasad 30yd TD pass to Qaddoumi).
+- Week 20 OT: Topcats 29-23 Beavers (Bestaw 2yd TD run, 2pt failed, Littlesky 47-yd FG missed), Dales 17-14 Terrors (Noyosei 32-yd FG).
+- Playoff field (not yet played): Regal 1 Greats 12-5-1, 2 Redwoods 11-6-1, 3 Cavemen 11-7, 4 Rapids 11-7, 5 Hope 10-8, 6 Tigers 9-8-1, 7 Beetles 9-8-1, 8 Asteroids 9-9. Majestic 1 Leatherbacks 15-3, 2 Bees 14-4, 3 Lions 13-5, 4 Phenoms 11-6-1, 5 Dales 11-7, 6 Silverbacks 9-8-1, 7 Dynamos 9-8-1, 8 Commodores 9-8-1.
+- Awards finalists computed (season.awards); Dan picks winners.
