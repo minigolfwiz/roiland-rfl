@@ -58,7 +58,7 @@ td.min{color:var(--good);font-weight:600}
 @media (max-width:900px){.wrap,.tables{grid-template-columns:minmax(0,1fr)}h1{font-size:25px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
-<header><h1>Quarterfinal travel</h1><div class="sub">Where each of the eight teams starts from, and where it goes, under three ways of assigning the four bowls. Distances are in map units on the 596 by 596 Roiland map. Nothing here has been played.</div></header>
+<header><h1>Quarterfinal travel, __YEAR__</h1><div class="sub">Where each of the eight teams starts from, and where it goes, under three ways of assigning the four bowls. Distances are in map units on the 596 by 596 Roiland map. Nothing here has been played.</div></header>
 <div class="wrap">
   <div class="mapbox"><svg id="map" viewBox="0 0 596 596" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of the eight quarterfinal teams, the four bowl sites and the travel lines">
     <image href="data:image/png;base64,__IMG__" width="596" height="596"/>
@@ -68,7 +68,7 @@ td.min{color:var(--good);font-weight:600}
 </div>
 <div class="tables">
   <div class="tbl"><h2>True distance, campus to bowl city</h2><p>Highest seed in each game. Green is the nearest bowl.</p><div class="scroll"><table id="t1"></table></div></div>
-  <div class="tbl"><h2>Engine distance, state label to state label</h2><p>What the assignment rule actually measures.</p><div class="scroll"><table id="t2"></table></div></div>
+  <div class="tbl"><h2>Engine distance</h2><p>What the assignment rule measures. Since 2042 it uses campus to bowl city, so this matches the table above.</p><div class="scroll"><table id="t2"></table></div></div>
 </div>
 <div class="note">Solid lines are the higher seed, dashed lines the lower seed. Tap a game to isolate its lines.</div>
 <script>

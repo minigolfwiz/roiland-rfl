@@ -5,18 +5,20 @@ sys.path.insert(0,'/home/claude/cfb2')
 import pbp_engine as E, committee as CM
 U=E.U; sc=U['school_coords']
 pk=json.load(open('/home/claude/cfb2/state/roiland_map_package.json')); C=pk['cities']
-P=pickle.load(open('/home/claude/cfb2/state/playoff_s17.pkl','rb'))
+import season as _SE0
+_S0=_SE0.load_state(); SEAS=_S0.get('season',17)
+P=pickle.load(open('/home/claude/cfb2/state/playoff_s%d.pkl'%SEAS,'rb'))
 games=P['qf']; seeds=P['seeds']
 sd=lambda t: seeds[t] if isinstance(seeds[t],int) else seeds[t].get('seed')
 B={b['name']:dict(C['%s, %s'%(b['city'],b['state'])],name=b['name']) for b in CM.BOWLS}
-qb=['Lumber Bowl','Copper Bowl','501 Bowl','Redwood Bowl']
+qb=[b['name'] for b in CM.bowl_rotation(SEAS)['quarters']]
 d=lambda t,b: math.hypot(sc[t][0]-B[b]['x'],sc[t][1]-B[b]['y'])
 def vlabel(t,b):
     bw=[v for v in CM.BOWLS if v['name']==b][0]; return CM.vdist(bw,t)
 # engine assignment, recomputed with its own rule (state label positions, seed order, nearest free)
 used=set(); eng={}
 for h,l in games:
-    v=CM.rotation_venue(17,'QF',h,used); eng[h]=v['name']
+    v=CM.rotation_venue(SEAS,'QF',h,used,l); eng[h]=v['name']
 greedy={}; used=set()
 for h,l in games:
     b=min([x for x in qb if x not in used],key=lambda x:d(h,x)); used.add(b); greedy[h]=b
@@ -25,7 +27,7 @@ for perm in itertools.permutations(qb):
     a={g[0]:perm[i] for i,g in enumerate(games)}
     t=sum(d(h,a[h])+d(l,a[h]) for h,l in games)
     if best is None or t<best[0]: best=(t,a)
-scen=[('built','As built','Engine rule: nearest free bowl to the higher seed, measured between state label positions.',eng),
+scen=[('built','As built','Engine rule: nearest free bowl in the season rotation to the higher seed, measured campus to bowl city, skipping a bowl in the opponent\'s own state.',eng),
       ('true','Nearest to higher seed, true positions','Same seed order and same rule, measured campus to bowl city.',greedy),
       ('min','Least total travel','Every team counted, whichever seed it is.',best[1])]
 teams={}
@@ -48,6 +50,6 @@ tabl={t:{b:round(vlabel(t,b)) for b in qb} for t in teams if t in [g[0] for g in
 tpl=open('/home/claude/cfb2/travel_map_template.html').read()
 img=pk['image_png_base64']
 html=(tpl.replace('__IMG__',img).replace('__TEAMS__',json.dumps(teams)).replace('__BOWLS__',json.dumps(B))
-        .replace('__SCEN__',json.dumps(out)).replace('__TAB__',json.dumps(tab)).replace('__TABL__',json.dumps(tabl)))
+        .replace('__YEAR__',str(2025+SEAS)).replace('__SCEN__',json.dumps(out)).replace('__TAB__',json.dumps(tab)).replace('__TABL__',json.dumps(tabl)))
 open('/home/claude/cfb2/travel_map.html','w').write(html)
 print(len(html)//1024,'KB'); [print(o['name'],o['total'],[(r['hi'],r['bowl'],r['dh'],r['dl']) for r in o['rows']]) for o in out]
