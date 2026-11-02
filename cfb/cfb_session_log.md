@@ -978,3 +978,6 @@ FINAL MEDIA POLL filed (media_history[15], media_final_key=16, backup season_sta
 NEXT: parity monitor + audit, title-standings (end of season), award title sites 2052+ (show the full list), Ryskamp past-winners review reminder (Dan), republish Season + Media Pool, rollover.
 
 2045 end of season: all-time title standings shown to Dan (shared pre-playoff titles from 1930-1976 not counted); parity monitor (through wk 14) shown: weeks 8-11 ranked lost to unranked 42% vs 28% expected, weeks 12-14 29% vs 22%; elite records inside the 2038-42 reference band. Ryskamp past-winners review reminder delivered. Full title-site list shown; Dan to award 2052+. Parity audit (deeper) not run.
+
+## TITLE SITES 2052-2056 AWARDED (Dan, 2 Nov 2026, from the Title Site Map hand-off)
+2052 Classetto (Harrell); 2053 Holliday (Natzumakis); 2054 Hughes City (South Antiragal); 2055 Niana Vaw (North Hatesei); 2056 Riverwake (Rogaela). All five are new to the bid pool and were added; none is a rotation-bowl city so the semifinal rule is clear. Sites now awarded through 2056. Written to state/universe.pkl (backup universe.pkl.pre_s20_sites), mirrored to repo as universe.pkl.gz.
