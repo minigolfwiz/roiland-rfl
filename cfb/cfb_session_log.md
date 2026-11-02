@@ -928,3 +928,7 @@ Dan's week-13 committee board INSTALLED (state/ballot_s20_w13.json, audit clean)
 
 ## 2045 post-week-14 committee board installed
 Dan's hand-built board of record (25 teams), audit CLEAN. Top 5: Tengus State, Rogaela State, UNN, Ciarralotta Tech, North Hatesei. Movement: UNN 7->3, Ciarralotta Tech 5->4, North Hatesei 8->5, Keeper 11->6, Eastern State 3->8. Dropped out: Barhold, Yrei Trobniy, Ekralund State. CCG preview run; conference finals not yet played (awaiting Dan's go).
+
+## 2045 conference championships played
+P6: Tengus State 26-23 (1OT) Marblehead; Rogaela State 31-14 Antiragal State; UNN 42-28 North Hatesei; Yrei Trobniy 26-10 Far Farris State; Keeper 48-45 Ciarralotta Tech; Costique River 23-21 Crayellan.
+L6: Palisades 27-20 Reid State; New Madrid 34-13 Hansenne; Marines 34-21 Canesta State; Lito Rock State 38-24 Trapper Point; Rupin State 33-14 Fiota State; Ediville State 34-23 Cordelle.
