@@ -932,3 +932,8 @@ Dan's hand-built board of record (25 teams), audit CLEAN. Top 5: Tengus State, R
 ## 2045 conference championships played
 P6: Tengus State 26-23 (1OT) Marblehead; Rogaela State 31-14 Antiragal State; UNN 42-28 North Hatesei; Yrei Trobniy 26-10 Far Farris State; Keeper 48-45 Ciarralotta Tech; Costique River 23-21 Crayellan.
 L6: Palisades 27-20 Reid State; New Madrid 34-13 Hansenne; Marines 34-21 Canesta State; Lito Rock State 38-24 Trapper Point; Rupin State 33-14 Fiota State; Ediville State 34-23 Cordelle.
+
+## 2045 Ryskamp pool rerun (Dan's ruling: winning is a much larger part of the metric)
+committee.compute_awards now scales the Ryskamp production points (season >= 20) by a team factor: 0.30 + win% + 0.12 conference champion + 0.06 top-ten committee rank. Earlier seasons unchanged (backup committee.py.bak_pre_teamweight).
+New twenty and ten (strict subset) stored in s['ryskamp_s20']; old pools kept as twenty_v1 / ten_v1.
+Ten: Beatrice Peatbourne, Antonella Cisneros, Raviy Messei, Nigel Ashbank, Tengfei Se-Seok, Bora Pannei, Taiga Lokhande, Yelena Blaubach, Nicolas Ventavanti, Hyejin Ga-Rim. Dan picks the four finalists, then the winner.

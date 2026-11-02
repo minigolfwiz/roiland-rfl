@@ -318,7 +318,30 @@ def compute_awards(state, n_heisman=5, db_basis=None):
         c = [r for r in rows if filt(r[1], r[2])]
         c.sort(key=lambda r: -r[3])
         return c[:n]
-    heisman = top(lambda pl, s: pl["pos"] in ("QB","RB","WR","TE"), n_heisman)
+    # Dan, 2045: winning is a much larger part of the Ryskamp. The production points are scaled
+    # by a team multiplier (win%, conference title, top-ten committee rank). Applies from
+    # season 20; earlier seasons keep the production-only board.
+    def _team_mult(team):
+        r = state["record"].get(team) or {}
+        g = r.get("W", 0) + r.get("L", 0)
+        if not g: return 1.0
+        champ = 0.0
+        try:
+            import pickle, os
+            fp = "/home/claude/cfb2/state/conf_champs_s%d.pkl" % state.get("season", 0)
+            if os.path.exists(fp):
+                champ = 0.12 if team in set(pickle.load(open(fp, "rb")).values()) else 0.0
+        except Exception: pass
+        crk = {t: rk for rk, t in (state.get("committee_poll_current") or [])}
+        top10 = 0.06 if crk.get(team, 99) <= 10 else 0.0
+        return 0.30 + 1.00 * (r.get("W", 0) / g) + champ + top10
+    if state.get("season", 0) >= 20:
+        hrows = [(pid, pl, s, sc * _team_mult(pl["team"])) for pid, pl, s, sc in rows
+                 if pl["pos"] in ("QB","RB","WR","TE")]
+        hrows.sort(key=lambda r: -r[3])
+        heisman = hrows[:n_heisman]
+    else:
+        heisman = top(lambda pl, s: pl["pos"] in ("QB","RB","WR","TE"), n_heisman)
     dpoy    = top(lambda pl, s: pl["pos"] in ("DL","LB","CB","S"), 5)
     foy     = top(lambda pl, s: pl["cls"] == "Fr", 5)
     # coach of the year: wins over preseason expectation
