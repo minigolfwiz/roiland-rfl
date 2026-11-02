@@ -141,6 +141,7 @@ def subject(S, rnd, spec, week, res, used, key):
         ctx = base_ctx(S, rnd, club); ctx.update(name=p['name'], last=p['name'].split()[-1], pos=p['pos'], opp=nick(oppc), oppclub=oppc, flag=x['type'], when=when_of(x), onick=nick(oppc), game=g['id'])
         _lk = injury_link(g, x); injs = [i for i in g['injuries'] if i['team'] == oppc and _lk and _lk['text'].startswith(i['name'])]      # only an injury logged on this play can be the victim
         want = VICTIM_POS[x['type']]
+        if x['type'] == 'unnecessary roughness' and p['pos'] in ('QB', 'RB', 'WR', 'TE', 'OL', 'K', 'P'): want = ('DL', 'LB', 'CB', 'S')      # an offensive player can only plausibly hit an opposing defender (fix forward from 2045 week 18)
         victim = None
         for i in injs:        # a real injury to an opponent in this game is the victim when the position fits
             if i['pos'] in want or kind == 'flag_injury':

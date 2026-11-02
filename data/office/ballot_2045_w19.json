@@ -1,0 +1,504 @@
+{
+ "year": 2045,
+ "week": 19,
+ "potw": {
+  "off": [
+   {
+    "pid": 9036903,
+    "name": "Uchenna Qaddoumi",
+    "pos": "WR",
+    "club": "Hughes City Asteroids",
+    "line": "17 rec, 237 yds, 2 TD",
+    "res": "W 33-27 vs Cavemen",
+    "score": 38.7,
+    "plays": [
+     "Q2 10:40 3-yd TD catch from Alastair Gangaprasad (was down 1)",
+     "OT 0:42 30-yd TD catch from Alastair Gangaprasad (was tied, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9101254,
+    "name": "Alastair Gangaprasad",
+    "pos": "QB",
+    "club": "Hughes City Asteroids",
+    "line": "33/45, 407 yds, 4 TD",
+    "res": "W 33-27 vs Cavemen",
+    "score": 38.25,
+    "plays": [
+     "Q2 10:40 3-yd TD pass to Uchenna Qaddoumi (was down 1)",
+     "Q4 13:01 9-yd TD pass to Aminata Zelenentsev (was down 11)",
+     "Q4 4:51 10-yd TD pass to Soren Birketveit (was down 5, late), go-ahead, later answered",
+     "OT 0:42 30-yd TD pass to Uchenna Qaddoumi (was tied, late), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9037368,
+    "name": "Sieglinde Forshus",
+    "pos": "WR",
+    "club": "Purcell Rapids",
+    "line": "15 rec, 225 yds, 1 TD",
+    "res": "L 22-25 at Swords",
+    "score": 30.0,
+    "plays": [
+     "Q4 11:24 9-yd TD catch from Minjun Pengzha (was down 5), go-ahead, later answered"
+    ]
+   },
+   {
+    "pid": 9035718,
+    "name": "Minjun Pengzha",
+    "pos": "QB",
+    "club": "Purcell Rapids",
+    "line": "35/49, 417 yds, 2 TD",
+    "res": "L 22-25 at Swords",
+    "score": 27.95,
+    "plays": [
+     "Q4 11:24 9-yd TD pass to Sieglinde Forshus (was down 5), go-ahead, later answered",
+     "Q4 2:28 8-yd TD pass to Bertram Havtveit (was down 1, late), go-ahead, later answered"
+    ]
+   },
+   {
+    "pid": 9038606,
+    "name": "Efrain Valreal",
+    "pos": "WR",
+    "club": "Diamond City Hope",
+    "line": "11 rec, 186 yds, 1 TD",
+    "res": "L 17-24 at Raccoons",
+    "score": 25.35,
+    "plays": [
+     "Q4 3:39 9-yd TD catch from Solene Verfleur (was down 14), cut the deficit late"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9037396,
+    "name": "Torsten Feldmeier",
+    "pos": "LB",
+    "club": "Eona Topcats",
+    "line": "14 tackles, 2 sacks, 1 INT, 1 forced fumble",
+    "res": "W 24-17 at Mastiffs",
+    "score": 31.9,
+    "plays": [
+     "Q1 2:07 sack and forced fumble (tied)",
+     "Q4 1:20 interception returned 22 yds (up 6, late), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9036200,
+    "name": "Zitkala Blackcrane",
+    "pos": "LB",
+    "club": "Coachville Mastodons",
+    "line": "9 tackles, 1 sack, 1 INT",
+    "res": "W 29-10 vs Raptors",
+    "score": 18.4,
+    "plays": [
+     "Q2 7:33 interception returned 12 yds (up 3), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9036216,
+    "name": "Tavita Pouha",
+    "pos": "LB",
+    "club": "Tasson Thunderbugs",
+    "line": "14 tackles, 2 sacks",
+    "res": "W 27-7 vs Commodores",
+    "score": 18.4,
+    "plays": []
+   },
+   {
+    "pid": 9035919,
+    "name": "Andre Kalomatos",
+    "pos": "DL",
+    "club": "Hughes City Asteroids",
+    "line": "6 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 33-27 vs Cavemen",
+    "score": 17.6,
+    "plays": [
+     "Q2 0:23 sack and forced fumble (down 4)"
+    ]
+   },
+   {
+    "pid": 9034723,
+    "name": "Ojinjintka Tomselniy",
+    "pos": "LB",
+    "club": "Diamond City Dynamos",
+    "line": "7 tackles, 1 sack, 1 INT",
+    "res": "W 37-27 vs Renegades",
+    "score": 17.2,
+    "plays": [
+     "Q2 12:15 interception returned 37 yds (down 3), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9038514,
+    "name": "Chenguang Beisha",
+    "pos": "LB",
+    "club": "Stanton City Conductors",
+    "line": "7 tackles, 1 sack, 1 INT",
+    "res": "W 24-16 vs Bees",
+    "score": 17.2,
+    "plays": [
+     "Q3 2:44 interception returned 18 yds (tied), led to a touchdown"
+    ]
+   }
+  ],
+  "st": [],
+  "st_cands": [
+   {
+    "pid": 9101381,
+    "name": "Ryusei Takahara",
+    "pos": "K",
+    "club": "Stamford Grays",
+    "line": "4/5 FG, long 61, 2/2 XP",
+    "res": "W 26-23 at Lions",
+    "score": 22.75,
+    "plays": [
+     "Q1 1:25 37-yd GOOD",
+     "Q2 0:55 61-yd GOOD",
+     "Q3 11:49 36-yd MISSED",
+     "Q3 7:57 56-yd GOOD",
+     "OT 4:40 35-yd GOOD, go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9101094,
+    "name": "Anders Nightingale",
+    "pos": "K",
+    "club": "Coachville Mastodons",
+    "line": "5/5 FG, long 49, 2/2 XP",
+    "res": "W 29-10 vs Raptors",
+    "score": 18.75,
+    "plays": [
+     "Q2 11:29 49-yd GOOD",
+     "Q2 5:01 45-yd GOOD",
+     "Q3 7:04 49-yd GOOD",
+     "Q4 3:03 36-yd GOOD",
+     "Q4 0:11 34-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101470,
+    "name": "Gareth Bjornstad",
+    "pos": "K",
+    "club": "Diveo Demons",
+    "line": "4/4 FG, long 56, 1/1 XP",
+    "res": "L 19-20 at Bats",
+    "score": 17.0,
+    "plays": [
+     "Q2 10:38 22-yd GOOD",
+     "Q2 0:40 19-yd GOOD",
+     "Q4 8:13 56-yd GOOD",
+     "Q4 3:06 32-yd GOOD, go-ahead, later answered"
+    ]
+   },
+   {
+    "pid": 9101505,
+    "name": "Nandini Hak-Jae",
+    "pos": "P",
+    "club": "Chapel Rock Crowns",
+    "line": "7 punts, 45.6 avg, 6 inside the 20",
+    "res": "W 16-10 vs Redwoods",
+    "score": 15.499999999999996,
+    "plays": []
+   },
+   {
+    "pid": 9101024,
+    "name": "Dongwook Baiwang",
+    "pos": "K",
+    "club": "San Saltadac Sea Lions",
+    "line": "3/3 FG, long 54, 2/2 XP",
+    "res": "L 23-26 vs Grays",
+    "score": 14.75,
+    "plays": [
+     "Q3 0:43 54-yd GOOD",
+     "Q4 5:57 53-yd GOOD",
+     "Q4 0:15 26-yd GOOD, tied the game"
+    ]
+   }
+  ],
+  "st_pick": {
+   "pid": 9101381,
+   "name": "Ryusei Takahara",
+   "pos": "K",
+   "club": "Stamford Grays",
+   "line": "4/5 FG, long 61, 2/2 XP",
+   "res": "W 26-23 at Lions",
+   "score": 22.75,
+   "plays": [
+    "Q1 1:25 37-yd GOOD",
+    "Q2 0:55 61-yd GOOD",
+    "Q3 11:49 36-yd MISSED",
+    "Q3 7:57 56-yd GOOD",
+    "OT 4:40 35-yd GOOD, go-ahead and decisive, never answered"
+   ],
+   "why": "Top performer by the box score."
+  }
+ },
+ "cases": [],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": [],
+ "prime": [],
+ "teamPrime": {
+  "Billiataho Greats": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Bruca Beach Hammerheads": {
+   "ph": 1,
+   "pa": 0,
+   "bh": 0,
+   "ba": 1
+  },
+  "Canesta Dales": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Chapel Rock Crowns": {
+   "ph": 2,
+   "pa": 1,
+   "bh": 0,
+   "ba": 1
+  },
+  "Classetto Cavemen": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Coachville Mastodons": {
+   "ph": 2,
+   "pa": 3,
+   "bh": 1,
+   "ba": 0
+  },
+  "Cordelle Raptors": {
+   "ph": 1,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Costique Bearcats": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Crayellan Redwoods": {
+   "ph": 2,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Diamond City Dynamos": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Diamond City Hope": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Diveo Demons": {
+   "ph": 1,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Ediville Brass Tigers": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "El Latigo Shredders": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Eona Topcats": {
+   "ph": 1,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Far Farris Raccoons": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Fiota Bay T-Rexes": {
+   "ph": 1,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Fiota Swords": {
+   "ph": 1,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Good River Rangers": {
+   "ph": 3,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Holliday Beetles": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Hughes City Asteroids": {
+   "ph": 2,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Lornaman Renegades": {
+   "ph": 2,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "New Madrid Mastiffs": {
+   "ph": 3,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "North Hatesei Bees": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 1,
+   "ba": 0
+  },
+  "Palm Creek Leatherbacks": {
+   "ph": 3,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Port Logan Commodores": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 1,
+   "ba": 0
+  },
+  "Purcell Rapids": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Queensville Phenoms": {
+   "ph": 3,
+   "pa": 2,
+   "bh": 0,
+   "ba": 1
+  },
+  "Rogaela Rovers": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 1,
+   "ba": 0
+  },
+  "San Saltadac Sea Lions": {
+   "ph": 3,
+   "pa": 2,
+   "bh": 0,
+   "ba": 1
+  },
+  "Sarkady Beavers": {
+   "ph": 1,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "South Burke Tsunami": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Stamford Grays": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Stanton City Conductors": {
+   "ph": 2,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Tasson Thunderbugs": {
+   "ph": 2,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Tengus City Terrors": {
+   "ph": 1,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Underwood Bats": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Vaughn Bay Silverbacks": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Verigon Komodos": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Wolford Dragons": {
+   "ph": 3,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  }
+ }
+}
