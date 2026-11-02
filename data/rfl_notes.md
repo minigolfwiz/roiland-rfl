@@ -199,3 +199,10 @@
 - Playoff field (not yet played): Regal 1 Greats 12-5-1, 2 Redwoods 11-6-1, 3 Cavemen 11-7, 4 Rapids 11-7, 5 Hope 10-8, 6 Tigers 9-8-1, 7 Beetles 9-8-1, 8 Asteroids 9-9. Majestic 1 Leatherbacks 15-3, 2 Bees 14-4, 3 Lions 13-5, 4 Phenoms 11-6-1, 5 Dales 11-7, 6 Silverbacks 9-8-1, 7 Dynamos 9-8-1, 8 Commodores 9-8-1.
 - Awards finalists computed (season.awards); Dan picks winners.
 - League Office week 20 now carries a "Season awards" section (radio picks per award, from `ballot.awards`); `league_office.apply` records dec['awards'] as `season.awards[k]['winner']` and moves the winner to finalists[0]. Dan's request (2 Nov 2026): award picks by click, not typed.
+
+## 2045 week 20 decisions / playoffs round 1
+- Dan's awards (picked on the League Office page): MVP Dongmei Panbo (Phenoms QB); OPOY Dongmei Panbo; DPOY Anders Hollywood (Rapids LB); ROY Cristobal Penanueva (Conductors TE); COY Ruta Albaverde (Leatherbacks). W20-1 Coldcombe: no action.
+- Round 1 (seed in brackets, away at home): Regal: (1) Greats 26, (8) Asteroids 23; (7) Beetles 24, (2) Redwoods 13; (3) Cavemen 30, (6) Brass Tigers 27 OT (Camparini tied it with a 42-yd FG at 0:24, won it with a 33-yd FG after a Tigers fumble on a sack); (5) Hope 40, (4) Rapids 24. Majestic: (1) Leatherbacks 14, (8) Commodores 11; (7) Dynamos 45, (2) Bees 20; (3) Sea Lions 35, (6) Silverbacks 30; (5) Dales 24, (4) Phenoms 19.
+- Race to 11: Redwoods (lost as the 2 seed) and Brass Tigers (OT loss) are out; Greats alive, still on 10.
+- Round 2: Regal (1) Greats v (7) Beetles, (3) Cavemen v (5) Hope; Majestic (1) Leatherbacks v (7) Dynamos, (3) Sea Lions v (5) Dales. Mega Bowl: One Wolford Stadium, Wolford Dragons.
+- History file playoff entries are [round, HOME, home_pts, AWAY, away_pts], not winner/loser; the Mega Bowl records computed from them are unreliable (early rounds named differently). Use the notes' Mega Bowl records.
