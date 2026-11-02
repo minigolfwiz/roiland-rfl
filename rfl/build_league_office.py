@@ -13,7 +13,7 @@ season_page = open(f'{ROOT}/out/rfl_season_{year}.html').read()
 i = season_page.index('const BRAND = '); BRAND = season_page[i:season_page.index('\n', i)]
 j = season_page.index('const _lum = '); k = season_page.index('function tmn(')
 CHIPJS = season_page[j:season_page.index('\n', k)]
-hist = dict(potw=se.get('potw', {}), discipline=se.get('discipline', []))
+hist = dict(potw=se.get('potw', {}), discipline=se.get('discipline', []), prime=se.get('prime_log', {}))
 from rfl.cases import RATES
 D = dict(year=year, week=week, ballot=B, hist=hist, rates=RATES)
 
@@ -73,12 +73,19 @@ details{margin-top:6px} summary{cursor:pointer;font-family:var(--display);font-w
 .sev{font-family:var(--display);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:12.5px;color:var(--dim);border:1px solid var(--rule);border-radius:999px;padding:0 8px}
 .sev i{display:inline-block;width:46px;height:6px;background:var(--chip);border-radius:3px;margin:0 5px 1px;vertical-align:middle;position:relative;overflow:hidden} .sev i b{position:absolute;left:0;top:0;bottom:0;background:var(--c)}
 .txt p{margin:0 0 8px} .ctx{background:var(--paper);border-radius:8px;padding:6px 10px;margin:4px 0 6px;font-size:13px;color:var(--dim)} .ctx b{font-family:var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--ink);font-size:12px} .ctx ul{margin:3px 0 0;padding-left:17px}
+.pg{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:10px 12px;margin:0 0 8px}
+.pg .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.pg .tms{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.pg select{font:inherit;font-size:15px;background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:8px;padding:7px 8px;min-width:150px}
+.pg.sel{border-color:var(--navy);box-shadow:inset 0 0 0 1px var(--navy)}
+.pg .tl{font-size:12.5px;color:var(--dim);margin-top:5px;display:grid;gap:2px;font-variant-numeric:tabular-nums}
+.pk{background:var(--paper);border-radius:8px;padding:6px 10px;margin:4px 0 8px;font-size:13.5px} .pk div{margin:2px 0} .pk b{font-family:var(--display);letter-spacing:.06em;text-transform:uppercase;font-size:12.5px}
 .blurb{display:block;color:var(--dim);font-size:12.5px;margin-top:1px}
 .note{font-size:12.5px;color:var(--dim)} .warn{color:var(--serious)}
 </style>
 <div class="wrap">
 <h1>League Office</h1>
-<p class="sub">Your desk between weeks. Pick the Players of the Week, rule on any cases, and submit. Then tell Claude, and the next week plays.</p>
+<p class="sub">Your desk between weeks. Pick the Sunday primetime games three weeks ahead, rule on any cases, and submit. Then tell Claude, and the next week plays.</p>
 <div id="status" class="status"><span class="dot"></span><span id="stxt"></span></div>
 <div id="main"></div>
 <h2>How often cases come<small>drawn at random, no quota</small></h2>
@@ -110,15 +117,43 @@ function candidate(c, name, val){
 function option(o, name){
   return `<label class="opt"><input type="radio" name="${name}" value="${esc(o.key)}"><span><span class="nm">${esc(o.label)}</span>${o.suggested ? '<span class="sug">Suggested</span>' : ''}${o.status === 'indef' ? '<span class="sug warn">Stays out until reinstated</span>' : ''}${o.status === 'ban' ? '<span class="sug warn">Permanent</span>' : ''}${(o.blurb && (o.program || o.probation || o.coach_games || o.pick_round || o.indef_min || o.exempt || o.adjust || o.reinstate || o.ban)) ? '<span class="blurb">' + esc(o.blurb) + '</span>' : ''}</span></label>`;
 }
+const SLOTS = [['sam','Morning'],['spm','Afternoon'],['snf','Evening']];
+const rc = r => r[0] + '-' + r[1] + (r[2] ? '-' + r[2] : '');
+function teamLine(t, r, st, home){
+  const p = (D.ballot.teamPrime || {})[t] || {ph:0, pa:0, bh:0, ba:0};
+  const gb = st.gb ? (st.gb + ' back') : 'leads';
+  return `<div>${chip(t, true)} <b>${rc(r)}</b> · ${st.rank === 1 ? '1st' : st.rank === 2 ? '2nd' : st.rank === 3 ? '3rd' : st.rank + 'th'} in ${esc(st.div)}${st.rank === 1 ? '' : ' (' + gb + ')'} · primetime played ${p.ph} home / ${p.pa} away · booked ${p.bh} home / ${p.ba} away</div>`;
+}
+function primeHTML(){
+  const P = B.prime || []; if (!P.length) return '';
+  let h = `<h2>Sunday primetime<small>${P.length === 1 ? 'week ' + P[0].week : 'weeks ' + P[0].week + ' to ' + P[P.length - 1].week}</small></h2><p class="hint">For each week, choose the morning, afternoon and evening primetime game from that week's Sunday games. Thursday and Monday games are already set. Each club shows its current record, its division standing, and its primetime games so far: played (home / away) and booked ahead (home / away, counting Thursday, Monday and any Sunday picks already made).</p>`;
+  for (const W of P){
+    h += `<div class="grp" data-week="${W.week}"><h3>Week ${W.week}</h3><div class="pk" id="pk-${W.week}"></div>` + W.games.map(g => `<div class="pg" id="pg-${g.id}"><div class="row"><div class="tms">${chip(g.visitor, true)} <span class="rs">at</span> ${chip(g.host, true)} <span class="rs">${esc(g.kind)}</span></div>
+      <select id="ps-${g.id}" data-week="${W.week}" aria-label="Slot for ${esc(g.visitor)} at ${esc(g.host)}"><option value="">Not primetime</option>${SLOTS.map(([k, l]) => `<option value="${k}">${l} primetime</option>`).join('')}</select></div>
+      <div class="tl">${teamLine(g.visitor, g.vr, g.vs)}${teamLine(g.host, g.hr, g.hs)}</div></div>`).join('') + '</div>';
+  }
+  const T = B.teamPrime || {}; const rows = Object.keys(T).sort((a, b) => (T[b].ph + T[b].pa + T[b].bh + T[b].ba) - (T[a].ph + T[a].pa + T[a].bh + T[a].ba) || a.localeCompare(b));
+  h += `<details><summary>Every club's primetime games</summary><div class="tw"><table><tr><th>Club</th><th>Played H</th><th>Played A</th><th>Booked H</th><th>Booked A</th></tr>` + rows.map(t => `<tr><td>${chip(t, true)}</td><td class="n">${T[t].ph}</td><td class="n">${T[t].pa}</td><td class="n">${T[t].bh}</td><td class="n">${T[t].ba}</td></tr>`).join('') + '</table></div></details>';
+  return h;
+}
+function primeState(){
+  const out = {};
+  for (const W of (B.prime || [])){ const o = {}; for (const g of W.games){ const s = $('ps-' + g.id); if (s && s.value) o[s.value] = g.id; } out[W.week] = o; }
+  return out;
+}
+function refreshPrime(){
+  const st = primeState();
+  for (const W of (B.prime || [])){
+    const o = st[W.week] || {}; const by = {}; W.games.forEach(g => by[g.id] = g);
+    $('pk-' + W.week).innerHTML = SLOTS.map(([k, l]) => { const g = by[o[k]]; return `<div><b>${l}</b>: ${g ? esc(g.visitor) + ' at ' + esc(g.host) : '<span class="warn">not chosen</span>'}</div>`; }).join('');
+    W.games.forEach(g => $('pg-' + g.id).classList.toggle('sel', !!$('ps-' + g.id).value));
+  }
+}
 function render(){
   const m = $('main');
   if (!B){ m.innerHTML = '<div class="empty">Nothing is waiting. The ballot for the next week appears here once that week has been played.</div>'; $('bar').hidden = true;
     $('status').classList.add('done'); $('stxt').innerHTML = '<b>All caught up.</b> Week ' + WK + ' is decided.'; return; }
-  let h = CATS.some(([k]) => (B.potw[k] || []).length) ? `<h2>Players of the Week<small>week ${WK}</small></h2><p class="hint">One from each list. Candidates are the top performers by the week's box scores.</p>` : '';
-  for (const [k, label] of CATS){ const L = B.potw[k] || []; if (!L.length) continue;
-    h += `<div class="grp"><h3>${label}</h3>` + L.map(c => candidate(c, 'p-' + k, c.pid)).join('') + '</div>'; }
-  if (B.potw.st_pick){ const c = B.potw.st_pick;
-    h += `<div class="grp"><h3>Special Teams Player of the Week<span class="sug">Claude's pick</span></h3><div class="opt" style="cursor:default;grid-template-columns:minmax(0,1fr)"><span><span class="nm">${esc(c.name)}</span><span class="pos">${esc(c.pos)}</span> ${chip(c.club, true)}<div class="ln">${esc(c.line)}</div><div class="rs">${esc(c.res)}</div>${(c.plays && c.plays.length) ? '<ul class="pv">' + c.plays.map(x => '<li>' + esc(x) + '</li>').join('') + '</ul>' : ''}${c.why ? '<div class="rs">' + esc(c.why) + '</div>' : ''}</span></div></div>`; }
+  let h = primeHTML();
   h += `<h2>Cases<small>${B.cases.length ? B.cases.length + ' this week' : 'none this week'}</small></h2>`;
   if (!B.cases.length) h += '<div class="empty">No cases reached the league office this week.</div>';
   for (const c of B.cases){
@@ -133,24 +168,25 @@ function render(){
       <textarea id="note-${c.id}" placeholder="Optional note for the record" rows="1"></textarea></div>`; }
   if ((B.open || []).length) h += `<h2>Open matters<small>still unresolved</small></h2><div class="ctx">` + B.open.map(x => `<div>${esc(x.title)}: <span class="nm">${esc(x.who)}</span> ${chip(x.club, true)} <span class="rs">${esc(x.since)}${x.ruling ? ' · your ruling: ' + esc(x.ruling) : ''}</span></div>`).join('') + '</div>';
   m.innerHTML = h; $('bar').hidden = false;
-  m.addEventListener('change', update); m.addEventListener('input', e => { if (e.target.tagName === 'TEXTAREA') dirty(); });
-  update();
+  m.addEventListener('change', e => { const t = e.target; if (t.tagName === 'SELECT' && t.id.startsWith('ps-') && t.value){ document.querySelectorAll(`select[data-week="${t.dataset.week}"]`).forEach(x => { if (x !== t && x.value === t.value) x.value = ''; }); } refreshPrime(); update(); });
+  m.addEventListener('input', e => { if (e.target.tagName === 'TEXTAREA') dirty(); });
+  refreshPrime(); update();
 }
 function val(name){ const x = document.querySelector(`input[name="${name}"]:checked`); return x ? x.value : null; }
 function collect(){
-  const potw = {}; for (const [k] of CATS){ if ((B.potw[k] || []).length){ const v = val('p-' + k); if (v) potw[k] = +v; } }
+  const prime = primeState();
   const rulings = {}; for (const c of B.cases){ const v = val('c-' + c.id); if (v) rulings[c.id] = {key: v, note: ($('note-' + c.id).value || '').trim()}; }
-  return {week: WK, potw, rulings};
+  return {week: WK, prime, rulings};
 }
 function missing(){
   const d = collect(); let n = 0;
-  for (const [k] of CATS) if ((B.potw[k] || []).length && d.potw[k] == null) n++;
+  for (const W of (B.prime || [])) for (const [k] of SLOTS) if (!(d.prime[W.week] || {})[k]) n++;
   for (const c of B.cases) if (!d.rulings[c.id]) n++;
   return n;
 }
 function summary(){
   const d = collect(); const L = ['Week ' + WK + ' decisions'];
-  for (const [k, label] of CATS){ const c = (B.potw[k] || []).find(x => x.pid === d.potw[k]); if (c) L.push(label + ': ' + c.name + ' (' + c.pos + ', ' + c.club + ')'); }
+  for (const W of (B.prime || [])){ const o = d.prime[W.week] || {}; for (const [k, l] of SLOTS){ const g = W.games.find(x => x.id === o[k]); if (g) L.push('Week ' + W.week + ' Sunday ' + l.toLowerCase() + ': ' + g.visitor + ' at ' + g.host); } }
   for (const c of B.cases){ const r = d.rulings[c.id]; if (r){ const o = c.options.find(x => x.key === r.key); L.push(c.id + ' ' + c.title + ' - ' + c.who.map(w => w.name).join(' & ') + ': ' + o.label + (r.note ? ' [' + r.note + ']' : '')); } }
   return L.join('\n');
 }
@@ -167,7 +203,8 @@ function setStatus(){
 }
 function apply(d){
   if (!d) return;
-  for (const k in (d.potw || {})){ const x = document.querySelector(`input[name="p-${k}"][value="${d.potw[k]}"]`); if (x) x.checked = true; }
+  for (const wk in (d.prime || {})) for (const sl in d.prime[wk]){ const x = $('ps-' + d.prime[wk][sl]); if (x) x.value = sl; }
+  refreshPrime();
   for (const id in (d.rulings || {})){ const r = d.rulings[id]; const x = document.querySelector(`input[name="c-${id}"][value="${r.key}"]`); if (x) x.checked = true; const t = $('note-' + id); if (t && r.note) t.value = r.note; }
 }
 async function init(){
@@ -187,12 +224,16 @@ async function init(){
 }
 function renderHist(){
   const H = D.hist, weeks = Object.keys(H.potw).map(Number).sort((a, b) => b - a);
-  if (!weeks.length){ $('hist').innerHTML = '<div class="empty">No weeks decided yet. Your first picks and rulings will be recorded here.</div>'; return; }
-  const CL = {off:'Offense', defense:'Defense', st:'Special teams'};
-  $('hist').innerHTML = weeks.map(w => {
-    const p = H.potw[w]; const cases = H.discipline.filter(d => d.week === w);
-    return `<div class="rec"><b>WEEK ${w}</b><div>${['off','defense','st'].filter(k => p[k]).map(k => `${CL[k]}: <span class="nm">${esc(p[k].name)}</span> ${chip(p[k].club, true)} <span class="rs">${esc(p[k].line)}</span>`).join('<br>')}</div>` +
-      (cases.length ? '<div style="margin-top:6px">' + cases.map(c => `<div><span class="pill t-${c.tier}">${TIER[c.tier] || c.tier}</span> ${esc(c.title)}: ${c.who.map(esc).join(' &amp; ')} (${c.clubs.map(x => chip(x, true)).join(' ')}) <b>${esc(c.ruling)}</b>${c.note ? ' <span class="rs">' + esc(c.note) + '</span>' : ''}</div>`).join('') + '</div>' : '<div class="rs" style="margin-top:6px">No cases.</div>') + '</div>'; }).join('');
+  const pw = Object.keys(H.prime || {}).map(Number).sort((a, b) => b - a);
+  let h = '';
+  if (pw.length) h += '<h3 style="font-family:var(--display);letter-spacing:.06em;text-transform:uppercase;margin:6px 0">Sunday primetime picks</h3>' + pw.map(w => { const p = H.prime[w]; return `<div class="rec"><b>WEEK ${w}</b>` + [['sam','Morning'],['spm','Afternoon'],['snf','Evening']].filter(x => p[x[0]]).map(x => `<div>${x[1]}: ${chip(p[x[0]].visitor, true)} <span class="rs">at</span> ${chip(p[x[0]].host, true)}</div>`).join('') + '</div>'; }).join('');
+  const withCases = weeks.filter(w => H.discipline.some(d => d.week === w));
+  if (!pw.length && !withCases.length){ $('hist').innerHTML = '<div class="empty">No weeks decided yet. Your first picks and rulings will be recorded here.</div>'; return; }
+  h += '<h3 style="font-family:var(--display);letter-spacing:.06em;text-transform:uppercase;margin:14px 0 6px">Case rulings</h3>' + withCases.map(w => {
+    const cases = H.discipline.filter(d => d.week === w);
+    return `<div class="rec"><b>WEEK ${w}</b>` +
+      '<div style="margin-top:6px">' + cases.map(c => `<div><span class="pill t-${c.tier}">${TIER[c.tier] || c.tier}</span> ${esc(c.title)}: ${c.who.map(esc).join(' &amp; ')} (${c.clubs.map(x => chip(x, true)).join(' ')}) <b>${esc(c.ruling)}</b>${c.note ? ' <span class="rs">' + esc(c.note) + '</span>' : ''}</div>`).join('') + '</div></div>'; }).join('');
+  $('hist').innerHTML = h;
 }
 init();
 </script>

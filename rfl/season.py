@@ -110,7 +110,7 @@ def flex_check(S, week):
     notes = []
     nxt = se['schedule'].get(str(week + 1), [])
     thu_next = {t for x in nxt if x['slot'] == 'thu' for t in (x['host'], x['visitor'])}   # clubs on short rest if moved to Monday night
-    for slot, label in (('snf', 'Sunday night'), ('mnf', 'Monday night')):
+    for slot, label in (('snf', 'Sunday evening'), ('mnf', 'Monday night')):
         for g in [x for x in se['schedule'][w] if x['slot'].startswith(slot)]:
             a, b = g['host'], g['visitor']
             dire = pct(a) < .5 and pct(b) < .5 and max(behind(a), behind(b)) >= min(4, left + 1)
@@ -131,7 +131,7 @@ def run_week(S, week, seed_base=None):
     fx = flex_check(S, week)
     if fx: print('FLEX', *fx, sep='\n  ')
     set_lineups(S)
-    order = {'thu': 0, 'sun': 1, 'snf': 2, 'snf2': 3, 'mnf': 4}
+    order = {'thu': 0, 'sam': 1, 'sun': 2, 'spm': 3, 'snf': 4, 'snf2': 5, 'mnf': 6}
     games = sorted(se['schedule'][w], key=lambda g: (order.get(g['slot'], 1), random.Random(g['id']).random()))
     out = []
     for g in games:

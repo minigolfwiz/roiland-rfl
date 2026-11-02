@@ -33,7 +33,7 @@ h2.w{font-family:var(--display);font-weight:800;font-size:26px;margin:6px 0 8px}
 .gc{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:10px 12px;text-align:left;font:inherit;color:inherit;cursor:pointer;width:100%}
 .gc .row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 10px;align-items:center} .gc .sc{font-family:var(--display);font-weight:800;font-size:22px;font-variant-numeric:tabular-nums;text-align:right}
 .gc .row.w .sc{color:var(--fg)} .gc .row.l .sc{color:var(--dim)} .gc .meta{font-size:11.5px;color:var(--dim);margin-top:5px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
-.slot{font-family:var(--display);font-weight:700;font-size:10.5px;letter-spacing:.08em;border-radius:4px;padding:1px 6px;color:#fff;background:var(--dim)} .slot.thu{background:#1d6fa5} .slot.snf,.slot.snf2{background:#6b2d8e} .slot.mnf{background:#b8322a}
+.slot{font-family:var(--display);font-weight:700;font-size:10.5px;letter-spacing:.08em;border-radius:4px;padding:1px 6px;color:#fff;background:var(--dim)} .slot.thu{background:#1d6fa5} .slot.snf,.slot.snf2{background:#6b2d8e} .slot.sam{background:#2d7d6b} .slot.spm{background:#b0701c} .slot.mnf{background:#b8322a}
 .det{display:none;margin-top:10px;border-top:1px solid var(--rule);padding-top:8px;font-size:13px} .gc.open .det{display:block}
 .pl{display:grid;grid-template-columns:52px 1fr auto;gap:4px 8px;align-items:baseline;padding:3px 0;border-bottom:1px dashed var(--rule)} .pl .t{font-family:var(--data);font-size:10.5px;color:var(--dim)} .pl .s{font-family:var(--data);font-size:11px;font-weight:600;white-space:nowrap}
 .pl.to{color:#b8322a} .kv{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0} .kv span{background:var(--chip);border-radius:6px;padding:2px 7px;font-size:12px}
@@ -88,7 +88,7 @@ function mk(name, size){ const b = BRAND[name]; if (!b) return esc(name); const 
 
 const $ = id => document.getElementById(id); const NARROW = window.matchMedia('(max-width: 760px)');
 let tab = 'week', week = D.week_done || 1;
-const SLOT = {thu:'Thursday night', snf:'Sunday night', snf2:'Sunday night', mnf:'Monday night', sun:'Sunday'};
+const SLOT = {thu:'Thursday night', sam:'Sunday morning', spm:'Sunday afternoon', snf:'Sunday evening', snf2:'Sunday evening', mnf:'Monday night', sun:'Sunday'};
 const rec = t => { const r = D.records[t]; return `${r[0]}-${r[1]}${r[2] ? '-' + r[2] : ''}`; };
 const chip = (t, small) => _chip(t, small, `${NARROW.matches ? BRAND[t].nick : t} ${rec(t)}`);
 const NAMEIDX = {}; for (const pid in D.players){ const p = D.players[pid]; NAMEIDX[p.name + '|' + p.club] = pid; NAMEIDX[p.name] = NAMEIDX[p.name] || pid; }
@@ -129,7 +129,7 @@ function weekView(){
   const r = D.results.find(x => x.week === week);
   let h = `<h2 class="w">Week ${week} <small style="font-family:var(--body);font-weight:500;font-size:13px;color:var(--dim)">${r ? r.games.length + ' games' : 'not yet played'}</small></h2>`;
   if (!r){ const gs = D.sched[week] || []; return h + '<div class="gl">' + gs.map(g => `<div class="gc"><div class="row"><span>${chip(g.visitor, true)}</span></div><div class="row"><span>at ${chip(g.host, true)}</span></div><div class="meta"><span class="slot ${g.slot}">${SLOT[g.slot]}</span></div></div>`).join('') + '</div>'; }
-  const order = {thu:0, sun:1, snf:2, snf2:3, mnf:4};
+  const order = {thu:0, sam:1, sun:2, spm:3, snf:4, snf2:5, mnf:6};
   const gs = r.games.slice().sort((a,b) => order[a.slot] - order[b.slot] || Math.abs(a.home_pts - a.away_pts) - Math.abs(b.home_pts - b.away_pts));
   const prime = gs.filter(g => g.slot !== 'sun'), rest = gs.filter(g => g.slot === 'sun');
   h += '<h3>Stand-alone games</h3><div class="gl">' + prime.map(gameCard).join('') + '</div><h3>Sunday</h3><div class="gl">' + rest.map(gameCard).join('') + '</div>';
@@ -173,7 +173,7 @@ function schedView(){
   if (!team) team = D.al.Regal.North[0];
   const opts = confs.map(c => divs.map(d => `<optgroup label="${c} ${d}">` + D.al[c][d].slice().sort().map(t => `<option value="${esc(t)}"${t === team ? ' selected' : ''}>${esc(t)}</option>`).join('') + '</optgroup>').join('')).join('');
   const games = {}; D.results.forEach(r => r.games.forEach(g => { games[g.id] = g; }));
-  const SH = {thu:'THU', sun:'SUN', snf:'SNF', snf2:'SNF', mnf:'MNF'}, KD = {division:'Division', conference:'Conference', interconference:'Interconference'};
+  const SH = {thu:'THU', sam:'SUN AM', sun:'SUN', spm:'SUN PM', snf:'SUN EVE', snf2:'SUN EVE', mnf:'MNF'}, KD = {division:'Division', conference:'Conference', interconference:'Interconference'};
   let hm = 0, aw = 0, prime = 0, rows = '';
   for (let w = 1; w <= 20; w++){
     const g = (D.sched[w] || []).find(x => x.host === team || x.visitor === team);

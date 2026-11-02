@@ -149,6 +149,62 @@ def claude_picks_st(B):
     cands = B['potw'].get('st') or []
     if cands: B['potw']['st_cands'] = cands; B['potw']['st_pick'] = dict(cands[0], why='Top performer by the box score.'); B['potw']['st'] = []
 
+
+# ----------------------------------------------------------------------------- Sunday primetime picks (Dan, 1 Nov 2026): replaces the Players of the Week
+PRIME_SLOTS = ('sam', 'spm', 'snf')          # Sunday morning, afternoon, evening primetime
+PRIME_LABEL = dict(sam='Morning', spm='Afternoon', snf='Evening')
+ALL_PRIME = ('thu', 'mnf', 'sam', 'spm', 'snf', 'snf2')
+SUN_SLOTS = ('sun', 'sam', 'spm', 'snf', 'snf2')
+
+def migrate_prime(S):
+    """One-time: Sunday primetime is now picked three weeks ahead. Earlier SNF picks for weeks not yet decided are kept in season.snf_preset and cleared from the schedule."""
+    se = S['season']
+    if 'prime_decided' in se: return
+    se['prime_decided'] = list(range(1, se['week_done'] + 1)); se['snf_preset'] = {}; se['prime_log'] = {}
+    for w, gs in se['schedule'].items():
+        if int(w) > se['week_done']:
+            pre = [g['id'] for g in gs if g['slot'] in ('snf', 'snf2')]
+            if pre: se['snf_preset'][w] = pre
+            for g in gs:
+                if g['slot'] in ('snf', 'snf2'): g['slot'] = 'sun'
+
+def prime_counts(S):
+    """Per club: primetime games played / booked (decided, not yet played), home and away. Thu, Mon and the Sunday windows all count."""
+    se = S['season']; C = {}
+    def c(t): return C.setdefault(t, dict(ph=0, pa=0, bh=0, ba=0))
+    for t in se['records']: c(t)
+    for w, rs in se['results'].items():
+        for r in rs:
+            if r.get('slot') in ALL_PRIME and r.get('kind') != 'playoff': c(r['home'])['ph'] += 1; c(r['away'])['pa'] += 1
+    for w, gs in se['schedule'].items():
+        if int(w) > se['week_done']:
+            for g in gs:
+                if g['slot'] in ALL_PRIME: c(g['host'])['bh'] += 1; c(g['visitor'])['ba'] += 1
+    return C
+
+def prime_ballot(S, week):
+    """The weeks Dan must pick now: the next three unplayed weeks that are not yet decided, with the Sunday games and everything he needs to choose."""
+    se = S['season']; migrate_prime(S); L = json.load(open(f'{ROOT}/data/league.json'))['teams']; rec = se['records']
+    wk = [w for w in range(week + 1, min(week + 3, 20) + 1) if w not in se['prime_decided']]
+    def stand(t):
+        mates = sorted([x for x in rec if L[x]['conf'] == L[t]['conf'] and L[x]['div'] == L[t]['div']], key=lambda x: (-(rec[x]['w'] + .5 * rec[x]['t']), rec[x]['l']))
+        lead = rec[mates[0]]; r = rec[t]; gb = (lead['w'] - r['w'] + r['l'] - lead['l']) / 2
+        return dict(div=f"{L[t]['conf']} {L[t]['div']}", rank=mates.index(t) + 1, gb=gb)
+    out = []
+    for w in wk:
+        games = []
+        for g in se['schedule'][str(w)]:
+            if g['slot'] in SUN_SLOTS:
+                games.append(dict(id=g['id'], host=g['host'], visitor=g['visitor'], kind=g['kind'], hr=[rec[g['host']]['w'], rec[g['host']]['l'], rec[g['host']]['t']], vr=[rec[g['visitor']]['w'], rec[g['visitor']]['l'], rec[g['visitor']]['t']], hs=stand(g['host']), vs=stand(g['visitor'])))
+        out.append(dict(week=w, games=games))
+    return out
+
+def add_prime(S, week):
+    """Add (or refresh) the primetime section on an existing, still-undecided ballot."""
+    path = f'{ROOT}/data/office/ballot_{S["season"]["year"]}_w{week}.json'; B = json.load(open(path))
+    B['prime'] = prime_ballot(S, week); B['teamPrime'] = prime_counts(S)
+    json.dump(B, open(path, 'w'), indent=1); return B
+
 def ballot(S, week):
     se = S['season']; assert se['week_done'] == week, f"week {week} not the last played ({se['week_done']})"
     path = f'{ROOT}/data/office/ballot_{se["year"]}_w{week}.json'
@@ -157,6 +213,7 @@ def ballot(S, week):
     cases = CS.draw(S, week, res)
     B = dict(year=se['year'], week=week, potw=potw(S, week, res), cases=cases, rates=[dict(tier=t, mean=m) for t, m in RATES], open=open_storylines(S))
     claude_picks_st(B)
+    B['prime'] = prime_ballot(S, week); B['teamPrime'] = prime_counts(S)
     os.makedirs(f'{ROOT}/data/office', exist_ok=True)
     json.dump(B, open(path, 'w'), indent=1); return B
 
@@ -194,12 +251,26 @@ def apply(S, week, dec):
     cats = {'off': 'Offensive Player of the Week', 'defense': 'Defensive Player of the Week', 'st': 'Special Teams Player of the Week'}
     win = {}
     for k, label in cats.items():
-        pid = dec['potw'].get(k)
+        pid = (dec.get('potw') or {}).get(k)
+        if pid is None and k != 'st' and B['potw'].get(k): pid = B['potw'][k][0]['pid']      # since 2045 wk 11 Dan no longer picks these: the top box score is recorded automatically
         if k == 'st' and pid is None and B['potw'].get('st_pick'): pid = B['potw']['st_pick']['pid']; B['potw']['st'] = B['potw']['st_cands']      # Claude's own pick
         if pid is None: continue
         c = next(x for x in B['potw'][k] if x['pid'] == int(pid)); win[k] = dict(pid=c['pid'], name=c['name'], pos=c['pos'], club=c['club'], line=c['line'])
         out.append(f"{label}: {c['name']} ({c['pos']}, {c['club']}) {c['line']}")
     se['potw'][str(week)] = win
+    migrate_prime(S)
+    for wk_, pk in (dec.get('prime') or {}).items():
+        w_ = int(wk_); gs = {g['id']: g for g in se['schedule'][str(w_)]}
+        ids = [pk.get(sl) for sl in PRIME_SLOTS]
+        if None in ids or len(set(ids)) != 3 or any(i not in gs or gs[i]['slot'] in ('thu', 'mnf') for i in ids): raise SystemExit(f"bad Sunday primetime picks for week {w_}: {pk}")
+        for g in gs.values():
+            if g['slot'] in ('snf', 'snf2', 'sam', 'spm'): g['slot'] = 'sun'
+        log = {}
+        for sl in PRIME_SLOTS:
+            g = gs[pk[sl]]; g['slot'] = sl; log[sl] = dict(id=g['id'], host=g['host'], visitor=g['visitor'])
+            out.append(f"Week {w_} Sunday {PRIME_LABEL[sl].lower()}: {g['visitor']} at {g['host']}")
+        se['prime_log'][str(w_)] = log
+        if w_ not in se['prime_decided']: se['prime_decided'].append(w_)
     for c in B['cases']:
         d = dec['rulings'].get(c['id'])
         if not d: raise SystemExit(f"missing ruling for {c['id']}")
