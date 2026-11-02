@@ -976,3 +976,5 @@ FINAL: (1) Tengus State v (7) Costique River. Title site for 2045 must be awarde
 Awards canonized: Ryskamp Beatrice Peatbourne (Tengus State QB; finalists Peatbourne, Cisneros, Messei, Ashbank), DPOY Treiva Yreysei (Ranroman State DL), FOY Consuelo Neulac (Park Island QB), COY Rupin State.
 FINAL MEDIA POLL filed (media_history[15], media_final_key=16, backup season_state.pkl.pre_s20_finalpoll): 1 Costique River 2 Tengus State 3 Rogaela State 4 UNN 5 Skeenerland State 6 North Hatesei 7 Pistolheart 8 Central Stanton 9 Eona 10 Marblehead.
 NEXT: parity monitor + audit, title-standings (end of season), award title sites 2052+ (show the full list), Ryskamp past-winners review reminder (Dan), republish Season + Media Pool, rollover.
+
+2045 end of season: all-time title standings shown to Dan (shared pre-playoff titles from 1930-1976 not counted); parity monitor (through wk 14) shown: weeks 8-11 ranked lost to unranked 42% vs 28% expected, weeks 12-14 29% vs 22%; elite records inside the 2038-42 reference band. Ryskamp past-winners review reminder delivered. Full title-site list shown; Dan to award 2052+. Parity audit (deeper) not run.
