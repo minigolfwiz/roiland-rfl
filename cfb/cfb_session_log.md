@@ -971,3 +971,8 @@ SF (Copper-Steam, rotation): (1) Tengus State v (12) Marblehead @ Copper Bowl (B
 ## 2045 PLAYOFF SEMIFINALS PLAYED (backups season_state.pkl.pre_s20_po4, games_db.pkl.pre_s20_po4, playoff_s20.pkl.pre_po4)
 (1) Tengus State 38 (12) Marblehead 7 @ Copper Bowl (Billiataho); (7) Costique River 31 (11) Skeenerland State 27 @ Steam Bowl (Coachville).
 FINAL: (1) Tengus State v (7) Costique River. Title site for 2045 must be awarded first (champ_venue) -- Dan to award the 2045+ block; show the full list of previous sites. Title game NOT PLAYED.
+
+## 2045 NATIONAL CHAMPIONSHIP PLAYED (Kirkwood, Crayellan; backups *.pkl.pre_s20_pochamp): (7) Costique River 34, (1) Tengus State 28. Costique River is the 2045 national champion; history.champ[2045]=(Costique River, Tengus State). Tengus State finished 16-1 after 16-0. Tengus QB Peatbourne threw 4 INT (3 in Q3); Costique QB Velecek 359 yds; K Shamar Kone 4 FG; Fetu Yellowantler 55-yd TD + 2pt with 0:55 left.
+Awards canonized: Ryskamp Beatrice Peatbourne (Tengus State QB; finalists Peatbourne, Cisneros, Messei, Ashbank), DPOY Treiva Yreysei (Ranroman State DL), FOY Consuelo Neulac (Park Island QB), COY Rupin State.
+FINAL MEDIA POLL filed (media_history[15], media_final_key=16, backup season_state.pkl.pre_s20_finalpoll): 1 Costique River 2 Tengus State 3 Rogaela State 4 UNN 5 Skeenerland State 6 North Hatesei 7 Pistolheart 8 Central Stanton 9 Eona 10 Marblehead.
+NEXT: parity monitor + audit, title-standings (end of season), award title sites 2052+ (show the full list), Ryskamp past-winners review reminder (Dan), republish Season + Media Pool, rollover.
