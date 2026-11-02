@@ -648,6 +648,29 @@ def social_findings(S, st, p, r2):
              f"WHERE THINGS STAND. Your ruling at the time was no action, with a request to investigate. The video was removed and {name} apologized in a follow-up post."]
     return '\n\n'.join(paras)
 
+
+def bounty_findings(S, st, extra=''):
+    """Concrete findings for a pay-for-injury investigation (Dan wants specifics): what was found, how much, which injuries are tied to it."""
+    club = st['club']; nk = nick(club); r = random.Random(f"bounty-find|{st['year']}|{club}|{st['week']}")
+    inj = []
+    for wk, res in sorted(S['season']['results'].items(), key=lambda kv: int(kv[0])):
+        for g in res:
+            if club in (g['home'], g['away']) and int(wk) <= st['week'] + 4:
+                for i in g.get('injuries', []):
+                    if i['team'] != club and i['weeks'] >= 2: inj.append((int(wk), i))
+    lst = '; '.join(f"week {w}, {i['name']} ({i['pos']}, {nick(i['team'])}), {i['weeks']} wks, {i['kind']}" for w, i in inj[:6]) or 'none that met the 2-week threshold'
+    amt = r.choice([500, 1000, 1500]); n = r.randint(4, 9)
+    t = st['truth']
+    if t == 'substantiated':
+        v = (f"THE FINDINGS: investigators recovered messages in a {nk} defensive staff group chat offering ${amt:,} per opposing player knocked out of a game, and payment records show {n} payments to {r.randint(3, 6)} players over the season. "
+             f"Opposing injuries of 2+ weeks in {nk} games: {lst}. " + (('Investigators tied ' + ' and '.join(f"{i['name']} ({nick(i['team'])})" for w, i in r.sample(inj, min(len(inj), r.randint(1, 2)))) + ' to the program; the rest could not be linked to it.') if inj else 'No injury could be linked to it.'))
+    elif t == 'partial':
+        v = (f"THE FINDINGS: investigators found messages from one {nk} position coach offering ${amt:,} bonuses for 'big hits', but no evidence the offers were paid or that anyone was told to target an injury. "
+             f"Opposing injuries of 2+ weeks in {nk} games: {lst}. None were tied to the offers.")
+    else:
+        v = (f"THE FINDINGS: investigators reviewed staff messages and payment records and found no offer or payment tied to injuring opponents. Opposing injuries of 2+ weeks in {nk} games ({lst}) were consistent with ordinary play.")
+    return v
+
 def build_findings(S, rnd, st, item, week, chain, p):
     key = st['type']; spec = dict(CATALOG[key], id=key); r2 = random.Random(rnd.random())
     facts, d = roll_facts(r2, FIND_FACTS, {}, 0)
@@ -667,6 +690,7 @@ def build_findings(S, rnd, st, item, week, chain, p):
                    'partial': f"Investigators concluded that {st['name']}'s hit was reckless but not flagrant: avoidable, though the timing was close to the whistle.",
                    'unfounded': f"Investigators concluded that {st['name']}'s hit was not flagrant: the contact was close to the whistle and the league found no violation."}[st['truth']]
         text = '\n\n'.join([f"The league has finished its review of the hit by {st['name']} ({nick(st['club'])}) in week {st['week']}, {st['year']}. " + verdict, 'Original matter: ' + st['summary']])
+    if key == 'bounty' and st['truth'] != '' and not st.get('review_of'): text = text.split('\n\n')[0] + ' ' + bounty_findings(S, st) + '\n\n' + 'Original matter: ' + st['summary']
     if key == 'injury_report':      # 2045 wk 11 fix: the hand-opened investigation had no findings text (KeyError); findings now name the player and say what investigators found
         _P = [x for x in S['players'].values() if x.get('club') == st['club'] and x.get('starter')]; _p = max(_P, key=lambda x: x['abil']) if _P else None
         _n = f"{_p['name']} ({_p['pos']})" if _p else 'the player'; nk_ = nick(st['club'])
