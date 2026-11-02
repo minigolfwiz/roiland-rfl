@@ -122,18 +122,18 @@ const rc = r => r[0] + '-' + r[1] + (r[2] ? '-' + r[2] : '');
 function teamLine(t, r, st, home){
   const p = (D.ballot.teamPrime || {})[t] || {ph:0, pa:0, bh:0, ba:0};
   const gb = st.gb ? (st.gb + ' back') : 'leads';
-  return `<div>${chip(t, true)} <b>${rc(r)}</b> · ${st.rank === 1 ? '1st' : st.rank === 2 ? '2nd' : st.rank === 3 ? '3rd' : st.rank + 'th'} in ${esc(st.div)}${st.rank === 1 ? '' : ' (' + gb + ')'} · primetime played ${p.ph} home / ${p.pa} away · booked ${p.bh} home / ${p.ba} away</div>`;
+  return `<div>${chip(t, true)} <b>${rc(r)}</b> · ${st.rank === 1 ? '1st' : st.rank === 2 ? '2nd' : st.rank === 3 ? '3rd' : st.rank + 'th'} in ${esc(st.div)}${st.rank === 1 ? '' : ' (' + gb + ')'} · primetime so far and booked: ${p.ph + p.bh} home / ${p.pa + p.ba} away</div>`;
 }
 function primeHTML(){
   const P = B.prime || []; if (!P.length) return '';
-  let h = `<h2>Sunday primetime<small>${P.length === 1 ? 'week ' + P[0].week : 'weeks ' + P[0].week + ' to ' + P[P.length - 1].week}</small></h2><p class="hint">For each week, choose the morning, afternoon and evening primetime game from that week's Sunday games. Thursday and Monday games are already set. Each club shows its current record, its division standing, and its primetime games so far: played (home / away) and booked ahead (home / away, counting Thursday, Monday and any Sunday picks already made).</p>`;
+  let h = `<h2>Sunday primetime<small>${P.length === 1 ? 'week ' + P[0].week : 'weeks ' + P[0].week + ' to ' + P[P.length - 1].week}</small></h2><p class="hint">For each week, choose the morning, afternoon and evening primetime game from that week's Sunday games. Thursday and Monday games are already set. Each club shows its current record, its division standing, and its total primetime games, played plus already booked (home / away). That counts Thursday, Monday and any Sunday picks already made.</p>`;
   for (const W of P){
     h += `<div class="grp" data-week="${W.week}"><h3>Week ${W.week}</h3><div class="pk" id="pk-${W.week}"></div>` + W.games.map(g => `<div class="pg" id="pg-${g.id}"><div class="row"><div class="tms">${chip(g.visitor, true)} <span class="rs">at</span> ${chip(g.host, true)} <span class="rs">${esc(g.kind)}</span></div>
       <select id="ps-${g.id}" data-week="${W.week}" aria-label="Slot for ${esc(g.visitor)} at ${esc(g.host)}"><option value="">Not primetime</option>${SLOTS.map(([k, l]) => `<option value="${k}">${l} primetime</option>`).join('')}</select></div>
       <div class="tl">${teamLine(g.visitor, g.vr, g.vs)}${teamLine(g.host, g.hr, g.hs)}</div></div>`).join('') + '</div>';
   }
   const T = B.teamPrime || {}; const rows = Object.keys(T).sort((a, b) => (T[b].ph + T[b].pa + T[b].bh + T[b].ba) - (T[a].ph + T[a].pa + T[a].bh + T[a].ba) || a.localeCompare(b));
-  h += `<details><summary>Every club's primetime games</summary><div class="tw"><table><tr><th>Club</th><th>Played H</th><th>Played A</th><th>Booked H</th><th>Booked A</th></tr>` + rows.map(t => `<tr><td>${chip(t, true)}</td><td class="n">${T[t].ph}</td><td class="n">${T[t].pa}</td><td class="n">${T[t].bh}</td><td class="n">${T[t].ba}</td></tr>`).join('') + '</table></div></details>';
+  h += `<details><summary>Every club's primetime games</summary><div class="tw"><table><tr><th>Club</th><th>Home</th><th>Away</th><th>Total</th></tr>` + rows.map(t => `<tr><td>${chip(t, true)}</td><td class="n">${T[t].ph + T[t].bh}</td><td class="n">${T[t].pa + T[t].ba}</td><td class="n">${T[t].ph + T[t].bh + T[t].pa + T[t].ba}</td></tr>`).join('') + '</table></div></details>';
   return h;
 }
 function primeState(){
