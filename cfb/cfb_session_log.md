@@ -953,3 +953,7 @@ Selection Board ordering fixed (Dan): the candidate list now opens with his week
 ## 2045 PLAYOFF FIELD INSTALLED (state/field_s20.json -> playoff_s20.pkl)
 Byes: 1 Tengus State, 2 Rogaela State, 3 UNN, 4 Keeper, 5 North Hatesei, 6 Ciarralotta Tech, 7 Costique River, 8 Pistolheart.
 R1 (at the higher seed): 24 Palisades @ 9 Eastern State; 23 Ediville State @ 10 Eona; 22 Rupin State @ 11 Skeenerland State; 21 Lito Rock State @ 12 Marblehead; 20 New Madrid @ 13 Will Tech; 19 Marines @ 14 Central Stanton; 18 Yrei Trobniy @ 15 Roosevelt; 17 South Antiragal @ 16 Antiragal State. R1 previews shown in chat, NOT PLAYED; awaiting Dan's go.
+
+## 2045 PLAYOFF ROUND 1 PLAYED (backups season_state.pkl.pre_s20_po_r1 / pre_s20_po1, games_db.pkl.pre_s20_po1, playoff_s20.pkl.pre_po1)
+(9) Eastern State 45 Palisades 31; (10) Eona 41 Ediville State 7; (11) Skeenerland State 30 Rupin State 7; (12) Marblehead 36 Lito Rock State 33; (13) Will Tech 22 New Madrid 27; (14) Central Stanton 37 Marines 17; (15) Roosevelt 7 Yrei Trobniy 19; (16) Antiragal State 21 South Antiragal 27.
+R2 (bye teams host): 1 Tengus State v 20 New Madrid; 2 Rogaela State v 18 Yrei Trobniy; 3 UNN v 17 South Antiragal; 4 Keeper v 14 Central Stanton; 5 North Hatesei v 12 Marblehead; 6 Ciarralotta Tech v 11 Skeenerland State; 7 Costique River v 10 Eona; 8 Pistolheart v 9 Eastern State. Previews shown, NOT PLAYED.
