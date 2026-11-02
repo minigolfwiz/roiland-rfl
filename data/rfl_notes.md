@@ -181,3 +181,7 @@
 - W15-1 Kalyanprasad warning; W15-2 Sugitsu warning.
 - Week 16 played: Redwoods–Greats 20-20 OT tie; no cases. Only week 19 primetime to pick.
 - League Office page now shows the Morning/Afternoon/Evening picks box both above and below each week's candidate list (pk-W, pk2-W).
+
+## 2045 week 16 decisions / week 17 stage
+- Week 19 primetime: morning T-Rexes at Rovers, afternoon Grays at Sea Lions, evening Beetles at Rangers. No cases in week 16.
+- Week 17 played automatically. Ballot: W17-1 Khoury obscene gesture (text hand-expanded with what happened/severity); week 20 primetime pick.
