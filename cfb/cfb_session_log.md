@@ -967,3 +967,7 @@ QF (rotation sites, previews shown, NOT PLAYED): 1 Tengus State v 14 Central Sta
 ## 2045 PLAYOFF QUARTERFINALS PLAYED (backups season_state.pkl.pre_s20_po3, games_db.pkl.pre_s20_po3, playoff_s20.pkl.pre_po3)
 (1) Tengus State 48 Central Stanton 17 @ Redwood Bowl (Kirkwood); (12) Marblehead 48 (2) Rogaela State 24 @ Lumber Bowl (Port Logan) -- Rogaela State's first loss; (11) Skeenerland State 37 (3) UNN 36 @ Star Bowl (Ediville); (7) Costique River 49 Pistolheart 14 @ 501 Bowl (Stamford).
 SF (Copper-Steam, rotation): (1) Tengus State v (12) Marblehead @ Copper Bowl (Billiataho, Roosevelt); (7) Costique River v (11) Skeenerland State @ Steam Bowl (Coachville, Stanton). Previews shown, NOT PLAYED.
+
+## 2045 PLAYOFF SEMIFINALS PLAYED (backups season_state.pkl.pre_s20_po4, games_db.pkl.pre_s20_po4, playoff_s20.pkl.pre_po4)
+(1) Tengus State 38 (12) Marblehead 7 @ Copper Bowl (Billiataho); (7) Costique River 31 (11) Skeenerland State 27 @ Steam Bowl (Coachville).
+FINAL: (1) Tengus State v (7) Costique River. Title site for 2045 must be awarded first (champ_venue) -- Dan to award the 2045+ block; show the full list of previous sites. Title game NOT PLAYED.
