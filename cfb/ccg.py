@@ -151,3 +151,7 @@ if __name__ == "__main__":
         sc = f"{box['home_score']}-{box['away_score']}" if box["home_score"]>box["away_score"] else f"{box['away_score']}-{box['home_score']}"
         ot = f" ({box['ot']}OT)" if box["ot"] else ""
         print(f"[{tier}] {conf}: {wt} def. {lt} {sc}{ot} @ {vn}")
+
+    print("")
+    print("[RYSKAMP REMINDER] Conference finals are done. Dan picks the FOUR FINALISTS from state ryskamp_s%d['ten'] BEFORE he names the winner. "
+          "Remind him, show the ten (stats page), and wait. (He forgot in 2045 and let Claude pick the rest once; that does not repeat.)" % SE.load_state().get("season", 0))

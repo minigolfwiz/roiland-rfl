@@ -941,3 +941,9 @@ Ten: Beatrice Peatbourne, Antonella Cisneros, Raviy Messei, Nigel Ashbank, Tengf
 ## 2045 Ryskamp Trophy winner
 Dan named Beatrice Peatbourne (QB, Tengus State) the winner. Four finalists were not separately named; awards fall back to the top five on the board until Dan names them.
 REMINDER FOR DAN (his request): at the end of the 2045 season, after the title standings, remind him to review past Ryskamp winners.
+
+## 2045 Ryskamp finalists set; playoff Selection Board published
+Dan forgot to pick the four finalists before naming the winner and said Claude may pick the other three THIS ONCE. Four: Beatrice Peatbourne (winner), Antonella Cisneros, Raviy Messei, Nigel Ashbank (top four of the ten on the new team-weighted score). Standing rule (29 Oct 2026) otherwise stands: Dan picks the four and the winner himself.
+NEXT SEASON: ccg.py now prints a reminder after the conference finals to have Dan pick the four finalists before the winner (also in project memory).
+Selection Board (playoff field builder) rebuilt for 2045 and published to the existing artifact; awaiting Dan's 24-team field JSON -> install_field.py (first run writes the bracket, no dry run).
+Still to do after the field/bracket: national title sites for 2045+ (show the full list of previous sites), end-of-season title standings, parity audit, Ryskamp past-winners review reminder.
