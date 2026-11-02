@@ -937,3 +937,7 @@ L6: Palisades 27-20 Reid State; New Madrid 34-13 Hansenne; Marines 34-21 Canesta
 committee.compute_awards now scales the Ryskamp production points (season >= 20) by a team factor: 0.30 + win% + 0.12 conference champion + 0.06 top-ten committee rank. Earlier seasons unchanged (backup committee.py.bak_pre_teamweight).
 New twenty and ten (strict subset) stored in s['ryskamp_s20']; old pools kept as twenty_v1 / ten_v1.
 Ten: Beatrice Peatbourne, Antonella Cisneros, Raviy Messei, Nigel Ashbank, Tengfei Se-Seok, Bora Pannei, Taiga Lokhande, Yelena Blaubach, Nicolas Ventavanti, Hyejin Ga-Rim. Dan picks the four finalists, then the winner.
+
+## 2045 Ryskamp Trophy winner
+Dan named Beatrice Peatbourne (QB, Tengus State) the winner. Four finalists were not separately named; awards fall back to the top five on the board until Dan names them.
+REMINDER FOR DAN (his request): at the end of the 2045 season, after the title standings, remind him to review past Ryskamp winners.
