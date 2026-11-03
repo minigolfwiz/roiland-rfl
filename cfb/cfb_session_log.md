@@ -983,3 +983,9 @@ NEXT: parity monitor + audit, title-standings (end of season), award title sites
 2052 Classetto (Harrell); 2053 Holliday (Natzumakis); 2054 Hughes City (South Antiragal); 2055 Niana Vaw (North Hatesei); 2056 Riverwake (Rogaela). All five are new to the bid pool and were added; none is a rotation-bowl city so the semifinal rule is clear. Sites now awarded through 2056. Written to state/universe.pkl (backup universe.pkl.pre_s20_sites), mirrored to repo as universe.pkl.gz.
 
 ## 2045 post-season parity audit run (parity_audit_2045.md; parity_audit.py SEAS extended to 20, backup parity_audit.py.pre_s20). Inside the 2038-44 envelope; soft spot: wks 8-11 ranked-lost-to-unranked 42% vs 28% expected. No engine change. NEXT: rollover to 2046 / offseason (Dan to say go).
+
+## 2045-46 OFFSEASON -- Stage 1 of 7 COMPLETE: coaching carousel (2026-11-02)
+Backups state/{season_state,rosters,coaches,universe,seed_registry}.pkl.pre_s21_carousel; s['carousel_s20']. Prestige step ran (152 moved on 980 results).
+18 HC hires, 34 coordinator moves. Vacancies: 13 offseason firings, 3 retirements (Barhold Valley, Kaji Kita State, Keytommiyr), 1 interim not retained (Skylar Rose), 1 poached away (Lito Rock State -> Vaughn Bay State: Bellichelli).
+Retreads: Rushua (East Costique -> Parchynt), Orellana (Dove Island -> Northlight), Brookbridge (Larksdale -> S Antiragal State). First-time HCs: Keytommiyr, Kaji Kita State, Larksdale.
+NEXT: Stage 2, the 2046 draft pool for the RFL (needs Dan).
