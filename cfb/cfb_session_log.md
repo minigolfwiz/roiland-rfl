@@ -981,3 +981,5 @@ NEXT: parity monitor + audit, title-standings (end of season), award title sites
 
 ## TITLE SITES 2052-2056 AWARDED (Dan, 2 Nov 2026, from the Title Site Map hand-off)
 2052 Classetto (Harrell); 2053 Holliday (Natzumakis); 2054 Hughes City (South Antiragal); 2055 Niana Vaw (North Hatesei); 2056 Riverwake (Rogaela). All five are new to the bid pool and were added; none is a rotation-bowl city so the semifinal rule is clear. Sites now awarded through 2056. Written to state/universe.pkl (backup universe.pkl.pre_s20_sites), mirrored to repo as universe.pkl.gz.
+
+## 2045 post-season parity audit run (parity_audit_2045.md; parity_audit.py SEAS extended to 20, backup parity_audit.py.pre_s20). Inside the 2038-44 envelope; soft spot: wks 8-11 ranked-lost-to-unranked 42% vs 28% expected. No engine change. NEXT: rollover to 2046 / offseason (Dan to say go).
