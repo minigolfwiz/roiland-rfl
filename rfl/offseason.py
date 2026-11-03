@@ -135,7 +135,7 @@ def unretire(S, pid, contract):
     S['offseason']['retired'] = [r for r in S['offseason']['retired'] if r['pid'] != pid]
 
 def step_retire(S):
-    rnd = random.Random(2043001)
+    rnd = random.Random(S["season"]["year"] * 1000 + 1)      # year-based seed from the 2046 offseason (was a fixed 2043001 every year; fixed forward, 2 Nov 2026)
     progress(S, rnd); out = retire(S, rnd)
     S['offseason'] = dict(done=['close', 'retire'], retired=[])
     for p in out:
