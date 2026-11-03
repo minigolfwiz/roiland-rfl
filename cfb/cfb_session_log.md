@@ -993,3 +993,14 @@ NEXT: Stage 2, the 2046 draft pool for the RFL (needs Dan).
 ## 2045-46 OFFSEASON -- Stage 2 of 7 IN PROGRESS: 2046 draft pool handed to the RFL (2026-11-02)
 export_draft_pool.py -> state/draft_pool_2046.json: 3,514 declared (2,157 seniors, 1,334 early entrants, 23 subdivision). State untouched (season_state and rosters md5 identical before/after). Slim top-700 filed to Project as claude/cfb_draft_pool_2046.json; full pool sent to Dan.
 WAITING on RFL's 280 picks ({"season":20,...}) -> install_rfl_draft.py --forfeits=N --commit, then stages 3-7 in one run (portal, recruiting --commit, development, roster_final, rollover), then the 2046 schedule build.
+
+## 2045-46 OFFSEASON -- Stage 2 of 7 COMPLETE: the 2046 draft, run by the RFL (2026-11-03)
+RFL picks found in the repo (data/rfl_draft_2046_picks.json, written by the RFL session from our pool): 279 picks, 0 rejected, overall 1..279. install_rfl_draft.py --forfeits=1 --commit (Shredders' round-1 pick forfeited under W12-1, confirmed in rfl_notes). Backups state/{season_state,rosters}.pkl.pre_s21_draft. s['draft_s20']: 190 early entrants, 1 subdivision. 2,520 leave college, 971 declared underclassmen withdrew to school. Skeenerland State 10 draftees, Costique River 8, Central Stanton 8, Eona 7, Park Island 7.
+
+## 2045-46 OFFSEASON -- Stages 3-7 COMPLETE in one run at Dan's request (2026-11-03): 2045 closed, 2046 open (season 21)
+Backups state/{season_state,rosters,coaches,universe,seed_registry}.pkl.pre_s21_{portal,recruit,dev,final,rollover}.
+Stage 3 portal: 300 transfers, 140 withdrew. Stage 4 recruiting (recruiting.py --commit): class 2,816, needs 2,277, signed 2,277 (13 5* | 258 4* | 986 3* | 1,020 2*), unsigned 539; blue-chip share 11.9% of signees; 65 programmes landed no 4*/5*; richest classes Rogaela State, Tengus State, Costique River, Eona, North Hatesei, UNN (1 five-star + 5 four-stars each).
+Stage 5 development: 7,299 players, mean +0.276, r_coach 0.60 (2045 run: 0.50), 320 breakouts, 64 busts; only 10 rated 9.0+, 271 rated 8.0+.
+Stage 6 roster_final: 2,520 departed, 2,277 recruits added, 0 true walk-ons, 308 floor fills, rosters 63-68, total 9,884 (recruiting_s20 existed, so the 2044 bug did not recur).
+Stage 7 rollover (--commit): 2045 archived (champion Costique River), classes Sr 2,405 | Jr 2,081 | So 2,616 | RS 197 | Fr 2,585. Preseason top 10: Rogaela State 10.45, Hatesei, Marblehead, Skeenerland State, Tengus State, UFNH, Yrei Trobniy, Dietsche, Crayellan State, Eona. Season 21, next_week 0. games_db untouched.
+NEXT: 2046 schedule build (Series Office -> convert_series_db -> fill_noncon -> fix_p6_hosting -> fill_conf), then media pool s21 and preseason poll.
