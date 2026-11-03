@@ -989,3 +989,7 @@ Backups state/{season_state,rosters,coaches,universe,seed_registry}.pkl.pre_s21_
 18 HC hires, 34 coordinator moves. Vacancies: 13 offseason firings, 3 retirements (Barhold Valley, Kaji Kita State, Keytommiyr), 1 interim not retained (Skylar Rose), 1 poached away (Lito Rock State -> Vaughn Bay State: Bellichelli).
 Retreads: Rushua (East Costique -> Parchynt), Orellana (Dove Island -> Northlight), Brookbridge (Larksdale -> S Antiragal State). First-time HCs: Keytommiyr, Kaji Kita State, Larksdale.
 NEXT: Stage 2, the 2046 draft pool for the RFL (needs Dan).
+
+## 2045-46 OFFSEASON -- Stage 2 of 7 IN PROGRESS: 2046 draft pool handed to the RFL (2026-11-02)
+export_draft_pool.py -> state/draft_pool_2046.json: 3,514 declared (2,157 seniors, 1,334 early entrants, 23 subdivision). State untouched (season_state and rosters md5 identical before/after). Slim top-700 filed to Project as claude/cfb_draft_pool_2046.json; full pool sent to Dan.
+WAITING on RFL's 280 picks ({"season":20,...}) -> install_rfl_draft.py --forfeits=N --commit, then stages 3-7 in one run (portal, recruiting --commit, development, roster_final, rollover), then the 2046 schedule build.
