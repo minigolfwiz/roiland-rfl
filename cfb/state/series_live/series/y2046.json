@@ -608,8 +608,36 @@
       "sub": false,
       "v": "Coachville",
       "week": 1
+    },
+    {
+      "h": "Costique",
+      "sid": null,
+      "sub": false,
+      "v": "Will Tech",
+      "week": 1
+    },
+    {
+      "h": "Will Tech",
+      "sid": null,
+      "sub": false,
+      "v": "Riveral State",
+      "week": 2
+    },
+    {
+      "h": "UN Ediville",
+      "sid": null,
+      "sub": false,
+      "v": "Skeenerland",
+      "week": 1
+    },
+    {
+      "h": "Natzumakis",
+      "sid": null,
+      "sub": false,
+      "v": "Tengus",
+      "week": 3
     }
   ],
-  "saved": "10/30/2026, 3:18:43 PM",
+  "saved": "11/4/2026, 3:05:23 PM",
   "year": 2046
 }

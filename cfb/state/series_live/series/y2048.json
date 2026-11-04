@@ -237,8 +237,36 @@
       "sub": false,
       "v": "Leafette",
       "week": 1
+    },
+    {
+      "h": "Will Tech",
+      "sid": null,
+      "sub": false,
+      "v": "Costique",
+      "week": 1
+    },
+    {
+      "h": "Will Tech",
+      "sid": null,
+      "sub": true,
+      "v": "Fiota",
+      "week": 3
+    },
+    {
+      "h": "UN Ediville",
+      "sid": null,
+      "sub": false,
+      "v": "Natzumakis State",
+      "week": 1
+    },
+    {
+      "h": "Tengus",
+      "sid": null,
+      "sub": false,
+      "v": "Natzumakis",
+      "week": 1
     }
   ],
-  "saved": "10/30/2026, 3:18:56 PM",
+  "saved": "11/4/2026, 3:05:53 PM",
   "year": 2048
 }
