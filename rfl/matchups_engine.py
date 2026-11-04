@@ -67,8 +67,8 @@ def games_standings(year, S=None):
     adj = collections.defaultdict(list)
     for n, (a, b, k) in enumerate(edges): adj[a].append((n, b)); adj[b].append((n, a))
     # every club has 10 non-division games (even degree), so walking closed trails gives exactly 5 home and 5 away
-    return _finish(out, edges, adj, year)
-def _finish(out, edges, adj, year):
+    return _finish(out, edges, adj, year, place)
+def _finish(out, edges, adj, year, place=None):
     """Home/away for the non-division games (Dan, 4 Nov 2026). Conference games are oriented one pair of divisions at a time: each
     club has exactly two games against the other division (same place + rotation), so walking the closed trails gives it one home
     and one away against every other division in its conference, and so 3 home / 3 away overall. Interconference games get one
@@ -95,6 +95,40 @@ def _finish(out, edges, adj, year):
                     if not ptr[v]: break
                     n, w = ptr[v].pop(); used[n] = True; orient[n] = (w, v)   # trail leaves v, arrives at w: w hosts v
                     v = w
+    if place:   # no club hosts, or visits, all three of its same-finish opponents (Dan, 4 Nov 2026)
+        # flipping a whole closed trail keeps every club's one-home-one-away split, so flip trails until the rule holds
+        same = [n for n, (a, b, k) in enumerate(edges) if k == "conference" and place[a] == place[b]]
+        unit = {}; ncomp = 0
+        for key in groups:
+            if key[0] != "conference": continue
+            seen = set(); adjn = collections.defaultdict(list)
+            for n in groups[key]:
+                a, b, _ = edges[n]; adjn[a].append((n, b)); adjn[b].append((n, a))
+            for t0 in adjn:
+                if t0 in seen: continue
+                stack = [t0]; seen.add(t0)
+                while stack:
+                    v = stack.pop()
+                    for n, w in adjn[v]:
+                        unit[n] = ncomp
+                        if w not in seen: seen.add(w); stack.append(w)
+                ncomp += 1
+        byunit = collections.defaultdict(list)
+        for n, u in unit.items(): byunit[u].append(n)
+        sameby = collections.defaultdict(list)
+        for n in same: sameby[edges[n][0]].append(n); sameby[edges[n][1]].append(n)
+        def bad(t): h = sum(orient[n][0] == t for n in sameby[t]); return h in (0, len(sameby[t]))
+        def total(): return sum(bad(t) for t in sameby)
+        rnd = random.Random(year * 31337); cur = total(); units = list(byunit)
+        for _ in range(200000):
+            if cur == 0: break
+            u = rnd.choice(units)
+            for n in byunit[u]: orient[n] = (orient[n][1], orient[n][0])
+            new = total()
+            if new <= cur or rnd.random() < 0.02: cur = new
+            else:
+                for n in byunit[u]: orient[n] = (orient[n][1], orient[n][0])
+        assert cur == 0, f"could not satisfy same-finish home/away rule ({cur} clubs)"
     for n, (a, b, k) in enumerate(edges):
         host, vis = orient[n]; out.append({"host": host, "visitor": vis, "kind": k})
     for i, g in enumerate(out): g['id'] = f'G{i}'
