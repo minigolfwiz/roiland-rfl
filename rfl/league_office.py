@@ -7,6 +7,7 @@ Two jobs, both decided by Dan before the next week is played:
 
 Usage:
   python3 rfl/league_office.py ballot N        # build the ballot for the week just played (once; saved to data/office/; also saves the state)
+  python3 rfl/league_office.py preseason       # the week-0 ballot of a new season (Thursday/Monday desk, first Sunday weeks, offseason cases)
   python3 rfl/league_office.py apply N file    # apply Dan's decisions (json from the page's db doc) to the state
 """
 import sys, os, json, math, random, re
@@ -232,6 +233,69 @@ def offseason_ballot(S, week=21):
     B = dict(year=se['year'], week=week, potw=dict(off=[], defense=[], st=[]), cases=cases, rates=[dict(tier=t, mean=m) for t, m in RATES], open=open_storylines(S))
     json.dump(B, open(path, 'w'), indent=1); return B
 
+# ----------------------------------------------------------------------------- pre-season ballot (week 0): Thursday and Monday nights for the whole year, the first Sunday weeks, offseason cases
+OFFSEASON_WEEKS = 20           # the offseason is long: the weekly draw rates for serious, major and club cases run for this many "weeks" (minor and moderate cases come from games, so none)
+OFFSEASON_CLUB = ('tampering', 'cap', 'draft_leak', 'owner_comments')      # club matters that make sense with no game behind them
+
+def preseason_cases(S):
+    """Offseason cases for the week-0 ballot. Serious and felony types build from the roster; club types use one pseudo-game per club so the generator has a subject
+    (the game itself is never cited: game=None, and these types print no game detail)."""
+    se = S['season']; year = se['year']; o = CS.office(S); rnd = random.Random(f'league-office-{year}-0'); now = CS.tick(S, 0)
+    clubs = sorted(S['clubs']); pres = [dict(id=None, home=c, away=rnd.choice([x for x in clubs if x != c]), week=0, pens=[], plays=[], injuries=[]) for c in clubs]
+    cases = []; used = set()
+    for tier, mean in RATES:
+        if tier not in ('serious', 'major', 'club'): continue
+        types = [(k, w) for k, w in CS.tier_types(tier) if tier != 'club' or k in OFFSEASON_CLUB]
+        n = CS.poisson(rnd, mean * OFFSEASON_WEEKS)
+        for _ in range(n):
+            for _try in range(16):
+                key = rnd.choices([k for k, w in types], [w for k, w in types])[0]
+                r = CS.build_case(S, rnd, key, 0, pres, used)
+                if r: break
+            else: continue
+            c, story = r; c['tier'] = tier; c['_story'] = story; cases.append(c); used.update(c['pids'])
+    order = {'major': 0, 'serious': 1, 'club': 2}
+    cases.sort(key=lambda c: order[c['tier']])
+    for i, c in enumerate(cases):
+        c['id'] = f"W0-{i + 1}"; c['week'] = 0
+        story = c.pop('_story', None); c.pop('_it', None)
+        if story:
+            sid = f"{year}:{c['id']}"; story.update(week=0, year=year, summary=c['text'].split('\n\n')[0], chain=[]); o['pending'][sid] = story; c['sid'] = sid
+        c.pop('facts', None)
+    return cases
+
+def preseason_ballot(S):
+    """The first ballot of a season: Thursday/Monday for all 20 weeks, Sunday primetime for weeks 1-3, and any offseason cases. Never re-drawn."""
+    from rfl import broadcast_data as BD
+    se = S['season']; assert se['week_done'] == 0, 'pre-season ballot is only for an unplayed season'
+    path = f'{ROOT}/data/office/ballot_{se["year"]}_w0.json'
+    if os.path.exists(path): raise SystemExit(f'ballot already exists: {path} (never re-draw a ballot)')
+    cases = preseason_cases(S)
+    B = dict(year=se['year'], week=0, potw=dict(off=[], defense=[], st=[]), cases=cases, rates=[dict(tier=t, mean=m) for t, m in RATES], open=open_storylines(S))
+    B['prime'] = prime_ballot(S, 0); B['teamPrime'] = prime_counts(S); B['broadcast'] = BD.build(S)
+    os.makedirs(f'{ROOT}/data/office', exist_ok=True)
+    json.dump(B, open(path, 'w'), indent=1); return B
+
+def apply_broadcast(S, bc):
+    """Thursday and Monday nights for the whole season: bc = {week: {thu: gid, mnf: gid}}; weeks 1-20 Thursday, weeks 1-19 Monday (no Monday game in week 20)."""
+    se = S['season']; out = []; log = se.setdefault('broadcast_log', {})
+    for w in range(1, 21):
+        pk = bc.get(str(w)) or {}; gs = {g['id']: g for g in se['schedule'][str(w)]}
+        need = ('thu',) if w == 20 else ('thu', 'mnf')
+        ids = [pk.get(sl) for sl in need]
+        if None in ids or len(set(ids)) != len(ids) or any(i not in gs for i in ids): raise SystemExit(f'bad Thursday/Monday picks for week {w}: {pk}')
+        for g in gs.values():
+            if g['slot'] in ('thu', 'mnf'): g['slot'] = 'sun'
+        log[str(w)] = {}
+        for sl, gid in zip(need, ids):
+            g = gs[gid]; g['slot'] = sl; log[str(w)][sl] = dict(id=gid, host=g['host'], visitor=g['visitor'])
+            out.append(f"Week {w} {'Thursday' if sl == 'thu' else 'Monday'} night: {g['visitor']} at {g['host']}")
+    slots = {str(w): {sl: f"{v['visitor']} at {v['host']}" for sl, v in log[str(w)].items()} for w in range(1, 21)}
+    path = f'{ROOT}/data/rfl_broadcast_slots_{se["year"]}.json'; f = json.load(open(path)); f['slots'] = slots
+    f['note'] = f"Dan's Thursday and Monday night picks for {se['year']} from the League Office (Broadcast Desk); Sunday primetime is picked three weeks ahead and logged in the state (prime_log). Week 20 has Thursday only."
+    json.dump(f, open(path, 'w'), indent=1)
+    return out
+
 def open_storylines(S):
     """Public one-liners about matters still open (never the hidden truth)."""
     o = CS.office(S); now = CS.tick(S); out = []
@@ -259,6 +323,7 @@ def apply(S, week, dec):
         out.append(f"{label}: {c['name']} ({c['pos']}, {c['club']}) {c['line']}")
     se['potw'][str(week)] = win
     migrate_prime(S)
+    if dec.get('broadcast'): out += apply_broadcast(S, dec['broadcast'])
     for wk_, pk in (dec.get('prime') or {}).items():
         w_ = int(wk_); gs = {g['id']: g for g in se['schedule'][str(w_)]}
         ids = [pk.get(sl) for sl in PRIME_SLOTS]
@@ -292,6 +357,9 @@ if __name__ == '__main__':
         B = ballot(S, int(sys.argv[2])); save(S, STATE); write_project_state(S, Z64)
         print(json.dumps({'cases': [(c['id'], c['tier'], c['title'], [w['name'] for w in c['who']], c['severity']) for c in B['cases']],
                           'potw': {k: [(x['name'], x['pos'], x['club'].split()[-1], x['line']) for x in v] for k, v in B['potw'].items()}}, indent=1))
+    elif cmd == 'preseason':
+        B = preseason_ballot(S); save(S, STATE); write_project_state(S, Z64)
+        print(json.dumps({'cases': [(c['id'], c['tier'], c['title'], [w['name'] for w in c['who']], c['severity']) for c in B['cases']]}, indent=1))
     elif cmd == 'offseason':
         B = offseason_ballot(S); save(S, STATE); write_project_state(S, Z64); print([(c['id'], c['title'], [w['name'] for w in c['who']], c['severity']) for c in B['cases']])
     elif cmd == 'apply':

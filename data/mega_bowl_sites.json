@@ -27,6 +27,15 @@
    "city": "Marymond",
    "state": "Wolford",
    "stadium": "One Wolford Stadium"
+  },
+  {
+   "year": 2046,
+   "host": "Port Logan Commodores",
+   "conf": "Majestic",
+   "div": "East",
+   "city": "Port Logan",
+   "state": "Fiota",
+   "stadium": "Lumber Bowl"
   }
  ]
 }

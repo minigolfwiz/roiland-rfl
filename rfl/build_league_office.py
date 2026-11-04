@@ -9,11 +9,15 @@ week = int(os.environ.get('RFL_OFFICE_WEEK', se['week_done']))
 bpath = f'{ROOT}/data/office/ballot_{year}_w{week}.json'
 pending = os.path.exists(bpath) and str(week) not in se.get('potw', {})
 B = json.load(open(bpath)) if pending else None
-season_page = open(f'{ROOT}/out/rfl_season_{year}.html').read()
+import glob, re
+_sp = f'{ROOT}/out/rfl_season_{year}.html'
+if not os.path.exists(_sp):      # new season, page not built yet: the club brand block is the same every year
+    _sp = sorted(glob.glob(f'{ROOT}/out/rfl_season_*.html'), key=lambda p: int(re.search(r'(\d{4})', os.path.basename(p)).group(1)))[-1]
+season_page = open(_sp).read()
 i = season_page.index('const BRAND = '); BRAND = season_page[i:season_page.index('\n', i)]
 j = season_page.index('const _lum = '); k = season_page.index('function tmn(')
 CHIPJS = season_page[j:season_page.index('\n', k)]
-hist = dict(potw=se.get('potw', {}), discipline=se.get('discipline', []), prime=se.get('prime_log', {}))
+hist = dict(potw=se.get('potw', {}), discipline=se.get('discipline', []), prime=se.get('prime_log', {}), broadcast=se.get('broadcast_log', {}))
 from rfl.cases import RATES
 D = dict(year=year, week=week, ballot=B, hist=hist, rates=RATES)
 
@@ -82,10 +86,11 @@ details{margin-top:6px} summary{cursor:pointer;font-family:var(--display);font-w
 .pk{background:var(--paper);border-radius:8px;padding:6px 10px;margin:4px 0 8px;font-size:13.5px} .pk div{margin:2px 0} .pk b{font-family:var(--display);letter-spacing:.06em;text-transform:uppercase;font-size:12.5px}
 .blurb{display:block;color:var(--dim);font-size:12.5px;margin-top:1px}
 .note{font-size:12.5px;color:var(--dim)} .warn{color:var(--serious)}
+__DESKCSS__
 </style>
 <div class="wrap">
 <h1>League Office</h1>
-<p class="sub">Your desk between weeks. Pick the Sunday primetime games three weeks ahead, rule on any cases, and submit. Then tell Claude, and the next week plays.</p>
+<p class="sub" id="sub">Your desk between weeks. Pick the Sunday primetime games three weeks ahead, rule on any cases, and submit. Then tell Claude, and the next week plays.</p>
 <div id="status" class="status"><span class="dot"></span><span id="stxt"></span></div>
 <div id="main"></div>
 <h2>How often cases come<small>drawn at random, no quota</small></h2>
@@ -94,10 +99,12 @@ details{margin-top:6px} summary{cursor:pointer;font-family:var(--display);font-w
 <h2>The record<small>decided weeks</small></h2>
 <div id="hist"></div>
 </div>
-<div class="bar" id="bar" hidden><div class="in"><span class="need" id="need"></span><span><button class="ghost" id="copy" type="button" hidden>Copy summary</button> <button id="submit" type="button" disabled>Submit decisions</button></span></div></div>
+<dialog id="bdhist" aria-label="Club history"><form method="dialog" class="hhead"><button class="btab" type="submit">Close</button></form><div class="hbody"></div></dialog>
+<div class="bar" id="bar" hidden><div class="in"><span class="need" id="need"></span><span><button class="ghost" id="copy" type="button" hidden>Copy summary</button> <button id="submit" type="button" disabled>Submit decisions</button></span><span class="note" id="auto" style="flex-basis:100%"></span></div></div>
 <script>
 __BRAND__
 __CHIPJS__
+__DESKJS__
 const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const D = __DATA__;
 const $ = id => document.getElementById(id);
@@ -120,20 +127,36 @@ function option(o, name){
 const SLOTS = [['sam','Morning'],['spm','Afternoon'],['snf','Evening']];
 const rc = r => r[0] + '-' + r[1] + (r[2] ? '-' + r[2] : '');
 function teamLine(t, r, st, home){
-  const p = (D.ballot.teamPrime || {})[t] || {ph:0, pa:0, bh:0, ba:0};
   const gb = st.gb ? (st.gb + ' back') : 'leads';
-  return `<div>${chip(t, true)} <b>${rc(r)}</b> · ${st.rank === 1 ? '1st' : st.rank === 2 ? '2nd' : st.rank === 3 ? '3rd' : st.rank + 'th'} in ${esc(st.div)}${st.rank === 1 ? '' : ' (' + gb + ')'} · primetime so far and booked: ${p.ph + p.bh} home / ${p.pa + p.ba} away</div>`;
+  return `<div>${chip(t, true)} <b>${rc(r)}</b> · ${st.rank === 1 ? '1st' : st.rank === 2 ? '2nd' : st.rank === 3 ? '3rd' : st.rank + 'th'} in ${esc(st.div)}${st.rank === 1 ? '' : ' (' + gb + ')'} · primetime so far and booked: <span class="pc" data-t="${esc(t)}"></span></div>`;
 }
+// each club's primetime games: played plus booked before this page, plus everything picked on this page right now (Thursday, Monday and Sunday)
+function sundayApp(){
+  const m = {}, st = primeState();
+  for (const W of (B.prime || [])){ const by = {}; W.games.forEach(g => by[g.id] = g);
+    for (const k in (st[W.week] || {})){ const g = by[st[W.week][k]]; if (!g) continue; (m[g.host] = m[g.host] || {h:0, a:0}).h++; (m[g.visitor] = m[g.visitor] || {h:0, a:0}).a++; } }
+  return m;
+}
+function liveCounts(){
+  const T = B.teamPrime || {}, o = {};
+  for (const t in T) o[t] = {h: T[t].ph + T[t].bh, a: T[t].pa + T[t].ba};
+  const add = m => { for (const t in m){ o[t] = o[t] || {h:0, a:0}; o[t].h += m[t].h; o[t].a += m[t].a; } };
+  if (B.broadcast) add(Desk.own());
+  add(sundayApp());
+  return o;
+}
+const SUNLABEL = {sam:'Sunday morning', spm:'Sunday afternoon', snf:'Sunday evening'};
+function sundayLabel(gid){ const x = $('ps-' + gid); return x && x.value ? SUNLABEL[x.value] : null; }
 function primeHTML(){
   const P = B.prime || []; if (!P.length) return '';
-  let h = `<h2>Sunday primetime<small>${P.length === 1 ? 'week ' + P[0].week : 'weeks ' + P[0].week + ' to ' + P[P.length - 1].week}</small></h2><p class="hint">For each week, choose the morning, afternoon and evening primetime game from that week's Sunday games. Thursday and Monday games are already set. Each club shows its current record, its division standing, and its total primetime games, played plus already booked (home / away). That counts Thursday, Monday and any Sunday picks already made.</p>`;
+  let h = `<h2>Sunday primetime<small>${P.length === 1 ? 'week ' + P[0].week : 'weeks ' + P[0].week + ' to ' + P[P.length - 1].week}</small></h2><p class="hint">For each week, choose the morning, afternoon and evening primetime game from that week's Sunday games. ${B.broadcast ? 'A game you set as Thursday or Monday night in the Broadcast Desk above is not available here.' : 'Thursday and Monday games are already set.'} Each club shows its current record, its division standing, and its total primetime games, played plus already booked plus whatever you have picked on this page (home / away).</p>`;
   for (const W of P){
-    h += `<div class="grp" data-week="${W.week}"><h3>Week ${W.week}</h3><div class="pk" id="pk-${W.week}"></div>` + W.games.map(g => `<div class="pg" id="pg-${g.id}"><div class="row"><div class="tms">${chip(g.visitor, true)} <span class="rs">at</span> ${chip(g.host, true)} <span class="rs">${esc(g.kind)}</span></div>
+    h += `<div class="grp" data-week="${W.week}"><h3>Week ${W.week}</h3><div class="pk" id="pk-${W.week}"></div>` + W.games.map(g => `<div class="pg" id="pg-${g.id}"><div class="row"><div class="tms">${chip(g.visitor, true)} <span class="rs">at</span> ${chip(g.host, true)} <span class="rs">${esc(g.kind)}</span> <span class="rs warn" id="pt-${g.id}"></span></div>
       <select id="ps-${g.id}" data-week="${W.week}" aria-label="Slot for ${esc(g.visitor)} at ${esc(g.host)}"><option value="">Not primetime</option>${SLOTS.map(([k, l]) => `<option value="${k}">${l} primetime</option>`).join('')}</select></div>
       <div class="tl">${teamLine(g.visitor, g.vr, g.vs)}${teamLine(g.host, g.hr, g.hs)}</div></div>`).join('') + `<div class="pk" id="pk2-${W.week}"></div></div>`;
   }
   const T = B.teamPrime || {}; const rows = Object.keys(T).sort((a, b) => (T[b].ph + T[b].pa + T[b].bh + T[b].ba) - (T[a].ph + T[a].pa + T[a].bh + T[a].ba) || a.localeCompare(b));
-  h += `<details><summary>Every club's primetime games</summary><div class="tw"><table><tr><th>Club</th><th>Home</th><th>Away</th><th>Total</th></tr>` + rows.map(t => `<tr><td>${chip(t, true)}</td><td class="n">${T[t].ph + T[t].bh}</td><td class="n">${T[t].pa + T[t].ba}</td><td class="n">${T[t].ph + T[t].bh + T[t].pa + T[t].ba}</td></tr>`).join('') + '</table></div></details>';
+  h += `<details><summary>Every club's primetime games</summary><div class="tw"><table><tr><th>Club</th><th>Home</th><th>Away</th><th>Total</th></tr>` + rows.map(t => `<tr data-t="${esc(t)}"><td>${chip(t, true)}</td><td class="n h"></td><td class="n a"></td><td class="n tot"></td></tr>`).join('') + '</table></div></details>';
   return h;
 }
 function primeState(){
@@ -142,6 +165,10 @@ function primeState(){
   return out;
 }
 function refreshPrime(){
+  for (const W of (B.prime || [])) for (const g of W.games){      // a Thursday or Monday pick on the Broadcast Desk takes the game out of the Sunday list
+    const dk = B.broadcast ? Desk.slotOf(g.id) : null, sel = $('ps-' + g.id), pt = $('pt-' + g.id);
+    if (dk){ sel.value = ''; sel.disabled = true; pt.textContent = dk + ' (Broadcast Desk)'; } else { sel.disabled = false; pt.textContent = ''; }
+  }
   const st = primeState();
   for (const W of (B.prime || [])){
     const o = st[W.week] || {}; const by = {}; W.games.forEach(g => by[g.id] = g);
@@ -149,14 +176,18 @@ function refreshPrime(){
     $('pk-' + W.week).innerHTML = pkh; $('pk2-' + W.week).innerHTML = pkh;
     W.games.forEach(g => $('pg-' + g.id).classList.toggle('sel', !!$('ps-' + g.id).value));
   }
+  const LC = liveCounts();
+  document.querySelectorAll('.pc').forEach(e => { const c = LC[e.dataset.t] || {h:0, a:0}; e.textContent = c.h + ' home / ' + c.a + ' away'; });
+  document.querySelectorAll('tr[data-t]').forEach(r => { const c = LC[r.dataset.t] || {h:0, a:0}; r.querySelector('.h').textContent = c.h; r.querySelector('.a').textContent = c.a; r.querySelector('.tot').textContent = c.h + c.a; });
 }
 function render(){
   const m = $('main');
   if (!B){ m.innerHTML = '<div class="empty">Nothing is waiting. The ballot for the next week appears here once that week has been played.</div>'; $('bar').hidden = true;
     $('status').classList.add('done'); $('stxt').innerHTML = '<b>All caught up.</b> Week ' + WK + ' is decided.'; return; }
-  let h = primeHTML();
-  h += `<h2>Cases<small>${B.cases.length ? B.cases.length + ' this week' : 'none this week'}</small></h2>`;
-  if (!B.cases.length) h += '<div class="empty">No cases reached the league office this week.</div>';
+  if (WK === 0) $('sub').textContent = 'The first desk of the season. Set Thursday and Monday night for all 20 weeks, pick Sunday primetime for weeks 1 to 3, rule on anything that reached the league office over the offseason, and submit. Your picks save as a draft as you go. Then tell Claude, and week 1 plays.';
+  let h = (B.broadcast ? '<div id="bd"></div>' : '') + primeHTML();
+  h += `<h2>${WK === 0 ? 'Offseason cases' : 'Cases'}<small>${B.cases.length ? B.cases.length + (WK === 0 ? ' to rule on' : ' this week') : (WK === 0 ? 'none' : 'none this week')}</small></h2>`;
+  if (!B.cases.length) h += '<div class="empty">' + (WK === 0 ? 'No matters reached the league office over the offseason.' : 'No cases reached the league office this week.') + '</div>';
   for (const c of B.cases){
     const sev = c.severity ? `<span class="sev t-${c.tier}" style="--c:var(--${c.tier})">Severity <i><b style="width:${Math.round(c.severity * 10)}%"></b></i>${c.severity.toFixed(1)}</span>` : '';
     const paras = String(c.text || '').split('\n\n').map(x => '<p>' + esc(x) + '</p>').join('');
@@ -171,8 +202,9 @@ function render(){
     for (const a of B.awards) h += `<div class="case"><h3>${esc(a.key)}<span class="rs"> · ${esc(a.award)}</span></h3><div style="margin-top:8px">${a.finalists.map(f => `<label class="opt"><input type="radio" name="aw-${esc(a.key)}" value="${esc(f.id)}"><span><span class="nm">${esc(f.name)}</span><span class="pos">${esc(f.pos)}</span> ${chip(f.club, true)}<div class="ln">${esc(f.line)}</div></span></label>`).join('')}</div></div>`; }
   if ((B.open || []).length) h += `<h2>Open matters<small>still unresolved</small></h2><div class="ctx">` + B.open.map(x => `<div>${esc(x.title)}: <span class="nm">${esc(x.who)}</span> ${chip(x.club, true)} <span class="rs">${esc(x.since)}${x.ruling ? ' · your ruling: ' + esc(x.ruling) : ''}</span></div>`).join('') + '</div>';
   m.innerHTML = h; $('bar').hidden = false;
-  m.addEventListener('change', e => { const t = e.target; if (t.tagName === 'SELECT' && t.id.startsWith('ps-') && t.value){ document.querySelectorAll(`select[data-week="${t.dataset.week}"]`).forEach(x => { if (x !== t && x.value === t.value) x.value = ''; }); } refreshPrime(); update(); });
-  m.addEventListener('input', e => { if (e.target.tagName === 'TEXTAREA') dirty(); });
+  if (B.broadcast){ Desk.hooks.change = () => { refreshPrime(); update(); autosave(); }; Desk.hooks.sunday = sundayLabel; Desk.hooks.sundayApp = sundayApp; Desk.mount($('bd'), B.broadcast); }
+  m.addEventListener('change', e => { const t = e.target; if (t.tagName === 'SELECT' && t.id.startsWith('ps-') && t.value){ document.querySelectorAll(`select[data-week="${t.dataset.week}"]`).forEach(x => { if (x !== t && x.value === t.value) x.value = ''; }); } refreshPrime(); if (B.broadcast) Desk.render(); update(); autosave(); });
+  m.addEventListener('input', e => { if (e.target.tagName === 'TEXTAREA'){ dirty(); autosave(); } });
   refreshPrime(); update();
 }
 function val(name){ const x = document.querySelector(`input[name="${name}"]:checked`); return x ? x.value : null; }
@@ -180,23 +212,29 @@ function collect(){
   const prime = primeState();
   const rulings = {}; for (const c of B.cases){ const v = val('c-' + c.id); if (v) rulings[c.id] = {key: v, note: ($('note-' + c.id).value || '').trim()}; }
   const awards = {}; for (const a of (B.awards || [])){ const v = val('aw-' + a.key); if (v) awards[a.key] = v; }
-  return {week: WK, prime, rulings, awards};
+  const o = {week: WK, prime, rulings, awards}; if (B.broadcast) o.broadcast = Desk.get(); return o;
 }
 function missing(){
   const d = collect(); let n = 0;
   for (const W of (B.prime || [])) for (const [k] of SLOTS) if (!(d.prime[W.week] || {})[k]) n++;
+  if (B.broadcast) n += Desk.missing();
   for (const c of B.cases) if (!d.rulings[c.id]) n++;
   for (const a of (B.awards || [])) if (!d.awards[a.key]) n++;
   return n;
 }
 function summary(){
-  const d = collect(); const L = ['Week ' + WK + ' decisions'];
+  const d = collect(); const L = [WK === 0 ? 'Preseason decisions' : 'Week ' + WK + ' decisions'];
+  if (B.broadcast) L.push(...Desk.lines());
   for (const W of (B.prime || [])){ const o = d.prime[W.week] || {}; for (const [k, l] of SLOTS){ const g = W.games.find(x => x.id === o[k]); if (g) L.push('Week ' + W.week + ' Sunday ' + l.toLowerCase() + ': ' + g.visitor + ' at ' + g.host); } }
   for (const c of B.cases){ const r = d.rulings[c.id]; if (r){ const o = c.options.find(x => x.key === r.key); L.push(c.id + ' ' + c.title + ' - ' + c.who.map(w => w.name).join(' & ') + ': ' + o.label + (r.note ? ' [' + r.note + ']' : '')); } }
   for (const a of (B.awards || [])){ const v = d.awards[a.key]; const f = a.finalists.find(x => x.id === v); if (f) L.push(a.key + ': ' + f.name + ' (' + f.club + ')'); }
   return L.join('\n');
 }
-let saved = false, dbRef = null;
+let saved = false, dbRef = null, submittedAt = null, tAuto = null;
+function autosave(){      // every change is kept as a draft in the same db doc, so nothing is lost if the page closes; submit stamps it as final
+  if (!dbRef) return; clearTimeout(tAuto);
+  tAuto = setTimeout(async () => { try { const d = collect(); d.submitted = null; d.draft = true; d.updated = new Date().toISOString(); submittedAt = null; await dbRef.set(d); $('auto').textContent = 'Draft saved.'; } catch (e) { $('auto').textContent = 'Draft could not be saved from this view.'; } }, 900);
+}
 function dirty(){ if (saved){ saved = false; update(); } }
 function update(){
   if (!B) return; if (saved) saved = false;
@@ -205,10 +243,11 @@ function update(){
 }
 function setStatus(){
   const s = $('status'); s.classList.toggle('done', saved);
-  $('stxt').innerHTML = saved ? '<b>Submitted.</b> Tell Claude you are done and week ' + (WK + 1) + ' plays. You can still change answers until then.' : '<b>Waiting on you.</b> ' + (WK > 20 ? 'The season is over; these matters came due.' : 'Week ' + WK + ' is played.') + ' Make your picks and rulings, then submit.';
+  $('stxt').innerHTML = saved ? '<b>Submitted.</b> Tell Claude you are done and week ' + (WK + 1) + ' plays. You can still change answers until then.' : '<b>Waiting on you.</b> ' + (WK === 0 ? 'The season has not started.' : WK > 20 ? 'The season is over; these matters came due.' : 'Week ' + WK + ' is played.') + ' Make your picks and rulings, then submit.';
 }
 function apply(d){
   if (!d) return;
+  if (d.broadcast && B.broadcast) Desk.load(d.broadcast);
   for (const wk in (d.prime || {})) for (const sl in d.prime[wk]){ const x = $('ps-' + d.prime[wk][sl]); if (x) x.value = sl; }
   refreshPrime();
   for (const k in (d.awards || {})){ const x = document.querySelector(`input[name="aw-${k}"][value="${d.awards[k]}"]`); if (x) x.checked = true; }
@@ -218,11 +257,11 @@ async function init(){
   render();
   if (B){
     try { const db = await claude.use('db'); if (db){ dbRef = db.doc(D.year === 2043 ? 'office/w' + WK : 'office/y' + D.year + 'w' + WK);
-        const snap = await dbRef.get(); if (snap.exists){ apply(snap.data()); update(); saved = true; setStatus(); } } } catch (e) {}
+        const snap = await dbRef.get(); if (snap.exists){ const sd = snap.data(); apply(sd); submittedAt = sd.submitted || null; update(); saved = !!sd.submitted; setStatus(); if (!sd.submitted && sd.updated) $('auto').textContent = 'Draft restored.'; } } } catch (e) {}
     $('copy').hidden = !!dbRef; if (!dbRef){ $('copy').hidden = false; }
     $('submit').onclick = async () => {
-      const d = collect(); d.submitted = new Date().toISOString(); $('submit').disabled = true;
-      try { if (!dbRef) throw new Error('nodb'); await dbRef.set(d); saved = true; $('need').textContent = 'Saved.'; setStatus(); }
+      clearTimeout(tAuto); const d = collect(); d.submitted = new Date().toISOString(); $('submit').disabled = true;
+      try { if (!dbRef) throw new Error('nodb'); await dbRef.set(d); saved = true; submittedAt = d.submitted; $('auto').textContent = ''; $('need').textContent = 'Saved.'; setStatus(); }
       catch (e) { $('need').innerHTML = '<span class="warn">Could not save from this view.</span> Use Copy summary and paste it to Claude.'; $('copy').hidden = false; $('submit').disabled = false; }
     };
     $('copy').onclick = async () => { const t = summary(); try { await navigator.clipboard.writeText(t); $('need').textContent = 'Summary copied.'; } catch (e) { $('need').textContent = 'Copy blocked. Select and copy from the note below.'; const pre = document.createElement('textarea'); pre.value = t; pre.readOnly = true; pre.rows = 6; $('main').appendChild(pre); pre.select(); } };
@@ -232,18 +271,20 @@ async function init(){
 function renderHist(){
   const H = D.hist, weeks = Object.keys(H.potw).map(Number).sort((a, b) => b - a);
   const pw = Object.keys(H.prime || {}).map(Number).sort((a, b) => b - a);
+  const bw = Object.keys(H.broadcast || {}).map(Number).sort((a, b) => a - b);
   let h = '';
+  if (bw.length) h += '<h3 style="font-family:var(--display);letter-spacing:.06em;text-transform:uppercase;margin:6px 0">Thursday and Monday nights</h3><div class="rec">' + bw.map(w => { const p = H.broadcast[w]; return `<div style="margin:3px 0"><b>WEEK ${w}</b> ` + [['thu','Thursday'],['mnf','Monday']].filter(x => p[x[0]]).map(x => `${x[1]}: ${chip(p[x[0]].visitor, true)} <span class="rs">at</span> ${chip(p[x[0]].host, true)}`).join(' &middot; ') + '</div>'; }).join('') + '</div>';
   if (pw.length) h += '<h3 style="font-family:var(--display);letter-spacing:.06em;text-transform:uppercase;margin:6px 0">Sunday primetime picks</h3>' + pw.map(w => { const p = H.prime[w]; return `<div class="rec"><b>WEEK ${w}</b>` + [['sam','Morning'],['spm','Afternoon'],['snf','Evening']].filter(x => p[x[0]]).map(x => `<div>${x[1]}: ${chip(p[x[0]].visitor, true)} <span class="rs">at</span> ${chip(p[x[0]].host, true)}</div>`).join('') + '</div>'; }).join('');
   const withCases = weeks.filter(w => H.discipline.some(d => d.week === w));
-  if (!pw.length && !withCases.length){ $('hist').innerHTML = '<div class="empty">No weeks decided yet. Your first picks and rulings will be recorded here.</div>'; return; }
+  if (!pw.length && !bw.length && !withCases.length){ $('hist').innerHTML = '<div class="empty">No weeks decided yet. Your first picks and rulings will be recorded here.</div>'; return; }
   h += '<h3 style="font-family:var(--display);letter-spacing:.06em;text-transform:uppercase;margin:14px 0 6px">Case rulings</h3>' + withCases.map(w => {
     const cases = H.discipline.filter(d => d.week === w);
-    return `<div class="rec"><b>WEEK ${w}</b>` +
+    return `<div class="rec"><b>${w ? 'WEEK ' + w : 'PRESEASON'}</b>` +
       '<div style="margin-top:6px">' + cases.map(c => `<div><span class="pill t-${c.tier}">${TIER[c.tier] || c.tier}</span> ${esc(c.title)}: ${c.who.map(esc).join(' &amp; ')} (${c.clubs.map(x => chip(x, true)).join(' ')}) <b>${esc(c.ruling)}</b>${c.note ? ' <span class="rs">' + esc(c.note) + '</span>' : ''}</div>`).join('') + '</div></div>'; }).join('');
   $('hist').innerHTML = h;
 }
 init();
 </script>
 """
-page = HTML.replace('__BRAND__', BRAND).replace('__CHIPJS__', CHIPJS).replace('__DATA__', json.dumps(D, separators=(',', ':'), ensure_ascii=False))
+page = HTML.replace('__DESKCSS__', open(f'{ROOT}/rfl/lo_desk.css').read()).replace('__DESKJS__', open(f'{ROOT}/rfl/lo_desk.js').read()).replace('__BRAND__', BRAND).replace('__CHIPJS__', CHIPJS).replace('__DATA__', json.dumps(D, separators=(',', ':'), ensure_ascii=False))
 out = f'{ROOT}/out/league_office_{year}.html'; open(out, 'w').write(page); print(out, len(page) // 1024, 'KB', 'pending week' if pending else 'no pending ballot', week)
