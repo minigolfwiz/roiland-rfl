@@ -195,8 +195,50 @@
       "sub": false,
       "v": "Antiragal State",
       "week": 3
+    },
+    {
+      "h": "Tengus State",
+      "sid": null,
+      "sub": false,
+      "v": "Yrei Trobniy",
+      "week": 1
+    },
+    {
+      "h": "Tengus State",
+      "sid": null,
+      "sub": true,
+      "v": "Lawiiri",
+      "week": 2
+    },
+    {
+      "h": "Tengus State",
+      "sid": null,
+      "sub": false,
+      "v": "Palisades",
+      "week": 3
+    },
+    {
+      "h": "Skylar Rose",
+      "sid": null,
+      "sub": false,
+      "v": "Eastern State",
+      "week": 2
+    },
+    {
+      "h": "Far Farris State",
+      "sid": null,
+      "sub": false,
+      "v": "Hatesei",
+      "week": 1
+    },
+    {
+      "h": "Coachville",
+      "sid": null,
+      "sub": false,
+      "v": "Leafette",
+      "week": 1
     }
   ],
-  "saved": "added by Claude",
+  "saved": "10/30/2026, 3:18:56 PM",
   "year": 2048
 }

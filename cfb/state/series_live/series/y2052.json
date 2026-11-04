@@ -153,8 +153,29 @@
       "sub": false,
       "v": "Verigon",
       "week": 3
+    },
+    {
+      "h": "UFNH",
+      "sid": null,
+      "sub": false,
+      "v": "Eastern State",
+      "week": 3
+    },
+    {
+      "h": "Eastern State",
+      "sid": null,
+      "sub": true,
+      "v": "Lawiiri South",
+      "week": 2
+    },
+    {
+      "h": "Ciarralotta State",
+      "sid": null,
+      "sub": false,
+      "v": "Orlot",
+      "week": 1
     }
   ],
-  "saved": "10/28/2026, 12:21:16 AM",
+  "saved": "10/30/2026, 3:15:13 PM",
   "year": 2052
 }

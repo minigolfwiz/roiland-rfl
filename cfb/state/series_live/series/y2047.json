@@ -176,13 +176,6 @@
       "week": 1
     },
     {
-      "h": "Hatesei",
-      "sid": null,
-      "sub": false,
-      "v": "Fiota Bay",
-      "week": 1
-    },
-    {
       "h": "Kaji Kita",
       "sid": null,
       "sub": false,
@@ -356,8 +349,15 @@
       "sub": true,
       "v": "Freyr",
       "week": 9
+    },
+    {
+      "h": "Eastern State",
+      "sid": null,
+      "sub": false,
+      "v": "UFNH",
+      "week": 2
     }
   ],
-  "saved": "10/30/2026, 1:02:07 PM",
+  "saved": "10/30/2026, 3:14:10 PM",
   "year": 2047
 }

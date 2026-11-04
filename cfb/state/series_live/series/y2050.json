@@ -195,8 +195,43 @@
       "sub": false,
       "v": "Coachville College",
       "week": 5
+    },
+    {
+      "h": "Yrei Trobniy",
+      "sid": null,
+      "sub": false,
+      "v": "Tengus State",
+      "week": 3
+    },
+    {
+      "h": "Tengus State",
+      "sid": null,
+      "sub": true,
+      "v": "St. Ballo's",
+      "week": 2
+    },
+    {
+      "h": "Tengus State",
+      "sid": null,
+      "sub": false,
+      "v": "Kaji Daun State",
+      "week": 1
+    },
+    {
+      "h": "Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "Far Farris State",
+      "week": 2
+    },
+    {
+      "h": "Hatesei",
+      "sid": null,
+      "sub": false,
+      "v": "Fiota Bay",
+      "week": 0
     }
   ],
-  "saved": "added by Claude",
+  "saved": "10/30/2026, 3:14:23 PM",
   "year": 2050
 }

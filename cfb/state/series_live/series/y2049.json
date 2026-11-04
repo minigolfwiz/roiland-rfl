@@ -188,8 +188,22 @@
       "sub": false,
       "v": "Marines",
       "week": 2
+    },
+    {
+      "h": "South Antiragal",
+      "sid": null,
+      "sub": false,
+      "v": "Skylar Rose",
+      "week": 3
+    },
+    {
+      "h": "Dove Island",
+      "sid": null,
+      "sub": false,
+      "v": "UFNH",
+      "week": 1
     }
   ],
-  "saved": "10/30/2026, 1:02:55 PM",
+  "saved": "10/30/2026, 3:08:58 PM",
   "year": 2049
 }
