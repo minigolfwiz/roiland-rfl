@@ -360,7 +360,7 @@ if __name__ == '__main__':
     if cmd == 'ballot':
         B = ballot(S, int(sys.argv[2])); save(S, STATE); write_project_state(S, Z64)
         print(json.dumps({'cases': [(c['id'], c['tier'], c['title'], [w['name'] for w in c['who']], c['severity']) for c in B['cases']],
-                          'potw': {k: [(x['name'], x['pos'], x['club'].split()[-1], x['line']) for x in v] for k, v in B['potw'].items()}}, indent=1))
+                          'potw': {k: [(x['name'], x['pos'], x['club'].split()[-1], x['line']) for x in v] for k, v in B['potw'].items() if isinstance(v, list)}}, indent=1))
     elif cmd == 'preseason':
         B = preseason_ballot(S); save(S, STATE); write_project_state(S, Z64)
         print(json.dumps({'cases': [(c['id'], c['tier'], c['title'], [w['name'] for w in c['who']], c['severity']) for c in B['cases']]}, indent=1))
