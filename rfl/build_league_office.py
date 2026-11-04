@@ -128,7 +128,7 @@ const SLOTS = [['sam','Morning'],['spm','Afternoon'],['snf','Evening']];
 const rc = r => r[0] + '-' + r[1] + (r[2] ? '-' + r[2] : '');
 function teamLine(t, r, st, home){
   const gb = st.gb ? (st.gb + ' back') : 'leads';
-  return `<div>${chip(t, true)} <b>${rc(r)}</b> · ${st.rank === 1 ? '1st' : st.rank === 2 ? '2nd' : st.rank === 3 ? '3rd' : st.rank + 'th'} in ${esc(st.div)}${st.rank === 1 ? '' : ' (' + gb + ')'} · primetime so far and booked: <span class="pc" data-t="${esc(t)}"></span></div>`;
+  return `<div>${chip(t, true)} <b>${rc(r)}</b>${st.last ? ' <span class="rs">in ' + st.last + '</span>' : ''} · ${st.last ? 'finished ' : ''}${st.rank === 1 ? '1st' : st.rank === 2 ? '2nd' : st.rank === 3 ? '3rd' : st.rank + 'th'} in ${esc(st.div)}${st.rank === 1 ? '' : ' (' + gb + ')'} · primetime so far and booked: <span class="pc" data-t="${esc(t)}"></span></div>`;
 }
 // each club's primetime games: played plus booked before this page, plus everything picked on this page right now (Thursday, Monday and Sunday)
 function sundayApp(){

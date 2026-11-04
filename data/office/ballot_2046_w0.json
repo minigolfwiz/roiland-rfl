@@ -213,24 +213,26 @@
      "visitor": "Palm Creek Leatherbacks",
      "kind": "division",
      "hr": [
-      0,
-      0,
+      5,
+      13,
       0
      ],
      "vr": [
-      0,
-      0,
+      15,
+      3,
       0
      ],
      "hs": {
       "div": "Majestic West",
-      "rank": 1,
-      "gb": 0.0
+      "rank": 5,
+      "gb": 10.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic West",
-      "rank": 4,
-      "gb": 0.0
+      "rank": 1,
+      "gb": 0.0,
+      "last": 2045
      }
     },
     {
@@ -239,24 +241,26 @@
      "visitor": "North Hatesei Bees",
      "kind": "division",
      "hr": [
-      0,
-      0,
+      7,
+      11,
       0
      ],
      "vr": [
-      0,
-      0,
+      14,
+      4,
       0
      ],
      "hs": {
       "div": "Majestic West",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 4,
+      "gb": 8.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic West",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 1.0,
+      "last": 2045
      }
     },
     {
@@ -265,24 +269,26 @@
      "visitor": "Lornaman Renegades",
      "kind": "division",
      "hr": [
-      0,
-      0,
+      13,
+      5,
       0
      ],
      "vr": [
-      0,
-      0,
+      7,
+      11,
       0
      ],
      "hs": {
       "div": "Majestic South",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 1,
+      "gb": 0.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic South",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 5,
+      "gb": 6.0,
+      "last": 2045
      }
     },
     {
@@ -291,24 +297,26 @@
      "visitor": "Sarkady Beavers",
      "kind": "division",
      "hr": [
-      0,
-      0,
-      0
+      12,
+      5,
+      1
      ],
      "vr": [
-      0,
-      0,
-      0
+      4,
+      13,
+      1
      ],
      "hs": {
       "div": "Regal North",
       "rank": 1,
-      "gb": 0.0
+      "gb": 0.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal North",
       "rank": 5,
-      "gb": 0.0
+      "gb": 8.0,
+      "last": 2045
      }
     },
     {
@@ -317,24 +325,26 @@
      "visitor": "Wolford Dragons",
      "kind": "conference",
      "hr": [
-      0,
-      0,
+      9,
+      9,
       0
      ],
      "vr": [
-      0,
-      0,
+      9,
+      9,
       0
      ],
      "hs": {
       "div": "Regal South",
-      "rank": 1,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 1.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal West",
-      "rank": 5,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 0.5,
+      "last": 2045
      }
     },
     {
@@ -343,24 +353,26 @@
      "visitor": "Hughes City Asteroids",
      "kind": "conference",
      "hr": [
-      0,
-      0,
+      11,
+      7,
       0
      ],
      "vr": [
-      0,
-      0,
+      9,
+      9,
       0
      ],
      "hs": {
       "div": "Regal East",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 0.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal South",
-      "rank": 5,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 1.0,
+      "last": 2045
      }
     },
     {
@@ -369,24 +381,26 @@
      "visitor": "Tengus City Terrors",
      "kind": "conference",
      "hr": [
-      0,
-      0,
+      8,
+      10,
       0
      ],
      "vr": [
-      0,
-      0,
-      0
+      9,
+      8,
+      1
      ],
      "hs": {
       "div": "Majestic West",
-      "rank": 5,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 7.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic North",
-      "rank": 5,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 2.0,
+      "last": 2045
      }
     },
     {
@@ -395,24 +409,26 @@
      "visitor": "Costique Bearcats",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
+      5,
+      13,
       0
      ],
      "vr": [
-      0,
-      0,
+      9,
+      9,
       0
      ],
      "hs": {
       "div": "Majestic North",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 5,
+      "gb": 6.5,
+      "last": 2045
      },
      "vs": {
       "div": "Regal North",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 3.5,
+      "last": 2045
      }
     },
     {
@@ -421,24 +437,26 @@
      "visitor": "Port Logan Commodores",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
-      0
+      11,
+      6,
+      1
      ],
      "vr": [
-      0,
-      0,
-      0
+      9,
+      8,
+      1
      ],
      "hs": {
       "div": "Regal North",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 1.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic East",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 0.0,
+      "last": 2045
      }
     },
     {
@@ -447,24 +465,26 @@
      "visitor": "Diveo Demons",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
+      7,
+      11,
       0
      ],
      "vr": [
-      0,
-      0,
-      0
+      7,
+      10,
+      1
      ],
      "hs": {
       "div": "Majestic East",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 5,
+      "gb": 2.5,
+      "last": 2045
      },
      "vs": {
       "div": "Regal North",
       "rank": 4,
-      "gb": 0.0
+      "gb": 5.0,
+      "last": 2045
      }
     },
     {
@@ -473,24 +493,26 @@
      "visitor": "Stamford Grays",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
-      0
+      9,
+      8,
+      1
      ],
      "vr": [
-      0,
-      0,
+      9,
+      9,
       0
      ],
      "hs": {
       "div": "Regal West",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 0.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic South",
-      "rank": 4,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 4.0,
+      "last": 2045
      }
     },
     {
@@ -499,24 +521,26 @@
      "visitor": "New Madrid Mastiffs",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
-      0
+      9,
+      8,
+      1
      ],
      "vr": [
-      0,
-      0,
-      0
+      8,
+      9,
+      1
      ],
      "hs": {
       "div": "Majestic East",
-      "rank": 5,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 0.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal West",
       "rank": 4,
-      "gb": 0.0
+      "gb": 1.0,
+      "last": 2045
      }
     },
     {
@@ -525,24 +549,26 @@
      "visitor": "Diamond City Hope",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
-      0
+      8,
+      9,
+      1
      ],
      "vr": [
-      0,
-      0,
+      10,
+      8,
       0
      ],
      "hs": {
       "div": "Majestic East",
       "rank": 4,
-      "gb": 0.0
+      "gb": 1.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal South",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 1,
+      "gb": 0.0,
+      "last": 2045
      }
     },
     {
@@ -551,24 +577,26 @@
      "visitor": "Verigon Komodos",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
-      0
+      11,
+      6,
+      1
      ],
      "vr": [
-      0,
-      0,
+      6,
+      12,
       0
      ],
      "hs": {
       "div": "Majestic North",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 1,
+      "gb": 0.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal East",
       "rank": 5,
-      "gb": 0.0
+      "gb": 5.0,
+      "last": 2045
      }
     },
     {
@@ -577,24 +605,26 @@
      "visitor": "Good River Rangers",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
+      11,
+      7,
       0
      ],
      "vr": [
-      0,
-      0,
-      0
+      8,
+      9,
+      1
      ],
      "hs": {
       "div": "Regal East",
       "rank": 1,
-      "gb": 0.0
+      "gb": 0.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic South",
-      "rank": 1,
-      "gb": 0.0
+      "rank": 4,
+      "gb": 4.5,
+      "last": 2045
      }
     },
     {
@@ -603,24 +633,26 @@
      "visitor": "Tasson Thunderbugs",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
+      9,
+      9,
       0
      ],
      "vr": [
-      0,
-      0,
+      6,
+      12,
       0
      ],
      "hs": {
       "div": "Majestic South",
-      "rank": 5,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 4.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal East",
       "rank": 4,
-      "gb": 0.0
+      "gb": 5.0,
+      "last": 2045
      }
     },
     {
@@ -629,24 +661,26 @@
      "visitor": "Diamond City Dynamos",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
+      9,
+      9,
       0
      ],
      "vr": [
-      0,
-      0,
-      0
+      9,
+      8,
+      1
      ],
      "hs": {
       "div": "Regal East",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 2.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic East",
       "rank": 1,
-      "gb": 0.0
+      "gb": 0.0,
+      "last": 2045
      }
     },
     {
@@ -655,24 +689,26 @@
      "visitor": "Ediville Brass Tigers",
      "kind": "division",
      "hr": [
-      0,
-      0,
+      7,
+      11,
       0
      ],
      "vr": [
-      0,
-      0,
-      0
+      9,
+      8,
+      1
      ],
      "hs": {
       "div": "Regal West",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 5,
+      "gb": 2.5,
+      "last": 2045
      },
      "vs": {
       "div": "Regal West",
       "rank": 1,
-      "gb": 0.0
+      "gb": 0.0,
+      "last": 2045
      }
     },
     {
@@ -681,24 +717,26 @@
      "visitor": "Cordelle Raptors",
      "kind": "division",
      "hr": [
-      0,
-      0,
+      8,
+      10,
       0
      ],
      "vr": [
-      0,
-      0,
+      7,
+      11,
       0
      ],
      "hs": {
       "div": "Regal South",
       "rank": 4,
-      "gb": 0.0
+      "gb": 2.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal South",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 5,
+      "gb": 3.0,
+      "last": 2045
      }
     },
     {
@@ -707,24 +745,26 @@
      "visitor": "Canesta Dales",
      "kind": "division",
      "hr": [
-      0,
-      0,
-      0
+      8,
+      8,
+      2
      ],
      "vr": [
-      0,
-      0,
+      11,
+      7,
       0
      ],
      "hs": {
       "div": "Majestic North",
       "rank": 4,
-      "gb": 0.0
+      "gb": 2.5,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic North",
-      "rank": 1,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 0.5,
+      "last": 2045
      }
     }
    ]
@@ -738,24 +778,26 @@
      "visitor": "Bruca Beach Hammerheads",
      "kind": "division",
      "hr": [
-      0,
-      0,
+      14,
+      4,
       0
      ],
      "vr": [
-      0,
-      0,
+      5,
+      13,
       0
      ],
      "hs": {
       "div": "Majestic West",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 1.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic West",
-      "rank": 1,
-      "gb": 0.0
+      "rank": 5,
+      "gb": 10.0,
+      "last": 2045
      }
     },
     {
@@ -764,24 +806,26 @@
      "visitor": "Fiota Bay T-Rexes",
      "kind": "division",
      "hr": [
-      0,
-      0,
-      0
+      8,
+      9,
+      1
      ],
      "vr": [
-      0,
-      0,
+      7,
+      11,
       0
      ],
      "hs": {
       "div": "Majestic East",
       "rank": 4,
-      "gb": 0.0
+      "gb": 1.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic East",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 5,
+      "gb": 2.5,
+      "last": 2045
      }
     },
     {
@@ -790,24 +834,26 @@
      "visitor": "Vaughn Bay Silverbacks",
      "kind": "division",
      "hr": [
-      0,
-      0,
-      0
+      9,
+      8,
+      1
      ],
      "vr": [
-      0,
-      0,
-      0
+      9,
+      8,
+      1
      ],
      "hs": {
       "div": "Majestic East",
       "rank": 1,
-      "gb": 0.0
+      "gb": 0.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic East",
-      "rank": 5,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 0.0,
+      "last": 2045
      }
     },
     {
@@ -816,24 +862,26 @@
      "visitor": "Billiataho Greats",
      "kind": "conference",
      "hr": [
-      0,
-      0,
-      0
+      9,
+      8,
+      1
      ],
      "vr": [
-      0,
-      0,
-      0
+      12,
+      5,
+      1
      ],
      "hs": {
       "div": "Regal West",
       "rank": 1,
-      "gb": 0.0
+      "gb": 0.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal North",
       "rank": 1,
-      "gb": 0.0
+      "gb": 0.0,
+      "last": 2045
      }
     },
     {
@@ -842,24 +890,26 @@
      "visitor": "Holliday Beetles",
      "kind": "conference",
      "hr": [
-      0,
-      0,
+      6,
+      12,
       0
      ],
      "vr": [
-      0,
-      0,
-      0
+      9,
+      8,
+      1
      ],
      "hs": {
       "div": "Regal East",
       "rank": 5,
-      "gb": 0.0
+      "gb": 5.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal West",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 0.0,
+      "last": 2045
      }
     },
     {
@@ -868,24 +918,26 @@
      "visitor": "Stanton City Conductors",
      "kind": "conference",
      "hr": [
-      0,
-      0,
-      0
+      9,
+      8,
+      1
      ],
      "vr": [
-      0,
-      0,
+      9,
+      9,
       0
      ],
      "hs": {
       "div": "Majestic East",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 0.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic South",
-      "rank": 5,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 4.0,
+      "last": 2045
      }
     },
     {
@@ -894,24 +946,26 @@
      "visitor": "Palm Creek Leatherbacks",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
+      9,
+      9,
       0
      ],
      "vr": [
-      0,
-      0,
+      15,
+      3,
       0
      ],
      "hs": {
       "div": "Regal North",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 3.5,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic West",
-      "rank": 4,
-      "gb": 0.0
+      "rank": 1,
+      "gb": 0.0,
+      "last": 2045
      }
     },
     {
@@ -920,24 +974,26 @@
      "visitor": "San Saltadac Sea Lions",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
-      0
+      11,
+      6,
+      1
      ],
      "vr": [
-      0,
-      0,
+      13,
+      5,
       0
      ],
      "hs": {
       "div": "Regal North",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 1.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic South",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 1,
+      "gb": 0.0,
+      "last": 2045
      }
     },
     {
@@ -946,24 +1002,26 @@
      "visitor": "Eona Topcats",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
+      7,
+      11,
       0
      ],
      "vr": [
-      0,
-      0,
+      7,
+      11,
       0
      ],
      "hs": {
       "div": "Majestic West",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 4,
+      "gb": 8.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal West",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 5,
+      "gb": 2.5,
+      "last": 2045
      }
     },
     {
@@ -972,24 +1030,26 @@
      "visitor": "Good River Rangers",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
+      9,
+      9,
       0
      ],
      "vr": [
-      0,
-      0,
-      0
+      8,
+      9,
+      1
      ],
      "hs": {
       "div": "Regal West",
-      "rank": 5,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 0.5,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic South",
-      "rank": 1,
-      "gb": 0.0
+      "rank": 4,
+      "gb": 4.5,
+      "last": 2045
      }
     },
     {
@@ -998,24 +1058,26 @@
      "visitor": "Lornaman Renegades",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
-      0
+      8,
+      9,
+      1
      ],
      "vr": [
-      0,
-      0,
+      7,
+      11,
       0
      ],
      "hs": {
       "div": "Regal West",
       "rank": 4,
-      "gb": 0.0
+      "gb": 1.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic South",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 5,
+      "gb": 6.0,
+      "last": 2045
      }
     },
     {
@@ -1024,24 +1086,26 @@
      "visitor": "Rogaela Rovers",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
+      7,
+      11,
       0
      ],
      "vr": [
-      0,
-      0,
-      0
+      8,
+      8,
+      2
      ],
      "hs": {
       "div": "Regal South",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 5,
+      "gb": 3.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic North",
       "rank": 4,
-      "gb": 0.0
+      "gb": 2.5,
+      "last": 2045
      }
     },
     {
@@ -1050,24 +1114,26 @@
      "visitor": "Underwood Bats",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
+      9,
+      9,
       0
      ],
      "vr": [
-      0,
-      0,
+      8,
+      10,
       0
      ],
      "hs": {
       "div": "Regal South",
-      "rank": 5,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 1.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic West",
-      "rank": 5,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 7.0,
+      "last": 2045
      }
     },
     {
@@ -1076,24 +1142,26 @@
      "visitor": "Diamond City Hope",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
+      9,
+      9,
       0
      ],
      "vr": [
-      0,
-      0,
+      10,
+      8,
       0
      ],
      "hs": {
       "div": "Majestic South",
-      "rank": 4,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 4.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal South",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 1,
+      "gb": 0.0,
+      "last": 2045
      }
     },
     {
@@ -1102,24 +1170,26 @@
      "visitor": "Far Farris Raccoons",
      "kind": "division",
      "hr": [
-      0,
-      0,
+      9,
+      9,
       0
      ],
      "vr": [
-      0,
-      0,
+      8,
+      10,
       0
      ],
      "hs": {
       "div": "Regal South",
-      "rank": 1,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 1.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal South",
       "rank": 4,
-      "gb": 0.0
+      "gb": 2.0,
+      "last": 2045
      }
     },
     {
@@ -1128,24 +1198,26 @@
      "visitor": "Tasson Thunderbugs",
      "kind": "division",
      "hr": [
-      0,
-      0,
+      11,
+      7,
       0
      ],
      "vr": [
-      0,
-      0,
+      6,
+      12,
       0
      ],
      "hs": {
       "div": "Regal East",
       "rank": 1,
-      "gb": 0.0
+      "gb": 0.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal East",
       "rank": 4,
-      "gb": 0.0
+      "gb": 5.0,
+      "last": 2045
      }
     },
     {
@@ -1154,24 +1226,26 @@
      "visitor": "Fiota Swords",
      "kind": "division",
      "hr": [
-      0,
-      0,
+      11,
+      7,
       0
      ],
      "vr": [
-      0,
-      0,
+      9,
+      9,
       0
      ],
      "hs": {
       "div": "Regal East",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 0.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal East",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 2.0,
+      "last": 2045
      }
     },
     {
@@ -1180,24 +1254,26 @@
      "visitor": "Sarkady Beavers",
      "kind": "division",
      "hr": [
-      0,
-      0,
-      0
+      7,
+      10,
+      1
      ],
      "vr": [
-      0,
-      0,
-      0
+      4,
+      13,
+      1
      ],
      "hs": {
       "div": "Regal North",
       "rank": 4,
-      "gb": 0.0
+      "gb": 5.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal North",
       "rank": 5,
-      "gb": 0.0
+      "gb": 8.0,
+      "last": 2045
      }
     },
     {
@@ -1206,24 +1282,26 @@
      "visitor": "Canesta Dales",
      "kind": "division",
      "hr": [
-      0,
-      0,
-      0
+      9,
+      8,
+      1
      ],
      "vr": [
-      0,
-      0,
+      11,
+      7,
       0
      ],
      "hs": {
       "div": "Majestic North",
-      "rank": 5,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 2.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic North",
-      "rank": 1,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 0.5,
+      "last": 2045
      }
     },
     {
@@ -1232,24 +1310,26 @@
      "visitor": "El Latigo Shredders",
      "kind": "division",
      "hr": [
-      0,
-      0,
-      0
+      11,
+      6,
+      1
      ],
      "vr": [
-      0,
-      0,
+      5,
+      13,
       0
      ],
      "hs": {
       "div": "Majestic North",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 1,
+      "gb": 0.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic North",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 5,
+      "gb": 6.5,
+      "last": 2045
      }
     }
    ]
@@ -1263,24 +1343,26 @@
      "visitor": "Stamford Grays",
      "kind": "division",
      "hr": [
-      0,
-      0,
-      0
+      8,
+      9,
+      1
      ],
      "vr": [
-      0,
-      0,
+      9,
+      9,
       0
      ],
      "hs": {
       "div": "Majestic South",
-      "rank": 1,
-      "gb": 0.0
+      "rank": 4,
+      "gb": 4.5,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic South",
-      "rank": 4,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 4.0,
+      "last": 2045
      }
     },
     {
@@ -1289,24 +1371,26 @@
      "visitor": "Stanton City Conductors",
      "kind": "division",
      "hr": [
-      0,
-      0,
+      7,
+      11,
       0
      ],
      "vr": [
-      0,
-      0,
+      9,
+      9,
       0
      ],
      "hs": {
       "div": "Majestic South",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 5,
+      "gb": 6.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic South",
-      "rank": 5,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 4.0,
+      "last": 2045
      }
     },
     {
@@ -1315,24 +1399,26 @@
      "visitor": "Crayellan Redwoods",
      "kind": "conference",
      "hr": [
-      0,
-      0,
-      0
+      9,
+      8,
+      1
      ],
      "vr": [
-      0,
-      0,
-      0
+      11,
+      6,
+      1
      ],
      "hs": {
       "div": "Regal West",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 0.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal North",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 1.0,
+      "last": 2045
      }
     },
     {
@@ -1341,24 +1427,26 @@
      "visitor": "Cordelle Raptors",
      "kind": "conference",
      "hr": [
-      0,
-      0,
-      0
+      4,
+      13,
+      1
      ],
      "vr": [
-      0,
-      0,
+      7,
+      11,
       0
      ],
      "hs": {
       "div": "Regal North",
       "rank": 5,
-      "gb": 0.0
+      "gb": 8.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal South",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 5,
+      "gb": 3.0,
+      "last": 2045
      }
     },
     {
@@ -1367,24 +1455,26 @@
      "visitor": "Fiota Swords",
      "kind": "conference",
      "hr": [
-      0,
-      0,
+      9,
+      9,
       0
      ],
      "vr": [
-      0,
-      0,
+      9,
+      9,
       0
      ],
      "hs": {
       "div": "Regal North",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 3.5,
+      "last": 2045
      },
      "vs": {
       "div": "Regal East",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 2.0,
+      "last": 2045
      }
     },
     {
@@ -1393,24 +1483,26 @@
      "visitor": "Diveo Demons",
      "kind": "conference",
      "hr": [
-      0,
-      0,
+      6,
+      12,
       0
      ],
      "vr": [
-      0,
-      0,
-      0
+      7,
+      10,
+      1
      ],
      "hs": {
       "div": "Regal East",
       "rank": 4,
-      "gb": 0.0
+      "gb": 5.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal North",
       "rank": 4,
-      "gb": 0.0
+      "gb": 5.0,
+      "last": 2045
      }
     },
     {
@@ -1419,24 +1511,26 @@
      "visitor": "Coachville Mastodons",
      "kind": "conference",
      "hr": [
-      0,
-      0,
-      0
+      8,
+      9,
+      1
      ],
      "vr": [
-      0,
-      0,
+      9,
+      9,
       0
      ],
      "hs": {
       "div": "Regal West",
       "rank": 4,
-      "gb": 0.0
+      "gb": 1.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal South",
-      "rank": 1,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 1.0,
+      "last": 2045
      }
     },
     {
@@ -1445,24 +1539,26 @@
      "visitor": "Classetto Cavemen",
      "kind": "conference",
      "hr": [
-      0,
-      0,
+      9,
+      9,
       0
      ],
      "vr": [
-      0,
-      0,
+      11,
+      7,
       0
      ],
      "hs": {
       "div": "Regal West",
-      "rank": 5,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 0.5,
+      "last": 2045
      },
      "vs": {
       "div": "Regal East",
       "rank": 1,
-      "gb": 0.0
+      "gb": 0.0,
+      "last": 2045
      }
     },
     {
@@ -1471,24 +1567,26 @@
      "visitor": "Purcell Rapids",
      "kind": "conference",
      "hr": [
-      0,
-      0,
+      10,
+      8,
       0
      ],
      "vr": [
-      0,
-      0,
+      11,
+      7,
       0
      ],
      "hs": {
       "div": "Regal South",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 1,
+      "gb": 0.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal East",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 0.0,
+      "last": 2045
      }
     },
     {
@@ -1497,24 +1595,26 @@
      "visitor": "El Latigo Shredders",
      "kind": "conference",
      "hr": [
-      0,
-      0,
+      5,
+      13,
       0
      ],
      "vr": [
-      0,
-      0,
+      5,
+      13,
       0
      ],
      "hs": {
       "div": "Majestic West",
-      "rank": 1,
-      "gb": 0.0
+      "rank": 5,
+      "gb": 10.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic North",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 5,
+      "gb": 6.5,
+      "last": 2045
      }
     },
     {
@@ -1523,24 +1623,26 @@
      "visitor": "South Burke Tsunami",
      "kind": "conference",
      "hr": [
-      0,
-      0,
-      0
+      8,
+      8,
+      2
      ],
      "vr": [
-      0,
-      0,
-      0
+      8,
+      9,
+      1
      ],
      "hs": {
       "div": "Majestic North",
       "rank": 4,
-      "gb": 0.0
+      "gb": 2.5,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic East",
       "rank": 4,
-      "gb": 0.0
+      "gb": 1.0,
+      "last": 2045
      }
     },
     {
@@ -1549,24 +1651,26 @@
      "visitor": "Diamond City Dynamos",
      "kind": "conference",
      "hr": [
-      0,
-      0,
+      15,
+      3,
       0
      ],
      "vr": [
-      0,
-      0,
-      0
+      9,
+      8,
+      1
      ],
      "hs": {
       "div": "Majestic West",
-      "rank": 4,
-      "gb": 0.0
+      "rank": 1,
+      "gb": 0.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic East",
       "rank": 1,
-      "gb": 0.0
+      "gb": 0.0,
+      "last": 2045
      }
     },
     {
@@ -1575,24 +1679,26 @@
      "visitor": "Fiota Bay T-Rexes",
      "kind": "conference",
      "hr": [
-      0,
-      0,
+      8,
+      10,
       0
      ],
      "vr": [
-      0,
-      0,
+      7,
+      11,
       0
      ],
      "hs": {
       "div": "Majestic West",
-      "rank": 5,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 7.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic East",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 5,
+      "gb": 2.5,
+      "last": 2045
      }
     },
     {
@@ -1601,24 +1707,26 @@
      "visitor": "Vaughn Bay Silverbacks",
      "kind": "conference",
      "hr": [
-      0,
-      0,
+      13,
+      5,
       0
      ],
      "vr": [
-      0,
-      0,
-      0
+      9,
+      8,
+      1
      ],
      "hs": {
       "div": "Majestic South",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 1,
+      "gb": 0.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic East",
-      "rank": 5,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 0.0,
+      "last": 2045
      }
     },
     {
@@ -1627,24 +1735,26 @@
      "visitor": "Chapel Rock Crowns",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
-      0
+      12,
+      5,
+      1
      ],
      "vr": [
-      0,
-      0,
+      7,
+      11,
       0
      ],
      "hs": {
       "div": "Regal North",
       "rank": 1,
-      "gb": 0.0
+      "gb": 0.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic West",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 4,
+      "gb": 8.0,
+      "last": 2045
      }
     },
     {
@@ -1653,24 +1763,26 @@
      "visitor": "Tengus City Terrors",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
+      7,
+      11,
       0
      ],
      "vr": [
-      0,
-      0,
-      0
+      9,
+      8,
+      1
      ],
      "hs": {
       "div": "Regal West",
-      "rank": 2,
-      "gb": 0.0
+      "rank": 5,
+      "gb": 2.5,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic North",
-      "rank": 5,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 2.0,
+      "last": 2045
      }
     },
     {
@@ -1679,24 +1791,26 @@
      "visitor": "Ediville Brass Tigers",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
-      0
+      9,
+      8,
+      1
      ],
      "vr": [
-      0,
-      0,
-      0
+      9,
+      8,
+      1
      ],
      "hs": {
       "div": "Majestic East",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 0.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal West",
       "rank": 1,
-      "gb": 0.0
+      "gb": 0.0,
+      "last": 2045
      }
     },
     {
@@ -1705,24 +1819,26 @@
      "visitor": "North Hatesei Bees",
      "kind": "interconference",
      "hr": [
-      0,
-      0,
+      6,
+      12,
       0
      ],
      "vr": [
-      0,
-      0,
+      14,
+      4,
       0
      ],
      "hs": {
       "div": "Regal East",
       "rank": 5,
-      "gb": 0.0
+      "gb": 5.0,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic West",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 1.0,
+      "last": 2045
      }
     },
     {
@@ -1731,24 +1847,26 @@
      "visitor": "Hughes City Asteroids",
      "kind": "division",
      "hr": [
-      0,
-      0,
+      8,
+      10,
       0
      ],
      "vr": [
-      0,
-      0,
+      9,
+      9,
       0
      ],
      "hs": {
       "div": "Regal South",
       "rank": 4,
-      "gb": 0.0
+      "gb": 2.0,
+      "last": 2045
      },
      "vs": {
       "div": "Regal South",
-      "rank": 5,
-      "gb": 0.0
+      "rank": 3,
+      "gb": 1.0,
+      "last": 2045
      }
     },
     {
@@ -1757,24 +1875,26 @@
      "visitor": "Queensville Phenoms",
      "kind": "division",
      "hr": [
-      0,
-      0,
+      11,
+      7,
       0
      ],
      "vr": [
-      0,
-      0,
-      0
+      11,
+      6,
+      1
      ],
      "hs": {
       "div": "Majestic North",
-      "rank": 1,
-      "gb": 0.0
+      "rank": 2,
+      "gb": 0.5,
+      "last": 2045
      },
      "vs": {
       "div": "Majestic North",
-      "rank": 3,
-      "gb": 0.0
+      "rank": 1,
+      "gb": 0.0,
+      "last": 2045
      }
     }
    ]

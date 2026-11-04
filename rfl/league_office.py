@@ -187,10 +187,14 @@ def prime_ballot(S, week):
     """The weeks Dan must pick now: the next three unplayed weeks that are not yet decided, with the Sunday games and everything he needs to choose."""
     se = S['season']; migrate_prime(S); L = json.load(open(f'{ROOT}/data/league.json'))['teams']; rec = se['records']
     wk = [w for w in range(week + 1, min(week + 3, 20) + 1) if w not in se['prime_decided']]
+    last = None
+    if week == 0:      # before week 1 every club is 0-0, so the standings shown are last season's (final records and division finish), flagged `last`
+        H = json.load(open(f'{ROOT}/data/rfl_history_1951_2040.json'))['seasons'][str(se['year'] - 1)]; last = se['year'] - 1
+        rec = {t: dict(w=w_, l=l_, t=t_) for t, (w_, l_, t_) in H['res'].items()}
     def stand(t):
         mates = sorted([x for x in rec if L[x]['conf'] == L[t]['conf'] and L[x]['div'] == L[t]['div']], key=lambda x: (-(rec[x]['w'] + .5 * rec[x]['t']), rec[x]['l']))
         lead = rec[mates[0]]; r = rec[t]; gb = (lead['w'] - r['w'] + r['l'] - lead['l']) / 2
-        return dict(div=f"{L[t]['conf']} {L[t]['div']}", rank=mates.index(t) + 1, gb=gb)
+        return dict(div=f"{L[t]['conf']} {L[t]['div']}", rank=mates.index(t) + 1, gb=gb, last=last)
     out = []
     for w in wk:
         games = []
