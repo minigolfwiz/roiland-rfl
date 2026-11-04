@@ -1022,3 +1022,7 @@ Preseason top 5: Costique River (57 of 60 firsts, defending champions, third tit
 ARCHIVE: 2045 viewer (incl. CCG + playoff box scores) saved at cfb/archive/season_viewer_2045_full.html.gz before the 2046 viewer overwrote it.
 Republished: Roiland Season (v236, 2046 schedule), Media Pool (v103), Roiland Preseason (v9).
 Week 0 Gameview candidates: Leafette at Chinolka; Riveral State at Lito Rock State; Starfield at Rogaela Tech; Denver State at Rupin State. NEXT: Dan picks -> `python3 gameview.py pick 0 <host>` then `python3 week_cycle.py 0 <host>`.
+
+## 2046 WEEK 0 played (Gameview Stanton State: Stanton State 24-7 over Natzumakis State; Rupert Eaddy 223 rush yds, 2 TD). Backup state/season_state.pkl.pre_w0. Dan picked a game that was not on the candidate list (Stanton State v Natzumakis State, a week-0 game I had not shown); played as asked.
+12 games: Barhold Valley 23-13 Stanton, Diveo 13-10 at Burrstone, Leafette 35-7 at Chinolka, Dove Island 24-14 Ek Tech, East Costique 13-3 Sacred Tomb, Krobe 48-10 UK Hoza (guest), Krobe State 37-10 Vaughn Bay State, Lito Rock State 27-24 Riveral State, Rogaela Tech 13-3 Starfield, Rupin State 42-24 Denver State, West Hatesei 24-17 San Diego Valley. No ranked team played. Guest games: 1 (Krobe 48-10 UK Hoza), guests 0-1. Media poll unchanged at the top; UFNH +2, Keeper -1, Ciarralotta State -1. Viewer + Media Pool republished.
+NEXT: week 1 Gameview candidates: #3 North Hatesei at #18 Crayellan; Krobe State at #5 Rogaela State; Coachville College at #6 Central Stanton; Coastal Ranroman at #8 Pistolheart.
