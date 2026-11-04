@@ -9,8 +9,8 @@ NFL_STYLE_FROM = 2046   # first season scheduled with last year's standings (Dan
 def games_for(year, S=None, new=None):
     """2041-2045: pure 5-year rotation. 2046 on: 8 division games; per other division in the conference one same-place game and one
     rotation game (bumped to the nearest legal opponent if it would repeat the same-place opponent); per other-conference division one
-    game against a place that is not your own (4x4 Latin grid of place shifts, shifted each year). Home/away: Euler orientations of the
-    conference games (3 home / 3 away) and the interconference games (2 / 2), so every club is 9/9 overall."""
+    game against a place that is not your own (4x4 Latin grid of place shifts, shifted each year). Home/away: orientation per division pair, so
+    a club hosts one and visits one of the two clubs it plays from each other division in its conference (3 / 3), and 2 / 2 against the other conference, so every club is 9/9 overall."""
     if new is None: new = year >= NFL_STYLE_FROM
     if new: return games_standings(year, S)
     y = year - 2041; out = []
@@ -69,16 +69,21 @@ def games_standings(year, S=None):
     # every club has 10 non-division games (even degree), so walking closed trails gives exactly 5 home and 5 away
     return _finish(out, edges, adj, year)
 def _finish(out, edges, adj, year):
-    """Orient the non-division games in two separate passes so every club is 3 home / 3 away against non-division conference
-    opponents and 2 home / 2 away against the other conference (Dan, 4 Nov 2026). Each pass walks closed trails over a graph whose
-    degrees are all even (6 and 4), which balances home and away exactly."""
+    """Home/away for the non-division games (Dan, 4 Nov 2026). Conference games are oriented one pair of divisions at a time: each
+    club has exactly two games against the other division (same place + rotation), so walking the closed trails gives it one home
+    and one away against every other division in its conference, and so 3 home / 3 away overall. Interconference games get one
+    pass of their own (every club has 4, so 2 home / 2 away)."""
     import collections, random
+    where = {t: (c, d) for c in CONFS for d in DIVS for t in div(c, d)}
+    def gkey(a, b, k):
+        return (k, where[a][0], frozenset((where[a][1], where[b][1]))) if k == "conference" else (k,)
+    groups = collections.defaultdict(list)
+    for n, (a, b, k) in enumerate(edges): groups[gkey(a, b, k)].append(n)
     orient = {}
-    for kind, salt in (("conference", 7), ("interconference", 11)):
-        rnd = random.Random(year * salt); used = {}
-        ptr = collections.defaultdict(list)
-        for n, (a, b, k) in enumerate(edges):
-            if k == kind: ptr[a].append((n, b)); ptr[b].append((n, a)); used[n] = False
+    for gi, key in enumerate(sorted(groups, key=str)):
+        rnd = random.Random(year * 1009 + gi); used = {}; ptr = collections.defaultdict(list)
+        for n in groups[key]:
+            a, b, k = edges[n]; ptr[a].append((n, b)); ptr[b].append((n, a)); used[n] = False
         for v in ptr: rnd.shuffle(ptr[v])
         for s0 in sorted(ptr, key=lambda v: rnd.random()):
             while True:
