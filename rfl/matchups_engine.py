@@ -9,8 +9,8 @@ NFL_STYLE_FROM = 2046   # first season scheduled with last year's standings (Dan
 def games_for(year, S=None, new=None):
     """2041-2045: pure 5-year rotation. 2046 on: 8 division games; per other division in the conference one same-place game and one
     rotation game (bumped to the nearest legal opponent if it would repeat the same-place opponent); per other-conference division one
-    game against a place that is not your own (4x4 Latin grid of place shifts, shifted each year). Home/away: an Euler orientation of the
-    non-division games, so every club is 5 home / 5 away outside the division (9/9 overall)."""
+    game against a place that is not your own (4x4 Latin grid of place shifts, shifted each year). Home/away: Euler orientations of the
+    conference games (3 home / 3 away) and the interconference games (2 / 2), so every club is 9/9 overall."""
     if new is None: new = year >= NFL_STYLE_FROM
     if new: return games_standings(year, S)
     y = year - 2041; out = []
@@ -69,20 +69,27 @@ def games_standings(year, S=None):
     # every club has 10 non-division games (even degree), so walking closed trails gives exactly 5 home and 5 away
     return _finish(out, edges, adj, year)
 def _finish(out, edges, adj, year):
+    """Orient the non-division games in two separate passes so every club is 3 home / 3 away against non-division conference
+    opponents and 2 home / 2 away against the other conference (Dan, 4 Nov 2026). Each pass walks closed trails over a graph whose
+    degrees are all even (6 and 4), which balances home and away exactly."""
     import collections, random
-    used = [False] * len(edges); orient = {}; rnd = random.Random(year * 7)
-    ptr = collections.defaultdict(list)
-    for v in adj: ptr[v] = list(adj[v]); rnd.shuffle(ptr[v])
-    for s0 in sorted(adj, key=lambda v: rnd.random()):
-        while True:
-            while ptr[s0] and used[ptr[s0][-1][0]]: ptr[s0].pop()
-            if not ptr[s0]: break
-            v = s0
+    orient = {}
+    for kind, salt in (("conference", 7), ("interconference", 11)):
+        rnd = random.Random(year * salt); used = {}
+        ptr = collections.defaultdict(list)
+        for n, (a, b, k) in enumerate(edges):
+            if k == kind: ptr[a].append((n, b)); ptr[b].append((n, a)); used[n] = False
+        for v in ptr: rnd.shuffle(ptr[v])
+        for s0 in sorted(ptr, key=lambda v: rnd.random()):
             while True:
-                while ptr[v] and used[ptr[v][-1][0]]: ptr[v].pop()
-                if not ptr[v]: break
-                n, w = ptr[v].pop(); used[n] = True; orient[n] = (w, v)   # trail leaves v, arrives at w: w hosts v
-                v = w
+                while ptr[s0] and used[ptr[s0][-1][0]]: ptr[s0].pop()
+                if not ptr[s0]: break
+                v = s0
+                while True:
+                    while ptr[v] and used[ptr[v][-1][0]]: ptr[v].pop()
+                    if not ptr[v]: break
+                    n, w = ptr[v].pop(); used[n] = True; orient[n] = (w, v)   # trail leaves v, arrives at w: w hosts v
+                    v = w
     for n, (a, b, k) in enumerate(edges):
         host, vis = orient[n]; out.append({"host": host, "visitor": vis, "kind": k})
     for i, g in enumerate(out): g['id'] = f'G{i}'
