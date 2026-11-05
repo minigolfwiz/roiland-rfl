@@ -264,3 +264,6 @@ Generator fixes (forward-only): bench_clear opener now says who did what; invest
 
 2046 week 13 desk applied: W13-1 Conductors hazing closed (no violation found); Dan's note 'Open investigation of the original accusers' recorded as a note only (no engine mechanism; disclosed to Dan). W13-2 Langmore warning; W13-3 Shizan warning. Week 16 Sunday primetime: Conductors at Rangers (morning), Beetles at Topcats (afternoon), Rovers at Terrors (evening).
 2046 week 14 played: 1 OT (Swords 34 at Thunderbugs 40). No unbeaten/winless. Ballot W14-1 Elvborg remarks (profanity live), W14-2 Salaabella post, W14-3 Hollydale crew criticism. Awaiting week 17 Sunday primetime picks.
+
+2046 week 14 desk applied: W14-1 Elvborg warning; W14-2 Salaabella no action; W14-3 Hollydale warning. Week 17 Sunday primetime: T-Rexes at Cavemen (morning), Beetles at Asteroids (afternoon), Dales at Dynamos (evening).
+2046 week 15 played: 2 OT (Greats 19 at Asteroids 13; Mastiffs 16 at Beavers 10). No unbeaten/winless. No ballot cases this week (random draw gave none); only week 18 primetime picks pending.

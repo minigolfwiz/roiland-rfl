@@ -1,0 +1,26 @@
+{
+  "awards": {},
+  "prime": {
+    "17": {
+      "sam": "G355",
+      "snf": "G241",
+      "spm": "G191"
+    }
+  },
+  "rulings": {
+    "W14-1": {
+      "key": "warn",
+      "note": ""
+    },
+    "W14-2": {
+      "key": "none",
+      "note": ""
+    },
+    "W14-3": {
+      "key": "warn",
+      "note": ""
+    }
+  },
+  "submitted": "2026-11-05T19:27:05.312Z",
+  "week": 14
+}
