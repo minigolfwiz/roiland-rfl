@@ -255,3 +255,6 @@ Generator fixes (forward-only): bench_clear opener now says who did what; invest
 
 2046 week 10 desk applied: W10-1 Conductors hazing -> formal investigation opened. Week 13 Sunday primetime: Raccoons at Demons (morning), Bats at Beavers (afternoon), Redwoods at Rovers (evening).
 2046 week 11 played: 3 OT (Leatherbacks 29 Bats 23; Shredders 25 Phenoms 19; Crowns 26 Grays 20). No unbeaten, no winless. Ballot W11-1 Chibayo court result (assault dismissed), W11-2 Monteserna ejection, W11-3 Ackerhorn helmet-to-helmet. Awaiting week 14 Sunday primetime picks.
+
+2046 week 11 desk applied: W11-1 Chibayo court result -> earlier ruling stands; W11-2 Monteserna 2 games + $100K; W11-3 Ackerhorn warning. Week 14 Sunday primetime: Mastiffs at Raccoons (morning), Rovers at T-Rexes (afternoon), Shredders at Terrors (evening).
+2046 week 12 played: 1 OT (Phenoms 26 at Terrors 20). No unbeaten/winless. Ballot W12-1 Olubayo post, W12-2 Prabhakrishnan tunnel incident. Awaiting week 15 Sunday primetime picks.
