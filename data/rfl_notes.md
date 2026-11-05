@@ -270,3 +270,6 @@ Generator fixes (forward-only): bench_clear opener now says who did what; invest
 
 2046 week 15 desk applied: no cases; week 18 Sunday primetime: Mastiffs at Beetles (morning), Conductors at Dales (afternoon), Shredders at Tsunami (evening).
 2046 week 16 played: 1 OT (Silverbacks 30 at Dales 24). No unbeaten/winless. Second straight week with zero ballot cases (random draw). Awaiting week 19 Sunday primetime picks.
+
+2046 week 16 desk applied: no cases; week 19 Sunday primetime: Brass Tigers at Mastiffs (morning), Dragons at Redwoods (afternoon), Conductors at Bats (evening).
+2046 week 17 played: 1 OT, ended in a tie (Leatherbacks 24 at Crowns 24). No unbeaten/winless. Third straight week with zero ballot cases (checked: weeks 2 and 4 were also empty, so within the random draw). Awaiting week 20 Sunday primetime picks.
