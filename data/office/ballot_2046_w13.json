@@ -1,0 +1,1148 @@
+{
+ "year": 2046,
+ "week": 13,
+ "potw": {
+  "off": [
+   {
+    "pid": 9037244,
+    "name": "Manaia Snowbird",
+    "pos": "RB",
+    "club": "Diamond City Dynamos",
+    "line": "18 car, 95 yds, 5 rec, 116 yds, 2 TD",
+    "res": "W 48-17 vs Greats",
+    "score": 33.1,
+    "plays": [
+     "Q4 13:07 3-yd TD catch from Barthelemy Eastbridge (was up 7)",
+     "Q4 11:43 19-yd TD run (was up 14)"
+    ]
+   },
+   {
+    "pid": 9035723,
+    "name": "Rongrong Xiazan",
+    "pos": "WR",
+    "club": "Holliday Beetles",
+    "line": "9 rec, 186 yds, 2 TD",
+    "res": "W 27-24 vs Rapids",
+    "score": 30.6,
+    "plays": [
+     "Q1 6:13 8-yd TD catch from Georgia Yenteniy (was down 7)",
+     "Q3 8:29 28-yd TD catch from Georgia Yenteniy (was tied)"
+    ]
+   },
+   {
+    "pid": 9101254,
+    "name": "Alastair Gangaprasad",
+    "pos": "QB",
+    "club": "Hughes City Asteroids",
+    "line": "30/43, 344 yds, 3 TD",
+    "res": "W 30-24 vs Hope",
+    "score": 29.69,
+    "plays": [
+     "Q1 3:54 35-yd TD pass to Aminata Zelenentsev (was down 3)",
+     "Q2 5:11 4-yd TD pass to Uchenna Qaddoumi (was down 3)",
+     "Q4 9:39 1-yd TD pass to Uchenna Qaddoumi (was down 4), go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9101717,
+    "name": "Nokosi Faitai",
+    "pos": "WR",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "8 rec, 103 yds, 3 TD",
+    "res": "W 30-13 vs Tsunami",
+    "score": 28.3,
+    "plays": [
+     "Q1 8:13 1-yd TD catch from Manish Anysei (was tied)",
+     "Q3 6:34 8-yd TD catch from Manish Anysei (was up 4)",
+     "Q4 5:24 5-yd TD catch from Manish Anysei (was up 10)"
+    ]
+   },
+   {
+    "pid": 9101648,
+    "name": "Kyungja U-Cheol",
+    "pos": "QB",
+    "club": "Classetto Cavemen",
+    "line": "34/47, 418 yds, 3 TD, 1 INT, 30 rush yds",
+    "res": "W 34-24 at Raptors",
+    "score": 26.22,
+    "plays": [
+     "Q1 4:07 6-yd TD pass to Lakshman Ganguly (was down 7)",
+     "Q2 1:32 interception thrown (up 3), led to a touchdown",
+     "Q3 13:25 4-yd TD pass to Lakshman Ganguly (was down 4)",
+     "Q4 7:54 31-yd TD pass to Dante Santascio (was up 10)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9100923,
+    "name": "Digby Solborg",
+    "pos": "LB",
+    "club": "Bruca Beach Hammerheads",
+    "line": "9 tackles, 3 sacks, 1 forced fumble",
+    "res": "W 30-20 at Renegades",
+    "score": 26.4,
+    "plays": [
+     "Q1 9:00 sack and forced fumble (tied), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9100819,
+    "name": "Maelys Lundvoll",
+    "pos": "LB",
+    "club": "North Hatesei Bees",
+    "line": "8 tackles, 2 sacks, 1 INT",
+    "res": "L 21-24 vs Leatherbacks",
+    "score": 20.8,
+    "plays": [
+     "Q2 7:12 interception (up 11)"
+    ]
+   },
+   {
+    "pid": 9100765,
+    "name": "Holaniy Ostreimyr",
+    "pos": "LB",
+    "club": "Rogaela Rovers",
+    "line": "9 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 19-20 vs Redwoods",
+    "score": 19.4,
+    "plays": [
+     "Q1 4:33 sack and forced fumble (up 3)"
+    ]
+   },
+   {
+    "pid": 9037488,
+    "name": "Peymyr Vasilakis",
+    "pos": "DL",
+    "club": "Diamond City Dynamos",
+    "line": "4 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 48-17 vs Greats",
+    "score": 18.4,
+    "plays": [
+     "Q3 0:07 sack and forced fumble (up 7), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9037822,
+    "name": "Enlai Nagahata",
+    "pos": "LB",
+    "club": "Diamond City Dynamos",
+    "line": "12 tackles, 1 sack, 1 forced fumble",
+    "res": "W 48-17 vs Greats",
+    "score": 18.2,
+    "plays": [
+     "Q4 7:24 sack and forced fumble (up 21), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9037860,
+    "name": "Perei Nomaw",
+    "pos": "LB",
+    "club": "Far Farris Raccoons",
+    "line": "8 tackles, 1 sack, 1 INT",
+    "res": "W 17-16 at Demons",
+    "score": 17.3,
+    "plays": [
+     "Q4 1:32 interception (up 1, late)"
+    ]
+   }
+  ],
+  "st": [],
+  "st_cands": [
+   {
+    "pid": 9101837,
+    "name": "Roswitha Rosenmeier",
+    "pos": "K",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "3/3 FG, long 58, 3/3 XP",
+    "res": "W 30-13 vs Tsunami",
+    "score": 15.75,
+    "plays": [
+     "Q1 1:20 47-yd GOOD",
+     "Q4 13:31 48-yd GOOD",
+     "Q4 8:56 58-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9037064,
+    "name": "Adaeze Stavroledis",
+    "pos": "P",
+    "club": "Holliday Beetles",
+    "line": "6 punts, 46.8 avg, 4 inside the 20",
+    "res": "W 27-24 vs Rapids",
+    "score": 12.833333333333336,
+    "plays": []
+   },
+   {
+    "pid": 9101897,
+    "name": "Deepika El-Husri",
+    "pos": "K",
+    "club": "Queensville Phenoms",
+    "line": "3/3 FG, long 56, 1/1 XP",
+    "res": "T 22-22 vs Lions",
+    "score": 12.5,
+    "plays": [
+     "Q1 0:25 56-yd GOOD",
+     "Q4 5:31 31-yd GOOD",
+     "Q4 2:32 34-yd GOOD, tied the game"
+    ]
+   },
+   {
+    "pid": 9101028,
+    "name": "Kirovei Noyosei",
+    "pos": "K",
+    "club": "Canesta Dales",
+    "line": "4/4 FG, long 41, 1/2 XP",
+    "res": "W 25-21 vs Shredders",
+    "score": 12.5,
+    "plays": [
+     "Q2 13:50 31-yd GOOD",
+     "Q2 5:49 41-yd GOOD",
+     "Q3 5:55 29-yd GOOD",
+     "Q4 2:49 20-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9034739,
+    "name": "Nadine Jorseil",
+    "pos": "P",
+    "club": "Rogaela Rovers",
+    "line": "7 punts, 45.6 avg, 4 inside the 20",
+    "res": "L 19-20 vs Redwoods",
+    "score": 12.499999999999996,
+    "plays": []
+   }
+  ],
+  "st_pick": {
+   "pid": 9101837,
+   "name": "Roswitha Rosenmeier",
+   "pos": "K",
+   "club": "Vaughn Bay Silverbacks",
+   "line": "3/3 FG, long 58, 3/3 XP",
+   "res": "W 30-13 vs Tsunami",
+   "score": 15.75,
+   "plays": [
+    "Q1 1:20 47-yd GOOD",
+    "Q4 13:31 48-yd GOOD",
+    "Q4 8:56 58-yd GOOD"
+   ],
+   "why": "Top performer by the box score."
+  }
+ },
+ "cases": [
+  {
+   "type": "hazing",
+   "title": "Findings: Hazing complaint",
+   "who": [
+    {
+     "name": "Stanton City Conductors",
+     "pos": "CLUB",
+     "club": "Stanton City Conductors",
+     "pid": null,
+     "club_level": true
+    }
+   ],
+   "game": null,
+   "where": "League investigation",
+   "text": "The league has finished its investigation of the Conductors (opened in week 10). After interviews and a review of records, the league could not substantiate the allegation of a pattern of hazing.\n\nOriginal matter: The league is investigating a hazing complaint at the Conductors' training camp.",
+   "severity": 1.0,
+   "prior": 0,
+   "stage": "findings",
+   "pids": [],
+   "precedent": [],
+   "chain": [
+    "Week 10, 2046: investigation opened"
+   ],
+   "options": [
+    {
+     "key": "clear",
+     "label": "Close the matter: no violation found",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": true,
+     "blurb": ""
+    },
+    {
+     "key": "warn",
+     "label": "Close the matter with a warning about procedures",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": ""
+    },
+    {
+     "key": "k150",
+     "label": "Fine $150K for failing to cooperate fully",
+     "games": 0,
+     "fine": 150000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": ""
+    }
+   ],
+   "precedent_pick": null,
+   "sid": "2046:W10-1",
+   "tier": "moderate",
+   "id": "W13-1",
+   "week": 13
+  },
+  {
+   "type": "helmet",
+   "title": "Illegal use of the helmet",
+   "who": [
+    {
+     "name": "Tamsin Langmore",
+     "pos": "LB",
+     "club": "Lornaman Renegades",
+     "pid": 9101660
+    }
+   ],
+   "game": "G254",
+   "where": "Bruca Beach Hammerheads at Lornaman Renegades, week 13",
+   "text": "An unnecessary roughness flag went against Tamsin Langmore (LB, Renegades) with 12:17 left in the first quarter for contact to the head. Treiva Otravaw (S, Hammerheads) left for a few plays and returned. Langmore sought out Otravaw after the game to apologize. Film review showed the contact was close to the whistle. It was the second flag of that kind against the Renegades in the game.\n\nTamsin Langmore's agent, Beatrix Lund, says the player will cooperate with the review.",
+   "severity": 2.6,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9101660,
+    9101635
+   ],
+   "precedent": [
+    "2045 wk 8, Perla Bergqvist: Warning (severity 2.7)",
+    "2045 wk 1, Andre Kalomatos: Fine $10K (severity 2.9)",
+    "2044 wk 20, Jongdae Yukibashi: No action (severity 3.1)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $10K"
+    },
+    {
+     "key": "k15",
+     "label": "Fine $15K",
+     "games": 0,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $15K"
+    },
+    {
+     "key": "k40",
+     "label": "Fine $40K",
+     "games": 0,
+     "fine": 40000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $40K"
+    }
+   ],
+   "precedent_pick": "none",
+   "tier": "minor",
+   "id": "W13-2",
+   "week": 13
+  },
+  {
+   "type": "late_hit",
+   "title": "Late hit",
+   "who": [
+    {
+     "name": "Ren Shizan",
+     "pos": "S",
+     "club": "Purcell Rapids",
+     "pid": 9102347
+    }
+   ],
+   "game": "G201",
+   "where": "Purcell Rapids at Holliday Beetles, week 13",
+   "text": "Ren Shizan (S, Rapids) was flagged for unnecessary roughness with 5:53 left in the second quarter on a hit the officials ruled came well after the play was over. Gerhard Rothhagen (RB, Beetles) stayed in the game. Film review showed the contact was close to the whistle.\n\nRen Shizan's agent, Sol Terrance, says the player will cooperate with the review.",
+   "severity": 2.3,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9102347,
+    9037426
+   ],
+   "precedent": [
+    "2045 wk 3, Padma Devacharya: Warning (severity 2.2)",
+    "2046 wk 9, Tomoe Forsgaard: Warning (severity 2.7)",
+    "2045 wk 11, Nadia Ultreimyr: Warning (severity 2.9)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "warn",
+     "label": "Warning",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k10",
+     "label": "Fine $10K",
+     "games": 0,
+     "fine": 10000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $10K"
+    },
+    {
+     "key": "k15",
+     "label": "Fine $15K",
+     "games": 0,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $15K"
+    },
+    {
+     "key": "k25",
+     "label": "Fine $25K",
+     "games": 0,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $25K"
+    }
+   ],
+   "precedent_pick": "none",
+   "tier": "minor",
+   "id": "W13-3",
+   "week": 13
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": [
+  {
+   "title": "Hazing complaint",
+   "who": "Stanton City Conductors",
+   "club": "Stanton City Conductors",
+   "since": "week 10, 2046",
+   "ruling": "Open a formal investigation, rule on the findings"
+  }
+ ],
+ "prime": [
+  {
+   "week": 16,
+   "games": [
+    {
+     "id": "G121",
+     "host": "Good River Rangers",
+     "visitor": "Stanton City Conductors",
+     "kind": "division",
+     "hr": [
+      7,
+      4,
+      0
+     ],
+     "vr": [
+      5,
+      6,
+      0
+     ],
+     "hs": {
+      "div": "Majestic South",
+      "rank": 1,
+      "gb": 0.0,
+      "last": null
+     },
+     "vs": {
+      "div": "Majestic South",
+      "rank": 4,
+      "gb": 2.0,
+      "last": null
+     }
+    },
+    {
+     "id": "G14",
+     "host": "Costique Bearcats",
+     "visitor": "Diveo Demons",
+     "kind": "division",
+     "hr": [
+      6,
+      6,
+      0
+     ],
+     "vr": [
+      4,
+      8,
+      0
+     ],
+     "hs": {
+      "div": "Regal North",
+      "rank": 2,
+      "gb": 2.0,
+      "last": null
+     },
+     "vs": {
+      "div": "Regal North",
+      "rank": 4,
+      "gb": 4.0,
+      "last": null
+     }
+    },
+    {
+     "id": "G197",
+     "host": "Ediville Brass Tigers",
+     "visitor": "Cordelle Raptors",
+     "kind": "conference",
+     "hr": [
+      7,
+      4,
+      0
+     ],
+     "vr": [
+      4,
+      7,
+      0
+     ],
+     "hs": {
+      "div": "Regal West",
+      "rank": 1,
+      "gb": 0.0,
+      "last": null
+     },
+     "vs": {
+      "div": "Regal South",
+      "rank": 5,
+      "gb": 4.5,
+      "last": null
+     }
+    },
+    {
+     "id": "G202",
+     "host": "Fiota Swords",
+     "visitor": "Wolford Dragons",
+     "kind": "conference",
+     "hr": [
+      3,
+      9,
+      0
+     ],
+     "vr": [
+      4,
+      8,
+      0
+     ],
+     "hs": {
+      "div": "Regal East",
+      "rank": 5,
+      "gb": 6.0,
+      "last": null
+     },
+     "vs": {
+      "div": "Regal West",
+      "rank": 5,
+      "gb": 3.5,
+      "last": null
+     }
+    },
+    {
+     "id": "G203",
+     "host": "New Madrid Mastiffs",
+     "visitor": "Tasson Thunderbugs",
+     "kind": "conference",
+     "hr": [
+      6,
+      5,
+      0
+     ],
+     "vr": [
+      7,
+      4,
+      0
+     ],
+     "hs": {
+      "div": "Regal West",
+      "rank": 3,
+      "gb": 1.0,
+      "last": null
+     },
+     "vs": {
+      "div": "Regal East",
+      "rank": 3,
+      "gb": 1.5,
+      "last": null
+     }
+    },
+    {
+     "id": "G225",
+     "host": "El Latigo Shredders",
+     "visitor": "Palm Creek Leatherbacks",
+     "kind": "conference",
+     "hr": [
+      6,
+      6,
+      0
+     ],
+     "vr": [
+      10,
+      2,
+      0
+     ],
+     "hs": {
+      "div": "Majestic North",
+      "rank": 3,
+      "gb": 3.0,
+      "last": null
+     },
+     "vs": {
+      "div": "Majestic West",
+      "rank": 1,
+      "gb": 0.0,
+      "last": null
+     }
+    },
+    {
+     "id": "G249",
+     "host": "Queensville Phenoms",
+     "visitor": "Port Logan Commodores",
+     "kind": "conference",
+     "hr": [
+      5,
+      6,
+      1
+     ],
+     "vr": [
+      5,
+      7,
+      0
+     ],
+     "hs": {
+      "div": "Majestic North",
+      "rank": 5,
+      "gb": 3.5,
+      "last": null
+     },
+     "vs": {
+      "div": "Majestic East",
+      "rank": 5,
+      "gb": 2.5,
+      "last": null
+     }
+    },
+    {
+     "id": "G252",
+     "host": "Stamford Grays",
+     "visitor": "Underwood Bats",
+     "kind": "conference",
+     "hr": [
+      5,
+      6,
+      0
+     ],
+     "vr": [
+      4,
+      7,
+      1
+     ],
+     "hs": {
+      "div": "Majestic South",
+      "rank": 3,
+      "gb": 2.0,
+      "last": null
+     },
+     "vs": {
+      "div": "Majestic West",
+      "rank": 4,
+      "gb": 5.5,
+      "last": null
+     }
+    },
+    {
+     "id": "G264",
+     "host": "Fiota Bay T-Rexes",
+     "visitor": "Bruca Beach Hammerheads",
+     "kind": "conference",
+     "hr": [
+      7,
+      4,
+      0
+     ],
+     "vr": [
+      5,
+      7,
+      0
+     ],
+     "hs": {
+      "div": "Majestic East",
+      "rank": 1,
+      "gb": 0.0,
+      "last": null
+     },
+     "vs": {
+      "div": "Majestic West",
+      "rank": 2,
+      "gb": 5.0,
+      "last": null
+     }
+    },
+    {
+     "id": "G278",
+     "host": "South Burke Tsunami",
+     "visitor": "San Saltadac Sea Lions",
+     "kind": "conference",
+     "hr": [
+      6,
+      6,
+      0
+     ],
+     "vr": [
+      5,
+      6,
+      1
+     ],
+     "hs": {
+      "div": "Majestic East",
+      "rank": 3,
+      "gb": 1.5,
+      "last": null
+     },
+     "vs": {
+      "div": "Majestic South",
+      "rank": 2,
+      "gb": 2.0,
+      "last": null
+     }
+    },
+    {
+     "id": "G325",
+     "host": "Diamond City Hope",
+     "visitor": "North Hatesei Bees",
+     "kind": "interconference",
+     "hr": [
+      8,
+      4,
+      0
+     ],
+     "vr": [
+      3,
+      9,
+      0
+     ],
+     "hs": {
+      "div": "Regal South",
+      "rank": 2,
+      "gb": 1.0,
+      "last": null
+     },
+     "vs": {
+      "div": "Majestic West",
+      "rank": 5,
+      "gb": 7.0,
+      "last": null
+     }
+    },
+    {
+     "id": "G37",
+     "host": "Eona Topcats",
+     "visitor": "Holliday Beetles",
+     "kind": "division",
+     "hr": [
+      4,
+      8,
+      0
+     ],
+     "vr": [
+      7,
+      4,
+      0
+     ],
+     "hs": {
+      "div": "Regal West",
+      "rank": 4,
+      "gb": 3.5,
+      "last": null
+     },
+     "vs": {
+      "div": "Regal West",
+      "rank": 2,
+      "gb": 0.0,
+      "last": null
+     }
+    },
+    {
+     "id": "G46",
+     "host": "Far Farris Raccoons",
+     "visitor": "Coachville Mastodons",
+     "kind": "division",
+     "hr": [
+      5,
+      6,
+      0
+     ],
+     "vr": [
+      7,
+      5,
+      0
+     ],
+     "hs": {
+      "div": "Regal South",
+      "rank": 4,
+      "gb": 3.5,
+      "last": null
+     },
+     "vs": {
+      "div": "Regal South",
+      "rank": 3,
+      "gb": 2.0,
+      "last": null
+     }
+    },
+    {
+     "id": "G63",
+     "host": "Verigon Komodos",
+     "visitor": "Purcell Rapids",
+     "kind": "division",
+     "hr": [
+      4,
+      8,
+      0
+     ],
+     "vr": [
+      8,
+      4,
+      0
+     ],
+     "hs": {
+      "div": "Regal East",
+      "rank": 4,
+      "gb": 5.0,
+      "last": null
+     },
+     "vs": {
+      "div": "Regal East",
+      "rank": 2,
+      "gb": 1.0,
+      "last": null
+     }
+    },
+    {
+     "id": "G89",
+     "host": "Tengus City Terrors",
+     "visitor": "Rogaela Rovers",
+     "kind": "division",
+     "hr": [
+      5,
+      5,
+      1
+     ],
+     "vr": [
+      8,
+      4,
+      0
+     ],
+     "hs": {
+      "div": "Majestic North",
+      "rank": 4,
+      "gb": 3.0,
+      "last": null
+     },
+     "vs": {
+      "div": "Majestic North",
+      "rank": 2,
+      "gb": 1.0,
+      "last": null
+     }
+    }
+   ]
+  }
+ ],
+ "teamPrime": {
+  "Billiataho Greats": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Bruca Beach Hammerheads": {
+   "ph": 1,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Canesta Dales": {
+   "ph": 2,
+   "pa": 1,
+   "bh": 1,
+   "ba": 1
+  },
+  "Chapel Rock Crowns": {
+   "ph": 1,
+   "pa": 0,
+   "bh": 0,
+   "ba": 0
+  },
+  "Classetto Cavemen": {
+   "ph": 3,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Coachville Mastodons": {
+   "ph": 3,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Cordelle Raptors": {
+   "ph": 1,
+   "pa": 1,
+   "bh": 0,
+   "ba": 1
+  },
+  "Costique Bearcats": {
+   "ph": 2,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Crayellan Redwoods": {
+   "ph": 3,
+   "pa": 2,
+   "bh": 0,
+   "ba": 1
+  },
+  "Diamond City Dynamos": {
+   "ph": 2,
+   "pa": 3,
+   "bh": 0,
+   "ba": 1
+  },
+  "Diamond City Hope": {
+   "ph": 3,
+   "pa": 1,
+   "bh": 0,
+   "ba": 1
+  },
+  "Diveo Demons": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Ediville Brass Tigers": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 1,
+   "ba": 0
+  },
+  "El Latigo Shredders": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 1,
+   "ba": 1
+  },
+  "Eona Topcats": {
+   "ph": 2,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Far Farris Raccoons": {
+   "ph": 1,
+   "pa": 1,
+   "bh": 1,
+   "ba": 1
+  },
+  "Fiota Bay T-Rexes": {
+   "ph": 2,
+   "pa": 1,
+   "bh": 1,
+   "ba": 0
+  },
+  "Fiota Swords": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 1
+  },
+  "Good River Rangers": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 1,
+   "ba": 1
+  },
+  "Holliday Beetles": {
+   "ph": 2,
+   "pa": 1,
+   "bh": 1,
+   "ba": 0
+  },
+  "Hughes City Asteroids": {
+   "ph": 1,
+   "pa": 3,
+   "bh": 1,
+   "ba": 0
+  },
+  "Lornaman Renegades": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "New Madrid Mastiffs": {
+   "ph": 3,
+   "pa": 1,
+   "bh": 0,
+   "ba": 2
+  },
+  "North Hatesei Bees": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 1,
+   "ba": 0
+  },
+  "Palm Creek Leatherbacks": {
+   "ph": 3,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Port Logan Commodores": {
+   "ph": 2,
+   "pa": 1,
+   "bh": 1,
+   "ba": 1
+  },
+  "Purcell Rapids": {
+   "ph": 3,
+   "pa": 1,
+   "bh": 0,
+   "ba": 1
+  },
+  "Queensville Phenoms": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 1,
+   "ba": 1
+  },
+  "Rogaela Rovers": {
+   "ph": 2,
+   "pa": 1,
+   "bh": 1,
+   "ba": 1
+  },
+  "San Saltadac Sea Lions": {
+   "ph": 1,
+   "pa": 3,
+   "bh": 1,
+   "ba": 0
+  },
+  "Sarkady Beavers": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 1,
+   "ba": 0
+  },
+  "South Burke Tsunami": {
+   "ph": 0,
+   "pa": 2,
+   "bh": 1,
+   "ba": 0
+  },
+  "Stamford Grays": {
+   "ph": 2,
+   "pa": 1,
+   "bh": 0,
+   "ba": 1
+  },
+  "Stanton City Conductors": {
+   "ph": 1,
+   "pa": 1,
+   "bh": 1,
+   "ba": 0
+  },
+  "Tasson Thunderbugs": {
+   "ph": 1,
+   "pa": 1,
+   "bh": 1,
+   "ba": 1
+  },
+  "Tengus City Terrors": {
+   "ph": 1,
+   "pa": 0,
+   "bh": 1,
+   "ba": 1
+  },
+  "Underwood Bats": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Vaughn Bay Silverbacks": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 0,
+   "ba": 1
+  },
+  "Verigon Komodos": {
+   "ph": 1,
+   "pa": 0,
+   "bh": 0,
+   "ba": 0
+  },
+  "Wolford Dragons": {
+   "ph": 0,
+   "pa": 1,
+   "bh": 1,
+   "ba": 0
+  }
+ }
+}

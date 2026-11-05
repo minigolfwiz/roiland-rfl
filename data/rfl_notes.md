@@ -258,3 +258,6 @@ Generator fixes (forward-only): bench_clear opener now says who did what; invest
 
 2046 week 11 desk applied: W11-1 Chibayo court result -> earlier ruling stands; W11-2 Monteserna 2 games + $100K; W11-3 Ackerhorn warning. Week 14 Sunday primetime: Mastiffs at Raccoons (morning), Rovers at T-Rexes (afternoon), Shredders at Terrors (evening).
 2046 week 12 played: 1 OT (Phenoms 26 at Terrors 20). No unbeaten/winless. Ballot W12-1 Olubayo post, W12-2 Prabhakrishnan tunnel incident. Awaiting week 15 Sunday primetime picks.
+
+2046 week 12 desk applied: W12-1 Olubayo no action; W12-2 Prabhakrishnan Fine $10K. Week 15 Sunday primetime: Dynamos at Conductors (morning), Rapids at Thunderbugs (afternoon), Rangers at Rovers (evening).
+2046 week 13 played: 1 OT, ended in a tie (Sea Lions 22 at Phenoms 22). No unbeaten/winless. Ballot W13-1 Conductors hazing findings (Dan opened investigation; league found nothing substantiated, suggested close), W13-2 Langmore helmet, W13-3 Shizan late hit. Possessive typo 'Conductors's' hand-fixed in ballot; generator still uses "{nick}'s" in several openers (TODO). Awaiting week 16 Sunday primetime picks.
