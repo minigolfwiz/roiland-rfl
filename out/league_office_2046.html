@@ -291,6 +291,7 @@ function option(o, name){
   return `<label class="opt"><input type="radio" name="${name}" value="${esc(o.key)}"><span><span class="nm">${esc(o.label)}</span>${o.suggested ? '<span class="sug">Suggested</span>' : ''}${o.status === 'indef' ? '<span class="sug warn">Stays out until reinstated</span>' : ''}${o.status === 'ban' ? '<span class="sug warn">Permanent</span>' : ''}${(o.blurb && (o.program || o.probation || o.coach_games || o.pick_round || o.indef_min || o.exempt || o.adjust || o.reinstate || o.ban)) ? '<span class="blurb">' + esc(o.blurb) + '</span>' : ''}</span></label>`;
 }
 const SLOTS = [['sam','Morning'],['spm','Afternoon'],['snf','Evening']];
+const slotsFor = w => w === 20 ? [['sam','Morning'],['spm','Afternoon'],['snf','Evening (first game)'],['snf2','Evening (second game)']] : SLOTS;   // week 20 has two Sunday evening games
 const rc = r => r[0] + '-' + r[1] + (r[2] ? '-' + r[2] : '');
 function teamLine(t, r, st, home){
   const gb = st.gb ? (st.gb + ' back') : 'leads';
@@ -311,14 +312,14 @@ function liveCounts(){
   add(sundayApp());
   return o;
 }
-const SUNLABEL = {sam:'Sunday morning', spm:'Sunday afternoon', snf:'Sunday evening'};
+const SUNLABEL = {sam:'Sunday morning', spm:'Sunday afternoon', snf:'Sunday evening', snf2:'Sunday evening (second game)'};
 function sundayLabel(gid){ const x = $('ps-' + gid); return x && x.value ? SUNLABEL[x.value] : null; }
 function primeHTML(){
   const P = B.prime || []; if (!P.length) return '';
-  let h = `<h2>Sunday primetime<small>${P.length === 1 ? 'week ' + P[0].week : 'weeks ' + P[0].week + ' to ' + P[P.length - 1].week}</small></h2><p class="hint">For each week, choose the morning, afternoon and evening primetime game from that week's Sunday games. ${B.broadcast ? 'A game you set as Thursday or Monday night in the Broadcast Desk above is not available here.' : 'Thursday and Monday games are already set.'} Each club shows its current record, its division standing, and its total primetime games, played plus already booked plus whatever you have picked on this page (home / away).</p>`;
+  let h = `<h2>Sunday primetime<small>${P.length === 1 ? 'week ' + P[0].week : 'weeks ' + P[0].week + ' to ' + P[P.length - 1].week}</small></h2><p class="hint">For each week, choose the morning, afternoon and evening primetime game from that week's Sunday games (week 20 has two evening games). ${B.broadcast ? 'A game you set as Thursday or Monday night in the Broadcast Desk above is not available here.' : 'Thursday and Monday games are already set.'} Each club shows its current record, its division standing, and its total primetime games, played plus already booked plus whatever you have picked on this page (home / away).</p>`;
   for (const W of P){
     h += `<div class="grp" data-week="${W.week}"><h3>Week ${W.week}</h3><div class="pk" id="pk-${W.week}"></div>` + W.games.map(g => `<div class="pg" id="pg-${g.id}"><div class="row"><div class="tms">${chip(g.visitor, true)} <span class="rs">at</span> ${chip(g.host, true)} <span class="rs">${esc(g.kind)}</span> <span class="rs warn" id="pt-${g.id}"></span></div>
-      <select id="ps-${g.id}" data-week="${W.week}" aria-label="Slot for ${esc(g.visitor)} at ${esc(g.host)}"><option value="">Not primetime</option>${SLOTS.map(([k, l]) => `<option value="${k}">${l} primetime</option>`).join('')}</select></div>
+      <select id="ps-${g.id}" data-week="${W.week}" aria-label="Slot for ${esc(g.visitor)} at ${esc(g.host)}"><option value="">Not primetime</option>${slotsFor(W.week).map(([k, l]) => `<option value="${k}">${l} primetime</option>`).join('')}</select></div>
       <div class="tl">${teamLine(g.visitor, g.vr, g.vs)}${teamLine(g.host, g.hr, g.hs)}</div></div>`).join('') + `<div class="pk" id="pk2-${W.week}"></div></div>`;
   }
   const T = B.teamPrime || {}; const rows = Object.keys(T).sort((a, b) => (T[b].ph + T[b].pa + T[b].bh + T[b].ba) - (T[a].ph + T[a].pa + T[a].bh + T[a].ba) || a.localeCompare(b));
@@ -338,7 +339,7 @@ function refreshPrime(){
   const st = primeState();
   for (const W of (B.prime || [])){
     const o = st[W.week] || {}; const by = {}; W.games.forEach(g => by[g.id] = g);
-    const pkh = SLOTS.map(([k, l]) => { const g = by[o[k]]; return `<div><b>${l}</b>: ${g ? esc(g.visitor) + ' at ' + esc(g.host) : '<span class="warn">not chosen</span>'}</div>`; }).join('');
+    const pkh = slotsFor(W.week).map(([k, l]) => { const g = by[o[k]]; return `<div><b>${l}</b>: ${g ? esc(g.visitor) + ' at ' + esc(g.host) : '<span class="warn">not chosen</span>'}</div>`; }).join('');
     $('pk-' + W.week).innerHTML = pkh; $('pk2-' + W.week).innerHTML = pkh;
     W.games.forEach(g => $('pg-' + g.id).classList.toggle('sel', !!$('ps-' + g.id).value));
   }
@@ -382,7 +383,7 @@ function collect(){
 }
 function missing(){
   const d = collect(); let n = 0;
-  for (const W of (B.prime || [])) for (const [k] of SLOTS) if (!(d.prime[W.week] || {})[k]) n++;
+  for (const W of (B.prime || [])) for (const [k] of slotsFor(W.week)) if (!(d.prime[W.week] || {})[k]) n++;
   if (B.broadcast) n += Desk.missing();
   for (const c of B.cases) if (!d.rulings[c.id]) n++;
   for (const a of (B.awards || [])) if (!d.awards[a.key]) n++;
@@ -391,7 +392,7 @@ function missing(){
 function summary(){
   const d = collect(); const L = [WK === 0 ? 'Preseason decisions' : 'Week ' + WK + ' decisions'];
   if (B.broadcast) L.push(...Desk.lines());
-  for (const W of (B.prime || [])){ const o = d.prime[W.week] || {}; for (const [k, l] of SLOTS){ const g = W.games.find(x => x.id === o[k]); if (g) L.push('Week ' + W.week + ' Sunday ' + l.toLowerCase() + ': ' + g.visitor + ' at ' + g.host); } }
+  for (const W of (B.prime || [])){ const o = d.prime[W.week] || {}; for (const [k, l] of slotsFor(W.week)){ const g = W.games.find(x => x.id === o[k]); if (g) L.push('Week ' + W.week + ' Sunday ' + l.toLowerCase() + ': ' + g.visitor + ' at ' + g.host); } }
   for (const c of B.cases){ const r = d.rulings[c.id]; if (r){ const o = c.options.find(x => x.key === r.key); L.push(c.id + ' ' + c.title + ' - ' + c.who.map(w => w.name).join(' & ') + ': ' + o.label + (r.note ? ' [' + r.note + ']' : '')); } }
   for (const a of (B.awards || [])){ const v = d.awards[a.key]; const f = a.finalists.find(x => x.id === v); if (f) L.push(a.key + ': ' + f.name + ' (' + f.club + ')'); }
   return L.join('\n');
@@ -440,7 +441,7 @@ function renderHist(){
   const bw = Object.keys(H.broadcast || {}).map(Number).sort((a, b) => a - b);
   let h = '';
   if (bw.length) h += '<h3 style="font-family:var(--display);letter-spacing:.06em;text-transform:uppercase;margin:6px 0">Thursday and Monday nights</h3><div class="rec">' + bw.map(w => { const p = H.broadcast[w]; return `<div style="margin:3px 0"><b>WEEK ${w}</b> ` + [['thu','Thursday'],['mnf','Monday']].filter(x => p[x[0]]).map(x => `${x[1]}: ${chip(p[x[0]].visitor, true)} <span class="rs">at</span> ${chip(p[x[0]].host, true)}`).join(' &middot; ') + '</div>'; }).join('') + '</div>';
-  if (pw.length) h += '<h3 style="font-family:var(--display);letter-spacing:.06em;text-transform:uppercase;margin:6px 0">Sunday primetime picks</h3>' + pw.map(w => { const p = H.prime[w]; return `<div class="rec"><b>WEEK ${w}</b>` + [['sam','Morning'],['spm','Afternoon'],['snf','Evening']].filter(x => p[x[0]]).map(x => `<div>${x[1]}: ${chip(p[x[0]].visitor, true)} <span class="rs">at</span> ${chip(p[x[0]].host, true)}</div>`).join('') + '</div>'; }).join('');
+  if (pw.length) h += '<h3 style="font-family:var(--display);letter-spacing:.06em;text-transform:uppercase;margin:6px 0">Sunday primetime picks</h3>' + pw.map(w => { const p = H.prime[w]; return `<div class="rec"><b>WEEK ${w}</b>` + [['sam','Morning'],['spm','Afternoon'],['snf','Evening'],['snf2','Evening (second game)']].filter(x => p[x[0]]).map(x => `<div>${x[1]}: ${chip(p[x[0]].visitor, true)} <span class="rs">at</span> ${chip(p[x[0]].host, true)}</div>`).join('') + '</div>'; }).join('');
   const withCases = weeks.filter(w => H.discipline.some(d => d.week === w));
   if (!pw.length && !bw.length && !withCases.length){ $('hist').innerHTML = '<div class="empty">No weeks decided yet. Your first picks and rulings will be recorded here.</div>'; return; }
   h += '<h3 style="font-family:var(--display);letter-spacing:.06em;text-transform:uppercase;margin:14px 0 6px">Case rulings</h3>' + withCases.map(w => {

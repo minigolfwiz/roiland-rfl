@@ -153,7 +153,8 @@ def claude_picks_st(B):
 
 # ----------------------------------------------------------------------------- Sunday primetime picks (Dan, 1 Nov 2026): replaces the Players of the Week
 PRIME_SLOTS = ('sam', 'spm', 'snf')          # Sunday morning, afternoon, evening primetime
-PRIME_LABEL = dict(sam='Morning', spm='Afternoon', snf='Evening')
+PRIME_LABEL = dict(sam='Morning', spm='Afternoon', snf='Evening', snf2='Evening (second game)')
+def prime_slots(w): return PRIME_SLOTS + ('snf2',) if int(w) == 20 else PRIME_SLOTS      # week 20 (Dan, 2046 wk 17): two Sunday evening games
 ALL_PRIME = ('thu', 'mnf', 'sam', 'spm', 'snf', 'snf2')
 SUN_SLOTS = ('sun', 'sam', 'spm', 'snf', 'snf2')
 
@@ -330,12 +331,12 @@ def apply(S, week, dec):
     if dec.get('broadcast'): out += apply_broadcast(S, dec['broadcast'])
     for wk_, pk in (dec.get('prime') or {}).items():
         w_ = int(wk_); gs = {g['id']: g for g in se['schedule'][str(w_)]}
-        ids = [pk.get(sl) for sl in PRIME_SLOTS]
-        if None in ids or len(set(ids)) != 3 or any(i not in gs or gs[i]['slot'] in ('thu', 'mnf') for i in ids): raise SystemExit(f"bad Sunday primetime picks for week {w_}: {pk}")
+        ids = [pk.get(sl) for sl in prime_slots(w_)]
+        if None in ids or len(set(ids)) != len(ids) or any(i not in gs or gs[i]['slot'] in ('thu', 'mnf') for i in ids): raise SystemExit(f"bad Sunday primetime picks for week {w_}: {pk}")
         for g in gs.values():
             if g['slot'] in ('snf', 'snf2', 'sam', 'spm'): g['slot'] = 'sun'
         log = {}
-        for sl in PRIME_SLOTS:
+        for sl in prime_slots(w_):
             g = gs[pk[sl]]; g['slot'] = sl; log[sl] = dict(id=g['id'], host=g['host'], visitor=g['visitor'])
             out.append(f"Week {w_} Sunday {PRIME_LABEL[sl].lower()}: {g['visitor']} at {g['host']}")
         se['prime_log'][str(w_)] = log
