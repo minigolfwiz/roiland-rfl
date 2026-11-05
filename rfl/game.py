@@ -1,6 +1,6 @@
 """Drive-by-drive game engine (rebuilt). Clock-aware: possessions end at 0:00, halftime and the final gun are hard stops,
 two-minute hurry-up and clock-milking, timeouts, 4th-down and two-point decisions by score and time, onside kicks,
-Hail Marys, kneel-downs, NFL overtime (both teams possess; regular season can tie after one 10-minute period).
+Hail Marys, kneel-downs, NFL overtime (both teams possess; regular season can tie after one period: 10 minutes through 2045, 15 from 2046).
 Returns a result dict with score, plays (scoring + turnovers), per-player stats, injuries."""
 import random, math
 from rfl.engine import depth_chart, ovr, age, DEPTH
@@ -51,6 +51,7 @@ class Side:
         return self.rbs[0] if len(self.rbs) == 1 or self.rnd.random() < .72 else self.rbs[1]
 
 TWO_LEAD_FROM = 2045   # from week 9 of 2045: coaches with a 5- or 12-point lead in the 4th go for two
+OT_REG_MIN = {2046: 15}   # regular-season overtime length in minutes by first year (Dan, 4 Nov 2026: 15 instead of 10 to cut ties; forward-only)
 OT_TWO_POINT_FROM = 2045   # from this season on, overtime touchdowns must be followed by a two-point try
 
 class Game:
@@ -306,7 +307,7 @@ class Game:
                     winner=None if self.H.score == self.A.score else (self.H.name if self.H.score > self.A.score else self.A.name),
                     plays=self.plays, stats={'H': self.H.stats, 'A': self.A.stats}, injuries=self.injuries, drives=getattr(self, 'drives', {'H': 0, 'A': 0}), pens=self.pens)
     def overtime(self):
-        self.ot = True; self.ot_state = {}; self.q = 5; self.clock = 600 if not self.playoff else 900
+        self.ot = True; self.ot_state = {}; self.q = 5; self.clock = 900 if (self.playoff or self.year >= min(OT_REG_MIN)) else 600
         self.H.timeouts = self.A.timeouts = 2
         first = self.H if self.rnd.random() < .5 else self.A; second = self.other(first)
         self.log('ot', first, f"OVERTIME — {first.name} win the toss and receive")
