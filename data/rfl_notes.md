@@ -242,3 +242,6 @@
 - **2046 week 6 decisions (Dan, 4 Nov 2026):** W6-1 Chibayo (Silverbacks LB) 2 games + $75K + conduct program; W6-2 Talltree (Rovers DL) no action; week 9 Sunday primetime: morning Mastodons at Asteroids, afternoon Shredders at Hope, evening Phenoms at Leatherbacks.
 - **2046 week 7 played (4 Nov 2026):** two OT games (Brass Tigers 31-29 Swords, Rovers 33-27 Phenoms), no ties; Leatherbacks still unbeaten, Renegades still winless. Week 7 ballot: W7-1 Thiruvengadam (T-Rexes DL) missed mandatory media, severity 1.0; week 10 primetime pick.
 - **Generator fix (forward-only, 4 Nov 2026):** `rfl/cases.py` now gives 'social' cases a quote and target (WORDS['social']) and 'assault_misd' cases the police-report circumstances (ASSAULT_DETAIL), after the week 6 texts came out too thin to rule on.
+
+2046 week 7 desk applied: W7-1 Thiruvengadam (T-Rexes DL, missed media) no action. Week 10 Sunday primetime: Rovers at Swords (morning), Sea Lions at Grays (afternoon), Commodores at T-Rexes (evening).
+2046 week 8 played: no OT games; no unbeaten teams left, Renegades lone winless. Week 8 ballot: W8-1 Gyefrah (Dragons WR, left news conference after one question). Awaiting week 11 Sunday primetime picks.
