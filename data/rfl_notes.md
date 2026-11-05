@@ -252,3 +252,6 @@
 2046 week 9 desk applied: W9-1 Danestead/Karakoulis Fine $15K each (as ruled), W9-2 Kyo-Jin warning, W9-3 Forsgaard warning. Week 12 Sunday primetime: Topcats at Mastiffs (morning), Dynamos at Commodores (afternoon), Beavers at Cavemen (evening).
 Generator fixes (forward-only): bench_clear opener now says who did what; investigation tail sentence no longer says 'bounty' for non-bounty cases (hazing gets its own detail).
 2046 week 10 played: 2 OT (Tsunami 26 at Bees 23, Phenoms 40 Dales 34). Renegades won (31-13 at Dynamos): no unbeaten, no winless. Ballot W10-1 hazing complaint vs Conductors (text hand-expanded). Awaiting week 13 Sunday primetime picks.
+
+2046 week 10 desk applied: W10-1 Conductors hazing -> formal investigation opened. Week 13 Sunday primetime: Raccoons at Demons (morning), Bats at Beavers (afternoon), Redwoods at Rovers (evening).
+2046 week 11 played: 3 OT (Leatherbacks 29 Bats 23; Shredders 25 Phenoms 19; Crowns 26 Grays 20). No unbeaten, no winless. Ballot W11-1 Chibayo court result (assault dismissed), W11-2 Monteserna ejection, W11-3 Ackerhorn helmet-to-helmet. Awaiting week 14 Sunday primetime picks.
