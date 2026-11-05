@@ -276,3 +276,6 @@ Generator fixes (forward-only): bench_clear opener now says who did what; invest
 
 2046 week 17 (Dan): week 20 has TWO Sunday evening primetime games (as in 2042-2044: snf + snf2, no MNF). Engine/page now support it: `prime_slots(20)` = sam, spm, snf, snf2 in league_office.py (apply requires 4 distinct games for week 20); page `slotsFor(20)` shows 'Evening (first game)' / 'Evening (second game)'. Decision format: prime['20'] = {sam, spm, snf, snf2}. Week 17 desk page rebuilt with this; Dan's week 17 picks not yet submitted.
 2046 standing rule (Dan, wk 17): in the final few weeks, if a week's desk has no league office decisions (no cases, no primetime picks), do NOT roll straight on to the next week; post the recap and wait for Dan to acknowledge first. (Regular-season weeks 18-20 and playoffs.)
+
+2046 week 17 desk applied: no cases. Week 20 Sunday primetime (two evening games): morning Dragons at Brass Tigers, afternoon Redwoods at Rapids, evening Dynamos at Silverbacks, second evening T-Rexes at Shredders. Engine auto-flexed week 18 Monday night: Raptors at Commodores replaced by Asteroids at Hope.
+2046 week 18 played: 2 OT (Hammerheads 16 Sea Lions 13; Grays 34 Renegades 28). No unbeaten/winless. Ballot W18-1 Woolshaw/Skognes fight (text hand-expanded). No primetime left to pick (all weeks through 20 decided).

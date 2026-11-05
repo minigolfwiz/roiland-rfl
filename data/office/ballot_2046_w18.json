@@ -1,0 +1,580 @@
+{
+ "year": 2046,
+ "week": 18,
+ "potw": {
+  "off": [
+   {
+    "pid": 9036314,
+    "name": "Aminata Kofkah",
+    "pos": "QB",
+    "club": "Tengus City Terrors",
+    "line": "27/40, 342 yds, 4 TD, 52 rush yds",
+    "res": "W 44-3 at Phenoms",
+    "score": 38.15,
+    "plays": [
+     "Q1 7:01 9-yd TD pass to Masaru Wakamaki (was tied)",
+     "Q1 0:02 17-yd TD pass to Annika Weinheim (was up 7)",
+     "Q2 10:30 28-yd TD pass to Annika Weinheim (was up 17)",
+     "Q3 6:11 4-yd TD pass to Michio Sugita (was up 21)",
+     "Q4 12:47 12-yd TD run (was up 31)"
+    ]
+   },
+   {
+    "pid": 9034737,
+    "name": "Lubna Zelenimir",
+    "pos": "QB",
+    "club": "El Latigo Shredders",
+    "line": "28/32, 322 yds, 4 TD, 46 rush yds",
+    "res": "W 49-16 at Tsunami",
+    "score": 31.95,
+    "plays": [
+     "Q1 8:02 14-yd TD pass to Samira Habibi (was tied)",
+     "Q1 1:06 4-yd TD pass to Honoka Seo-Bae (was up 7)",
+     "Q2 8:44 1-yd TD pass to Samira Habibi (was up 14)",
+     "Q4 7:05 14-yd TD pass to Samira Habibi (was up 19)"
+    ]
+   },
+   {
+    "pid": 9101793,
+    "name": "Ureniy Fentreimyr",
+    "pos": "WR",
+    "club": "Cordelle Raptors",
+    "line": "13 rec, 165 yds, 2 TD",
+    "res": "W 30-22 at Commodores",
+    "score": 28.5,
+    "plays": [
+     "Q4 11:58 9-yd TD catch from Bruno Rioserna (was up 2)",
+     "Q4 6:04 3-yd TD catch from Bruno Rioserna (was up 9)"
+    ]
+   },
+   {
+    "pid": 9037791,
+    "name": "Samira Habibi",
+    "pos": "WR",
+    "club": "El Latigo Shredders",
+    "line": "7 rec, 102 yds, 3 TD",
+    "res": "W 49-16 at Tsunami",
+    "score": 28.2,
+    "plays": [
+     "Q1 8:02 14-yd TD catch from Lubna Zelenimir (was tied)",
+     "Q2 8:44 1-yd TD catch from Lubna Zelenimir (was up 14)",
+     "Q4 7:05 14-yd TD catch from Lubna Zelenimir (was up 19)"
+    ]
+   },
+   {
+    "pid": 9101688,
+    "name": "Kazimir Gladushkin",
+    "pos": "RB",
+    "club": "Classetto Cavemen",
+    "line": "20 car, 53 yds, 2 rec, 29 yds, 3 TD",
+    "res": "W 37-24 at Thunderbugs",
+    "score": 26.2,
+    "plays": [
+     "Q2 1:52 3-yd TD run (was up 16)",
+     "Q3 11:31 3-yd TD run (was up 23)",
+     "Q4 1:57 1-yd TD catch from Kyungja U-Cheol (was up 13)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9034503,
+    "name": "Shanice Engelstad",
+    "pos": "LB",
+    "club": "Diamond City Dynamos",
+    "line": "15 tackles, 1 sack, 1 INT",
+    "res": "W 28-21 at T-Rexes",
+    "score": 23.5,
+    "plays": [
+     "Q4 3:47 interception returned 17 yds (tied, late), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9101617,
+    "name": "Nikhil Al-Husri",
+    "pos": "LB",
+    "club": "Verigon Komodos",
+    "line": "10 tackles, 1 sack, 1 INT, 1 forced fumble",
+    "res": "L 9-17 vs Bearcats",
+    "score": 23.0,
+    "plays": [
+     "Q2 9:07 interception returned 24 yds (down 7), led to a field goal",
+     "Q2 2:06 sack and forced fumble (down 4)"
+    ]
+   },
+   {
+    "pid": 9101653,
+    "name": "Treiva Rolaniy",
+    "pos": "LB",
+    "club": "Good River Rangers",
+    "line": "8 tackles, 1 sack, 1 INT",
+    "res": "W 37-13 vs Crowns",
+    "score": 17.8,
+    "plays": [
+     "Q3 14:08 interception returned 9 yds (up 17), led to a touchdown"
+    ]
+   },
+   {
+    "pid": 9038461,
+    "name": "Nkechi Yeboah",
+    "pos": "DL",
+    "club": "Diveo Demons",
+    "line": "4 tackles, 3 sacks",
+    "res": "W 24-17 vs Tigers",
+    "score": 17.4,
+    "plays": []
+   },
+   {
+    "pid": 9101776,
+    "name": "Kiran Padmasekaran",
+    "pos": "LB",
+    "club": "Canesta Dales",
+    "line": "3 tackles, 2 INT",
+    "res": "W 20-16 vs Conductors",
+    "score": 17.3,
+    "plays": [
+     "Q3 3:48 interception returned 27 yds (down 3), led to a touchdown",
+     "Q4 1:24 interception (up 4, late)"
+    ]
+   },
+   {
+    "pid": 9037265,
+    "name": "Savitri Sugitsu",
+    "pos": "DL",
+    "club": "San Saltadac Sea Lions",
+    "line": "3 tackles, 3 sacks",
+    "res": "L 13-16 at Hammerheads",
+    "score": 16.8,
+    "plays": []
+   }
+  ],
+  "st": [],
+  "st_cands": [
+   {
+    "pid": 9103086,
+    "name": "Amelia Kaltkamp",
+    "pos": "P",
+    "club": "Diamond City Dynamos",
+    "line": "7 punts, 49.6 avg, 5 inside the 20",
+    "res": "W 28-21 at T-Rexes",
+    "score": 18.666666666666664,
+    "plays": []
+   },
+   {
+    "pid": 9038683,
+    "name": "Jack Rocherive",
+    "pos": "K",
+    "club": "Tengus City Terrors",
+    "line": "3/4 FG, long 58, 5/5 XP",
+    "res": "W 44-3 at Phenoms",
+    "score": 16.25,
+    "plays": [
+     "Q1 13:46 50-yd MISSED",
+     "Q2 12:40 57-yd GOOD",
+     "Q3 2:20 58-yd GOOD",
+     "Q4 5:37 44-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101837,
+    "name": "Roswitha Rosenmeier",
+    "pos": "K",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "4/4 FG, long 52, 3/3 XP",
+    "res": "W 33-17 at Rapids",
+    "score": 15.5,
+    "plays": [
+     "Q1 9:53 40-yd GOOD",
+     "Q1 3:21 52-yd GOOD",
+     "Q2 3:24 29-yd GOOD",
+     "Q4 1:30 37-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9035917,
+    "name": "Abena Ramadan",
+    "pos": "K",
+    "club": "Hughes City Asteroids",
+    "line": "3/3 FG, long 57, 1/1 XP",
+    "res": "L 16-17 at Hope",
+    "score": 13.0,
+    "plays": [
+     "Q1 12:05 24-yd GOOD",
+     "Q3 0:27 57-yd GOOD",
+     "Q4 4:30 45-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9037423,
+    "name": "Baltazar Kleinmann",
+    "pos": "P",
+    "club": "Diveo Demons",
+    "line": "5 punts, 49.8 avg, 3 inside the 20",
+    "res": "W 24-17 vs Tigers",
+    "score": 12.666666666666664,
+    "plays": []
+   }
+  ],
+  "st_pick": {
+   "pid": 9103086,
+   "name": "Amelia Kaltkamp",
+   "pos": "P",
+   "club": "Diamond City Dynamos",
+   "line": "7 punts, 49.6 avg, 5 inside the 20",
+   "res": "W 28-21 at T-Rexes",
+   "score": 18.666666666666664,
+   "plays": [],
+   "why": "Top performer by the box score."
+  }
+ },
+ "cases": [
+  {
+   "type": "fight",
+   "title": "Fight and ejections",
+   "who": [
+    {
+     "name": "Marlene Woolshaw",
+     "pos": "OL",
+     "club": "Verigon Komodos",
+     "pid": 9101777
+    },
+    {
+     "name": "Aslaug Skognes",
+     "pos": "LB",
+     "club": "Costique Bearcats",
+     "pid": 9037841
+    }
+   ],
+   "game": "G188",
+   "where": "Costique Bearcats at Verigon Komodos, week 18",
+   "text": "Late in the second quarter of Bearcats at Komodos, Aslaug Skognes (LB, Bearcats) was lying on Marlene Woolshaw (OL, Komodos) at the bottom of a pile after a run play. Woolshaw swung his forearm into Skognes's facemask, and Skognes answered with two punches to Woolshaw's helmet. Both benches cleared and the scrum lasted about a minute. Woolshaw and Skognes were both ejected; no one else was. Officials described the fight as mutual.\n\nThe league office has asked both clubs for statements.",
+   "severity": 4.6,
+   "prior": 0,
+   "stage": "new",
+   "pids": [
+    9101777,
+    9037841
+   ],
+   "precedent": [
+    "2044 wk 12, Yansa Thunderstar: Fine $15K (severity 4.6)"
+   ],
+   "options": [
+    {
+     "key": "none",
+     "label": "No action",
+     "games": 0,
+     "fine": 0,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "No penalty"
+    },
+    {
+     "key": "k15",
+     "label": "Fine $15K",
+     "games": 0,
+     "fine": 15000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Fined $15K"
+    },
+    {
+     "key": "g1",
+     "label": "1 game + $25K",
+     "games": 1,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": true,
+     "blurb": "Out 1 game, fined $25K"
+    },
+    {
+     "key": "g2",
+     "label": "2 games + $25K",
+     "games": 2,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Out 2 games, fined $25K"
+    },
+    {
+     "key": "g3",
+     "label": "3 games + $25K",
+     "games": 3,
+     "fine": 25000,
+     "status": "ok",
+     "suggested": false,
+     "blurb": "Out 3 games, fined $25K"
+    }
+   ],
+   "precedent_pick": null,
+   "tier": "moderate",
+   "id": "W18-1",
+   "week": 18
+  }
+ ],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": [],
+ "prime": [],
+ "teamPrime": {
+  "Billiataho Greats": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Bruca Beach Hammerheads": {
+   "ph": 1,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Canesta Dales": {
+   "ph": 4,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Chapel Rock Crowns": {
+   "ph": 1,
+   "pa": 0,
+   "bh": 0,
+   "ba": 0
+  },
+  "Classetto Cavemen": {
+   "ph": 4,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Coachville Mastodons": {
+   "ph": 3,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Cordelle Raptors": {
+   "ph": 1,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Costique Bearcats": {
+   "ph": 2,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Crayellan Redwoods": {
+   "ph": 3,
+   "pa": 3,
+   "bh": 1,
+   "ba": 1
+  },
+  "Diamond City Dynamos": {
+   "ph": 3,
+   "pa": 4,
+   "bh": 0,
+   "ba": 1
+  },
+  "Diamond City Hope": {
+   "ph": 4,
+   "pa": 1,
+   "bh": 0,
+   "ba": 1
+  },
+  "Diveo Demons": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Ediville Brass Tigers": {
+   "ph": 3,
+   "pa": 2,
+   "bh": 1,
+   "ba": 1
+  },
+  "El Latigo Shredders": {
+   "ph": 1,
+   "pa": 4,
+   "bh": 2,
+   "ba": 0
+  },
+  "Eona Topcats": {
+   "ph": 3,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Far Farris Raccoons": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Fiota Bay T-Rexes": {
+   "ph": 3,
+   "pa": 2,
+   "bh": 0,
+   "ba": 1
+  },
+  "Fiota Swords": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 1
+  },
+  "Good River Rangers": {
+   "ph": 3,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Holliday Beetles": {
+   "ph": 3,
+   "pa": 3,
+   "bh": 1,
+   "ba": 0
+  },
+  "Hughes City Asteroids": {
+   "ph": 2,
+   "pa": 4,
+   "bh": 1,
+   "ba": 0
+  },
+  "Lornaman Renegades": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "New Madrid Mastiffs": {
+   "ph": 3,
+   "pa": 4,
+   "bh": 1,
+   "ba": 0
+  },
+  "North Hatesei Bees": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Palm Creek Leatherbacks": {
+   "ph": 3,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Port Logan Commodores": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Purcell Rapids": {
+   "ph": 3,
+   "pa": 2,
+   "bh": 1,
+   "ba": 0
+  },
+  "Queensville Phenoms": {
+   "ph": 2,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Rogaela Rovers": {
+   "ph": 3,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "San Saltadac Sea Lions": {
+   "ph": 2,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Sarkady Beavers": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "South Burke Tsunami": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Stamford Grays": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Stanton City Conductors": {
+   "ph": 2,
+   "pa": 3,
+   "bh": 0,
+   "ba": 1
+  },
+  "Tasson Thunderbugs": {
+   "ph": 2,
+   "pa": 1,
+   "bh": 0,
+   "ba": 1
+  },
+  "Tengus City Terrors": {
+   "ph": 3,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Underwood Bats": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 1,
+   "ba": 0
+  },
+  "Vaughn Bay Silverbacks": {
+   "ph": 1,
+   "pa": 3,
+   "bh": 1,
+   "ba": 0
+  },
+  "Verigon Komodos": {
+   "ph": 1,
+   "pa": 0,
+   "bh": 0,
+   "ba": 0
+  },
+  "Wolford Dragons": {
+   "ph": 1,
+   "pa": 1,
+   "bh": 0,
+   "ba": 2
+  }
+ }
+}
