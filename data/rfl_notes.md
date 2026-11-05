@@ -261,3 +261,6 @@ Generator fixes (forward-only): bench_clear opener now says who did what; invest
 
 2046 week 12 desk applied: W12-1 Olubayo no action; W12-2 Prabhakrishnan Fine $10K. Week 15 Sunday primetime: Dynamos at Conductors (morning), Rapids at Thunderbugs (afternoon), Rangers at Rovers (evening).
 2046 week 13 played: 1 OT, ended in a tie (Sea Lions 22 at Phenoms 22). No unbeaten/winless. Ballot W13-1 Conductors hazing findings (Dan opened investigation; league found nothing substantiated, suggested close), W13-2 Langmore helmet, W13-3 Shizan late hit. Possessive typo 'Conductors's' hand-fixed in ballot; generator still uses "{nick}'s" in several openers (TODO). Awaiting week 16 Sunday primetime picks.
+
+2046 week 13 desk applied: W13-1 Conductors hazing closed (no violation found); Dan's note 'Open investigation of the original accusers' recorded as a note only (no engine mechanism; disclosed to Dan). W13-2 Langmore warning; W13-3 Shizan warning. Week 16 Sunday primetime: Conductors at Rangers (morning), Beetles at Topcats (afternoon), Rovers at Terrors (evening).
+2046 week 14 played: 1 OT (Swords 34 at Thunderbugs 40). No unbeaten/winless. Ballot W14-1 Elvborg remarks (profanity live), W14-2 Salaabella post, W14-3 Hollydale crew criticism. Awaiting week 17 Sunday primetime picks.

@@ -1,0 +1,26 @@
+{
+  "awards": {},
+  "prime": {
+    "16": {
+      "sam": "G121",
+      "snf": "G89",
+      "spm": "G37"
+    }
+  },
+  "rulings": {
+    "W13-1": {
+      "key": "clear",
+      "note": "Open investigation of the original accusers"
+    },
+    "W13-2": {
+      "key": "warn",
+      "note": ""
+    },
+    "W13-3": {
+      "key": "warn",
+      "note": ""
+    }
+  },
+  "submitted": "2026-11-05T19:01:57.838Z",
+  "week": 13
+}
