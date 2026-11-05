@@ -1,0 +1,18 @@
+{
+  "awards": {},
+  "prime": {
+    "8": {
+      "sam": "G199",
+      "snf": "G337",
+      "spm": "G273"
+    }
+  },
+  "rulings": {
+    "W5-1": {
+      "key": "warn",
+      "note": "Also warn the  opposing team’s  operations for the fan’s behavior"
+    }
+  },
+  "submitted": "2026-11-05T01:59:33.048Z",
+  "week": 5
+}
