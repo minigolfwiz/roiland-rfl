@@ -245,3 +245,6 @@
 
 2046 week 7 desk applied: W7-1 Thiruvengadam (T-Rexes DL, missed media) no action. Week 10 Sunday primetime: Rovers at Swords (morning), Sea Lions at Grays (afternoon), Commodores at T-Rexes (evening).
 2046 week 8 played: no OT games; no unbeaten teams left, Renegades lone winless. Week 8 ballot: W8-1 Gyefrah (Dragons WR, left news conference after one question). Awaiting week 11 Sunday primetime picks.
+
+2046 week 8 desk applied: W8-1 Gyefrah (Dragons WR, missed media) no action. Week 11 Sunday primetime: Asteroids at Redwoods (morning), Cavemen at Greats (afternoon), Bearcats at Hope (evening).
+2046 week 9 played: 1 OT (Bearcats 21 at Demons 27). No unbeaten teams; Renegades lone winless. Ballot W9-1 bench-clearing (Danestead/Karakoulis; text hand-expanded, generator bench_clear text is thin), W9-2 Kyo-Jin crew criticism, W9-3 Forsgaard roughing the passer (title fixed by hand). TODO: fix bench_clear generator to say who did what; late_hit title for QB cases. Awaiting week 12 Sunday primetime picks.
