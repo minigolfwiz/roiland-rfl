@@ -95,7 +95,7 @@ CATALOG['fight'] = T(tier='moderate', w=1.8, subject='duel', ladder='disc', base
 CATALOG['bench_clear'] = T(tier='moderate', w=.9, subject='duel', ladder='disc', base=4.0, closers=["The league office has asked both clubs for statements.", "Both head coaches have been asked to speak with the commissioner's staff."],
     title=['Bench-clearing incident', 'Sideline melee', 'Benches empty after a late hit'],
     openers=["Both benches emptied {when2} after {name} ({nick}) and {other} ({othernick}) squared off near the sideline.",
-             "A late hit led to a bench-clearing scrum {when2}. {name} ({nick}) and {other} ({othernick}) were singled out by officials.",
+             "{other} ({othernick}) hit a ball carrier well after the whistle {when2}, and {name} ({nick}) shoved {other} with both hands in response. Both benches emptied and the scrum lasted about a minute before officials separated the teams. Neither player was ejected on the field, but officials named both in their report.",
              "Players from both teams poured onto the field {when2} after an exchange between {name} ({nick}) and {other} ({othernick})."],
     factors=[F('coaches_in', .3, .8, 'a', "Assistant coaches from both sides were seen in the scrum."), F('fan', .1, 1.0, 'b', "A fan reached over the railing during the melee."),
              F('quick', .45, -.6, 'c', "Order was restored in under a minute."), F('ejections', .4, .6, 'd', "Officials ejected four players in total."), F('no_ejections', .25, -.4, 'd', "Officials issued only a warning to both benches.")])

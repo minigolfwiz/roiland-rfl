@@ -248,3 +248,7 @@
 
 2046 week 8 desk applied: W8-1 Gyefrah (Dragons WR, missed media) no action. Week 11 Sunday primetime: Asteroids at Redwoods (morning), Cavemen at Greats (afternoon), Bearcats at Hope (evening).
 2046 week 9 played: 1 OT (Bearcats 21 at Demons 27). No unbeaten teams; Renegades lone winless. Ballot W9-1 bench-clearing (Danestead/Karakoulis; text hand-expanded, generator bench_clear text is thin), W9-2 Kyo-Jin crew criticism, W9-3 Forsgaard roughing the passer (title fixed by hand). TODO: fix bench_clear generator to say who did what; late_hit title for QB cases. Awaiting week 12 Sunday primetime picks.
+
+2046 week 9 desk applied: W9-1 Danestead/Karakoulis Fine $15K each (as ruled), W9-2 Kyo-Jin warning, W9-3 Forsgaard warning. Week 12 Sunday primetime: Topcats at Mastiffs (morning), Dynamos at Commodores (afternoon), Beavers at Cavemen (evening).
+Generator fixes (forward-only): bench_clear opener now says who did what; investigation tail sentence no longer says 'bounty' for non-bounty cases (hazing gets its own detail).
+2046 week 10 played: 2 OT (Tsunami 26 at Bees 23, Phenoms 40 Dales 34). Renegades won (31-13 at Dynamos): no unbeaten, no winless. Ballot W10-1 hazing complaint vs Conductors (text hand-expanded). Awaiting week 13 Sunday primetime picks.

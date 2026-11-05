@@ -402,7 +402,9 @@ def detail_extra(S, rnd, key, who, facts, game=None, week=None):
             if inj:
                 out.append(f"THE DETAILS: {len(inj)} opposing player{'s' if len(inj) != 1 else ''} left {nick(club)} games with injuries of 2 or more weeks this season: " + '; '.join(f"week {w}, {i['name']} ({i['pos']}, {nick(i['team'])}), {i['weeks']} wks, {i['kind']}" for w, i in inj[:6]) + '.')
             else: out.append(f"THE DETAILS: no opposing player has left a {nick(club)} game with an injury of 2 or more weeks this season.")
-        out.append(f"The allegation comes from a former {nick(club)} staffer. A bounty ruling depends on whether messages or payments are found.")
+        if key == 'bounty': out.append(f"The allegation comes from a former {nick(club)} staffer. A bounty ruling depends on whether messages or payments are found.")
+        elif key == 'hazing': out.append(f"The complaint, filed by a former {nick(club)} staffer, says veterans required rookies at training camp to carry equipment, pay for team dinners and perform on command, and that position coaches saw it. The club says it has not found any such practice.")
+        else: out.append(f"The allegation comes from a former {nick(club)} staffer.")
     return ' '.join(out)
 
 def st_ok(spec): return spec.get('story') not in ('investigation', 'court')
