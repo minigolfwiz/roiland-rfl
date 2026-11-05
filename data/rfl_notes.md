@@ -267,3 +267,6 @@ Generator fixes (forward-only): bench_clear opener now says who did what; invest
 
 2046 week 14 desk applied: W14-1 Elvborg warning; W14-2 Salaabella no action; W14-3 Hollydale warning. Week 17 Sunday primetime: T-Rexes at Cavemen (morning), Beetles at Asteroids (afternoon), Dales at Dynamos (evening).
 2046 week 15 played: 2 OT (Greats 19 at Asteroids 13; Mastiffs 16 at Beavers 10). No unbeaten/winless. No ballot cases this week (random draw gave none); only week 18 primetime picks pending.
+
+2046 week 15 desk applied: no cases; week 18 Sunday primetime: Mastiffs at Beetles (morning), Conductors at Dales (afternoon), Shredders at Tsunami (evening).
+2046 week 16 played: 1 OT (Silverbacks 30 at Dales 24). No unbeaten/winless. Second straight week with zero ballot cases (random draw). Awaiting week 19 Sunday primetime picks.
