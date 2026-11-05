@@ -328,6 +328,10 @@ WORDS = {
    0: ('moderate', ["\"That's a hold on every snap and you've missed it all day. Look at the film!\"", "\"Get it right! You've missed that three times!\""], 'a missed call, argued from the sideline and continued after the whistle'),
    1: ('mild', ["\"That's pass interference. Look at it again.\"", "\"What do you see that I don't? Tell me what you saw.\""], 'a heated exchange from the sideline, with no physical contact'),
    2: ('serious', ["\"I'm not going back until you tell me what you saw!\"", "\"You owe me an explanation. I'll wait right here.\""], 'he followed the official onto the field and ignored two warnings')},
+ 'social': {
+   0: ('mild', ["\"Another Thursday slot nobody asked for. Whoever builds this schedule has never played a down.\"", "\"Tell me again how this broadcast window helps the players, because I can't find one way it does.\""], "the league's scheduling and broadcast decisions"),
+   1: ('moderate', ["\"Nice crowd, {opp} fans. Hope the traffic home is as bad as the football was.\"", "\"Count the empty seats, {opp}. Then count the points.\""], "{opp} fans, in a video that went viral"),
+   2: ('mild', ["\"Overrated and everybody in that building knows it. Film doesn't lie.\"", "\"I won't say his name. Watch the tape and you'll see why he disappears in the second half.\""], "a named opposing player" )},
  'sideline_gm': {
    0: ('serious', ["\"You cost us that game and you know it.\"", "\"I want that call explained, and I'm not leaving until somebody does it.\""], 'a face-to-face confrontation with a referee in the tunnel'),
    1: ('moderate', ["\"The league has a problem with consistency and nobody in New York wants to talk about it.\"", "\"I'd like to know who grades these crews, because it isn't working.\""], 'a public criticism of the league office'),
@@ -340,6 +344,11 @@ WORDS = {
 SEV_NOTE = dict(mild='Mild: disagreement with a call, no accusation of bias, no physical contact.',
                 moderate='Moderate: sharper criticism, but of calls and competence rather than honesty.',
                 serious='Serious: it accuses someone of bias, ignores warnings, or goes after a person by name.')
+ASSAULT_DETAIL = [
+ "According to the police report, the dispute began as an argument over a table, and {last} shoved the other man and struck him once; no weapon was involved. {last} has played in every game this season.",
+ "According to the police report, security separated the two men after a shoving match near the door, and {last} landed one punch; no weapon was involved. {last} has played in every game this season.",
+ "According to the police report, the argument began over a parked car, and {last} shoved the other man and struck him once; no weapon was involved. {last} has played in every game this season.",
+]
 def words_detail(S, key, op, ctx, facts, g=None, club=None):
     w = WORDS.get(key, {}).get(op)
     if not w: return ''
@@ -468,6 +477,7 @@ def build_case(S, rnd, key, week, res, used):
     closer = fmt(r2.choice(spec['closers']), ctx)
     _g = next((x for x in (res or []) if x.get('id') == game), None) if game else None
     _gd = words_detail(S, key, op, ctx, facts, _g, who[0].get('club')) if st_ok(spec) else ''
+    if key == 'assault_misd': _gd = ASSAULT_DETAIL[op % len(ASSAULT_DETAIL)].format(name=ctx.get('name', ''), last=ctx.get('last', ctx.get('name', '')))
     _gd = (_gd + ' ' + detail_extra(S, r2, key, who, facts, game, week)).strip()
     text = '\n\n'.join(x for x in [(body + ' ' + fact_txt).strip(), _gd, ' '.join(extra + [closer])] if x)
     prec = precedent_for(S, key, sev, pid)
