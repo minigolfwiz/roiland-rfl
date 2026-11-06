@@ -1,0 +1,94 @@
+{
+ "note": "Changes made to the shared Roiland map during the RCBA alignment on 2026-11-06. NOT yet applied to cfb/state/map_placements.json or the CFB universe. The five no-football schools exist in CFB (universe no_football_schools) under the old names with periods.",
+ "new_placements": {
+  "Coachville Rev": {
+   "map_xy": [
+    275.91,
+    459.84
+   ],
+   "state": "Stanton",
+   "full": "Coachville Rev Aurals",
+   "mascot": "Aurals",
+   "cfb_old_name": "Coachville Rev."
+  },
+  "Crayellan Ag": {
+   "map_xy": [
+    289.9,
+    209.65
+   ],
+   "state": "Crayellan",
+   "full": "Crayellan Ag Shamrocks",
+   "mascot": "Shamrocks",
+   "cfb_old_name": "Crayellan Ag"
+  },
+  "East Costique Int": {
+   "map_xy": [
+    409.49,
+    281.96
+   ],
+   "state": "East Costique",
+   "full": "East Costique Int Roilanders",
+   "mascot": "Roilanders",
+   "cfb_old_name": "East Costique Int."
+  },
+  "Eternal Fox JC": {
+   "map_xy": [
+    371.82,
+    348.03
+   ],
+   "state": "Fiota",
+   "full": "Eternal Fox JC Early Birds",
+   "mascot": "Early Birds",
+   "cfb_old_name": "Eternal Fox JC"
+  },
+  "Fiota Catskill": {
+   "map_xy": [
+    371.13,
+    346.39
+   ],
+   "state": "Fiota",
+   "full": "Fiota Catskill Rockers",
+   "mascot": "Rockers",
+   "cfb_old_name": "Fiota Catskill"
+  }
+ },
+ "moved": {
+  "Forrester": {
+   "was_state": "Diveo",
+   "now_state": "Stanton",
+   "map_xy": [
+    266.0,
+    457.0
+   ]
+  },
+  "Chorrisaw": {
+   "was_state": "Orlot",
+   "now_state": "Stanton",
+   "map_xy": [
+    308.52,
+    471.05
+   ],
+   "was_xy": [
+    308.52,
+    472.1
+   ]
+  }
+ },
+ "renames": {
+  "North Hatesei St": "North Hatesei State",
+  "West Hatesei St": "West Hatesei State",
+  "S Dove Island St": "S Dove Island State",
+  "S Antiragal State": "South Antiragal St",
+  "Kro Magloire St": "Kro Magloire (mascot St. Bernards)",
+  "St. Ballo's": "St Ballo's",
+  "St. Brandon's": "St Brandon's",
+  "St. Recreation": "St Recreation",
+  "St. Valentine": "St Valentine",
+  "Coachville Rev.": "Coachville Rev",
+  "East Costique Int.": "East Costique Int",
+  "Mt. Kaji": "Mt Kaji",
+  "Mt. St. Williams": "Mt St Williams",
+  "Ro": "Koli Ro",
+  "Academy of Marines": "Marines (formal name The Academy of Marines, no mascot)"
+ }
+}

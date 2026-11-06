@@ -1,0 +1,6964 @@
+{
+ "generated": "2026-11-06",
+ "source": "RCBA season 5 PDF, aligned by Dan in the Map Office",
+ "conferences": [
+  {
+   "name": "Sky Cross",
+   "origin": "RCBA-only, named by Dan",
+   "schools": 16,
+   "members": [
+    "Cedar Frost",
+    "Collette",
+    "Draque College",
+    "El Latigo",
+    "Gordon-Shipp",
+    "Highrose",
+    "Josephine",
+    "Lannister",
+    "Lower Kaji Kita",
+    "Malta",
+    "Mt Kaji",
+    "Pershing",
+    "RPU",
+    "Skeenerland Parley",
+    "Whiteside",
+    "Yarrola"
+   ]
+  },
+  {
+   "name": "Tropic South",
+   "origin": "RCBA-only, named by Dan",
+   "schools": 10,
+   "members": [
+    "Anderville Tech",
+    "Bowles",
+    "Gunther",
+    "Lamb",
+    "Oceanside",
+    "RU Herriman",
+    "Reuben-Smith",
+    "Surreigh",
+    "Thurley",
+    "UEKP"
+   ]
+  },
+  {
+   "name": "Coastal Ten",
+   "origin": "RCBA-only, named by Dan",
+   "schools": 10,
+   "members": [
+    "Fort Disher",
+    "Jack Todd",
+    "Jones College",
+    "Juniper",
+    "Lake Triton",
+    "Pepperlund",
+    "Pinn College",
+    "Prowesser",
+    "Quincy Harmon",
+    "Revigian"
+   ]
+  },
+  {
+   "name": "Stanton Valley",
+   "origin": "RCBA-only, named by Dan",
+   "schools": 12,
+   "members": [
+    "Chorrisaw",
+    "Coachville Rev",
+    "Coffeeville",
+    "Forrester",
+    "Gorban",
+    "NW Stanton",
+    "Strame State",
+    "US Downtown",
+    "US Fall Beach",
+    "US Fitzgerald",
+    "US Harlon",
+    "US Lyman"
+   ]
+  },
+  {
+   "name": "Harvest South",
+   "origin": "RCBA-only, named by Dan",
+   "schools": 14,
+   "members": [
+    "Boulder Creek",
+    "Ekralund",
+    "Gretelson",
+    "Hunter",
+    "Jamestown",
+    "Lady Lina",
+    "Landon Hills",
+    "Lewis Valley",
+    "Mojourn State",
+    "Mountains",
+    "New Amethine",
+    "Pationah",
+    "Santa Madera",
+    "Victoria"
+   ]
+  },
+  {
+   "name": "North Jyras",
+   "origin": "RCBA-only, named by Dan",
+   "schools": 10,
+   "members": [
+    "Fiota Catskill",
+    "Lazzagu",
+    "Nelson Heights",
+    "Ravenhead",
+    "Seytoicca",
+    "Silverton",
+    "St Valentine",
+    "VCA",
+    "Veriota",
+    "Zialo State"
+   ]
+  },
+  {
+   "name": "Silver Plains",
+   "origin": "RCBA-only, named by Dan",
+   "schools": 12,
+   "members": [
+    "Applegate",
+    "Bragi",
+    "Central Fiota State",
+    "Humphrey",
+    "Kilgrave",
+    "Peterhaus",
+    "Redford",
+    "Reescomb",
+    "Riverwake",
+    "Stanisburg",
+    "Tasson Plains",
+    "Towgrade"
+   ]
+  },
+  {
+   "name": "Middle States",
+   "origin": "RCBA-only, named by Dan",
+   "schools": 10,
+   "members": [
+    "Benjamin",
+    "Carnegie",
+    "DeRowe",
+    "Forseti",
+    "Godfrey State",
+    "Guice-Moore",
+    "Lockring",
+    "Newfoundland",
+    "Phangrine A&M",
+    "Spirit of Light"
+   ]
+  },
+  {
+   "name": "Capital League",
+   "origin": "RCBA-only, named by Dan",
+   "schools": 10,
+   "members": [
+    "Brallstrom",
+    "Brock",
+    "Civil Law",
+    "Harriker",
+    "Lornaman State",
+    "Olds College",
+    "Polt Hall",
+    "Reagan",
+    "Robertson",
+    "Ursus"
+   ]
+  },
+  {
+   "name": "King’s Land",
+   "origin": "RCBA-only, named by Dan",
+   "schools": 10,
+   "members": [
+    "Coniferous",
+    "Farmington",
+    "Greater Billiataho",
+    "Harko",
+    "Middle Parchynt",
+    "Mt St Williams",
+    "Star Mountain",
+    "Stokie",
+    "UK Hoza",
+    "Verigon Tech"
+   ]
+  },
+  {
+   "name": "Great Athletic",
+   "origin": "RCBA-only, named by Dan",
+   "schools": 10,
+   "members": [
+    "Brinckston",
+    "Central Antiragal",
+    "Leoto State",
+    "Newfeld State",
+    "North Ranroman",
+    "RU Smithfield",
+    "Rodgerville",
+    "Trinne State",
+    "UN Leoto",
+    "Western Antiragal"
+   ]
+  },
+  {
+   "name": "Hidden Hills",
+   "origin": "RCBA-only, named by Dan",
+   "schools": 10,
+   "members": [
+    "Classetto",
+    "East Costique Int",
+    "Harrell State",
+    "Joseph Hall",
+    "Lighaty",
+    "Ormskirk",
+    "Rascha",
+    "Rouska",
+    "Skeenerland East",
+    "UHMM"
+   ]
+  },
+  {
+   "name": "Mountain Range",
+   "origin": "RCBA-only, named by Dan",
+   "schools": 10,
+   "members": [
+    "Boetticher",
+    "Burrell",
+    "Inkstromm",
+    "Junesburg",
+    "Kimberly",
+    "Norris State",
+    "Nuvero State",
+    "Pietro Tadal",
+    "Poppyseed",
+    "Southern Perth"
+   ]
+  },
+  {
+   "name": "Valley Bay",
+   "origin": "RCBA-only, named by Dan",
+   "schools": 10,
+   "members": [
+    "Apatol",
+    "Arguster",
+    "Athens",
+    "Casavadrian",
+    "French State",
+    "Friedrichsville",
+    "McCall State",
+    "Mill Station",
+    "Pollard State",
+    "Wharf Bay"
+   ]
+  },
+  {
+   "name": "Holy Revigian",
+   "origin": "RCBA-only, named by Dan",
+   "schools": 10,
+   "members": [
+    "Cathedral",
+    "Church of Fiota",
+    "Crystal Word",
+    "Eternal Fox JC",
+    "First Dawn Falls",
+    "Holy Monastery",
+    "Long South",
+    "Mountain Home",
+    "St Recreation",
+    "Waterville"
+   ]
+  },
+  {
+   "name": "Big Gulf",
+   "origin": "RCBA-only, named by Dan",
+   "schools": 10,
+   "members": [
+    "Avian Light",
+    "Iricod",
+    "KKRC",
+    "Kendall",
+    "Kro Magloire",
+    "Lupgate",
+    "Michaelson-Timms",
+    "San Milos",
+    "Southern Bay",
+    "Wintersleep"
+   ]
+  },
+  {
+   "name": "New National",
+   "origin": "RCBA-only, named by Dan",
+   "schools": 12,
+   "members": [
+    "Charlesville",
+    "Enos",
+    "Fiota",
+    "Kaji Central",
+    "Krane State",
+    "Lawiiri",
+    "Monroe",
+    "ParTech",
+    "Southern Parchynt",
+    "UFFE",
+    "UFFL",
+    "Yawney"
+   ]
+  },
+  {
+   "name": "Bayside",
+   "origin": "RCBA-only, named by Dan",
+   "schools": 10,
+   "members": [
+    "Burke State",
+    "Koli Ro",
+    "Krei",
+    "Lawiiri State",
+    "Northern Krobe",
+    "Peach Valley",
+    "Pikeland",
+    "S Dove Island State",
+    "Southern Fiota",
+    "Tono State"
+   ]
+  },
+  {
+   "name": "North Country",
+   "origin": "RCBA-only, named by Dan",
+   "schools": 10,
+   "members": [
+    "Broadhilton",
+    "Freyr",
+    "High Platte",
+    "LSFA",
+    "Lawiiri South",
+    "Stamford",
+    "USA Bradley",
+    "USA Britton",
+    "USA Roman City",
+    "USADY"
+   ]
+  },
+  {
+   "name": "Peninsula",
+   "origin": "RCBA-only, named by Dan",
+   "schools": 10,
+   "members": [
+    "Agis",
+    "Bitner",
+    "Fabor State",
+    "Guerra",
+    "OCU",
+    "Orlot East Coast",
+    "Phangrine",
+    "Sarandon State",
+    "Southern",
+    "Villalandon"
+   ]
+  },
+  {
+   "name": "Vapor Stream",
+   "origin": "shared with RCFB (same name)",
+   "schools": 16,
+   "members": [
+    "Crayellan Ag",
+    "Crimson Mount",
+    "Denver State",
+    "Grizzly Hills",
+    "Henderson State",
+    "Hofferteltra",
+    "Hoganelle",
+    "Kaji Daun State",
+    "NE Rogaela",
+    "North Canesta",
+    "Palisades",
+    "Reid State",
+    "Rogaela Tech",
+    "Roosevelt Mines",
+    "Skirter",
+    "St Ballo's"
+   ]
+  },
+  {
+   "name": "Low Sixteen",
+   "origin": "shared with RCFB (same name)",
+   "schools": 14,
+   "members": [
+    "Black Forest",
+    "Clark",
+    "Cliffstraite",
+    "Coachville College",
+    "Ek Tech",
+    "Hansenne",
+    "Hughes State",
+    "National",
+    "New Madrid",
+    "Orlot Western",
+    "Queensville",
+    "Sacred Tomb",
+    "San Diego Valley",
+    "Westburg"
+   ]
+  },
+  {
+   "name": "Brass Belt",
+   "origin": "shared with RCFB (same name)",
+   "schools": 10,
+   "members": [
+    "Canesta State",
+    "Churchill",
+    "Eona Navy",
+    "Marines",
+    "North Hatesei State",
+    "Repidome",
+    "UN Steelbridge",
+    "West Hatesei",
+    "West Hatesei State",
+    "Wolford"
+   ]
+  },
+  {
+   "name": "East Forest",
+   "origin": "shared with RCFB (same name)",
+   "schools": 14,
+   "members": [
+    "Candie College",
+    "Costique State",
+    "East Tasson",
+    "Eternal Fox",
+    "German Shores",
+    "Kingdom Valley",
+    "Larksdale",
+    "Lito Rock State",
+    "North Central",
+    "Southeastern",
+    "St Brandon's",
+    "Starfield",
+    "Tasson State",
+    "Trapper Point"
+   ]
+  },
+  {
+   "name": "Power North",
+   "origin": "shared with RCFB (same name)",
+   "schools": 14,
+   "members": [
+    "Barhold",
+    "Barhold State",
+    "Costique",
+    "Diveo",
+    "Diveo State",
+    "Kaji Kita",
+    "Marblehead",
+    "Northlight",
+    "Roosevelt State",
+    "Skeenerland",
+    "Skeenerland State",
+    "Southern Tengus",
+    "Tengus",
+    "Tengus State"
+   ]
+  },
+  {
+   "name": "Jyras Bay",
+   "origin": "shared with RCFB (same name)",
+   "schools": 14,
+   "members": [
+    "Antiragal",
+    "Antiragal State",
+    "Dietsche",
+    "Dove Island",
+    "Keytommiyr",
+    "Krobe",
+    "Krobe State",
+    "Leafette",
+    "Rogaela State",
+    "South Antiragal",
+    "South Antiragal St",
+    "Tasson",
+    "Verigon State",
+    "Will Tech"
+   ]
+  },
+  {
+   "name": "Great Fourteen",
+   "origin": "shared with RCFB (same name)",
+   "schools": 14,
+   "members": [
+    "Central Stanton",
+    "Ciarralotta",
+    "Eona",
+    "Greene",
+    "Hatesei",
+    "Kaji Daun",
+    "North Hatesei",
+    "Orlot",
+    "Pistolheart",
+    "Ranroman",
+    "Ranroman State",
+    "Stanton",
+    "UN Ediville",
+    "UNN"
+   ]
+  },
+  {
+   "name": "Western Coast",
+   "origin": "shared with RCFB (same name)",
+   "schools": 12,
+   "members": [
+    "Barhold Valley",
+    "Burrstone",
+    "Far Farris",
+    "Far Farris State",
+    "Good River",
+    "Kaji Kita State",
+    "Natzumakis",
+    "Natzumakis State",
+    "Park Island",
+    "Roosevelt",
+    "Skylar Rose",
+    "Yrei Trobniy"
+   ]
+  },
+  {
+   "name": "Broad South",
+   "origin": "shared with RCFB (same name)",
+   "schools": 12,
+   "members": [
+    "Ciarralotta State",
+    "Ciarralotta Tech",
+    "Coachville",
+    "Diamond City",
+    "Eastern State",
+    "Ekralund State",
+    "Keeper",
+    "Lornaman",
+    "Milharvey",
+    "Phangrine State",
+    "Southern Krobe",
+    "Stanton State"
+   ]
+  },
+  {
+   "name": "Mountain Valley",
+   "origin": "shared with RCFB (same name)",
+   "schools": 12,
+   "members": [
+    "Costique River",
+    "Crayellan",
+    "Crayellan State",
+    "East Costique",
+    "Fiota Bay",
+    "Harrell",
+    "North Verigon",
+    "Parchynt",
+    "Riveral",
+    "Rogaela",
+    "UFNH",
+    "Verigon"
+   ]
+  },
+  {
+   "name": "Evening Star",
+   "origin": "shared with RCFB (same name)",
+   "schools": 12,
+   "members": [
+    "David Harrison",
+    "Dove Island State",
+    "Fiota State",
+    "Ireland River",
+    "Parchynt State",
+    "Perri Park",
+    "Princeton State",
+    "Riveral State",
+    "Rupin State",
+    "VSSC",
+    "Vaughn Bay",
+    "Vaughn Bay State"
+   ]
+  },
+  {
+   "name": "Southwestern",
+   "origin": "shared with RCFB (same name)",
+   "schools": 14,
+   "members": [
+    "Chapel Rock",
+    "Cherry Lake",
+    "Chinolka",
+    "Coastal Ranroman",
+    "Cordelle",
+    "Ediville State",
+    "Eona State",
+    "Holliday",
+    "Mount Cairn",
+    "Perth Island",
+    "Poland State",
+    "UN Minko",
+    "Underwood",
+    "Waterloo"
+   ]
+  }
+ ],
+ "schools": [
+  {
+   "name": "Burke State",
+   "full": "Burke State Storm",
+   "mascot": "Storm",
+   "state": "Dove Island",
+   "map_xy": [
+    419.37,
+    413.94
+   ],
+   "rcba_conference": "Bayside",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "16-16",
+   "season5_location_label": "North Dove Island"
+  },
+  {
+   "name": "Koli Ro",
+   "full": "Koli Ro Shuriken",
+   "mascot": "Shuriken",
+   "state": "Verigon",
+   "map_xy": [
+    325.98,
+    379.05
+   ],
+   "rcba_conference": "Bayside",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "27-6",
+   "season5_location_label": "S S Antiragal"
+  },
+  {
+   "name": "Krei",
+   "full": "Krei Coppers",
+   "mascot": "Coppers",
+   "state": "Orlot",
+   "map_xy": [
+    274.53,
+    479.98
+   ],
+   "rcba_conference": "Bayside",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "9-22",
+   "season5_location_label": "West Verigon"
+  },
+  {
+   "name": "Lawiiri State",
+   "full": "Lawiiri State Lemurs",
+   "mascot": "Lemurs",
+   "state": "Lawiiri",
+   "map_xy": [
+    279.39,
+    404.53
+   ],
+   "rcba_conference": "Bayside",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "15-18",
+   "season5_location_label": "Eastern Lawiiri"
+  },
+  {
+   "name": "Northern Krobe",
+   "full": "Northern Krobe Miners",
+   "mascot": "Miners",
+   "state": "Krobe",
+   "map_xy": [
+    331.01,
+    381.57
+   ],
+   "rcba_conference": "Bayside",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "7-25",
+   "season5_location_label": "Northern Krobe"
+  },
+  {
+   "name": "Peach Valley",
+   "full": "Peach Valley Jackrabbits",
+   "mascot": "Jackrabbits",
+   "state": "Stanton",
+   "map_xy": [
+    303.14,
+    450.68
+   ],
+   "rcba_conference": "Bayside",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "17-16",
+   "season5_location_label": "Central Orlot"
+  },
+  {
+   "name": "Pikeland",
+   "full": "Pikeland Pirhanas",
+   "mascot": "Pirhanas",
+   "state": "Krobe",
+   "map_xy": [
+    324.03,
+    453.18
+   ],
+   "rcba_conference": "Bayside",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "8-23",
+   "season5_location_label": "C S Antiragal"
+  },
+  {
+   "name": "S Dove Island State",
+   "full": "S Dove Island State Tortugas",
+   "mascot": "Tortugas",
+   "state": "Dove Island",
+   "map_xy": [
+    431.22,
+    426.38
+   ],
+   "rcba_conference": "Bayside",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": null,
+   "season5_location_label": null
+  },
+  {
+   "name": "Southern Fiota",
+   "full": "Southern Fiota Turtles",
+   "mascot": "Turtles",
+   "state": "Fiota",
+   "map_xy": [
+    435.84,
+    393.77
+   ],
+   "rcba_conference": "Bayside",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "23-8",
+   "season5_location_label": "Eastern Fiota"
+  },
+  {
+   "name": "Tono State",
+   "full": "Tono State Flamingos",
+   "mascot": "Flamingos",
+   "state": "South Antiragal",
+   "map_xy": [
+    307.92,
+    387.02
+   ],
+   "rcba_conference": "Bayside",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "15-16",
+   "season5_location_label": "N South Antiragal"
+  },
+  {
+   "name": "Avian Light",
+   "full": "Avian Light Chickadees",
+   "mascot": "Chickadees",
+   "state": "Kaji Daun",
+   "map_xy": [
+    146.8,
+    345.57
+   ],
+   "rcba_conference": "Big Gulf",
+   "rcba_conference_originally": "Holy Revigian",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "10-21",
+   "season5_location_label": "Central Far Farris"
+  },
+  {
+   "name": "Iricod",
+   "full": "Iricod Gophers",
+   "mascot": "Gophers",
+   "state": "Ranroman",
+   "map_xy": [
+    192.91,
+    471.94
+   ],
+   "rcba_conference": "Big Gulf",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "8-24",
+   "season5_location_label": "Central Verigon"
+  },
+  {
+   "name": "KKRC",
+   "full": "KKRC Black Widows",
+   "mascot": "Black Widows",
+   "state": "Kaji Kita",
+   "map_xy": [
+    164.64,
+    313.28
+   ],
+   "rcba_conference": "Big Gulf",
+   "rcba_conference_originally": "Holy Revigian",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "8-23",
+   "season5_location_label": "Coastal Kaji Kita"
+  },
+  {
+   "name": "Kendall",
+   "full": "Kendall Excaliburs",
+   "mascot": "Excaliburs",
+   "state": "Eona",
+   "map_xy": [
+    231.53,
+    539.44
+   ],
+   "rcba_conference": "Big Gulf",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "19-13",
+   "season5_location_label": "SW Verigon"
+  },
+  {
+   "name": "Kro Magloire",
+   "full": "Kro Magloire St. Bernards",
+   "mascot": "St. Bernards",
+   "state": "Stanton",
+   "map_xy": [
+    294.88,
+    448.12
+   ],
+   "rcba_conference": "Big Gulf",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": null,
+   "season5_location_label": null
+  },
+  {
+   "name": "Lupgate",
+   "full": "Lupgate Leopards",
+   "mascot": "Leopards",
+   "state": "Natzumakis",
+   "map_xy": [
+    163.73,
+    449.95
+   ],
+   "rcba_conference": "Big Gulf",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "3-28",
+   "season5_location_label": "East Fiota"
+  },
+  {
+   "name": "Michaelson-Timms",
+   "full": "Michaelson-Timms Commodores",
+   "mascot": "Commodores",
+   "state": "South Antiragal",
+   "map_xy": [
+    291.94,
+    417.62
+   ],
+   "rcba_conference": "Big Gulf",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "17-15",
+   "season5_location_label": "Logan Sound Fiota"
+  },
+  {
+   "name": "San Milos",
+   "full": "San Milos Earthquakes",
+   "mascot": "Earthquakes",
+   "state": "Eona",
+   "map_xy": [
+    230.03,
+    534.55
+   ],
+   "rcba_conference": "Big Gulf",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "12-19",
+   "season5_location_label": "Fiota Bay"
+  },
+  {
+   "name": "Southern Bay",
+   "full": "Southern Bay Titans",
+   "mascot": "Titans",
+   "state": "Eona",
+   "map_xy": [
+    208.53,
+    543.14
+   ],
+   "rcba_conference": "Big Gulf",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "26-7",
+   "season5_location_label": "Logan Sound Fiota"
+  },
+  {
+   "name": "Wintersleep",
+   "full": "Wintersleep Giants",
+   "mascot": "Giants",
+   "state": "Orlot",
+   "map_xy": [
+    278.2,
+    477.91
+   ],
+   "rcba_conference": "Big Gulf",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "14-17",
+   "season5_location_label": "S Central Verigon"
+  },
+  {
+   "name": "Canesta State",
+   "full": "Canesta State Loons",
+   "mascot": "Loons",
+   "state": "Kaji Daun",
+   "map_xy": [
+    146.45,
+    340.6
+   ],
+   "rcba_conference": "Brass Belt",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Brass Belt",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "26-7",
+   "season5_location_label": "Central Kaji Daun"
+  },
+  {
+   "name": "Churchill",
+   "full": "Churchill Saints",
+   "mascot": "Saints",
+   "state": "Natzumakis",
+   "map_xy": [
+    130.39,
+    411.62
+   ],
+   "rcba_conference": "Brass Belt",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Brass Belt",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "26-6",
+   "season5_location_label": "SE Natzumakis"
+  },
+  {
+   "name": "Eona Navy",
+   "full": "Eona Navy Pollywogs",
+   "mascot": "Pollywogs",
+   "state": "Eona",
+   "map_xy": [
+    233.35,
+    517.88
+   ],
+   "rcba_conference": "Brass Belt",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Brass Belt",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "18-13",
+   "season5_location_label": "North Eona Main"
+  },
+  {
+   "name": "Marines",
+   "full": "The Academy of Marines",
+   "mascot": null,
+   "state": "North Hatesei",
+   "map_xy": [
+    196.66,
+    541.75
+   ],
+   "rcba_conference": "Brass Belt",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Brass Belt",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "12-20",
+   "season5_location_label": "East North Hatesei"
+  },
+  {
+   "name": "North Hatesei State",
+   "full": "North Hatesei State Tigers",
+   "mascot": "Tigers",
+   "state": "North Hatesei",
+   "map_xy": [
+    183.34,
+    531.68
+   ],
+   "rcba_conference": "Brass Belt",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Brass Belt",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": null,
+   "season5_location_label": null
+  },
+  {
+   "name": "Repidome",
+   "full": "Repidome Pythons",
+   "mascot": "Pythons",
+   "state": "Eona",
+   "map_xy": [
+    220.34,
+    539.41
+   ],
+   "rcba_conference": "Brass Belt",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Brass Belt",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "17-14",
+   "season5_location_label": "Central Eona"
+  },
+  {
+   "name": "UN Steelbridge",
+   "full": "UN Steelbridge Cougars",
+   "mascot": "Cougars",
+   "state": "Natzumakis",
+   "map_xy": [
+    124.57,
+    508.19
+   ],
+   "rcba_conference": "Brass Belt",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Brass Belt",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "15-16",
+   "season5_location_label": "Central Natzumakis"
+  },
+  {
+   "name": "West Hatesei",
+   "full": "West Hatesei Horned Owls",
+   "mascot": "Horned Owls",
+   "state": "West Hatesei",
+   "map_xy": [
+    158.69,
+    520.3
+   ],
+   "rcba_conference": "Brass Belt",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Brass Belt",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "26-7",
+   "season5_location_label": "North West Hatesei"
+  },
+  {
+   "name": "West Hatesei State",
+   "full": "West Hatesei State Hyenas",
+   "mascot": "Hyenas",
+   "state": "West Hatesei",
+   "map_xy": [
+    165.03,
+    534.85
+   ],
+   "rcba_conference": "Brass Belt",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Brass Belt",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": null,
+   "season5_location_label": null
+  },
+  {
+   "name": "Wolford",
+   "full": "Wolford Wolfpack",
+   "mascot": "Wolfpack",
+   "state": "Wolford",
+   "map_xy": [
+    195.26,
+    565.97
+   ],
+   "rcba_conference": "Brass Belt",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Brass Belt",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "6-25",
+   "season5_location_label": "North Wolford"
+  },
+  {
+   "name": "Ciarralotta State",
+   "full": "Ciarralotta State Fightin' Chickens",
+   "mascot": "Fightin' Chickens",
+   "state": "Ciarralotta",
+   "map_xy": [
+    266.02,
+    451.29
+   ],
+   "rcba_conference": "Broad South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Broad South",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "29-3",
+   "season5_location_label": "South Ciarralotta"
+  },
+  {
+   "name": "Ciarralotta Tech",
+   "full": "Ciarralotta Tech Hornets",
+   "mascot": "Hornets",
+   "state": "Ciarralotta",
+   "map_xy": [
+    256.68,
+    468.3
+   ],
+   "rcba_conference": "Broad South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Broad South",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "26-8",
+   "season5_location_label": "NW Ciarralotta"
+  },
+  {
+   "name": "Coachville",
+   "full": "Coachville Tigercats",
+   "mascot": "Tigercats",
+   "state": "Stanton",
+   "map_xy": [
+    275.4,
+    457.57
+   ],
+   "rcba_conference": "Broad South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Broad South",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "24-9",
+   "season5_location_label": "Coachville Stanton"
+  },
+  {
+   "name": "Diamond City",
+   "full": "Diamond City Rattlers",
+   "mascot": "Rattlers",
+   "state": "Phangrine",
+   "map_xy": [
+    276.06,
+    492.35
+   ],
+   "rcba_conference": "Broad South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Broad South",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "14-17",
+   "season5_location_label": "Diamond City"
+  },
+  {
+   "name": "Eastern State",
+   "full": "Eastern State Parrots",
+   "mascot": "Parrots",
+   "state": "Antiragal",
+   "map_xy": [
+    230.66,
+    353.39
+   ],
+   "rcba_conference": "Broad South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Broad South",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "11-20",
+   "season5_location_label": "Eastern Antiragal"
+  },
+  {
+   "name": "Ekralund State",
+   "full": "Ekralund State Eagles",
+   "mascot": "Eagles",
+   "state": "Ekralund",
+   "map_xy": [
+    302.53,
+    477.1
+   ],
+   "rcba_conference": "Broad South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Broad South",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "16-17",
+   "season5_location_label": "Southern Ekralund"
+  },
+  {
+   "name": "Keeper",
+   "full": "Keeper Golden Foxes",
+   "mascot": "Golden Foxes",
+   "state": "Lawiiri",
+   "map_xy": [
+    282.86,
+    406.33
+   ],
+   "rcba_conference": "Broad South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Broad South",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "9-22",
+   "season5_location_label": "NW Lawiiri"
+  },
+  {
+   "name": "Lornaman",
+   "full": "Lornaman Lions",
+   "mascot": "Lions",
+   "state": "Ekralund",
+   "map_xy": [
+    306.74,
+    476.45
+   ],
+   "rcba_conference": "Broad South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Broad South",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "22-9",
+   "season5_location_label": "Central Ekralund"
+  },
+  {
+   "name": "Milharvey",
+   "full": "Milharvey Green Demons",
+   "mascot": "Green Demons",
+   "state": "Krobe",
+   "map_xy": [
+    314.11,
+    461.84
+   ],
+   "rcba_conference": "Broad South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Broad South",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "13-19",
+   "season5_location_label": "Central Krobe"
+  },
+  {
+   "name": "Phangrine State",
+   "full": "Phangrine State Hammerheads",
+   "mascot": "Hammerheads",
+   "state": "Phangrine",
+   "map_xy": [
+    290.64,
+    493.06
+   ],
+   "rcba_conference": "Broad South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Broad South",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "21-11",
+   "season5_location_label": "North Phangrine"
+  },
+  {
+   "name": "Southern Krobe",
+   "full": "Southern Krobe Crocodiles",
+   "mascot": "Crocodiles",
+   "state": "Krobe",
+   "map_xy": [
+    313.8,
+    472.73
+   ],
+   "rcba_conference": "Broad South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Broad South",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "10-21",
+   "season5_location_label": "Southern Krobe"
+  },
+  {
+   "name": "Stanton State",
+   "full": "Stanton State Strikers",
+   "mascot": "Strikers",
+   "state": "Stanton",
+   "map_xy": [
+    306.01,
+    464.8
+   ],
+   "rcba_conference": "Broad South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Broad South",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "24-7",
+   "season5_location_label": "WC Stanton"
+  },
+  {
+   "name": "Brallstrom",
+   "full": "Brallstrom Gorillas",
+   "mascot": "Gorillas",
+   "state": "Ranroman",
+   "map_xy": [
+    198.78,
+    406.51
+   ],
+   "rcba_conference": "Capital League",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "6-25",
+   "season5_location_label": "South Ciarralotta"
+  },
+  {
+   "name": "Brock",
+   "full": "Brock Terrapins",
+   "mascot": "Terrapins",
+   "state": "Phangrine",
+   "map_xy": [
+    282.15,
+    496.37
+   ],
+   "rcba_conference": "Capital League",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "15-17",
+   "season5_location_label": "Eastern Stanton"
+  },
+  {
+   "name": "Civil Law",
+   "full": "Civil Law Aces",
+   "mascot": "Aces",
+   "state": "Stanton",
+   "map_xy": [
+    275.17,
+    459.27
+   ],
+   "rcba_conference": "Capital League",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "13-21",
+   "season5_location_label": "Central Stanton"
+  },
+  {
+   "name": "Harriker",
+   "full": "Harriker Knights",
+   "mascot": "Knights",
+   "state": "Stanton",
+   "map_xy": [
+    302.56,
+    470.1
+   ],
+   "rcba_conference": "Capital League",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "11-21",
+   "season5_location_label": "South Ranroman"
+  },
+  {
+   "name": "Lornaman State",
+   "full": "Lornaman State Pitbulls",
+   "mascot": "Pitbulls",
+   "state": "Ekralund",
+   "map_xy": [
+    306.06,
+    475.57
+   ],
+   "rcba_conference": "Capital League",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "17-14",
+   "season5_location_label": "South Ekralund"
+  },
+  {
+   "name": "Olds College",
+   "full": "Olds College Bruins",
+   "mascot": "Bruins",
+   "state": "Natzumakis",
+   "map_xy": [
+    133.41,
+    415.02
+   ],
+   "rcba_conference": "Capital League",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "18-15",
+   "season5_location_label": "Ediville Natzumakis"
+  },
+  {
+   "name": "Polt Hall",
+   "full": "Polt Hall Lionhearts",
+   "mascot": "Lionhearts",
+   "state": "Orlot",
+   "map_xy": [
+    297.94,
+    484.35
+   ],
+   "rcba_conference": "Capital League",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "8-23",
+   "season5_location_label": "SC Natzumakis"
+  },
+  {
+   "name": "Reagan",
+   "full": "Reagan Cranes",
+   "mascot": "Cranes",
+   "state": "Natzumakis",
+   "map_xy": [
+    124.21,
+    480.59
+   ],
+   "rcba_conference": "Capital League",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "11-20",
+   "season5_location_label": "Diamond City"
+  },
+  {
+   "name": "Robertson",
+   "full": "Robertson Yellers",
+   "mascot": "Yellers",
+   "state": "Krobe",
+   "map_xy": [
+    333.7,
+    433.1
+   ],
+   "rcba_conference": "Capital League",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "23-9",
+   "season5_location_label": "Southern Krobe"
+  },
+  {
+   "name": "Ursus",
+   "full": "Ursus Majors",
+   "mascot": "Majors",
+   "state": "Natzumakis",
+   "map_xy": [
+    116.59,
+    498.28
+   ],
+   "rcba_conference": "Capital League",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "22-9",
+   "season5_location_label": "Central Natzumakis"
+  },
+  {
+   "name": "Fort Disher",
+   "full": "Fort Disher Major Moose",
+   "mascot": "Major Moose",
+   "state": "Ranroman",
+   "map_xy": [
+    183.39,
+    433.23
+   ],
+   "rcba_conference": "Coastal Ten",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "9-23",
+   "season5_location_label": "NE Ranroman"
+  },
+  {
+   "name": "Jack Todd",
+   "full": "Jack Todd Capitals",
+   "mascot": "Capitals",
+   "state": "Hatesei",
+   "map_xy": [
+    183.46,
+    556.11
+   ],
+   "rcba_conference": "Coastal Ten",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "17-14",
+   "season5_location_label": "Eastern Lawiiri"
+  },
+  {
+   "name": "Jones College",
+   "full": "Jones College Poplars",
+   "mascot": "Poplars",
+   "state": "West Hatesei",
+   "map_xy": [
+    164.25,
+    523.59
+   ],
+   "rcba_conference": "Coastal Ten",
+   "rcba_conference_originally": "King’s Land",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "19-13",
+   "season5_location_label": "Eastern Diveo"
+  },
+  {
+   "name": "Juniper",
+   "full": "Juniper Longbows",
+   "mascot": "Longbows",
+   "state": "Krobe",
+   "map_xy": [
+    321.09,
+    389.6
+   ],
+   "rcba_conference": "Coastal Ten",
+   "rcba_conference_originally": "Sky Cross",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "5-26",
+   "season5_location_label": "Central Kaji Kita"
+  },
+  {
+   "name": "Lake Triton",
+   "full": "Lake Triton Poseidons",
+   "mascot": "Poseidons",
+   "state": "Ciarralotta",
+   "map_xy": [
+    247.98,
+    454.23
+   ],
+   "rcba_conference": "Coastal Ten",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "8-23",
+   "season5_location_label": "Central Ciarralotta"
+  },
+  {
+   "name": "Pepperlund",
+   "full": "Pepperlund Badgers",
+   "mascot": "Badgers",
+   "state": "Eona",
+   "map_xy": [
+    231.51,
+    517.31
+   ],
+   "rcba_conference": "Coastal Ten",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "22-10",
+   "season5_location_label": "Western Orlot"
+  },
+  {
+   "name": "Pinn College",
+   "full": "Pinn College Pointers",
+   "mascot": "Pointers",
+   "state": "Eona",
+   "map_xy": [
+    228.42,
+    520.14
+   ],
+   "rcba_conference": "Coastal Ten",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "28-5",
+   "season5_location_label": "Lower S Antiragal"
+  },
+  {
+   "name": "Prowesser",
+   "full": "Prowesser Kings",
+   "mascot": "Kings",
+   "state": "South Antiragal",
+   "map_xy": [
+    304.79,
+    421.65
+   ],
+   "rcba_conference": "Coastal Ten",
+   "rcba_conference_originally": "Sky Cross",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "4-27",
+   "season5_location_label": "Southern Kaji Kita"
+  },
+  {
+   "name": "Quincy Harmon",
+   "full": "Quincy Harmon Owls",
+   "mascot": "Owls",
+   "state": "Parchynt",
+   "map_xy": [
+    313.11,
+    349.76
+   ],
+   "rcba_conference": "Coastal Ten",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "18-15",
+   "season5_location_label": "NE Natzumakis"
+  },
+  {
+   "name": "Revigian",
+   "full": "Revigian Zoomers",
+   "mascot": "Zoomers",
+   "state": "Lawiiri",
+   "map_xy": [
+    271.77,
+    401.76
+   ],
+   "rcba_conference": "Coastal Ten",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "20-11",
+   "season5_location_label": "NE Ciarralotta"
+  },
+  {
+   "name": "Candie College",
+   "full": "Candie College Cougars",
+   "mascot": "Cougars",
+   "state": "Fiota",
+   "map_xy": [
+    394.15,
+    370.91
+   ],
+   "rcba_conference": "East Forest",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "19-14",
+   "season5_location_label": "Central Fiota"
+  },
+  {
+   "name": "Costique State",
+   "full": "Costique State Camels",
+   "mascot": "Camels",
+   "state": "Costique",
+   "map_xy": [
+    352.39,
+    276.67
+   ],
+   "rcba_conference": "East Forest",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "East Forest",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "14-17",
+   "season5_location_label": "South Costique"
+  },
+  {
+   "name": "East Tasson",
+   "full": "East Tasson Red Eagles",
+   "mascot": "Red Eagles",
+   "state": "Tasson",
+   "map_xy": [
+    457.61,
+    279.32
+   ],
+   "rcba_conference": "East Forest",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "East Forest",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "14-17",
+   "season5_location_label": "SE Tasson"
+  },
+  {
+   "name": "Eternal Fox",
+   "full": "Eternal Fox Avians",
+   "mascot": "Avians",
+   "state": "Fiota",
+   "map_xy": [
+    370.54,
+    345.18
+   ],
+   "rcba_conference": "East Forest",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "East Forest",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "25-8",
+   "season5_location_label": "NW Fiota"
+  },
+  {
+   "name": "German Shores",
+   "full": "German Shores Kraken",
+   "mascot": "Kraken",
+   "state": "Verigon",
+   "map_xy": [
+    341.59,
+    369.26
+   ],
+   "rcba_conference": "East Forest",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "East Forest",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "6-26",
+   "season5_location_label": "South Verigon"
+  },
+  {
+   "name": "Kingdom Valley",
+   "full": "Kingdom Valley Monarchs",
+   "mascot": "Monarchs",
+   "state": "Vaughn Bay",
+   "map_xy": [
+    411.66,
+    339.59
+   ],
+   "rcba_conference": "East Forest",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "East Forest",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "20-11",
+   "season5_location_label": "C Veughn Bay"
+  },
+  {
+   "name": "Larksdale",
+   "full": "Larksdale Golden Ghosts",
+   "mascot": "Golden Ghosts",
+   "state": "Costique",
+   "map_xy": [
+    336.72,
+    263.47
+   ],
+   "rcba_conference": "East Forest",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "East Forest",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "17-14",
+   "season5_location_label": "Northern Costique"
+  },
+  {
+   "name": "Lito Rock State",
+   "full": "Lito Rock State Box Turtles",
+   "mascot": "Box Turtles",
+   "state": "Fiota",
+   "map_xy": [
+    389.42,
+    376.48
+   ],
+   "rcba_conference": "East Forest",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "East Forest",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "16-15",
+   "season5_location_label": "Logan Sound Fiota"
+  },
+  {
+   "name": "North Central",
+   "full": "North Central Wildcats",
+   "mascot": "Wildcats",
+   "state": "Vaughn Bay",
+   "map_xy": [
+    407.45,
+    314.06
+   ],
+   "rcba_conference": "East Forest",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "East Forest",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "23-10",
+   "season5_location_label": "North Vaughn Bay"
+  },
+  {
+   "name": "Southeastern",
+   "full": "Southeastern Hares",
+   "mascot": "Hares",
+   "state": "Costique",
+   "map_xy": [
+    389.95,
+    307.12
+   ],
+   "rcba_conference": "East Forest",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "East Forest",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "16-16",
+   "season5_location_label": "SE Costique"
+  },
+  {
+   "name": "St Brandon's",
+   "full": "St Brandon's Wardogs",
+   "mascot": "Wardogs",
+   "state": "Fiota",
+   "map_xy": [
+    426.28,
+    376.68
+   ],
+   "rcba_conference": "East Forest",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": null,
+   "season5_location_label": null
+  },
+  {
+   "name": "Starfield",
+   "full": "Starfield Cosmonauts",
+   "mascot": "Cosmonauts",
+   "state": "East Costique",
+   "map_xy": [
+    410.16,
+    279.38
+   ],
+   "rcba_conference": "East Forest",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "East Forest",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "20-11",
+   "season5_location_label": "C East Costique"
+  },
+  {
+   "name": "Tasson State",
+   "full": "Tasson State Chargers",
+   "mascot": "Chargers",
+   "state": "Tasson",
+   "map_xy": [
+    441.19,
+    269.09
+   ],
+   "rcba_conference": "East Forest",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "East Forest",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "15-16",
+   "season5_location_label": "SW Tasson"
+  },
+  {
+   "name": "Trapper Point",
+   "full": "Trapper Point Mountaineers",
+   "mascot": "Mountaineers",
+   "state": "Vaughn Bay",
+   "map_xy": [
+    398.08,
+    345.31
+   ],
+   "rcba_conference": "East Forest",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "East Forest",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "19-15",
+   "season5_location_label": "South Vaughn Bay"
+  },
+  {
+   "name": "David Harrison",
+   "full": "David Harrison Hedgehogs",
+   "mascot": "Hedgehogs",
+   "state": "Parchynt",
+   "map_xy": [
+    315.9,
+    352.38
+   ],
+   "rcba_conference": "Evening Star",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Evening Star",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "8-23",
+   "season5_location_label": "Southern Rogaela"
+  },
+  {
+   "name": "Dove Island State",
+   "full": "Dove Island State Dolphins",
+   "mascot": "Dolphins",
+   "state": "Dove Island",
+   "map_xy": [
+    425.07,
+    415.49
+   ],
+   "rcba_conference": "Evening Star",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Evening Star",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "14-19",
+   "season5_location_label": "North Dove Island"
+  },
+  {
+   "name": "Fiota State",
+   "full": "Fiota State Flames",
+   "mascot": "Flames",
+   "state": "Fiota",
+   "map_xy": [
+    363.76,
+    370.31
+   ],
+   "rcba_conference": "Evening Star",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Evening Star",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "17-15",
+   "season5_location_label": "Logan Sound Fiota"
+  },
+  {
+   "name": "Ireland River",
+   "full": "Ireland River Gremlins",
+   "mascot": "Gremlins",
+   "state": "Fiota",
+   "map_xy": [
+    400.63,
+    364.39
+   ],
+   "rcba_conference": "Evening Star",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Evening Star",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "14-17",
+   "season5_location_label": "Fiota Bay Fiota"
+  },
+  {
+   "name": "Parchynt State",
+   "full": "Parchynt State Tapirs",
+   "mascot": "Tapirs",
+   "state": "Parchynt",
+   "map_xy": [
+    315.22,
+    346.08
+   ],
+   "rcba_conference": "Evening Star",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Evening Star",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "31-2",
+   "season5_location_label": "Eastern Parchynt"
+  },
+  {
+   "name": "Perri Park",
+   "full": "Perri Park Nighthawks",
+   "mascot": "Nighthawks",
+   "state": "Dove Island",
+   "map_xy": [
+    389.47,
+    408.68
+   ],
+   "rcba_conference": "Evening Star",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Evening Star",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "10-21",
+   "season5_location_label": "SW Dove Island"
+  },
+  {
+   "name": "Princeton State",
+   "full": "Princeton State Big Blue",
+   "mascot": "Big Blue",
+   "state": "Parchynt",
+   "map_xy": [
+    318.13,
+    340.59
+   ],
+   "rcba_conference": "Evening Star",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Evening Star",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "17-15",
+   "season5_location_label": "Central Parchynt"
+  },
+  {
+   "name": "Riveral State",
+   "full": "Riveral State Elephants",
+   "mascot": "Elephants",
+   "state": "Riveral",
+   "map_xy": [
+    463.72,
+    241.97
+   ],
+   "rcba_conference": "Evening Star",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Evening Star",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "9-23",
+   "season5_location_label": "Southern Riveral"
+  },
+  {
+   "name": "Rupin State",
+   "full": "Rupin State Red Raccoons",
+   "mascot": "Red Raccoons",
+   "state": "Rogaela",
+   "map_xy": [
+    282.95,
+    317.62
+   ],
+   "rcba_conference": "Evening Star",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Evening Star",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "16-15",
+   "season5_location_label": "Southern Rogaela"
+  },
+  {
+   "name": "VSSC",
+   "full": "VSSC Demonkillers",
+   "mascot": "Demonkillers",
+   "state": "East Costique",
+   "map_xy": [
+    376.46,
+    287.64
+   ],
+   "rcba_conference": "Evening Star",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Evening Star",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "12-20",
+   "season5_location_label": "Western Costique"
+  },
+  {
+   "name": "Vaughn Bay",
+   "full": "Vaughn Bay Toads",
+   "mascot": "Toads",
+   "state": "Vaughn Bay",
+   "map_xy": [
+    404.13,
+    307.16
+   ],
+   "rcba_conference": "Evening Star",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Evening Star",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "19-12",
+   "season5_location_label": "Centr Vaughn Bay"
+  },
+  {
+   "name": "Vaughn Bay State",
+   "full": "Vaughn Bay State Buccaneers",
+   "mascot": "Buccaneers",
+   "state": "Vaughn Bay",
+   "map_xy": [
+    411.64,
+    325.7
+   ],
+   "rcba_conference": "Evening Star",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Evening Star",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "24-9",
+   "season5_location_label": "North Vaughn Bay"
+  },
+  {
+   "name": "Brinckston",
+   "full": "Brinckston Cardinals",
+   "mascot": "Cardinals",
+   "state": "Far Farris",
+   "map_xy": [
+    224.31,
+    340.94
+   ],
+   "rcba_conference": "Great Athletic",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "4-27",
+   "season5_location_label": "Northern Far Farris"
+  },
+  {
+   "name": "Central Antiragal",
+   "full": "Central Antiragal Roaches",
+   "mascot": "Roaches",
+   "state": "Antiragal",
+   "map_xy": [
+    273.62,
+    365.08
+   ],
+   "rcba_conference": "Great Athletic",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "12-19",
+   "season5_location_label": "Central Antiragal"
+  },
+  {
+   "name": "Leoto State",
+   "full": "Leoto State Windriders",
+   "mascot": "Windriders",
+   "state": "Natzumakis",
+   "map_xy": [
+    128.67,
+    460.12
+   ],
+   "rcba_conference": "Great Athletic",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "24-7",
+   "season5_location_label": "NWC Natzumakis"
+  },
+  {
+   "name": "Newfeld State",
+   "full": "Newfeld State Eagles",
+   "mascot": "Eagles",
+   "state": "Natzumakis",
+   "map_xy": [
+    115.07,
+    503.95
+   ],
+   "rcba_conference": "Great Athletic",
+   "rcba_conference_originally": "North Jyras",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "18-14",
+   "season5_location_label": "Logan Sound Fiota"
+  },
+  {
+   "name": "North Ranroman",
+   "full": "North Ranroman Thunderdogs",
+   "mascot": "Thunderdogs",
+   "state": "Ranroman",
+   "map_xy": [
+    165.54,
+    390.17
+   ],
+   "rcba_conference": "Great Athletic",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "11-20",
+   "season5_location_label": "East Ranroman"
+  },
+  {
+   "name": "RU Smithfield",
+   "full": "RU Smithfield Mustangs",
+   "mascot": "Mustangs",
+   "state": "Ranroman",
+   "map_xy": [
+    186.92,
+    400.97
+   ],
+   "rcba_conference": "Great Athletic",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "15-16",
+   "season5_location_label": "Central Ranroman"
+  },
+  {
+   "name": "Rodgerville",
+   "full": "Rodgerville Gophers",
+   "mascot": "Gophers",
+   "state": "Far Farris",
+   "map_xy": [
+    205.76,
+    315.63
+   ],
+   "rcba_conference": "Great Athletic",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "20-13",
+   "season5_location_label": "Central Far Farris"
+  },
+  {
+   "name": "Trinne State",
+   "full": "Trinne State Bears",
+   "mascot": "Bears",
+   "state": "Natzumakis",
+   "map_xy": [
+    148.56,
+    508.46
+   ],
+   "rcba_conference": "Great Athletic",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "13-20",
+   "season5_location_label": "SW Kaji Daun"
+  },
+  {
+   "name": "UN Leoto",
+   "full": "UN Leoto Geckos",
+   "mascot": "Geckos",
+   "state": "Natzumakis",
+   "map_xy": [
+    130.8,
+    458.85
+   ],
+   "rcba_conference": "Great Athletic",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "19-13",
+   "season5_location_label": "NWC Natzumakis"
+  },
+  {
+   "name": "Western Antiragal",
+   "full": "Western Antiragal Wranglers",
+   "mascot": "Wranglers",
+   "state": "Antiragal",
+   "map_xy": [
+    225.02,
+    357.91
+   ],
+   "rcba_conference": "Great Athletic",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "28-5",
+   "season5_location_label": "Western Antiragal"
+  },
+  {
+   "name": "Central Stanton",
+   "full": "Central Stanton Trumpeters",
+   "mascot": "Trumpeters",
+   "state": "Stanton",
+   "map_xy": [
+    289.12,
+    458.43
+   ],
+   "rcba_conference": "Great Fourteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Great Fourteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "26-7",
+   "season5_location_label": "Central Stanton"
+  },
+  {
+   "name": "Ciarralotta",
+   "full": "Ciarralotta Paladins",
+   "mascot": "Paladins",
+   "state": "Ciarralotta",
+   "map_xy": [
+    283.77,
+    420.19
+   ],
+   "rcba_conference": "Great Fourteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Great Fourteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "18-14",
+   "season5_location_label": "Centr Ciarralotta"
+  },
+  {
+   "name": "Eona",
+   "full": "Eona Whales",
+   "mascot": "Whales",
+   "state": "Eona",
+   "map_xy": [
+    229.62,
+    514.08
+   ],
+   "rcba_conference": "Great Fourteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Great Fourteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "11-20",
+   "season5_location_label": "North Eona"
+  },
+  {
+   "name": "Greene",
+   "full": "Greene Goblins",
+   "mascot": "Goblins",
+   "state": "Stanton",
+   "map_xy": [
+    278.69,
+    467.3
+   ],
+   "rcba_conference": "Great Fourteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Great Fourteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "6-25",
+   "season5_location_label": "SW Stanton"
+  },
+  {
+   "name": "Hatesei",
+   "full": "Hatesei Banana Slugs",
+   "mascot": "Banana Slugs",
+   "state": "Hatesei",
+   "map_xy": [
+    172.87,
+    545.19
+   ],
+   "rcba_conference": "Great Fourteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Great Fourteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "19-12",
+   "season5_location_label": "North Hatesei"
+  },
+  {
+   "name": "Kaji Daun",
+   "full": "Kaji Daun Elephants",
+   "mascot": "Elephants",
+   "state": "Kaji Daun",
+   "map_xy": [
+    146.28,
+    371.83
+   ],
+   "rcba_conference": "Great Fourteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Great Fourteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "19-13",
+   "season5_location_label": "South Kaji Daun"
+  },
+  {
+   "name": "North Hatesei",
+   "full": "North Hatesei Screamin’ Goats",
+   "mascot": "Screamin’ Goats",
+   "state": "North Hatesei",
+   "map_xy": [
+    174.43,
+    523.07
+   ],
+   "rcba_conference": "Great Fourteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Great Fourteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "19-12",
+   "season5_location_label": "Cent North Hatesei"
+  },
+  {
+   "name": "Orlot",
+   "full": "Orlot Panthers",
+   "mascot": "Panthers",
+   "state": "Orlot",
+   "map_xy": [
+    291.23,
+    478.26
+   ],
+   "rcba_conference": "Great Fourteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Great Fourteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "17-16",
+   "season5_location_label": "West Orlot"
+  },
+  {
+   "name": "Pistolheart",
+   "full": "Pistolheart Deputies",
+   "mascot": "Deputies",
+   "state": "Natzumakis",
+   "map_xy": [
+    154.37,
+    434.66
+   ],
+   "rcba_conference": "Great Fourteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Great Fourteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "22-12",
+   "season5_location_label": "CE Natzumakis"
+  },
+  {
+   "name": "Ranroman",
+   "full": "Ranroman Stags",
+   "mascot": "Stags",
+   "state": "Ranroman",
+   "map_xy": [
+    191.65,
+    426.53
+   ],
+   "rcba_conference": "Great Fourteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Great Fourteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "17-15",
+   "season5_location_label": "NE Ranroman"
+  },
+  {
+   "name": "Ranroman State",
+   "full": "Ranroman State Senators",
+   "mascot": "Senators",
+   "state": "Ranroman",
+   "map_xy": [
+    173.06,
+    465.01
+   ],
+   "rcba_conference": "Great Fourteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Great Fourteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "16-15",
+   "season5_location_label": "Central Ranroman"
+  },
+  {
+   "name": "Stanton",
+   "full": "Stanton Locomotives",
+   "mascot": "Locomotives",
+   "state": "Stanton",
+   "map_xy": [
+    289.12,
+    452.69
+   ],
+   "rcba_conference": "Great Fourteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Great Fourteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "18-14",
+   "season5_location_label": "SE Stanton"
+  },
+  {
+   "name": "UN Ediville",
+   "full": "UN Ediville Oilers",
+   "mascot": "Oilers",
+   "state": "Natzumakis",
+   "map_xy": [
+    112.41,
+    494.51
+   ],
+   "rcba_conference": "Great Fourteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Great Fourteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "13-19",
+   "season5_location_label": "W Ediv Natzumakis"
+  },
+  {
+   "name": "UNN",
+   "full": "UNN Grey Wolves",
+   "mascot": "Grey Wolves",
+   "state": "Natzumakis",
+   "map_xy": [
+    143.24,
+    421.51
+   ],
+   "rcba_conference": "Great Fourteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Great Fourteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "19-12",
+   "season5_location_label": "NC Natzumakis"
+  },
+  {
+   "name": "Boulder Creek",
+   "full": "Boulder Creek Water Buffalo",
+   "mascot": "Water Buffalo",
+   "state": "Lawiiri",
+   "map_xy": [
+    276.69,
+    397.7
+   ],
+   "rcba_conference": "Harvest South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "4-27",
+   "season5_location_label": "E S Antiragal"
+  },
+  {
+   "name": "Ekralund",
+   "full": "Ekralund Tide",
+   "mascot": "Tide",
+   "state": "Ekralund",
+   "map_xy": [
+    310.1,
+    477.96
+   ],
+   "rcba_conference": "Harvest South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "23-10",
+   "season5_location_label": "Eastern Ekralund"
+  },
+  {
+   "name": "Gretelson",
+   "full": "Gretelson Swords",
+   "mascot": "Swords",
+   "state": "Stanton",
+   "map_xy": [
+    287.98,
+    470.95
+   ],
+   "rcba_conference": "Harvest South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "20-12",
+   "season5_location_label": "Western Orlot"
+  },
+  {
+   "name": "Hunter",
+   "full": "Hunter Hawks",
+   "mascot": "Hawks",
+   "state": "Ranroman",
+   "map_xy": [
+    182.53,
+    471.99
+   ],
+   "rcba_conference": "Harvest South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "11-20",
+   "season5_location_label": "North Ciarralotta"
+  },
+  {
+   "name": "Jamestown",
+   "full": "Jamestown Wizards",
+   "mascot": "Wizards",
+   "state": "Ekralund",
+   "map_xy": [
+    310.71,
+    472.96
+   ],
+   "rcba_conference": "Harvest South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "25-8",
+   "season5_location_label": "Central Krobe"
+  },
+  {
+   "name": "Lady Lina",
+   "full": "Lady Lina Rams",
+   "mascot": "Rams",
+   "state": "Lawiiri",
+   "map_xy": [
+    279.73,
+    382.11
+   ],
+   "rcba_conference": "Harvest South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "20-13",
+   "season5_location_label": "North Lawiiri"
+  },
+  {
+   "name": "Landon Hills",
+   "full": "Landon Hills Spartans",
+   "mascot": "Spartans",
+   "state": "Ciarralotta",
+   "map_xy": [
+    273.59,
+    428.65
+   ],
+   "rcba_conference": "Harvest South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "16-16",
+   "season5_location_label": "East Ciarralotta"
+  },
+  {
+   "name": "Lewis Valley",
+   "full": "Lewis Valley Templars",
+   "mascot": "Templars",
+   "state": "Ciarralotta",
+   "map_xy": [
+    202.31,
+    447.62
+   ],
+   "rcba_conference": "Harvest South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "9-22",
+   "season5_location_label": "Central Orlot"
+  },
+  {
+   "name": "Mojourn State",
+   "full": "Mojourn State Phantoms",
+   "mascot": "Phantoms",
+   "state": "Ranroman",
+   "map_xy": [
+    178.19,
+    476.9
+   ],
+   "rcba_conference": "Harvest South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "14-17",
+   "season5_location_label": "Northern Ekralund"
+  },
+  {
+   "name": "Mountains",
+   "full": "Mountains Missionaries",
+   "mascot": "Missionaries",
+   "state": "Phangrine",
+   "map_xy": [
+    283.09,
+    487.94
+   ],
+   "rcba_conference": "Harvest South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "16-16",
+   "season5_location_label": "NE Phangrine"
+  },
+  {
+   "name": "New Amethine",
+   "full": "New Amethine Rubberheads",
+   "mascot": "Rubberheads",
+   "state": "Phangrine",
+   "map_xy": [
+    283.73,
+    495.72
+   ],
+   "rcba_conference": "Harvest South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "9-22",
+   "season5_location_label": "Eastern Phangrine"
+  },
+  {
+   "name": "Pationah",
+   "full": "Pationah Swans",
+   "mascot": "Swans",
+   "state": "South Antiragal",
+   "map_xy": [
+    290.11,
+    422.41
+   ],
+   "rcba_conference": "Harvest South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "18-13",
+   "season5_location_label": "C S Antiragal"
+  },
+  {
+   "name": "Santa Madera",
+   "full": "Santa Madera Minotaurs",
+   "mascot": "Minotaurs",
+   "state": "Ciarralotta",
+   "map_xy": [
+    254.5,
+    434.29
+   ],
+   "rcba_conference": "Harvest South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "19-14",
+   "season5_location_label": "N S Antiragal"
+  },
+  {
+   "name": "Victoria",
+   "full": "Victoria Gargoyles",
+   "mascot": "Gargoyles",
+   "state": "Antiragal",
+   "map_xy": [
+    283.62,
+    367.23
+   ],
+   "rcba_conference": "Harvest South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "10-22",
+   "season5_location_label": "North Lawiiri"
+  },
+  {
+   "name": "Classetto",
+   "full": "Classetto Dingos",
+   "mascot": "Dingos",
+   "state": "Harrell",
+   "map_xy": [
+    417.4,
+    281.51
+   ],
+   "rcba_conference": "Hidden Hills",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "7-25",
+   "season5_location_label": "SW Harrell"
+  },
+  {
+   "name": "East Costique Int",
+   "full": "East Costique Int Roilanders",
+   "mascot": "Roilanders",
+   "state": "East Costique",
+   "map_xy": [
+    409.49,
+    281.96
+   ],
+   "rcba_conference": "Hidden Hills",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": true,
+   "season5_record": null,
+   "season5_location_label": null
+  },
+  {
+   "name": "Harrell State",
+   "full": "Harrell State Harlequins",
+   "mascot": "Harlequins",
+   "state": "Harrell",
+   "map_xy": [
+    433.23,
+    259.02
+   ],
+   "rcba_conference": "Hidden Hills",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "20-12",
+   "season5_location_label": "NE Harrell"
+  },
+  {
+   "name": "Joseph Hall",
+   "full": "Joseph Hall Legionaries",
+   "mascot": "Legionaries",
+   "state": "Crayellan",
+   "map_xy": [
+    440.15,
+    195.62
+   ],
+   "rcba_conference": "Hidden Hills",
+   "rcba_conference_originally": "Mountain Range",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "14-18",
+   "season5_location_label": "EC Crayellan"
+  },
+  {
+   "name": "Lighaty",
+   "full": "Lighaty Marshalls",
+   "mascot": "Marshalls",
+   "state": "Riveral",
+   "map_xy": [
+    435.96,
+    243.65
+   ],
+   "rcba_conference": "Hidden Hills",
+   "rcba_conference_originally": "Big Gulf",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "11-21",
+   "season5_location_label": "Northern Krobe"
+  },
+  {
+   "name": "Ormskirk",
+   "full": "Ormskirk Viscounts",
+   "mascot": "Viscounts",
+   "state": "Harrell",
+   "map_xy": [
+    429.82,
+    285.46
+   ],
+   "rcba_conference": "Hidden Hills",
+   "rcba_conference_originally": "Mountain Range",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "13-18",
+   "season5_location_label": "SW Fiota"
+  },
+  {
+   "name": "Rascha",
+   "full": "Rascha Lions",
+   "mascot": "Lions",
+   "state": "Fiota",
+   "map_xy": [
+    403.85,
+    367.31
+   ],
+   "rcba_conference": "Hidden Hills",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "12-19",
+   "season5_location_label": "SE East Costique"
+  },
+  {
+   "name": "Rouska",
+   "full": "Rouska Red Ants",
+   "mascot": "Red Ants",
+   "state": "Skeenerland",
+   "map_xy": [
+    328.42,
+    259.68
+   ],
+   "rcba_conference": "Hidden Hills",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "9-22",
+   "season5_location_label": "South Riveral"
+  },
+  {
+   "name": "Skeenerland East",
+   "full": "Skeenerland East Screaming Eagles",
+   "mascot": "Screaming Eagles",
+   "state": "Skeenerland",
+   "map_xy": [
+    349.62,
+    247.31
+   ],
+   "rcba_conference": "Hidden Hills",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "19-14",
+   "season5_location_label": "East Skeenerland"
+  },
+  {
+   "name": "UHMM",
+   "full": "UHMM Mighty Mice",
+   "mascot": "Mighty Mice",
+   "state": "Harrell",
+   "map_xy": [
+    437.87,
+    276.73
+   ],
+   "rcba_conference": "Hidden Hills",
+   "rcba_conference_originally": "Mountain Range",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "22-9",
+   "season5_location_label": "SE Harrell"
+  },
+  {
+   "name": "Cathedral",
+   "full": "Cathedral High Monks",
+   "mascot": "High Monks",
+   "state": "Fiota",
+   "map_xy": [
+    364.61,
+    365.34
+   ],
+   "rcba_conference": "Holy Revigian",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "21-12",
+   "season5_location_label": "Eastern Roosevelt"
+  },
+  {
+   "name": "Church of Fiota",
+   "full": "Church of Fiota Sentinels",
+   "mascot": "Sentinels",
+   "state": "Fiota",
+   "map_xy": [
+    377.27,
+    375.2
+   ],
+   "rcba_conference": "Holy Revigian",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "17-15",
+   "season5_location_label": "Port Logan Fiota"
+  },
+  {
+   "name": "Crystal Word",
+   "full": "Crystal Word Pilgrims",
+   "mascot": "Pilgrims",
+   "state": "Fiota",
+   "map_xy": [
+    434.33,
+    385.21
+   ],
+   "rcba_conference": "Holy Revigian",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "12-22",
+   "season5_location_label": "Fiota Bay"
+  },
+  {
+   "name": "Eternal Fox JC",
+   "full": "Eternal Fox JC Early Birds",
+   "mascot": "Early Birds",
+   "state": "Fiota",
+   "map_xy": [
+    371.82,
+    348.03
+   ],
+   "rcba_conference": "Holy Revigian",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": true,
+   "season5_record": "3-28",
+   "season5_location_label": "NW Fiota"
+  },
+  {
+   "name": "First Dawn Falls",
+   "full": "First Dawn Falls Holy Ray",
+   "mascot": "Holy Ray",
+   "state": "Fiota",
+   "map_xy": [
+    411.69,
+    370.02
+   ],
+   "rcba_conference": "Holy Revigian",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "23-10",
+   "season5_location_label": "Central Fiota"
+  },
+  {
+   "name": "Holy Monastery",
+   "full": "Holy Monastery Golden Elks",
+   "mascot": "Golden Elks",
+   "state": "Krobe",
+   "map_xy": [
+    332.46,
+    384.05
+   ],
+   "rcba_conference": "Holy Revigian",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "14-18",
+   "season5_location_label": "Southern Costique"
+  },
+  {
+   "name": "Long South",
+   "full": "Long South Larks",
+   "mascot": "Larks",
+   "state": "Fiota",
+   "map_xy": [
+    389.08,
+    379.21
+   ],
+   "rcba_conference": "Holy Revigian",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "7-24",
+   "season5_location_label": "Southern Rogaela"
+  },
+  {
+   "name": "Mountain Home",
+   "full": "Mountain Home Morning Glory",
+   "mascot": "Morning Glory",
+   "state": "Vaughn Bay",
+   "map_xy": [
+    393.99,
+    337.22
+   ],
+   "rcba_conference": "Holy Revigian",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "7-24",
+   "season5_location_label": "Western Fiota"
+  },
+  {
+   "name": "St Recreation",
+   "full": "St Recreation Lambs",
+   "mascot": "Lambs",
+   "state": "Fiota",
+   "map_xy": [
+    389,
+    371.72
+   ],
+   "rcba_conference": "Holy Revigian",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": null,
+   "season5_location_label": null
+  },
+  {
+   "name": "Waterville",
+   "full": "Waterville Wrens",
+   "mascot": "Wrens",
+   "state": "Fiota",
+   "map_xy": [
+    409.67,
+    380.29
+   ],
+   "rcba_conference": "Holy Revigian",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "15-17",
+   "season5_location_label": "Western Fiota"
+  },
+  {
+   "name": "Antiragal",
+   "full": "Antiragal Hoppers",
+   "mascot": "Hoppers",
+   "state": "Antiragal",
+   "map_xy": [
+    250.58,
+    358.74
+   ],
+   "rcba_conference": "Jyras Bay",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Jyras Bay",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "16-15",
+   "season5_location_label": "WC Antiragal"
+  },
+  {
+   "name": "Antiragal State",
+   "full": "Antiragal State Aardvarks",
+   "mascot": "Aardvarks",
+   "state": "Antiragal",
+   "map_xy": [
+    289.67,
+    374.6
+   ],
+   "rcba_conference": "Jyras Bay",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Jyras Bay",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "13-18",
+   "season5_location_label": "Central Antiragal"
+  },
+  {
+   "name": "Dietsche",
+   "full": "Dietsche Bulldogs",
+   "mascot": "Bulldogs",
+   "state": "Lawiiri",
+   "map_xy": [
+    283.54,
+    386.12
+   ],
+   "rcba_conference": "Jyras Bay",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Jyras Bay",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "11-21",
+   "season5_location_label": "East Lawiiri"
+  },
+  {
+   "name": "Dove Island",
+   "full": "Dove Island Spruces",
+   "mascot": "Spruces",
+   "state": "Dove Island",
+   "map_xy": [
+    420.2,
+    411.12
+   ],
+   "rcba_conference": "Jyras Bay",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Jyras Bay",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "23-9",
+   "season5_location_label": "North Dove Island"
+  },
+  {
+   "name": "Keytommiyr",
+   "full": "Keytommiyr Kites",
+   "mascot": "Kites",
+   "state": "Verigon",
+   "map_xy": [
+    342.38,
+    342.83
+   ],
+   "rcba_conference": "Jyras Bay",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Jyras Bay",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "24-9",
+   "season5_location_label": "Central Verigon"
+  },
+  {
+   "name": "Krobe",
+   "full": "Krobe Crabs",
+   "mascot": "Crabs",
+   "state": "Krobe",
+   "map_xy": [
+    325.63,
+    412.1
+   ],
+   "rcba_conference": "Jyras Bay",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Jyras Bay",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "20-12",
+   "season5_location_label": "NW Krobe"
+  },
+  {
+   "name": "Krobe State",
+   "full": "Krobe State Krobbers",
+   "mascot": "Krobbers",
+   "state": "Krobe",
+   "map_xy": [
+    330.19,
+    441.06
+   ],
+   "rcba_conference": "Jyras Bay",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Jyras Bay",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "16-15",
+   "season5_location_label": "East Krobe"
+  },
+  {
+   "name": "Leafette",
+   "full": "Leafette Flames",
+   "mascot": "Flames",
+   "state": "South Antiragal",
+   "map_xy": [
+    292.71,
+    382.71
+   ],
+   "rcba_conference": "Jyras Bay",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Jyras Bay",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "16-16",
+   "season5_location_label": "East S Antiragal"
+  },
+  {
+   "name": "Rogaela State",
+   "full": "Rogaela State Valiants",
+   "mascot": "Valiants",
+   "state": "Rogaela",
+   "map_xy": [
+    281.49,
+    354.51
+   ],
+   "rcba_conference": "Jyras Bay",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Jyras Bay",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "19-13",
+   "season5_location_label": "Central Rogaela"
+  },
+  {
+   "name": "South Antiragal",
+   "full": "South Antiragal Rumblers",
+   "mascot": "Rumblers",
+   "state": "South Antiragal",
+   "map_xy": [
+    302.77,
+    429.65
+   ],
+   "rcba_conference": "Jyras Bay",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Jyras Bay",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "18-14",
+   "season5_location_label": "NW S Anyiragal"
+  },
+  {
+   "name": "South Antiragal St",
+   "full": "South Antiragal St Cockatiels",
+   "mascot": "Cockatiels",
+   "state": "South Antiragal",
+   "map_xy": [
+    286.77,
+    404.18
+   ],
+   "rcba_conference": "Jyras Bay",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Jyras Bay",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": null,
+   "season5_location_label": null
+  },
+  {
+   "name": "Tasson",
+   "full": "Tasson Tarantulas",
+   "mascot": "Tarantulas",
+   "state": "Tasson",
+   "map_xy": [
+    440.63,
+    279.26
+   ],
+   "rcba_conference": "Jyras Bay",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Jyras Bay",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "21-11",
+   "season5_location_label": "SW Tasson"
+  },
+  {
+   "name": "Verigon State",
+   "full": "Verigon State Vultures",
+   "mascot": "Vultures",
+   "state": "Verigon",
+   "map_xy": [
+    333.7,
+    374.76
+   ],
+   "rcba_conference": "Jyras Bay",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Jyras Bay",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "7-24",
+   "season5_location_label": "South Verigon"
+  },
+  {
+   "name": "Will Tech",
+   "full": "Will Tech Werewolves",
+   "mascot": "Werewolves",
+   "state": "Tasson",
+   "map_xy": [
+    441.47,
+    278.1
+   ],
+   "rcba_conference": "Jyras Bay",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Jyras Bay",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "21-10",
+   "season5_location_label": "SW Tasson"
+  },
+  {
+   "name": "Coniferous",
+   "full": "Coniferous Needles",
+   "mascot": "Needles",
+   "state": "Diveo",
+   "map_xy": [
+    152.42,
+    235.54
+   ],
+   "rcba_conference": "King’s Land",
+   "rcba_conference_originally": "Valley Bay",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "16-17",
+   "season5_location_label": "Central Ranroman"
+  },
+  {
+   "name": "Farmington",
+   "full": "Farmington Predators",
+   "mascot": "Predators",
+   "state": "Roosevelt",
+   "map_xy": [
+    133.56,
+    237.64
+   ],
+   "rcba_conference": "King’s Land",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "5-26",
+   "season5_location_label": "North Logan Sound"
+  },
+  {
+   "name": "Greater Billiataho",
+   "full": "Greater Billiataho Anacondas",
+   "mascot": "Anacondas",
+   "state": "Roosevelt",
+   "map_xy": [
+    150.43,
+    248.43
+   ],
+   "rcba_conference": "King’s Land",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "11-21",
+   "season5_location_label": "NE Roosevelt"
+  },
+  {
+   "name": "Harko",
+   "full": "Harko Marksmen",
+   "mascot": "Marksmen",
+   "state": "Roosevelt",
+   "map_xy": [
+    148.97,
+    279.1
+   ],
+   "rcba_conference": "King’s Land",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "14-17",
+   "season5_location_label": "West Kaji Kita"
+  },
+  {
+   "name": "Middle Parchynt",
+   "full": "Middle Parchynt War Wasps",
+   "mascot": "War Wasps",
+   "state": "Parchynt",
+   "map_xy": [
+    317.84,
+    334.26
+   ],
+   "rcba_conference": "King’s Land",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "16-16",
+   "season5_location_label": "North C Parchynt"
+  },
+  {
+   "name": "Mt St Williams",
+   "full": "Mt St Williams Rams",
+   "mascot": "Rams",
+   "state": "Roosevelt",
+   "map_xy": [
+    149.1,
+    252.31
+   ],
+   "rcba_conference": "King’s Land",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "27-6",
+   "season5_location_label": "Fiota Bay Fiota"
+  },
+  {
+   "name": "Star Mountain",
+   "full": "Star Mountain Jaguars",
+   "mascot": "Jaguars",
+   "state": "Rogaela",
+   "map_xy": [
+    276.58,
+    330.05
+   ],
+   "rcba_conference": "King’s Land",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "20-13",
+   "season5_location_label": "South Diveo"
+  },
+  {
+   "name": "Stokie",
+   "full": "Stokie Bulldogs",
+   "mascot": "Bulldogs",
+   "state": "Stanton",
+   "map_xy": [
+    289.65,
+    451.82
+   ],
+   "rcba_conference": "King’s Land",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "15-17",
+   "season5_location_label": "Central Parchynt"
+  },
+  {
+   "name": "UK Hoza",
+   "full": "UK Hoza Cowboys",
+   "mascot": "Cowboys",
+   "state": "Krobe",
+   "map_xy": [
+    317.29,
+    418.18
+   ],
+   "rcba_conference": "King’s Land",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "15-16",
+   "season5_location_label": "SE Krobe"
+  },
+  {
+   "name": "Verigon Tech",
+   "full": "Verigon Tech Vipers",
+   "mascot": "Vipers",
+   "state": "Verigon",
+   "map_xy": [
+    342.43,
+    354.75
+   ],
+   "rcba_conference": "King’s Land",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "8-23",
+   "season5_location_label": "SE Verigon"
+  },
+  {
+   "name": "Black Forest",
+   "full": "Black Forest Lumberjacks",
+   "mascot": "Lumberjacks",
+   "state": "Parchynt",
+   "map_xy": [
+    313.7,
+    376.45
+   ],
+   "rcba_conference": "Low Sixteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Low Sixteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "25-7",
+   "season5_location_label": "Southern Parchynt"
+  },
+  {
+   "name": "Clark",
+   "full": "Clark Cavaliers",
+   "mascot": "Cavaliers",
+   "state": "Orlot",
+   "map_xy": [
+    291.79,
+    482.54
+   ],
+   "rcba_conference": "Low Sixteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Low Sixteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "14-18",
+   "season5_location_label": "Eastern Orlot"
+  },
+  {
+   "name": "Cliffstraite",
+   "full": "Cliffstraite Rockhoppers",
+   "mascot": "Rockhoppers",
+   "state": "Krobe",
+   "map_xy": [
+    337.35,
+    408.57
+   ],
+   "rcba_conference": "Low Sixteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Low Sixteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "13-19",
+   "season5_location_label": "Central Krobe"
+  },
+  {
+   "name": "Coachville College",
+   "full": "Coachville College Bulls",
+   "mascot": "Bulls",
+   "state": "Stanton",
+   "map_xy": [
+    275.74,
+    458.91
+   ],
+   "rcba_conference": "Low Sixteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Low Sixteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "5-26",
+   "season5_location_label": "Coachville Stanton"
+  },
+  {
+   "name": "Ek Tech",
+   "full": "Ek Tech Marshalls",
+   "mascot": "Marshalls",
+   "state": "Ekralund",
+   "map_xy": [
+    304.61,
+    481.56
+   ],
+   "rcba_conference": "Low Sixteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Low Sixteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "12-19",
+   "season5_location_label": "SW Ekralund"
+  },
+  {
+   "name": "Hansenne",
+   "full": "Hansenne Seacats",
+   "mascot": "Seacats",
+   "state": "Krobe",
+   "map_xy": [
+    318.47,
+    464.33
+   ],
+   "rcba_conference": "Low Sixteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Low Sixteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "29-4",
+   "season5_location_label": "Southern Krobe"
+  },
+  {
+   "name": "Hughes State",
+   "full": "Hughes State Cyclones",
+   "mascot": "Cyclones",
+   "state": "South Antiragal",
+   "map_xy": [
+    300.68,
+    412.14
+   ],
+   "rcba_conference": "Low Sixteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Low Sixteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "14-19",
+   "season5_location_label": "C S Antiragal"
+  },
+  {
+   "name": "National",
+   "full": "National Lavenders",
+   "mascot": "Lavenders",
+   "state": "Ekralund",
+   "map_xy": [
+    307.3,
+    474.92
+   ],
+   "rcba_conference": "Low Sixteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Low Sixteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "22-12",
+   "season5_location_label": "Central Ekralund"
+  },
+  {
+   "name": "New Madrid",
+   "full": "New Madrid Royals",
+   "mascot": "Royals",
+   "state": "Antiragal",
+   "map_xy": [
+    228.04,
+    354.02
+   ],
+   "rcba_conference": "Low Sixteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Low Sixteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "11-21",
+   "season5_location_label": "Western Antiragal"
+  },
+  {
+   "name": "Orlot Western",
+   "full": "Orlot Western Cowboys",
+   "mascot": "Cowboys",
+   "state": "Orlot",
+   "map_xy": [
+    269.12,
+    476.82
+   ],
+   "rcba_conference": "Low Sixteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Low Sixteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "14-17",
+   "season5_location_label": "Western Orlot"
+  },
+  {
+   "name": "Queensville",
+   "full": "Queensville Crows",
+   "mascot": "Crows",
+   "state": "Parchynt",
+   "map_xy": [
+    311.13,
+    347.21
+   ],
+   "rcba_conference": "Low Sixteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Low Sixteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "22-10",
+   "season5_location_label": "Central Parchynt"
+  },
+  {
+   "name": "Sacred Tomb",
+   "full": "Sacred Tomb Olives",
+   "mascot": "Olives",
+   "state": "Antiragal",
+   "map_xy": [
+    230.82,
+    355.87
+   ],
+   "rcba_conference": "Low Sixteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Low Sixteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "9-22",
+   "season5_location_label": "Western Antiragal"
+  },
+  {
+   "name": "San Diego Valley",
+   "full": "San Diego Valley Geckos",
+   "mascot": "Geckos",
+   "state": "Stanton",
+   "map_xy": [
+    266.24,
+    469.32
+   ],
+   "rcba_conference": "Low Sixteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Low Sixteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "14-17",
+   "season5_location_label": "South Stanton"
+  },
+  {
+   "name": "Westburg",
+   "full": "Westburg Friars",
+   "mascot": "Friars",
+   "state": "Orlot",
+   "map_xy": [
+    272.26,
+    480.63
+   ],
+   "rcba_conference": "Low Sixteen",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Low Sixteen",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "19-12",
+   "season5_location_label": "Western Orlot"
+  },
+  {
+   "name": "Benjamin",
+   "full": "Benjamin Lions",
+   "mascot": "Lions",
+   "state": "Ciarralotta",
+   "map_xy": [
+    236.85,
+    476.41
+   ],
+   "rcba_conference": "Middle States",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "12-19",
+   "season5_location_label": "NE Ekralund"
+  },
+  {
+   "name": "Carnegie",
+   "full": "Carnegie Ducks",
+   "mascot": "Ducks",
+   "state": "Ciarralotta",
+   "map_xy": [
+    267.76,
+    447.25
+   ],
+   "rcba_conference": "Middle States",
+   "rcba_conference_originally": "Sky Cross",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "20-12",
+   "season5_location_label": "North Kaji Kita"
+  },
+  {
+   "name": "DeRowe",
+   "full": "DeRowe Devils",
+   "mascot": "Devils",
+   "state": "Krobe",
+   "map_xy": [
+    326.43,
+    446.76
+   ],
+   "rcba_conference": "Middle States",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "22-10",
+   "season5_location_label": "Western Ekralund"
+  },
+  {
+   "name": "Forseti",
+   "full": "Forseti Judges",
+   "mascot": "Judges",
+   "state": "Ekralund",
+   "map_xy": [
+    303.66,
+    480.6
+   ],
+   "rcba_conference": "Middle States",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "18-13",
+   "season5_location_label": "Central Ciarralotta"
+  },
+  {
+   "name": "Godfrey State",
+   "full": "Godfrey State Halos",
+   "mascot": "Halos",
+   "state": "Ekralund",
+   "map_xy": [
+    302.95,
+    472.81
+   ],
+   "rcba_conference": "Middle States",
+   "rcba_conference_originally": "North Jyras",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "19-13",
+   "season5_location_label": "South Verigon"
+  },
+  {
+   "name": "Guice-Moore",
+   "full": "Guice-Moore Sabretooths",
+   "mascot": "Sabretooths",
+   "state": "Krobe",
+   "map_xy": [
+    311.9,
+    458.52
+   ],
+   "rcba_conference": "Middle States",
+   "rcba_conference_originally": "Great Athletic",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "11-21",
+   "season5_location_label": "NW Natzumakis"
+  },
+  {
+   "name": "Lockring",
+   "full": "Lockring Warthogs",
+   "mascot": "Warthogs",
+   "state": "Stanton",
+   "map_xy": [
+    306.16,
+    456.22
+   ],
+   "rcba_conference": "Middle States",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "19-13",
+   "season5_location_label": "SE South Antiragal"
+  },
+  {
+   "name": "Newfoundland",
+   "full": "Newfoundland Constrictors",
+   "mascot": "Constrictors",
+   "state": "Stanton",
+   "map_xy": [
+    264.06,
+    468.52
+   ],
+   "rcba_conference": "Middle States",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "24-9",
+   "season5_location_label": "East Stanton"
+  },
+  {
+   "name": "Phangrine A&M",
+   "full": "Phangrine A&M Mules",
+   "mascot": "Mules",
+   "state": "Phangrine",
+   "map_xy": [
+    272.1,
+    484.57
+   ],
+   "rcba_conference": "Middle States",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "8-23",
+   "season5_location_label": "Central Phangrine"
+  },
+  {
+   "name": "Spirit of Light",
+   "full": "Spirit of Light Warriors",
+   "mascot": "Warriors",
+   "state": "Phangrine",
+   "map_xy": [
+    272.16,
+    487.72
+   ],
+   "rcba_conference": "Middle States",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "21-12",
+   "season5_location_label": "Diamond City"
+  },
+  {
+   "name": "Boetticher",
+   "full": "Boetticher Bumblebees",
+   "mascot": "Bumblebees",
+   "state": "Natzumakis",
+   "map_xy": [
+    125.94,
+    495.79
+   ],
+   "rcba_conference": "Mountain Range",
+   "rcba_conference_originally": "Valley Bay",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "10-22",
+   "season5_location_label": "SW Ciarralotta"
+  },
+  {
+   "name": "Burrell",
+   "full": "Burrell Shephards",
+   "mascot": "Shephards",
+   "state": "Natzumakis",
+   "map_xy": [
+    111.29,
+    498.58
+   ],
+   "rcba_conference": "Mountain Range",
+   "rcba_conference_originally": "Holy Revigian",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "12-19",
+   "season5_location_label": "Central Parchynt"
+  },
+  {
+   "name": "Inkstromm",
+   "full": "Inkstromm Seasnakes",
+   "mascot": "Seasnakes",
+   "state": "West Hatesei",
+   "map_xy": [
+    153.2,
+    526.58
+   ],
+   "rcba_conference": "Mountain Range",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "11-22",
+   "season5_location_label": "South Vaughn Bay"
+  },
+  {
+   "name": "Junesburg",
+   "full": "Junesburg Junebugs",
+   "mascot": "Junebugs",
+   "state": "West Hatesei",
+   "map_xy": [
+    167.87,
+    529.76
+   ],
+   "rcba_conference": "Mountain Range",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "23-10",
+   "season5_location_label": "NW Fiota"
+  },
+  {
+   "name": "Kimberly",
+   "full": "Kimberly Kodiaks",
+   "mascot": "Kodiaks",
+   "state": "Eona",
+   "map_xy": [
+    235.13,
+    526.45
+   ],
+   "rcba_conference": "Mountain Range",
+   "rcba_conference_originally": "Valley Bay",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "16-16",
+   "season5_location_label": "East North Hatesei"
+  },
+  {
+   "name": "Norris State",
+   "full": "Norris State Ozarks",
+   "mascot": "Ozarks",
+   "state": "Eona",
+   "map_xy": [
+    228.28,
+    553.97
+   ],
+   "rcba_conference": "Mountain Range",
+   "rcba_conference_originally": "Valley Bay",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "12-19",
+   "season5_location_label": "NW Hatesei"
+  },
+  {
+   "name": "Nuvero State",
+   "full": "Nuvero State Orions",
+   "mascot": "Orions",
+   "state": "Eona",
+   "map_xy": [
+    228.85,
+    528.46
+   ],
+   "rcba_conference": "Mountain Range",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "5-26",
+   "season5_location_label": "SW Fiota"
+  },
+  {
+   "name": "Pietro Tadal",
+   "full": "Pietro Tadal Yellow Devils",
+   "mascot": "Yellow Devils",
+   "state": "Eona",
+   "map_xy": [
+    222.64,
+    558.57
+   ],
+   "rcba_conference": "Mountain Range",
+   "rcba_conference_originally": "Valley Bay",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "18-14",
+   "season5_location_label": "SE Ranroman"
+  },
+  {
+   "name": "Poppyseed",
+   "full": "Poppyseed Weasels",
+   "mascot": "Weasels",
+   "state": "Natzumakis",
+   "map_xy": [
+    136.46,
+    514.81
+   ],
+   "rcba_conference": "Mountain Range",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "15-17",
+   "season5_location_label": "SE Skeenerland"
+  },
+  {
+   "name": "Southern Perth",
+   "full": "Southern Perth Rays",
+   "mascot": "Rays",
+   "state": "Eona",
+   "map_xy": [
+    223.8,
+    511.53
+   ],
+   "rcba_conference": "Mountain Range",
+   "rcba_conference_originally": "Valley Bay",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "16-17",
+   "season5_location_label": "Perth Island Eona"
+  },
+  {
+   "name": "Costique River",
+   "full": "Costique River Mockingbirds",
+   "mascot": "Mockingbirds",
+   "state": "Costique",
+   "map_xy": [
+    391.72,
+    299.6
+   ],
+   "rcba_conference": "Mountain Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Mountain Valley",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "13-18",
+   "season5_location_label": "Central Costique"
+  },
+  {
+   "name": "Crayellan",
+   "full": "Crayellan Badgers",
+   "mascot": "Badgers",
+   "state": "Crayellan",
+   "map_xy": [
+    436.17,
+    203.37
+   ],
+   "rcba_conference": "Mountain Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Mountain Valley",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "19-12",
+   "season5_location_label": "Eastern Crayellan"
+  },
+  {
+   "name": "Crayellan State",
+   "full": "Crayellan State Spiders",
+   "mascot": "Spiders",
+   "state": "Crayellan",
+   "map_xy": [
+    269.94,
+    188.39
+   ],
+   "rcba_conference": "Mountain Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Mountain Valley",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "19-13",
+   "season5_location_label": "Western Crayellan"
+  },
+  {
+   "name": "East Costique",
+   "full": "East Costique Pirates",
+   "mascot": "Pirates",
+   "state": "East Costique",
+   "map_xy": [
+    396.65,
+    291.83
+   ],
+   "rcba_conference": "Mountain Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Mountain Valley",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "14-17",
+   "season5_location_label": "S East Costique"
+  },
+  {
+   "name": "Fiota Bay",
+   "full": "Fiota Bay Whale Sharks",
+   "mascot": "Whale Sharks",
+   "state": "Fiota",
+   "map_xy": [
+    428.44,
+    381.31
+   ],
+   "rcba_conference": "Mountain Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Mountain Valley",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "22-10",
+   "season5_location_label": "Fiota Bay Fiota"
+  },
+  {
+   "name": "Harrell",
+   "full": "Harrell Tigerhawks",
+   "mascot": "Tigerhawks",
+   "state": "Harrell",
+   "map_xy": [
+    423.14,
+    277.58
+   ],
+   "rcba_conference": "Mountain Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Mountain Valley",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "10-21",
+   "season5_location_label": "SW Harrell"
+  },
+  {
+   "name": "North Verigon",
+   "full": "North Verigon Delta Dogs",
+   "mascot": "Delta Dogs",
+   "state": "Verigon",
+   "map_xy": [
+    339.31,
+    344.26
+   ],
+   "rcba_conference": "Mountain Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Mountain Valley",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "12-21",
+   "season5_location_label": "N Central Verigon"
+  },
+  {
+   "name": "Parchynt",
+   "full": "Parchynt Rangers",
+   "mascot": "Rangers",
+   "state": "Parchynt",
+   "map_xy": [
+    299.43,
+    340.36
+   ],
+   "rcba_conference": "Mountain Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Mountain Valley",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "13-19",
+   "season5_location_label": "West Parchynt"
+  },
+  {
+   "name": "Riveral",
+   "full": "Riveral Bullfrogs",
+   "mascot": "Bullfrogs",
+   "state": "Riveral",
+   "map_xy": [
+    435.34,
+    249.49
+   ],
+   "rcba_conference": "Mountain Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Mountain Valley",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "24-9",
+   "season5_location_label": "Northern Riverdale"
+  },
+  {
+   "name": "Rogaela",
+   "full": "Rogaela Rockets",
+   "mascot": "Rockets",
+   "state": "Rogaela",
+   "map_xy": [
+    288.47,
+    314.26
+   ],
+   "rcba_conference": "Mountain Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Mountain Valley",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "15-17",
+   "season5_location_label": "S Central Rogaela"
+  },
+  {
+   "name": "UFNH",
+   "full": "UFNH Hummingbirds",
+   "mascot": "Hummingbirds",
+   "state": "Fiota",
+   "map_xy": [
+    385.34,
+    369.15
+   ],
+   "rcba_conference": "Mountain Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Mountain Valley",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "20-11",
+   "season5_location_label": "Logan Sound Fiota"
+  },
+  {
+   "name": "Verigon",
+   "full": "Verigon Vikings",
+   "mascot": "Vikings",
+   "state": "Verigon",
+   "map_xy": [
+    351.14,
+    363.11
+   ],
+   "rcba_conference": "Mountain Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Mountain Valley",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "29-4",
+   "season5_location_label": "SW Verigon"
+  },
+  {
+   "name": "Charlesville",
+   "full": "Charlesville Chukars",
+   "mascot": "Chukars",
+   "state": "Vaughn Bay",
+   "map_xy": [
+    407.94,
+    316.52
+   ],
+   "rcba_conference": "New National",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "9-23",
+   "season5_location_label": "North Vaugh Bay"
+  },
+  {
+   "name": "Enos",
+   "full": "Enos Ants",
+   "mascot": "Ants",
+   "state": "Ranroman",
+   "map_xy": [
+    190.05,
+    448.55
+   ],
+   "rcba_conference": "New National",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "21-11",
+   "season5_location_label": "South Vaughn Bay"
+  },
+  {
+   "name": "Fiota",
+   "full": "Fiota Fear",
+   "mascot": "Fear",
+   "state": "Fiota",
+   "map_xy": [
+    424.33,
+    377.86
+   ],
+   "rcba_conference": "New National",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "21-11",
+   "season5_location_label": "Eastern Fiota"
+  },
+  {
+   "name": "Kaji Central",
+   "full": "Kaji Central Chipmunks",
+   "mascot": "Chipmunks",
+   "state": "Kaji Daun",
+   "map_xy": [
+    160.07,
+    345.45
+   ],
+   "rcba_conference": "New National",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "29-4",
+   "season5_location_label": "Northern Kaji Daun"
+  },
+  {
+   "name": "Krane State",
+   "full": "Krane State Couriers",
+   "mascot": "Couriers",
+   "state": "Verigon",
+   "map_xy": [
+    347.19,
+    366.77
+   ],
+   "rcba_conference": "New National",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "22-9",
+   "season5_location_label": "Southern Verigon"
+  },
+  {
+   "name": "Lawiiri",
+   "full": "Lawiiri River Rats",
+   "mascot": "River Rats",
+   "state": "Lawiiri",
+   "map_xy": [
+    281.69,
+    388.89
+   ],
+   "rcba_conference": "New National",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "5-26",
+   "season5_location_label": "Eastern Lawiiri"
+  },
+  {
+   "name": "Monroe",
+   "full": "Monroe Seagulls",
+   "mascot": "Seagulls",
+   "state": "Ranroman",
+   "map_xy": [
+    168.14,
+    395.46
+   ],
+   "rcba_conference": "New National",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "10-22",
+   "season5_location_label": "North Ranroman"
+  },
+  {
+   "name": "ParTech",
+   "full": "ParTech Griffins",
+   "mascot": "Griffins",
+   "state": "Parchynt",
+   "map_xy": [
+    322.75,
+    297.86
+   ],
+   "rcba_conference": "New National",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "27-6",
+   "season5_location_label": "Central Parchynt"
+  },
+  {
+   "name": "Southern Parchynt",
+   "full": "Southern Parchynt Hurricanes",
+   "mascot": "Hurricanes",
+   "state": "Parchynt",
+   "map_xy": [
+    305.35,
+    367.59
+   ],
+   "rcba_conference": "New National",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "11-21",
+   "season5_location_label": "Southern Parchynt"
+  },
+  {
+   "name": "UFFE",
+   "full": "UFFE Clockworkers",
+   "mascot": "Clockworkers",
+   "state": "Far Farris",
+   "map_xy": [
+    254.79,
+    329.01
+   ],
+   "rcba_conference": "New National",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "18-13",
+   "season5_location_label": "Eastern Far Farris"
+  },
+  {
+   "name": "UFFL",
+   "full": "UFFL Treefrogs",
+   "mascot": "Treefrogs",
+   "state": "Far Farris",
+   "map_xy": [
+    230,
+    328.57
+   ],
+   "rcba_conference": "New National",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "16-15",
+   "season5_location_label": "Northern Far Farris"
+  },
+  {
+   "name": "Yawney",
+   "full": "Yawney Coalburners",
+   "mascot": "Coalburners",
+   "state": "Natzumakis",
+   "map_xy": [
+    130.84,
+    495.15
+   ],
+   "rcba_conference": "New National",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "17-14",
+   "season5_location_label": "Central Roosevelt"
+  },
+  {
+   "name": "Broadhilton",
+   "full": "Broadhilton Bears",
+   "mascot": "Bears",
+   "state": "South Antiragal",
+   "map_xy": [
+    304.37,
+    431.46
+   ],
+   "rcba_conference": "North Country",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "20-14",
+   "season5_location_label": "C S Antiragal"
+  },
+  {
+   "name": "Freyr",
+   "full": "Freyr Aggies",
+   "mascot": "Aggies",
+   "state": "Natzumakis",
+   "map_xy": [
+    163.35,
+    492.96
+   ],
+   "rcba_conference": "North Country",
+   "rcba_conference_originally": "Tropic South",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "15-17",
+   "season5_location_label": "South Ranroman"
+  },
+  {
+   "name": "High Platte",
+   "full": "High Platte Nomads",
+   "mascot": "Nomads",
+   "state": "Phangrine",
+   "map_xy": [
+    285.35,
+    494.07
+   ],
+   "rcba_conference": "North Country",
+   "rcba_conference_originally": "Tropic South",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "5-26",
+   "season5_location_label": "N North Hatesei"
+  },
+  {
+   "name": "LSFA",
+   "full": "LSFA Whitetails",
+   "mascot": "Whitetails",
+   "state": "Lawiiri",
+   "map_xy": [
+    263.12,
+    388.75
+   ],
+   "rcba_conference": "North Country",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "9-22",
+   "season5_location_label": "NE Lawiiri"
+  },
+  {
+   "name": "Lawiiri South",
+   "full": "Lawiiri South Wildcats",
+   "mascot": "Wildcats",
+   "state": "Lawiiri",
+   "map_xy": [
+    261.87,
+    407.89
+   ],
+   "rcba_conference": "North Country",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "19-12",
+   "season5_location_label": "SE Lawiiri"
+  },
+  {
+   "name": "Stamford",
+   "full": "Stamford Voyagers",
+   "mascot": "Voyagers",
+   "state": "Ciarralotta",
+   "map_xy": [
+    243.52,
+    474.6
+   ],
+   "rcba_conference": "North Country",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "21-10",
+   "season5_location_label": "SE Ciarralotta"
+  },
+  {
+   "name": "USA Bradley",
+   "full": "USA Bradley Yellowbirds",
+   "mascot": "Yellowbirds",
+   "state": "South Antiragal",
+   "map_xy": [
+    291.94,
+    408.06
+   ],
+   "rcba_conference": "North Country",
+   "rcba_conference_originally": "Valley Bay",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "17-15",
+   "season5_location_label": "N South Antiragal"
+  },
+  {
+   "name": "USA Britton",
+   "full": "USA Britton Bulldogs",
+   "mascot": "Bulldogs",
+   "state": "South Antiragal",
+   "map_xy": [
+    280.08,
+    444.32
+   ],
+   "rcba_conference": "North Country",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "19-13",
+   "season5_location_label": "SE S Antiragal"
+  },
+  {
+   "name": "USA Roman City",
+   "full": "USA Roman City Caesars",
+   "mascot": "Caesars",
+   "state": "South Antiragal",
+   "map_xy": [
+    300.88,
+    419.67
+   ],
+   "rcba_conference": "North Country",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "8-24",
+   "season5_location_label": "SW S Antiragal"
+  },
+  {
+   "name": "USADY",
+   "full": "USADY Terriers",
+   "mascot": "Terriers",
+   "state": "South Antiragal",
+   "map_xy": [
+    301.6,
+    443.46
+   ],
+   "rcba_conference": "North Country",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "10-21",
+   "season5_location_label": "C S Antiragal"
+  },
+  {
+   "name": "Fiota Catskill",
+   "full": "Fiota Catskill Rockers",
+   "mascot": "Rockers",
+   "state": "Fiota",
+   "map_xy": [
+    371.13,
+    346.39
+   ],
+   "rcba_conference": "North Jyras",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": true,
+   "season5_record": "7-25",
+   "season5_location_label": "Logan Sound Fiota"
+  },
+  {
+   "name": "Lazzagu",
+   "full": "Lazzagu Komodos",
+   "mascot": "Komodos",
+   "state": "Dove Island",
+   "map_xy": [
+    408.94,
+    411.8
+   ],
+   "rcba_conference": "North Jyras",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "19-13",
+   "season5_location_label": "North Dove Island"
+  },
+  {
+   "name": "Nelson Heights",
+   "full": "Nelson Heights Kookaburras",
+   "mascot": "Kookaburras",
+   "state": "Fiota",
+   "map_xy": [
+    385.32,
+    369.39
+   ],
+   "rcba_conference": "North Jyras",
+   "rcba_conference_originally": "Silver Plains",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "11-22",
+   "season5_location_label": "Logan Sound Fiota"
+  },
+  {
+   "name": "Ravenhead",
+   "full": "Ravenhead Chiefs",
+   "mascot": "Chiefs",
+   "state": "Dove Island",
+   "map_xy": [
+    393.62,
+    411.87
+   ],
+   "rcba_conference": "North Jyras",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "9-22",
+   "season5_location_label": "South Dove Island"
+  },
+  {
+   "name": "Seytoicca",
+   "full": "Seytoicca Silver Hawks",
+   "mascot": "Silver Hawks",
+   "state": "Dove Island",
+   "map_xy": [
+    417.41,
+    407.43
+   ],
+   "rcba_conference": "North Jyras",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "23-10",
+   "season5_location_label": "South Central Fiota"
+  },
+  {
+   "name": "Silverton",
+   "full": "Silverton Silverheads",
+   "mascot": "Silverheads",
+   "state": "Tasson",
+   "map_xy": [
+    447.61,
+    280.82
+   ],
+   "rcba_conference": "North Jyras",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "14-17",
+   "season5_location_label": "Western Fiota"
+  },
+  {
+   "name": "St Valentine",
+   "full": "St Valentine Voles",
+   "mascot": "Voles",
+   "state": "Skeenerland",
+   "map_xy": [
+    330.8,
+    274.1
+   ],
+   "rcba_conference": "North Jyras",
+   "rcba_conference_originally": "Middle States",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": null,
+   "season5_location_label": null
+  },
+  {
+   "name": "VCA",
+   "full": "VCA Saints",
+   "mascot": "Saints",
+   "state": "Verigon",
+   "map_xy": [
+    339.38,
+    358.4
+   ],
+   "rcba_conference": "North Jyras",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "27-6",
+   "season5_location_label": "South Verigon"
+  },
+  {
+   "name": "Veriota",
+   "full": "Veriota Criss-Crossers",
+   "mascot": "Criss-Crossers",
+   "state": "Fiota",
+   "map_xy": [
+    359.78,
+    368.97
+   ],
+   "rcba_conference": "North Jyras",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "13-18",
+   "season5_location_label": "SE Verigon"
+  },
+  {
+   "name": "Zialo State",
+   "full": "Zialo State Zephyrs",
+   "mascot": "Zephyrs",
+   "state": "Costique",
+   "map_xy": [
+    341.98,
+    270.01
+   ],
+   "rcba_conference": "North Jyras",
+   "rcba_conference_originally": "Middle States",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "17-15",
+   "season5_location_label": "SE Ciarralotta"
+  },
+  {
+   "name": "Agis",
+   "full": "Agis Androids",
+   "mascot": "Androids",
+   "state": "Phangrine",
+   "map_xy": [
+    274.65,
+    494.71
+   ],
+   "rcba_conference": "Peninsula",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "20-11",
+   "season5_location_label": "Central Phangrine"
+  },
+  {
+   "name": "Bitner",
+   "full": "Bitner Baskervilles",
+   "mascot": "Baskervilles",
+   "state": "Krobe",
+   "map_xy": [
+    313.8,
+    468.5
+   ],
+   "rcba_conference": "Peninsula",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "8-23",
+   "season5_location_label": "Southwest Krobe"
+  },
+  {
+   "name": "Fabor State",
+   "full": "Fabor State Fauns",
+   "mascot": "Fauns",
+   "state": "Stanton",
+   "map_xy": [
+    298.61,
+    460.96
+   ],
+   "rcba_conference": "Peninsula",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "10-21",
+   "season5_location_label": "NE Stanton"
+  },
+  {
+   "name": "Guerra",
+   "full": "Guerra Warhawks",
+   "mascot": "Warhawks",
+   "state": "Ranroman",
+   "map_xy": [
+    180.72,
+    409.93
+   ],
+   "rcba_conference": "Peninsula",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "14-18",
+   "season5_location_label": "SW Ranroman"
+  },
+  {
+   "name": "OCU",
+   "full": "OCU Ramrods",
+   "mascot": "Ramrods",
+   "state": "Orlot",
+   "map_xy": [
+    267.3,
+    474.85
+   ],
+   "rcba_conference": "Peninsula",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "19-13",
+   "season5_location_label": "North west Orlot"
+  },
+  {
+   "name": "Orlot East Coast",
+   "full": "Orlot East Coast Anglers",
+   "mascot": "Anglers",
+   "state": "Orlot",
+   "map_xy": [
+    294.5,
+    490.56
+   ],
+   "rcba_conference": "Peninsula",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "25-8",
+   "season5_location_label": "South Orlot"
+  },
+  {
+   "name": "Phangrine",
+   "full": "Phangrine Bombardiers",
+   "mascot": "Bombardiers",
+   "state": "Phangrine",
+   "map_xy": [
+    273.41,
+    488.92
+   ],
+   "rcba_conference": "Peninsula",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "22-11",
+   "season5_location_label": "Central Phangrine"
+  },
+  {
+   "name": "Sarandon State",
+   "full": "Sarandon State Silverfish",
+   "mascot": "Silverfish",
+   "state": "Ciarralotta",
+   "map_xy": [
+    214.26,
+    471.17
+   ],
+   "rcba_conference": "Peninsula",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "20-11",
+   "season5_location_label": "SE Natzumakis"
+  },
+  {
+   "name": "Southern",
+   "full": "Southern Jaguars",
+   "mascot": "Jaguars",
+   "state": "Stanton",
+   "map_xy": [
+    276.82,
+    471.94
+   ],
+   "rcba_conference": "Peninsula",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "14-18",
+   "season5_location_label": "Southern Stanton"
+  },
+  {
+   "name": "Villalandon",
+   "full": "Villalandon Salmon",
+   "mascot": "Salmon",
+   "state": "Stanton",
+   "map_xy": [
+    261.59,
+    470.2
+   ],
+   "rcba_conference": "Peninsula",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "25-7",
+   "season5_location_label": "North Orlot"
+  },
+  {
+   "name": "Barhold",
+   "full": "Barhold Bears",
+   "mascot": "Bears",
+   "state": "Barhold",
+   "map_xy": [
+    252.92,
+    137.38
+   ],
+   "rcba_conference": "Power North",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Power North",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "13-18",
+   "season5_location_label": "South Cent Barhold"
+  },
+  {
+   "name": "Barhold State",
+   "full": "Barhold State Bisons",
+   "mascot": "Bisons",
+   "state": "Barhold",
+   "map_xy": [
+    237.94,
+    112.99
+   ],
+   "rcba_conference": "Power North",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Power North",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "18-14",
+   "season5_location_label": "SW Barhold"
+  },
+  {
+   "name": "Costique",
+   "full": "Costique Mystics",
+   "mascot": "Mystics",
+   "state": "Costique",
+   "map_xy": [
+    347.32,
+    264.02
+   ],
+   "rcba_conference": "Power North",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Power North",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "19-14",
+   "season5_location_label": "Central Costique"
+  },
+  {
+   "name": "Diveo",
+   "full": "Diveo Dukes",
+   "mascot": "Dukes",
+   "state": "Diveo",
+   "map_xy": [
+    163.39,
+    217.5
+   ],
+   "rcba_conference": "Power North",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Power North",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "22-9",
+   "season5_location_label": "Southern Diveo"
+  },
+  {
+   "name": "Diveo State",
+   "full": "Diveo State Wildcats",
+   "mascot": "Wildcats",
+   "state": "Diveo",
+   "map_xy": [
+    180.26,
+    204.38
+   ],
+   "rcba_conference": "Power North",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Power North",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "25-8",
+   "season5_location_label": "Northern Diveo"
+  },
+  {
+   "name": "Kaji Kita",
+   "full": "Kaji Kita Knights",
+   "mascot": "Knights",
+   "state": "Kaji Kita",
+   "map_xy": [
+    163.91,
+    310.76
+   ],
+   "rcba_conference": "Power North",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Power North",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "11-21",
+   "season5_location_label": "Northern Kaji Kita"
+  },
+  {
+   "name": "Marblehead",
+   "full": "Marblehead Trout",
+   "mascot": "Trout",
+   "state": "Costique",
+   "map_xy": [
+    364.6,
+    287.26
+   ],
+   "rcba_conference": "Power North",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Power North",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "22-11",
+   "season5_location_label": "NE Costique"
+  },
+  {
+   "name": "Northlight",
+   "full": "Northlight Nauticals",
+   "mascot": "Nauticals",
+   "state": "Roosevelt",
+   "map_xy": [
+    111.85,
+    242.44
+   ],
+   "rcba_conference": "Power North",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Power North",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "20-12",
+   "season5_location_label": "West Roosevelt"
+  },
+  {
+   "name": "Roosevelt State",
+   "full": "Roosevelt State Rhinos",
+   "mascot": "Rhinos",
+   "state": "Roosevelt",
+   "map_xy": [
+    139,
+    244.23
+   ],
+   "rcba_conference": "Power North",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Power North",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "17-14",
+   "season5_location_label": "Central Roosevelt"
+  },
+  {
+   "name": "Skeenerland",
+   "full": "Skeenerland Shakers",
+   "mascot": "Shakers",
+   "state": "Skeenerland",
+   "map_xy": [
+    322.85,
+    267.56
+   ],
+   "rcba_conference": "Power North",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Power North",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "6-26",
+   "season5_location_label": "Centr Skeenerland"
+  },
+  {
+   "name": "Skeenerland State",
+   "full": "Skeenerland State Pumas",
+   "mascot": "Pumas",
+   "state": "Skeenerland",
+   "map_xy": [
+    304.83,
+    261.33
+   ],
+   "rcba_conference": "Power North",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Power North",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "9-22",
+   "season5_location_label": "East C Skeenerland"
+  },
+  {
+   "name": "Southern Tengus",
+   "full": "Southern Tengus Stampede",
+   "mascot": "Stampede",
+   "state": "Tengus",
+   "map_xy": [
+    191.23,
+    241.29
+   ],
+   "rcba_conference": "Power North",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Power North",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "14-17",
+   "season5_location_label": "SW Tengus"
+  },
+  {
+   "name": "Tengus",
+   "full": "Tengus Tigers",
+   "mascot": "Tigers",
+   "state": "Tengus",
+   "map_xy": [
+    224.73,
+    189.32
+   ],
+   "rcba_conference": "Power North",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Power North",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "11-20",
+   "season5_location_label": "North Tengus"
+  },
+  {
+   "name": "Tengus State",
+   "full": "Tengus State Bullhorns",
+   "mascot": "Bullhorns",
+   "state": "Tengus",
+   "map_xy": [
+    220.02,
+    213.14
+   ],
+   "rcba_conference": "Power North",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Power North",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "25-8",
+   "season5_location_label": "Southern Tengus"
+  },
+  {
+   "name": "Applegate",
+   "full": "Applegate Jets",
+   "mascot": "Jets",
+   "state": "Skeenerland",
+   "map_xy": [
+    322,
+    271.08
+   ],
+   "rcba_conference": "Silver Plains",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "9-22",
+   "season5_location_label": "Central Fiota"
+  },
+  {
+   "name": "Bragi",
+   "full": "Bragi Rhapsody",
+   "mascot": "Rhapsody",
+   "state": "Costique",
+   "map_xy": [
+    335.64,
+    260.97
+   ],
+   "rcba_conference": "Silver Plains",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "23-8",
+   "season5_location_label": "SE Skenerland"
+  },
+  {
+   "name": "Central Fiota State",
+   "full": "Central Fiota State Loggers",
+   "mascot": "Loggers",
+   "state": "Fiota",
+   "map_xy": [
+    403.98,
+    377.66
+   ],
+   "rcba_conference": "Silver Plains",
+   "rcba_conference_originally": "Big Gulf",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "20-13",
+   "season5_location_label": "Central Fiota"
+  },
+  {
+   "name": "Humphrey",
+   "full": "Humphrey Humpbacks",
+   "mascot": "Humpbacks",
+   "state": "Fiota",
+   "map_xy": [
+    383.56,
+    366.33
+   ],
+   "rcba_conference": "Silver Plains",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "19-14",
+   "season5_location_label": "Logan Sound Fiota"
+  },
+  {
+   "name": "Kilgrave",
+   "full": "Kilgrave Wolverines",
+   "mascot": "Wolverines",
+   "state": "Fiota",
+   "map_xy": [
+    372.67,
+    371.08
+   ],
+   "rcba_conference": "Silver Plains",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "8-24",
+   "season5_location_label": "Central Fiota"
+  },
+  {
+   "name": "Peterhaus",
+   "full": "Peterhaus Billy Goats",
+   "mascot": "Billy Goats",
+   "state": "East Costique",
+   "map_xy": [
+    413.15,
+    276.62
+   ],
+   "rcba_conference": "Silver Plains",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "18-13",
+   "season5_location_label": "C Rogaela"
+  },
+  {
+   "name": "Redford",
+   "full": "Redford Buffaloes",
+   "mascot": "Buffaloes",
+   "state": "Crayellan",
+   "map_xy": [
+    439.13,
+    191.72
+   ],
+   "rcba_conference": "Silver Plains",
+   "rcba_conference_originally": "Sky Cross",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "12-19",
+   "season5_location_label": "Southern Diveo"
+  },
+  {
+   "name": "Reescomb",
+   "full": "Reescomb Stars",
+   "mascot": "Stars",
+   "state": "Costique",
+   "map_xy": [
+    342.27,
+    266.16
+   ],
+   "rcba_conference": "Silver Plains",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "5-26",
+   "season5_location_label": "Eastern Kaji Daun"
+  },
+  {
+   "name": "Riverwake",
+   "full": "Riverwake Sand Crabs",
+   "mascot": "Sand Crabs",
+   "state": "Rogaela",
+   "map_xy": [
+    296.54,
+    262.73
+   ],
+   "rcba_conference": "Silver Plains",
+   "rcba_conference_originally": "North Country",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "10-22",
+   "season5_location_label": "Cent Skeenerland"
+  },
+  {
+   "name": "Stanisburg",
+   "full": "Stanisburg Brown Bears",
+   "mascot": "Brown Bears",
+   "state": "Skeenerland",
+   "map_xy": [
+    295.23,
+    258.7
+   ],
+   "rcba_conference": "Silver Plains",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "8-23",
+   "season5_location_label": "East Skeenerland"
+  },
+  {
+   "name": "Tasson Plains",
+   "full": "Tasson Plains Yellow Jackets",
+   "mascot": "Yellow Jackets",
+   "state": "Tasson",
+   "map_xy": [
+    451.36,
+    258.88
+   ],
+   "rcba_conference": "Silver Plains",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "22-11",
+   "season5_location_label": "Northern Tasson"
+  },
+  {
+   "name": "Towgrade",
+   "full": "Towgrade Cobblers",
+   "mascot": "Cobblers",
+   "state": "East Costique",
+   "map_xy": [
+    382.2,
+    271.05
+   ],
+   "rcba_conference": "Silver Plains",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "25-7",
+   "season5_location_label": "C East Costique"
+  },
+  {
+   "name": "Cedar Frost",
+   "full": "Cedar Frost Mounties",
+   "mascot": "Mounties",
+   "state": "Barhold",
+   "map_xy": [
+    212.27,
+    144.86
+   ],
+   "rcba_conference": "Sky Cross",
+   "rcba_conference_originally": "Middle States",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "8-23",
+   "season5_location_label": "SW Stanton"
+  },
+  {
+   "name": "Collette",
+   "full": "Collette Super Soldiers",
+   "mascot": "Super Soldiers",
+   "state": "Diveo",
+   "map_xy": [
+    155.87,
+    220.41
+   ],
+   "rcba_conference": "Sky Cross",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "27-6",
+   "season5_location_label": "Southern Diveo"
+  },
+  {
+   "name": "Draque College",
+   "full": "Draque College Drakes",
+   "mascot": "Drakes",
+   "state": "Kaji Kita",
+   "map_xy": [
+    145.08,
+    339.56
+   ],
+   "rcba_conference": "Sky Cross",
+   "rcba_conference_originally": "North Country",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "18-13",
+   "season5_location_label": "East Kaji Kita"
+  },
+  {
+   "name": "El Latigo",
+   "full": "El Latigo Huskies",
+   "mascot": "Huskies",
+   "state": "Skeenerland",
+   "map_xy": [
+    332.18,
+    262.12
+   ],
+   "rcba_conference": "Sky Cross",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "15-18",
+   "season5_location_label": "C Skeenerland"
+  },
+  {
+   "name": "Gordon-Shipp",
+   "full": "Gordon-Shipp River Devils",
+   "mascot": "River Devils",
+   "state": "Diveo",
+   "map_xy": [
+    169.12,
+    203.24
+   ],
+   "rcba_conference": "Sky Cross",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "19-14",
+   "season5_location_label": "Central Tengus"
+  },
+  {
+   "name": "Highrose",
+   "full": "Highrose Grebes",
+   "mascot": "Grebes",
+   "state": "Tengus",
+   "map_xy": [
+    215.76,
+    206.15
+   ],
+   "rcba_conference": "Sky Cross",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "23-8",
+   "season5_location_label": "C Coastal Barhold"
+  },
+  {
+   "name": "Josephine",
+   "full": "Josephine Rams",
+   "mascot": "Rams",
+   "state": "Far Farris",
+   "map_xy": [
+    245.11,
+    278.63
+   ],
+   "rcba_conference": "Sky Cross",
+   "rcba_conference_originally": "Coastal Ten",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "15-17",
+   "season5_location_label": "South Far Farris"
+  },
+  {
+   "name": "Lannister",
+   "full": "Lannister Goblins",
+   "mascot": "Goblins",
+   "state": "Tengus",
+   "map_xy": [
+    217.83,
+    184.13
+   ],
+   "rcba_conference": "Sky Cross",
+   "rcba_conference_originally": "Hidden Hills",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "13-18",
+   "season5_location_label": "Northern Costique"
+  },
+  {
+   "name": "Lower Kaji Kita",
+   "full": "Lower Kaji Kita Killer Bees",
+   "mascot": "Killer Bees",
+   "state": "Kaji Kita",
+   "map_xy": [
+    137.13,
+    343.75
+   ],
+   "rcba_conference": "Sky Cross",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "18-14",
+   "season5_location_label": "Southern Kaji Kita"
+  },
+  {
+   "name": "Malta",
+   "full": "Malta Cougars",
+   "mascot": "Cougars",
+   "state": "Barhold",
+   "map_xy": [
+    247.47,
+    129.9
+   ],
+   "rcba_conference": "Sky Cross",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "23-9",
+   "season5_location_label": "Northern Barhold"
+  },
+  {
+   "name": "Mt Kaji",
+   "full": "Mt Kaji Mountain Lions",
+   "mascot": "Mountain Lions",
+   "state": "Kaji Kita",
+   "map_xy": [
+    146.43,
+    338.11
+   ],
+   "rcba_conference": "Sky Cross",
+   "rcba_conference_originally": "Coastal Ten",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "25-7",
+   "season5_location_label": "North Kaji Daun"
+  },
+  {
+   "name": "Pershing",
+   "full": "Pershing Wildcats",
+   "mascot": "Wildcats",
+   "state": "Kaji Kita",
+   "map_xy": [
+    148.38,
+    313.47
+   ],
+   "rcba_conference": "Sky Cross",
+   "rcba_conference_originally": "North Jyras",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "5-26",
+   "season5_location_label": "Western Fiota"
+  },
+  {
+   "name": "RPU",
+   "full": "RPU Hornbills",
+   "mascot": "Hornbills",
+   "state": "Roosevelt",
+   "map_xy": [
+    142.15,
+    241.48
+   ],
+   "rcba_conference": "Sky Cross",
+   "rcba_conference_originally": "North Country",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "14-17",
+   "season5_location_label": "SW Roosevelt"
+  },
+  {
+   "name": "Skeenerland Parley",
+   "full": "Skeenerland Parley Armadillos",
+   "mascot": "Armadillos",
+   "state": "Skeenerland",
+   "map_xy": [
+    262.58,
+    261.71
+   ],
+   "rcba_conference": "Sky Cross",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "4-27",
+   "season5_location_label": "West Skeenerland"
+  },
+  {
+   "name": "Whiteside",
+   "full": "Whiteside Gators",
+   "mascot": "Gators",
+   "state": "Skeenerland",
+   "map_xy": [
+    275.11,
+    241.51
+   ],
+   "rcba_conference": "Sky Cross",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "15-17",
+   "season5_location_label": "Western Kaji Kita"
+  },
+  {
+   "name": "Yarrola",
+   "full": "Yarrola Squirrels",
+   "mascot": "Squirrels",
+   "state": "Natzumakis",
+   "map_xy": [
+    131.42,
+    384.46
+   ],
+   "rcba_conference": "Sky Cross",
+   "rcba_conference_originally": "Coastal Ten",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "6-25",
+   "season5_location_label": "Central Natzumakis"
+  },
+  {
+   "name": "Chapel Rock",
+   "full": "Chapel Rock King Crabs",
+   "mascot": "King Crabs",
+   "state": "West Hatesei",
+   "map_xy": [
+    163.02,
+    518.89
+   ],
+   "rcba_conference": "Southwestern",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Southwestern",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "19-12",
+   "season5_location_label": "North West Hatesei"
+  },
+  {
+   "name": "Cherry Lake",
+   "full": "Cherry Lake Raccoons",
+   "mascot": "Raccoons",
+   "state": "Wolford",
+   "map_xy": [
+    200.54,
+    559.77
+   ],
+   "rcba_conference": "Southwestern",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Southwestern",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "20-12",
+   "season5_location_label": "East Wolford"
+  },
+  {
+   "name": "Chinolka",
+   "full": "Chinolka Jackets",
+   "mascot": "Jackets",
+   "state": "Ranroman",
+   "map_xy": [
+    175.53,
+    488.64
+   ],
+   "rcba_conference": "Southwestern",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Southwestern",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "12-21",
+   "season5_location_label": "Cent North Hatesei"
+  },
+  {
+   "name": "Coastal Ranroman",
+   "full": "Coastal Ranroman Urchins",
+   "mascot": "Urchins",
+   "state": "Ranroman",
+   "map_xy": [
+    198.99,
+    480.53
+   ],
+   "rcba_conference": "Southwestern",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Southwestern",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "28-5",
+   "season5_location_label": "South Ranroman"
+  },
+  {
+   "name": "Cordelle",
+   "full": "Cordelle Lions",
+   "mascot": "Lions",
+   "state": "Natzumakis",
+   "map_xy": [
+    127.8,
+    417.31
+   ],
+   "rcba_conference": "Southwestern",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Southwestern",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "10-22",
+   "season5_location_label": "West Natzumakis"
+  },
+  {
+   "name": "Ediville State",
+   "full": "Ediville State Cougars",
+   "mascot": "Cougars",
+   "state": "Natzumakis",
+   "map_xy": [
+    116.45,
+    491.2
+   ],
+   "rcba_conference": "Southwestern",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Southwestern",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "18-14",
+   "season5_location_label": "Ediville Natzumakis"
+  },
+  {
+   "name": "Eona State",
+   "full": "Eona State Aviators",
+   "mascot": "Aviators",
+   "state": "Eona",
+   "map_xy": [
+    223.17,
+    553.07
+   ],
+   "rcba_conference": "Southwestern",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Southwestern",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "15-17",
+   "season5_location_label": "Northeast Eona"
+  },
+  {
+   "name": "Holliday",
+   "full": "Holliday Jerseys",
+   "mascot": "Jerseys",
+   "state": "Natzumakis",
+   "map_xy": [
+    141.32,
+    418.97
+   ],
+   "rcba_conference": "Southwestern",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Southwestern",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "19-12",
+   "season5_location_label": "North Natzumakis"
+  },
+  {
+   "name": "Mount Cairn",
+   "full": "Mount Cairn Toppers",
+   "mascot": "Toppers",
+   "state": "Ranroman",
+   "map_xy": [
+    168.02,
+    413.28
+   ],
+   "rcba_conference": "Southwestern",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Southwestern",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "18-14",
+   "season5_location_label": "CentrL Ranroman"
+  },
+  {
+   "name": "Perth Island",
+   "full": "Perth Island Mallards",
+   "mascot": "Mallards",
+   "state": "Eona",
+   "map_xy": [
+    225.53,
+    510.03
+   ],
+   "rcba_conference": "Southwestern",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Southwestern",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "10-21",
+   "season5_location_label": "Perth Island Eona"
+  },
+  {
+   "name": "Poland State",
+   "full": "Poland State Ravens",
+   "mascot": "Ravens",
+   "state": "Wolford",
+   "map_xy": [
+    208.56,
+    553.83
+   ],
+   "rcba_conference": "Southwestern",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Southwestern",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "21-11",
+   "season5_location_label": "North Wolford"
+  },
+  {
+   "name": "UN Minko",
+   "full": "UN Minko Rattlesnakes",
+   "mascot": "Rattlesnakes",
+   "state": "Natzumakis",
+   "map_xy": [
+    118.42,
+    473.11
+   ],
+   "rcba_conference": "Southwestern",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Southwestern",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "13-18",
+   "season5_location_label": "NW Natzumakis"
+  },
+  {
+   "name": "Underwood",
+   "full": "Underwood Knights",
+   "mascot": "Knights",
+   "state": "Hatesei",
+   "map_xy": [
+    177.67,
+    550.2
+   ],
+   "rcba_conference": "Southwestern",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Southwestern",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "25-8",
+   "season5_location_label": "NE Hatesei"
+  },
+  {
+   "name": "Waterloo",
+   "full": "Waterloo Otters",
+   "mascot": "Otters",
+   "state": "Wolford",
+   "map_xy": [
+    191.4,
+    577.37
+   ],
+   "rcba_conference": "Southwestern",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Southwestern",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "9-22",
+   "season5_location_label": "NW Wolford"
+  },
+  {
+   "name": "Chorrisaw",
+   "full": "Chorrisaw Cobras",
+   "mascot": "Cobras",
+   "state": "Stanton",
+   "map_xy": [
+    308.52,
+    471.05
+   ],
+   "rcba_conference": "Stanton Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "14-17",
+   "season5_location_label": null
+  },
+  {
+   "name": "Coachville Rev",
+   "full": "Coachville Rev Aurals",
+   "mascot": "Aurals",
+   "state": "Stanton",
+   "map_xy": [
+    275.91,
+    459.84
+   ],
+   "rcba_conference": "Stanton Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": true,
+   "season5_record": null,
+   "season5_location_label": null
+  },
+  {
+   "name": "Coffeeville",
+   "full": "Coffeeville Hornets",
+   "mascot": "Hornets",
+   "state": "Stanton",
+   "map_xy": [
+    267.98,
+    461.51
+   ],
+   "rcba_conference": "Stanton Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "9-22",
+   "season5_location_label": null
+  },
+  {
+   "name": "Forrester",
+   "full": "Forrester Grizzlies",
+   "mascot": "Grizzlies",
+   "state": "Stanton",
+   "map_xy": [
+    266.0,
+    457.0
+   ],
+   "rcba_conference": "Stanton Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "7-25",
+   "season5_location_label": null
+  },
+  {
+   "name": "Gorban",
+   "full": "Gorban Warriors",
+   "mascot": "Warriors",
+   "state": "Stanton",
+   "map_xy": [
+    303.23,
+    465.83
+   ],
+   "rcba_conference": "Stanton Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "20-13",
+   "season5_location_label": null
+  },
+  {
+   "name": "NW Stanton",
+   "full": "NW Stanton Hammerheads",
+   "mascot": "Hammerheads",
+   "state": "Stanton",
+   "map_xy": [
+    269.93,
+    454.59
+   ],
+   "rcba_conference": "Stanton Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "3-28",
+   "season5_location_label": null
+  },
+  {
+   "name": "Strame State",
+   "full": "Strame State Snakes",
+   "mascot": "Snakes",
+   "state": "Stanton",
+   "map_xy": [
+    270.61,
+    470.01
+   ],
+   "rcba_conference": "Stanton Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "24-9",
+   "season5_location_label": null
+  },
+  {
+   "name": "US Downtown",
+   "full": "US Downtown Trolleys",
+   "mascot": "Trolleys",
+   "state": "Stanton",
+   "map_xy": [
+    275.09,
+    458.21
+   ],
+   "rcba_conference": "Stanton Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "12-19",
+   "season5_location_label": null
+  },
+  {
+   "name": "US Fall Beach",
+   "full": "US Fall Beach Fortholders",
+   "mascot": "Fortholders",
+   "state": "Stanton",
+   "map_xy": [
+    262.1,
+    474.1
+   ],
+   "rcba_conference": "Stanton Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "14-19",
+   "season5_location_label": null
+  },
+  {
+   "name": "US Fitzgerald",
+   "full": "US Fitzgerald Lizards",
+   "mascot": "Lizards",
+   "state": "Stanton",
+   "map_xy": [
+    278.47,
+    449.84
+   ],
+   "rcba_conference": "Stanton Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "13-19",
+   "season5_location_label": null
+  },
+  {
+   "name": "US Harlon",
+   "full": "US Harlon Magicians",
+   "mascot": "Magicians",
+   "state": "Stanton",
+   "map_xy": [
+    294.29,
+    467.26
+   ],
+   "rcba_conference": "Stanton Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "20-11",
+   "season5_location_label": null
+  },
+  {
+   "name": "US Lyman",
+   "full": "US Lyman Blackbirds",
+   "mascot": "Blackbirds",
+   "state": "Stanton",
+   "map_xy": [
+    284.22,
+    462.52
+   ],
+   "rcba_conference": "Stanton Valley",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "19-12",
+   "season5_location_label": null
+  },
+  {
+   "name": "Anderville Tech",
+   "full": "Anderville Tech Hermit Crabs",
+   "mascot": "Hermit Crabs",
+   "state": "Hatesei",
+   "map_xy": [
+    179.67,
+    547.94
+   ],
+   "rcba_conference": "Tropic South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "7-24",
+   "season5_location_label": "North West Hatesei"
+  },
+  {
+   "name": "Bowles",
+   "full": "Bowles Bearcats",
+   "mascot": "Bearcats",
+   "state": "Wolford",
+   "map_xy": [
+    194.76,
+    554.66
+   ],
+   "rcba_conference": "Tropic South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "21-11",
+   "season5_location_label": "Western Hatesei"
+  },
+  {
+   "name": "Gunther",
+   "full": "Gunther Sea Lions",
+   "mascot": "Sea Lions",
+   "state": "North Hatesei",
+   "map_xy": [
+    195.2,
+    539.86
+   ],
+   "rcba_conference": "Tropic South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "17-17",
+   "season5_location_label": "East North Hatesei"
+  },
+  {
+   "name": "Lamb",
+   "full": "Lamb Musketeers",
+   "mascot": "Musketeers",
+   "state": "North Hatesei",
+   "map_xy": [
+    167.97,
+    519.72
+   ],
+   "rcba_conference": "Tropic South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "10-23",
+   "season5_location_label": "West North Hatesei"
+  },
+  {
+   "name": "Oceanside",
+   "full": "Oceanside Warriors",
+   "mascot": "Warriors",
+   "state": "Natzumakis",
+   "map_xy": [
+    117.69,
+    447.56
+   ],
+   "rcba_conference": "Tropic South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "16-16",
+   "season5_location_label": "WC Natzumakis"
+  },
+  {
+   "name": "RU Herriman",
+   "full": "RU Herriman Broncos",
+   "mascot": "Broncos",
+   "state": "Ranroman",
+   "map_xy": [
+    180.83,
+    453
+   ],
+   "rcba_conference": "Tropic South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "23-8",
+   "season5_location_label": "SW Ranroman"
+  },
+  {
+   "name": "Reuben-Smith",
+   "full": "Reuben-Smith Broncos",
+   "mascot": "Broncos",
+   "state": "Eona",
+   "map_xy": [
+    236.09,
+    530.63
+   ],
+   "rcba_conference": "Tropic South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "17-16",
+   "season5_location_label": "Central Eona"
+  },
+  {
+   "name": "Surreigh",
+   "full": "Surreigh Mustangs",
+   "mascot": "Mustangs",
+   "state": "North Hatesei",
+   "map_xy": [
+    172.2,
+    525.23
+   ],
+   "rcba_conference": "Tropic South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "5-26",
+   "season5_location_label": "North West Hatesei"
+  },
+  {
+   "name": "Thurley",
+   "full": "Thurley Jaguars",
+   "mascot": "Jaguars",
+   "state": "Natzumakis",
+   "map_xy": [
+    116.23,
+    476.97
+   ],
+   "rcba_conference": "Tropic South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "8-23",
+   "season5_location_label": "East Natzumakis"
+  },
+  {
+   "name": "UEKP",
+   "full": "UEKP Kangaroos",
+   "mascot": "Kangaroos",
+   "state": "Eona",
+   "map_xy": [
+    217.62,
+    547.75
+   ],
+   "rcba_conference": "Tropic South",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "25-6",
+   "season5_location_label": "Southern Eona"
+  },
+  {
+   "name": "Apatol",
+   "full": "Apatol Beavers",
+   "mascot": "Beavers",
+   "state": "Antiragal",
+   "map_xy": [
+    305.89,
+    375.03
+   ],
+   "rcba_conference": "Valley Bay",
+   "rcba_conference_originally": "Mountain Range",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "16-17",
+   "season5_location_label": "NW Fiota"
+  },
+  {
+   "name": "Arguster",
+   "full": "Arguster Bulls",
+   "mascot": "Bulls",
+   "state": "South Antiragal",
+   "map_xy": [
+    294.68,
+    383.82
+   ],
+   "rcba_conference": "Valley Bay",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "5-26",
+   "season5_location_label": "Central Ciarralotta"
+  },
+  {
+   "name": "Athens",
+   "full": "Athens Gladiators",
+   "mascot": "Gladiators",
+   "state": "Lawiiri",
+   "map_xy": [
+    279.51,
+    392.9
+   ],
+   "rcba_conference": "Valley Bay",
+   "rcba_conference_originally": "Mountain Range",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "5-26",
+   "season5_location_label": "East Crayellan"
+  },
+  {
+   "name": "Casavadrian",
+   "full": "Casavadrian Pipers",
+   "mascot": "Pipers",
+   "state": "Fiota",
+   "map_xy": [
+    397.83,
+    375.19
+   ],
+   "rcba_conference": "Valley Bay",
+   "rcba_conference_originally": "Holy Revigian",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "21-10",
+   "season5_location_label": "Eastern Fiota"
+  },
+  {
+   "name": "French State",
+   "full": "French State Barbarians",
+   "mascot": "Barbarians",
+   "state": "South Antiragal",
+   "map_xy": [
+    311.56,
+    441.76
+   ],
+   "rcba_conference": "Valley Bay",
+   "rcba_conference_originally": "Mountain Range",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "10-21",
+   "season5_location_label": "NW Costique"
+  },
+  {
+   "name": "Friedrichsville",
+   "full": "Friedrichsville Toucans",
+   "mascot": "Toucans",
+   "state": "Far Farris",
+   "map_xy": [
+    193.21,
+    355.39
+   ],
+   "rcba_conference": "Valley Bay",
+   "rcba_conference_originally": "Hidden Hills",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "21-12",
+   "season5_location_label": "West Tasson"
+  },
+  {
+   "name": "McCall State",
+   "full": "McCall State Bulls",
+   "mascot": "Bulls",
+   "state": "Ranroman",
+   "map_xy": [
+    199.6,
+    450.64
+   ],
+   "rcba_conference": "Valley Bay",
+   "rcba_conference_originally": "Hidden Hills",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "12-19",
+   "season5_location_label": "West Verigon"
+  },
+  {
+   "name": "Mill Station",
+   "full": "Mill Station Raccoons",
+   "mascot": "Raccoons",
+   "state": "South Antiragal",
+   "map_xy": [
+    288.76,
+    405.49
+   ],
+   "rcba_conference": "Valley Bay",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "12-19",
+   "season5_location_label": "C South Antiragal"
+  },
+  {
+   "name": "Pollard State",
+   "full": "Pollard State Bulls",
+   "mascot": "Bulls",
+   "state": "Kaji Daun",
+   "map_xy": [
+    177.18,
+    362.98
+   ],
+   "rcba_conference": "Valley Bay",
+   "rcba_conference_originally": "Hidden Hills",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "7-25",
+   "season5_location_label": "Central Verigon"
+  },
+  {
+   "name": "Wharf Bay",
+   "full": "Wharf Bay Eels",
+   "mascot": "Eels",
+   "state": "Fiota",
+   "map_xy": [
+    381.48,
+    369.96
+   ],
+   "rcba_conference": "Valley Bay",
+   "rcba_conference_originally": "Valley Bay",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "14-17",
+   "season5_location_label": "SE Natzumakis"
+  },
+  {
+   "name": "Crayellan Ag",
+   "full": "Crayellan Ag Shamrocks",
+   "mascot": "Shamrocks",
+   "state": "Crayellan",
+   "map_xy": [
+    289.9,
+    209.65
+   ],
+   "rcba_conference": "Vapor Stream",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": true,
+   "season5_record": "20-13",
+   "season5_location_label": "Central Crayellan"
+  },
+  {
+   "name": "Crimson Mount",
+   "full": "Crimson Mount Cardinals",
+   "mascot": "Cardinals",
+   "state": "Kaji Kita",
+   "map_xy": [
+    160.26,
+    296.21
+   ],
+   "rcba_conference": "Vapor Stream",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Vapor Stream",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "13-19",
+   "season5_location_label": "Central Kaji Kita"
+  },
+  {
+   "name": "Denver State",
+   "full": "Denver State Arrowheads",
+   "mascot": "Arrowheads",
+   "state": "Diveo",
+   "map_xy": [
+    178.25,
+    195.62
+   ],
+   "rcba_conference": "Vapor Stream",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Vapor Stream",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "24-9",
+   "season5_location_label": "Central Diveo"
+  },
+  {
+   "name": "Grizzly Hills",
+   "full": "Grizzly Hills Cadets",
+   "mascot": "Cadets",
+   "state": "Tengus",
+   "map_xy": [
+    217,
+    218.67
+   ],
+   "rcba_conference": "Vapor Stream",
+   "rcba_conference_originally": "North Country",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "18-16",
+   "season5_location_label": "North Tengus"
+  },
+  {
+   "name": "Henderson State",
+   "full": "Henderson State Yetis",
+   "mascot": "Yetis",
+   "state": "Diveo",
+   "map_xy": [
+    195.04,
+    156.23
+   ],
+   "rcba_conference": "Vapor Stream",
+   "rcba_conference_originally": "North Country",
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": "21-11",
+   "season5_location_label": "West Diveo"
+  },
+  {
+   "name": "Hofferteltra",
+   "full": "Hofferteltra Wild Hogs",
+   "mascot": "Wild Hogs",
+   "state": "Crayellan",
+   "map_xy": [
+    356.46,
+    188.47
+   ],
+   "rcba_conference": "Vapor Stream",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Vapor Stream",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "20-12",
+   "season5_location_label": "Western Crayellan"
+  },
+  {
+   "name": "Hoganelle",
+   "full": "Hoganelle Herahawks",
+   "mascot": "Herahawks",
+   "state": "Crayellan",
+   "map_xy": [
+    411.18,
+    194.45
+   ],
+   "rcba_conference": "Vapor Stream",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Vapor Stream",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "2-29",
+   "season5_location_label": "Central Crayellan"
+  },
+  {
+   "name": "Kaji Daun State",
+   "full": "Kaji Daun State Cats",
+   "mascot": "Cats",
+   "state": "Kaji Daun",
+   "map_xy": [
+    149.86,
+    348.73
+   ],
+   "rcba_conference": "Vapor Stream",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Vapor Stream",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "20-12",
+   "season5_location_label": "Central Kaji Daun"
+  },
+  {
+   "name": "NE Rogaela",
+   "full": "NE Rogaela Bulldogs",
+   "mascot": "Bulldogs",
+   "state": "Rogaela",
+   "map_xy": [
+    323.38,
+    293.83
+   ],
+   "rcba_conference": "Vapor Stream",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Vapor Stream",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "20-12",
+   "season5_location_label": "NE Rogaela"
+  },
+  {
+   "name": "North Canesta",
+   "full": "North Canesta Terriers",
+   "mascot": "Terriers",
+   "state": "Kaji Daun",
+   "map_xy": [
+    148.14,
+    340.41
+   ],
+   "rcba_conference": "Vapor Stream",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Vapor Stream",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "4-27",
+   "season5_location_label": "Central Kaji Daun"
+  },
+  {
+   "name": "Palisades",
+   "full": "Palisades Marsh Monsters",
+   "mascot": "Marsh Monsters",
+   "state": "Rogaela",
+   "map_xy": [
+    301.46,
+    287.19
+   ],
+   "rcba_conference": "Vapor Stream",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Vapor Stream",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "20-11",
+   "season5_location_label": "Northern Rogaela"
+  },
+  {
+   "name": "Reid State",
+   "full": "Reid State Sequoias",
+   "mascot": "Sequoias",
+   "state": "Tengus",
+   "map_xy": [
+    235.89,
+    178.02
+   ],
+   "rcba_conference": "Vapor Stream",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Vapor Stream",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "22-11",
+   "season5_location_label": "Northern Tengus"
+  },
+  {
+   "name": "Rogaela Tech",
+   "full": "Rogaela Tech Dragons",
+   "mascot": "Dragons",
+   "state": "Rogaela",
+   "map_xy": [
+    278.89,
+    346.97
+   ],
+   "rcba_conference": "Vapor Stream",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Vapor Stream",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "8-24",
+   "season5_location_label": "Central Rogaela"
+  },
+  {
+   "name": "Roosevelt Mines",
+   "full": "Roosevelt Mines Hardhats",
+   "mascot": "Hardhats",
+   "state": "Roosevelt",
+   "map_xy": [
+    160.25,
+    278.04
+   ],
+   "rcba_conference": "Vapor Stream",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Vapor Stream",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "19-13",
+   "season5_location_label": "SW Roosevelt"
+  },
+  {
+   "name": "Skirter",
+   "full": "Skirter Skunks",
+   "mascot": "Skunks",
+   "state": "Roosevelt",
+   "map_xy": [
+    127.68,
+    242.07
+   ],
+   "rcba_conference": "Vapor Stream",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Vapor Stream",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "16-15",
+   "season5_location_label": "SE Roosevelt"
+  },
+  {
+   "name": "St Ballo's",
+   "full": "St Ballo's Wildcats",
+   "mascot": "Wildcats",
+   "state": "Diveo",
+   "map_xy": [
+    126.49,
+    218.76
+   ],
+   "rcba_conference": "Vapor Stream",
+   "rcba_conference_originally": null,
+   "rcfb_conference": null,
+   "rcfb_level": "SUB",
+   "no_football": false,
+   "season5_record": null,
+   "season5_location_label": null
+  },
+  {
+   "name": "Barhold Valley",
+   "full": "Barhold Valley Icefolk",
+   "mascot": "Icefolk",
+   "state": "Barhold",
+   "map_xy": [
+    276.38,
+    96.33
+   ],
+   "rcba_conference": "Western Coast",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Western Coast",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "10-23",
+   "season5_location_label": "Eastern Barhold"
+  },
+  {
+   "name": "Burrstone",
+   "full": "Burrstone Islanders",
+   "mascot": "Islanders",
+   "state": "Barhold",
+   "map_xy": [
+    183,
+    51
+   ],
+   "rcba_conference": "Western Coast",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Western Coast",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "13-18",
+   "season5_location_label": "South Barhold Isle"
+  },
+  {
+   "name": "Far Farris",
+   "full": "Far Farris Threshers",
+   "mascot": "Threshers",
+   "state": "Far Farris",
+   "map_xy": [
+    207.19,
+    331.94
+   ],
+   "rcba_conference": "Western Coast",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Western Coast",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "22-9",
+   "season5_location_label": "SW Far Farris"
+  },
+  {
+   "name": "Far Farris State",
+   "full": "Far Farris State Flyers",
+   "mascot": "Flyers",
+   "state": "Far Farris",
+   "map_xy": [
+    206.6,
+    307.54
+   ],
+   "rcba_conference": "Western Coast",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Western Coast",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "23-10",
+   "season5_location_label": "NW Far Farris"
+  },
+  {
+   "name": "Good River",
+   "full": "Good River Allegiants",
+   "mascot": "Allegiants",
+   "state": "Ranroman",
+   "map_xy": [
+    195.61,
+    404.19
+   ],
+   "rcba_conference": "Western Coast",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Western Coast",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "17-15",
+   "season5_location_label": "NE Ranroman"
+  },
+  {
+   "name": "Kaji Kita State",
+   "full": "Kaji Kita State Golden Eagles",
+   "mascot": "Golden Eagles",
+   "state": "Kaji Kita",
+   "map_xy": [
+    145.35,
+    332.45
+   ],
+   "rcba_conference": "Western Coast",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Western Coast",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "26-7",
+   "season5_location_label": "East Kaji Kita"
+  },
+  {
+   "name": "Natzumakis",
+   "full": "Natzumakis Bobcats",
+   "mascot": "Bobcats",
+   "state": "Natzumakis",
+   "map_xy": [
+    143.92,
+    405.51
+   ],
+   "rcba_conference": "Western Coast",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Western Coast",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "15-17",
+   "season5_location_label": "North Ediville"
+  },
+  {
+   "name": "Natzumakis State",
+   "full": "Natzumakis State Villagers",
+   "mascot": "Villagers",
+   "state": "Natzumakis",
+   "map_xy": [
+    129.76,
+    432.27
+   ],
+   "rcba_conference": "Western Coast",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Western Coast",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "14-17",
+   "season5_location_label": "South Ediville"
+  },
+  {
+   "name": "Park Island",
+   "full": "Park Island Northrangers",
+   "mascot": "Northrangers",
+   "state": "Barhold",
+   "map_xy": [
+    174.6,
+    23
+   ],
+   "rcba_conference": "Western Coast",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Western Coast",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "17-14",
+   "season5_location_label": "North Barhold Isle"
+  },
+  {
+   "name": "Roosevelt",
+   "full": "Roosevelt Roughriders",
+   "mascot": "Roughriders",
+   "state": "Roosevelt",
+   "map_xy": [
+    151.64,
+    275.49
+   ],
+   "rcba_conference": "Western Coast",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Western Coast",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "12-19",
+   "season5_location_label": "South Roosevelt"
+  },
+  {
+   "name": "Skylar Rose",
+   "full": "Skylar Rose Knights",
+   "mascot": "Knights",
+   "state": "Roosevelt",
+   "map_xy": [
+    148,
+    257.42
+   ],
+   "rcba_conference": "Western Coast",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Western Coast",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "23-9",
+   "season5_location_label": "Western Roosevelt"
+  },
+  {
+   "name": "Yrei Trobniy",
+   "full": "Yrei Trobniy Sandpipers",
+   "mascot": "Sandpipers",
+   "state": "Far Farris",
+   "map_xy": [
+    227.18,
+    352.06
+   ],
+   "rcba_conference": "Western Coast",
+   "rcba_conference_originally": null,
+   "rcfb_conference": "Western Coast",
+   "rcfb_level": "FBS",
+   "no_football": false,
+   "season5_record": "16-16",
+   "season5_location_label": "SW Far Farris"
+  }
+ ]
+}

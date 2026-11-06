@@ -1,0 +1,956 @@
+[
+ {
+  "year": 2021,
+  "champion": "Eternal Fox",
+  "runner_up": "Will Tech",
+  "semifinalists": [
+   "Central Stanton",
+   "ParTech"
+  ]
+ },
+ {
+  "year": 2020,
+  "champion": "Pistolheart",
+  "runner_up": "Diveo State",
+  "semifinalists": [
+   "Black Forest",
+   "South Antiragal St"
+  ]
+ },
+ {
+  "year": 2019,
+  "champion": "Rogaela",
+  "runner_up": "Ranroman",
+  "semifinalists": [
+   "UNN",
+   "Ranroman State"
+  ]
+ },
+ {
+  "year": 2018,
+  "champion": "Ranroman State",
+  "runner_up": "Hansenne",
+  "semifinalists": [
+   "Newfoundland",
+   "Dove Island"
+  ]
+ },
+ {
+  "year": 2017,
+  "champion": "Lito Rock State",
+  "runner_up": "Ranroman State",
+  "semifinalists": [
+   "Far Farris State",
+   "Clark"
+  ]
+ },
+ {
+  "year": 2016,
+  "champion": "Kingdom Valley",
+  "runner_up": "Ranroman State",
+  "semifinalists": [
+   "North Hatesei",
+   "Rogaela"
+  ]
+ },
+ {
+  "year": 2015,
+  "champion": "Diveo State",
+  "runner_up": "Natzumakis State",
+  "semifinalists": [
+   "Barhold State",
+   "Ranroman State"
+  ]
+ },
+ {
+  "year": 2014,
+  "champion": "Ranroman State",
+  "runner_up": "Central Stanton",
+  "semifinalists": [
+   "Kingdom Valley",
+   "Far Farris State"
+  ]
+ },
+ {
+  "year": 2013,
+  "champion": "Ranroman State",
+  "runner_up": "Kingdom Valley",
+  "semifinalists": [
+   "Tengus",
+   "Roosevelt"
+  ]
+ },
+ {
+  "year": 2012,
+  "champion": "Verigon State",
+  "runner_up": "Polt Hall",
+  "semifinalists": [
+   "Kingdom Valley",
+   "Ranroman State"
+  ]
+ },
+ {
+  "year": 2011,
+  "champion": "Kingdom Valley",
+  "runner_up": "UNN",
+  "semifinalists": [
+   "Skeenerland",
+   "Ciarralotta State"
+  ]
+ },
+ {
+  "year": 2010,
+  "champion": "Verigon State",
+  "runner_up": "Diveo State",
+  "semifinalists": [
+   "Eona",
+   "Repidome"
+  ]
+ },
+ {
+  "year": 2009,
+  "champion": "Diveo",
+  "runner_up": "Northlight",
+  "semifinalists": [
+   "Kingdom Valley",
+   "Fiota Bay"
+  ]
+ },
+ {
+  "year": 2008,
+  "champion": "Dietsche",
+  "runner_up": "Park Island",
+  "semifinalists": [
+   "Ranroman State",
+   "Crayellan Ag"
+  ]
+ },
+ {
+  "year": 2007,
+  "champion": "Far Farris State",
+  "runner_up": "Crayellan State",
+  "semifinalists": [
+   "Fiota Bay",
+   "Dove Island"
+  ]
+ },
+ {
+  "year": 2006,
+  "champion": "Kingdom Valley",
+  "runner_up": "UNN",
+  "semifinalists": [
+   "Ranroman State",
+   "Diveo"
+  ]
+ },
+ {
+  "year": 2005,
+  "champion": "Skeenerland",
+  "runner_up": "Natzumakis State",
+  "semifinalists": [
+   "Ranroman",
+   "St Valentine"
+  ]
+ },
+ {
+  "year": 2004,
+  "champion": "Keeper",
+  "runner_up": "Ciarralotta State",
+  "semifinalists": [
+   "Harrell",
+   "Will Tech"
+  ]
+ },
+ {
+  "year": 2003,
+  "champion": "Kingdom Valley",
+  "runner_up": "Parchynt",
+  "semifinalists": [
+   "Diveo",
+   "Diveo State"
+  ]
+ },
+ {
+  "year": 2002,
+  "champion": "UNN",
+  "runner_up": "Diveo",
+  "semifinalists": [
+   "Stanton State",
+   "National"
+  ]
+ },
+ {
+  "year": 2001,
+  "champion": "Kaji Daun",
+  "runner_up": "UN Steelbridge",
+  "semifinalists": [
+   "South Antiragal St",
+   "Harrell"
+  ]
+ },
+ {
+  "year": 2000,
+  "champion": "Tasson",
+  "runner_up": "Westburg",
+  "semifinalists": [
+   "Far Farris State",
+   "Fiota Bay"
+  ]
+ },
+ {
+  "year": 1999,
+  "champion": "Crayellan",
+  "runner_up": "UNN",
+  "semifinalists": [
+   "Kingdom Valley",
+   "Diveo"
+  ]
+ },
+ {
+  "year": 1998,
+  "champion": "Fiota Bay",
+  "runner_up": "Diveo",
+  "semifinalists": [
+   "Ranroman State",
+   "Will Tech"
+  ]
+ },
+ {
+  "year": 1997,
+  "champion": "Fiota Bay",
+  "runner_up": "Diveo",
+  "semifinalists": [
+   "Kaji Kita",
+   "Natzumakis"
+  ]
+ },
+ {
+  "year": 1996,
+  "champion": "Fiota Bay",
+  "runner_up": "Southeastern",
+  "semifinalists": [
+   "North Hatesei State",
+   "Vaughn Bay"
+  ]
+ },
+ {
+  "year": 1995,
+  "champion": "Fiota Bay",
+  "runner_up": "Diveo",
+  "semifinalists": [
+   "Ranroman State",
+   "St Ballo's"
+  ]
+ },
+ {
+  "year": 1994,
+  "champion": "National",
+  "runner_up": "Verigon State",
+  "semifinalists": [
+   "Crayellan",
+   "Barhold"
+  ]
+ },
+ {
+  "year": 1993,
+  "champion": "Fiota Bay",
+  "runner_up": "Will Tech",
+  "semifinalists": [
+   "Diveo",
+   "Stanton State"
+  ]
+ },
+ {
+  "year": 1992,
+  "champion": "Fiota Bay",
+  "runner_up": "Phangrine State",
+  "semifinalists": [
+   "Antiragal",
+   "Fiota State"
+  ]
+ },
+ {
+  "year": 1991,
+  "champion": "Fiota Bay",
+  "runner_up": "San Diego Valley",
+  "semifinalists": [
+   "Ranroman",
+   "North Hatesei"
+  ]
+ },
+ {
+  "year": 1990,
+  "champion": "South Antiragal St",
+  "runner_up": "Palisades",
+  "semifinalists": [
+   "Costique",
+   "Ciarralotta State"
+  ]
+ },
+ {
+  "year": 1989,
+  "champion": "Ranroman State",
+  "runner_up": "Lito Rock State",
+  "semifinalists": [
+   "Yrei Trobniy",
+   "Diveo"
+  ]
+ },
+ {
+  "year": 1988,
+  "champion": "Lornaman",
+  "runner_up": "Southern Tengus",
+  "semifinalists": [
+   "Kingdom Valley",
+   "Ek Tech"
+  ]
+ },
+ {
+  "year": 1987,
+  "champion": "Eona",
+  "runner_up": "Roosevelt State",
+  "semifinalists": [
+   "Dietsche",
+   "Southern Tengus"
+  ]
+ },
+ {
+  "year": 1986,
+  "champion": "Diveo",
+  "runner_up": "Dove Island",
+  "semifinalists": [
+   "Greene",
+   "Pinn College"
+  ]
+ },
+ {
+  "year": 1985,
+  "champion": "Lornaman",
+  "runner_up": "Costique River",
+  "semifinalists": [
+   "Ranroman State",
+   "Tasson"
+  ]
+ },
+ {
+  "year": 1984,
+  "champion": "Antiragal",
+  "runner_up": "Antiragal State",
+  "semifinalists": [
+   "Dove Island",
+   "Kingdom Valley"
+  ]
+ },
+ {
+  "year": 1983,
+  "champion": "Dove Island",
+  "runner_up": "Verigon State",
+  "semifinalists": [
+   "Lawiiri",
+   "UNN"
+  ]
+ },
+ {
+  "year": 1982,
+  "champion": "Stanton State",
+  "runner_up": "Tengus State",
+  "semifinalists": [
+   "Ranroman State",
+   "Kingdom Valley"
+  ]
+ },
+ {
+  "year": 1981,
+  "champion": "Kingdom Valley",
+  "runner_up": "Ciarralotta",
+  "semifinalists": [
+   "Harrell",
+   "Vaughn Bay"
+  ]
+ },
+ {
+  "year": 1980,
+  "champion": "Diveo State",
+  "runner_up": "Redford",
+  "semifinalists": [
+   "Antiragal State",
+   "Repidome"
+  ]
+ },
+ {
+  "year": 1979,
+  "champion": "Dietsche",
+  "runner_up": "Dove Island",
+  "semifinalists": [
+   "Hatesei",
+   "UNN"
+  ]
+ },
+ {
+  "year": 1978,
+  "champion": "Dietsche",
+  "runner_up": "Ciarralotta",
+  "semifinalists": [
+   "Diamond City",
+   "Tasson State"
+  ]
+ },
+ {
+  "year": 1977,
+  "champion": "St Valentine",
+  "runner_up": "Diveo",
+  "semifinalists": [
+   "Ranroman",
+   "Barhold"
+  ]
+ },
+ {
+  "year": 1976,
+  "champion": "Kaji Daun",
+  "runner_up": "Ranroman State",
+  "semifinalists": [
+   "Lower Kaji Kita",
+   "South Antiragal St"
+  ]
+ },
+ {
+  "year": 1975,
+  "champion": "Diveo",
+  "runner_up": "Crayellan",
+  "semifinalists": [
+   "Skeenerland State",
+   "Roosevelt"
+  ]
+ },
+ {
+  "year": 1974,
+  "champion": "Keeper",
+  "runner_up": "Dove Island State",
+  "semifinalists": [
+   "Repidome",
+   "Kingdom Valley"
+  ]
+ },
+ {
+  "year": 1973,
+  "champion": "Kingdom Valley",
+  "runner_up": "Antiragal",
+  "semifinalists": [
+   "Rogaela State",
+   "Riveral"
+  ]
+ },
+ {
+  "year": 1972,
+  "champion": "Dietsche",
+  "runner_up": "Kingdom Valley",
+  "semifinalists": [
+   "Ekralund State",
+   "Lito Rock State"
+  ]
+ },
+ {
+  "year": 1971,
+  "champion": "Dietsche",
+  "runner_up": "St Ballo's",
+  "semifinalists": [
+   "Dove Island",
+   "Boetticher"
+  ]
+ },
+ {
+  "year": 1970,
+  "champion": "Costique State",
+  "runner_up": "Kingdom Valley",
+  "semifinalists": [
+   "Lito Rock State",
+   "St Brandon's"
+  ]
+ },
+ {
+  "year": 1969,
+  "champion": "Dietsche",
+  "runner_up": "Diveo State",
+  "semifinalists": [
+   "Pistolheart",
+   "Repidome"
+  ]
+ },
+ {
+  "year": 1968,
+  "champion": "Diveo",
+  "runner_up": "Pistolheart",
+  "semifinalists": [
+   "Greene",
+   "Vaughn Bay"
+  ]
+ },
+ {
+  "year": 1967,
+  "champion": "Harrell",
+  "runner_up": "Candie College",
+  "semifinalists": [
+   "Eternal Fox",
+   "Stanton"
+  ]
+ },
+ {
+  "year": 1966,
+  "champion": "Central Stanton",
+  "runner_up": "Lockring",
+  "semifinalists": [
+   "Denver State",
+   "Keeper"
+  ]
+ },
+ {
+  "year": 1965,
+  "champion": "Central Stanton",
+  "runner_up": "Ranroman State",
+  "semifinalists": [
+   "Diveo",
+   "Ranroman"
+  ]
+ },
+ {
+  "year": 1964,
+  "champion": "Central Stanton",
+  "runner_up": "UN Ediville",
+  "semifinalists": [
+   "Ranroman State",
+   "Riveral"
+  ]
+ },
+ {
+  "year": 1963,
+  "champion": "Central Stanton",
+  "runner_up": "Diveo",
+  "semifinalists": [
+   "Kingdom Valley",
+   "Will Tech"
+  ]
+ },
+ {
+  "year": 1962,
+  "champion": "Pepperlund",
+  "runner_up": "Harrell",
+  "semifinalists": [
+   "Crayellan",
+   "Barhold State"
+  ]
+ },
+ {
+  "year": 1961,
+  "champion": "Central Stanton",
+  "runner_up": "Will Tech",
+  "semifinalists": [
+   "Parchynt",
+   "Ciarralotta"
+  ]
+ },
+ {
+  "year": 1960,
+  "champion": "Central Stanton",
+  "runner_up": "San Diego Valley",
+  "semifinalists": [
+   "Orlot",
+   "Phangrine State"
+  ]
+ },
+ {
+  "year": 1959,
+  "champion": "Central Stanton",
+  "runner_up": "Northlight",
+  "semifinalists": [
+   "Roosevelt State",
+   "Kaji Daun"
+  ]
+ },
+ {
+  "year": 1958,
+  "champion": "Central Stanton",
+  "runner_up": "Kaji Daun",
+  "semifinalists": [
+   "Lornaman",
+   "Ranroman State"
+  ]
+ },
+ {
+  "year": 1957,
+  "champion": "Lito Rock State",
+  "runner_up": "Central Stanton",
+  "semifinalists": [
+   "Ranroman State",
+   "North Hatesei State"
+  ]
+ },
+ {
+  "year": 1956,
+  "champion": "Greene",
+  "runner_up": "Central Stanton",
+  "semifinalists": [
+   "Diveo State",
+   "Tasson"
+  ]
+ },
+ {
+  "year": 1955,
+  "champion": "Diveo",
+  "runner_up": "Marines",
+  "semifinalists": [
+   "Orlot Western",
+   "Crimson Mount"
+  ]
+ },
+ {
+  "year": 1954,
+  "champion": "UNN",
+  "runner_up": "Skeenerland",
+  "semifinalists": [
+   "Roosevelt",
+   "Ranroman State"
+  ]
+ },
+ {
+  "year": 1953,
+  "champion": "Kro Magloire",
+  "runner_up": "Fiota State",
+  "semifinalists": [
+   "Crayellan",
+   "UNN"
+  ]
+ },
+ {
+  "year": 1952,
+  "champion": "Kro Magloire",
+  "runner_up": "Pistolheart",
+  "semifinalists": [
+   "Kingdom Valley",
+   "Greene"
+  ]
+ },
+ {
+  "year": 1951,
+  "champion": "UNN",
+  "runner_up": "Diveo",
+  "semifinalists": [
+   "Trapper Point",
+   "Phangrine State"
+  ]
+ },
+ {
+  "year": 1950,
+  "champion": "Stanton",
+  "runner_up": "Diveo",
+  "semifinalists": [
+   "Dietsche",
+   "Ekralund State"
+  ]
+ },
+ {
+  "year": 1949,
+  "champion": "Koli Ro",
+  "runner_up": "Crayellan",
+  "semifinalists": [
+   "Rogaela State",
+   "Dove Island"
+  ]
+ },
+ {
+  "year": 1948,
+  "champion": "Will Tech",
+  "runner_up": "Barhold",
+  "semifinalists": [
+   "Diveo",
+   "Dietsche"
+  ]
+ },
+ {
+  "year": 1947,
+  "champion": "Diveo",
+  "runner_up": "Hatesei",
+  "semifinalists": [
+   "VSSC",
+   "New Madrid"
+  ]
+ },
+ {
+  "year": 1946,
+  "champion": "Marines",
+  "runner_up": "Starfield",
+  "semifinalists": [
+   "Crimson Mount",
+   "Stanton"
+  ]
+ },
+ {
+  "year": 1945,
+  "champion": "Costique",
+  "runner_up": "Queensville",
+  "semifinalists": [
+   "Vaughn Bay",
+   "Wolford"
+  ]
+ },
+ {
+  "year": 1944,
+  "champion": "Yrei Trobniy",
+  "runner_up": "South Antiragal St",
+  "semifinalists": [
+   "Riveral",
+   "Wolford"
+  ]
+ },
+ {
+  "year": 1943,
+  "champion": "Repidome",
+  "runner_up": "Wolford",
+  "semifinalists": [
+   "Ranroman State",
+   "Orlot"
+  ]
+ },
+ {
+  "year": 1942,
+  "champion": "Ranroman State",
+  "runner_up": "Rogaela",
+  "semifinalists": [
+   "Black Forest",
+   "Dove Island"
+  ]
+ },
+ {
+  "year": 1941,
+  "champion": "North Hatesei",
+  "runner_up": "Fiota Bay",
+  "semifinalists": [
+   "Skeenerland State",
+   "Pistolheart"
+  ]
+ },
+ {
+  "year": 1940,
+  "champion": "Diveo",
+  "runner_up": "Pistolheart",
+  "semifinalists": [
+   "Wolford",
+   "Mount Cairn"
+  ]
+ },
+ {
+  "year": 1939,
+  "champion": "Far Farris",
+  "runner_up": "Roosevelt Mines",
+  "semifinalists": [
+   "Pinn College",
+   "St Brandon's"
+  ]
+ },
+ {
+  "year": 1938,
+  "champion": "Lawiiri",
+  "runner_up": "UNN",
+  "semifinalists": [
+   "Ranroman State",
+   "Cathedral"
+  ]
+ },
+ {
+  "year": 1937,
+  "champion": "UFNH",
+  "runner_up": "Diveo",
+  "semifinalists": [
+   "Kingdom Valley",
+   "Dove Island"
+  ]
+ },
+ {
+  "year": 1936,
+  "champion": "Eternal Fox",
+  "runner_up": "Fiota Bay",
+  "semifinalists": [
+   "Diveo State",
+   "German Shores"
+  ]
+ },
+ {
+  "year": 1935,
+  "champion": "South Antiragal St",
+  "runner_up": "Ranroman State",
+  "semifinalists": [
+   "Tasson",
+   "Grizzly Hills"
+  ]
+ },
+ {
+  "year": 1934,
+  "champion": "Stanton State",
+  "runner_up": "Stamford",
+  "semifinalists": [
+   "Skeenerland Parley",
+   "Tengus"
+  ]
+ },
+ {
+  "year": 1933,
+  "champion": "Kingdom Valley",
+  "runner_up": "Barhold State",
+  "semifinalists": [
+   "Eona",
+   "Coastal Ranroman"
+  ]
+ },
+ {
+  "year": 1932,
+  "champion": "Ranroman State",
+  "runner_up": "Diveo",
+  "semifinalists": [
+   "Jack Todd",
+   "Lornaman State"
+  ]
+ },
+ {
+  "year": 1931,
+  "champion": "Ranroman State",
+  "runner_up": "Antiragal State",
+  "semifinalists": [
+   "Lornaman State",
+   "Krobe"
+  ]
+ },
+ {
+  "year": 1930,
+  "champion": "Southern Tengus",
+  "runner_up": "Whiteside",
+  "semifinalists": [
+   "Orlot",
+   "Chapel Rock"
+  ]
+ },
+ {
+  "year": 1929,
+  "champion": "Polt Hall",
+  "runner_up": "Roosevelt State",
+  "semifinalists": [
+   "Far Farris State",
+   "Rogaela State"
+  ]
+ },
+ {
+  "year": 1928,
+  "champion": "Tasson",
+  "runner_up": "Tasson Plains",
+  "semifinalists": [
+   "Eona",
+   "Ranroman State"
+  ]
+ },
+ {
+  "year": 1927,
+  "champion": "Skeenerland",
+  "runner_up": "Phangrine State",
+  "semifinalists": [
+   "Hatesei",
+   "Cherry Lake"
+  ]
+ },
+ {
+  "year": 1926,
+  "champion": "Repidome",
+  "runner_up": "Phangrine State",
+  "semifinalists": [
+   "Dietsche",
+   "Burke State"
+  ]
+ },
+ {
+  "year": 1925,
+  "champion": "Repidome",
+  "runner_up": "Marines",
+  "semifinalists": [
+   "Tasson",
+   "Perri Park"
+  ]
+ },
+ {
+  "year": 1924,
+  "champion": "Keeper",
+  "runner_up": "Chapel Rock",
+  "semifinalists": [
+   "Yrei Trobniy",
+   "Diveo State"
+  ]
+ },
+ {
+  "year": 1923,
+  "champion": "Diveo State",
+  "runner_up": "East Costique",
+  "semifinalists": [
+   "Fiota Bay",
+   "Ranroman"
+  ]
+ },
+ {
+  "year": 1922,
+  "champion": "Cherry Lake",
+  "runner_up": "Antiragal",
+  "semifinalists": [
+   "Ranroman",
+   "Boulder Creek"
+  ]
+ },
+ {
+  "year": 1921,
+  "champion": "Westburg",
+  "runner_up": "Diveo",
+  "semifinalists": [
+   "Roosevelt",
+   "Kaji Kita"
+  ]
+ },
+ {
+  "year": 1920,
+  "champion": "German Shores",
+  "runner_up": "Bitner",
+  "semifinalists": [
+   "Stanton State",
+   "Ranroman State"
+  ]
+ },
+ {
+  "year": 1919,
+  "champion": "Costique River",
+  "runner_up": "German Shores",
+  "semifinalists": [
+   "Diveo",
+   "Skeenerland"
+  ]
+ },
+ {
+  "year": 1918,
+  "champion": "German Shores",
+  "runner_up": "Wolford",
+  "semifinalists": [
+   "Phangrine State",
+   "Olds College"
+  ]
+ },
+ {
+  "year": 1917,
+  "champion": "Polt Hall",
+  "runner_up": "Tasson",
+  "semifinalists": [
+   "North Hatesei",
+   "Diveo State"
+  ]
+ },
+ {
+  "year": 1916,
+  "champion": "Ranroman State",
+  "runner_up": "Lornaman State",
+  "semifinalists": [
+   "Diveo",
+   "Polt Hall"
+  ]
+ }
+]
