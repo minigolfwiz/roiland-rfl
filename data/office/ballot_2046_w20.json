@@ -586,35 +586,67 @@
    "award": "Fjelltveit Award",
    "finalists": [
     {
-     "pid": 9101687,
-     "name": "Mio Hirogaki",
-     "pos": "S",
+     "pid": 9038770,
+     "name": "Agnieszka Novovec",
+     "pos": "DL",
      "club": "Crayellan Redwoods",
-     "line": "7 INT",
-     "id": "9101687"
+     "line": "42 tackles, 11 sacks, 0 INT, 2 FF",
+     "id": "9038770"
+    },
+    {
+     "pid": 9037265,
+     "name": "Savitri Sugitsu",
+     "pos": "DL",
+     "club": "San Saltadac Sea Lions",
+     "line": "53 tackles, 13 sacks, 0 INT, 0 FF",
+     "id": "9037265"
     },
     {
      "pid": 9100856,
      "name": "Bronwyn Vestheim",
      "pos": "DL",
      "club": "San Saltadac Sea Lions",
-     "line": "13 sacks, 1 FF, 0 INT",
+     "line": "33 tackles, 13 sacks, 0 INT, 1 FF",
      "id": "9100856"
     },
     {
-     "pid": 9038770,
-     "name": "Agnieszka Novovec",
-     "pos": "DL",
+     "pid": 9101687,
+     "name": "Mio Hirogaki",
+     "pos": "S",
      "club": "Crayellan Redwoods",
-     "line": "11 sacks, 2 FF, 0 INT",
-     "id": "9038770"
+     "line": "94 tackles, 0 sacks, 7 INT, 0 FF",
+     "id": "9101687"
+    },
+    {
+     "pid": 9101030,
+     "name": "Yaa Al-Hakim",
+     "pos": "LB",
+     "club": "Palm Creek Leatherbacks",
+     "line": "106 tackles, 9 sacks, 5 INT, 1 FF",
+     "id": "9101030"
+    },
+    {
+     "pid": 9102178,
+     "name": "Sorei Keylaniy",
+     "pos": "DL",
+     "club": "Canesta Dales",
+     "line": "49 tackles, 10 sacks, 0 INT, 1 FF",
+     "id": "9102178"
+    },
+    {
+     "pid": 9037822,
+     "name": "Enlai Nagahata",
+     "pos": "LB",
+     "club": "Diamond City Dynamos",
+     "line": "110 tackles, 11 sacks, 3 INT, 3 FF",
+     "id": "9037822"
     },
     {
      "pid": 9101704,
      "name": "Leonel Petitbec",
      "pos": "CB",
      "club": "Diamond City Dynamos",
-     "line": "7 INT",
+     "line": "88 tackles, 0 sacks, 7 INT, 0 FF",
      "id": "9101704"
     }
    ]
@@ -636,7 +668,7 @@
      "name": "Rostislav Feldmeier",
      "pos": "DL",
      "club": "Palm Creek Leatherbacks",
-     "line": "10 sacks, 1 FF, 0 INT",
+     "line": "36 tackles, 10 sacks, 0 INT, 1 FF",
      "id": "9102743"
     },
     {
@@ -644,7 +676,7 @@
      "name": "Aishwarya Lahham",
      "pos": "LB",
      "club": "Holliday Beetles",
-     "line": "10 sacks, 0 FF, 2 INT",
+     "line": "114 tackles, 10 sacks, 2 INT, 0 FF",
      "id": "9102745"
     },
     {

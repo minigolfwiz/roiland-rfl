@@ -232,8 +232,8 @@ def awards(S):
         succ = pct(rec[club])
         v = dict(QB=lambda: s.get('pass_yds', 0) / 100 + 2.5 * s.get('pass_td', 0) - 2.5 * s.get('ints', 0) + s.get('rush_yds', 0) / 40 + 2 * s.get('rush_td', 0),
                  RB=lambda: s.get('rush_yds', 0) / 50 + 2.5 * s.get('rush_td', 0) + s.get('rec_yds', 0) / 60, WR=lambda: s.get('rec_yds', 0) / 50 + 2.5 * s.get('rec_td', 0),
-                 TE=lambda: s.get('rec_yds', 0) / 45 + 2.5 * s.get('rec_td', 0), DL=lambda: 3 * s.get('sacks', 0) + 2 * s.get('ff', 0), LB=lambda: 3 * s.get('sacks', 0) + 4 * s.get('int_made', 0) + 2 * s.get('ff', 0),
-                 CB=lambda: 4 * s.get('int_made', 0) + .3 * s.get('pd', 0), S=lambda: 4 * s.get('int_made', 0) + .3 * s.get('pd', 0), K=lambda: 1.2 * s.get('fg', 0) - 2 * (s.get('fga', 0) - s.get('fg', 0)), P=lambda: 0, OL=lambda: 0)[p['pos']]()
+                 TE=lambda: s.get('rec_yds', 0) / 45 + 2.5 * s.get('rec_td', 0), DL=lambda: 3 * s.get('sacks', 0) + 2 * s.get('ff', 0) + .1 * s.get('tkl', 0) + 4 * s.get('int_made', 0), LB=lambda: 3 * s.get('sacks', 0) + 4 * s.get('int_made', 0) + 2 * s.get('ff', 0) + .1 * s.get('tkl', 0),
+                 CB=lambda: 4 * s.get('int_made', 0) + .3 * s.get('pd', 0) + .1 * s.get('tkl', 0), S=lambda: 4 * s.get('int_made', 0) + .3 * s.get('pd', 0) + .1 * s.get('tkl', 0), K=lambda: 1.2 * s.get('fg', 0) - 2 * (s.get('fga', 0) - s.get('fg', 0)), P=lambda: 0, OL=lambda: 0)[p['pos']]()
         rows.append(dict(pid=int(pid), name=p['name'], pos=p['pos'], club=club, v=v, succ=succ, rookie=bool(p.get('draft') and p['draft'].get('year') == se['year']) or (p.get('contract') and p['contract'].get('kind') == 'undrafted' and p['contract'].get('signed') == se['year']), s=s))
     bypos = collections.defaultdict(list)
     for r in rows: bypos[r['pos']].append(r['v'])
@@ -246,12 +246,11 @@ def awards(S):
         if r['pos'] == 'QB': return f"{s.get('pass_yds', 0):,} yds, {s.get('pass_td', 0)} TD, {s.get('ints', 0)} INT"
         if r['pos'] == 'RB': return f"{s.get('rush_yds', 0):,} rush yds, {s.get('rush_td', 0)} TD, {s.get('rec_yds', 0)} rec yds"
         if r['pos'] in ('WR', 'TE'): return f"{s.get('rec', 0)} rec, {s.get('rec_yds', 0):,} yds, {s.get('rec_td', 0)} TD"
-        if r['pos'] in ('DL', 'LB'): return f"{s.get('sacks', 0)} sacks, {s.get('ff', 0)} FF, {s.get('int_made', 0)} INT"
-        if r['pos'] in ('CB', 'S'): return f"{s.get('int_made', 0)} INT"
+        if r['pos'] in ('DL', 'LB', 'CB', 'S'): return f"{s.get('tkl', 0)} tackles, {s.get('sacks', 0)} sacks, {s.get('int_made', 0)} INT, {s.get('ff', 0)} FF"
         return ''
     fmt = lambda rs: [dict(pid=r['pid'], name=r['name'], pos=r['pos'], club=r['club'], line=line(r)) for r in rs]
     for r in rows: r['mz'] = r['z'] * (.75 if r['pos'] in ('DL', 'LB', 'CB', 'S') else 1) - (9 if r['pos'] in ('K', 'P') else 0)
-    mvp = sorted(rows, key=lambda r: -r['mz'])[:4]; opoy = top(off); dpoy = top(de); roy = sorted([r for r in rows if r['rookie']], key=lambda r: -r['mz'])[:4]
+    mvp = sorted(rows, key=lambda r: -r['mz'])[:4]; opoy = top(off); dpoy = top(de, 6); roy = sorted([r for r in rows if r['rookie']], key=lambda r: -r['mz'])[:4]
     # coach of the year: biggest overperformance vs preseason strength, weighted by record
     cy = sorted(CLUBS, key=lambda t: -(pct(rec[t]) - .5) * 1.0 - .25 * (strength(S, t) - 8.3) * -1)[:4]
     coy = [dict(name=S['clubs'][t]['coach']['name'], club=t, record=f"{rec[t]['w']}-{rec[t]['l']}" + (f"-{rec[t]['t']}" if rec[t]['t'] else '')) for t in cy]
