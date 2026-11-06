@@ -1,0 +1,699 @@
+{
+ "year": 2046,
+ "week": 20,
+ "potw": {
+  "off": [
+   {
+    "pid": 9035364,
+    "name": "Yannis Blancbec",
+    "pos": "QB",
+    "club": "Verigon Komodos",
+    "line": "33/50, 294 yds, 4 TD, 68 rush yds",
+    "res": "L 27-29 vs Tsunami",
+    "score": 33.79,
+    "plays": [
+     "Q1 9:25 1-yd TD pass to Haeun Ostermann (was tied)",
+     "Q2 6:41 14-yd TD pass to Rania Lawal (was tied)",
+     "Q4 0:18 2-yd TD pass to Raghav Ganguly (was down 7, late), cut the deficit late",
+     "OT 5:50 20-yd TD pass to Deepika Gangadeva (was down 8, late), cut the deficit late"
+    ]
+   },
+   {
+    "pid": 9101180,
+    "name": "Wesley Holmtveit",
+    "pos": "WR",
+    "club": "South Burke Tsunami",
+    "line": "10 rec, 138 yds, 3 TD",
+    "res": "W 29-27 at Komodos",
+    "score": 33.3,
+    "plays": [
+     "Q2 11:52 7-yd TD catch from Tomoe Taoli (was down 7)",
+     "Q3 11:00 8-yd TD catch from Tomoe Taoli (was down 7)",
+     "OT 10:17 11-yd TD catch from Tomoe Taoli (was tied, late), go-ahead, later answered"
+    ]
+   },
+   {
+    "pid": 9037885,
+    "name": "Waimarie Sharpturtle",
+    "pos": "QB",
+    "club": "Tasson Thunderbugs",
+    "line": "31/42, 341 yds, 3 TD, 35 rush yds",
+    "res": "W 35-28 vs Topcats",
+    "score": 32.97,
+    "plays": [
+     "Q1 3:06 8-yd TD pass to Essence Rowham (was up 3)",
+     "Q2 6:36 23-yd TD pass to Daesung Langdale (was up 10)",
+     "Q2 0:00 8-yd TD pass to Daesung Langdale (was up 10)",
+     "Q4 2:09 11-yd TD run (was up 6, late)"
+    ]
+   },
+   {
+    "pid": 9101624,
+    "name": "Tsuvai Eiselniy",
+    "pos": "WR",
+    "club": "Diamond City Dynamos",
+    "line": "8 rec, 97 yds, 3 TD",
+    "res": "W 24-17 at Silverbacks",
+    "score": 29.2,
+    "plays": [
+     "Q2 1:47 2-yd TD catch from Barthelemy Eastbridge (was tied)",
+     "Q4 8:49 6-yd TD catch from Barthelemy Eastbridge (was tied), go-ahead, later answered",
+     "Q4 2:09 21-yd TD catch from Barthelemy Eastbridge (was up 7, late)"
+    ]
+   },
+   {
+    "pid": 9036454,
+    "name": "Daesung Langdale",
+    "pos": "WR",
+    "club": "Tasson Thunderbugs",
+    "line": "12 rec, 134 yds, 2 TD",
+    "res": "W 35-28 vs Topcats",
+    "score": 25.4,
+    "plays": [
+     "Q2 6:36 23-yd TD catch from Waimarie Sharpturtle (was up 10)",
+     "Q2 0:00 8-yd TD catch from Waimarie Sharpturtle (was up 10)"
+    ]
+   }
+  ],
+  "defense": [
+   {
+    "pid": 9037804,
+    "name": "Tatsuya Tae",
+    "pos": "LB",
+    "club": "Good River Rangers",
+    "line": "6 tackles, 3 INT",
+    "res": "W 33-10 vs Renegades",
+    "score": 27.6,
+    "plays": [
+     "Q1 9:20 interception returned 17 yds (up 7), led to a field goal",
+     "Q3 14:37 interception (up 24), led to a field goal",
+     "Q4 5:32 interception (up 27), led to a field goal"
+    ]
+   },
+   {
+    "pid": 9101210,
+    "name": "Nadia Novanek",
+    "pos": "LB",
+    "club": "Costique Bearcats",
+    "line": "9 tackles, 3 sacks",
+    "res": "W 30-27 at Beavers",
+    "score": 20.4,
+    "plays": []
+   },
+   {
+    "pid": 9101735,
+    "name": "Marquis Adenna",
+    "pos": "LB",
+    "club": "Ediville Brass Tigers",
+    "line": "6 tackles, 2 sacks, 1 forced fumble",
+    "res": "L 20-28 vs Dragons",
+    "score": 17.6,
+    "plays": [
+     "Q3 3:19 sack and forced fumble (up 6)"
+    ]
+   },
+   {
+    "pid": 9037270,
+    "name": "Halvar Fairshaw",
+    "pos": "DL",
+    "club": "Chapel Rock Crowns",
+    "line": "5 tackles, 2 sacks, 1 forced fumble",
+    "res": "W 15-12 vs Rovers",
+    "score": 17.0,
+    "plays": [
+     "Q3 8:48 sack and forced fumble (down 2)"
+    ]
+   },
+   {
+    "pid": 9038770,
+    "name": "Agnieszka Novovec",
+    "pos": "DL",
+    "club": "Crayellan Redwoods",
+    "line": "3 tackles, 3 sacks",
+    "res": "W 38-17 at Rapids",
+    "score": 16.8,
+    "plays": []
+   },
+   {
+    "pid": 9037755,
+    "name": "Pooja Ezenti",
+    "pos": "LB",
+    "club": "Costique Bearcats",
+    "line": "11 tackles, 2 sacks",
+    "res": "W 30-27 at Beavers",
+    "score": 16.6,
+    "plays": []
+   }
+  ],
+  "st": [],
+  "st_cands": [
+   {
+    "pid": 9038674,
+    "name": "Shaojun Youbao",
+    "pos": "K",
+    "club": "Billiataho Greats",
+    "line": "4/4 FG, long 57, 2/2 XP",
+    "res": "W 26-16 at Demons",
+    "score": 19.25,
+    "plays": [
+     "Q1 5:05 56-yd GOOD",
+     "Q2 4:57 57-yd GOOD",
+     "Q4 5:05 41-yd GOOD",
+     "Q4 1:26 37-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101378,
+    "name": "Nikhil Devadeva",
+    "pos": "P",
+    "club": "Vaughn Bay Silverbacks",
+    "line": "6 punts, 49.0 avg, 4 inside the 20",
+    "res": "L 17-24 vs Dynamos",
+    "score": 15.0,
+    "plays": []
+   },
+   {
+    "pid": 9103046,
+    "name": "Lionel Rochelieu",
+    "pos": "K",
+    "club": "Costique Bearcats",
+    "line": "3/4 FG, long 41, 3/3 XP",
+    "res": "W 30-27 at Beavers",
+    "score": 14.5,
+    "plays": [
+     "Q1 6:37 61-yd MISSED",
+     "Q2 6:47 33-yd GOOD",
+     "Q4 3:14 41-yd GOOD, go-ahead, later answered",
+     "OT 1:05 36-yd GOOD, go-ahead and decisive, never answered"
+    ]
+   },
+   {
+    "pid": 9101387,
+    "name": "Pooja El-Hakim",
+    "pos": "K",
+    "club": "North Hatesei Bees",
+    "line": "5/6 FG, long 43, 2/2 XP",
+    "res": "W 29-22 at Phenoms",
+    "score": 14.0,
+    "plays": [
+     "Q1 12:54 42-yd GOOD",
+     "Q1 5:32 43-yd GOOD",
+     "Q2 4:31 32-yd GOOD",
+     "Q3 9:58 42-yd GOOD",
+     "Q3 0:00 58-yd MISSED",
+     "Q4 10:24 43-yd GOOD"
+    ]
+   },
+   {
+    "pid": 9101900,
+    "name": "Rocio Camparini",
+    "pos": "K",
+    "club": "Good River Rangers",
+    "line": "4/4 FG, long 46, 3/3 XP",
+    "res": "W 33-10 vs Renegades",
+    "score": 14.0,
+    "plays": [
+     "Q1 6:05 24-yd GOOD",
+     "Q3 13:20 42-yd GOOD",
+     "Q4 7:00 42-yd GOOD",
+     "Q4 3:23 46-yd GOOD"
+    ]
+   }
+  ],
+  "st_pick": {
+   "pid": 9038674,
+   "name": "Shaojun Youbao",
+   "pos": "K",
+   "club": "Billiataho Greats",
+   "line": "4/4 FG, long 57, 2/2 XP",
+   "res": "W 26-16 at Demons",
+   "score": 19.25,
+   "plays": [
+    "Q1 5:05 56-yd GOOD",
+    "Q2 4:57 57-yd GOOD",
+    "Q4 5:05 41-yd GOOD",
+    "Q4 1:26 37-yd GOOD"
+   ],
+   "why": "Top performer by the box score."
+  }
+ },
+ "cases": [],
+ "rates": [
+  {
+   "tier": "minor",
+   "mean": 0.9
+  },
+  {
+   "tier": "moderate",
+   "mean": 0.25
+  },
+  {
+   "tier": "serious",
+   "mean": 0.08
+  },
+  {
+   "tier": "major",
+   "mean": 0.015
+  },
+  {
+   "tier": "club",
+   "mean": 0.05
+  }
+ ],
+ "open": [],
+ "prime": [],
+ "teamPrime": {
+  "Billiataho Greats": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Bruca Beach Hammerheads": {
+   "ph": 1,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Canesta Dales": {
+   "ph": 4,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Chapel Rock Crowns": {
+   "ph": 1,
+   "pa": 0,
+   "bh": 0,
+   "ba": 0
+  },
+  "Classetto Cavemen": {
+   "ph": 4,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Coachville Mastodons": {
+   "ph": 3,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Cordelle Raptors": {
+   "ph": 1,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Costique Bearcats": {
+   "ph": 2,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Crayellan Redwoods": {
+   "ph": 4,
+   "pa": 4,
+   "bh": 0,
+   "ba": 0
+  },
+  "Diamond City Dynamos": {
+   "ph": 3,
+   "pa": 5,
+   "bh": 0,
+   "ba": 0
+  },
+  "Diamond City Hope": {
+   "ph": 4,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Diveo Demons": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Ediville Brass Tigers": {
+   "ph": 4,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "El Latigo Shredders": {
+   "ph": 3,
+   "pa": 4,
+   "bh": 0,
+   "ba": 0
+  },
+  "Eona Topcats": {
+   "ph": 3,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Far Farris Raccoons": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Fiota Bay T-Rexes": {
+   "ph": 3,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Fiota Swords": {
+   "ph": 2,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Good River Rangers": {
+   "ph": 3,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Holliday Beetles": {
+   "ph": 4,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Hughes City Asteroids": {
+   "ph": 3,
+   "pa": 4,
+   "bh": 0,
+   "ba": 0
+  },
+  "Lornaman Renegades": {
+   "ph": 1,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "New Madrid Mastiffs": {
+   "ph": 4,
+   "pa": 4,
+   "bh": 0,
+   "ba": 0
+  },
+  "North Hatesei Bees": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Palm Creek Leatherbacks": {
+   "ph": 3,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Port Logan Commodores": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Purcell Rapids": {
+   "ph": 4,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Queensville Phenoms": {
+   "ph": 2,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Rogaela Rovers": {
+   "ph": 3,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "San Saltadac Sea Lions": {
+   "ph": 2,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Sarkady Beavers": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "South Burke Tsunami": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Stamford Grays": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Stanton City Conductors": {
+   "ph": 2,
+   "pa": 4,
+   "bh": 0,
+   "ba": 0
+  },
+  "Tasson Thunderbugs": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Tengus City Terrors": {
+   "ph": 3,
+   "pa": 1,
+   "bh": 0,
+   "ba": 0
+  },
+  "Underwood Bats": {
+   "ph": 2,
+   "pa": 2,
+   "bh": 0,
+   "ba": 0
+  },
+  "Vaughn Bay Silverbacks": {
+   "ph": 2,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  },
+  "Verigon Komodos": {
+   "ph": 1,
+   "pa": 0,
+   "bh": 0,
+   "ba": 0
+  },
+  "Wolford Dragons": {
+   "ph": 1,
+   "pa": 3,
+   "bh": 0,
+   "ba": 0
+  }
+ },
+ "awards": [
+  {
+   "key": "MVP",
+   "award": "Rocaverde Award",
+   "finalists": [
+    {
+     "pid": 9034737,
+     "name": "Lubna Zelenimir",
+     "pos": "QB",
+     "club": "El Latigo Shredders",
+     "line": "5,369 yds, 42 TD, 5 INT",
+     "id": "9034737"
+    },
+    {
+     "pid": 9038231,
+     "name": "Kivaw Matafolau",
+     "pos": "QB",
+     "club": "Canesta Dales",
+     "line": "5,038 yds, 37 TD, 13 INT",
+     "id": "9038231"
+    },
+    {
+     "pid": 9101643,
+     "name": "Alessia Verville",
+     "pos": "QB",
+     "club": "Palm Creek Leatherbacks",
+     "line": "4,452 yds, 29 TD, 12 INT",
+     "id": "9101643"
+    },
+    {
+     "pid": 9035209,
+     "name": "Sivoyel Yingzuo",
+     "pos": "QB",
+     "club": "Crayellan Redwoods",
+     "line": "5,156 yds, 35 TD, 7 INT",
+     "id": "9035209"
+    }
+   ]
+  },
+  {
+   "key": "Offensive Player of the Year",
+   "award": "Hasselbach Award",
+   "finalists": [
+    {
+     "pid": 9034737,
+     "name": "Lubna Zelenimir",
+     "pos": "QB",
+     "club": "El Latigo Shredders",
+     "line": "5,369 yds, 42 TD, 5 INT",
+     "id": "9034737"
+    },
+    {
+     "pid": 9038231,
+     "name": "Kivaw Matafolau",
+     "pos": "QB",
+     "club": "Canesta Dales",
+     "line": "5,038 yds, 37 TD, 13 INT",
+     "id": "9038231"
+    },
+    {
+     "pid": 9101643,
+     "name": "Alessia Verville",
+     "pos": "QB",
+     "club": "Palm Creek Leatherbacks",
+     "line": "4,452 yds, 29 TD, 12 INT",
+     "id": "9101643"
+    },
+    {
+     "pid": 9035209,
+     "name": "Sivoyel Yingzuo",
+     "pos": "QB",
+     "club": "Crayellan Redwoods",
+     "line": "5,156 yds, 35 TD, 7 INT",
+     "id": "9035209"
+    }
+   ]
+  },
+  {
+   "key": "Defensive Player of the Year",
+   "award": "Fjelltveit Award",
+   "finalists": [
+    {
+     "pid": 9101687,
+     "name": "Mio Hirogaki",
+     "pos": "S",
+     "club": "Crayellan Redwoods",
+     "line": "7 INT",
+     "id": "9101687"
+    },
+    {
+     "pid": 9100856,
+     "name": "Bronwyn Vestheim",
+     "pos": "DL",
+     "club": "San Saltadac Sea Lions",
+     "line": "13 sacks, 1 FF, 0 INT",
+     "id": "9100856"
+    },
+    {
+     "pid": 9038770,
+     "name": "Agnieszka Novovec",
+     "pos": "DL",
+     "club": "Crayellan Redwoods",
+     "line": "11 sacks, 2 FF, 0 INT",
+     "id": "9038770"
+    },
+    {
+     "pid": 9101704,
+     "name": "Leonel Petitbec",
+     "pos": "CB",
+     "club": "Diamond City Dynamos",
+     "line": "7 INT",
+     "id": "9101704"
+    }
+   ]
+  },
+  {
+   "key": "Rookie of the Year",
+   "award": "Rookie of the Year",
+   "finalists": [
+    {
+     "pid": 9102740,
+     "name": "Akosua Gyesowah",
+     "pos": "TE",
+     "club": "Canesta Dales",
+     "line": "62 rec, 981 yds, 7 TD",
+     "id": "9102740"
+    },
+    {
+     "pid": 9102743,
+     "name": "Rostislav Feldmeier",
+     "pos": "DL",
+     "club": "Palm Creek Leatherbacks",
+     "line": "10 sacks, 1 FF, 0 INT",
+     "id": "9102743"
+    },
+    {
+     "pid": 9102745,
+     "name": "Aishwarya Lahham",
+     "pos": "LB",
+     "club": "Holliday Beetles",
+     "line": "10 sacks, 0 FF, 2 INT",
+     "id": "9102745"
+    },
+    {
+     "pid": 9102900,
+     "name": "Arnav Herrnegro",
+     "pos": "WR",
+     "club": "Canesta Dales",
+     "line": "84 rec, 973 yds, 11 TD",
+     "id": "9102900"
+    }
+   ]
+  },
+  {
+   "key": "Coach of the Year",
+   "award": "Yuanlin Award",
+   "finalists": [
+    {
+     "name": "Ruta Albaverde",
+     "club": "Palm Creek Leatherbacks",
+     "record": "14-3-1",
+     "id": "Palm Creek Leatherbacks",
+     "pos": "HC",
+     "line": "14-3-1"
+    },
+    {
+     "name": "Moonsik Radimir",
+     "club": "Crayellan Redwoods",
+     "record": "14-4",
+     "id": "Crayellan Redwoods",
+     "pos": "HC",
+     "line": "14-4"
+    },
+    {
+     "name": "Yakubu Vegadura",
+     "club": "Canesta Dales",
+     "record": "14-4",
+     "id": "Canesta Dales",
+     "pos": "HC",
+     "line": "14-4"
+    },
+    {
+     "name": "Yaritza Navaclara",
+     "club": "Classetto Cavemen",
+     "record": "12-6",
+     "id": "Classetto Cavemen",
+     "pos": "HC",
+     "line": "12-6"
+    }
+   ]
+  }
+ ]
+}

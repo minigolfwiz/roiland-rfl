@@ -282,3 +282,6 @@ Generator fixes (forward-only): bench_clear opener now says who did what; invest
 
 2046 week 18 desk applied: W18-1 Woolshaw/Skognes 1 game + $25K each (Dan's pick g1).
 2046 week 19 played: 2 OT (Beavers 37 Topcats 31; Dynamos 30 Tsunami 24). No unbeaten/winless. Ballot W19-1 Habibi (Shredders WR) refused media (generator text mentioned 'player of the game' - removed by hand; no POTW mentions). No primetime picks left. Week 20 waits for the desk as there is a case.
+
+2046 week 19 desk applied: W19-1 Habibi warning.
+2046 week 20 played (regular season complete): 3 OT (Commodores 27 Grays 27 tie; Tsunami 29 Komodos 27; Bearcats 30 Beavers 27). No cases. Ballot has only the Season awards (finalists from `season.py awards`, copied into ballot['awards'] with id=str(pid or club); coach lines added from records). Dan's rule: no league office decisions => hold; here the awards are decisions, so wait for Dan's picks. Playoffs not yet started.
