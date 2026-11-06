@@ -279,3 +279,6 @@ Generator fixes (forward-only): bench_clear opener now says who did what; invest
 
 2046 week 17 desk applied: no cases. Week 20 Sunday primetime (two evening games): morning Dragons at Brass Tigers, afternoon Redwoods at Rapids, evening Dynamos at Silverbacks, second evening T-Rexes at Shredders. Engine auto-flexed week 18 Monday night: Raptors at Commodores replaced by Asteroids at Hope.
 2046 week 18 played: 2 OT (Hammerheads 16 Sea Lions 13; Grays 34 Renegades 28). No unbeaten/winless. Ballot W18-1 Woolshaw/Skognes fight (text hand-expanded). No primetime left to pick (all weeks through 20 decided).
+
+2046 week 18 desk applied: W18-1 Woolshaw/Skognes 1 game + $25K each (Dan's pick g1).
+2046 week 19 played: 2 OT (Beavers 37 Topcats 31; Dynamos 30 Tsunami 24). No unbeaten/winless. Ballot W19-1 Habibi (Shredders WR) refused media (generator text mentioned 'player of the game' - removed by hand; no POTW mentions). No primetime picks left. Week 20 waits for the desk as there is a case.
