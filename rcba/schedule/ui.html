@@ -252,15 +252,18 @@ function vPick(){
  if(P.o<0){
   const q=(P.q||'').toLowerCase();const L=oppList(i,q);
   return`<div class="ov up"><div class="ovh"><h2>Opponent for ${esc(SC[i].n)}</h2><button class="btn sm" data-a="pickclose">Back</button></div>
-  <input type="search" id="pq" data-in="pq" placeholder="Search schools" value="${esc(P.q||'')}" aria-label="Search schools"><p class="mut">Every school, best fits first for a ${STY[X.sty[i]].n.toLowerCase()}. Amounts are what ${esc(SC[i].n)} would take in (+) or pay out (−) if it hosts or visits.</p>
+  <input type="search" id="pq" data-in="pq" placeholder="Search schools" value="${esc(P.q||'')}" aria-label="Search schools"><p class="mut">Every school, best fits first for a ${STY[X.sty[i]].n.toLowerCase()}. Each line shows what both schools take in (+) or pay out (−), in millions.</p>
   <div id="plist">${pickRows(i,L)}</div></div>`}
  const o=P.o,h=P.v==='H'?i:o,a=P.v==='H'?o:i;
  return`<div class="ov up"><div class="ovh"><h2>${P.v==='H'?'Host':'Visit'} ${esc(SC[o].n)}</h2><button class="btn sm" data-a="pickback">Back</button></div>
- <div class="row"><button class="btn ${P.v==='H'?'pri':''}" data-a="pickv" data-v="H">Hosts · ${money$(gameVal(i,o,'H'))}</button><button class="btn ${P.v==='A'?'pri':''}" data-a="pickv" data-v="A">Visits · ${money$(gameVal(i,o,'A'))}</button></div>
+ <div class="row"><button class="btn ${P.v==='H'?'pri':''}" data-a="pickv" data-v="H">${esc(SC[i].n)} hosts</button><button class="btn ${P.v==='A'?'pri':''}" data-a="pickv" data-v="A">${esc(SC[i].n)} visits</button></div>
+ <p style="font:500 13px/1.6 var(--mono)">${sideLine(i,o,P.v)}</p>
  ${isBuy(h,a)?`<p class="mut">A buy game: ${esc(SC[h].n)} pays ${esc(SC[a].n)} to travel.</p>`:''}
  <p class="mut">Pick a day. Only days free for both teams are open.</p>${calendar(d=>!X.busy[i].has(d)&&!X.busy[o].has(d)&&!BLK.has(d),'pickday')}</div>`}
-function pickRows(i,L){return L.map(o=>{const bad=badOpp(i,o),h=gameVal(i,o,'H'),a=gameVal(i,o,'A');
- return`<button class="pk" data-a="pickopp" data-o="${o}" ${bad?'disabled':''}><div><b>${nm(o)}</b><small>${esc(CF[SC[o].c].name)} · ${Math.round(DIST[i][o])} mi · ${TIERS[X.tier[o]]}${bad?' · '+bad:''}${!bad&&(isBuy(i,o)||isBuy(o,i))?' · buy game':''}</small></div>${bad?'':`<span style="text-align:right;font:500 12px var(--mono);white-space:nowrap"><span class="${h<0?'':'ok'}" style="${h<0?'color:var(--clay)':''}">Host ${money$(h)}</span><br><span style="color:${a<0?'var(--clay)':'var(--moss)'}">Visit ${money$(a)}</span></span>`}</button>`}).join('')}
+function sideLine(i,o,v){const me=gameVal(i,o,v),th=gameVal(o,i,v==='H'?'A':'H'),c=x=>x<0?'var(--clay)':'var(--moss)';
+ return`<span style="color:${c(me)}">${esc(SC[i].n)} ${money$(me)}</span> · <span style="color:${c(th)}">${esc(SC[o].n)} ${money$(th)}</span>`}
+function pickRows(i,L){return L.map(o=>{const bad=badOpp(i,o);
+ return`<button class="pk" data-a="pickopp" data-o="${o}" ${bad?'disabled':''} style="display:block"><b>${nm(o)}</b><small>${esc(CF[SC[o].c].name)} · ${Math.round(DIST[i][o])} mi · ${TIERS[X.tier[o]]}${bad?' · '+bad:''}${!bad&&(isBuy(i,o)||isBuy(o,i))?' · buy game':''}</small>${bad?'':`<div style="font:500 12px/1.6 var(--mono);margin-top:4px"><div>Hosts: ${sideLine(i,o,'H')}</div><div>Visits: ${sideLine(i,o,'A')}</div></div>`}</button>`}).join('')}
 function calendar(ok,act){
  let h='',m=-1;for(let d=0;d<NDAYS;d++){const t=dparts(d);
   if(t.m!==m){if(m>=0)h+='</div>';m=t.m;h+=`<div class="sec">${MON[t.m]} ${t.y}</div><div class="cal">${DOW.map(x=>`<b>${x[0]}</b>`).join('')}`;for(let q=0;q<t.dow;q++)h+='<span></span>'}
