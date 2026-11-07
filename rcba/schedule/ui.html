@@ -114,7 +114,7 @@ const UI={tab:'garden',sheet:-1,pick:null,tpick:null,open:{},undo:[],confirm:fal
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const nm=i=>esc(SC[i].n);
-const pctOf=i=>(Math.min(18,X.cc[i])+Math.min(12,ncTotal(i)))/30;
+const pctOf=i=>CONF_ON?(Math.min(18,X.cc[i])+Math.min(12,ncTotal(i)))/30:Math.min(12,ncTotal(i))/12;
 const cities=CITY.map((c,i)=>i);
 function snap(){UI.undo.push(JSON.stringify(S));if(UI.undo.length>8)UI.undo.shift()}
 function toast(msg,undo){const t=$('#toast');t.innerHTML=`<div class="toast"><span>${esc(msg)}</span>${undo&&UI.undo.length?'<button data-a="undo">Undo</button>':''}</div>`;clearTimeout(toast.t);toast.t=setTimeout(()=>t.innerHTML='',5200)}
@@ -151,16 +151,16 @@ function vGarden(){
  const cg=S.g.filter(g=>g.t==='C').length,ng=S.g.filter(g=>g.t==='N').length,tt=[...X.inT].filter(v=>v>=0).length;
  const empty=S.g.length===0&&tt===0;
  let h=`<section class="hero"><div class="pct">${pc}%<small>settled</small></div><div class="rake"><i style="width:${p*100}%"></i></div>
- <div class="mut">${empty?'A clear board. Place what matters to you, then ask for the rest.':pc===100?'Every team has a full season.':'Every game you place stays put when the rest is filled.'}</div>
- <div class="stats"><div class="stat"><b>${cg.toLocaleString()}</b><span>of 3,366 conference games</span></div><div class="stat"><b>${tt}</b><span>of 240 tournament spots</span></div><div class="stat"><b>${ng.toLocaleString()}</b><span>of 1,884 other non-conference</span></div></div>
+ <div class="mut">${empty?'A clear board. Place what matters to you, then ask for the rest.':pc===100?'Every team has its 12 non-conference games.':'Every game you place stays put when the rest is filled.'}</div>
+ <div class="stats"><div class="stat"><b>${[...Array(N).keys()].filter(i=>ncTotal(i)>=12).length}</b><span>of 374 teams have 12 games</span></div><div class="stat"><b>${tt}</b><span>of 240 tournament spots</span></div><div class="stat"><b>${ng.toLocaleString()}</b><span>of 1,884 other non-conference</span></div></div>
  <div class="row"><button class="btn pri" data-a="complete">Complete the rest</button><button class="btn" data-a="reroll">Re-roll what isn’t pinned</button>${UI.undo.length?'<button class="btn" data-a="undo">Undo</button>':''}</div></section>`;
  CF.forEach((c,ci)=>{
   const mem=CONFM[ci].slice().sort((a,b)=>SC[a].n.localeCompare(SC[b].n)),cgs=S.g.filter(g=>g.t==='C'&&SC[g.h].c===ci);
   const locked=cgs.length&&cgs.every(g=>g.p);
   h+=`<article class="card"><div class="ch"><h3>${esc(c.name)}</h3><span class="mut">${mem.length} teams</span></div>
-  <div class="mut">${cgs.length?`${cgs.length} of ${mem.length*9} conference games${locked?' · locked':''}`:'Conference games not built yet'}</div>
+  <div class="mut">${CONF_ON?(cgs.length?`${cgs.length} of ${mem.length*9} conference games${locked?' · locked':''}`:'Conference games not built yet'):'Conference games come later'}</div>
   <div class="chips">${mem.map(i=>{const p=pctOf(i),bad=issues(i).some(q=>q.s==='x');return`<button class="st ${p<1?'part':''} ${bad?'bad':''}" style="--p:${p*100}%" data-a="team" data-i="${i}">${nm(i)}</button>`}).join('')}</div>
-  <div class="row">${cgs.length?`<button class="btn sm" data-a="cfrot" data-c="${ci}">Rotate who doubles</button><button class="btn sm" data-a="cflock" data-c="${ci}">${locked?'Unlock':'Lock'} games</button><button class="btn sm" data-a="cfclear" data-c="${ci}">Clear</button>`:`<button class="btn sm pri" data-a="cfbuild" data-c="${ci}">Build conference games</button>`}</div></article>`});
+  <div class="row">${!CONF_ON?'':cgs.length?`<button class="btn sm" data-a="cfrot" data-c="${ci}">Rotate who doubles</button><button class="btn sm" data-a="cflock" data-c="${ci}">${locked?'Unlock':'Lock'} games</button><button class="btn sm" data-a="cfclear" data-c="${ci}">Clear</button>`:`<button class="btn sm pri" data-a="cfbuild" data-c="${ci}">Build conference games</button>`}</div></article>`});
  return h}
 function dateOpts(sel){let o='<option value="-1">Choose start day</option>';for(let d=0;d<=NC_END-2;d++){if(BLK.has(d)||BLK.has(d+1)||BLK.has(d+2))continue;o+=`<option value="${d}" ${d===sel?'selected':''}>${dlabel(d)} – ${dlabel(d+2)}</option>`}return o}
 function vTourn(){
@@ -189,9 +189,9 @@ function vCheck(){
 function vSeason(){
  const tc=[0,0,0,0,0],sc={};for(let i=0;i<N;i++){tc[X.tier[i]]++;sc[X.sty[i]]=(sc[X.sty[i]]||0)+1}
  return`<section class="hero"><h2>How the season is built</h2>
- <div class="card"><b>Calendar</b><p class="mut">Starts Mon Nov 1, 2021 and ends Sun Mar 6, 2022, 18 weeks. Non-conference play runs to Jan 2, conference play from Mon Jan 3. Dec 24–25 are off.</p>
- <p class="mut">Every team plays 12 non-conference and 18 conference games. Conference home and away runs never exceed three. In conferences of 12, 14 and 16, the nearest rivals double and the choice rotates when you tap “Rotate who doubles”.</p></div>
- <div class="card"><b>Budgets</b><p class="mut">Each school’s budget comes from prestige (40%), alumni and market (30%), conference strength (20%) and your nudge (10%). Open any team to change its alumni dial, nudge or scheduling style.</p>
+ <div class="card"><b>Calendar</b><p class="mut">Starts Mon Nov 1, 2021 and ends Sun Mar 6, 2022, 18 weeks. Non-conference games run through Jan 2. Dec 24–25 are off.</p>
+ <p class="mut">For now the board covers each team’s 12 non-conference games, tournaments included. Conference games are switched off and will come later.</p></div>
+ <div class="card"><b>Budgets</b><p class="mut">Each school’s budget comes from prestige (40%), alumni and market (30%), conference strength (20%) and your nudge (10%). Open any team to change its alumni dial, nudge or scheduling style. Conference home games count toward revenue as an average until the real ones are built.</p>
  <div class="chips">${TIERS.slice().reverse().map((t,j)=>`<span class="tag ${j>2?'sand':''}">${t} · ${tc[4-j]}</span>`).join('')}</div>
  <div class="chips">${Object.keys(STY).map(k=>`<span class="tag">${STY[k].n} · ${sc[k]||0}</span>`).join('')}</div>
  <p class="mut">Buy games happen when the host is two or more budget tiers above its guest. The host pays the guest, so small schools can earn money on the road. Each team’s gauge shows how much of its revenue need the schedule meets.</p></div>

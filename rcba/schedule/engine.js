@@ -2,6 +2,7 @@
 const N=SC.length, NC_=CF.length;
 const DAY0=Date.UTC(2021,10,1), NDAYS=126, CONF0=63, NC_END=62, TN_COUNT=30;
 const DOW=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'], MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const CONF_ON=false; // conference games are switched off for now
 const BLK=new Set([53,54]);
 function dparts(d){const t=new Date(DAY0+d*864e5);return{dow:t.getUTCDay(),m:t.getUTCMonth(),dm:t.getUTCDate(),y:t.getUTCFullYear()}}
 function dlabel(d){const t=dparts(d);return DOW[t.dow]+' '+MON[t.m]+' '+t.dm}
@@ -56,12 +57,13 @@ function money(i){
   if(e.t==='T'){if(e.r===1){stip+=STIP;const T=S.tn[e.k];if(T.site>=0){const c=CITY[T.site];trav-=TRV*3*Math.hypot(SC[i].x-c[2],SC[i].y-c[3])/100}}continue}
   if(e.v==='H'){gate+=GATE[t];if(e.t==='N'&&isBuy(i,e.opp))feeOut+=.3+.1*(t-X.tier[e.opp])}
   else{if(e.t==='N'&&isBuy(e.opp,i))feeIn+=.3+.1*(X.tier[e.opp]-t);else trav-=TRV*DIST[i][e.opp]/100}}
+ if(!CONF_ON){gate+=9*GATE[t];trav-=9*TRV*2.5}
  const tot=gate+feeIn-feeOut+trav+stip;
  return{gate,feeIn,feeOut,trav,stip,tot,need:NEED[t]}}
 // ---- checks
 function issues(i){
  const out=[],E=entries(i),nm=n=>SC[n].n;
- if(X.cc[i]!==18)out.push({s:X.cc[i]>18?'x':'l',m:`Conference games: ${X.cc[i]} of 18`});
+ if(CONF_ON&&X.cc[i]!==18)out.push({s:X.cc[i]>18?'x':'l',m:`Conference games: ${X.cc[i]} of 18`});
  const nt=ncTotal(i);if(nt!==12)out.push({s:nt>12?'x':'l',m:`Non-conference games: ${nt} of 12`});
  const k=X.inT[i];if(k>=0&&S.tn[k].d<0)out.push({s:'l',m:'Tournament date not set'});
  const seen=new Map();E.forEach(e=>{seen.set(e.d,(seen.get(e.d)||0)+1)});
@@ -69,11 +71,11 @@ function issues(i){
  E.forEach(e=>{if(BLK.has(e.d))out.push({s:'x',m:`Game on ${dlabel(e.d)} (holiday)`})});
  const tg=E.map((e,ix)=>e.t==='T'?ix:-1).filter(x=>x>=0);
  if(tg.length&&tg[tg.length-1]>=12)out.push({s:'x',m:'Tournament runs past the first 12 games'});
- const cs=E.filter(e=>e.t==='C');let run=0,last='',bad=0;for(const e of cs){if(e.v===last)run++;else{run=1;last=e.v}if(run===4)bad++}
+ const cs=CONF_ON?E.filter(e=>e.t==='C'):[];let run=0,last='',bad=0;for(const e of cs){if(e.v===last)run++;else{run=1;last=e.v}if(run===4)bad++}
  if(bad)out.push({s:'x',m:`Conference home/away streak longer than 3 (${bad}×)`});
  const ncOpp=new Map();E.forEach(e=>{if(e.t==='N'){ncOpp.set(e.opp,(ncOpp.get(e.opp)||0)+1);if(SC[e.opp].c===SC[i].c)out.push({s:'x',m:`Non-conference game vs conference mate ${nm(e.opp)}`})}});
  for(const[o,c]of ncOpp)if(c>1)out.push({s:'l',m:`Plays ${nm(o)} ${c} times outside the conference`});
- const cOpp=new Map();E.forEach(e=>{if(e.t==='C'){cOpp.set(e.opp,(cOpp.get(e.opp)||0)+1)}});
+ const cOpp=new Map();E.forEach(e=>{if(CONF_ON&&e.t==='C'){cOpp.set(e.opp,(cOpp.get(e.opp)||0)+1)}});
  for(const[o,c]of cOpp)if(c>2)out.push({s:'x',m:`Plays ${nm(o)} ${c} times in conference`});
  let b2=0;for(let q=1;q<E.length;q++)if(E[q].d-E[q-1].d===1&&!(E[q].t==='T'&&E[q-1].t==='T'&&E[q].k===E[q-1].k))b2++;
  if(b2>2)out.push({s:'l',m:`${b2} back-to-back days`});
@@ -83,7 +85,7 @@ function tnIssues(k){const T=S.tn[k],out=[],f=T.t.filter(i=>i>=0);
  const cc={};f.forEach(i=>cc[SC[i].c]=(cc[SC[i].c]||0)+1);for(const c in cc)if(cc[c]>2)out.push({s:'l',m:`${cc[c]} teams from ${CF[c].name}`});
  if(T.d>=0)for(const i of f)for(const d of[T.d,T.d+1,T.d+2])if(X.by[i].some(g=>g.d===d)){out.push({s:'x',m:`${SC[i].n} already has a game that weekend`});break}
  return out}
-function progress(){let have=0;for(let i=0;i<N;i++)have+=Math.min(18,X.cc[i])+Math.min(12,ncTotal(i));return have/(N*30)}
+function progress(){let have=0;if(!CONF_ON){for(let i=0;i<N;i++)have+=Math.min(12,ncTotal(i));return have/(N*12)}for(let i=0;i<N;i++)have+=Math.min(18,X.cc[i])+Math.min(12,ncTotal(i));return have/(N*30)}
 // ---- conference schedules
 const CP=[[1,5],[2,5],[3,6],[1,4],[2,6],[3,5],[0,5]];
 function confPlan(ci,seed){
@@ -218,7 +220,7 @@ function clearAuto(){
  }
 function completeAll(){
  const seed=S.seed;refresh();
- for(let ci=0;ci<NC_;ci++){if(!S.g.some(g=>g.t==='C'&&SC[g.h].c===ci)){placeConf(ci,seed+(S.cf[ci]?S.cf[ci].s||0:0))}}
+ for(let ci=0;CONF_ON&&ci<NC_;ci++){if(!S.g.some(g=>g.t==='C'&&SC[g.h].c===ci)){placeConf(ci,seed+(S.cf[ci]?S.cf[ci].s||0:0))}}
  refresh();autoTournaments(seed);refresh();fillNoncon(seed);refresh()}
 function reroll(){S.seed=(S.seed||1)+1;clearAuto();refresh();completeAll()}
 //</engine>
