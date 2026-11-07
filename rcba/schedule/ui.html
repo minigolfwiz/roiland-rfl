@@ -114,7 +114,7 @@ const CF=DATA.conf,CITY=DATA.cities,CUTS=DATA.cuts;
 const UI={tab:'garden',sheet:-1,pick:null,tpick:null,open:{},undo:[],confirm:false,lim:60};
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const rs=i=>{const s=SC[i];return`<span class="rs">${s.rec}${s.seed?` · ${s.seed} seed${s.f4?' (first four)':''}`:''}</span>`};
+const rs=i=>{const s=SC[i];return`<span class="rs">${s.rec||''}${s.seed?` · ${s.seed} seed${s.f4?' (first four)':''}`:''}</span>`};
 const nm=i=>esc(SC[i].n)+rs(i);
 const pctOf=i=>CONF_ON?(Math.min(18,X.cc[i])+Math.min(12,ncTotal(i)))/30:Math.min(12,ncTotal(i))/12;
 const CORD=CF.map((c,ci)=>ci).sort((a,b)=>CONFM[b].reduce((s,i)=>s+SC[i].prest,0)/CONFM[b].length-CONFM[a].reduce((s,i)=>s+SC[i].prest,0)/CONFM[a].length);
@@ -201,7 +201,7 @@ function vSeason(){
  <div class="card"><b>Small gray text</b><p class="mut">Next to each school: its record from last season, then its seed in last season’s national tournament if it made the field. “First four” marks the eight play-in teams.</p></div>
  <div class="card"><b>Home-and-homes</b>${(()=>{const L=S.g.filter(g=>g.r);return L.length?`<p class="mut">${L.length} return game${L.length>1?'s':''} promised for 22-23. Tap ⇄ on any non-conference game to add or remove one.</p>`+L.slice(0,40).sort((a,b)=>a.d-b.d).map(g=>`<p style="margin:3px 0;font-size:14px"><button class="ic" style="padding:0;color:var(--ink);text-decoration:underline" data-a="team" data-i="${g.h}">${nm(g.h)}</button> hosts ${nm(g.a)} now, and ${nm(g.a)} hosts ${nm(g.h)} in 22-23</p>`).join('')+(L.length>40?`<p class="mut">and ${L.length-40} more</p>`:''):'<p class="mut">None yet. Tap ⇄ on a non-conference game to promise a return game next season. Home-and-home schools often get one automatically.</p>'})()}</div>
  <div class="card"><b>Take it with you</b><p class="mut">A spreadsheet of every game, as a CSV file.</p><button class="btn" data-a="csv">Save schedule as CSV</button></div>
- <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 12 · hidden picks</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
+ <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 13 · records fixed</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
 function render(){
  const a=$('#app');const sy=window.scrollY;
  a.innerHTML=topbar()+({garden:vGarden,tourn:vTourn,check:vCheck,season:vSeason}[UI.tab])()+nav();
