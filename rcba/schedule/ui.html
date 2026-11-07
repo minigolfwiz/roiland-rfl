@@ -127,14 +127,14 @@ const dec=s=>{const q=s.split('.');return{d:parseInt(q[0],36),h:parseInt(q[1],36
 let SVT='',SVB=0;function setSv(t,bad){SVT=t;SVB=bad?1:0;const e=$('#sv');if(e){e.textContent=t;e.className='sv'+(bad?' bad':'')}}
 function dirty(){clearTimeout(saveT);setSv('Saving…');saveT=setTimeout(doSave,800)}
 async function doSave(){
- const meta={v:1,seed:S.seed,ov:S.ov,cf:S.cf,tn:S.tn},js=JSON.stringify(meta),gs=S.g.map(enc).join(';');
+ const meta={v:1,seed:S.seed,tl:S.tl||0,ov:S.ov,cf:S.cf,tn:S.tn},js=JSON.stringify(meta),gs=S.g.map(enc).join(';');
  try{localStorage.setItem('rcba2122',JSON.stringify({meta,gs}))}catch(e){}
  if(!DB){setSv('Kept in this browser');return}
  try{if(js!==lastMeta){await DB.doc('plan2122/meta').set(meta);lastMeta=js}
   if(gs!==lastGames){await DB.doc('plan2122/games').set({s:gs});lastGames=gs}
   setSv('Saved')}catch(e){setSv('Not saved to the cloud · kept in this browser',1)}}
 function adopt(meta,gs){if(meta)meta=JSON.parse(JSON.stringify(meta)); // stored data can be read-only; work on a private copy
- const s=newState();if(meta){s.seed=meta.seed||1;s.ov=meta.ov||{};s.cf=meta.cf||{};if(meta.tn&&meta.tn.length===TN_COUNT)s.tn=meta.tn.map(T=>Object.assign({n:'',na:0,site:-1,sp:0,d:-1,dp:0,t:Array(8).fill(-1),tp:Array(8).fill(0)},T))}
+ const s=newState();if(meta){s.seed=meta.seed||1;s.tl=meta.tl||0;s.ov=meta.ov||{};s.cf=meta.cf||{};if(meta.tn&&meta.tn.length)s.tn=meta.tn.map(T=>Object.assign({n:'',na:0,site:-1,sp:0,d:-1,dp:0,t:Array(8).fill(-1),tp:Array(8).fill(0)},T))}
  s.g=gs?gs.split(';').filter(Boolean).map(dec):[];S=s;refresh()}
 async function boot(){
  S=newState();refresh();render();
@@ -148,14 +148,14 @@ async function boot(){
 function topbar(){return`<header class="top"><div><div class="kick">RCBA · 21-22</div><div class="brand">Schedule Garden</div></div><div id="sv" class="sv${SVB?' bad':''}">${esc(SVT)}</div></header>`}
 function nav(){const n=problemCount();const t=[['garden','Garden'],['tourn','Tournaments'],['check','Check'],['season','Season']];
  return`<nav class="nav"><div>${t.map(([k,l])=>`<button data-a="tab" data-k="${k}" aria-current="${UI.tab===k}">${l}${k==='check'&&n?`<span class="bdg">${n}</span>`:''}</button>`).join('')}</div></nav>`}
-let _pc=null;function problemCount(){let n=0;for(let i=0;i<N;i++)if(issues(i).some(q=>q.s==='x'))n++;for(let k=0;k<TN_COUNT;k++)if(tnIssues(k).some(q=>q.s==='x'))n++;return n}
+let _pc=null;function problemCount(){let n=0;for(let i=0;i<N;i++)if(issues(i).some(q=>q.s==='x'))n++;for(let k=0;k<S.tn.length;k++)if(tnIssues(k).some(q=>q.s==='x'))n++;return n}
 function vGarden(){
  const p=progress(),pc=Math.round(p*100);
  const cg=S.g.filter(g=>g.t==='C').length,ng=S.g.filter(g=>g.t==='N').length,tt=[...X.inT].filter(v=>v>=0).length;
  const empty=S.g.length===0&&tt===0;
  let h=`<section class="hero"><div class="pct">${pc}%<small>settled</small></div><div class="rake"><i style="width:${p*100}%"></i></div>
  <div class="mut">${empty?'A clear board. Place what matters to you, then ask for the rest.':pc===100?'Every team has its 12 non-conference games.':'Every game you place stays put when the rest is filled.'}</div>
- <div class="stats"><div class="stat"><b>${[...Array(N).keys()].filter(i=>ncTotal(i)>=12).length}</b><span>of 374 teams have 12 games</span></div><div class="stat"><b>${tt}</b><span>of 240 tournament spots</span></div><div class="stat"><b>${ng.toLocaleString()}</b><span>of 1,884 other non-conference</span></div></div>
+ <div class="stats"><div class="stat"><b>${[...Array(N).keys()].filter(i=>ncTotal(i)>=12).length}</b><span>of 374 teams have 12 games</span></div><div class="stat"><b>${tt}</b><span>of ${8*S.tn.length} tournament spots</span></div><div class="stat"><b>${ng.toLocaleString()}</b><span>of ${((N*12-3*tt)/2).toLocaleString()} other non-conference</span></div></div>
  <div class="row"><button class="btn pri" data-a="complete">Complete the rest</button><button class="btn" data-a="reroll">Re-roll what isn’t pinned</button>${UI.undo.length?'<button class="btn" data-a="undo">Undo</button>':''}</div></section>`;
  CORD.forEach(ci=>{const c=CF[ci];
   const mem=CONFM[ci].slice().sort((a,b)=>SC[a].n.localeCompare(SC[b].n)),cgs=S.g.filter(g=>g.t==='C'&&SC[g.h].c===ci);
@@ -167,20 +167,22 @@ function vGarden(){
  return h}
 function dateOpts(sel){let o='<option value="-1">Choose start day</option>';for(let d=0;d<=NC_END-2;d++){if(BLK.has(d)||BLK.has(d+1)||BLK.has(d+2))continue;o+=`<option value="${d}" ${d===sel?'selected':''}>${dlabel(d)} – ${dlabel(d+2)}</option>`}return o}
 function vTourn(){
- let h=`<section class="hero"><h2>Early-season tournaments</h2><p class="mut">Eight teams, three straight days, neutral court. Every team plays three games, and each team can enter one.</p></section>`;
+ const nf=S.tn.filter(T=>T.t.every(i=>i>=0)).length,nt=S.tn.reduce((s,T)=>s+T.t.filter(i=>i>=0).length,0);
+ let h=`<section class="hero"><h2>Early-season tournaments</h2><p class="mut">Eight teams, three straight days, neutral court. Every team plays three games, and each team can enter one.</p>
+ ${S.tl?`<div class="card"><b>Locked in</b><p class="mut">${S.tn.length} tournaments, ${nt} teams. No more will be made, and “Complete the rest” leaves them alone.</p><button class="btn sm" data-a="tunlock">Unlock to edit</button></div>`:`<div class="card"><b>Done with tournaments?</b><p class="mut">${nf} have full fields. Locking keeps only tournaments that have teams, drops the empty ones, and stops auto-fill from adding any.</p><button class="btn pri" data-a="tlock">Lock in the tournaments</button></div>`}</section>`;
  S.tn.forEach((T,k)=>{
   const f=T.t.filter(i=>i>=0).length,iss=tnIssues(k).filter(q=>q.s==='x');
   h+=`<article class="card"><div class="ch"><span class="mut">${T.d>=0?dlabel(T.d)+' – '+dlabel(T.d+2):'Date open'}</span><span class="tag ${iss.length?'clay':f===8?'':'sand'}">${iss.length?'clash':f+' of 8'}</span></div>
-  <div style="margin:8px 0"><input type="text" id="tnn${k}" data-in="tnname" data-k="${k}" placeholder="Tournament ${k+1}" value="${esc(T.n)}" aria-label="Tournament name"></div>
+   ${S.tl?`<h3 style="margin:8px 0 2px;font:700 17px var(--disp)">${esc(T.n||'Tournament '+(k+1))}</h3><p class="mut">${T.site>=0?esc(CITY[T.site][0])+', '+esc(CITY[T.site][1]):'No host city'}</p><div class="slots">${T.t.map(i=>i>=0?`<div class="slot f"><span>${nm(i)}</span></div>`:'').join('')}</div></article>`:`<div style="margin:8px 0"><input type="text" id="tnn${k}" data-in="tnname" data-k="${k}" placeholder="Tournament ${k+1}" value="${esc(T.n)}" aria-label="Tournament name"></div>
   <div class="grid2"><select data-in="tnsite" data-k="${k}" aria-label="Host city"><option value="-1">Host city</option>${CITY.map((c,i)=>`<option value="${i}" ${T.site===i?'selected':''}>${esc(c[0])}</option>`).join('')}</select>
   <select data-in="tndate" data-k="${k}" aria-label="Start day">${dateOpts(T.d)}</select></div>
   <div class="slots">${T.t.map((i,p)=>i>=0?`<div class="slot f"><span>${nm(i)}</span><button class="ic" data-a="unslot" data-k="${k}" data-p="${p}" aria-label="Remove ${esc(SC[i].n)}">×</button></div>`:`<button class="slot" data-a="slot" data-k="${k}" data-p="${p}"><span class="mut">+ Add team</span></button>`).join('')}</div>
   ${iss.map(q=>`<p class="ok" style="color:var(--clay)">${esc(q.m)}</p>`).join('')}
-  ${f<8?`<button class="btn sm" data-a="fillone" data-k="${k}">Fill the rest of this field</button>`:''}</article>`});
+  ${f<8?`<button class="btn sm" data-a="fillone" data-k="${k}">Fill the rest of this field</button>`:''}</article>`}`});
  return h}
 function vCheck(){
  const x=[],l=[];
- for(let k=0;k<TN_COUNT;k++)tnIssues(k).forEach(q=>(q.s==='x'?x:l).push({k,m:q.m}));
+ for(let k=0;k<S.tn.length;k++)tnIssues(k).forEach(q=>(q.s==='x'?x:l).push({k,m:q.m}));
  const T=[];for(let i=0;i<N;i++){const q=issues(i);if(q.length)T.push({i,q})}
  const tx=T.filter(t=>t.q.some(z=>z.s==='x')),tl=T.filter(t=>!t.q.some(z=>z.s==='x'));
  let h=`<section class="hero"><h2>Check</h2><p class="mut">Clashes break a rule. Open items are just not placed yet.</p></section>`;
@@ -201,7 +203,7 @@ function vSeason(){
  <div class="card"><b>Small gray text</b><p class="mut">Next to each school: its record from last season, then its seed in last season’s national tournament if it made the field. “First four” marks the eight play-in teams.</p></div>
  <div class="card"><b>Home-and-homes</b>${(()=>{const L=S.g.filter(g=>g.r);return L.length?`<p class="mut">${L.length} return game${L.length>1?'s':''} promised for 22-23. Tap ⇄ on any non-conference game to add or remove one.</p>`+L.slice(0,40).sort((a,b)=>a.d-b.d).map(g=>`<p style="margin:3px 0;font-size:14px"><button class="ic" style="padding:0;color:var(--ink);text-decoration:underline" data-a="team" data-i="${g.h}">${nm(g.h)}</button> hosts ${nm(g.a)} now, and ${nm(g.a)} hosts ${nm(g.h)} in 22-23</p>`).join('')+(L.length>40?`<p class="mut">and ${L.length-40} more</p>`:''):'<p class="mut">None yet. Tap ⇄ on a non-conference game to promise a return game next season. Home-and-home schools often get one automatically.</p>'})()}</div>
  <div class="card"><b>Take it with you</b><p class="mut">A spreadsheet of every game, as a CSV file.</p><button class="btn" data-a="csv">Save schedule as CSV</button></div>
- <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 13 · records fixed</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
+ <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 14 · tournaments locked</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
 function render(){
  const a=$('#app');const sy=window.scrollY;
  a.innerHTML=topbar()+({garden:vGarden,tourn:vTourn,check:vCheck,season:vSeason}[UI.tab])()+nav();
@@ -355,6 +357,8 @@ async function act(el){
    const p=T.t.indexOf(-1);if(p<0)break;T.t[p]=i;T.tp[p]=1}
   UI.tpick=null;refresh();dirty();render();toast(here>=0?SC[i].n+' removed':SC[i].n+' added · '+S.tn[k].t.filter(x=>x>=0).length+' of 8')}break;
  case'unslot':{const T=S.tn[num('k')];T.t[num('p')]=-1;T.tp[num('p')]=0;changed()}break;
+ case'tlock':snap();S.tn=S.tn.filter(T=>T.t.some(i=>i>=0));S.tn.forEach(T=>{T.sp=1;T.dp=1;T.tp=T.tp.map((v,p)=>T.t[p]>=0?1:0)});S.tl=1;changed('Tournaments locked in',1);break;
+ case'tunlock':S.tl=0;changed('Unlocked');break;
  case'fillone':snap();fillOne(num('k'));changed('Field filled',1);break;
  case'wipe':if(!UI.confirm){UI.confirm=true;render()}else{snap();S=newState();UI.confirm=false;changed('Board cleared',1)}break;
  case'csv':{let d=null;try{d=await window.claude.use('downloads')}catch(e){}if(d){try{await d.save({filename:'rcba_21-22_schedule.csv',data:csv()})}catch(e){}}else toast('Saving files is not available here')}break;

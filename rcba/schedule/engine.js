@@ -30,7 +30,7 @@ function defStyle(t,i){const h=hash(i);
  return h<80?'earn':'near'}
 let S=null; // state
 const X={}; // derived index
-function newState(){return{v:1,g:[],tn:Array.from({length:TN_COUNT},()=>({n:'',na:0,site:-1,sp:0,d:-1,dp:0,t:Array(8).fill(-1),tp:Array(8).fill(0)})),ov:{},cf:{},seed:1}}
+function newState(){return{v:1,tl:0,g:[],tn:Array.from({length:TN_COUNT},()=>({n:'',na:0,site:-1,sp:0,d:-1,dp:0,t:Array(8).fill(-1),tp:Array(8).fill(0)})),ov:{},cf:{},seed:1}}
 function score(i){const s=SC[i],o=S.ov[i]||{};const al=o.alum!=null?o.alum:s.alum;return .4*s.prest+.3*(al-1)/4*100+.2*s.cl+5*(o.bud||0)}
 function tierOf(i){const v=score(i);return v<CUTS[0]?0:v<CUTS[1]?1:v<CUTS[2]?2:v<CUTS[3]?3:4}
 function styleOf(i){const o=S.ov[i];return(o&&o.style)||defStyle(tierOf(i),i)}
@@ -219,11 +219,11 @@ function fillNoncon(seed){
  return placed}
 function clearAuto(){
  S.g=S.g.filter(g=>g.p);
- S.tn.forEach(T=>{T.t.forEach((i,p)=>{if(i>=0&&!T.tp[p]){T.t[p]=-1}});if(!T.dp)T.d=-1;if(!T.sp){T.site=-1;if(T.na){T.n='';T.na=0}}});
+ if(!S.tl)S.tn.forEach(T=>{T.t.forEach((i,p)=>{if(i>=0&&!T.tp[p]){T.t[p]=-1}});if(!T.dp)T.d=-1;if(!T.sp){T.site=-1;if(T.na){T.n='';T.na=0}}});
  }
 function completeAll(){
  const seed=S.seed;refresh();
  for(let ci=0;CONF_ON&&ci<NC_;ci++){if(!S.g.some(g=>g.t==='C'&&SC[g.h].c===ci)){placeConf(ci,seed+(S.cf[ci]?S.cf[ci].s||0:0))}}
- refresh();autoTournaments(seed);refresh();fillNoncon(seed);refresh()}
+ refresh();if(!S.tl){autoTournaments(seed);refresh()}fillNoncon(seed);refresh()}
 function reroll(){S.seed=(S.seed||1)+1;clearAuto();refresh();completeAll()}
 //</engine>
