@@ -238,6 +238,16 @@ function fillNoncon(seed){
    if(s<bs){bs=s;bd=d}}
   if(bd<0)continue;g.d=bd;g.t='N';g.p=0;{const sa=X.sty[g.h],sb=X.sty[g.a];g.r=((sa==='swap'||sb==='swap')&&Math.abs(X.tier[g.h]-X.tier[g.a])<=1)?1:0}S.g.push(g);X.busy[g.h].add(bd);X.busy[g.a].add(bd);load[bd]++;X.by[g.h].push(g);X.by[g.a].push(g);X.nc[g.h]++;X.nc[g.a]++;placed++}
  return placed}
+// seed every full tournament by last year's strength, with noise so first rounds stay interesting
+function reseedTn(seed){let n=0;const ORD=[0,7,3,4,2,5,1,6]; // seeds 1v8, 4v5, 3v6, 2v7
+ S.tn.forEach((T,k)=>{const f=T.t.map((i,p)=>({i,p:T.tp[p]})).filter(x=>x.i>=0);if(f.length<8)return;
+  const r=mulberry32(seed*131+k*7+3);let pick=null;
+  for(let a=0;a<120&&!pick;a++){const o=f.map(x=>({x,v:QV[x.i]+(r()+r()+r()-1.5)*8})).sort((p,q)=>q.v-p.v).map(z=>z.x);
+   const slots=Array(8);ORD.forEach((si,rank)=>{slots[si]=o[rank]});
+   let ok=true;for(let q=0;q<8;q+=2)if(SC[slots[q].i].c===SC[slots[q+1].i].c)ok=false;
+   if(ok||a===119)pick=slots}
+  T.t=pick.map(x=>x.i);T.tp=pick.map(x=>x.p);n++});
+ return n}
 function clearAuto(){
  S.g=S.g.filter(g=>g.p);
  if(!S.tl)S.tn.forEach(T=>{T.t.forEach((i,p)=>{if(i>=0&&!T.tp[p]){T.t[p]=-1}});if(!T.dp)T.d=-1;if(!T.sp){T.site=-1;if(T.na){T.n='';T.na=0}}});
