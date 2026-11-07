@@ -44,6 +44,7 @@ h2{font:700 18px/1.2 var(--disp);margin:0}
 .st.part::after{background:var(--sand)}
 .st.bad{border-color:var(--clay)}
 .st.bad::after{background:var(--clay)}
+.rs{font:400 11px var(--mono);color:var(--mute);margin-left:6px;white-space:nowrap;font-weight:400;text-decoration:none}
 .tag{font:500 11px var(--mono);padding:2px 7px;border-radius:999px;background:var(--moss-s);color:var(--moss);white-space:nowrap}
 .tag.sand{background:var(--sand-s);color:var(--sand)}
 .tag.clay{background:var(--clay-s);color:var(--clay)}
@@ -106,14 +107,15 @@ p{margin:6px 0}
 <div id="toast"></div>
 <script>
 const DATA=/*DATA*/;
-const SC=DATA.schools.map((r,i)=>({i,n:r[0],c:r[1],st:r[2],x:r[3],y:r[4],lv:r[5],prest:r[6],alum:r[7],cl:r[8],ti:r[9],ff:r[10]}));
+const SC=DATA.schools.map((r,i)=>({i,n:r[0],c:r[1],st:r[2],x:r[3],y:r[4],lv:r[5],prest:r[6],alum:r[7],cl:r[8],ti:r[9],ff:r[10],rec:r[11],seed:r[12],f4:r[13]}));
 const CF=DATA.conf,CITY=DATA.cities,CUTS=DATA.cuts;
 /*ENGINE*/
 // ---------- UI ----------
 const UI={tab:'garden',sheet:-1,pick:null,tpick:null,open:{},undo:[],confirm:false,lim:60};
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const nm=i=>esc(SC[i].n);
+const rs=i=>{const s=SC[i];return`<span class="rs">${s.rec}${s.seed?` · ${s.seed} seed${s.f4?' (first four)':''}`:''}</span>`};
+const nm=i=>esc(SC[i].n)+rs(i);
 const pctOf=i=>CONF_ON?(Math.min(18,X.cc[i])+Math.min(12,ncTotal(i)))/30:Math.min(12,ncTotal(i))/12;
 const CORD=CF.map((c,ci)=>ci).sort((a,b)=>CONFM[b].reduce((s,i)=>s+SC[i].prest,0)/CONFM[b].length-CONFM[a].reduce((s,i)=>s+SC[i].prest,0)/CONFM[a].length);
 function snap(){UI.undo.push(JSON.stringify(S));if(UI.undo.length>8)UI.undo.shift()}
@@ -196,9 +198,10 @@ function vSeason(){
  <div class="chips">${TIERS.slice().reverse().map((t,j)=>`<span class="tag ${j>2?'sand':''}">${t} · ${tc[4-j]}</span>`).join('')}</div>
  <div class="chips">${Object.keys(STY).map(k=>`<span class="tag">${STY[k].n} · ${sc[k]||0}</span>`).join('')}</div>
  <p class="mut">Buy games happen when the host is two or more budget tiers above its guest. The host pays the guest, so small schools can earn money on the road. Each team’s gauge shows how much of its revenue need the schedule meets.</p></div>
+ <div class="card"><b>Small gray text</b><p class="mut">Next to each school: its record from last season, then its seed in last season’s national tournament if it made the field. “First four” marks the eight play-in teams.</p></div>
  <div class="card"><b>Home-and-homes</b>${(()=>{const L=S.g.filter(g=>g.r);return L.length?`<p class="mut">${L.length} return game${L.length>1?'s':''} promised for 22-23. Tap ⇄ on any non-conference game to add or remove one.</p>`+L.slice(0,40).sort((a,b)=>a.d-b.d).map(g=>`<p style="margin:3px 0;font-size:14px"><button class="ic" style="padding:0;color:var(--ink);text-decoration:underline" data-a="team" data-i="${g.h}">${nm(g.h)}</button> hosts ${nm(g.a)} now, and ${nm(g.a)} hosts ${nm(g.h)} in 22-23</p>`).join('')+(L.length>40?`<p class="mut">and ${L.length-40} more</p>`:''):'<p class="mut">None yet. Tap ⇄ on a non-conference game to promise a return game next season. Home-and-home schools often get one automatically.</p>'})()}</div>
  <div class="card"><b>Take it with you</b><p class="mut">A spreadsheet of every game, as a CSV file.</p><button class="btn" data-a="csv">Save schedule as CSV</button></div>
- <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 10 · saved-data fix</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
+ <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 11 · records and seeds</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
 function render(){
  const a=$('#app');const sy=window.scrollY;
  a.innerHTML=topbar()+({garden:vGarden,tourn:vTourn,check:vCheck,season:vSeason}[UI.tab])()+nav();
@@ -231,7 +234,7 @@ function vSheet(i){
  const g=Math.min(1,m.tot/m.need),home=E.filter(e=>e.v==='H').length,road=E.filter(e=>e.v==='A').length,neu=E.filter(e=>e.v==='N').length;
  const buyH=E.filter(e=>e.t==='N'&&e.v==='H'&&isBuy(i,e.opp)).length,buyA=E.filter(e=>e.t==='N'&&e.v==='A'&&isBuy(e.opp,i)).length;
  const dbl=[];const cc={};E.forEach(e=>{if(e.t==='C')cc[e.opp]=(cc[e.opp]||0)+1});for(const k in cc)if(cc[k]>1)dbl.push(+k);
- return`<div class="ov"><div class="ovh"><h2>${esc(s.n)}</h2><button class="btn sm" data-a="closesheet">Done</button></div>
+ return`<div class="ov"><div class="ovh"><h2>${esc(s.n)}${rs(i)}</h2><button class="btn sm" data-a="closesheet">Done</button></div>
  <div class="row"><span class="tag">${esc(CF[s.c].name)}</span><span class="tag">${esc(s.st)}</span><span class="tag ${t<2?'sand':''}">${TIERS[t]}</span><span class="tag">${STY[st].n}</span></div>
  <p class="mut">${STY[st].d}</p>
  <div class="card"><div class="ch"><b>Budget</b><span class="mut">${ncTotal(i)===0?'':Math.round(g*100)+'% of its need covered'+(ncTotal(i)<12?' so far':'')}</span></div>
@@ -291,7 +294,7 @@ function vTPick(){
  <div class="chips" style="margin-top:0">${T.t.some(i=>i>=0)?T.t.filter(i=>i>=0).map(i=>`<button class="st" style="background:var(--moss-s);border-color:var(--moss)" data-a="tppick" data-i="${i}">${nm(i)} ×</button>`).join(''):'<span class="mut">No teams in this field yet.</span>'}</div>
  <select id="tc" data-in="tconf" aria-label="Conference" style="margin-bottom:8px"><option value="-1">All conferences</option>${CORD.map(ci=>`<option value="${ci}" ${conf===ci?'selected':''}>${esc(CF[ci].name)}</option>`).join('')}</select>
  <input type="search" id="tq" data-in="tq" placeholder="Search schools" value="${esc(UI.tpick.q||'')}" aria-label="Search schools">
- <p class="mut">${n>=8?'This field is full.':'Tap schools to add them. The window stays open so you can keep picking.'} ${conf>=0?'':c?`Closest to ${esc(c[0])} first.`:''}</p><div id="tlist">${tpRows()}</div></div>`}
+ <p class="mut">${n>=8?'This field is full.':'Tap a school to add it and return to the tournaments.'} ${conf>=0?'':c?`Closest to ${esc(c[0])} first.`:''}</p><div id="tlist">${tpRows()}</div></div>`}
 
 // ----- actions
 function changed(msg,undo){refresh();dirty();render();if(msg)toast(msg,undo)}
@@ -348,7 +351,7 @@ async function act(el){
   if(here>=0){T.t[here]=-1;T.tp[here]=0}
   else{const k2=X.inT[i];if(k2>=0){const T2=S.tn[k2],p2=T2.t.indexOf(i);T2.t[p2]=-1;T2.tp[p2]=0}
    const p=T.t.indexOf(-1);if(p<0)break;T.t[p]=i;T.tp[p]=1}
-  refresh();dirty();render();toast(here>=0?SC[i].n+' removed':SC[i].n+' added · '+S.tn[k].t.filter(x=>x>=0).length+' of 8')}break;
+  UI.tpick=null;refresh();dirty();render();toast(here>=0?SC[i].n+' removed':SC[i].n+' added · '+S.tn[k].t.filter(x=>x>=0).length+' of 8')}break;
  case'unslot':{const T=S.tn[num('k')];T.t[num('p')]=-1;T.tp[num('p')]=0;changed()}break;
  case'fillone':snap();fillOne(num('k'));changed('Field filled',1);break;
  case'wipe':if(!UI.confirm){UI.confirm=true;render()}else{snap();S=newState();UI.confirm=false;changed('Board cleared',1)}break;

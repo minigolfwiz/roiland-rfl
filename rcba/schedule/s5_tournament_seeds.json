@@ -1,0 +1,342 @@
+{
+ "Barhold State": {
+  "record": "18-14",
+  "seed": 9,
+  "first_four": false
+ },
+ "Black Forest": {
+  "record": "25-7",
+  "seed": 10,
+  "first_four": false
+ },
+ "Canesta State": {
+  "record": "26-7",
+  "seed": 11,
+  "first_four": false
+ },
+ "Central Stanton": {
+  "record": "26-7",
+  "seed": 2,
+  "first_four": false
+ },
+ "Churchill": {
+  "record": "26-6",
+  "seed": 2,
+  "first_four": false
+ },
+ "Ciarralotta": {
+  "record": "18-14",
+  "seed": 8,
+  "first_four": false
+ },
+ "Ciarralotta State": {
+  "record": "29-3",
+  "seed": 1,
+  "first_four": false
+ },
+ "Ciarralotta Tech": {
+  "record": "26-8",
+  "seed": 3,
+  "first_four": false
+ },
+ "Coastal Ranroman": {
+  "record": "28-5",
+  "seed": 10,
+  "first_four": false
+ },
+ "Crayellan": {
+  "record": "19-12",
+  "seed": 12,
+  "first_four": true
+ },
+ "Crayellan State": {
+  "record": "19-13",
+  "seed": 9,
+  "first_four": false
+ },
+ "Denver State": {
+  "record": "24-9",
+  "seed": 9,
+  "first_four": false
+ },
+ "Diveo": {
+  "record": "22-9",
+  "seed": 3,
+  "first_four": false
+ },
+ "Diveo State": {
+  "record": "25-8",
+  "seed": 6,
+  "first_four": false
+ },
+ "Dove Island": {
+  "record": "23-9",
+  "seed": 2,
+  "first_four": false
+ },
+ "Eternal Fox": {
+  "record": "25-8",
+  "seed": 4,
+  "first_four": false
+ },
+ "Far Farris": {
+  "record": "22-9",
+  "seed": 1,
+  "first_four": false
+ },
+ "Far Farris State": {
+  "record": "23-10",
+  "seed": 5,
+  "first_four": false
+ },
+ "Fiota Bay": {
+  "record": "22-10",
+  "seed": 8,
+  "first_four": false
+ },
+ "Hansenne": {
+  "record": "29-4",
+  "seed": 7,
+  "first_four": false
+ },
+ "Hatesei": {
+  "record": "19-12",
+  "seed": 6,
+  "first_four": false
+ },
+ "Kaji Daun": {
+  "record": "19-13",
+  "seed": 12,
+  "first_four": false
+ },
+ "Kaji Kita State": {
+  "record": "26-7",
+  "seed": 11,
+  "first_four": false
+ },
+ "Keytommiyr": {
+  "record": "24-9",
+  "seed": 7,
+  "first_four": false
+ },
+ "Krobe State": {
+  "record": "16-15",
+  "seed": 12,
+  "first_four": true
+ },
+ "Lornaman": {
+  "record": "22-9",
+  "seed": 3,
+  "first_four": false
+ },
+ "Marblehead": {
+  "record": "22-11",
+  "seed": 11,
+  "first_four": false
+ },
+ "National": {
+  "record": "22-12",
+  "seed": 8,
+  "first_four": false
+ },
+ "Natzumakis": {
+  "record": "15-17",
+  "seed": 12,
+  "first_four": true
+ },
+ "North Central": {
+  "record": "23-10",
+  "seed": 7,
+  "first_four": false
+ },
+ "Parchynt State": {
+  "record": "31-2",
+  "seed": 1,
+  "first_four": false
+ },
+ "Phangrine State": {
+  "record": "21-11",
+  "seed": 5,
+  "first_four": false
+ },
+ "Reid State": {
+  "record": "22-11",
+  "seed": 5,
+  "first_four": false
+ },
+ "Repidome": {
+  "record": "17-14",
+  "seed": 7,
+  "first_four": false
+ },
+ "Riveral": {
+  "record": "24-9",
+  "seed": 4,
+  "first_four": false
+ },
+ "South Antiragal St": {
+  "record": null,
+  "seed": 2,
+  "first_four": false
+ },
+ "Skylar Rose": {
+  "record": "23-9",
+  "seed": 4,
+  "first_four": false
+ },
+ "South Antiragal": {
+  "record": "18-14",
+  "seed": 10,
+  "first_four": false
+ },
+ "Stanton State": {
+  "record": "24-7",
+  "seed": 3,
+  "first_four": false
+ },
+ "Starfield": {
+  "record": "20-11",
+  "seed": 10,
+  "first_four": false
+ },
+ "Tasson": {
+  "record": "21-11",
+  "seed": 12,
+  "first_four": false
+ },
+ "Tengus State": {
+  "record": "25-8",
+  "seed": 1,
+  "first_four": false
+ },
+ "UFNH": {
+  "record": "20-11",
+  "seed": 8,
+  "first_four": false
+ },
+ "UNN": {
+  "record": "19-12",
+  "seed": 6,
+  "first_four": false
+ },
+ "Verigon": {
+  "record": "29-4",
+  "seed": 4,
+  "first_four": false
+ },
+ "West Hatesei": {
+  "record": "26-7",
+  "seed": 6,
+  "first_four": false
+ },
+ "Will Tech": {
+  "record": "21-10",
+  "seed": 12,
+  "first_four": true
+ },
+ "Bragi": {
+  "record": "23-8",
+  "seed": 14,
+  "first_four": false
+ },
+ "Collette": {
+  "record": "27-6",
+  "seed": 13,
+  "first_four": false
+ },
+ "Gretelson": {
+  "record": "20-12",
+  "seed": 15,
+  "first_four": false
+ },
+ "Junesburg": {
+  "record": "23-10",
+  "seed": 16,
+  "first_four": true
+ },
+ "Kaji Central": {
+  "record": "29-4",
+  "seed": 5,
+  "first_four": false
+ },
+ "Mt St Williams": {
+  "record": "27-6",
+  "seed": 16,
+  "first_four": false
+ },
+ "Newfoundland": {
+  "record": "24-9",
+  "seed": 15,
+  "first_four": false
+ },
+ "Pietro Tadal": {
+  "record": "18-14",
+  "seed": 16,
+  "first_four": true
+ },
+ "Pinn College": {
+  "record": "28-5",
+  "seed": 13,
+  "first_four": false
+ },
+ "Sarandon State": {
+  "record": "20-11",
+  "seed": 11,
+  "first_four": false
+ },
+ "Southern Bay": {
+  "record": "26-7",
+  "seed": 16,
+  "first_four": true
+ },
+ "St Recreation": {
+  "record": null,
+  "seed": 16,
+  "first_four": true
+ },
+ "Stamford": {
+  "record": "21-10",
+  "seed": 14,
+  "first_four": false
+ },
+ "UEKP": {
+  "record": "25-6",
+  "seed": 13,
+  "first_four": false
+ },
+ "Ursus": {
+  "record": "22-9",
+  "seed": 16,
+  "first_four": false
+ },
+ "VCA": {
+  "record": "27-6",
+  "seed": 14,
+  "first_four": false
+ },
+ "Villalandon": {
+  "record": "25-7",
+  "seed": 9,
+  "first_four": false
+ },
+ "Western Antiragal": {
+  "record": "28-5",
+  "seed": 13,
+  "first_four": false
+ },
+ "Koli Ro": {
+  "record": "27-6",
+  "seed": 14,
+  "first_four": false
+ },
+ "Coachville Rev": {
+  "record": null,
+  "seed": 15,
+  "first_four": false
+ },
+ "East Costique Int": {
+  "record": null,
+  "seed": 15,
+  "first_four": false
+ }
+}
