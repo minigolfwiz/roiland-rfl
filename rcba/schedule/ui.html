@@ -201,7 +201,7 @@ function vSeason(){
  <div class="card"><b>Small gray text</b><p class="mut">Next to each school: its record from last season, then its seed in last season’s national tournament if it made the field. “First four” marks the eight play-in teams.</p></div>
  <div class="card"><b>Home-and-homes</b>${(()=>{const L=S.g.filter(g=>g.r);return L.length?`<p class="mut">${L.length} return game${L.length>1?'s':''} promised for 22-23. Tap ⇄ on any non-conference game to add or remove one.</p>`+L.slice(0,40).sort((a,b)=>a.d-b.d).map(g=>`<p style="margin:3px 0;font-size:14px"><button class="ic" style="padding:0;color:var(--ink);text-decoration:underline" data-a="team" data-i="${g.h}">${nm(g.h)}</button> hosts ${nm(g.a)} now, and ${nm(g.a)} hosts ${nm(g.h)} in 22-23</p>`).join('')+(L.length>40?`<p class="mut">and ${L.length-40} more</p>`:''):'<p class="mut">None yet. Tap ⇄ on a non-conference game to promise a return game next season. Home-and-home schools often get one automatically.</p>'})()}</div>
  <div class="card"><b>Take it with you</b><p class="mut">A spreadsheet of every game, as a CSV file.</p><button class="btn" data-a="csv">Save schedule as CSV</button></div>
- <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 11 · records and seeds</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
+ <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 12 · hidden picks</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
 function render(){
  const a=$('#app');const sy=window.scrollY;
  a.innerHTML=topbar()+({garden:vGarden,tourn:vTourn,check:vCheck,season:vSeason}[UI.tab])()+nav();
@@ -282,9 +282,11 @@ function calendar(ok,act){
 const tnName=k=>S.tn[k].n||'Tournament '+(k+1);
 function tpList(){const{k,q,conf}=UI.tpick,T=S.tn[k],qq=(q||'').toLowerCase(),c=T.site>=0?CITY[T.site]:null;
  const dd=i=>c?3*Math.hypot(SC[i].x-c[2],SC[i].y-c[3]):0;
- const L=[];for(let i=0;i<N;i++){if(conf>=0&&SC[i].c!==conf)continue;if(qq&&!SC[i].n.toLowerCase().includes(qq))continue;L.push(i)}
+ const fc=new Set(T.t.filter(i=>i>=0).map(i=>SC[i].c));
+ const L=[];for(let i=0;i<N;i++){if(X.inT[i]>=0||fc.has(SC[i].c))continue;if(conf>=0&&SC[i].c!==conf)continue;if(qq&&!SC[i].n.toLowerCase().includes(qq))continue;L.push(i)}
  L.sort((a,b)=>(conf>=0||!c)?SC[a].n.localeCompare(SC[b].n):dd(a)-dd(b));return{L,T,c,dd}}
 function tpRows(){const{L,T,c,dd}=tpList(),k=UI.tpick.k,full=T.t.every(i=>i>=0);
+ if(!L.length)return'<p class="mut">No schools left to show. Schools already in a tournament, and conferences already in this field, are hidden.</p>';
  return L.map(i=>{const k2=X.inT[i],here=k2===k,clash=T.d>=0&&[T.d,T.d+1,T.d+2].some(d=>X.by[i].some(g=>g.d===d));
   const note=here?'In this field · tap to remove':k2>=0?'In '+tnName(k2)+' · tap to move here':clash?'Has a game that weekend':'';
   return`<button class="pk" data-a="tppick" data-i="${i}" ${!here&&full?'disabled':''} style="${here?'background:var(--moss-s);padding-left:8px;padding-right:8px;border-radius:8px':''}"><div><b>${nm(i)}</b><small>${esc(CF[SC[i].c].name)}${c?' · '+Math.round(dd(i))+' mi':''} · ${TIERS[X.tier[i]]}${note?' · '+note:''}</small></div>${here?'<span class="tag">in</span>':''}</button>`}).join('')}
@@ -292,9 +294,9 @@ function vTPick(){
  const{k,conf}=UI.tpick,T=S.tn[k],c=T.site>=0?CITY[T.site]:null,n=T.t.filter(i=>i>=0).length;
  return`<div class="ov up"><div class="ovh"><h2>${esc(tnName(k))} · ${n} of 8</h2><button class="btn sm pri" data-a="tpclose">Done</button></div>
  <div class="chips" style="margin-top:0">${T.t.some(i=>i>=0)?T.t.filter(i=>i>=0).map(i=>`<button class="st" style="background:var(--moss-s);border-color:var(--moss)" data-a="tppick" data-i="${i}">${nm(i)} ×</button>`).join(''):'<span class="mut">No teams in this field yet.</span>'}</div>
- <select id="tc" data-in="tconf" aria-label="Conference" style="margin-bottom:8px"><option value="-1">All conferences</option>${CORD.map(ci=>`<option value="${ci}" ${conf===ci?'selected':''}>${esc(CF[ci].name)}</option>`).join('')}</select>
+ <select id="tc" data-in="tconf" aria-label="Conference" style="margin-bottom:8px"><option value="-1">All conferences</option>${CORD.filter(ci=>!T.t.some(i=>i>=0&&SC[i].c===ci)).map(ci=>`<option value="${ci}" ${conf===ci?'selected':''}>${esc(CF[ci].name)}</option>`).join('')}</select>
  <input type="search" id="tq" data-in="tq" placeholder="Search schools" value="${esc(UI.tpick.q||'')}" aria-label="Search schools">
- <p class="mut">${n>=8?'This field is full.':'Tap a school to add it and return to the tournaments.'} ${conf>=0?'':c?`Closest to ${esc(c[0])} first.`:''}</p><div id="tlist">${tpRows()}</div></div>`}
+ <p class="mut">${n>=8?'This field is full.':'Tap a school to add it and return to the tournaments. Schools in other tournaments, and conferences already in this field, are hidden.'} ${conf>=0?'':c?`Closest to ${esc(c[0])} first.`:''}</p><div id="tlist">${tpRows()}</div></div>`}
 
 // ----- actions
 function changed(msg,undo){refresh();dirty();render();if(msg)toast(msg,undo)}
