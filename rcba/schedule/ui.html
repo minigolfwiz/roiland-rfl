@@ -200,10 +200,13 @@ function vSeason(){
  <div class="chips">${TIERS.slice().reverse().map((t,j)=>`<span class="tag ${j>2?'sand':''}">${t} · ${tc[4-j]}</span>`).join('')}</div>
  <div class="chips">${Object.keys(STY).map(k=>`<span class="tag">${STY[k].n} · ${sc[k]||0}</span>`).join('')}</div>
  <p class="mut">Buy games happen when the host is two or more budget tiers above its guest. The host pays the guest, so small schools can earn money on the road. Each team’s gauge shows how much of its revenue need the schedule meets.</p></div>
+ <div class="card"><b>Fan draw</b><p class="mut">A home game earns gate money times a crowd factor. Opponent name and last year’s seed raise it, so do banners, in-state matchups and teams close enough for fans to drive. Saturdays sell best, midweek and the holiday break sell worst.</p></div>
+ <div class="card"><b>Budget goals</b><p class="mut">Every school has a revenue goal for its tier. A team with all 12 games and less money than its goal is flagged. Buy games, big home crowds and tournament stipends all move the number.</p></div>
+ <div class="card"><b>Tournament outlook</b><p class="mut">Talent is last year’s record and prestige. The schedule adjusts it: a tough one lifts a team’s resume, a soft one sinks it. A team whose schedule drops its outlook is flagged.</p></div>
  <div class="card"><b>Small gray text</b><p class="mut">Next to each school: its record from last season, then its seed in last season’s national tournament if it made the field. “First four” marks the eight play-in teams.</p></div>
  <div class="card"><b>Home-and-homes</b>${(()=>{const L=S.g.filter(g=>g.r);return L.length?`<p class="mut">${L.length} return game${L.length>1?'s':''} promised for 22-23. Tap ⇄ on any non-conference game to add or remove one.</p>`+L.slice(0,40).sort((a,b)=>a.d-b.d).map(g=>`<p style="margin:3px 0;font-size:14px"><button class="ic" style="padding:0;color:var(--ink);text-decoration:underline" data-a="team" data-i="${g.h}">${nm(g.h)}</button> hosts ${nm(g.a)} now, and ${nm(g.a)} hosts ${nm(g.h)} in 22-23</p>`).join('')+(L.length>40?`<p class="mut">and ${L.length-40} more</p>`:''):'<p class="mut">None yet. Tap ⇄ on a non-conference game to promise a return game next season. Home-and-home schools often get one automatically.</p>'})()}</div>
  <div class="card"><b>Take it with you</b><p class="mut">A spreadsheet of every game, as a CSV file.</p><button class="btn" data-a="csv">Save schedule as CSV</button></div>
- <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 14 · tournaments locked</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
+ <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 15 · fan draw and goals</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
 function render(){
  const a=$('#app');const sy=window.scrollY;
  a.innerHTML=topbar()+({garden:vGarden,tourn:vTourn,check:vCheck,season:vSeason}[UI.tab])()+nav();
@@ -218,7 +221,7 @@ const prestWords=p=>p>=75?'a top program':p>=55?'a strong program':p>=35?'a mid-
 const alumWords=a=>['little alumni support','a small alumni base','a solid alumni base','a big alumni base','a huge alumni base'][a-1];
 const confWords=c=>c>=70?'plays in a strong conference':c>=35?'plays in an average conference':'plays in a lighter conference';
 const money$=v=>(v<0?'−':'+')+'$'+Math.abs(v).toFixed(2)+'M';
-function gameVal(i,o,v){const t=X.tier[i];return v==='H'?GATE[t]-(isBuy(i,o)?fee(i,o):0):(isBuy(o,i)?fee(o,i):-TRV*DIST[i][o]/100)}
+function gameVal(i,o,v){const t=X.tier[i];return v==='H'?GATE[t]*drawMult(i,o,null)-(isBuy(i,o)?fee(i,o):0):(isBuy(o,i)?fee(o,i):-TRV*DIST[i][o]/100)}
 function badOpp(i,o){return SC[o].c===SC[i].c?'Same conference':X.pairs.has(Math.min(i,o)*1000+Math.max(i,o))?'Already scheduled':ncTotal(o)>=12?'Already has 12':''}
 function oppList(i,q){const L=[];for(let o=0;o<N;o++){if(o===i)continue;if(q&&!SC[o].n.toLowerCase().includes(q))continue;L.push(o)}
  return L.sort((a,b)=>(!!badOpp(i,a)-!!badOpp(i,b))||suggest(i,a)-suggest(i,b))}
@@ -239,13 +242,15 @@ function vSheet(i){
  return`<div class="ov"><div class="ovh"><h2>${esc(s.n)}${rs(i)}</h2><button class="btn sm" data-a="closesheet">Done</button></div>
  <div class="row"><span class="tag">${esc(CF[s.c].name)}</span><span class="tag">${esc(s.st)}</span><span class="tag ${t<2?'sand':''}">${TIERS[t]}</span><span class="tag">${STY[st].n}</span></div>
  <p class="mut">${STY[st].d}</p>
- <div class="card"><div class="ch"><b>Budget</b><span class="mut">${ncTotal(i)===0?'':Math.round(g*100)+'% of its need covered'+(ncTotal(i)<12?' so far':'')}</span></div>
+ <div class="card"><div class="ch"><b>Budget</b><span class="mut">${ncTotal(i)===0?'':'Goal $'+m.need.toFixed(1)+'M'}</span></div>
  ${ncTotal(i)===0?'<p class="mut">No games yet. The gauge appears once this team has games.</p>':`<div class="gauge ${g>=.95?'ok':''}"><i style="width:${g*100}%"></i></div>`}
+ ${ncTotal(i)===0?'':`<p style="font:500 13px/1.5 var(--mono);color:${m.tot>=m.need-.3?'var(--moss)':'var(--clay)'}">Projected $${m.tot.toFixed(2)}M · ${m.tot>=m.need?'ahead of the goal by $'+(m.tot-m.need).toFixed(2)+'M':m.tot>=m.need-.3?'close to the goal':'short by $'+(m.need-m.tot).toFixed(2)+'M'}${ncTotal(i)<12?' (more games to come)':''}</p>`}
  <p class="mut">${TIERS[t]} budget: ${prestWords(s.prest)}, ${alumWords(al)}, and ${confWords(s.cl)}.</p>
  ${ncTotal(i)===0?'':`<p class="mut">Home ${home} · Road ${road} · Neutral ${neu}${buyH?` · hosts ${buyH} buy game${buyH>1?'s':''}`:''}${buyA?` · visits ${buyA} for pay`:''}</p>`}
  <div class="lever"><span>Alumni and market</span><span class="step"><button data-a="alum" data-i="${i}" data-v="-1" aria-label="Lower">−</button>${al}<button data-a="alum" data-i="${i}" data-v="1" aria-label="Raise">+</button></span></div>
  <div class="lever"><span>Your nudge</span><span class="step"><button data-a="bud" data-i="${i}" data-v="-1" aria-label="Lower">−</button>${o.bud>0?'+':''}${o.bud||0}<button data-a="bud" data-i="${i}" data-v="1" aria-label="Raise">+</button></span></div>
  <label class="mut" for="sty">Scheduling style</label><select id="sty" data-in="style" data-i="${i}"><option value="">Automatic · ${STY[defStyle(t,i)].n}</option>${Object.keys(STY).map(k=>`<option value="${k}" ${o.style===k?'selected':''}>${STY[k].n}</option>`).join('')}</select></div>
+ ${outlookCard(i)}
  ${iss.length?`<div class="card" style="border-color:${iss.some(q=>q.s==='x')?'var(--clay)':'var(--line)'}">${iss.map(q=>`<p style="color:${q.s==='x'?'var(--clay)':'var(--mute)'}">${esc(q.m)}</p>`).join('')}</div>`:''}
  ${dbl.length?`<p class="mut">Plays twice in conference: ${dbl.map(nm).join(', ')}</p>`:''}
  <div class="sec">Season · ${E.length} games set</div>
@@ -270,12 +275,26 @@ function vPick(){
  <div class="row"><button class="btn ${P.r?'pri':''}" data-a="pickr">⇄ Home-and-home: ${esc(SC[a].n)} hosts ${esc(SC[h].n)} in 22-23</button></div>
  ${isBuy(h,a)?`<p class="mut">A buy game: ${esc(SC[h].n)} pays ${esc(SC[a].n)} to travel.</p>`:''}
  <p class="mut">Pick a day. Only days free for both teams are open.</p>${calendar(d=>!X.busy[i].has(d)&&!X.busy[o].has(d)&&!BLK.has(d),'pickday')}</div>`}
-function feeNote(h,a){if(!isBuy(h,a))return`<p class="mut">Not a buy game. ${esc(SC[a].n)} pays its own travel, about ${Math.round(DIST[h][a])} miles.</p>`;const p=feeParts(h,a);
+function outlookCard(i){const s=SC[i],R=resumeOf(i),b=outlookOf(QV[i]);
+ const last=s.seed>0?`${s.rec}, ${s.seed} seed${s.f4?' (First Four)':''}`:s.rec+', missed the field';
+ if(!R)return`<div class="card"><b>Tournament outlook</b><p class="mut">Last year: ${esc(last)}. On talent alone: ${OUTL[b].toLowerCase()}.</p><p class="mut">The schedule’s strength shows once it has six or more games.</p></div>`;
+ const ord=SC.map((_,k)=>k).filter(k=>sosOf(k).n>=6).sort((a,c)=>sosOf(c).avg-sosOf(a).avg),rk=ord.indexOf(i)+1;
+ const w=R.o>R.base?'is helping':R.o<R.base?'is hurting':'is not changing it';
+ return`<div class="card"><b>Tournament outlook</b><p class="mut">Last year: ${esc(last)}.</p><p style="font:500 13px/1.5 var(--mono);color:${R.o<R.base?'var(--clay)':R.o>R.base?'var(--moss)':'var(--ink)'}">${OUTL[R.o]} · schedule ${w}</p><p class="mut">Talent alone: ${OUTL[R.base].toLowerCase()}. Schedule strength: ${rk?'#'+rk+' of '+ord.length:'—'}. Beating strong teams lifts the resume, a soft schedule drags it down.</p></div>`}
+function crowdLine(h,a,d){const P=drawParts(h,a,d),L=[],f=x=>(x>0?'+':'−')+Math.round(Math.abs(x)*100)+'%';
+ L.push(['Opponent name',P.name]);if(P.state)L.push(['In-state',P.state]);if(P.near)L.push(['Fans can drive',P.near]);if(P.seed)L.push(['Last year’s '+SC[a].seed+' seed',P.seed]);if(P.title)L.push(['Banners',P.title]);
+ return L.map(z=>z[0]+' '+f(z[1])).join(' · ')}
+function feeNote(h,a){const cw=`<div class="card" style="font-size:13px"><b>Crowd at ${esc(SC[h].n)}</b><p class="mut">${crowdLine(h,a)}. Ticket revenue is ×${drawMult(h,a,null).toFixed(2)} of a normal night. Saturdays add 10%, midweek takes off 6%, and the holiday break takes off 12%.</p></div>`;return cw+feeNote2(h,a)}
+function feeNote2(h,a){if(!isBuy(h,a))return`<p class="mut">Not a buy game. ${esc(SC[a].n)} pays its own travel, about ${Math.round(DIST[h][a])} miles.</p>`;const p=feeParts(h,a);
  return`<div class="card" style="font-size:13px"><b>The guarantee ${esc(SC[h].n)} pays ${esc(SC[a].n)}</b><p class="mut">Budget gap +$${p.base.toFixed(2)}M · ${Math.round(DIST[h][a])} miles of travel +$${p.trav.toFixed(2)}M · drawing power +$${p.draw.toFixed(2)}M · total $${(p.base+p.trav+p.draw).toFixed(2)}M</p></div>`}
 function sideLine(i,o,v){const me=gameVal(i,o,v),th=gameVal(o,i,v==='H'?'A':'H'),c=x=>x<0?'var(--clay)':'var(--moss)';
  return`<span style="color:${c(me)}">${esc(SC[i].n)} ${money$(me)}</span> · <span style="color:${c(th)}">${esc(SC[o].n)} ${money$(th)}</span>`}
 function pickRows(i,L){return L.map(o=>{const bad=badOpp(i,o);
- return`<button class="pk" data-a="pickopp" data-o="${o}" ${bad?'disabled':''} style="display:block"><b>${nm(o)}</b><small>${esc(CF[SC[o].c].name)} · ${Math.round(DIST[i][o])} mi · ${TIERS[X.tier[o]]}${bad?' · '+bad:''}${!bad&&(isBuy(i,o)||isBuy(o,i))?' · buy game':''}</small>${bad?'':`<div style="font:500 12px/1.6 var(--mono);margin-top:4px"><div>Hosts: ${sideLine(i,o,'H')}</div><div>Visits: ${sideLine(i,o,'A')}</div></div>`}</button>`}).join('')}
+ return`<button class="pk" data-a="pickopp" data-o="${o}" ${bad?'disabled':''} style="display:block"><b>${nm(o)}</b><small>${esc(CF[SC[o].c].name)} · ${Math.round(DIST[i][o])} mi · ${TIERS[X.tier[o]]}${bad?' · '+bad:''}${!bad&&(isBuy(i,o)||isBuy(o,i))?' · buy game':''}</small>${bad?'':`<div style="font:500 12px/1.6 var(--mono);margin-top:4px"><div>Hosts: ${sideLine(i,o,'H')}</div><div>Visits: ${sideLine(i,o,'A')}</div></div>${resumeTag(i,o)}`}</button>`}).join('')}
+function resumeTag(i,o){const wp=Math.round(100*winProb(i,o,'H')),wa=Math.round(100*winProb(i,o,'A'));const inRace=QV[i]>=QCUT-12;let n='';
+ if(inRace)n=QV[o]>=QMEAN+10?' · boosts the resume':QV[o]<=QMEAN-8?' · drags the resume':'';
+ const cr=drawMult(i,o,null);const cn=cr>=1.3?'big crowd':cr<=.9?'thin crowd':'';
+ return`<div style="font:500 12px/1.6 var(--mono);color:var(--mute)">Win chance ${wp}% home, ${wa}% away${n}${cn?' · '+cn+' at home':''}</div>`}
 function calendar(ok,act){
  let h='',m=-1;for(let d=0;d<NDAYS;d++){const t=dparts(d);
   if(t.m!==m){if(m>=0)h+='</div>';m=t.m;h+=`<div class="sec">${MON[t.m]} ${t.y}</div><div class="cal">${DOW.map(x=>`<b>${x[0]}</b>`).join('')}`;for(let q=0;q<t.dow;q++)h+='<span></span>'}

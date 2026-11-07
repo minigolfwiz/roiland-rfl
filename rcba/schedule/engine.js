@@ -9,6 +9,21 @@ function dlabel(d){const t=dparts(d);return DOW[t.dow]+' '+MON[t.m]+' '+t.dm}
 function dshort(d){const t=dparts(d);return MON[t.m]+' '+t.dm}
 const CONFM=CF.map(()=>[]);SC.forEach(s=>CONFM[s.c].push(s.i));
 const DIST=SC.map(a=>Float32Array.from(SC,b=>3*Math.hypot(a.x-b.x,a.y-b.y)));
+// ---- team quality, fan draw, resume
+const QV=SC.map(s=>{const m=/^(\d+)-(\d+)/.exec(s.rec||'');const w=m?+m[1]/((+m[1])+(+m[2])||1):.5;return .5*s.prest+.5*w*100+(s.seed>0?3:0)});
+const QMEAN=QV.reduce((a,b)=>a+b,0)/QV.length, QCUT=QV.slice().sort((a,b)=>b-a)[67];
+const QRANK=(()=>{const o=QV.map((v,i)=>i).sort((a,b)=>QV[b]-QV[a]),r=new Int16Array(QV.length);o.forEach((i,k)=>r[i]=k+1);return r})();
+function winProb(i,o,v){return 1/(1+Math.exp(-((QV[i]-QV[o])+(v==='H'?4:v==='A'?-4:0))/10))}
+// what makes a crowd: opponent name, same state, short trip for fans, last year's seed, banners, and the day of the week
+function drawParts(h,a,d){const A=SC[a],H=SC[h],D=DIST[h][a],P={};
+ P.name=-.25+.5*A.prest/100;
+ P.state=H.st===A.st?.30:0;
+ P.near=D<=100?.15:D<=250?.08:0;
+ P.seed=A.seed>0?(A.seed<=4?.15:A.seed<=8?.10:.05):0;
+ P.title=A.ti>0?.05:0;
+ P.day=0;if(d!=null&&d>=0){const w=dparts(d).dow;P.day=w===6?.10:(w===5||w===0)?.03:(w===2||w===3)?-.06:0;if(d>=49)P.day-=.12}
+ return P}
+function drawMult(h,a,d){const P=drawParts(h,a,d);return Math.max(.5,1+P.name+P.state+P.near+P.seed+P.title+P.day)}
 function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 function shuf(a,r){for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 const TIERS=['Hurting','Tight','Middling','Comfortable','Flush'];
@@ -20,7 +35,7 @@ const STY={
  swap:{n:'Home-and-home',d:'Trades home dates with schools of similar standing.',home:.5,tw:.8},
  sos:{n:'Schedule strengthener',d:'Looks for strong opponents to help its résumé.',home:.4,tw:.9}
 };
-const GATE=[.20,.30,.45,.65,.90], NEED=[5.2,5.4,5.6,7.2,9.8], STIP=.25, TRV=.05;
+const GATE=[.20,.30,.45,.65,.90], NEED=[3.9,4.0,5.2,7.4,10.2], STIP=.25, TRV=.05;
 function hash(i){return ((i+1)*2654435761>>>0)%100}
 function defStyle(t,i){const h=hash(i);
  if(t===4)return h<60?'host':'sos';
@@ -58,16 +73,22 @@ function money(i){
  const E=entries(i),t=X.tier[i];let gate=0,feeIn=0,feeOut=0,trav=0,stip=0;
  for(const e of E){
   if(e.t==='T'){if(e.r===1){stip+=STIP;const T=S.tn[e.k];if(T.site>=0){const c=CITY[T.site];trav-=TRV*3*Math.hypot(SC[i].x-c[2],SC[i].y-c[3])/100}}continue}
-  if(e.v==='H'){gate+=GATE[t];if(e.t==='N'&&isBuy(i,e.opp))feeOut+=fee(i,e.opp)}
+  if(e.v==='H'){gate+=GATE[t]*drawMult(i,e.opp,e.d);if(e.t==='N'&&isBuy(i,e.opp))feeOut+=fee(i,e.opp)}
   else{if(e.t==='N'&&isBuy(e.opp,i))feeIn+=fee(e.opp,i);else trav-=TRV*DIST[i][e.opp]/100}}
  if(!CONF_ON){gate+=9*GATE[t];trav-=9*TRV*2.5}
  const tot=gate+feeIn-feeOut+trav+stip;
  return{gate,feeIn,feeOut,trav,stip,tot,need:NEED[t]}}
+function sosOf(i){const q=[];for(const e of entries(i)){if(e.t==='T'){if(e.r===1){const T=S.tn[e.k],f=T.t.filter(x=>x>=0&&x!==i);if(f.length){const a=f.reduce((s,x)=>s+QV[x],0)/f.length;q.push(a,a,a)}}}else if(e.opp>=0)q.push(QV[e.opp])}
+ return{n:q.length,avg:q.length?q.reduce((a,b)=>a+b,0)/q.length:0}}
+function outlookOf(r){return r>=QCUT+6?3:r>=QCUT-4?2:r>=QCUT-14?1:0}
+const OUTL=['Outside the field','Longshot','On the bubble','Safely in'];
+function resumeOf(i){const s=sosOf(i);if(s.n<6)return null;return{sos:s.avg,r:QV[i]+1.2*(s.avg-QMEAN),o:outlookOf(QV[i]+1.2*(s.avg-QMEAN)),base:outlookOf(QV[i])}}
 // ---- checks
 function issues(i){
  const out=[],E=entries(i),nm=n=>SC[n].n;
  if(CONF_ON&&X.cc[i]!==18)out.push({s:X.cc[i]>18?'x':'l',m:`Conference games: ${X.cc[i]} of 18`});
  const nt=ncTotal(i);if(nt!==12)out.push({s:nt>12?'x':'l',m:`Non-conference games: ${nt} of 12`});
+ if(nt===12){const m=money(i);if(m.tot<m.need-.3)out.push({s:'l',m:`Budget short by $${(m.need-m.tot).toFixed(2)}M`});const R=resumeOf(i);if(R&&R.o<R.base)out.push({s:'l',m:`Soft schedule: tournament outlook slips to “${OUTL[R.o].toLowerCase()}”`})}
  const k=X.inT[i];if(k>=0&&S.tn[k].d<0)out.push({s:'l',m:'Tournament date not set'});
  const seen=new Map();E.forEach(e=>{seen.set(e.d,(seen.get(e.d)||0)+1)});
  for(const[d,c]of seen)if(c>1)out.push({s:'x',m:`Two games on ${dlabel(d)}`});
