@@ -11,7 +11,7 @@
 body{background:var(--bg);color:var(--ink);font:15px/1.45 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 96px}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
 .wrap{max-width:720px;margin:0 auto}
-button{font:inherit;color:inherit;cursor:pointer}
+button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}
 button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--moss);outline-offset:2px}
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);display:flex;justify-content:space-between;align-items:flex-end;padding:12px 0 10px;border-bottom:1px solid var(--line)}
 .kick{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
@@ -197,7 +197,7 @@ function vSeason(){
  <p class="mut">Buy games happen when the host is two or more budget tiers above its guest. The host pays the guest, so small schools can earn money on the road. Each team’s gauge shows how much of its revenue need the schedule meets.</p></div>
  <div class="card"><b>Home-and-homes</b>${(()=>{const L=S.g.filter(g=>g.r);return L.length?`<p class="mut">${L.length} return game${L.length>1?'s':''} promised for 22-23. Tap ⇄ on any non-conference game to add or remove one.</p>`+L.slice(0,40).sort((a,b)=>a.d-b.d).map(g=>`<p style="margin:3px 0;font-size:14px"><button class="ic" style="padding:0;color:var(--ink);text-decoration:underline" data-a="team" data-i="${g.h}">${nm(g.h)}</button> hosts ${nm(g.a)} now, and ${nm(g.a)} hosts ${nm(g.h)} in 22-23</p>`).join('')+(L.length>40?`<p class="mut">and ${L.length-40} more</p>`:''):'<p class="mut">None yet. Tap ⇄ on a non-conference game to promise a return game next season. Home-and-home schools often get one automatically.</p>'})()}</div>
  <div class="card"><b>Take it with you</b><p class="mut">A spreadsheet of every game, as a CSV file.</p><button class="btn" data-a="csv">Save schedule as CSV</button></div>
- <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 8 · tournament picker</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
+ <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 9 · touch fix</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
 function render(){
  const a=$('#app');const sy=window.scrollY;
  a.innerHTML=topbar()+({garden:vGarden,tourn:vTourn,check:vCheck,season:vSeason}[UI.tab])()+nav();
@@ -313,8 +313,8 @@ function csv(){
   for(let r=0;r<4;r++)out.push([T.d+2,'Tournament','TBD','TBD','Neutral · '+site,nmT+' · round 3'])});
  out.sort((a,b)=>a[0]-b[0]);
  return rows.concat(out.map(r=>[dshort(r[0])+', 202'+(r[0]<61?1:2),DOW[dparts(r[0]).dow],r[1],r[2],r[3],r[4],r[5]])).map(r=>r.map(q).join(',')).join('\n')}
-document.addEventListener('click',async ev=>{
- const el=ev.target.closest('[data-a]');if(!el)return;const a=el.dataset.a,D=el.dataset;
+async function act(el){
+ const a=el.dataset.a,D=el.dataset;
  const num=k=>+D[k];
  switch(a){
  case'tab':UI.tab=D.k;UI.confirm=false;UI.lim=60;UI.sheet=-1;UI.pick=null;UI.tpick=null;render();window.scrollTo(0,0);break;
@@ -347,12 +347,16 @@ document.addEventListener('click',async ev=>{
   if(here>=0){T.t[here]=-1;T.tp[here]=0}
   else{const k2=X.inT[i];if(k2>=0){const T2=S.tn[k2],p2=T2.t.indexOf(i);T2.t[p2]=-1;T2.tp[p2]=0}
    const p=T.t.indexOf(-1);if(p<0)break;T.t[p]=i;T.tp[p]=1}
-  refresh();dirty();render()}break;
+  refresh();dirty();render();toast(here>=0?SC[i].n+' removed':SC[i].n+' added · '+S.tn[k].t.filter(x=>x>=0).length+' of 8')}break;
  case'unslot':{const T=S.tn[num('k')];T.t[num('p')]=-1;T.tp[num('p')]=0;changed()}break;
  case'fillone':snap();fillOne(num('k'));changed('Field filled',1);break;
  case'wipe':if(!UI.confirm){UI.confirm=true;render()}else{snap();S=newState();UI.confirm=false;changed('Board cleared',1)}break;
  case'csv':{let d=null;try{d=await window.claude.use('downloads')}catch(e){}if(d){try{await d.save({filename:'rcba_21-22_schedule.csv',data:csv()})}catch(e){}}else toast('Saving files is not available here')}break;
- }});
+ }}
+let lastTap=0,pd=null;
+document.addEventListener('click',ev=>{const el=ev.target.closest('[data-a]');if(!el)return;if(Date.now()-lastTap<700)return;act(el)});
+document.addEventListener('pointerdown',ev=>{pd={x:ev.clientX,y:ev.clientY,t:Date.now(),id:ev.pointerId}});
+document.addEventListener('pointerup',ev=>{if(ev.pointerType==='mouse'||!pd||pd.id!==ev.pointerId)return;const moved=Math.hypot(ev.clientX-pd.x,ev.clientY-pd.y),dt=Date.now()-pd.t;pd=null;if(moved>10||dt>700)return;const el=ev.target.closest&&ev.target.closest('[data-a]');if(!el||el.disabled)return;lastTap=Date.now();act(el)});
 document.addEventListener('input',ev=>{
  const el=ev.target,k=el.dataset.in;if(!k)return;
  if(k==='tnname'){const T=S.tn[+el.dataset.k];T.n=el.value;T.na=0;dirty()}
