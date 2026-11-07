@@ -206,7 +206,8 @@ function render(){
 function renderLayer(){
  const L=$('#layer');const prev=L.querySelector('.ov:not(.up)'),ps=prev?prev.scrollTop:0;
  let h='';if(UI.sheet>=0)h+=vSheet(UI.sheet);if(UI.pick)h+=vPick();if(UI.tpick)h+=vTPick();
- L.innerHTML=h;const o=L.querySelector('.ov:not(.up)');if(o&&!UI.pick)o.scrollTop=ps}
+const upOld=L.querySelector('.ov.up'),us=upOld?upOld.scrollTop:0,keepUp=UI.tpick&&upOld;
+ L.innerHTML=h;const o=L.querySelector('.ov:not(.up)');if(o&&!UI.pick)o.scrollTop=ps;if(keepUp){const n=L.querySelector('.ov.up');if(n)n.scrollTop=us}}
 const prestWords=p=>p>=75?'a top program':p>=55?'a strong program':p>=35?'a mid-level program':p>=18?'a smaller program':'a program still building';
 const alumWords=a=>['little alumni support','a small alumni base','a solid alumni base','a big alumni base','a huge alumni base'][a-1];
 const confWords=c=>c>=70?'plays in a strong conference':c>=35?'plays in an average conference':'plays in a lighter conference';
@@ -274,16 +275,22 @@ function calendar(ok,act){
   if(t.m!==m){if(m>=0)h+='</div>';m=t.m;h+=`<div class="sec">${MON[t.m]} ${t.y}</div><div class="cal">${DOW.map(x=>`<b>${x[0]}</b>`).join('')}`;for(let q=0;q<t.dow;q++)h+='<span></span>'}
   const k=ok(d);h+=`<button class="day ${k?'k':''}" ${k?`data-a="${act}" data-d="${d}"`:'disabled'}>${t.dm}</button>`}
  return h+'</div>'}
+const tnName=k=>S.tn[k].n||'Tournament '+(k+1);
+function tpList(){const{k,q,conf}=UI.tpick,T=S.tn[k],qq=(q||'').toLowerCase(),c=T.site>=0?CITY[T.site]:null;
+ const dd=i=>c?3*Math.hypot(SC[i].x-c[2],SC[i].y-c[3]):0;
+ const L=[];for(let i=0;i<N;i++){if(conf>=0&&SC[i].c!==conf)continue;if(qq&&!SC[i].n.toLowerCase().includes(qq))continue;L.push(i)}
+ L.sort((a,b)=>(conf>=0||!c)?SC[a].n.localeCompare(SC[b].n):dd(a)-dd(b));return{L,T,c,dd}}
+function tpRows(){const{L,T,c,dd}=tpList(),k=UI.tpick.k,full=T.t.every(i=>i>=0);
+ return L.map(i=>{const k2=X.inT[i],here=k2===k,clash=T.d>=0&&[T.d,T.d+1,T.d+2].some(d=>X.by[i].some(g=>g.d===d));
+  const note=here?'In this field · tap to remove':k2>=0?'In '+tnName(k2)+' · tap to move here':clash?'Has a game that weekend':'';
+  return`<button class="pk" data-a="tppick" data-i="${i}" ${!here&&full?'disabled':''}><div><b>${nm(i)}</b><small>${esc(CF[SC[i].c].name)}${c?' · '+Math.round(dd(i))+' mi':''} · ${TIERS[X.tier[i]]}${note?' · '+note:''}</small></div>${here?'<span class="tag">in</span>':''}</button>`}).join('')}
 function vTPick(){
- const{k,p}=UI.tpick,T=S.tn[k],q=(UI.tpick.q||'').toLowerCase();let L=[];
- for(let i=0;i<N;i++){if(q&&!SC[i].n.toLowerCase().includes(q))continue;L.push(i)}
- const c=T.site>=0?CITY[T.site]:null;const dd=i=>c?3*Math.hypot(SC[i].x-c[2],SC[i].y-c[3]):0;
- L.sort((a,b)=>(X.inT[a]>=0)-(X.inT[b]>=0)||(c?dd(a)-dd(b):SC[a].n.localeCompare(SC[b].n)));
- return`<div class="ov up"><div class="ovh"><h2>Add to ${esc(T.n||'Tournament '+(k+1))}</h2><button class="btn sm" data-a="tpclose">Back</button></div>
- <input type="search" id="tq" data-in="tq" placeholder="Search schools" value="${esc(UI.tpick.q||'')}" aria-label="Search schools"><p class="mut">${c?`Closest to ${esc(c[0])} first.`:'Pick a host city to sort by distance.'}</p><div id="tlist">${tpRows(L,T,dd,c)}</div></div>`}
-function tpRows(L,T,dd,c){return L.slice(0,40).map(i=>{const k2=X.inT[i];const clash=T.d>=0&&[T.d,T.d+1,T.d+2].some(d=>X.by[i].some(g=>g.d===d));
- const bad=k2>=0?'In '+(S.tn[k2].n||'Tournament '+(k2+1)):clash?'Has a game that weekend':'';
- return`<button class="pk" data-a="tppick" data-i="${i}" ${bad?'disabled':''}><div><b>${nm(i)}</b><small>${esc(CF[SC[i].c].name)}${c?' · '+Math.round(dd(i))+' mi':''} · ${TIERS[X.tier[i]]}${bad?' · '+bad:''}</small></div></button>`}).join('')}
+ const{k,conf}=UI.tpick,T=S.tn[k],c=T.site>=0?CITY[T.site]:null,n=T.t.filter(i=>i>=0).length;
+ return`<div class="ov up"><div class="ovh"><h2>${esc(tnName(k))} · ${n} of 8</h2><button class="btn sm pri" data-a="tpclose">Done</button></div>
+ <select id="tc" data-in="tconf" aria-label="Conference" style="margin-bottom:8px"><option value="-1">All conferences</option>${CORD.map(ci=>`<option value="${ci}" ${conf===ci?'selected':''}>${esc(CF[ci].name)}</option>`).join('')}</select>
+ <input type="search" id="tq" data-in="tq" placeholder="Search schools" value="${esc(UI.tpick.q||'')}" aria-label="Search schools">
+ <p class="mut">${n>=8?'This field is full.':'Tap schools to add them. The window stays open so you can keep picking.'} ${conf>=0?'':c?`Closest to ${esc(c[0])} first.`:''}</p><div id="tlist">${tpRows()}</div></div>`}
+
 // ----- actions
 function changed(msg,undo){refresh();dirty();render();if(msg)toast(msg,undo)}
 function fillOne(k){refresh();const T=S.tn[k];if(T.site<0){const used=new Set(S.tn.map(t=>t.site));const f=T.t.filter(i=>i>=0);let cx=0,cy=0;if(f.length){f.forEach(i=>{cx+=SC[i].x;cy+=SC[i].y});cx/=f.length;cy/=f.length}else{cx=SC[0].x;cy=SC[0].y}
@@ -333,9 +340,13 @@ document.addEventListener('click',async ev=>{
  case'hh':{const g=S.g[num('g')];if(g){g.r=g.r?0:1;changed(g.r?'Return game set for 22-23':'Home-and-home removed')}}break;
  case'pickv':UI.pick.v=D.v;renderLayer();break;
  case'pickday':{const P=UI.pick,h=P.v==='H'?P.i:P.o,aw=P.v==='H'?P.o:P.i;snap();S.g.push({d:num('d'),h,a:aw,t:'N',p:1,r:P.r?1:0});UI.pick=null;changed('Game added and pinned',1)}break;
- case'slot':UI.tpick={k:num('k'),p:num('p'),q:''};renderLayer();break;
- case'tpclose':UI.tpick=null;renderLayer();break;
- case'tppick':{const{k,p}=UI.tpick,T=S.tn[k];T.t[p]=num('i');T.tp[p]=1;UI.tpick=null;changed()}break;
+ case'slot':UI.tpick={k:num('k'),q:'',conf:-1};renderLayer();break;
+ case'tpclose':UI.tpick=null;render();break;
+ case'tppick':{const i=num('i'),k=UI.tpick.k,T=S.tn[k],here=T.t.indexOf(i);
+  if(here>=0){T.t[here]=-1;T.tp[here]=0}
+  else{const k2=X.inT[i];if(k2>=0){const T2=S.tn[k2],p2=T2.t.indexOf(i);T2.t[p2]=-1;T2.tp[p2]=0}
+   const p=T.t.indexOf(-1);if(p<0)break;T.t[p]=i;T.tp[p]=1}
+  refresh();dirty();render()}break;
  case'unslot':{const T=S.tn[num('k')];T.t[num('p')]=-1;T.tp[num('p')]=0;changed()}break;
  case'fillone':snap();fillOne(num('k'));changed('Field filled',1);break;
  case'wipe':if(!UI.confirm){UI.confirm=true;render()}else{snap();S=newState();UI.confirm=false;changed('Board cleared',1)}break;
@@ -345,10 +356,12 @@ document.addEventListener('input',ev=>{
  const el=ev.target,k=el.dataset.in;if(!k)return;
  if(k==='tnname'){const T=S.tn[+el.dataset.k];T.n=el.value;T.na=0;dirty()}
  else if(k==='pq'){UI.pick.q=el.value;const i=UI.pick.i;$('#plist').innerHTML=pickRows(i,oppList(i,el.value.toLowerCase()))}
- else if(k==='tq'){UI.tpick.q=el.value;const T=S.tn[UI.tpick.k],q=el.value.toLowerCase(),c=T.site>=0?CITY[T.site]:null;const dd=i=>c?3*Math.hypot(SC[i].x-c[2],SC[i].y-c[3]):0;let L=[];for(let i=0;i<N;i++){if(q&&!SC[i].n.toLowerCase().includes(q))continue;L.push(i)}L.sort((a,b)=>(X.inT[a]>=0)-(X.inT[b]>=0)||(c?dd(a)-dd(b):SC[a].n.localeCompare(SC[b].n)));$('#tlist').innerHTML=tpRows(L,T,dd,c)}});
+ else if(k==='tq'){UI.tpick.q=el.value;$('#tlist').innerHTML=tpRows()}
+});
 document.addEventListener('change',ev=>{
  const el=ev.target,k=el.dataset.in;if(!k)return;
  if(k==='tnsite'){const T=S.tn[+el.dataset.k];T.site=+el.value;T.sp=T.site>=0?1:0;if(T.na&&T.site>=0){T.n='';T.na=0}changed()}
+ else if(k==='tconf'){UI.tpick.conf=+el.value;renderLayer()}
  else if(k==='tndate'){const T=S.tn[+el.dataset.k];T.d=+el.value;T.dp=T.d>=0?1:0;changed()}
  else if(k==='style'){const i=+el.dataset.i,o=S.ov[i]=S.ov[i]||{};o.style=el.value||undefined;changed()}});
 boot();
