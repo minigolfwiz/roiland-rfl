@@ -51,12 +51,15 @@ function entries(i){
   out.push({d:T.d,opp:q,v:'N',t:'T',k,r:1},{d:T.d+1,opp:-1,v:'N',t:'T',k,r:2},{d:T.d+2,opp:-1,v:'N',t:'T',k,r:3})}}
  return out.sort((a,b)=>a.d-b.d)}
 function isBuy(h,a){return X.tier[h]-X.tier[a]>=2}
+// guarantee the host pays the guest: grows with the budget gap, the miles travelled and the guest's drawing power
+function feeParts(h,a){return{base:.15+.08*(X.tier[h]-X.tier[a]),trav:.0003*DIST[h][a],draw:.004*SC[a].prest}}
+function fee(h,a){const p=feeParts(h,a);return p.base+p.trav+p.draw}
 function money(i){
  const E=entries(i),t=X.tier[i];let gate=0,feeIn=0,feeOut=0,trav=0,stip=0;
  for(const e of E){
   if(e.t==='T'){if(e.r===1){stip+=STIP;const T=S.tn[e.k];if(T.site>=0){const c=CITY[T.site];trav-=TRV*3*Math.hypot(SC[i].x-c[2],SC[i].y-c[3])/100}}continue}
-  if(e.v==='H'){gate+=GATE[t];if(e.t==='N'&&isBuy(i,e.opp))feeOut+=.3+.1*(t-X.tier[e.opp])}
-  else{if(e.t==='N'&&isBuy(e.opp,i))feeIn+=.3+.1*(X.tier[e.opp]-t);else trav-=TRV*DIST[i][e.opp]/100}}
+  if(e.v==='H'){gate+=GATE[t];if(e.t==='N'&&isBuy(i,e.opp))feeOut+=fee(i,e.opp)}
+  else{if(e.t==='N'&&isBuy(e.opp,i))feeIn+=fee(e.opp,i);else trav-=TRV*DIST[i][e.opp]/100}}
  if(!CONF_ON){gate+=9*GATE[t];trav-=9*TRV*2.5}
  const tot=gate+feeIn-feeOut+trav+stip;
  return{gate,feeIn,feeOut,trav,stip,tot,need:NEED[t]}}
@@ -212,7 +215,7 @@ function fillNoncon(seed){
   for(const d of days){if(X.busy[g.h].has(d)||X.busy[g.a].has(d))continue;let s=load[d]*.6+r()*2.2;
    for(const t of[g.h,g.a]){if(X.busy[t].has(d-1)||X.busy[t].has(d+1))s+=7;if(X.busy[t].has(d-2)||X.busy[t].has(d+2))s+=1.6}
    if(s<bs){bs=s;bd=d}}
-  if(bd<0)continue;g.d=bd;g.t='N';g.p=0;S.g.push(g);X.busy[g.h].add(bd);X.busy[g.a].add(bd);load[bd]++;X.by[g.h].push(g);X.by[g.a].push(g);X.nc[g.h]++;X.nc[g.a]++;placed++}
+  if(bd<0)continue;g.d=bd;g.t='N';g.p=0;{const sa=X.sty[g.h],sb=X.sty[g.a];g.r=((sa==='swap'||sb==='swap')&&Math.abs(X.tier[g.h]-X.tier[g.a])<=1)?1:0}S.g.push(g);X.busy[g.h].add(bd);X.busy[g.a].add(bd);load[bd]++;X.by[g.h].push(g);X.by[g.a].push(g);X.nc[g.h]++;X.nc[g.a]++;placed++}
  return placed}
 function clearAuto(){
  S.g=S.g.filter(g=>g.p);
