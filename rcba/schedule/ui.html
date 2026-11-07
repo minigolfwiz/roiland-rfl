@@ -115,7 +115,7 @@ const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const nm=i=>esc(SC[i].n);
 const pctOf=i=>CONF_ON?(Math.min(18,X.cc[i])+Math.min(12,ncTotal(i)))/30:Math.min(12,ncTotal(i))/12;
-const cities=CITY.map((c,i)=>i);
+const CORD=CF.map((c,ci)=>ci).sort((a,b)=>CONFM[b].reduce((s,i)=>s+SC[i].prest,0)/CONFM[b].length-CONFM[a].reduce((s,i)=>s+SC[i].prest,0)/CONFM[a].length);
 function snap(){UI.undo.push(JSON.stringify(S));if(UI.undo.length>8)UI.undo.shift()}
 function toast(msg,undo){const t=$('#toast');t.innerHTML=`<div class="toast"><span>${esc(msg)}</span>${undo&&UI.undo.length?'<button data-a="undo">Undo</button>':''}</div>`;clearTimeout(toast.t);toast.t=setTimeout(()=>t.innerHTML='',5200)}
 // ----- storage
@@ -154,7 +154,7 @@ function vGarden(){
  <div class="mut">${empty?'A clear board. Place what matters to you, then ask for the rest.':pc===100?'Every team has its 12 non-conference games.':'Every game you place stays put when the rest is filled.'}</div>
  <div class="stats"><div class="stat"><b>${[...Array(N).keys()].filter(i=>ncTotal(i)>=12).length}</b><span>of 374 teams have 12 games</span></div><div class="stat"><b>${tt}</b><span>of 240 tournament spots</span></div><div class="stat"><b>${ng.toLocaleString()}</b><span>of 1,884 other non-conference</span></div></div>
  <div class="row"><button class="btn pri" data-a="complete">Complete the rest</button><button class="btn" data-a="reroll">Re-roll what isn’t pinned</button>${UI.undo.length?'<button class="btn" data-a="undo">Undo</button>':''}</div></section>`;
- CF.forEach((c,ci)=>{
+ CORD.forEach(ci=>{const c=CF[ci];
   const mem=CONFM[ci].slice().sort((a,b)=>SC[a].n.localeCompare(SC[b].n)),cgs=S.g.filter(g=>g.t==='C'&&SC[g.h].c===ci);
   const locked=cgs.length&&cgs.every(g=>g.p);
   h+=`<article class="card"><div class="ch"><h3>${esc(c.name)}</h3><span class="mut">${mem.length} teams</span></div>
@@ -206,6 +206,14 @@ function renderLayer(){
  const L=$('#layer');const prev=L.querySelector('.ov:not(.up)'),ps=prev?prev.scrollTop:0;
  let h='';if(UI.sheet>=0)h+=vSheet(UI.sheet);if(UI.pick)h+=vPick();if(UI.tpick)h+=vTPick();
  L.innerHTML=h;const o=L.querySelector('.ov:not(.up)');if(o&&!UI.pick)o.scrollTop=ps}
+const prestWords=p=>p>=75?'a top program':p>=55?'a strong program':p>=35?'a mid-level program':p>=18?'a smaller program':'a program still building';
+const alumWords=a=>['little alumni support','a small alumni base','a solid alumni base','a big alumni base','a huge alumni base'][a-1];
+const confWords=c=>c>=70?'plays in a strong conference':c>=35?'plays in an average conference':'plays in a lighter conference';
+const money$=v=>(v<0?'−':'+')+'$'+Math.abs(v).toFixed(2)+'M';
+function gameVal(i,o,v){const t=X.tier[i];return v==='H'?GATE[t]-(isBuy(i,o)?.3+.1*(t-X.tier[o]):0):(isBuy(o,i)?.3+.1*(X.tier[o]-t):-TRV*DIST[i][o]/100)}
+function badOpp(i,o){return SC[o].c===SC[i].c?'Same conference':X.pairs.has(Math.min(i,o)*1000+Math.max(i,o))?'Already scheduled':ncTotal(o)>=12?'Already has 12':''}
+function oppList(i,q){const L=[];for(let o=0;o<N;o++){if(o===i)continue;if(q&&!SC[o].n.toLowerCase().includes(q))continue;L.push(o)}
+ return L.sort((a,b)=>(!!badOpp(i,a)-!!badOpp(i,b))||suggest(i,a)-suggest(i,b))}
 // ----- team sheet
 function entryRow(e,ix,i){
  const tag=e.t==='C'?'Conference':e.t==='T'?'Tournament':'Non-conf';
@@ -223,12 +231,11 @@ function vSheet(i){
  return`<div class="ov"><div class="ovh"><h2>${esc(s.n)}</h2><button class="btn sm" data-a="closesheet">Done</button></div>
  <div class="row"><span class="tag">${esc(CF[s.c].name)}</span><span class="tag">${esc(s.st)}</span><span class="tag ${t<2?'sand':''}">${TIERS[t]}</span><span class="tag">${STY[st].n}</span></div>
  <p class="mut">${STY[st].d}</p>
- <div class="card"><div class="ch"><b>Budget</b><span class="mut">${Math.round(g*100)}% of its need covered${E.length<30?' so far':''}</span></div>
- <div class="gauge ${g>=.95?'ok':''}"><i style="width:${g*100}%"></i></div>
- <p class="mut">Home ${home} · Road ${road} · Neutral ${neu}${buyH?` · hosts ${buyH} buy game${buyH>1?'s':''}`:''}${buyA?` · visits ${buyA} for pay`:''}</p>
- <div class="lever"><span>Prestige</span><span class="mut">from titles and last season</span><div class="bar"><i style="width:${s.prest}%"></i></div></div>
- <div class="lever"><span>Alumni and market</span><span class="step"><button data-a="alum" data-i="${i}" data-v="-1" aria-label="Lower">−</button>${al}<button data-a="alum" data-i="${i}" data-v="1" aria-label="Raise">+</button></span><div class="bar"><i style="width:${(al-1)*25}%"></i></div></div>
- <div class="lever"><span>Conference strength</span><span class="mut">${CF[s.c].name}</span><div class="bar"><i style="width:${s.cl}%"></i></div></div>
+ <div class="card"><div class="ch"><b>Budget</b><span class="mut">${ncTotal(i)===0?'':Math.round(g*100)+'% of its need covered'+(ncTotal(i)<12?' so far':'')}</span></div>
+ ${ncTotal(i)===0?'<p class="mut">No games yet. The gauge appears once this team has games.</p>':`<div class="gauge ${g>=.95?'ok':''}"><i style="width:${g*100}%"></i></div>`}
+ <p class="mut">${TIERS[t]} budget: ${prestWords(s.prest)}, ${alumWords(al)}, and ${confWords(s.cl)}.</p>
+ ${ncTotal(i)===0?'':`<p class="mut">Home ${home} · Road ${road} · Neutral ${neu}${buyH?` · hosts ${buyH} buy game${buyH>1?'s':''}`:''}${buyA?` · visits ${buyA} for pay`:''}</p>`}
+ <div class="lever"><span>Alumni and market</span><span class="step"><button data-a="alum" data-i="${i}" data-v="-1" aria-label="Lower">−</button>${al}<button data-a="alum" data-i="${i}" data-v="1" aria-label="Raise">+</button></span></div>
  <div class="lever"><span>Your nudge</span><span class="step"><button data-a="bud" data-i="${i}" data-v="-1" aria-label="Lower">−</button>${o.bud>0?'+':''}${o.bud||0}<button data-a="bud" data-i="${i}" data-v="1" aria-label="Raise">+</button></span></div>
  <label class="mut" for="sty">Scheduling style</label><select id="sty" data-in="style" data-i="${i}"><option value="">Automatic · ${STY[defStyle(t,i)].n}</option>${Object.keys(STY).map(k=>`<option value="${k}" ${o.style===k?'selected':''}>${STY[k].n}</option>`).join('')}</select></div>
  ${iss.length?`<div class="card" style="border-color:${iss.some(q=>q.s==='x')?'var(--clay)':'var(--line)'}">${iss.map(q=>`<p style="color:${q.s==='x'?'var(--clay)':'var(--mute)'}">${esc(q.m)}</p>`).join('')}</div>`:''}
@@ -243,18 +250,17 @@ function suggest(i,o){const d=DIST[i][o],t=X.tier[i]-X.tier[o],st=X.sty[i];
 function vPick(){
  const P=UI.pick,i=P.i;
  if(P.o<0){
-  const q=(P.q||'').toLowerCase();let L=[];for(let o=0;o<N;o++){if(o===i)continue;if(q&&!SC[o].n.toLowerCase().includes(q))continue;L.push(o)}
-  L.sort((a,b)=>suggest(i,a)-suggest(i,b));
+  const q=(P.q||'').toLowerCase();const L=oppList(i,q);
   return`<div class="ov up"><div class="ovh"><h2>Opponent for ${esc(SC[i].n)}</h2><button class="btn sm" data-a="pickclose">Back</button></div>
-  <input type="search" id="pq" data-in="pq" placeholder="Search schools" value="${esc(P.q||'')}" aria-label="Search schools"><p class="mut">Best fits for a ${STY[X.sty[i]].n.toLowerCase()} first.</p>
+  <input type="search" id="pq" data-in="pq" placeholder="Search schools" value="${esc(P.q||'')}" aria-label="Search schools"><p class="mut">Every school, best fits first for a ${STY[X.sty[i]].n.toLowerCase()}. Amounts are what ${esc(SC[i].n)} would take in (+) or pay out (−) if it hosts or visits.</p>
   <div id="plist">${pickRows(i,L)}</div></div>`}
  const o=P.o,h=P.v==='H'?i:o,a=P.v==='H'?o:i;
  return`<div class="ov up"><div class="ovh"><h2>${P.v==='H'?'Host':'Visit'} ${esc(SC[o].n)}</h2><button class="btn sm" data-a="pickback">Back</button></div>
- <div class="row"><button class="btn ${P.v==='H'?'pri':''}" data-a="pickv" data-v="H">${esc(SC[i].n)} hosts</button><button class="btn ${P.v==='A'?'pri':''}" data-a="pickv" data-v="A">${esc(SC[i].n)} visits</button></div>
+ <div class="row"><button class="btn ${P.v==='H'?'pri':''}" data-a="pickv" data-v="H">Hosts · ${money$(gameVal(i,o,'H'))}</button><button class="btn ${P.v==='A'?'pri':''}" data-a="pickv" data-v="A">Visits · ${money$(gameVal(i,o,'A'))}</button></div>
  ${isBuy(h,a)?`<p class="mut">A buy game: ${esc(SC[h].n)} pays ${esc(SC[a].n)} to travel.</p>`:''}
  <p class="mut">Pick a day. Only days free for both teams are open.</p>${calendar(d=>!X.busy[i].has(d)&&!X.busy[o].has(d)&&!BLK.has(d),'pickday')}</div>`}
-function pickRows(i,L){return L.slice(0,40).map(o=>{const bad=SC[o].c===SC[i].c?'Same conference':X.pairs.has(Math.min(i,o)*1000+Math.max(i,o))?'Already scheduled':ncTotal(o)>=12?'Already has 12':'';
- return`<button class="pk" data-a="pickopp" data-o="${o}" ${bad?'disabled':''}><div><b>${nm(o)}</b><small>${esc(CF[SC[o].c].name)} · ${Math.round(DIST[i][o])} mi · ${TIERS[X.tier[o]]}${bad?' · '+bad:''}</small></div>${isBuy(i,o)||isBuy(o,i)?'<span class="tag sand">buy game</span>':''}</button>`}).join('')+(L.length>40?'<p class="mut">Keep typing to narrow the list.</p>':'')}
+function pickRows(i,L){return L.map(o=>{const bad=badOpp(i,o),h=gameVal(i,o,'H'),a=gameVal(i,o,'A');
+ return`<button class="pk" data-a="pickopp" data-o="${o}" ${bad?'disabled':''}><div><b>${nm(o)}</b><small>${esc(CF[SC[o].c].name)} · ${Math.round(DIST[i][o])} mi · ${TIERS[X.tier[o]]}${bad?' · '+bad:''}${!bad&&(isBuy(i,o)||isBuy(o,i))?' · buy game':''}</small></div>${bad?'':`<span style="text-align:right;font:500 12px var(--mono);white-space:nowrap"><span class="${h<0?'':'ok'}" style="${h<0?'color:var(--clay)':''}">Host ${money$(h)}</span><br><span style="color:${a<0?'var(--clay)':'var(--moss)'}">Visit ${money$(a)}</span></span>`}</button>`}).join('')}
 function calendar(ok,act){
  let h='',m=-1;for(let d=0;d<NDAYS;d++){const t=dparts(d);
   if(t.m!==m){if(m>=0)h+='</div>';m=t.m;h+=`<div class="sec">${MON[t.m]} ${t.y}</div><div class="cal">${DOW.map(x=>`<b>${x[0]}</b>`).join('')}`;for(let q=0;q<t.dow;q++)h+='<span></span>'}
@@ -328,7 +334,7 @@ document.addEventListener('click',async ev=>{
 document.addEventListener('input',ev=>{
  const el=ev.target,k=el.dataset.in;if(!k)return;
  if(k==='tnname'){const T=S.tn[+el.dataset.k];T.n=el.value;T.na=0;dirty()}
- else if(k==='pq'){UI.pick.q=el.value;const i=UI.pick.i,q=el.value.toLowerCase();let L=[];for(let o=0;o<N;o++){if(o===i)continue;if(q&&!SC[o].n.toLowerCase().includes(q))continue;L.push(o)}L.sort((a,b)=>suggest(i,a)-suggest(i,b));$('#plist').innerHTML=pickRows(i,L)}
+ else if(k==='pq'){UI.pick.q=el.value;const i=UI.pick.i;$('#plist').innerHTML=pickRows(i,oppList(i,el.value.toLowerCase()))}
  else if(k==='tq'){UI.tpick.q=el.value;const T=S.tn[UI.tpick.k],q=el.value.toLowerCase(),c=T.site>=0?CITY[T.site]:null;const dd=i=>c?3*Math.hypot(SC[i].x-c[2],SC[i].y-c[3]):0;let L=[];for(let i=0;i<N;i++){if(q&&!SC[i].n.toLowerCase().includes(q))continue;L.push(i)}L.sort((a,b)=>(X.inT[a]>=0)-(X.inT[b]>=0)||(c?dd(a)-dd(b):SC[a].n.localeCompare(SC[b].n)));$('#tlist').innerHTML=tpRows(L,T,dd,c)}});
 document.addEventListener('change',ev=>{
  const el=ev.target,k=el.dataset.in;if(!k)return;
