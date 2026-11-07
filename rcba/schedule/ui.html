@@ -208,7 +208,7 @@ function vSeason(){
  <div class="card"><b>Small gray text</b><p class="mut">Next to each school: its record from last season, then its seed in last season’s national tournament if it made the field. “First four” marks the eight play-in teams.</p></div>
  <div class="card"><b>Home-and-homes</b>${(()=>{const L=S.g.filter(g=>g.r);return L.length?`<p class="mut">${L.length} return game${L.length>1?'s':''} promised for 22-23. Tap ⇄ on any non-conference game to add or remove one.</p>`+L.slice(0,40).sort((a,b)=>a.d-b.d).map(g=>`<p style="margin:3px 0;font-size:14px"><button class="ic" style="padding:0;color:var(--ink);text-decoration:underline" data-a="team" data-i="${g.h}">${nm(g.h)}</button> hosts ${nm(g.a)} now, and ${nm(g.a)} hosts ${nm(g.h)} in 22-23</p>`).join('')+(L.length>40?`<p class="mut">and ${L.length-40} more</p>`:''):'<p class="mut">None yet. Tap ⇄ on a non-conference game to promise a return game next season. Home-and-home schools often get one automatically.</p>'})()}</div>
  <div class="card"><b>Take it with you</b><p class="mut">A spreadsheet of every game, as a CSV file.</p><button class="btn" data-a="csv">Save schedule as CSV</button></div>
- <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 17 · busy-day dots</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
+ <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 18 · tournament mates</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
 function render(){
  const a=$('#app');const sy=window.scrollY;
  a.innerHTML=topbar()+({garden:vGarden,tourn:vTourn,check:vCheck,season:vSeason}[UI.tab])()+nav();
@@ -224,7 +224,7 @@ const alumWords=a=>['little alumni support','a small alumni base','a solid alumn
 const confWords=c=>c>=70?'plays in a strong conference':c>=35?'plays in an average conference':'plays in a lighter conference';
 const money$=v=>(v<0?'−':'+')+'$'+Math.abs(v).toFixed(2)+'M';
 function gameVal(i,o,v){const t=X.tier[i];return v==='H'?GATE[t]*drawMult(i,o,null)-(isBuy(i,o)?fee(i,o):0):(isBuy(o,i)?fee(o,i):-TRV*DIST[i][o]/100)}
-function badOpp(i,o){return SC[o].c===SC[i].c?'Same conference':X.pairs.has(Math.min(i,o)*1000+Math.max(i,o))?'Already scheduled':ncTotal(o)>=12?'Already has 12':''}
+function badOpp(i,o){return SC[o].c===SC[i].c?'Same conference':X.inT[i]>=0&&X.inT[i]===X.inT[o]?'In the same tournament':X.pairs.has(Math.min(i,o)*1000+Math.max(i,o))?'Already scheduled':ncTotal(o)>=12?'Already has 12':''}
 function oppList(i,q){const L=[];for(let o=0;o<N;o++){if(o===i)continue;if(q&&!SC[o].n.toLowerCase().includes(q))continue;L.push(o)}
  return L.sort((a,b)=>(!!badOpp(i,a)-!!badOpp(i,b))||suggest(i,a)-suggest(i,b))}
 // ----- team sheet

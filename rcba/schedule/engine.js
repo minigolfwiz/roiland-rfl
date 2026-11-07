@@ -98,6 +98,7 @@ function issues(i){
  const cs=CONF_ON?E.filter(e=>e.t==='C'):[];let run=0,last='',bad=0;for(const e of cs){if(e.v===last)run++;else{run=1;last=e.v}if(run===4)bad++}
  if(bad)out.push({s:'x',m:`Conference home/away streak longer than 3 (${bad}×)`});
  const ncOpp=new Map();E.forEach(e=>{if(e.t==='N'){ncOpp.set(e.opp,(ncOpp.get(e.opp)||0)+1);if(SC[e.opp].c===SC[i].c)out.push({s:'x',m:`Non-conference game vs conference mate ${nm(e.opp)}`})}});
+ E.forEach(e=>{if(e.t==='N'&&e.opp>=0&&k>=0&&X.inT[e.opp]===k)out.push({s:'x',m:`Plays ${nm(e.opp)} in a game and in the same tournament`})});
  for(const[o,c]of ncOpp)if(c>1)out.push({s:'l',m:`Plays ${nm(o)} ${c} times outside the conference`});
  const cOpp=new Map();E.forEach(e=>{if(CONF_ON&&e.t==='C'){cOpp.set(e.opp,(cOpp.get(e.opp)||0)+1)}});
  for(const[o,c]of cOpp)if(c>2)out.push({s:'x',m:`Plays ${nm(o)} ${c} times in conference`});
@@ -107,6 +108,7 @@ function issues(i){
 function tnIssues(k){const T=S.tn[k],out=[],f=T.t.filter(i=>i>=0);
  if(f.length<8)out.push({s:'l',m:`${f.length} of 8 teams`});if(T.d<0)out.push({s:'l',m:'No date'});if(T.site<0)out.push({s:'l',m:'No host city'});
  const cc={};f.forEach(i=>cc[SC[i].c]=(cc[SC[i].c]||0)+1);for(const c in cc)if(cc[c]>2)out.push({s:'l',m:`${cc[c]} teams from ${CF[c].name}`});
+ for(const i of f)for(const g of X.by[i])if(g.t==='N'){const o=g.h===i?g.a:g.h;if(o>i&&f.includes(o))out.push({s:'x',m:`${SC[i].n} and ${SC[o].n} already have a game`})}
  if(T.d>=0)for(const i of f)for(const d of[T.d,T.d+1,T.d+2])if(X.by[i].some(g=>g.d===d)){out.push({s:'x',m:`${SC[i].n} already has a game that weekend`});break}
  return out}
 function progress(){let have=0;if(!CONF_ON){for(let i=0;i<N;i++)have+=Math.min(12,ncTotal(i));return have/(N*12)}for(let i=0;i<N;i++)have+=Math.min(18,X.cc[i])+Math.min(12,ncTotal(i));return have/(N*30)}
@@ -200,6 +202,7 @@ function fillNoncon(seed){
  const hL=Int16Array.from(hT),rL=Int16Array.from(need.map((n,i)=>n-hT[i]));
  const played=new Set(X.pairs),newG=[];
  const key=(a,b)=>a<b?a*1000+b:b*1000+a;
+ S.tn.forEach(T=>{const f=T.t.filter(i=>i>=0);for(const a of f)for(const b of f)if(a<b)played.add(key(a,b))}); // tournament mates never meet again
  const prest=SC.map(s=>s.prest),tier=X.tier;
  function sc(a,b){ // a home, b road
   const d=DIST[a][b],sa=X.sty[a],sb=X.sty[b],g=tier[a]-tier[b];let s=r()*1.2;
