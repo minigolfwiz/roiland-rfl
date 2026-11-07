@@ -15,13 +15,22 @@ const QMEAN=QV.reduce((a,b)=>a+b,0)/QV.length, QCUT=QV.slice().sort((a,b)=>b-a)[
 const QRANK=(()=>{const o=QV.map((v,i)=>i).sort((a,b)=>QV[b]-QV[a]),r=new Int16Array(QV.length);o.forEach((i,k)=>r[i]=k+1);return r})();
 function winProb(i,o,v){return 1/(1+Math.exp(-((QV[i]-QV[o])+(v==='H'?4:v==='A'?-4:0))/10))}
 // what makes a crowd: opponent name, same state, short trip for fans, last year's seed, banners, and the day of the week
+const HOME_CAP=7, OPC=[.10,.14,.20,.30,.42], EXPO=.10, RW={H:1,A:1.4,N:1.15};
+function dayEff(d){if(d==null||d<0)return 0;const w=dparts(d).dow;let x=w===6?.10:(w===5||w===0)?.03:(w===2||w===3)?-.06:0;if(d>=49)x-=.12;return x}
+function capOf(i){const o=S.ov[i];return o&&o.cap!=null?o.cap:HOME_CAP}
+function homeN(i){let n=0;for(const g of X.by[i])if(g.t==='N'&&g.h===i&&!(g.s>=0))n++;return n}
+// marquee neutral-site games: two big names, an arena, a promoter. The pot is split evenly, each side pays its own travel.
+function marqOK(i,o){return X.tier[i]>=3&&X.tier[o]>=3}
+function marqPot(i,o,d){return(.8+.010*(SC[i].prest+SC[o].prest))*(1+dayEff(d))}
+function cityMiles(i,s){const c=CITY[s];return 3*Math.hypot(SC[i].x-c[2],SC[i].y-c[3])}
+function marqNet(i,o,s,d){const mi=s>=0?cityMiles(i,s):DIST[i][o]/2;return marqPot(i,o,d)/2-TRV*mi/100}
 function drawParts(h,a,d){const A=SC[a],H=SC[h],D=DIST[h][a],P={};
  P.name=-.25+.5*A.prest/100;
  P.state=H.st===A.st?.30:0;
  P.near=D<=100?.15:D<=250?.08:0;
  P.seed=A.seed>0?(A.seed<=4?.15:A.seed<=8?.10:.05):0;
  P.title=A.ti>0?.05:0;
- P.day=0;if(d!=null&&d>=0){const w=dparts(d).dow;P.day=w===6?.10:(w===5||w===0)?.03:(w===2||w===3)?-.06:0;if(d>=49)P.day-=.12}
+ P.day=dayEff(d);
  return P}
 function drawMult(h,a,d){const P=drawParts(h,a,d);return Math.max(.5,1+P.name+P.state+P.near+P.seed+P.title+P.day)}
 function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
@@ -35,7 +44,7 @@ const STY={
  swap:{n:'Home-and-home',d:'Trades home dates with schools of similar standing.',home:.5,tw:.8},
  sos:{n:'Schedule strengthener',d:'Looks for strong opponents to help its résumé.',home:.4,tw:.9}
 };
-const GATE=[.20,.30,.45,.65,.90], NEED=[3.9,4.0,5.2,7.4,10.2], STIP=.25, TRV=.05;
+const GATE=[.20,.30,.45,.65,.90], NEED=[2.4,2.0,2.2,3.2,3.7], STIP=.25, TRV=.05;
 function hash(i){return ((i+1)*2654435761>>>0)%100}
 function defStyle(t,i){const h=hash(i);
  if(t===4)return h<60?'host':'sos';
@@ -61,7 +70,7 @@ function refresh(){
 }
 function ncTotal(i){return X.nc[i]+(X.inT[i]>=0?3:0)}
 function entries(i){
- const out=[];for(const g of X.by[i])out.push({d:g.d,opp:g.h===i?g.a:g.h,v:g.h===i?'H':'A',t:g.t,g});
+ const out=[];for(const g of X.by[i])out.push({d:g.d,opp:g.h===i?g.a:g.h,v:g.s>=0?'N':g.h===i?'H':'A',t:g.t,g});
  const k=X.inT[i];if(k>=0){const T=S.tn[k];if(T.d>=0){const p=T.t.indexOf(i),q=T.t[p^1];
   out.push({d:T.d,opp:q,v:'N',t:'T',k,r:1},{d:T.d+1,opp:-1,v:'N',t:'T',k,r:2},{d:T.d+2,opp:-1,v:'N',t:'T',k,r:3})}}
  return out.sort((a,b)=>a.d-b.d)}
@@ -70,16 +79,19 @@ function isBuy(h,a){return X.tier[h]-X.tier[a]>=2}
 function feeParts(h,a){return{base:.15+.08*(X.tier[h]-X.tier[a]),trav:.0003*DIST[h][a],draw:.004*SC[a].prest}}
 function fee(h,a){const p=feeParts(h,a);return p.base+p.trav+p.draw}
 function money(i){
- const E=entries(i),t=X.tier[i];let gate=0,feeIn=0,feeOut=0,trav=0,stip=0;
+ const E=entries(i),t=X.tier[i];let gate=0,feeIn=0,feeOut=0,trav=0,stip=0,opc=0,expo=0,neu=0;
  for(const e of E){
   if(e.t==='T'){if(e.r===1){stip+=STIP;const T=S.tn[e.k];if(T.site>=0){const c=CITY[T.site];trav-=TRV*3*Math.hypot(SC[i].x-c[2],SC[i].y-c[3])/100}}continue}
-  if(e.v==='H'){gate+=GATE[t]*drawMult(i,e.opp,e.d);if(e.t==='N'&&isBuy(i,e.opp))feeOut+=fee(i,e.opp)}
-  else{if(e.t==='N'&&isBuy(e.opp,i))feeIn+=fee(e.opp,i);else trav-=TRV*DIST[i][e.opp]/100}}
- if(!CONF_ON){gate+=9*GATE[t];trav-=9*TRV*2.5}
- const tot=gate+feeIn-feeOut+trav+stip;
- return{gate,feeIn,feeOut,trav,stip,tot,need:NEED[t]}}
-function sosOf(i){const q=[];for(const e of entries(i)){if(e.t==='T'){if(e.r===1){const T=S.tn[e.k],f=T.t.filter(x=>x>=0&&x!==i);if(f.length){const a=f.reduce((s,x)=>s+QV[x],0)/f.length;q.push(a,a,a)}}}else if(e.opp>=0)q.push(QV[e.opp])}
- return{n:q.length,avg:q.length?q.reduce((a,b)=>a+b,0)/q.length:0}}
+  if(e.v==='N'){neu+=marqNet(i,e.opp,e.g.s,e.d);continue}
+  if(e.v==='H'){const buy=e.t==='N'&&isBuy(i,e.opp);gate+=GATE[t]*drawMult(i,e.opp,e.d)*(buy?1:1-EXPO);opc+=OPC[t];if(buy)feeOut+=fee(i,e.opp)}
+  else{if(e.t==='N'&&isBuy(e.opp,i))feeIn+=fee(e.opp,i);else{expo+=EXPO*GATE[X.tier[e.opp]]*drawMult(e.opp,i,e.d);trav-=TRV*DIST[i][e.opp]/100}}}
+ if(!CONF_ON){gate+=9*GATE[t];opc+=9*OPC[t];trav-=9*TRV*2.5}
+ const tot=gate+feeIn-feeOut+trav+stip-opc+expo+neu;
+ return{gate,feeIn,feeOut,trav,stip,opc,expo,neu,tot,need:NEED[t]}}
+function sosOf(i){let n=0,sw=0,s=0;const add=(q,w)=>{n++;sw+=w;s+=w*q};
+ for(const e of entries(i)){if(e.t==='T'){if(e.r===1){const T=S.tn[e.k],f=T.t.filter(x=>x>=0&&x!==i);if(f.length){const a=f.reduce((t,x)=>t+QV[x],0)/f.length;for(let z=0;z<3;z++)add(a,RW.N)}}}
+  else if(e.opp>=0)add(QV[e.opp],RW[e.v]||1)} // road games count 40% more toward the resume
+ return{n,avg:sw?s/sw:0}}
 function outlookOf(r){return r>=QCUT+6?3:r>=QCUT-4?2:r>=QCUT-14?1:0}
 const OUTL=['Outside the field','Longshot','On the bubble','Safely in'];
 function resumeOf(i){const s=sosOf(i);if(s.n<6)return null;return{sos:s.avg,r:QV[i]+1.2*(s.avg-QMEAN),o:outlookOf(QV[i]+1.2*(s.avg-QMEAN)),base:outlookOf(QV[i])}}
@@ -90,6 +102,7 @@ function issues(i){
  const nt=ncTotal(i);if(nt!==12)out.push({s:nt>12?'x':'l',m:`Non-conference games: ${nt} of 12`});
  if(nt===12){const m=money(i);if(m.tot<m.need-.3)out.push({s:'l',m:`Budget short by $${(m.need-m.tot).toFixed(2)}M`});const R=resumeOf(i);if(R&&R.o<R.base)out.push({s:'l',m:`Soft schedule: tournament outlook slips to “${OUTL[R.o].toLowerCase()}”`})}
  const k=X.inT[i];if(k>=0&&S.tn[k].d<0)out.push({s:'l',m:'Tournament date not set'});
+ {const hn=homeN(i);if(hn>capOf(i))out.push({s:'x',m:`Hosts ${hn} non-conference home games, limit ${capOf(i)}`})}
  const seen=new Map();E.forEach(e=>{seen.set(e.d,(seen.get(e.d)||0)+1)});
  for(const[d,c]of seen)if(c>1)out.push({s:'x',m:`Two games on ${dlabel(d)}`});
  E.forEach(e=>{if(BLK.has(e.d))out.push({s:'x',m:`Game on ${dlabel(e.d)} (holiday)`})});
@@ -192,13 +205,13 @@ function autoTournaments(seed){
 function fillNoncon(seed){
  const r=mulberry32(seed*31+7);
  const need=new Int16Array(N),hT=new Int16Array(N);
- for(let i=0;i<N;i++){need[i]=Math.max(0,12-ncTotal(i));hT[i]=Math.round(need[i]*STY[X.sty[i]].home)}
+ const capL=new Int16Array(N);for(let i=0;i<N;i++){need[i]=Math.max(0,12-ncTotal(i));capL[i]=Math.max(0,capOf(i)-homeN(i));hT[i]=Math.min(capL[i],Math.round(need[i]*STY[X.sty[i]].home))}
  const flex=i=>['near','swap','chase','sos'].includes(X.sty[i]);
  let tH=0,tR=0;for(let i=0;i<N;i++){tH+=hT[i];tR+=need[i]-hT[i]}
  const ord=shuf([...Array(N).keys()],r);
  let guard=0;while(tH!==tR&&guard++<5000){
   if(tH>tR){const i=ord[guard%N];if(hT[i]>0&&(flex(i)||guard>2000)){hT[i]--;tH--;tR++}}
-  else{const i=ord[guard%N];if(need[i]-hT[i]>0&&(flex(i)||guard>2000)){hT[i]++;tH++;tR--}}}
+  else{const i=ord[guard%N];if(need[i]-hT[i]>0&&hT[i]<capL[i]&&(flex(i)||guard>2000)){hT[i]++;tH++;tR--}}}
  const hL=Int16Array.from(hT),rL=Int16Array.from(need.map((n,i)=>n-hT[i]));
  const played=new Set(X.pairs),newG=[];
  const key=(a,b)=>a<b?a*1000+b:b*1000+a;

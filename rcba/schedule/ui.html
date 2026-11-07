@@ -123,8 +123,8 @@ function snap(){UI.undo.push(JSON.stringify(S));if(UI.undo.length>8)UI.undo.shif
 function toast(msg,undo){const t=$('#toast');t.innerHTML=`<div class="toast"><span>${esc(msg)}</span>${undo&&UI.undo.length?'<button data-a="undo">Undo</button>':''}</div>`;clearTimeout(toast.t);toast.t=setTimeout(()=>t.innerHTML='',5200)}
 // ----- storage
 let DB=null,lastMeta='',lastGames='',saveT=null;
-const enc=g=>`${g.d.toString(36)}.${g.h.toString(36)}.${g.a.toString(36)}.${g.t}${g.p?1:0}${g.r?1:0}`;
-const dec=s=>{const q=s.split('.');return{d:parseInt(q[0],36),h:parseInt(q[1],36),a:parseInt(q[2],36),t:q[3][0],p:+q[3][1],r:+(q[3][2]||0)}};
+const enc=g=>`${g.d.toString(36)}.${g.h.toString(36)}.${g.a.toString(36)}.${g.t}${g.p?1:0}${g.r?1:0}${g.s>=0?'.'+g.s.toString(36):''}`;
+const dec=s=>{const q=s.split('.');return{d:parseInt(q[0],36),h:parseInt(q[1],36),a:parseInt(q[2],36),t:q[3][0],p:+q[3][1],r:+(q[3][2]||0),s:q[4]!=null?parseInt(q[4],36):-1}};
 let SVT='',SVB=0;function setSv(t,bad){SVT=t;SVB=bad?1:0;const e=$('#sv');if(e){e.textContent=t;e.className='sv'+(bad?' bad':'')}}
 function dirty(){clearTimeout(saveT);setSv('Saving…');saveT=setTimeout(doSave,800)}
 async function doSave(){
@@ -203,12 +203,14 @@ function vSeason(){
  <div class="chips">${Object.keys(STY).map(k=>`<span class="tag">${STY[k].n} · ${sc[k]||0}</span>`).join('')}</div>
  <p class="mut">Buy games happen when the host is two or more budget tiers above its guest. The host pays the guest, so small schools can earn money on the road. Each team’s gauge shows how much of its revenue need the schedule meets.</p></div>
  <div class="card"><b>Fan draw</b><p class="mut">A home game earns gate money times a crowd factor. Opponent name and last year’s seed raise it, so do banners, in-state matchups and teams close enough for fans to drive. Saturdays sell best, midweek and the holiday break sell worst.</p></div>
+ <div class="card"><b>Why play on the road</b><p class="mut">Each school can host only seven non-conference home games (you can change that per school), and every home night costs money to run. So someone has to visit. A visitor in a non-buy game gets 10% of the gate as exposure share. On the resume, a road game counts 40% more than a home game.</p></div>
+ <div class="card"><b>Marquee neutral games</b><p class="mut">Two Comfortable or Flush schools can meet at a neutral arena. An arena and promoter put up a pot, split evenly, that grows with both names. Both pay their own travel. These don’t use up a home date.</p></div>
  <div class="card"><b>Budget goals</b><p class="mut">Every school has a revenue goal for its tier. A team with all 12 games and less money than its goal is flagged. Buy games, big home crowds and tournament stipends all move the number.</p></div>
  <div class="card"><b>Tournament outlook</b><p class="mut">Talent is last year’s record and prestige. The schedule adjusts it: a tough one lifts a team’s resume, a soft one sinks it. A team whose schedule drops its outlook is flagged.</p></div>
  <div class="card"><b>Small gray text</b><p class="mut">Next to each school: its record from last season, then its seed in last season’s national tournament if it made the field. “First four” marks the eight play-in teams.</p></div>
  <div class="card"><b>Home-and-homes</b>${(()=>{const L=S.g.filter(g=>g.r);return L.length?`<p class="mut">${L.length} return game${L.length>1?'s':''} promised for 22-23. Tap ⇄ on any non-conference game to add or remove one.</p>`+L.slice(0,40).sort((a,b)=>a.d-b.d).map(g=>`<p style="margin:3px 0;font-size:14px"><button class="ic" style="padding:0;color:var(--ink);text-decoration:underline" data-a="team" data-i="${g.h}">${nm(g.h)}</button> hosts ${nm(g.a)} now, and ${nm(g.a)} hosts ${nm(g.h)} in 22-23</p>`).join('')+(L.length>40?`<p class="mut">and ${L.length-40} more</p>`:''):'<p class="mut">None yet. Tap ⇄ on a non-conference game to promise a return game next season. Home-and-home schools often get one automatically.</p>'})()}</div>
  <div class="card"><b>Take it with you</b><p class="mut">A spreadsheet of every game, as a CSV file.</p><button class="btn" data-a="csv">Save schedule as CSV</button></div>
- <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 18 · tournament mates</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
+ <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 19 · road games and marquee</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
 function render(){
  const a=$('#app');const sy=window.scrollY;
  a.innerHTML=topbar()+({garden:vGarden,tourn:vTourn,check:vCheck,season:vSeason}[UI.tab])()+nav();
@@ -223,8 +225,9 @@ const prestWords=p=>p>=75?'a top program':p>=55?'a strong program':p>=35?'a mid-
 const alumWords=a=>['little alumni support','a small alumni base','a solid alumni base','a big alumni base','a huge alumni base'][a-1];
 const confWords=c=>c>=70?'plays in a strong conference':c>=35?'plays in an average conference':'plays in a lighter conference';
 const money$=v=>(v<0?'−':'+')+'$'+Math.abs(v).toFixed(2)+'M';
-function gameVal(i,o,v){const t=X.tier[i];return v==='H'?GATE[t]*drawMult(i,o,null)-(isBuy(i,o)?fee(i,o):0):(isBuy(o,i)?fee(o,i):-TRV*DIST[i][o]/100)}
-function badOpp(i,o){return SC[o].c===SC[i].c?'Same conference':X.inT[i]>=0&&X.inT[i]===X.inT[o]?'In the same tournament':X.pairs.has(Math.min(i,o)*1000+Math.max(i,o))?'Already scheduled':ncTotal(o)>=12?'Already has 12':''}
+function gameVal(i,o,v,s){const t=X.tier[i];if(v==='N')return marqNet(i,o,s==null?-1:s,null);return v==='H'?GATE[t]*drawMult(i,o,null)*(isBuy(i,o)?1:1-EXPO)-OPC[t]-(isBuy(i,o)?fee(i,o):0):(isBuy(o,i)?fee(o,i):EXPO*GATE[X.tier[o]]*drawMult(o,i,null)-TRV*DIST[i][o]/100)}
+const canH=(i,o)=>homeN(i)<capOf(i), canA=(i,o)=>homeN(o)<capOf(o);
+function badOpp(i,o){return SC[o].c===SC[i].c?'Same conference':!canH(i,o)&&!canA(i,o)&&!marqOK(i,o)?'Neither can host':X.inT[i]>=0&&X.inT[i]===X.inT[o]?'In the same tournament':X.pairs.has(Math.min(i,o)*1000+Math.max(i,o))?'Already scheduled':ncTotal(o)>=12?'Already has 12':''}
 function oppList(i,q){const L=[];for(let o=0;o<N;o++){if(o===i)continue;if(q&&!SC[o].n.toLowerCase().includes(q))continue;L.push(o)}
  return L.sort((a,b)=>(!!badOpp(i,a)-!!badOpp(i,b))||suggest(i,a)-suggest(i,b))}
 // ----- team sheet
@@ -232,10 +235,10 @@ function entryRow(e,ix,i){
  const tag=e.t==='C'?'Conference':e.t==='T'?'Tournament':'Non-conf';
  let who,sub=tag;
  if(e.t==='T'){const T=S.tn[e.k];sub=(T.n||'Tournament '+(e.k+1))+' · round '+e.r;who=e.r===1&&e.opp>=0?`vs <button data-a="team" data-i="${e.opp}">${nm(e.opp)}</button>`:e.r===1?'First-round opponent TBD':'Opponent set by results'}
- else who=`${e.v==='H'?'vs':'at'} <button data-a="team" data-i="${e.opp}">${nm(e.opp)}</button>`;
- const buy=e.t==='N'&&(e.v==='H'?isBuy(i,e.opp):isBuy(e.opp,i));
+ else who=`${e.v==='A'?'at':'vs'} <button data-a="team" data-i="${e.opp}">${nm(e.opp)}</button>`;
+ const buy=e.t==='N'&&(e.v==='H'?isBuy(i,e.opp):e.v==='A'?isBuy(e.opp,i):false);
  const gi=e.g?S.g.indexOf(e.g):-1;
- return`<div class="gr"><span class="gn">${ix+1}</span><span class="gd">${dlabel(e.d)}</span><span class="gv ${e.v}">${e.v}</span><span class="go">${who}<small>${sub}${buy?' · buy game':''}${e.g&&e.g.r?' · return in 22-23':''}</small></span><span class="ga">${gi>=0?`${e.t==='N'?`<button class="ic ${e.g.r?'on':''}" data-a="hh" data-g="${gi}" aria-label="Home-and-home next season" title="Home-and-home: return game next season">⇄</button>`:''}<button class="ic ${e.g.p?'on':''}" data-a="pin" data-g="${gi}" aria-label="Pin game" title="Pin">${e.g.p?'◆':'◇'}</button><button class="ic" data-a="del" data-g="${gi}" aria-label="Remove game">×</button>`:''}</span></div>`}
+ return`<div class="gr"><span class="gn">${ix+1}</span><span class="gd">${dlabel(e.d)}</span><span class="gv ${e.v}">${e.v}</span><span class="go">${who}<small>${sub}${buy?' · buy game':''}${e.g&&e.g.s>=0?' · neutral site, '+esc(CITY[e.g.s][0]):''}${e.g&&e.g.r?' · return in 22-23':''}</small></span><span class="ga">${gi>=0?`${e.t==='N'&&!(e.g.s>=0)?`<button class="ic ${e.g.r?'on':''}" data-a="hh" data-g="${gi}" aria-label="Home-and-home next season" title="Home-and-home: return game next season">⇄</button>`:''}<button class="ic ${e.g.p?'on':''}" data-a="pin" data-g="${gi}" aria-label="Pin game" title="Pin">${e.g.p?'◆':'◇'}</button><button class="ic" data-a="del" data-g="${gi}" aria-label="Remove game">×</button>`:''}</span></div>`}
 function vSheet(i){
  const s=SC[i],o=S.ov[i]||{},t=X.tier[i],st=X.sty[i],E=entries(i),m=money(i),iss=issues(i),al=o.alum!=null?o.alum:s.alum;
  const g=Math.min(1,m.tot/m.need),home=E.filter(e=>e.v==='H').length,road=E.filter(e=>e.v==='A').length,neu=E.filter(e=>e.v==='N').length;
@@ -248,8 +251,9 @@ function vSheet(i){
  ${ncTotal(i)===0?'<p class="mut">No games yet. The gauge appears once this team has games.</p>':`<div class="gauge ${g>=.95?'ok':''}"><i style="width:${g*100}%"></i></div>`}
  ${ncTotal(i)===0?'':`<p style="font:500 13px/1.5 var(--mono);color:${m.tot>=m.need-.3?'var(--moss)':'var(--clay)'}">Projected $${m.tot.toFixed(2)}M · ${m.tot>=m.need?'ahead of the goal by $'+(m.tot-m.need).toFixed(2)+'M':m.tot>=m.need-.3?'close to the goal':'short by $'+(m.need-m.tot).toFixed(2)+'M'}${ncTotal(i)<12?' (more games to come)':''}</p>`}
  <p class="mut">${TIERS[t]} budget: ${prestWords(s.prest)}, ${alumWords(al)}, and ${confWords(s.cl)}.</p>
- ${ncTotal(i)===0?'':`<p class="mut">Home ${home} · Road ${road} · Neutral ${neu}${buyH?` · hosts ${buyH} buy game${buyH>1?'s':''}`:''}${buyA?` · visits ${buyA} for pay`:''}</p>`}
+ ${ncTotal(i)===0?'':`<p class="mut">Home ${home} of ${capOf(i)} allowed · Road ${road} · Neutral ${neu}${buyH?` · hosts ${buyH} buy game${buyH>1?'s':''}`:''}${buyA?` · visits ${buyA} for pay`:''}</p>`}
  <div class="lever"><span>Alumni and market</span><span class="step"><button data-a="alum" data-i="${i}" data-v="-1" aria-label="Lower">−</button>${al}<button data-a="alum" data-i="${i}" data-v="1" aria-label="Raise">+</button></span></div>
+ <div class="lever"><span>Home game limit</span><span class="step"><button data-a="cap" data-i="${i}" data-v="-1" aria-label="Lower">−</button>${capOf(i)}<button data-a="cap" data-i="${i}" data-v="1" aria-label="Raise">+</button></span></div>
  <div class="lever"><span>Your nudge</span><span class="step"><button data-a="bud" data-i="${i}" data-v="-1" aria-label="Lower">−</button>${o.bud>0?'+':''}${o.bud||0}<button data-a="bud" data-i="${i}" data-v="1" aria-label="Raise">+</button></span></div>
  <label class="mut" for="sty">Scheduling style</label><select id="sty" data-in="style" data-i="${i}"><option value="">Automatic · ${STY[defStyle(t,i)].n}</option>${Object.keys(STY).map(k=>`<option value="${k}" ${o.style===k?'selected':''}>${STY[k].n}</option>`).join('')}</select></div>
  ${outlookCard(i)}
@@ -269,14 +273,21 @@ function vPick(){
   return`<div class="ov up"><div class="ovh"><h2>Opponent for ${esc(SC[i].n)}</h2><button class="btn sm" data-a="pickclose">Back</button></div>
   <input type="search" id="pq" data-in="pq" placeholder="Search schools" value="${esc(P.q||'')}" aria-label="Search schools"><p class="mut">Every school, best fits first for a ${STY[X.sty[i]].n.toLowerCase()}. Each line shows what both schools take in (+) or pay out (−), in millions.</p>
   <div id="plist">${pickRows(i,L)}</div></div>`}
- const o=P.o,h=P.v==='H'?i:o,a=P.v==='H'?o:i;
- return`<div class="ov up"><div class="ovh"><h2>${P.v==='H'?'Host':'Visit'} ${esc(SC[o].n)}</h2><button class="btn sm" data-a="pickback">Back</button></div>
- <div class="row"><button class="btn ${P.v==='H'?'pri':''}" data-a="pickv" data-v="H">${esc(SC[i].n)} hosts</button><button class="btn ${P.v==='A'?'pri':''}" data-a="pickv" data-v="A">${esc(SC[i].n)} visits</button></div>
- <p style="font:500 13px/1.6 var(--mono)">${sideLine(i,o,P.v)}</p>
+ const o=P.o,h=P.v==='A'?o:i,a=P.v==='A'?i:o,hOK=canH(i,o),aOK=canA(i,o),mOK=marqOK(i,o),N=P.v==='N';
+ const cal=`<p class="mut">Pick a day. Only days free for both teams are open.</p><div class="leg"><span><i style="background:var(--moss)"></i>${esc(SC[i].n)} has a game</span><span><i style="background:var(--clay)"></i>${esc(SC[o].n)} has a game</span></div>${calendar(d=>!X.busy[i].has(d)&&!X.busy[o].has(d)&&!BLK.has(d),'pickday',d=>({a:X.busy[i].has(d),b:X.busy[o].has(d),h:BLK.has(d)}))}`;
+ let body;
+ if(N){
+  const cs=CITY.map((c,ix)=>[ix,cityMiles(i,ix)+cityMiles(o,ix)]).sort((x,y)=>x[1]-y[1]);
+  body=`<div class="card" style="font-size:13px"><b>Marquee game at a neutral arena</b><p class="mut">An arena and promoter put up a pot of $${marqPot(i,o,null).toFixed(2)}M, growing with both schools’ names. It is split evenly, and each school pays its own travel. Saturdays add 10%. Only two Comfortable or Flush schools qualify. Neutral games don’t count against the home limit.</p></div>`+
+   (P.s<0?`<p class="mut">Pick a city. Closest to both first.</p>`+cs.slice(0,14).map(([ix])=>`<button class="pk" data-a="pickcity" data-s="${ix}"><div><b>${esc(CITY[ix][0])}, ${esc(CITY[ix][1])}</b><small>${Math.round(cityMiles(i,ix))} mi for ${esc(SC[i].n)} · ${Math.round(cityMiles(o,ix))} mi for ${esc(SC[o].n)} · each nets ${money$(marqNet(i,o,ix,null))} and ${money$(marqNet(o,i,ix,null))}</small></div></button>`).join(''):
+   `<p style="font:500 13px/1.6 var(--mono)"><span style="color:var(--moss)">${esc(SC[i].n)} ${money$(marqNet(i,o,P.s,null))}</span> · <span style="color:var(--moss)">${esc(SC[o].n)} ${money$(marqNet(o,i,P.s,null))}</span></p><div class="row"><button class="btn sm" data-a="pickcity" data-s="-1">Change city (${esc(CITY[P.s][0])})</button></div>${cal}`)}
+ else body=`<p style="font:500 13px/1.6 var(--mono)">${sideLine(i,o,P.v)}</p>${(P.v==='H'?!hOK:!aOK)?`<p style="color:var(--clay);font-size:13px">${esc(SC[P.v==='H'?i:o].n)} is at its home limit of ${capOf(P.v==='H'?i:o)} non-conference home games.</p>`:''}
  ${feeNote(h,a)}
  <div class="row"><button class="btn ${P.r?'pri':''}" data-a="pickr">⇄ Home-and-home: ${esc(SC[a].n)} hosts ${esc(SC[h].n)} in 22-23</button></div>
- ${isBuy(h,a)?`<p class="mut">A buy game: ${esc(SC[h].n)} pays ${esc(SC[a].n)} to travel.</p>`:''}
- <p class="mut">Pick a day. Only days free for both teams are open.</p><div class="leg"><span><i style="background:var(--moss)"></i>${esc(SC[i].n)} has a game</span><span><i style="background:var(--clay)"></i>${esc(SC[o].n)} has a game</span></div>${calendar(d=>!X.busy[i].has(d)&&!X.busy[o].has(d)&&!BLK.has(d),'pickday',d=>({a:X.busy[i].has(d),b:X.busy[o].has(d),h:BLK.has(d)}))}</div>`}
+ ${isBuy(h,a)?`<p class="mut">A buy game: ${esc(SC[h].n)} pays ${esc(SC[a].n)} to travel.</p>`:''}${cal}`;
+ return`<div class="ov up"><div class="ovh"><h2>${N?'Neutral site vs':P.v==='H'?'Host':'Visit'} ${esc(SC[o].n)}</h2><button class="btn sm" data-a="pickback">Back</button></div>
+ <div class="row"><button class="btn ${P.v==='H'?'pri':''}" data-a="pickv" data-v="H" ${hOK?'':'disabled'}>${esc(SC[i].n)} hosts</button><button class="btn ${P.v==='A'?'pri':''}" data-a="pickv" data-v="A" ${aOK?'':'disabled'}>${esc(SC[i].n)} visits</button>${mOK?`<button class="btn ${N?'pri':''}" data-a="pickv" data-v="N">Neutral site</button>`:''}</div>
+ ${body}</div>`}
 function outlookCard(i){const s=SC[i],R=resumeOf(i),b=outlookOf(QV[i]);
  const last=s.seed>0?`${s.rec}, ${s.seed} seed${s.f4?' (First Four)':''}`:s.rec+', missed the field';
  if(!R)return`<div class="card"><b>Tournament outlook</b><p class="mut">Last year: ${esc(last)}. On talent alone: ${OUTL[b].toLowerCase()}.</p><p class="mut">The schedule’s strength shows once it has six or more games.</p></div>`;
@@ -287,12 +298,12 @@ function crowdLine(h,a,d){const P=drawParts(h,a,d),L=[],f=x=>(x>0?'+':'−')+Mat
  L.push(['Opponent name',P.name]);if(P.state)L.push(['In-state',P.state]);if(P.near)L.push(['Fans can drive',P.near]);if(P.seed)L.push(['Last year’s '+SC[a].seed+' seed',P.seed]);if(P.title)L.push(['Banners',P.title]);
  return L.map(z=>z[0]+' '+f(z[1])).join(' · ')}
 function feeNote(h,a){const cw=`<div class="card" style="font-size:13px"><b>Crowd at ${esc(SC[h].n)}</b><p class="mut">${crowdLine(h,a)}. Ticket revenue is ×${drawMult(h,a,null).toFixed(2)} of a normal night. Saturdays add 10%, midweek takes off 6%, and the holiday break takes off 12%.</p></div>`;return cw+feeNote2(h,a)}
-function feeNote2(h,a){if(!isBuy(h,a))return`<p class="mut">Not a buy game. ${esc(SC[a].n)} pays its own travel, about ${Math.round(DIST[h][a])} miles.</p>`;const p=feeParts(h,a);
+function feeNote2(h,a){if(!isBuy(h,a))return`<p class="mut">Not a buy game. ${esc(SC[a].n)} pays its own travel, about ${Math.round(DIST[h][a])} miles, and gets an exposure share of 10% of the gate. ${esc(SC[h].n)} pays $${OPC[X.tier[h]].toFixed(2)}M to run the night.</p>`;const p=feeParts(h,a);
  return`<div class="card" style="font-size:13px"><b>The guarantee ${esc(SC[h].n)} pays ${esc(SC[a].n)}</b><p class="mut">Budget gap +$${p.base.toFixed(2)}M · ${Math.round(DIST[h][a])} miles of travel +$${p.trav.toFixed(2)}M · drawing power +$${p.draw.toFixed(2)}M · total $${(p.base+p.trav+p.draw).toFixed(2)}M</p></div>`}
 function sideLine(i,o,v){const me=gameVal(i,o,v),th=gameVal(o,i,v==='H'?'A':'H'),c=x=>x<0?'var(--clay)':'var(--moss)';
  return`<span style="color:${c(me)}">${esc(SC[i].n)} ${money$(me)}</span> · <span style="color:${c(th)}">${esc(SC[o].n)} ${money$(th)}</span>`}
 function pickRows(i,L){return L.map(o=>{const bad=badOpp(i,o);
- return`<button class="pk" data-a="pickopp" data-o="${o}" ${bad?'disabled':''} style="display:block"><b>${nm(o)}</b><small>${esc(CF[SC[o].c].name)} · ${Math.round(DIST[i][o])} mi · ${TIERS[X.tier[o]]}${bad?' · '+bad:''}${!bad&&(isBuy(i,o)||isBuy(o,i))?' · buy game':''}</small>${bad?'':`<div style="font:500 12px/1.6 var(--mono);margin-top:4px"><div>Hosts: ${sideLine(i,o,'H')}</div><div>Visits: ${sideLine(i,o,'A')}</div></div>${resumeTag(i,o)}`}</button>`}).join('')}
+ return`<button class="pk" data-a="pickopp" data-o="${o}" ${bad?'disabled':''} style="display:block"><b>${nm(o)}</b><small>${esc(CF[SC[o].c].name)} · ${Math.round(DIST[i][o])} mi · ${TIERS[X.tier[o]]}${bad?' · '+bad:''}${!bad&&(isBuy(i,o)||isBuy(o,i))?' · buy game':''}</small>${bad?'':`<div style="font:500 12px/1.6 var(--mono);margin-top:4px"><div>Hosts: ${canH(i,o)?sideLine(i,o,'H'):'at its home limit'}</div><div>Visits: ${canA(i,o)?sideLine(i,o,'A'):esc(SC[o].n)+' is at its home limit'}</div>${marqOK(i,o)?`<div>Neutral: <span style="color:var(--moss)">${esc(SC[i].n)} ${money$(marqNet(i,o,-1,null))}</span> · <span style="color:var(--moss)">${esc(SC[o].n)} ${money$(marqNet(o,i,-1,null))}</span></div>`:''}</div>${resumeTag(i,o)}`}</button>`}).join('')}
 function resumeTag(i,o){const wp=Math.round(100*winProb(i,o,'H')),wa=Math.round(100*winProb(i,o,'A'));const inRace=QV[i]>=QCUT-12;let n='';
  if(inRace)n=QV[o]>=QMEAN+10?' · boosts the resume':QV[o]<=QMEAN-8?' · drags the resume':'';
  const cr=drawMult(i,o,null);const cn=cr>=1.3?'big crowd':cr<=.9?'thin crowd':'';
@@ -335,7 +346,7 @@ function csv(){
  const rows=[['Date','Day','Type','Home / Team A','Away / Team B','Venue','Event']];
  const q=v=>'"'+String(v).replace(/"/g,'""')+'"';
  const out=[];
- S.g.forEach(g=>out.push([g.d,g.t==='C'?'Conference':'Non-conference',SC[g.h].n,SC[g.a].n,SC[g.h].n+' (home)',g.r?'Home-and-home: return game in 22-23 at '+SC[g.a].n:'']));
+ S.g.forEach(g=>out.push([g.d,g.t==='C'?'Conference':'Non-conference',SC[g.h].n,SC[g.a].n,g.s>=0?'Neutral · '+CITY[g.s][0]+', '+CITY[g.s][1]:SC[g.h].n+' (home)',g.r?'Home-and-home: return game in 22-23 at '+SC[g.a].n:'']));
  S.tn.forEach((T,k)=>{if(T.d<0)return;const nmT=T.n||'Tournament '+(k+1),site=T.site>=0?CITY[T.site][0]+', '+CITY[T.site][1]:'TBD';
   for(let r=0;r<4;r++){const a=T.t[2*r],b=T.t[2*r+1];out.push([T.d,'Tournament',a>=0?SC[a].n:'TBD',b>=0?SC[b].n:'TBD','Neutral · '+site,nmT+' · round 1'])}
   for(let r=0;r<4;r++)out.push([T.d+1,'Tournament','TBD','TBD','Neutral · '+site,nmT+' · round 2']);
@@ -361,15 +372,17 @@ async function act(el){
  case'pin':{const g=S.g[num('g')];if(g){g.p=g.p?0:1;changed()}}break;
  case'del':snap();S.g.splice(num('g'),1);changed('Game removed',1);break;
  case'alum':{const i=num('i'),o=S.ov[i]=S.ov[i]||{},cur=o.alum!=null?o.alum:SC[i].alum;o.alum=Math.max(1,Math.min(5,cur+num('v')));changed()}break;
+ case'cap':{const i=num('i'),o=S.ov[i]=S.ov[i]||{};o.cap=Math.max(1,Math.min(12,capOf(i)+num('v')));changed()}break;
  case'bud':{const i=num('i'),o=S.ov[i]=S.ov[i]||{};o.bud=Math.max(-2,Math.min(2,(o.bud||0)+num('v')));changed()}break;
  case'addgame':UI.pick={i:num('i'),o:-1,v:'H',q:'',r:0};renderLayer();break;
  case'pickclose':UI.pick=null;renderLayer();break;
  case'pickback':UI.pick.o=-1;renderLayer();break;
- case'pickopp':UI.pick.o=num('o');renderLayer();break;
+ case'pickopp':{const P=UI.pick;P.o=num('o');P.s=-1;P.v=canH(P.i,P.o)?'H':canA(P.i,P.o)?'A':'N';renderLayer()}break;
+ case'pickcity':UI.pick.s=num('s');renderLayer();break;
  case'pickr':UI.pick.r=UI.pick.r?0:1;renderLayer();break;
  case'hh':{const g=S.g[num('g')];if(g){g.r=g.r?0:1;changed(g.r?'Return game set for 22-23':'Home-and-home removed')}}break;
- case'pickv':UI.pick.v=D.v;renderLayer();break;
- case'pickday':{const P=UI.pick,h=P.v==='H'?P.i:P.o,aw=P.v==='H'?P.o:P.i;snap();S.g.push({d:num('d'),h,a:aw,t:'N',p:1,r:P.r?1:0});UI.pick=null;changed('Game added and pinned',1)}break;
+ case'pickv':UI.pick.v=D.v;UI.pick.s=-1;renderLayer();break;
+ case'pickday':{const P=UI.pick,h=P.v==='A'?P.o:P.i,aw=P.v==='A'?P.i:P.o;snap();S.g.push({d:num('d'),h,a:aw,t:'N',p:1,r:P.v==='N'?0:P.r?1:0,...(P.v==='N'?{s:P.s}:{})});UI.pick=null;changed('Game added and pinned',1)}break;
  case'slot':UI.tpick={k:num('k'),q:'',conf:-1};renderLayer();break;
  case'tpclose':UI.tpick=null;render();break;
  case'tppick':{const i=num('i'),k=UI.tpick.k,T=S.tn[k],here=T.t.indexOf(i);
