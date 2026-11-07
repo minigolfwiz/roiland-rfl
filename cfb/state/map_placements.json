@@ -1847,6 +1847,42 @@
     353.5
    ],
    "custom": true
+  },
+  "Repidome|Eona": {
+   "city": "Repidome",
+   "state": "Eona",
+   "xy": [
+    220.34,
+    539.41
+   ],
+   "custom": true
+  },
+  "North Cape Point|Barhold": {
+   "city": "North Cape Point",
+   "state": "Barhold",
+   "xy": [
+    174.6,
+    23
+   ],
+   "custom": true
+  },
+  "Granny Smith|Kaji Kita": {
+   "city": "Granny Smith",
+   "state": "Kaji Kita",
+   "xy": [
+    163.91,
+    310.76
+   ],
+   "custom": true
+  },
+  "Fall Beach|Stanton": {
+   "city": "Fall Beach",
+   "state": "Stanton",
+   "xy": [
+    262.1,
+    474.1
+   ],
+   "custom": true
   }
  },
  "state_coords": {
