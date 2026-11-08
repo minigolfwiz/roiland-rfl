@@ -210,7 +210,7 @@ function vSeason(){
  <div class="card"><b>Small gray text</b><p class="mut">Next to each school: its record from last season, then its seed in last season’s national tournament if it made the field. “First four” marks the eight play-in teams.</p></div>
  <div class="card"><b>Home-and-homes</b>${(()=>{const L=S.g.filter(g=>g.r);return L.length?`<p class="mut">${L.length} return game${L.length>1?'s':''} promised for 22-23. Tap ⇄ on any non-conference game to add or remove one.</p>`+L.slice(0,40).sort((a,b)=>a.d-b.d).map(g=>`<p style="margin:3px 0;font-size:14px"><button class="ic" style="padding:0;color:var(--ink);text-decoration:underline" data-a="team" data-i="${g.h}">${nm(g.h)}</button> hosts ${nm(g.a)} now, and ${nm(g.a)} hosts ${nm(g.h)} in 22-23</p>`).join('')+(L.length>40?`<p class="mut">and ${L.length-40} more</p>`:''):'<p class="mut">None yet. Tap ⇄ on a non-conference game to promise a return game next season. Home-and-home schools often get one automatically.</p>'})()}</div>
  <div class="card"><b>Take it with you</b><p class="mut">A spreadsheet of every game, as a CSV file.</p><button class="btn" data-a="csv">Save schedule as CSV</button></div>
- <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 19 · road games and marquee</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
+ <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 20 · mixed suggestions</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
 function render(){
  const a=$('#app');const sy=window.scrollY;
  a.innerHTML=topbar()+({garden:vGarden,tourn:vTourn,check:vCheck,season:vSeason}[UI.tab])()+nav();
@@ -228,8 +228,30 @@ const money$=v=>(v<0?'−':'+')+'$'+Math.abs(v).toFixed(2)+'M';
 function gameVal(i,o,v,s){const t=X.tier[i];if(v==='N')return marqNet(i,o,s==null?-1:s,null);return v==='H'?GATE[t]*drawMult(i,o,null)*(isBuy(i,o)?1:1-EXPO)-OPC[t]-(isBuy(i,o)?fee(i,o):0):(isBuy(o,i)?fee(o,i):EXPO*GATE[X.tier[o]]*drawMult(o,i,null)-TRV*DIST[i][o]/100)}
 const canH=(i,o)=>homeN(i)<capOf(i), canA=(i,o)=>homeN(o)<capOf(o);
 function badOpp(i,o){return SC[o].c===SC[i].c?'Same conference':!canH(i,o)&&!canA(i,o)&&!marqOK(i,o)?'Neither can host':X.inT[i]>=0&&X.inT[i]===X.inT[o]?'In the same tournament':X.pairs.has(Math.min(i,o)*1000+Math.max(i,o))?'Already scheduled':ncTotal(o)>=12?'Already has 12':''}
-function oppList(i,q){const L=[];for(let o=0;o<N;o++){if(o===i)continue;if(q&&!SC[o].n.toLowerCase().includes(q))continue;L.push(o)}
- return L.sort((a,b)=>(!!badOpp(i,a)-!!badOpp(i,b))||suggest(i,a)-suggest(i,b))}
+const stem=n=>n.replace(/ (State|Tech|A&M)$/,'');
+const sibling=(a,b)=>{const x=stem(SC[a].n),y=stem(SC[b].n);return x===y||x.startsWith(y+' ')||y.startsWith(x+' ')};
+// why each school is suggested; the top of the picker mixes the best of each reason, then everyone else follows
+function oppReasons(i){
+ const race=QV[i]>=QCUT-12,R={rival:[],win:[],near:[],res:[],crowd:[],marq:[]},tg={};
+ const add=(o,t)=>{(tg[o]=tg[o]||[]).push(t)};
+ for(let o=0;o<N;o++){if(o===i||badOpp(i,o))continue;const d=DIST[i][o];
+  const same=SC[o].st===SC[i].st,sib=sibling(i,o);
+  if((same&&d<200)||sib||d<60){R.rival.push([o,(same?100:0)+(sib?80:0)+Math.max(0,150-d)/3]);add(o,'Rival')}
+  let w=-9;if(canH(i,o))w=Math.max(w,Math.min(gameVal(i,o,'H'),gameVal(o,i,'A')));if(canA(i,o))w=Math.max(w,Math.min(gameVal(i,o,'A'),gameVal(o,i,'H')));
+  if(w>=.15){R.win.push([o,w]);add(o,'Win-win')}
+  if(d<=200){R.near.push([o,-d]);add(o,'Nearby')}
+  if(race){if(QV[o]>=QMEAN+10&&winProb(i,o,'A')>=.2){R.res.push([o,QV[o]]);add(o,'Resume boost')}}
+  else if(Math.abs(QV[o]-QV[i])<7){R.res.push([o,-Math.abs(QV[o]-QV[i])]);add(o,'Even match')}
+  const cm=drawMult(i,o,null);if(cm>=1.3&&canH(i,o)){R.crowd.push([o,cm]);add(o,'Big crowd')}
+  if(marqOK(i,o)){R.marq.push([o,Math.min(marqNet(i,o,-1,null),marqNet(o,i,-1,null))]);add(o,'Marquee')}}
+ return{R,tg}}
+function oppList(i,q){
+ const{R,tg}=oppReasons(i);UI.tags=tg;
+ const lists=['rival','win','near','res','crowd','marq'].map(k=>R[k].sort((a,b)=>b[1]-a[1]).slice(0,14).map(x=>x[0]));
+ const seen=new Set(),top=[];for(let r=0;r<14;r++)for(const L of lists){const o=L[r];if(o!=null&&!seen.has(o)){seen.add(o);top.push(o)}}
+ const rest=[];for(let o=0;o<N;o++)if(o!==i&&!seen.has(o))rest.push(o);
+ rest.sort((a,b)=>(!!badOpp(i,a)-!!badOpp(i,b))||suggest(i,a)-suggest(i,b));
+ return top.concat(rest).filter(o=>!q||SC[o].n.toLowerCase().includes(q))}
 // ----- team sheet
 function entryRow(e,ix,i){
  const tag=e.t==='C'?'Conference':e.t==='T'?'Tournament':'Non-conf';
@@ -271,7 +293,7 @@ function vPick(){
  if(P.o<0){
   const q=(P.q||'').toLowerCase();const L=oppList(i,q);
   return`<div class="ov up"><div class="ovh"><h2>Opponent for ${esc(SC[i].n)}</h2><button class="btn sm" data-a="pickclose">Back</button></div>
-  <input type="search" id="pq" data-in="pq" placeholder="Search schools" value="${esc(P.q||'')}" aria-label="Search schools"><p class="mut">Every school, best fits first for a ${STY[X.sty[i]].n.toLowerCase()}. Each line shows what both schools take in (+) or pay out (−), in millions.</p>
+  <input type="search" id="pq" data-in="pq" placeholder="Search schools" value="${esc(P.q||'')}" aria-label="Search schools"><p class="mut">The top mixes rivals, win-win deals, nearby schools, resume builders, big crowds and marquee matchups. Every other school follows. Each line shows what both schools take in (+) or pay out (−), in millions.</p>
   <div id="plist">${pickRows(i,L)}</div></div>`}
  const o=P.o,h=P.v==='A'?o:i,a=P.v==='A'?i:o,hOK=canH(i,o),aOK=canA(i,o),mOK=marqOK(i,o),N=P.v==='N';
  const cal=`<p class="mut">Pick a day. Only days free for both teams are open.</p><div class="leg"><span><i style="background:var(--moss)"></i>${esc(SC[i].n)} has a game</span><span><i style="background:var(--clay)"></i>${esc(SC[o].n)} has a game</span></div>${calendar(d=>!X.busy[i].has(d)&&!X.busy[o].has(d)&&!BLK.has(d),'pickday',d=>({a:X.busy[i].has(d),b:X.busy[o].has(d),h:BLK.has(d)}))}`;
@@ -303,7 +325,7 @@ function feeNote2(h,a){if(!isBuy(h,a))return`<p class="mut">Not a buy game. ${es
 function sideLine(i,o,v){const me=gameVal(i,o,v),th=gameVal(o,i,v==='H'?'A':'H'),c=x=>x<0?'var(--clay)':'var(--moss)';
  return`<span style="color:${c(me)}">${esc(SC[i].n)} ${money$(me)}</span> · <span style="color:${c(th)}">${esc(SC[o].n)} ${money$(th)}</span>`}
 function pickRows(i,L){return L.map(o=>{const bad=badOpp(i,o);
- return`<button class="pk" data-a="pickopp" data-o="${o}" ${bad?'disabled':''} style="display:block"><b>${nm(o)}</b><small>${esc(CF[SC[o].c].name)} · ${Math.round(DIST[i][o])} mi · ${TIERS[X.tier[o]]}${bad?' · '+bad:''}${!bad&&(isBuy(i,o)||isBuy(o,i))?' · buy game':''}</small>${bad?'':`<div style="font:500 12px/1.6 var(--mono);margin-top:4px"><div>Hosts: ${canH(i,o)?sideLine(i,o,'H'):'at its home limit'}</div><div>Visits: ${canA(i,o)?sideLine(i,o,'A'):esc(SC[o].n)+' is at its home limit'}</div>${marqOK(i,o)?`<div>Neutral: <span style="color:var(--moss)">${esc(SC[i].n)} ${money$(marqNet(i,o,-1,null))}</span> · <span style="color:var(--moss)">${esc(SC[o].n)} ${money$(marqNet(o,i,-1,null))}</span></div>`:''}</div>${resumeTag(i,o)}`}</button>`}).join('')}
+ return`<button class="pk" data-a="pickopp" data-o="${o}" ${bad?'disabled':''} style="display:block"><b>${nm(o)}</b><small>${esc(CF[SC[o].c].name)} · ${Math.round(DIST[i][o])} mi · ${TIERS[X.tier[o]]}${bad?' · '+bad:''}${!bad&&(isBuy(i,o)||isBuy(o,i))?' · buy game':''}</small>${!bad&&UI.tags&&UI.tags[o]?`<div style="font:600 11px var(--mono);color:var(--moss);margin-top:3px">${UI.tags[o].join(' · ')}</div>`:''}${bad?'':`<div style="font:500 12px/1.6 var(--mono);margin-top:4px"><div>Hosts: ${canH(i,o)?sideLine(i,o,'H'):'at its home limit'}</div><div>Visits: ${canA(i,o)?sideLine(i,o,'A'):esc(SC[o].n)+' is at its home limit'}</div>${marqOK(i,o)?`<div>Neutral: <span style="color:var(--moss)">${esc(SC[i].n)} ${money$(marqNet(i,o,-1,null))}</span> · <span style="color:var(--moss)">${esc(SC[o].n)} ${money$(marqNet(o,i,-1,null))}</span></div>`:''}</div>${resumeTag(i,o)}`}</button>`}).join('')}
 function resumeTag(i,o){const wp=Math.round(100*winProb(i,o,'H')),wa=Math.round(100*winProb(i,o,'A'));const inRace=QV[i]>=QCUT-12;let n='';
  if(inRace)n=QV[o]>=QMEAN+10?' · boosts the resume':QV[o]<=QMEAN-8?' · drags the resume':'';
  const cr=drawMult(i,o,null);const cn=cr>=1.3?'big crowd':cr<=.9?'thin crowd':'';
