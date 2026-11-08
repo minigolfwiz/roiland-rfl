@@ -210,7 +210,7 @@ function vSeason(){
  <div class="card"><b>Small gray text</b><p class="mut">Next to each school: its record from last season, then its seed in last season’s national tournament if it made the field. “First four” marks the eight play-in teams.</p></div>
  <div class="card"><b>Home-and-homes</b>${(()=>{const L=S.g.filter(g=>g.r);return L.length?`<p class="mut">${L.length} return game${L.length>1?'s':''} promised for 22-23. Tap ⇄ on any non-conference game to add or remove one.</p>`+L.slice(0,40).sort((a,b)=>a.d-b.d).map(g=>`<p style="margin:3px 0;font-size:14px"><button class="ic" style="padding:0;color:var(--ink);text-decoration:underline" data-a="team" data-i="${g.h}">${nm(g.h)}</button> hosts ${nm(g.a)} now, and ${nm(g.a)} hosts ${nm(g.h)} in 22-23</p>`).join('')+(L.length>40?`<p class="mut">and ${L.length-40} more</p>`:''):'<p class="mut">None yet. Tap ⇄ on a non-conference game to promise a return game next season. Home-and-home schools often get one automatically.</p>'})()}</div>
  <div class="card"><b>Take it with you</b><p class="mut">A spreadsheet of every game, as a CSV file.</p><button class="btn" data-a="csv">Save schedule as CSV</button></div>
- <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 20 · mixed suggestions</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
+ <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 21 · add button on top</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
 function render(){
  const a=$('#app');const sy=window.scrollY;
  a.innerHTML=topbar()+({garden:vGarden,tourn:vTourn,check:vCheck,season:vSeason}[UI.tab])()+nav();
@@ -269,6 +269,8 @@ function vSheet(i){
  return`<div class="ov"><div class="ovh"><h2>${esc(s.n)}${rs(i)}</h2><button class="btn sm" data-a="closesheet">Done</button></div>
  <div class="row"><span class="tag">${esc(CF[s.c].name)}</span><span class="tag">${esc(s.st)}</span><span class="tag ${t<2?'sand':''}">${TIERS[t]}</span><span class="tag">${STY[st].n}</span></div>
  <p class="mut">${STY[st].d}</p>
+ <div class="row" style="margin:10px 0 2px"><button class="btn pri" data-a="addgame" data-i="${i}" ${ncTotal(i)>=12?'disabled':''}>Add a non-conference game</button></div>
+ <p class="mut" style="margin-top:4px">${12-ncTotal(i)>0?`${12-ncTotal(i)} non-conference spots open.`:'Non-conference is full.'}</p>
  <div class="card"><div class="ch"><b>Budget</b><span class="mut">${ncTotal(i)===0?'':'Goal $'+m.need.toFixed(1)+'M'}</span></div>
  ${ncTotal(i)===0?'<p class="mut">No games yet. The gauge appears once this team has games.</p>':`<div class="gauge ${g>=.95?'ok':''}"><i style="width:${g*100}%"></i></div>`}
  ${ncTotal(i)===0?'':`<p style="font:500 13px/1.5 var(--mono);color:${m.tot>=m.need-.3?'var(--moss)':'var(--clay)'}">Projected $${m.tot.toFixed(2)}M · ${m.tot>=m.need?'ahead of the goal by $'+(m.tot-m.need).toFixed(2)+'M':m.tot>=m.need-.3?'close to the goal':'short by $'+(m.need-m.tot).toFixed(2)+'M'}${ncTotal(i)<12?' (more games to come)':''}</p>`}
@@ -282,9 +284,7 @@ function vSheet(i){
  ${iss.length?`<div class="card" style="border-color:${iss.some(q=>q.s==='x')?'var(--clay)':'var(--line)'}">${iss.map(q=>`<p style="color:${q.s==='x'?'var(--clay)':'var(--mute)'}">${esc(q.m)}</p>`).join('')}</div>`:''}
  ${dbl.length?`<p class="mut">Plays twice in conference: ${dbl.map(nm).join(', ')}</p>`:''}
  <div class="sec">Season · ${E.length} games set</div>
- ${E.length?E.map((e,ix)=>entryRow(e,ix,i)).join(''):'<p class="mut">No games yet.</p>'}
- <div class="row" style="margin-top:14px"><button class="btn pri" data-a="addgame" data-i="${i}" ${ncTotal(i)>=12?'disabled':''}>Add a non-conference game</button></div>
- <p class="mut">${12-ncTotal(i)>0?`${12-ncTotal(i)} non-conference spots open.`:'Non-conference is full.'}</p></div>`}
+ ${E.length?E.map((e,ix)=>entryRow(e,ix,i)).join(''):'<p class="mut">No games yet.</p>'}</div>`}
 // ----- add-game picker
 function suggest(i,o){const d=DIST[i][o],t=X.tier[i]-X.tier[o],st=X.sty[i];
  if(st==='near')return d;if(st==='sos')return-SC[o].prest;if(st==='host')return Math.abs(t-2)*100+d/10;if(st==='earn')return Math.abs(t+2)*100+d/10;return Math.abs(t)*100+d/10}
