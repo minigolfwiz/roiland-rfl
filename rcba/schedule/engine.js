@@ -202,6 +202,19 @@ function autoTournaments(seed){
  S.tn.forEach((T,k)=>{if(!T.n&&T.site>=0){let nm;let tries=0;do{nm=CITY[T.site][0]+' '+SUF[(si++ +k)%SUF.length];tries++}while(names.has(nm)&&tries<20);names.add(nm);T.n=nm;T.na=1}})
 }
 // ---- non-conference games
+// Each pairing is scored in one of three moods so schedules mix neighbours, random pairings and long trips.
+function pickMode(a,r){const pl=X.sty[a]==='near'?.75:0.5,x=r();return x<pl?'local':x<pl+0.25?'any':'far'}
+function pairScore(a,b,r,mode){ // a home, b road
+ const tier=X.tier,d=DIST[a][b],sa=X.sty[a],sb=X.sty[b],g=tier[a]-tier[b];let s=r()*(mode==='any'?2.6:1.2);
+ if(mode==='local')s-=(sa==='near'||sb==='near')?d/45:d/150;
+ else if(mode==='far')s+=Math.min(d,900)/400;
+ if(sa==='host'||sb==='earn'){s+=g>=2?3.5:g>=0?.5:-2}
+ if(sa==='sos')s+=SC[b].prest/35;if(sb==='sos')s+=SC[a].prest/35;
+ if(sa==='swap'||sb==='swap')s-=Math.abs(g)*1.4;
+ if(sa==='chase'||sb==='chase'||sa==='near'||sb==='near')s-=Math.abs(g)*.5;
+ if(g>=2&&!(sa==='host'||sb==='earn'))s-=1;
+ if(g<=-2)s-=2.5;
+ return s}
 function fillNoncon(seed){
  const r=mulberry32(seed*31+7);
  const need=new Int16Array(N),hT=new Int16Array(N);
@@ -217,20 +230,11 @@ function fillNoncon(seed){
  const key=(a,b)=>a<b?a*1000+b:b*1000+a;
  S.tn.forEach(T=>{const f=T.t.filter(i=>i>=0);for(const a of f)for(const b of f)if(a<b)played.add(key(a,b))}); // tournament mates never meet again
  const prest=SC.map(s=>s.prest),tier=X.tier;
- function sc(a,b){ // a home, b road
-  const d=DIST[a][b],sa=X.sty[a],sb=X.sty[b],g=tier[a]-tier[b];let s=r()*1.2;
-  s-=(sa==='near'||sb==='near')?d/45:d/380;
-  if(sa==='host'||sb==='earn'){s+=g>=2?3.5:g>=0?.5:-2}
-  if(sa==='sos')s+=prest[b]/35;if(sb==='sos')s+=prest[a]/35;
-  if(sa==='swap'||sb==='swap')s-=Math.abs(g)*1.4;
-  if(sa==='chase'||sb==='chase'||sa==='near'||sb==='near')s-=Math.abs(g)*.5;
-  if(g>=2&&!(sa==='host'||sb==='earn'))s-=1;
-  if(g<=-2)s-=2.5;
-  return s}
+ let mode='local';const sc=(a,b)=>pairScore(a,b,r,mode);
  let progress=true;
  while(progress){progress=false;
   for(const a of shuf([...Array(N).keys()],r)){if(hL[a]<=0)continue;
-   let best=-1,bs=-1e9;
+   let best=-1,bs=-1e9;mode=pickMode(a,r);
    for(let b=0;b<N;b++){if(rL[b]<=0||b===a||SC[b].c===SC[a].c||played.has(key(a,b)))continue;const s=sc(a,b);if(s>bs){bs=s;best=b}}
    if(best<0)continue;hL[a]--;rL[best]--;played.add(key(a,best));newG.push({h:a,a:best});progress=true}}
  // repair leftovers by swapping
@@ -272,5 +276,35 @@ function completeAll(){
  const seed=S.seed;refresh();
  for(let ci=0;CONF_ON&&ci<NC_;ci++){if(!S.g.some(g=>g.t==='C'&&SC[g.h].c===ci)){placeConf(ci,seed+(S.cf[ci]?S.cf[ci].s||0:0))}}
  refresh();if(!S.tl){autoTournaments(seed);refresh()}fillNoncon(seed);refresh()}
+// Re-deal one team's unpinned non-conference games by swapping opponents with other pairings, so everyone else keeps 12 games.
+function rerollTeam(i,seed){
+ const r=mulberry32(seed*977+i*13+5),key=(a,b)=>a<b?a*1000+b:b*1000+a;let done=0,tried=0;
+ const mineAll=S.g.filter(g=>g.t==='N'&&!g.p&&!(g.s>=0)&&(g.h===i||g.a===i));
+ for(const g of shuf(mineAll.slice(),r)){
+  if(!S.g.includes(g))continue;tried++;refresh();
+  const played=new Set(S.g.map(q=>key(q.h,q.a)));S.tn.forEach(T=>{const f=T.t.filter(z=>z>=0);for(const a of f)for(const b of f)if(a<b)played.add(key(a,b))});
+  const iHome=g.h===i,x=iHome?g.a:g.h;let best=null,bs=-1e9;const tmode=pickMode(i,r);
+  const cands=shuf(S.g.filter(q=>q.t==='N'&&!q.p&&!(q.s>=0)&&q!==g&&q.h!==i&&q.a!==i&&q.h!==x&&q.a!==x),r).slice(0,160);
+  for(const q of cands){const u=q.a,v=q.h; // q: v hosts u
+   let g1h,g1a,g2h,g2a;
+   if(iHome){g1h=i;g1a=u;g2h=v;g2a=x}else{g1h=v;g1a=i;g2h=x;g2a=u}
+   if(SC[g1h].c===SC[g1a].c||SC[g2h].c===SC[g2a].c)continue;
+   if(played.has(key(g1h,g1a))||played.has(key(g2h,g2a)))continue;
+   const s=pairScore(g1h,g1a,r,tmode)+pairScore(g2h,g2a,r,'any')*.3;
+   if(s>bs){bs=s;best=q}}
+  if(!best)continue;
+  const q=best,u=q.a,v=q.h,od=[g.d,q.d];
+  let n1,n2;if(iHome){n1=[i,u];n2=[v,x]}else{n1=[v,i];n2=[x,u]}
+  S.g.splice(S.g.indexOf(g),1);S.g.splice(S.g.indexOf(q),1);refresh();
+  const days=[];for(let d=0;d<=NC_END;d++)if(!BLK.has(d)&&d!==24)days.push(d);
+  const free=(a,b,d)=>!X.busy[a].has(d)&&!X.busy[b].has(d);
+  const pick=(a,b,pref,taken)=>{const ok=d=>!taken.has(d)&&free(a,b,d);const p=pref.find(ok);if(p!=null)return p;
+   let bd=-1,sc=1e9;for(const d of days){if(!ok(d))continue;let s=r()*2;for(const t of[a,b]){if(X.busy[t].has(d-1)||X.busy[t].has(d+1))s+=7}if(s<sc){sc=s;bd=d}}return bd};
+  const d1=pick(n1[0],n1[1],od,new Set());
+  const d2=d1<0?-1:pick(n2[0],n2[1],od,new Set(n1.some(t=>n2.includes(t))?[d1]:[]));
+  if(d1<0||d2<0){S.g.push(g,q);refresh();continue}
+  const mk=(p,d)=>({d,h:p[0],a:p[1],t:'N',p:0,r:0});
+  S.g.push(mk(n1,d1),mk(n2,d2));done++}
+ refresh();return{done,tried}}
 function reroll(){S.seed=(S.seed||1)+1;clearAuto();refresh();completeAll()}
 //</engine>
