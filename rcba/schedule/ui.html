@@ -86,6 +86,7 @@ input[type=text],input[type=search],select{font:inherit;color:var(--ink);backgro
 .day{aspect-ratio:1/.9;border:1px solid var(--line);background:var(--panel);border-radius:8px;font:500 13px var(--mono);padding:0}
 .day:disabled{opacity:.28;cursor:default;background:none}
 .day.n{opacity:1;color:var(--mute)}.day.n .dots{display:flex;gap:3px;justify-content:center;margin-top:2px}.day.n i{width:7px;height:7px;border-radius:50%;display:block}.day.n i.a{background:var(--moss)}.day.n i.b{background:var(--clay)}.day.n small{display:block;font:500 8px var(--mono);margin-top:1px}.leg{display:flex;gap:14px;flex-wrap:wrap;font:500 12px var(--body);color:var(--mute);margin:6px 0}.leg i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
+.sw{display:inline-block;border-radius:3px;margin-right:5px;vertical-align:-1px;border:1px solid rgba(128,128,128,.45)}
 .day.k{border-color:var(--moss);color:var(--moss);font-weight:700}
 .pk{display:flex;justify-content:space-between;gap:10px;align-items:center;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);background:none;padding:10px 2px}
 .pk:disabled{opacity:.4;cursor:default}
@@ -116,7 +117,9 @@ const UI={tab:'garden',sheet:-1,pick:null,tpick:null,open:{},undo:[],confirm:fal
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const rs=i=>{const s=SC[i];return`<span class="rs">${s.rec||''}${s.seed?` · ${s.seed} seed${s.f4?' (first four)':''}`:''}</span>`};
-const nm=i=>esc(SC[i].n)+rs(i);
+const COL=DATA.col||[];
+const sw=(i,z)=>COL[i]?`<i class="sw" style="width:${z||11}px;height:${z||11}px;background:linear-gradient(135deg,${COL[i][0]} 50%,${COL[i][1]} 50%)"></i>`:'';
+const nm=i=>sw(i)+esc(SC[i].n)+rs(i);
 const pctOf=i=>CONF_ON?(Math.min(18,X.cc[i])+Math.min(12,ncTotal(i)))/30:Math.min(12,ncTotal(i))/12;
 const CORD=CF.map((c,ci)=>ci).sort((a,b)=>CONFM[b].reduce((s,i)=>s+SC[i].prest,0)/CONFM[b].length-CONFM[a].reduce((s,i)=>s+SC[i].prest,0)/CONFM[a].length);
 function snap(){UI.undo.push(JSON.stringify(S));if(UI.undo.length>8)UI.undo.shift()}
@@ -210,7 +213,7 @@ function vSeason(){
  <div class="card"><b>Small gray text</b><p class="mut">Next to each school: its record from last season, then its seed in last season’s national tournament if it made the field. “First four” marks the eight play-in teams.</p></div>
  <div class="card"><b>Home-and-homes</b>${(()=>{const L=S.g.filter(g=>g.r);return L.length?`<p class="mut">${L.length} return game${L.length>1?'s':''} promised for 22-23. Tap ⇄ on any non-conference game to add or remove one.</p>`+L.slice(0,40).sort((a,b)=>a.d-b.d).map(g=>`<p style="margin:3px 0;font-size:14px"><button class="ic" style="padding:0;color:var(--ink);text-decoration:underline" data-a="team" data-i="${g.h}">${nm(g.h)}</button> hosts ${nm(g.a)} now, and ${nm(g.a)} hosts ${nm(g.h)} in 22-23</p>`).join('')+(L.length>40?`<p class="mut">and ${L.length-40} more</p>`:''):'<p class="mut">None yet. Tap ⇄ on a non-conference game to promise a return game next season. Home-and-home schools often get one automatically.</p>'})()}</div>
  <div class="card"><b>Take it with you</b><p class="mut">A spreadsheet of every game, as a CSV file.</p><button class="btn" data-a="csv">Save schedule as CSV</button></div>
- <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 21 · add button on top</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
+ <div class="card"><b>Start over</b><p class="mut">Clears every game, tournament field and budget change.</p><p class="mut" style="font:400 11px var(--mono)">Build 22 · school colors</p><button class="btn warn" data-a="wipe">${UI.confirm?'Tap again to clear everything':'Clear the board'}</button></div></section>`}
 function render(){
  const a=$('#app');const sy=window.scrollY;
  a.innerHTML=topbar()+({garden:vGarden,tourn:vTourn,check:vCheck,season:vSeason}[UI.tab])()+nav();
@@ -266,7 +269,7 @@ function vSheet(i){
  const g=Math.min(1,m.tot/m.need),home=E.filter(e=>e.v==='H').length,road=E.filter(e=>e.v==='A').length,neu=E.filter(e=>e.v==='N').length;
  const buyH=E.filter(e=>e.t==='N'&&e.v==='H'&&isBuy(i,e.opp)).length,buyA=E.filter(e=>e.t==='N'&&e.v==='A'&&isBuy(e.opp,i)).length;
  const dbl=[];const cc={};E.forEach(e=>{if(e.t==='C')cc[e.opp]=(cc[e.opp]||0)+1});for(const k in cc)if(cc[k]>1)dbl.push(+k);
- return`<div class="ov"><div class="ovh"><h2>${esc(s.n)}${rs(i)}</h2><button class="btn sm" data-a="closesheet">Done</button></div>
+ return`<div class="ov"><div style="height:8px;border-radius:4px;background:linear-gradient(90deg,${COL[i][0]} 62%,${COL[i][1]} 62%);margin-bottom:10px"></div><div class="ovh"><h2>${esc(s.n)}${rs(i)}</h2><button class="btn sm" data-a="closesheet">Done</button></div>
  <div class="row"><span class="tag">${esc(CF[s.c].name)}</span><span class="tag">${esc(s.st)}</span><span class="tag ${t<2?'sand':''}">${TIERS[t]}</span><span class="tag">${STY[st].n}</span></div>
  <p class="mut">${STY[st].d}</p>
  <div class="row" style="margin:10px 0 2px"><button class="btn pri" data-a="addgame" data-i="${i}" ${ncTotal(i)>=12?'disabled':''}>Add a non-conference game</button></div>
